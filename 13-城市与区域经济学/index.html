@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>城市与区域经济学 · EconLearn 经济学自学之路</title>
+<meta name="description" content="城市与区域经济学中文互动教程：集聚经济、竞租曲线、住房市场、拥堵费与区域增长差距，配互动图表与自测。">
+<link rel="stylesheet" href="../assets/econ.css">
+</head>
+<body style="--branch:#ea580c">
+<noscript><p class="noscript-tip">本页的互动图表与自测需要启用 JavaScript；未启用时仍可阅读全部正文。</p></noscript>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← 总览</a>
+  <div class="topbar-title"><span class="topbar-num">13</span>城市与区域经济学</div>
+  <button class="toc-toggle" aria-expanded="false">目录</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">本分支章节</p>
+    <nav aria-label="章节目录">
+      <a href="#overview">导读与学习目标</a>
+      <a href="#ch1">1 · 为什么会有城市</a>
+      <a href="#ch2">2 · 城市内部结构</a>
+      <a href="#ch3">3 · 住房市场</a>
+      <a href="#ch4">4 · 拥堵与城市问题</a>
+      <a href="#ch5">5 · 区域差距与路径依赖</a>
+      <a href="#ch6">6 · 城市政策与中国城镇化</a>
+      <a href="#path">进阶路线与延伸阅读</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · 经济学自学之路</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">分支 13 · 应用领域</span>
+        <h1>城市与区域经济学</h1>
+        <p class="hero-en">Urban &amp; Regional Economics</p>
+        <p class="hero-lead">全球超过一半人口住在城市，中国这个数字已超过三分之二。这个分支回答四个追问：人和企业为什么要挤在一起？城市内部为什么长成同心圆？大城市的房价为什么高、路为什么堵？以及——为什么有的地区富起来之后，就很难再穷回去？</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">学完本分支你将能</div>
+        <ul>
+          <li>用马歇尔"共享、匹配、学习"三大机制解释<strong>集聚经济</strong>，并说明它与拥堵成本如何共同决定最优城市规模</li>
+          <li>用<strong>竞租曲线</strong>推导单中心城市的土地利用模式，预测交通成本下降对城市半径与密度梯度的影响</li>
+          <li>用住房<strong>供需弹性</strong>解释"人口流入 → 房价上涨"与"人口流入 → 数量扩张"两种结局，并评估租金管制</li>
+          <li>用<strong>外部性</strong>逻辑（边际社会成本与私人成本的缺口）论证拥堵费的定价与福利效果</li>
+          <li>用<strong>路径依赖、集聚阴影与雁阵模式</strong>解释区域差距的持续与产业的梯次转移</li>
+          <li>概述中国城镇化的历程、土地与户籍制度约束，以及"人地挂钩"等改革方向</li>
+        </ul>
+      </div>
+      <div class="prereq">前置知识：
+        <a class="badge" href="../01-微观经济学/index.html">01 微观（外部性、供需）</a>
+        <a class="badge" href="../07-国际经济学/index.html">07 国际（规模经济、要素流动）</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">第 1 章</span>为什么会有城市：集聚经济</h2>
+
+      <p><strong>引入问题：</strong>视频会议、协同文档、AI 客服——"距离的死亡"已经被预言了三十年，可现实是：旧金山湾区的办公室、深圳南山的写字楼、北京中关村的咖啡馆依旧一位难求。如果信息可以零成本传送，为什么最昂贵的产品——新知识——仍然要在人口最稠密的地方生产？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：城市是一台"降低互动成本"的机器</div>
+        <p>把城市想象成<strong>思想的交易所</strong>：交易标的价值越高、越难写成文档，面对面交流的"带宽"就越值钱。马歇尔在 1890 年写道：行业的秘密"不再是秘密，而是仿佛悬浮在空气中"——同行扎堆，看一眼别人怎么干，就胜过读十份报告。所以远程技术替代的是<strong>可编码的信息</strong>，而城市里交易最活跃的是<strong>默会知识</strong>（tacit knowledge）：直觉、手感、信任、当面拍板的魄力。这些东西，光纤传不动。</p>
+      </aside>
+
+      <p>经济学家把企业愿意为"挤在一起"付出的代价，归结为三大机制（马歇尔外部性的现代表述）：</p>
+      <ul>
+        <li><strong>共享（Sharing）</strong>：大城市养得起专业供应商、检测中心、机场跑道与剧院——巨大的固定成本被海量客户摊薄，小城市根本凑不齐这个"分母"。</li>
+        <li><strong>匹配（Matching）</strong>：大劳动力市场让"对的人遇到对的岗位"的概率更高、速度更快，失业与空岗并存的时间更短；企业也更容易找到配套的供应商与客户。</li>
+        <li><strong>学习（Learning）</strong>：知识外溢（Knowledge Spillovers）——同行业扎堆（地方化经济）与城市多样性（城市化经济）都加速模仿、流动与再组合；年轻人进城"边干边学"，是人力资本积累最快的方式。</li>
+      </ul>
+      <p>经验研究的规律相当稳健：城市就业密度或人口规模<strong>翻一倍，生产率平均提高约 3%~8%</strong>（Rosenthal 与 Strange 的综述区间）。这就是集聚的"复利"。但城市同样有成本：通勤、拥堵、高房价、污染——收益与成本相抵，才有了"最优城市规模"这个问题。</p>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">集聚经济 <span class="term-en">Agglomeration Economies</span></div><div class="term-def">企业与个人因空间集中而获得的生产率收益，机制包括共享、匹配、学习三大类。是解释城市存在与城市规模的核心变量。</div></div>
+        <div class="term"><div class="term-name">劳动力蓄水池 <span class="term-en">Labor Market Pooling</span></div><div class="term-def">大量同行业企业聚集形成的大劳动力市场：工人失业后很快找到下家，企业缺人时很快招到人，双方都少付"空转"的成本。</div></div>
+        <div class="term"><div class="term-name">地方化经济与城市化经济 <span class="term-en">Localization vs. Urbanization Economies</span></div><div class="term-def">前者来自<strong>同行业</strong>扎堆（硅谷的芯片、义乌的小商品）；后者来自<strong>跨行业</strong>的城市多样性（纽约的金融、法律、媒体、设计互相喂料）。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 1-1 · 最优城市规模：集聚收益 vs 拥堵成本</div>
+        <p class="fig-sub">试一试：拖动两个滑块，看净收益曲线的峰值（最优城市规模 N*）如何移动。把交通基础设施拉到最低，N* 会缩到五百万上下——那大致是一座"堵城"的经济学画像。</p>
+        <figure class="fig-canvas">
+          <svg id="gb-svg" viewBox="0 0 640 410" role="img" aria-label="最优城市规模图：人均集聚收益随城市人口递增且趋于平缓，人均拥堵成本随人口加速上升，两者之差为人均净收益，其峰值对应最优城市人口规模。">
+            <line class="gridline" x1="64" y1="248" x2="608" y2="248"/>
+            <line class="gridline" x1="64" y1="152" x2="608" y2="152"/>
+            <line class="gridline" x1="64" y1="56" x2="608" y2="56"/>
+            <text class="chart-label-en" x="58" y="252" text-anchor="end">50</text>
+            <text class="chart-label-en" x="58" y="156" text-anchor="end">100</text>
+            <text class="chart-label-en" x="58" y="60" text-anchor="end">150</text>
+            <line class="gridline" x1="189.5" y1="56" x2="189.5" y2="344"/>
+            <line class="gridline" x1="329" y1="56" x2="329" y2="344"/>
+            <line class="gridline" x1="468.5" y1="56" x2="468.5" y2="344"/>
+            <text class="chart-label-en" x="189.5" y="362" text-anchor="middle">5</text>
+            <text class="chart-label-en" x="329" y="362" text-anchor="middle">10</text>
+            <text class="chart-label-en" x="468.5" y="362" text-anchor="middle">15</text>
+            <text class="chart-label" x="336" y="390" text-anchor="middle">城市人口 N（百万人）</text>
+            <text class="chart-label" x="18" y="200" text-anchor="middle" transform="rotate(-90 18 200)">人均收益 / 成本（指数）</text>
+            <line class="axis" x1="64" y1="344" x2="608" y2="344"/>
+            <line class="axis" x1="64" y1="344" x2="64" y2="56"/>
+            <text class="chart-label" x="70" y="18" style="fill:#0d9488">— 集聚收益</text>
+            <text class="chart-label" x="180" y="18" style="fill:#2f6fdb">— 拥堵成本</text>
+            <text class="chart-label" x="292" y="18" style="fill:#7c3aed">— 人均净收益</text>
+            <text id="gb-read1" class="chart-title-sm" x="606" y="16" text-anchor="end"></text>
+            <text id="gb-read2" class="chart-label" x="606" y="38" text-anchor="end"></text>
+            <line id="gb-vline" y1="56" y2="344" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <path id="gb-ab" class="curve curve-c3"/>
+            <path id="gb-cc" class="curve curve-c1"/>
+            <path id="gb-nb" class="curve curve-c4"/>
+            <circle id="gb-dot" r="6" class="dot" fill="#ea580c"/>
+            <text id="gb-vlab" class="chart-title-sm" y="74" text-anchor="middle" fill="#ea580c"></text>
+            <text id="gb-lab-ab" class="chart-label" text-anchor="end" style="fill:#0d9488">集聚收益</text>
+            <text id="gb-lab-cc" class="chart-label" text-anchor="end" style="fill:#2f6fdb">拥堵成本</text>
+            <text id="gb-lab-nb" class="chart-label" text-anchor="end" style="fill:#7c3aed">净收益</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="gb-agg">集聚强度（知识外溢）</label><input type="range" id="gb-agg" min="60" max="140" step="5" value="100"><output id="gb-oagg" for="gb-agg">100%</output></div>
+          <div class="ctrl"><label for="gb-con">交通基础设施水平</label><input type="range" id="gb-con" min="0" max="100" step="5" value="50"><output id="gb-ocon" for="gb-con">50</output></div>
+        </div>
+        <figcaption>读图要点：集聚收益曲线递增但边际递减（拥挤稀释了外溢），拥堵成本随规模加速上升（道路是公地）。净收益峰值处，边际集聚收益恰好等于边际拥堵成本——这就是最优城市规模。基础设施改善压平拥堵曲线，最优规模右移：地铁与快速路让城市"长得更大"；而集聚强度越高（如知识密集产业），值得承受的拥堵也越多。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 深圳—东莞电子信息走廊</div>
+        <p>在华强北，一颗芯片的两百多家供应商挤在步行范围之内，流传的说法是"周一出图纸，周三出样机"。往北沿着 107 国道，深圳的研发、东莞的模具与注塑、惠州的组装连成一条走廊。三大机制在同一条公路上同时运转：<strong>共享</strong>（检测中心、物流仓、元器件市场人人可用）、<strong>匹配</strong>（工程师跳槽不出这条街，缺人当天补齐）、<strong>学习</strong>（供应链的工艺改进在展会与饭局上传开）。这就是为什么一部新手机从设计到量产，珠三角比多数国家都快。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"信息技术会让城市解散。"</strong>——历史上每次通信革命（电报、电话、互联网）之后，城市反而更大了：技术越进步，最稀缺的投入越是"不可编码"的创造力与信任，而它们恰恰最依赖面对面。另一个误区是<strong>把集聚与拥堵混为一谈</strong>：集聚收益是生产率之源，拥堵是过量交通需求造成的负外部性——治拥堵靠定价与管理，不需要也不应该消灭集聚本身。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.1</span>远程办公与视频会议日益普及，下列判断最符合经济学证据的是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>城市将逐步消亡，集聚收益会归零</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>面对面交流传递的默会知识仍难替代，且最依赖交流的科技产业本身高度集聚</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>企业分散办公后生产率必然提高</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>集聚经济只对制造业重要，对服务业可以忽略</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>每次"距离的死亡"预言之后城市反而更强——电话、互联网之后皆然。共享、匹配、学习三大机制中，默会知识与信任的传递最依赖面对面；而软件、金融这些"最该远程"的行业恰恰是最集聚的（B 正确）。A、C 与经验事实相反；D 错在方向：服务业（尤其知识密集型）比制造业更依赖集聚，工厂反而可以搬到郊区。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.2</span>在图 1-1 中，若城市大幅改善通勤基础设施（拥堵成本曲线下移），最优城市规模与峰值人均净收益将如何变化？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>最优规模下降，峰值收益下降</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>最优规模上升，峰值收益下降</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>最优规模上升，峰值收益也上升</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>两者都不变，基础设施只影响分布不影响规模</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>拥堵成本曲线被压平后，净收益曲线（收益减成本）的峰值向右、向上移动：城市在更大规模上仍然"划算"，且居民平均境况更好（C）。这正是地铁与快速路让城市"长大"的机制。A、B、D 或者忽略了成本下降直接提升净收益，或者误解了规模与治理的关系。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>城市存在的根本原因是<strong>集聚经济</strong>：共享（摊薄固定成本）、匹配（更快的找人与被找）、学习（知识外溢）。</li>
+          <li>经验规律：城市规模翻倍，生产率平均提高约 3%~8%；但拥堵、房价与污染随规模加速上升。</li>
+          <li>最优城市规模在<strong>边际集聚收益 = 边际拥堵成本</strong>处取得；交通技术改善与治理升级会推高最优规模。</li>
+          <li>集聚的是"互动"而不是"人口"本身——治理城市病不能靠消灭集聚。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">第 2 章</span>城市内部结构：竞租与土地利用</h2>
+
+      <p><strong>引入问题：</strong>把任意一座中国城市的卫星图缩小看：写字楼与商场簇拥在市中心，住宅向外摊开，工厂与物流园退到外围，再往外是农田。这个"同心圆"并不是哪个规划师画出来的（多数城市从未被这样规划过），它是千万个企业与家庭<strong>竞价竞出来的</strong>。它背后的机制是什么？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：土地市场是一场永不落幕的拍卖</div>
+        <p>每一块地，谁靠它赚到最多的钱，谁就能出最高的价。商务公司把员工、客户、会议全部堆在中心，省下的互动成本巨大，所以对中心地段出价最凶；家庭也想住得近，但一套住宅单位面积的"产出"远低于一层写字楼，竞不过商务，只好退到中间一圈，用更长的通勤换更便宜的地；农业根本不在乎通勤，只看土壤与灌溉，出价是一条几乎平坦的线——它划定了城市的外边界。<strong>地租随距离下降的梯度，就是通勤成本的"影子价格"</strong>。</p>
+      </aside>
+
+      <div class="formula">R(d) = R(0) − t · d<span class="f-note">R(d)：距市中心 d 处的竞租；t：单位距离的通勤成本（时间 + 货币）。曲线斜率 −t：谁对距离越敏感（t 越大），曲线越陡，越"赖"在市中心。</span></div>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">竞租函数 <span class="term-en">Bid Rent Function</span></div><div class="term-def">某一类使用者（商务、住宅、工业、农业）愿意为各区位支付的最高地租——恰好使其在该区位经济利润为零。不同用途竞租曲线的斜率不同，陡者占中心。</div></div>
+        <div class="term"><div class="term-name">单中心城市模型 <span class="term-en">Monocentric City Model</span></div><div class="term-def">阿隆索—穆斯—米尔斯模型：假设就业集中在中央商务区（CBD），家庭在"住房便宜"与"通勤贵"之间权衡，均衡结果是地租与密度随距离递减的同心圆结构。</div></div>
+        <div class="term"><div class="term-name">保留租金 <span class="term-en">Reservation Rent</span></div><div class="term-def">土地的次优用途（通常是农业）提供的地租。城市用途的竞租一旦降到保留租金以下，城市便停止扩张——保留租金与竞租曲线的交点决定城市边界。</div></div>
+        <div class="term"><div class="term-name">中心地理论 <span class="term-en">Central Place Theory</span></div><div class="term-def">克里斯塔勒（1933）：商品有"门槛人口"与"服务半径"，于是聚落形成层级——村口的便利店、镇上的超市、市里的百货与三甲医院、区域枢纽的机场。它解释的是<strong>城市体系</strong>，与解释单城结构的竞租模型互补。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 2-1 · 竞租曲线与城市结构：交通成本压平租金梯度</div>
+        <p class="fig-sub">试一试：拖动"相对交通成本"（修地铁、快速路，或远程办公混合通勤会降低它），观察商务区半径与城市边界如何移动；再拖动"住房需求压力"（人口与收入流入），看住宅竞租上移如何推动城市外扩。</p>
+        <figure class="fig-canvas">
+          <svg id="br-svg" viewBox="0 0 640 400" role="img" aria-label="竞租曲线图：商务与住宅两类用途的地租出价随距市中心距离递减，与水平的农业地租相交处为城市边界；交通成本下降时曲线变平缓，城市边界外移。">
+            <line class="gridline" x1="64" y1="251.7" x2="608" y2="251.7"/>
+            <line class="gridline" x1="64" y1="173.3" x2="608" y2="173.3"/>
+            <line class="gridline" x1="64" y1="95" x2="608" y2="95"/>
+            <text class="chart-label-en" x="58" y="255.7" text-anchor="end">100</text>
+            <text class="chart-label-en" x="58" y="177.3" text-anchor="end">200</text>
+            <text class="chart-label-en" x="58" y="99" text-anchor="end">300</text>
+            <line class="gridline" x1="200" y1="48" x2="200" y2="330"/>
+            <line class="gridline" x1="336" y1="48" x2="336" y2="330"/>
+            <line class="gridline" x1="472" y1="48" x2="472" y2="330"/>
+            <text class="chart-label-en" x="200" y="350" text-anchor="middle">5</text>
+            <text class="chart-label-en" x="336" y="350" text-anchor="middle">10</text>
+            <text class="chart-label-en" x="472" y="350" text-anchor="middle">15</text>
+            <text class="chart-label-en" x="604" y="350" text-anchor="middle">20</text>
+            <text class="chart-label" x="336" y="378" text-anchor="middle">距市中心距离 d（公里）</text>
+            <text class="chart-label" x="18" y="189" text-anchor="middle" transform="rotate(-90 18 189)">地租 R（元/㎡·月）</text>
+            <line class="axis" x1="64" y1="330" x2="608" y2="330"/>
+            <line class="axis" x1="64" y1="330" x2="64" y2="48"/>
+            <text id="br-read1" class="chart-title-sm" x="606" y="16" text-anchor="end"></text>
+            <text id="br-read2" class="chart-label" x="606" y="38" text-anchor="end"></text>
+            <rect id="br-zc" x="64" y="48" width="0" height="282" fill="#ea580c" class="area-fill"/>
+            <rect id="br-zr" x="64" y="48" width="0" height="282" fill="#0d9488" class="area-fill"/>
+            <line x1="64" y1="290.8" x2="608" y2="290.8" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 5"/>
+            <text class="chart-label" x="602" y="284" text-anchor="end" style="fill:#64748b">农业地租 A（保留租金）</text>
+            <line id="br-v1" y1="48" y2="330" class="gridline"/>
+            <line id="br-v2" y1="48" y2="330" class="gridline"/>
+            <path id="br-comm" class="curve curve-c1"/>
+            <path id="br-res" class="curve curve-c3"/>
+            <text id="br-lc" class="chart-label" style="fill:#2f6fdb">商务竞租</text>
+            <text id="br-lr" class="chart-label" style="fill:#0d9488">住宅竞租</text>
+            <text id="br-z1" class="chart-label" y="320" text-anchor="middle" data-t="商务区"></text>
+            <text id="br-z2" class="chart-label" y="320" text-anchor="middle" data-t="住宅区"></text>
+            <text id="br-z3" class="chart-label" y="320" text-anchor="middle" data-t="农业 / 绿地" style="fill:#64748b"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="br-tc">相对交通成本</label><input type="range" id="br-tc" min="50" max="180" step="5" value="100"><output id="br-otc" for="br-tc">1.00×</output></div>
+          <div class="ctrl"><label for="br-hd">住房需求压力（竞租上移）</label><input type="range" id="br-hd" min="0" max="120" step="5" value="0"><output id="br-ohd" for="br-hd">+0 元</output></div>
+        </div>
+        <figcaption>读图要点：商务竞租最陡——互动价值对距离最敏感，所以占据市中心；住宅竞租较缓，占据中间圈；农业保留租金是一条平线，与住宅竞租的交点即城市边界。交通成本 t 下降时所有曲线变平：市中心地租相对下降、边缘地租上升，城市"摊大"——这正是 20 世纪美国州际公路带来郊区化的几何形态。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 北京：环线就是租金梯度的等高线</div>
+        <p>金融街与国贸 CBD 挤在二环、三环边；回龙观、天通苑在五环外承接通勤人流，被称为"睡城"；再往外，燕郊凭一条潮白河的价差承接外溢需求。地租与房价随距天安门距离递减的梯度清晰可见：地铁每向外延伸一站，沿线租金的台阶就抬升一截；八通线、6 号线沿线的"租金断崖"，就是竞租曲线在轨道站点处的局部跳跃。观察一座城市最便宜的方式，就是看它的房价地图——那是千万家庭用真金白银投票画出的竞租曲线。</p>
+      </aside>
+
+      <aside class="callout history">
+        <div class="callout-title">思想史 · 从杜能环到阿隆索</div>
+        <p>1826 年，冯·杜能想象一座"孤立国"，解释农场为何围绕城市形成同心圆：鲜奶蔬菜易腐要在近郊，谷物耐运可在远郊。1960 年代，阿隆索把"运输的货物"换成"通勤的人"，杜能环变成了城市土地利用理论——单中心城市模型由此成为城市经济学的骨架。两个模型相隔一百四十年，说的是同一句话：<strong>运输成本雕刻空间结构</strong>。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"市中心地价高是因为那里的地少。"</strong>——错。决定地价的是<strong>可达性</strong>：单位面积土地每天"吞吐"的互动次数。同样面积的中心区位，承载的会面、交易与协作比郊区高几个数量级，地价自然高。另一个误区是<strong>"城市永远是单中心"</strong>：模型只是把就业集中在 CBD 以简化分析；现实中就业郊区化、多中心与副中心的出现，正是竞租机制与新技术（轨道、高速路、远程办公）互动的结果，并非对模型的否定。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.1</span>为什么商务办公活动通常成功竞得市中心土地？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>商务人士喜欢繁华的都市景观</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>商务活动对面对面互动和通勤最敏感，中心区位为其节约的总成本最大，竞租出价最高</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>政府规定写字楼必须建在市中心</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>住宅和农业在物理上无法出现在市中心</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>竞租的胜负取决于"距离的敏感度"。写字楼里每小时都在发生高价值的会面与协作，把距离压缩到最小省下的钱最多，因此愿意为中心支付最高租金（B）。A 是结果不是原因；C 与事实不符（CBD 是竞出来的，不是规划出来的）；D 显然错误——市中心也有住宅（如胡同、公寓），只是被商务"挤出"了最优地段。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.2</span>若城市与外围之间建成快速轨道，单位距离通勤成本大幅下降，依据竞租模型可预测：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>竞租曲线更陡峭，城市向中心收缩</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>租金梯度被压平，城市边界外扩，人口与住房更分散</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>市中心地租更高、郊区地租更低，城市更加单中心化</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>土地用途格局完全不变，只是通勤更快</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>竞租斜率 = 单位距离交通成本。t 下降 → 曲线变平：住在远处的机会成本降低，家庭外迁，城市边界外推，形成更低密度的蔓延（B；美国州际公路后的郊区化即此）。A、C 方向反了——通勤便宜削弱而非强化中心的优势；D 忽略了需求对"相对价格"的反应：距离变便宜，人们就会消费更多"距离"。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>土地市场按"谁能赚最多"配置空间：竞租 = 使经济利润为零的最高出价，斜率由通勤/互动成本决定。</li>
+          <li>均衡结构：对距离最敏感的用途（商务）占中心，住宅居中，农业保留租金划定城市边界。</li>
+          <li>交通成本下降压平租金梯度 → 城市摊平、外扩、密度下降；这也是郊区化的经济学解释。</li>
+          <li>中心地理论补充"城市之间的层级"：门槛人口与服务半径生成村—镇—市—区域枢纽的体系。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">第 3 章</span>住房市场：房价从哪里来</h2>
+
+      <p><strong>引入问题：</strong>同样一套 90 平米的房子：鹤岗挂牌 5 万元少人问津，深圳挂牌 600 万元有人排队。两地的建筑材料成本每平米相差不过几百块——那么 595 万元的差价，究竟从哪里来？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：房子 = 建筑物 + 土地区位</div>
+        <p>把一套房拆成两件东西：<strong>建筑物</strong>（可以异地生产、成本全国趋同）与<strong>土地区位</strong>（不可移动、就地定价）。房价的差距几乎全部来自后半块。而地价由三股力量角力：<strong>需求</strong>（工资、就业机会、学校医院、气候）、<strong>供给</strong>（可开发土地、地理约束、管制强度）、<strong>金融</strong>（利率、信贷、预期）。胜负手在供给弹性：能随便盖房子的城市，人口流入主要变成<strong>新房数量</strong>；盖不了的城市，人口流入全部变成<strong>价格上涨</strong>。</p>
+      </aside>
+
+      <p>判断房价是否"离谱"，最常用的标尺是房价收入比（Price-to-Income Ratio）：</p>
+      <div class="formula">房价收入比 = 住房成交中位总价 ÷ 家庭可支配收入中位数<span class="f-note">国际经验区间大致 3~6；中国一线城市曾长期高于 20——口径（面积、收入、城乡）与高速增长预期会抬高合理水平，但数十倍的读数仍提示供给约束与预期透支并存。</span></div>
+
+      <p>长期看，家庭会"用脚投票"把各城市的实际生活水平拉平——这就是<strong>空间均衡</strong>（Spatial Equilibrium，Rosen–Roback 框架）的逻辑：高工资的城市必然以高房价或低宜居度来"收费"，否则人就会继续涌入；反过来，气候宜人的城市可以"少付工资"。理解了这一点，就不会为"为什么昆明工资低""为什么深圳房价高"单独惊讶——它们是同一套价格体系的三个读数。</p>
+
+      <p>住房同时也是<strong>资产</strong>：房价理论上等于未来租金流的现值。当"上涨预期"自我实现、价格系统性脱离租金基本面时，泡沫便开始生长——日本 1990 年（低利率 + "土地不会跌"信仰）与美国 2008 年（次贷扩张）是两场教科书级的破灭。<strong>房价租金比</strong>是监测估值最直观的仪表盘。</p>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">住房供给弹性 <span class="term-en">Housing Supply Elasticity</span></div><div class="term-def">需求每变动 1%，住房数量（新增供应）变动的百分比。取决于地形与管制：弹性高的城市以量吸收需求，弹性低的城市以价吸收需求。</div></div>
+        <div class="term"><div class="term-name">房价收入比 <span class="term-en">Price-to-Income Ratio</span></div><div class="term-def">住房总价中位数与家庭收入中位数之比，衡量支付压力与估值水平。跨城市比较须注意收入口径、住房面积口径与增长预期的差异。</div></div>
+        <div class="term"><div class="term-name">空间均衡 <span class="term-en">Spatial Equilibrium</span></div><div class="term-def">家庭在城市间流动直至"名义工资 − 生活成本 + 宜居性"趋于相等。它把工资、房价与宜居性放进同一个方程，是城市经济学统一的定价框架。</div></div>
+        <div class="term"><div class="term-name">租金管制 <span class="term-en">Rent Control</span></div><div class="term-def">对租金设定上限的价格管制。短期保护存量租客，长期削弱新建与维护激励、造成错配与黑市，是价格上限理论在住房市场的直接应用。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 3-1 · 住房供需弹性对比：同样一波需求，两种结局</div>
+        <p class="fig-sub">试一试：拖动"需求移动"（想象人口与收入持续流入），比较两条供给曲线上的新均衡：易扩建城市（供给平缓）价格小涨、数量大增；供给管制城市（供给陡峭）数量几乎不动、价格大幅上冲。</p>
+        <figure class="fig-canvas">
+          <svg id="hs-svg" viewBox="0 0 640 400" role="img" aria-label="住房市场供需图：需求曲线右移时，平缓的弹性供给线使价格小幅上升、数量大幅增加；陡峭的刚性供给线使价格大幅上升、数量几乎不变。">
+            <line class="gridline" x1="64" y1="249.4" x2="608" y2="249.4"/>
+            <line class="gridline" x1="64" y1="168.9" x2="608" y2="168.9"/>
+            <line class="gridline" x1="64" y1="88.3" x2="608" y2="88.3"/>
+            <text class="chart-label-en" x="58" y="253.4" text-anchor="end">40</text>
+            <text class="chart-label-en" x="58" y="172.9" text-anchor="end">80</text>
+            <text class="chart-label-en" x="58" y="92.3" text-anchor="end">120</text>
+            <line class="gridline" x1="200" y1="48" x2="200" y2="330"/>
+            <line class="gridline" x1="336" y1="48" x2="336" y2="330"/>
+            <line class="gridline" x1="472" y1="48" x2="472" y2="330"/>
+            <text class="chart-label-en" x="200" y="350" text-anchor="middle">40</text>
+            <text class="chart-label-en" x="336" y="350" text-anchor="middle">80</text>
+            <text class="chart-label-en" x="472" y="350" text-anchor="middle">120</text>
+            <text class="chart-label" x="336" y="378" text-anchor="middle">住房数量 Q（万套）</text>
+            <text class="chart-label" x="18" y="189" text-anchor="middle" transform="rotate(-90 18 189)">价格 P（万元/套）</text>
+            <line class="axis" x1="64" y1="330" x2="608" y2="330"/>
+            <line class="axis" x1="64" y1="330" x2="64" y2="48"/>
+            <text id="hs-read1" class="chart-title-sm" x="606" y="16" text-anchor="end"></text>
+            <text id="hs-read2" class="chart-label" x="606" y="38" text-anchor="end"></text>
+            <path class="curve" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 5" d="M64 128.6 L608 289.7"/>
+            <path class="curve curve-c3" d="M64 249.4 L608 195.6"/>
+            <path class="curve curve-c2" stroke-dasharray="8 5" d="M64 249.4 L290.7 48"/>
+            <text class="chart-label" x="602" y="304" text-anchor="end" style="fill:#64748b">初始需求 D₀</text>
+            <text id="hs-ld" class="chart-label" style="fill:#2f6fdb">需求 D（流入后）</text>
+            <text class="chart-label" x="470" y="200" text-anchor="middle" style="fill:#0d9488">供给 S弹性（易扩建）</text>
+            <text class="chart-label" x="120" y="187" text-anchor="end" style="fill:#ea580c">供给 S刚性（管制）</text>
+            <path id="hs-d1" class="curve curve-c1"/>
+            <line id="hs-g1" class="gridline"/>
+            <line id="hs-g2" class="gridline"/>
+            <circle id="hs-e1" r="6" class="dot" fill="#0d9488"/>
+            <circle id="hs-e2" r="6" class="dot" fill="#ea580c"/>
+            <text id="hs-p1" class="chart-label-en" x="58" text-anchor="end"></text>
+            <text id="hs-p2" class="chart-label-en" x="58" text-anchor="end"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="hs-shift">需求移动（人口与收入流入）</label><input type="range" id="hs-shift" min="-40" max="40" step="5" value="0"><output id="hs-oshift" for="hs-shift">+0</output></div>
+        </div>
+        <figcaption>读图要点：两条供给曲线从同一点出发。需求右移同样幅度时，弹性供给下均衡点沿平缓曲线"横向滑动"（数量大增、价格小涨）；刚性供给下沿陡峭曲线"纵向跳跃"（价格大涨、数量几乎不变）。格莱泽等人的研究显示，1990 年代以来美国房价的城市分化（旧金山 vs 休斯敦）主要来自供给管制差异，而非需求差异。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 鹤岗与深圳：一枚硬币的两面</div>
+        <p>鹤岗因煤矿而兴，资源枯竭后人口持续流出，需求曲线年年左移，2019 年以"五万一套房"出圈——那是收缩城市里竞租曲线整体塌陷的形状。深圳四十年来人口从三十多万涨到一千七百多万，需求曲线猛烈右移；而可建设用地受地理与指标双重约束，供给曲线近乎垂直——于是价格成为唯一的出清方式。两座城市共同印证：房价是<strong>地方劳动力市场与住房供给制度</strong>共同定价的产物，"全国一盘棋"的房价讨论常常问错了问题。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"房价高都怪开发商贪婪、炒房客作祟。"</strong>——贪婪无处不在，为什么休斯敦炒不动、深圳炒得动？供给弹性才是结构性变量：没有供给约束，炒作无处落脚；投机是<strong>放大器</strong>，不是<strong>发动机</strong>。归因于道德会开错药方——一味打压需求而不增加供给，房价只会换一种方式上涨。另一个误区是<strong>"租金管制保护穷人"</strong>：它短期确实保护了存量租客，但戴蒙德等人对旧金山的研究显示，长期看管制让房东退出租赁市场（改建自住或出售）、维护下降、租客错配，全市租金反而更高——帮助低收入租房者的更优工具是租赁补贴与扩大保障性租赁住房供给。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.1</span>一座人口持续流入、但住房供给弹性很低的城市，长期看需求增长将主要转化为：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>新房数量的大幅增加，房价基本稳定</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>房价与地价的大幅上涨，新增数量有限</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>房价与数量都保持稳定</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>建筑成本的持续下降</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>供给弹性低意味着供给曲线近乎垂直：需求右移时，数量无法响应，市场只能靠价格出清（B）——地租与房价吸收全部需求增长，正如深圳、旧金山的经历。A 是弹性城市（休斯敦式）的结局；C 需要供给同步扩张；D 与本题逻辑无关，建筑成本恰恰是房价中各地最接近的部分。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.2</span>关于租金管制的长期效应，最准确的表述是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>只有房东受损，所有租客都受益</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>管制会刺激开发商新建更多出租房</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>租赁供给收缩、维护下降、租客错配，未被管制的房源租金反而可能更高</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>管制只影响高端住宅市场，与普通租客无关</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>价格上限压低回报：房东退出（改建、出售、闲置）、新建却步、维修推迟；老租客占着大房子不敢搬（错配），新租客面对更稀缺的存量与更高的非管制租金。旧金山 1994 年管制的实证研究（Diamond–McQuade–Qian）测得受管制房源供给下降约 15%、全市租金上升（C）。A 忽略了租客内部的赢家与输家；B 方向相反；D 错——管制恰恰在普通租赁市场影响最深。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>房价 = 建筑物成本（各地趋同）+ 土地区位租金（就地定价）；差价来自区位，不来自砖头。</li>
+          <li><strong>供给弹性是胜负手</strong>：弹性城市以量吸收需求，刚性城市以价吸收需求。</li>
+          <li>空间均衡：工资、房价、宜居性是同一套价格体系的读数——高工资城市必然以高房价"收费"。</li>
+          <li>住房是资产：房价租金比监测估值；脱离租金基本面的上涨预期即泡沫的温床。</li>
+          <li>租金管制短期护存量、长期伤供给与错配；补贴需求方与扩大供给是更优工具。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">第 4 章</span>拥堵与城市问题：外部性与拥堵费</h2>
+
+      <p><strong>引入问题：</strong>早高峰的北京东三环或成都二环，时速常常不到 15 公里。每多一辆车，都让所有车上的人再慢一点——但没有任何人为此付钱。为什么堵车是教科书级的"公地悲剧"？又为什么"多修路"常常治不了堵？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：司机只看自己的账单</div>
+        <p>每个准备上路的司机比较的是<strong>私人成本</strong>：自己的时间与油钱。他强加给其他所有人的延误，不在他的账单上——这部分是<strong>拥堵外部性</strong>。于是每个边际司机都觉得"再堵也值得一开"，车流一直加到私人成本压过出行价值为止，远超社会最优。庇古的药方照旧：<strong>把外部成本写进账单</strong>——按路段与时段收取拥堵费，费率恰等于最优车流处"社会成本与私人成本之差"。价格一出，时间价值高的人付钱赶路，可错峰的人让开道路，道路这个"公地"就有了主人。</p>
+      </aside>
+
+      <div class="formula">MSC(q) = MPC(q) + E(q)，最优费率 τ* = E(q*) = MSC(q*) − MPC(q*)<span class="f-note">MPC：私人边际成本（司机自己的时间与油费）；E(q)：第 q 辆车强加给全部道路使用者的额外延误；τ*：社会最优车流 q* 处的拥堵费——第 12 分支庇古税的直接应用。</span></div>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">拥堵外部性 <span class="term-en">Congestion Externality</span></div><div class="term-def">边际司机给其他道路使用者造成、却不由自己承担的延误成本。车流越接近容量，每增加一辆车拖慢所有人的幅度越大，外部成本随 q 加速上升。</div></div>
+        <div class="term"><div class="term-name">拥堵费 <span class="term-en">Congestion Pricing</span></div><div class="term-def">对使用拥堵道路按时段/路段动态收费，使边际司机面对真实社会成本。新加坡 ERP 与伦敦拥堵费是运行最久的两个案例。</div></div>
+        <div class="term"><div class="term-name">诱发需求 <span class="term-en">Induced Demand</span></div><div class="term-def">道路扩容降低私人成本，原本被拥堵"劝退"的出行回归、部分乘客改开车，车流回升直至边际成本重新等于边际价值——"修路治堵"常失灵的原因，即当斯定律。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 4-1 · 拥堵费的福利分析：让边际司机面对社会成本</div>
+        <p class="fig-sub">试一试：拖动"外部成本强度"（车流对彼此的拖累程度）与"需求强度"（是否早晚高峰），观察最优车流、拥堵费率与无谓损失三角形的联动；把外部成本调到最低，拥堵费明显变小——车流相互拖累越轻，最优费率越接近零；不堵的路本就不该收费。</p>
+        <figure class="fig-canvas">
+          <svg id="cg-svg" viewBox="0 0 640 400" role="img" aria-label="拥堵外部性图：需求曲线与私人边际成本曲线的交点为市场均衡车流，高于需求与边际社会成本曲线交点决定的社会最优车流；最优车流处的社会成本与私人成本之差为拥堵费，两者之间需求曲线下方的三角形为无谓损失。">
+            <line class="gridline" x1="64" y1="259.5" x2="608" y2="259.5"/>
+            <line class="gridline" x1="64" y1="189" x2="608" y2="189"/>
+            <line class="gridline" x1="64" y1="118.5" x2="608" y2="118.5"/>
+            <text class="chart-label-en" x="58" y="263.5" text-anchor="end">60</text>
+            <text class="chart-label-en" x="58" y="193" text-anchor="end">120</text>
+            <text class="chart-label-en" x="58" y="122.5" text-anchor="end">180</text>
+            <line class="gridline" x1="200" y1="48" x2="200" y2="330"/>
+            <line class="gridline" x1="336" y1="48" x2="336" y2="330"/>
+            <line class="gridline" x1="472" y1="48" x2="472" y2="330"/>
+            <text class="chart-label-en" x="200" y="350" text-anchor="middle">50</text>
+            <text class="chart-label-en" x="336" y="350" text-anchor="middle">100</text>
+            <text class="chart-label-en" x="472" y="350" text-anchor="middle">150</text>
+            <text class="chart-label" x="336" y="378" text-anchor="middle">道路车流量 Q（万辆/小时）</text>
+            <text class="chart-label" x="18" y="189" text-anchor="middle" transform="rotate(-90 18 189)">一次出行成本（元）</text>
+            <line class="axis" x1="64" y1="330" x2="608" y2="330"/>
+            <line class="axis" x1="64" y1="330" x2="64" y2="48"/>
+            <text id="cg-read1" class="chart-title-sm" x="606" y="16" text-anchor="end"></text>
+            <text id="cg-read2" class="chart-label" x="606" y="38" text-anchor="end"></text>
+            <polygon id="cg-dwl" class="area-fill" fill="#b91c1c" points=""/>
+            <path id="cg-d" class="curve curve-c1"/>
+            <path id="cg-mpc" class="curve curve-c3"/>
+            <path id="cg-msc" class="curve curve-c2"/>
+            <line id="cg-g1" class="gridline"/>
+            <line id="cg-g2" class="gridline"/>
+            <line id="cg-toll" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+            <circle id="cg-e1" r="6" class="dot" fill="#0d9488"/>
+            <circle id="cg-e2" r="6" class="dot" fill="#2f6fdb"/>
+            <text id="cg-lq1" class="chart-label" style="fill:#0d9488">市场均衡（D = MPC）</text>
+            <text id="cg-lq2" class="chart-label" style="fill:#2f6fdb">社会最优（D = MSC）</text>
+            <text id="cg-ltoll" class="chart-label" text-anchor="end" style="fill:#ea580c">拥堵费 τ</text>
+            <text id="cg-dwl-lab" class="chart-label" text-anchor="middle" style="fill:#b91c1c">无谓损失</text>
+            <text id="cg-ld" class="chart-label" style="fill:#2f6fdb">需求 D（边际支付意愿）</text>
+            <text class="chart-label" x="602" y="230" text-anchor="end" style="fill:#0d9488">私人成本 MPC</text>
+            <text id="cg-lmsc" class="chart-label" text-anchor="end" style="fill:#ea580c">社会成本 MSC</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="cg-e">拥堵外部成本强度</label><input type="range" id="cg-e" min="10" max="80" step="5" value="45"><output id="cg-oe" for="cg-e">0.45</output></div>
+          <div class="ctrl"><label for="cg-shift">需求强度（高峰程度）</label><input type="range" id="cg-shift" min="-30" max="30" step="5" value="0"><output id="cg-oshift" for="cg-shift">+0</output></div>
+        </div>
+        <figcaption>读图要点：市场均衡在 D = MPC 处（车流过多），社会最优在 D = MSC 处。两者之间的三角形是无谓损失——那些社会成本高于出行价值、却因账单失真而上路的行程。最优费率 τ* 等于最优车流处 MSC 与 MPC 的垂直距离；外部成本越强（曲线相距越远），无谓损失与最优费率都越大。收入可用于公交扩容，缓解累退性。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 新加坡 ERP 与伦敦拥堵费</div>
+        <p>新加坡 1975 年用区域通行证制度开启拥堵定价，1998 年升级为 ERP 电子道路收费：闸口识别车辆、按路段与时段扣费，<strong>费率随实测车速动态调整</strong>——车速低于目标就涨价，高于目标就降价，等于把这张图每月重画一次。伦敦 2003 年开征中心区拥堵费（初始 5 英镑，今已升至 15 英镑），收费区车流明显下降，公交与骑行份额上升。反观同一场外部性的另两种治理：北京尾号限行是<strong>免费的数量管制</strong>——按车牌尾号而非时间价值分配道路，还催生了第二辆车；上海车牌拍卖是<strong>价格化的准入管制</strong>——收入进公交，但只管"拥有"不管"使用"。对照之下，按路段时段动态定价的拥堵费效率最高。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"多修路就不堵了。"</strong>——诱发需求：扩容降低私人成本，被拥堵劝退的出行回归、乘客改开车，车流回升直到边际成本重新等于边际价值；当斯称之为"三重收敛"。修路并非无用（真实瓶颈该修、路网不足该补），但只要不给拥堵定价，扩容的福利很快被新流量吃掉。另一个误区是<strong>"限行比收费更公平"</strong>：免费的数量管制把稀缺道路按车牌尾号分配，既不看时间价值也不产生收入（本可用来修地铁），还激励家庭买第二辆车——"公平"的名目下藏着效率与分配的双重损失；对低收入通勤者的更好答案是收费 + 公交改善 + 定向返还。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.1</span>拥堵道路上均衡车流超过社会最优，其根本原因是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>司机不理性，高估了开车的好处</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>边际司机只承担私人成本，强加给他人的延误不在其账单上</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>道路容量绝对太小，任何车流都属过量</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>公交票价太低，分流了太多乘客</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>每位边际司机在"自己的时间与油费"（MPC）与出行价值之间做权衡，但他拖慢所有人的那部分成本（MSC − MPC）没有进入决策，于是车流停在 D = MPC 而非 D = MSC（B）。司机完全理性，个体理性加总出集体失灵，这正是外部性的定义；A 是行为解释的懒惰兜底，C、D 与机制无关。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.2</span>"修路治堵"在许多城市收效有限，最贴切的经济学解释是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>工程质量差，通行能力没有真正提升</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>诱发需求：容量上升压低私人成本，被拥堵劝退的出行回归，均衡仍回到 D = MPC</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>人口增长太快，任何工程都注定失败</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>收费站的设置抵消了扩容的好处</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>只要道路继续免费，均衡条件就始终是 D = MPC：扩容让 MPC 曲线右移，价格（时间成本）一降，新需求立刻填满容量（B，当斯定律）。要让车流停在社会最优，必须改变"用时间付账"的定价方式——这就是拥堵费的角色；A、D 是工程细节，C 是外推的宿命论，都未触及定价机制。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>拥堵是负外部性：MSC 与 MPC 之间的缺口是被低估的他人延误；免费道路用"时间"配给，必然过量使用。</li>
+          <li>拥堵费 = 最优车流处 MSC 与 MPC 之差；动态分时段定价（新加坡 ERP）效率最高。</li>
+          <li>诱发需求解释了"修路治堵"的失灵：不改变定价，扩容红利被新流量吞噬。</li>
+          <li>分配问题真实存在，但答案在"收费 + 公交 + 定向返还"，而非免费的数量管制（限行）。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">第 5 章</span>区域增长与差距：路径依赖</h2>
+
+      <p><strong>引入问题：</strong>1978 年，沈阳的机床厂是全中国羡慕的单位，深圳还是宝安县的墟市渔村。四十年后，一边是人口净流出与"投资不过山海关"的叹息，一边是千万人口的一线都市。为什么富的地方持续富、衰的地方持续衰？"地区的命运"究竟由什么决定？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：雪球与阴影</div>
+        <p>初始禀赋（港口、煤田、政策特区）决定起点；<strong>报酬递增</strong>决定路径：企业跟着工人走（要劳动力池），工人跟着企业走（要岗位），学校医院跟着人口走，公共设施又引来企业与人口——累积因果的雪球越滚越圆。一旦滚起来，同样的政策在两类地区效果天差地别，这就是<strong>路径依赖</strong>：历史的一小步被放大成格局的一大步（QWERTY 键盘如此，铁轨轨距如此，城市兴衰亦然）。但集聚也投下阴影：离中心太近的地方，人才与资本被虹吸，反而长不出自己的集聚。而产业不会无限堆进一个点：地价与工资的成本梯度，推动低端环节像雁群一样梯次外移。</p>
+      </aside>
+
+      <p>克鲁格曼 1991 年把这套直觉写成<strong>中心—外围模型</strong>（Core–Periphery Model）：运输成本、规模经济与要素流动三个参数，决定经济活动是"坍缩"到一个中心还是分散在两地——分岔往往只在毫厘之间，因此初始条件的小差异可以锁定百年格局。模型也给出可检验的推论：运输成本中等时集聚最强；一体化足够深时，外围反而可能凭低工资重新吸回产业。</p>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">路径依赖 <span class="term-en">Path Dependence</span></div><div class="term-def">报酬递增使初始条件被不断放大：早期的偶然优势吸引更多要素，后来者难以逆转，即便起点差异早已微不足道。区域格局的"锁定"多源于此。</div></div>
+        <div class="term"><div class="term-name">集聚阴影 <span class="term-en">Agglomeration Shadow</span></div><div class="term-def">大城市对周边的抑制作用：虹吸劳动力、资本与企业总部，使腹地难以形成自己的集聚中心。距中心"不远不近"的位置受害最深，太远反而能自立门户。</div></div>
+        <div class="term"><div class="term-name">雁阵模式 <span class="term-en">Flying Geese Pattern</span></div><div class="term-def">产业沿成本梯度梯次转移的发展形态：头雁升级让出的环节，被工资更低、基础设施达标的追随者承接，形成接续起飞的队列。</div></div>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead>
+            <tr><th>头雁（转出方）</th><th>主要承接方</th><th>外移的产业环节</th><th>大致时期</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>日本</td><td>韩国、台湾、香港、新加坡</td><td>纺织、成衣、简单电子</td><td>1960s–1970s</td></tr>
+            <tr><td>四小龙</td><td>珠三角、长三角沿海</td><td>电子组装、玩具、轻工</td><td>1980s–1990s</td></tr>
+            <tr><td>中国沿海</td><td>中西部县域、越南等东南亚</td><td>代工制造、组装环节</td><td>2000s–2010s</td></tr>
+            <tr><td>中国东部沿海</td><td>东南亚、南亚、墨西哥（近岸）</td><td>劳动密集与部分资本密集环节</td><td>2010s 至今</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>雁阵成立有两个前提：承接方具备<strong>基本的基础设施与制度</strong>（雁群要落得下来），且头雁确实在<strong>升级</strong>（腾笼才能换鸟）。哪个环节掉链子，产业要么不转移，要么转移到别处。</p>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 东北与深圳：一枚硬币的正反面</div>
+        <p>东北的起点并不差：煤铁石油俱全，加之计划时代的工业布局与苏联援助，1950 年代是"共和国长子"。但禀赋变成了枷锁：重资产难转产、单位制捆绑福利、国企与政府的关系盘根错节，向心力变成了离心力——"七普"十年间东北人口减少约 1100 万，人口外流又收缩了需求与税基，公共服务与就业机会进一步减少，雪球反着滚。深圳则相反：特区政策 + 毗邻香港 + 移民城市没有历史包袱，向心力四十年不散。政策含义残酷而清晰：振兴的靶心应当是<strong>人均生活水平的均等化</strong>（教育、医疗、社保随人走），而非经济总量的均等化——在报酬递增的世界里，强行让每个地区一样大，代价是全局效率。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"区域差距会自动收敛。"</strong>——新古典模型确实预言要素流动拉平差距，但那要求报酬不变；一旦存在报酬递增，"人往高处走"反而<strong>放大</strong>差距——这正是中心—外围模型的核心洞见，也与"东北振兴二十年、差距依旧"的观察一致。另一个误区是<strong>"给落后地区上项目、建园区就能赶上"</strong>：若向心力仍在，园区建成即空置，不少中西部新城与产业园是现成的注脚。钱要花在"人"身上而不是"地"身上——让人力资本与社会保障可携带，比在错位的地点复制厂房更有效。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.1</span>路径依赖导致区域差距长期持续的核心机制是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>自然条件永远不变，禀赋差异无法弥补</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>报酬递增与累积因果：初始优势吸引更多要素流入，格局被自我强化锁定</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>中央政府刻意维持地区间的差距</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>劳动力完全无法跨地区流动</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>路径依赖的要害在"自我强化"：企业、工人、配套与公共品互相吸引，谁先滚起雪球谁就占住高地，起点的小差异被放大成格局的大差异（B）。A 把问题归于静态自然条件，解释不了深圳的崛起；C、D 与可观察的事实相反——人口恰恰在大量流动，而差距仍在。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.2</span>关于"集聚阴影"，下列说法正确的是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>大城市周边必然同步繁荣，近水楼台先得月</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>大城市会虹吸周边的人才与资本，抑制其形成自己的集聚中心</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>集聚阴影指大城市上空的空气污染</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>集聚阴影只出现在发展中国家</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>集聚的向心力对腹地是一把双刃剑：通勤圈内会被"吞并"为卧城，稍远的腹地则被虹吸人才、资本与企业总部，难以自立门户（B）——德国南部城市带与柏林周边的对照、京津冀外围的"环京津带"都是例证。A 只讲了外溢收益、漏掉虹吸成本；C 望文生义；D 无此限制，集聚阴影在发达国家同样普遍。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>初始禀赋决定起点，报酬递增与累积因果决定路径：路径依赖让"历史的偶然"变成"地理的必然"。</li>
+          <li>中心—外围模型：运输成本、规模经济与要素流动决定集聚是否发生；分岔点附近，小差异定大局。</li>
+          <li>集聚阴影：中心虹吸周边要素，腹地"不远不近"处受害最深。</li>
+          <li>雁阵模式：产业沿成本梯度梯次转移，前提是承接方的基础设施与制度达标、头雁持续升级。</li>
+          <li>区域政策的正确目标：人均收入与公共服务的均等化，而非经济总量的均等化——"钱随人走"。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">第 6 章</span>城市政策与中国城镇化</h2>
+
+      <p><strong>引入问题：</strong>1978 到 2023 年，中国城镇化率从 17.9% 升到 66% 以上，超过 5 亿人从农村进入城市——人类历史上规模最大的和平人口迁移。它同时造就了世界工厂、全球最长的高铁网，也留下了留守儿童、"空城"与"睡城"。这场大迁移做对了什么，又留下了什么难题？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：城镇化的本质是空间再配置</div>
+        <p>把劳动力从低生产率的农业部门搬到高生产率的城市部门，一次迁移同时改善<strong>效率</strong>（总产出上升）与<strong>公平</strong>（迁移者收入数倍于务农）——这是城镇化红利的内核。但中国的城镇化被两根绳子牵着走：<strong>土地</strong>（建设用地指标按行政区切块分配，而非随人口流向）与<strong>户籍</strong>（公共服务与户口绑定，人进了城、服务没跟上，形成"半城市化"）。政策工具箱里，公共交通与密度互为因果，分区管制既是负外部性的防火墙也可能沦为供给壁垒，城市更新在"大拆大建"与"微更新"之间摆动——每一件工具都用过，每一件都留下正反两面。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">分区管制 <span class="term-en">Zoning</span></div><div class="term-def">对地块用途、密度、高度的法定限制。初衷是隔离负外部性（工厂与住宅分离）与提供公共品，但过严的限高、限密度会压低住房供给弹性，把保护变成短缺。</div></div>
+        <div class="term"><div class="term-name">士绅化 <span class="term-en">Gentrification</span></div><div class="term-def">旧城区更新后租金与业态升级，原低收入居民被迫外迁的现象。更新提升了环境与税基，也带来置换压力——效率与置换成本的经典权衡。</div></div>
+        <div class="term"><div class="term-name">人地挂钩 <span class="term-en">Linking Land Supply to Population Flow</span></div><div class="term-def">让建设用地指标随人口流向配置：人流向哪里，住宅用地与公共服务指标增到哪里。针对中国"人进城、地留乡、指标留中西部"的错配提出的改革方向。</div></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="tl-time">1978</div>
+          <div class="tl-title">城镇化率 17.9%</div>
+          <p>改革起点：八亿人务农，城市人口不足两成。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">1984–1985</div>
+          <div class="tl-title">农民进城开闸</div>
+          <p>允许农民自理口粮到集镇务工经商；乡镇企业与"民工潮"的起点。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">1994</div>
+          <div class="tl-title">分税制改革</div>
+          <p>地方财政转向土地出让收益，"土地财政"的雏形：低价工业地招商 + 高价商住地融资。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">1998</div>
+          <div class="tl-title">住房商品化</div>
+          <p>停止福利分房，住房分配货币化——房地产市场化的元年。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">2001</div>
+          <div class="tl-title">入世与打工潮</div>
+          <p>出口制造业爆发式扩张，数以亿计的农民工沿沿海—内陆轴线往返。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">2011</div>
+          <div class="tl-title">城镇化率过半</div>
+          <p>城市人口首次超过农村人口，中国进入"城市社会"。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">2014</div>
+          <div class="tl-title">新型城镇化规划</div>
+          <p>提出"三个一亿人"（中西部就近城镇化、棚改与城中村改造、随迁子女教育）与居住证制度，从"土地城镇化"转向"人的城镇化"。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">2020</div>
+          <div class="tl-title">七普：63.9%</div>
+          <p>人口继续向城市群与都市圈集聚；东北、收缩城市议题浮出水面。</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">2035（规划）</div>
+          <div class="tl-title">城镇化率预期 75% 左右</div>
+          <p>重心从"率"转向"质"：户籍、公共服务与土地制度的联动改革。</p>
+        </div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 重庆"地票"：给人地挂钩装上价格</div>
+        <p>人地挂钩说易行难：指标怎么知道该给谁？重庆 2008 年试了一个市场化答案——<strong>地票</strong>：农村闲置建设用地复垦为耕地，验收后生成等面积的建设用地指标，在农村土地交易所公开拍卖，城市开发者购得指标后方能在城镇规划区内落地开发。农民获得指标价款的绝大部分作为财产性收入，耕地总量不减，城镇用地随真实需求流动。它的方向（指标随需求配置、价格发现）是对的，规模与配套改革仍有限——但作为"人地挂钩 + 占补平衡"的制度实验，它证明了土地指标可以像商品一样交易，而不必像粮票一样分配。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"控制大城市人口就能治城市病。"</strong>——城市病来自治理（交通定价、规划、公共服务供给）而非人口本身；集聚经济决定大城市"有用"，控制人口既损失生产率，也挡不住人流入——只是让他们以更低的公共服务、更远的通勤、更弱的保障留下来。另一个误区是<strong>"城镇化率越高越快越好"</strong>：没有就业与公共服务支撑的"土地城镇化"制造空城与债务；要的是"人的城市化"——户籍、教育、医疗、住房随人走，城镇化率只是结果，不是目标。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.1</span>"人地挂钩"改革想解决的核心错配是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>农村人口过多，需要强制向城市迁移</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>人口流向大城市，建设用地指标却未随人配置，导致流入地住房供给不足、流出地指标闲置</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>城市建设用地总量过多，应全面收紧</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>耕地太多，需要更多转为建设用地</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>中国土地指标长期按行政区切块：人口净流入的一线城市拿不到相应用地指标，住房供给弹性被制度性压低（第 3 章的刚性供给曲线）；人口流出地却握着用不完的指标，造出空城（B）。人地挂钩让指标随人流动，同时缓解两端的错配；A、D 与政策目标无关，C 说反了——问题不是总量，而是空间配置。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.2</span>公共交通与城市密度之间的关系，最准确的表述是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>两者互不影响，各管各的</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>密度越高，公交越不可行，只能靠私家车</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>高密度支撑公交的规模经济，公交又反过来支撑更高密度，形成良性循环</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>公交建设必然导致城市衰落</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>公交的班次频率与线网密度需要客流的"密度阈值"：足够的乘客才摊得起高频服务，高频服务又让沿线上班、居住更便利，进一步抬高密度——东京与香港是循环的正样本，低密度蔓延的美国城市则是公交长期亏损的反样本（C）。B 方向反了；A、D 与基本事实不符。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>城镇化的内核是空间再配置：一次迁移同时改善效率与公平；"率"是结果，"人的城市化"才是目标。</li>
+          <li>两根制度绳子：土地指标按行政区分配（人地错配）、公共服务与户籍绑定（半城市化）。</li>
+          <li>工具各有两面：分区管制防外部性也可能造短缺；城市更新改善环境也可能置换穷人；土地财政促建设也绑架了财源。</li>
+          <li>改革方向：人地挂钩（重庆地票式的指标市场化）、钱随人走的公共服务、城市群与都市圈协同。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">终点</span>进阶路线与延伸阅读</h2>
+      <p>城市与区域经济学向上衔接：<strong>发展与创新经济学</strong>（11：结构转型、刘易斯拐点——城镇化正是其空间投影）、<strong>公共经济学</strong>（08：地方公共品、房产税与地方财政）、<strong>计量经济学</strong>（03：城市实证大量使用双重差分与断点识别）、<strong>环境与资源经济学</strong>（12：污染的空间分布与环境规制的辖区竞争）。若你顺着 11 读下去，会发现"城市"与"发展"本是一门学问的两个剖面。</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">阿瑟·奥沙利文《城市经济学》</span>——标准教材：竞租、住房、拥堵、城市政策一应俱全，供需框架贯穿始终（入门 → 中级）。</li>
+          <li><span class="bk">爱德华·格莱泽《城市的胜利》</span>——哈佛城市经济学家的科普经典：城市是人类最伟大的发明（入门，可作本分支的"课外读物"）。</li>
+          <li><span class="bk">藤田昌久、克鲁格曼、维纳布尔斯《空间经济学》</span>——新经济地理的原初宣言：中心—外围、集聚阴影的正式模型（高级，需微观与贸易基础）。</li>
+          <li><span class="bk">陆铭《大国大城》</span>——中国城市化与区域政策的当代论战：集聚、人地挂钩与"在集聚中走向平衡"（中文，面向公众而论证严密）。</li>
+          <li><span class="bk">简·雅各布斯《美国大城市的死与生》</span>——非经济学家写就的城市经典：多样性、街道眼与混合用途，影响了一代规划思想（入门，视角互补）。</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../12-环境与资源经济学/index.html"><span class="pager-dir">上一分支</span><br><span class="pager-name">环境与资源经济学</span></a>
+        <a href="../14-健康与教育经济学/index.html"><span class="pager-dir">下一分支</span><br><span class="pager-name">健康与教育经济学</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+<script src="../assets/econ.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- 小工具 ---------- */
+  function $(id) { return document.getElementById(id); }
+  function val(el, dflt) {
+    var v = el ? parseFloat(el.value) : NaN;
+    return isNaN(v) ? dflt : v;
+  }
+  function setD(id, d) { var el = $(id); if (el) el.setAttribute("d", d); }
+  function setAttrs(id, o) {
+    var el = $(id), k;
+    if (!el) return;
+    for (k in o) { if (Object.prototype.hasOwnProperty.call(o, k)) el.setAttribute(k, o[k]); }
+  }
+  function place(id, x, y) { setAttrs(id, { x: x, y: y }); }
+  function dotAt(id, x, y) { setAttrs(id, { cx: x, cy: y }); }
+  function lineAt(id, x1, y1, x2, y2) { setAttrs(id, { x1: x1, y1: y1, x2: x2, y2: y2 }); }
+  function txt(id, s) { var el = $(id); if (el) el.textContent = s; }
+  function sgn(x, n) { return (x > 0 ? "+" : "") + Number(x).toFixed(n == null ? 0 : n); }
+
+  /* ---------- 图 1-1 · 最优城市规模 ---------- */
+  function initGB() {
+    if (!$("gb-svg")) return;
+    var L = 64, R = 608, T = 56, B = 344, YMAX = 150, NMIN = 0.5, NMAX = 20;
+    function px(n) { return L + (n - NMIN) / (NMAX - NMIN) * (R - L); }
+    function py(v) { return B - Math.max(0, Math.min(YMAX, v)) / YMAX * (B - T); }
+    var aggS = $("gb-agg"), conS = $("gb-con");
+    function bm() { return val(aggS, 100) / 100; }
+    function cm() { return 1.6 - 1.2 * val(conS, 50) / 100; }
+    function ab(n) { return 20 + 16 * bm() * Math.sqrt(n); }
+    function cc(n) { return 8 + 0.28 * cm() * Math.pow(n, 1.9); }
+
+    function update() {
+      var dA = "", dC = "", dU = "", best = -1e9, bn = NMIN, n, a, c, u, p;
+      for (n = NMIN; n <= NMAX + 1e-9; n += 0.25) {
+        a = ab(n); c = cc(n); u = a - c;
+        p = px(n).toFixed(1);
+        dA += (dA ? "L" : "M") + p + " " + py(a).toFixed(1) + " ";
+        dC += (dC ? "L" : "M") + p + " " + py(c).toFixed(1) + " ";
+        dU += (dU ? "L" : "M") + p + " " + py(u).toFixed(1) + " ";
+        if (u > best) { best = u; bn = n; }
+      }
+      setD("gb-ab", dA); setD("gb-cc", dC); setD("gb-nb", dU);
+      var vx = px(bn), vy = py(best);
+      lineAt("gb-vline", vx, T, vx, B);
+      dotAt("gb-dot", vx, vy);
+      place("gb-vlab", Math.max(96, Math.min(552, vx)), 74);
+      txt("gb-vlab", "N* ≈ " + Math.round(bn * 100) + " 万");
+      place("gb-lab-ab", 600, py(ab(19)) - 12);
+      place("gb-lab-cc", 600, py(cc(19)) + 22);
+      place("gb-lab-nb", Math.max(120, Math.min(592, vx - 14)), Math.max(88, vy - 16));
+      txt("gb-read1", "最优城市规模 N* ≈ " + Math.round(bn * 100) + " 万人");
+      txt("gb-read2", "峰值人均净收益 ≈ " + best.toFixed(1) + "（指数）");
+      txt("gb-oagg", val(aggS, 100) + "%");
+      txt("gb-ocon", String(val(conS, 50)));
+      $("gb-svg").setAttribute("aria-label",
+        "最优城市规模图：当前最优城市规模约 " + Math.round(bn * 100) +
+        " 万人，峰值人均净收益指数 " + best.toFixed(1) + "。");
+    }
+    if (aggS) aggS.addEventListener("input", update);
+    if (conS) conS.addEventListener("input", update);
+    update();
+  }
+
+  /* ---------- 图 2-1 · 竞租曲线 ---------- */
+  function initBR() {
+    if (!$("br-comm")) return;
+    var L = 64, R = 608, T = 48, B = 330, DMAX = 20, RMAX = 360;
+    function px(d) { return L + d / DMAX * (R - L); }
+    function py(v) { return B - Math.max(0, Math.min(RMAX, v)) / RMAX * (B - T); }
+    var tcS = $("br-tc"), hdS = $("br-hd");
+    function Rc(d, t) { return 330 - 30 * t * d; }
+    function Rr(d, t, h) { return 210 + h - 12 * t * d; }
+    function seg(f, t, h) {
+      var s = "", started = false, d, v;
+      for (d = 0; d <= DMAX + 1e-9; d += 0.5) {
+        v = f(d, t, h);
+        if (v < 0) { started = false; continue; }
+        s += (started ? "L" : "M") + px(d).toFixed(1) + " " + py(v).toFixed(1) + " ";
+        started = true;
+      }
+      return s;
+    }
+    function zlab(id, x0, x1) {
+      var el = $(id);
+      if (!el) return;
+      if (x1 - x0 >= 56) {
+        el.setAttribute("x", ((x0 + x1) / 2).toFixed(1));
+        el.textContent = el.getAttribute("data-t") || "";
+      } else {
+        el.textContent = "";
+      }
+    }
+    function update() {
+      var t = val(tcS, 100) / 100, h = val(hdS, 0);
+      setD("br-comm", seg(Rc, t, h));
+      setD("br-res", seg(Rr, t, h));
+      var dcr = Math.max(0, (120 - h) / (18 * t));
+      var dEdge = (160 + h) / (12 * t);
+      var xc = px(Math.min(dcr, DMAX)), xe = px(Math.min(dEdge, DMAX));
+      setAttrs("br-zc", { x: L, width: Math.max(0, xc - L) });
+      setAttrs("br-zr", { x: xc, width: Math.max(0, xe - xc) });
+      var v1 = $("br-v1");
+      if (dcr > 0.15 && dcr < DMAX - 0.05) {
+        lineAt("br-v1", xc, T, xc, B);
+        v1.style.display = "";
+      } else { v1.style.display = "none"; }
+      var v2 = $("br-v2");
+      if (dEdge > dcr + 0.15 && dEdge <= DMAX) {
+        lineAt("br-v2", xe, T, xe, B);
+        v2.style.display = "";
+      } else { v2.style.display = "none"; }
+      place("br-lc", px(1.5), py(Rc(1.5, t)) - 12);
+      place("br-lr", px(1.5), py(Rr(1.5, t, h)) - 12);
+      zlab("br-z1", L, xc);
+      zlab("br-z2", xc, xe);
+      zlab("br-z3", xe, R);
+      txt("br-read1", "商务区半径 ≈ " + dcr.toFixed(1) + " km");
+      txt("br-read2", dEdge <= DMAX ? "城市边界 ≈ " + dEdge.toFixed(1) + " km" : "城市边界 > 20 km（超出图示）");
+      txt("br-otc", t.toFixed(2) + "×");
+      txt("br-ohd", (h >= 0 ? "+" : "") + h + " 元");
+      $("br-svg").setAttribute("aria-label",
+        "竞租曲线图：当前商务区半径约 " + dcr.toFixed(1) + " 公里，城市边界约 " +
+        (dEdge <= DMAX ? dEdge.toFixed(1) + " 公里" : "超过 20 公里") + "。");
+    }
+    if (tcS) tcS.addEventListener("input", update);
+    if (hdS) hdS.addEventListener("input", update);
+    update();
+  }
+
+  /* ---------- 图 3-1 · 住房供需弹性对比 ---------- */
+  function initHS() {
+    if (!$("hs-d1")) return;
+    var L = 64, R = 608, T = 48, B = 330, QMAX = 160, PMAX = 140;
+    function px(q) { return L + q / QMAX * (R - L); }
+    function py(p) { return B - Math.max(0, Math.min(PMAX, p)) / PMAX * (B - T); }
+    var sS = $("hs-shift");
+    function update() {
+      var s = val(sS, 0);
+      var p0 = 100 + s;
+      lineAt("hs-d1", px(0), py(p0), px(QMAX), py(p0 - 80));
+      var q1 = 1.5 * (60 + s), p1 = 55 + 0.25 * s;
+      var q2 = (60 + s) / 2, p2 = 85 + 0.75 * s;
+      lineAt("hs-g1", L, py(p1), px(q1), py(p1));
+      lineAt("hs-g2", L, py(p2), px(q2), py(p2));
+      dotAt("hs-e1", px(q1), py(p1));
+      dotAt("hs-e2", px(q2), py(p2));
+      place("hs-p1", 58, py(p1) + 4);
+      place("hs-p2", 58, py(p2) + 4);
+      txt("hs-p1", p1.toFixed(0));
+      txt("hs-p2", p2.toFixed(0));
+      place("hs-ld", px(6), py(p0 - 3) - 12);
+      txt("hs-read1", "易扩建城市：P 55 → " + p1.toFixed(0) + "（Δ" + sgn(p1 - 55, 0) + "）");
+      txt("hs-read2", "供给管制城市：P 85 → " + p2.toFixed(0) + "（Δ" + sgn(p2 - 85, 0) + "）");
+      txt("hs-oshift", sgn(s, 0));
+      $("hs-svg").setAttribute("aria-label",
+        "住房供需图：需求移动 " + sgn(s, 0) + " 后，弹性供给城市价格从 55 变为 " +
+        p1.toFixed(0) + "，刚性供给城市价格从 85 变为 " + p2.toFixed(0) + "。");
+    }
+    if (sS) sS.addEventListener("input", update);
+    update();
+  }
+
+  /* ---------- 图 4-1 · 拥堵费福利分析 ---------- */
+  function initCG() {
+    if (!$("cg-d")) return;
+    var L = 64, R = 608, T = 48, B = 330, QMAX = 200, PMAX = 240;
+    function px(q) { return L + q / QMAX * (R - L); }
+    function py(p) { return B - Math.max(0, Math.min(PMAX, p)) / PMAX * (B - T); }
+    var eS = $("cg-e"), sS = $("cg-shift");
+    function dem(q, s) { return 160 + s - 0.6 * q; }
+    function mpc(q) { return 30 + 0.25 * q; }
+    function update() {
+      var e = val(eS, 45) / 100, s = val(sS, 0);
+      function msc(q) { return 30 + (0.25 + e) * q; }
+      lineAt("cg-d", px(0), py(dem(0, s)), px(QMAX), py(dem(QMAX, s)));
+      lineAt("cg-mpc", px(0), py(mpc(0)), px(QMAX), py(mpc(QMAX)));
+      lineAt("cg-msc", px(0), py(msc(0)), px(QMAX), py(msc(QMAX)));
+      var q1 = (130 + s) / 0.85, p1 = mpc(q1);
+      var q2 = (130 + s) / (0.85 + e), p2 = dem(q2, s);
+      var toll = msc(q2) - mpc(q2);
+      var dwl = 0.5 * (q1 - q2) * e * q1; // 三角形高 = MSC(q1) − D(q1) = e·q1, 与所绘三角形一致
+      dotAt("cg-e1", px(q1), py(p1));
+      dotAt("cg-e2", px(q2), py(p2));
+      lineAt("cg-g1", px(q1), B, px(q1), py(p1));
+      lineAt("cg-g2", px(q2), B, px(q2), py(p2));
+      lineAt("cg-toll", px(q2), py(mpc(q2)), px(q2), py(p2));
+      setAttrs("cg-dwl", { points:
+        px(q2).toFixed(1) + "," + py(p2).toFixed(1) + " " +
+        px(q1).toFixed(1) + "," + py(p1).toFixed(1) + " " +
+        px(q1).toFixed(1) + "," + py(msc(q1)).toFixed(1)
+      });
+      place("cg-dwl-lab", (px(q2) + 2 * px(q1)) / 3, (py(p2) + py(p1) + py(msc(q1))) / 3 + 4);
+      var xq1 = px(q1);
+      if (xq1 > 460) {
+        setAttrs("cg-lq1", { "text-anchor": "end" });
+        place("cg-lq1", xq1 - 10, py(p1) + 4);
+      } else {
+        setAttrs("cg-lq1", { "text-anchor": "start" });
+        place("cg-lq1", xq1 + 10, py(p1) + 4);
+      }
+      setAttrs("cg-lq2", { "text-anchor": "end" });
+      place("cg-lq2", px(q2) - 10, py(p2) - 10);
+      place("cg-ltoll", px(q2) - 12, (py(mpc(q2)) + py(p2)) / 2 + 4);
+      place("cg-ld", px(6), py(dem(6, s)) - 10);
+      setAttrs("cg-lmsc", { "text-anchor": "end" });
+      place("cg-lmsc", px(172), py(msc(172)) - 10);
+      txt("cg-read1", "社会最优 Q* ≈ " + q2.toFixed(1) + " 万辆；拥堵费 τ ≈ " + Math.round(toll) + " 元");
+      txt("cg-read2", "市场均衡 Q ≈ " + q1.toFixed(1) + " 万辆；无谓损失 ≈ " + Math.round(dwl));
+      txt("cg-oe", e.toFixed(2));
+      txt("cg-oshift", sgn(s, 0));
+      $("cg-svg").setAttribute("aria-label",
+        "拥堵费福利图：当前市场均衡车流约 " + q1.toFixed(1) + " 万辆，社会最优约 " +
+        q2.toFixed(1) + " 万辆，最优拥堵费约 " + Math.round(toll) + " 元。");
+    }
+    if (eS) eS.addEventListener("input", update);
+    if (sS) sS.addEventListener("input", update);
+    update();
+  }
+
+  initGB();
+  initBR();
+  initHS();
+  initCG();
+})();
+</script>
+</body>
+</html>

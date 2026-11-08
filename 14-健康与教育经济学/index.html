@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>健康与教育经济学 · EconLearn 经济学自学之路</title>
+<meta name="description" content="健康与教育经济学中文互动教程：健康人力资本、医疗市场信息不对称、保险道德风险、教育回报识别与再分配，配互动图表与自测。">
+<link rel="stylesheet" href="../assets/econ.css">
+</head>
+<body style="--branch:#db2777">
+<noscript><p class="noscript-tip">本页的互动图表与自测需要启用 JavaScript；未启用时仍可阅读全部正文。</p></noscript>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← 总览</a>
+  <div class="topbar-title"><span class="topbar-num">14</span>健康与教育经济学</div>
+  <button class="toc-toggle" aria-expanded="false">目录</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">本分支章节</p>
+    <nav aria-label="章节目录">
+      <a href="#overview">导读与学习目标</a>
+      <a href="#ch1">1 · 健康作为人力资本</a>
+      <a href="#ch2">2 · 医疗市场的特殊性</a>
+      <a href="#ch3">3 · 医疗保险与道德风险</a>
+      <a href="#ch4">4 · 医疗体制与中国医改</a>
+      <a href="#ch5">5 · 教育回报：资本还是信号</a>
+      <a href="#ch6">6 · 福利国家与再分配</a>
+      <a href="#path">进阶路线与延伸阅读</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · 经济学自学之路</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">分支 14 · 应用领域</span>
+        <h1>健康与教育经济学</h1>
+        <p class="hero-en">Economics of Health &amp; Education</p>
+        <p class="hero-lead">人一生最重要的两笔投资是什么？不是股票和房子，而是自己的健康与教育。这个分支用经济学的透镜看医院、学校与福利国家：为什么医疗市场会让价格机制失灵、保险如何同时是救命稻草与浪费之源、上大学到底是"变强"还是"被挑出来"，以及政府从富人桶里舀水倒给穷人时，路上会漏掉多少。</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">学完本分支你将能</div>
+        <ul>
+          <li>用<strong>健康人力资本</strong>（Grossman 模型）解释健康—收入—教育梯度，说明医疗只是健康的一种投入</li>
+          <li>解释医疗市场的三大特殊性（信息不对称、第三方支付、供给诱导需求）如何使标准竞争模型失灵</li>
+          <li>在"共付比例—就诊量"图上画出<strong>道德风险</strong>的效率损失，并复述兰德实验的核心发现</li>
+          <li>比较贝弗里奇、俾斯麦、市场型三种医疗体制，概述中国医改"保覆盖、压药价、改支付"的逻辑</li>
+          <li>区分<strong>人力资本</strong>与<strong>信号</strong>两种教育观，说明能力偏差与三种因果识别策略</li>
+          <li>读懂洛伦兹曲线与基尼系数，用奥肯"漏桶"框架讨论再分配与 UBI 的权衡</li>
+        </ul>
+      </div>
+      <div class="prereq">前置知识：
+        <a class="badge" href="../01-微观经济学/index.html">01 微观（供需、信息不对称）</a>
+        <a class="badge" href="../03-计量经济学/index.html">03 计量（相关≠因果）</a>
+        <a class="badge" href="../09-劳动经济学/index.html">09 劳动（人力资本）</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">第 1 章</span>健康的经济学视角：健康作为资本</h2>
+
+      <p><strong>引入问题：</strong>同样是 60 岁生日，收入和学历最高的那群人，平均还能比最低的那群人多活十年以上——健康差距为什么跟着收入和学历走？生病看医生明明是"医学问题"，经济学家凭什么说它首先是"投资问题"？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：健康是一台不断折旧的机器</div>
+        <p>把健康想象成一台机器：出厂配置有差异（基因），使用中不断磨损（年龄、压力、污染），你可以花钱保养（医疗、锻炼、体检、更好的饮食）。格罗斯曼 1972 年提出<strong>健康人力资本</strong>（Health Capital）：健康是一个<strong>存量</strong>，每期的健康 = 上期健康扣掉折旧，再加上本期投资。关键推论有三条：①健康既是<strong>消费品</strong>（不生病本身就舒服），又是<strong>投资品</strong>（更健康的人出勤更多、工资更高）；②医疗只是健康生产的一种投入，睡眠、饮食、环境、知识同样重要；③医疗投入的<strong>边际报酬递减</strong>——给已经很健康、医疗已经很充足的人再加检查，几乎买不到额外健康。教育为什么和健康相关？格罗斯曼的"效率假说"：受教育的人更会筛选信息、更懂依从医嘱、更有效利用同样的医疗资源——教育提高了健康生产函数的<strong>效率</strong>。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">健康人力资本 <span class="term-en">Health Capital (Grossman Model)</span></div><div class="term-def">把健康视为随时间折旧、可经投资补充的资本存量。健康的需求由其消费价值（不生病）与投资价值（赚更多钱）共同决定。</div></div>
+        <div class="term"><div class="term-name">健康生产函数 <span class="term-en">Health Production Function</span></div><div class="term-def">把医疗、时间、行为、环境等投入映射为健康产出的函数。医疗投入的边际产出递减；不同人群（如不同教育水平）的函数效率不同。</div></div>
+        <div class="term"><div class="term-name">健康的收入梯度 <span class="term-en">Income Gradient of Health</span></div><div class="term-def">收入越高、教育越高，几乎各项健康指标都更好的稳定经验规律；梯度在各国普遍存在，且随年龄通常变宽。</div></div>
+      </div>
+
+      <div class="formula">H<sub>t+1</sub> = (1 − δ)·H<sub>t</sub> + I<sub>t</sub><span class="f-note">格罗斯曼健康资本积累方程：下一期健康存量 = 本期健康扣除折旧 δ，加上本期健康投资 I（医疗支出、时间、健康行为）。折旧率 δ 随年龄上升——这就是为什么人到中年要在健康上花更多钱。</span></div>
+
+      <figure class="fig">
+        <div class="fig-title">图 1-1 · 健康生产函数：钱买到多少健康？</div>
+        <p class="fig-sub">试一试：拖动"医疗投入"滑块，观察两组人群健康存量的变化，以及每增加 1 单位投入带来的边际健康产出如何越来越小。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="健康生产函数图：横轴为医疗投入，纵轴为健康存量指数。高教育组曲线位于低教育组之上，两条曲线均随投入增加而上升但趋于平缓，体现边际报酬递减。滑块移动时两个圆点沿曲线移动并显示读数。">
+            <line class="axis" x1="70" y1="330" x2="600" y2="330"/>
+            <line class="axis" x1="70" y1="330" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="372" text-anchor="middle">医疗投入（标准化单位/年）</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">健康存量（指数）</text>
+            <path id="hp-lo" class="curve curve-c2"/>
+            <path id="hp-hi" class="curve curve-c1"/>
+            <text class="chart-label" x="590" y="190" text-anchor="end" style="fill:#ea580c">低教育组</text>
+            <text class="chart-label" x="590" y="95" text-anchor="end" style="fill:#2f6fdb">高教育组</text>
+            <circle id="hp-d1" r="7" class="dot" fill="#ea580c"/>
+            <circle id="hp-d2" r="7" class="dot" fill="#2f6fdb"/>
+            <text id="hp-t1" class="chart-title-sm" x="335" y="24" text-anchor="middle"></text>
+            <text id="hp-t2" class="chart-label" x="335" y="48" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="hp-s">医疗投入</label>
+            <input type="range" id="hp-s" min="0" max="100" step="2" value="20">
+            <output id="hp-os" for="hp-s">20</output></div>
+        </div>
+        <figcaption>读图要点：高教育组曲线更高——同样的医疗投入换来更多健康（效率优势，即健康—教育梯度的一部分）。但两条曲线都越来越平：从 0 加到 20 的健康收益，远大于从 80 加到 100。这解释了一个反直觉事实：在医疗已饱和的群体上追加支出，买到的健康很少；把钱投到缺医少药的人群，边际回报更高。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 普雷斯顿曲线上的中国与美国</div>
+        <p>普雷斯顿曲线（Preston Curve）刻画人均收入与预期寿命的正相关。1980 年的中国是曲线上的"异常点"：收入排在全球后列，预期寿命却已接近 68 岁，远超同等收入国家——赤脚医生、爱国卫生运动、基础免疫接种这些"低成本、高覆盖"的公共卫生投入，绕开昂贵医疗直接改善了健康生产。反过来看美国：人均医疗支出全球第一（约占 GDP 的 17%），预期寿命却在高收入国家中垫底。两个案例共同说明：<strong>医疗支出 ≠ 健康产出</strong>，健康生产函数里最重要的投入未必是最贵的那一项。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"国民健康由医疗投入决定，医疗花得越多越健康。"</strong>——错了两层：第一，医疗只是健康生产函数的一个投入，收入、教育、行为、环境的解释力常常更大；第二，边际报酬递减意味着在医疗充足群体上追加投入几乎买不到健康。政策含义：同样一笔预算，投在疫苗、洁净水、基层照护上的健康回报，往往高于投在末端高端治疗上。<strong>另一个误区</strong>是反过来认为"医疗无用"——在缺医少药的人群（曲线的陡峭段），医疗的边际产出极高，这正是普惠医疗的理论根据。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.1</span>格罗斯曼模型中，健康作为"投资品"的属性体现在？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>生病让人难受，不生病本身带来效用</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>更健康的工人出勤更多、精力更足，从而生产率与收入更高</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>看病需要花钱，医疗支出是投资品</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>A 描述的是健康的<strong>消费品</strong>属性（直接进入效用函数）；B 是投资品属性——健康提高"可出售的时间"的数量与质量，这是格罗斯曼模型中健康需求的第二个来源；C 混淆了"医疗是投入"与"健康是资本"：花钱看病是投资行为，但被投资的资本是健康本身。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.2</span>同样 100 万元预算，按健康生产函数的逻辑，健康回报最大的是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>为医疗已饱和的高收入群体增加高端体检项目</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>投向缺医少药地区的基层医疗与疫苗接种</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>集中采购一台最先进的诊断设备置于大城市</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>边际报酬递减：高收入群体处在生产函数的平缓段，追加投入几乎买不到健康；缺医地区处在陡峭段，同样的钱边际健康产出高得多——这正是"普惠优先于尖端"的经济学根据。C 的误区在于只看供给能力不看使用者的边际产出，先进设备若服务的仍是平缓段人群，健康回报同样有限。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>健康是资本存量：折旧随年龄上升，可经医疗、时间与行为投资补充（格罗斯曼模型）。</li>
+          <li>健康既是消费品又是投资品；教育通过提高健康生产的"效率"参与解释健康梯度。</li>
+          <li>医疗只是投入之一且边际报酬递减：预算从平缓段挪到陡峭段，总健康产出更高。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">第 2 章</span>医疗市场的特殊性：谁在替你做决定</h2>
+
+      <p><strong>引入问题：</strong>理发前你可以走遍三家店比价，可当医生说"你必须做这项检查、用这个药"时，你凭什么判断真假？如果卖家同时是你的采购顾问，市场还怎么运转？</p>
+
+      <aside class="callout history">
+        <div class="callout-title">思想源头 · 阿罗 1963</div>
+        <p>肯尼斯·阿罗（Kenneth Arrow）1963 年的论文《不确定性与医疗服务的福利经济学》开创了卫生经济学：医疗市场偏离完全竞争的每一处特征——不确定性、信息不对称、进入壁垒、非营利组织盛行——都不是"不完善"，而是对市场失灵的<strong>制度回应</strong>。医生职业伦理与行业自律，本质上是在替代无法运转的声誉与价格机制。</p>
+      </aside>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：三重失灵的叠加</div>
+        <p>普通市场的运转靠"买者自知、卖者竞争、价格引导"。医疗市场三条同时失效：①<strong>信息不对称</strong>（Information Asymmetry）——医生知道你需要什么治疗，而你不知道，医患关系变成<strong>委托—代理问题</strong>（Principal–Agent Problem）：你雇医生替你做消费决策，但他同时是卖方；②<strong>第三方支付</strong>（Third-Party Payment）——真正付大头的是医保或保险公司，患者对价格几乎不敏感，价格机制失去配给功能；③<strong>供给诱导需求</strong>（Supplier-Induced Demand, SID）——既然患者听医生的，医生就能在一定程度上"移动"患者的需求曲线。罗默（Roemer）的观察常被引用："多建一张病床，它就会被填满。"三重失灵叠加的结果：医疗的量与价可能同时偏离有效水平，且偏离方向由<strong>支付与薪酬制度</strong>决定，而非由医生个人的善恶决定。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">信息不对称 <span class="term-en">Information Asymmetry</span></div><div class="term-def">交易一方掌握的信息多于另一方。医疗中患者难以评估诊断与治疗的必要性，竞争与声誉机制因此失灵（参见 04 分支柠檬市场）。</div></div>
+        <div class="term"><div class="term-name">委托—代理问题 <span class="term-en">Principal–Agent Problem</span></div><div class="term-def">代理人（医生）替委托人（患者）做决策，但双方利益不完全一致。当医生收入与开单量挂钩时，激励冲突被放大。</div></div>
+        <div class="term"><div class="term-name">第三方支付 <span class="term-en">Third-Party Payment</span></div><div class="term-def">医疗费用主要由医保/保险公司而非患者本人支付。患者面对的边际价格远低于真实成本，是道德风险与费用膨胀的制度温床。</div></div>
+        <div class="term"><div class="term-name">供给诱导需求 <span class="term-en">Supplier-Induced Demand</span></div><div class="term-def">医疗供给方利用信息优势影响患者需求的现象。证据显示其存在，但需求曲线并非无限可移——诱导能力受信任与良知的约束。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · "以药养医"与大处方</div>
+        <p>中国自 1950 年代起允许公立医院按进价加成约 15% 销售药品，而挂号费与医疗服务定价长期压得很低——医院要生存，最顺手的收入来源就是卖药。结果是制度性的<strong>大处方</strong>与<strong>过度输液</strong>：感冒也"挂吊瓶"，基层诊所的输液架一度连成"吊瓶森林"。注意：这不是"医生变坏"，而是激励结构使然——同样的医生，在不同的支付制度下会开出不同的处方。2017 年全国公立医院全面取消药品加成，此后药品耗材集采、按病种付费（DRG）等改革逐步把"开单"与"获利"脱钩。这是机制设计的一课：<strong>想改变行为，先改变激励</strong>。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"供给诱导需求说明医生群体道德败坏。"</strong>——把制度问题误读为人品问题。在"收入=开单量"的制度里，多数人会温和地多开一点；在薪金制里，同样的医生倾向保守。经济学关心的是<strong>激励的边际效应</strong>，不是给职业贴道德标签。反向误区同样常见：<strong>"只要医生有良心，制度无所谓"</strong>——良心能约束诱导的程度，却无法让患者突然掌握医学知识；信息不对称不会因为善意而消失，只能靠制度（薪酬脱钩、临床路径、第二诊疗意见）去补偿。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.1</span>医患关系中的委托—代理问题，根源在于？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>医生收入水平太低，缺乏职业尊严</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>患者缺乏判断治疗必要性的信息，而替他决策的医生同时是服务提供方</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>医院数量太少，患者排队时间过长</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>委托—代理问题的定义性特征是"委托人（患者）无法监督代理人（医生）是否为其利益行事"。B 正是这一点：信息不对称 + 代理人身兼卖方。A 与 C 可能加重信任问题或供需矛盾，但即使医生高薪、医院充足，只要患者无法评估"这个检查是否必要"，代理问题依然存在。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.2</span>"药品加成 15%"政策为何会导致大处方？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>药品是必需品，患者无论如何都要买</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>医院每多卖一份药、卖更贵的药就能多赚加成，卖药从治病手段变成收入来源</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>患者主动要求医生多开药、开贵药</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>固定加成率下，药费越高医院收益越大——这是典型的激励扭曲：把"开处方"（医疗决策）与"卖药收益"（经济利益）直接挂钩。A 只说明需求缺乏弹性（这使诱导更容易得逞），不解释供给方为何多开；C 与事实相反，信息劣势下患者恰恰是被引导的一方。2017 年取消加成、转向集采与 DRG，正是切断这条挂钩链。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>医疗市场三重失灵：信息不对称（代理问题）、第三方支付（价格不敏感）、供给诱导需求。</li>
+          <li>诱导需求是激励结构的结果，不是职业道德的失败；改行为先改激励。</li>
+          <li>行业伦理、非营利组织与规制都可视为对市场失灵的制度回应（阿罗 1963）。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">第 3 章</span>医疗保险：风险分担与道德风险</h2>
+
+      <p><strong>引入问题：</strong>两种人生由你选：A．确定损失 3000 元；B．有 5% 的概率损失 60 万元。你愿意付多少钱，把 B 换成 A？——这个问题决定了保险值多少钱；而它带来的副作用，决定了全世界的医保制度为何都要设计"起付线"和"共付比例"。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：保险是一台天平，两端是风险与浪费</div>
+        <p>大多数人<strong>风险厌恶</strong>：愿意付一笔保费把大额不确定损失换成小额确定支出——这份"确定"本身就是保险创造的价值（风险分担）。但保险一旦存在，你看病时面对的价格就从"全价"跌到"自付那一小块"，于是你会多看病、多用贵药——<strong>事后道德风险</strong>（ex-post Moral Hazard）：消费了成本高于其价值的服务。还有<strong>事前道德风险</strong>（ex-ante）：反正有保险，锻炼、体检、戒烟的动力下降。天平的一端是风险分担的收益，另一端是过度消费的浪费，<strong>最优保险合同就在两端之间找平衡</strong>：起付线（小额自担，抑制琐碎就诊）、共付比例（自付一块，保留价格敏感）、封顶线（灾难性支出必须兜底）。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 3-1 · 共付比例 → 就诊量：道德风险计算器</div>
+        <p class="fig-sub">试一试：把共付比例从 100%（无保险）一路拖到 0%（全额报销），观察自付价格、就诊量与阴影三角形的效率损失如何变化。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="供需图：横轴为就诊量，纵轴为价格。向下倾斜的就诊需求曲线，水平线为每次就诊的真实单位成本一百元，另一条水平线为随共付比例变动的自付价格。就诊量在需求曲线与自付价格线交点处决定，自付价低于真实成本时产生阴影三角形效率损失。">
+            <line class="axis" x1="70" y1="330" x2="600" y2="330"/>
+            <line class="axis" x1="70" y1="330" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="372" text-anchor="middle">就诊量 Q（人次/年）</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">价格 P（元）</text>
+            <polygon id="mh-dwl" class="area-fill" fill="#b91c1c"/>
+            <line id="mh-mc" stroke="#475569" stroke-width="2.5"/>
+            <text class="chart-label" x="594" y="118" text-anchor="end" style="fill:#475569">MC = 100（真实成本）</text>
+            <line id="mh-pe" stroke="#db2777" stroke-width="2.5"/>
+            <text id="mh-pelab" class="chart-label" x="76" y="150" style="fill:#db2777">自付价</text>
+            <line id="mh-d" class="curve curve-c1"/>
+            <text class="chart-label" x="150" y="52" style="fill:#2f6fdb">D（就诊需求）</text>
+            <circle id="mh-dot" r="7" class="dot" fill="#db2777"/>
+            <text id="mh-t1" class="chart-title-sm" x="335" y="22" text-anchor="middle"></text>
+            <text id="mh-t2" class="chart-label" x="335" y="44" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="mh-c">共付比例（自付占费用的份额）</label>
+            <input type="range" id="mh-c" min="0" max="100" step="5" value="100">
+            <output id="mh-oc" for="mh-c">100%</output></div>
+        </div>
+        <figcaption>读图要点：每次就诊的真实成本是 100 元，需求曲线与 100 元的交点（Q=40）是有效就诊水平。共付比例每降一档，自付价下移，患者沿需求曲线把就诊量推高到 40 以上——新增就诊的价值（需求曲线高度）低于 100 元的成本，其总和就是红色阴影三角形的<strong>效率损失</strong>。注意反方向的事实同样成立：共付 100%（无保险）时损失为零，但风险完全无人分担——这正是"最优共付率介于两者之间"的图形含义。</figcaption>
+      </figure>
+
+      <aside class="callout keypoint">
+        <div class="callout-title">设计要点 · 最优保险三件套</div>
+        <p><strong>起付线</strong>（Deductible）：小额费用自担，过滤"不值一次门诊"的琐碎就诊；<strong>共付比例</strong>（Coinsurance）：自付一定比例，让患者对价格保留敏感；<strong>封顶线</strong>（Out-of-pocket Maximum）：灾难性支出之上全额报销——因为巨额损失处恰恰是风险厌恶最强、保险价值最大的地方。三件套的共同逻辑：<strong>在小额、高频、价格敏感的支出上留激励，在大额、灾难性、无法承受的支出上保风险</strong>。同理，对慢病用药等"高价值服务"应收低共付甚至零共付——控费要控的是低价值医疗，不是所有医疗。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">道德风险 <span class="term-en">Moral Hazard</span></div><div class="term-def">保险改变被保险人行为：事后（多消费医疗）与事前（减少预防努力）两个维度。它是价格变化的理性反应，与欺诈无关。</div></div>
+        <div class="term"><div class="term-name">共付保险与起付线 <span class="term-en">Coinsurance &amp; Deductible</span></div><div class="term-def">让患者分担部分成本的工具：按比例分担保留价格敏感性，起付额过滤小额消费，封顶线兜底灾难风险。</div></div>
+        <div class="term"><div class="term-name">兰德健康保险实验 <span class="term-en">RAND Health Insurance Experiment</span></div><div class="term-def">1971–1986 年在美国随机分配不同共付方案的大型实验，首次用因果证据量化了道德风险的大小，奠定了现代医保设计。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 兰德实验：道德风险值多少钱？</div>
+        <p>兰德公司 1971–1986 年间把数千名 65 岁以下美国人<strong>随机</strong>分配到不同保险方案：从全额免费到 95% 共付（设自付上限）。结果：免费组的医疗支出比高共付组高出约三成——道德风险真实且可观；但免费组的<strong>平均</strong>健康指标几乎没有任何改善——多花的钱大部分买的是低价值服务。关键的例外：低收入且患有高血压、视力障碍、牙齿疾病等<strong>可被门诊有效管理的疾病</strong>人群，在免费组中健康显著改善。一句话总结：<strong>"平均无差异，边际人群有效果"</strong>——共付能控费，但必须对谁共付、对什么服务共付做出精细区分（这正是今天"价值医保"设计的实验源头）。2010 年代的俄勒冈医疗扩张实验用现代方法复现了类似结论。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"道德风险就是骗保。"</strong>——不。道德风险不需要任何欺诈：价格降低后多看一次门诊、多开一盒"备着"的药，全都是理性反应，这正是它难以根除的原因。反向误区：<strong>"既然保险造成浪费，不如不保险。"</strong>——忽略了保险的本源价值：对灾难性支出的风险分担能避免家庭破产、保护消费平滑，其收益远超小额浪费。经济学的答案从来不是"要不要保险"，而是"<strong>在哪一段价格上保、哪一段上不保</strong>"。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.1</span>共付比例从 50% 降到 0 后，门诊量明显上升。这一现象属于？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>逆向选择</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>事后（ex-post）道德风险</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>供给诱导需求</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>事后道德风险指投保后<strong>消费行为</strong>因价格下降而扩张（多就诊、多买药）；事前道德风险指预防努力下降，选项中未出现。A 逆向选择发生在<strong>投保之前</strong>（高风险者更愿意投保，是筛选问题而非消费问题）；C 供给诱导需求是<strong>医生</strong>利用信息优势影响需求，主体不同——虽然两者常同时推高费用，机制却是两回事。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.2</span>兰德健康保险实验的核心发现是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>免费医疗使所有人的健康指标大幅改善</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>免费组支出更高但平均健康几乎不变；低收入慢病人群例外地显著获益</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>共付比例越高，参保人越健康</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>B 是"平均无效、边际有效"的经典结论：多花的钱大多买了低价值服务，但免费就医确实改善了低收入高血压、视力、牙齿患者的健康——说明控费设计要区别对待"谁"与"什么服务"。A 高估了平均效果；C 把道德风险反读成"花钱有害"，忽略了高共付同样挡住了低收入者的高价值就诊（这正是 B 例外部分的政策含义）。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>保险的价值在风险分担，成本在道德风险；最优合同在两者间权衡。</li>
+          <li>起付线、共付比例、封顶线分别处理小额、中额、灾难性支出，各司其职。</li>
+          <li>兰德实验：免费组多花约三成、平均健康无差异、低收入慢病者获益——精细化共付是方向。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">第 4 章</span>医疗体制比较与中国医改</h2>
+
+      <p><strong>引入问题：</strong>美国把约 17% 的 GDP 花在医疗上，英国只花约 10%，而英国的预期寿命更长、覆盖率更高。医疗体制真的有"最优解"吗？如果有，为什么各国答案如此不同？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：三种原型，一个难题</div>
+        <p>全世界的医疗体制大体是三种原型的混合：<strong>贝弗里奇模式</strong>（税收筹资、政府组织提供，如英国 NHS、北欧）——覆盖全民、行政便宜，但排队与配给显性化；<strong>俾斯麦模式</strong>（社会保险筹资、多方 sickness fund 付款，如德、法、日）——雇主雇员共同缴费、多元提供，覆盖广但管理复杂；<strong>市场型</strong>（多元私立筹资与提供，如美国，辅以 Medicare/Medicaid 公共兜底）——创新与反应快，但碎片化、费用高、覆盖有洞。比较体制要看四个齿轮：<strong>筹资</strong>（钱从哪来）、<strong>覆盖</strong>（谁被保到）、<strong>支付</strong>（按项目、按人头还是按病种）、<strong>守门人</strong>（要不要经全科医生转诊）。而所有体制共享一个难题——<strong>控费</strong>：老龄化、技术进步和鲍莫尔成本病（Baumol's Cost Disease：医疗是劳动密集部门，生产率涨得慢，工资却必须跟着全经济上涨）使成本曲线天然上翘。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">贝弗里奇模式 <span class="term-en">Beveridge Model</span></div><div class="term-def">以税收筹资、政府举办或购买服务的全民医疗体制，得名于 1942 年英国《贝弗里奇报告》。特点是覆盖全民、费用低，代价是排队与预算配给。</div></div>
+        <div class="term"><div class="term-name">俾斯麦模式 <span class="term-en">Bismarck Model</span></div><div class="term-def">以强制社会保险筹资、非营利医保基金付费、公私混合提供的体制，源自 1880 年代德国。覆盖与就业绑定，多方共管。</div></div>
+        <div class="term"><div class="term-name">守门人制度 <span class="term-en">Gatekeeping</span></div><div class="term-def">患者须经全科医生转诊才能看专科。用一次性分诊减少专科资源的滥用，是控制费用与引导分级的常用工具。</div></div>
+        <div class="term"><div class="term-name">鲍莫尔成本病 <span class="term-en">Baumol's Cost Disease</span></div><div class="term-def">劳动密集、生产率增长慢的部门（医疗、教育）必须跟上整体工资水平，相对成本必然持续上升的结构性现象。</div></div>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead>
+            <tr><th>维度</th><th>贝弗里奇（英/北欧）</th><th>俾斯麦（德/法/日）</th><th>市场型（美国）</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>筹资来源</td><td>一般税收</td><td>社保缴费（雇主+雇员）</td><td>雇主保险+商业保险+公共兜底</td></tr>
+            <tr><td>覆盖方式</td><td>全民自动覆盖</td><td>与就业挂钩的强制参保</td><td>碎片化，历史上存在无保险人群</td></tr>
+            <tr><td>提供主体</td><td>公立为主</td><td>公私混合</td><td>私立为主</td></tr>
+            <tr><td>控费手段</td><td>全球预算+排队配给</td><td>基金谈判+支付规则</td><td>议价分散、管理成本高</td></tr>
+            <tr><td>主要代价</td><td>候诊时间长</td><td>缴费负担、管理复杂</td><td>费用高、公平性差</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 中国医改：从"看病贵"到"集采灵魂砍价"</div>
+        <p>改革开放后公立医院走向市场化，政府投入占比下降，"以药养医"催生了看病贵。2009 年新医改确立方向：<strong>筹资保覆盖</strong>——职工医保与城乡居民医保织成覆盖 13 亿人以上、参保率稳定在 95% 以上的全民医保网；<strong>集中采购压价格</strong>——2018 年国家医保局组建后开展药品耗材"带量采购"（以全国市场量换低价，即"灵魂砍价"），集采品种平均降价超过一半；<strong>支付改革控总量</strong>——2017 年全面取消药品加成，随后推广 DRG/DIP 按病种打包付费，把医院从"多开多得"推向"结余留用"；再加上分级诊疗与医联体，试图用守门人逻辑疏导"小病挤大三甲"。用本分支的语言复述：先把<strong>风险分担</strong>做满（广覆盖），再治理<strong>供给诱导</strong>（医药分开、集采），最后动<strong>支付激励</strong>（DRG）——一部控费与覆盖的平衡史。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"免费医疗没有成本，只是政府大方。"</strong>——NHS 式体制的医疗同样稀缺，成本只是换了形态：从"价格配给"（付不起的人退出）变成"时间配给"（排队数月）与"预算配给"（新药目录、手术配额）。比较体制的正确问题不是"有没有配给"，而是"<strong>由谁配给、对谁最疼</strong>"。另一个误区：<strong>"美国医疗贵是因为太市场化，所以市场必然导致天价。"</strong>——美国的公共支出占 GDP 比重其实并不低，贵的原因还包括支付方碎片化导致议价能力弱、管理成本高、价格缺乏透明与约束——恰是"市场机制不完整"而非"市场太多"的病症。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.1</span>以税收筹资、政府直接举办服务、全民自动覆盖的医疗体制属于？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>俾斯麦模式</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>贝弗里奇模式</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>市场主导模式</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>贝弗里奇模式的三要素正是题干：税收筹资 + 政府举办 + 居民自动覆盖（无需参保手续），典型如英国 NHS。俾斯麦模式靠社保缴费、与就业挂钩、由医保基金付费；市场型以私立保险与私立提供为主。三者区别的核心不在"有没有政府"，而在<strong>筹资方式与配给形式</strong>。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.2</span>鲍莫尔成本病解释了医疗费用长期上升，其机制是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>医生贪婪，不断抬高服务价格</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>医疗生产率增长慢于制造业，但工资必须随整体经济上涨，相对成本被推高</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>通货膨胀使所有商品同步变贵</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>鲍莫尔的原始例子是小提琴四重奏：今天演奏贝多芬仍需四人、同样时长，生产率千年不变，但乐师工资必须与去看制造业的同行看齐——否则人才流失。医疗、教育同理：一台护理仍需那么多护士时间，生产率涨得慢，工资却要跟随全经济上涨，于是<strong>相对</strong>成本持续上升。这是结构性现象，A 归因于道德、C 归因于一般通胀，都无法解释医疗费用占 GDP 份额的持续攀升。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>三大原型：贝弗里奇（税收+政府）、俾斯麦（社保+多元）、市场型（私立+兜底），各有代价。</li>
+          <li>比较体制看四齿轮：筹资、覆盖、支付、守门人；所有体制都要配给，区别在配给形式。</li>
+          <li>控费难是结构性的：老龄化 + 技术进步 + 鲍莫尔成本病使成本曲线天然上翘。</li>
+          <li>中国医改主线：全民医保保覆盖 → 集采压药价 → DRG 改支付激励。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">第 5 章</span>教育经济学：人力资本还是信号</h2>
+
+      <p><strong>引入问题：</strong>大学毕业生比高中毕业生多挣一大截。这多出来的钱，是教育"生产"出来的生产力，还是文凭只是把本来就聪明勤奋的人<strong>挑了出来</strong>？两种答案对"该不该补贴教育"的含义天差地别。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：两种世界观，一个识别难题</div>
+        <p><strong>人力资本观</strong>（贝克尔 Becker）：学校是工厂，教育直接安装生产力——读写、编程、协作、坚持。教育提升工资是因为你真的更能干了，补贴教育就是补贴生产。<strong>信号观</strong>（斯宾塞 Spence）：学校是筛子，上学昂贵且痛苦，恰好只有高能力者负担得起——文凭的价值不在于教了什么，而在于向雇主<strong>证明</strong>了什么。极端信号模型里，教育扩张像军备竞赛：人人多读两年，排名不变，社会白付学费（私人理性、社会浪费）；但温和版本里，信号改善了<strong>匹配</strong>，也有真实价值。谁对？这是个因果识别问题：能力高的人本来就上学更久、挣钱更多（<strong>能力偏差</strong>，Ability Bias），简单回归把能力的功劳记到教育头上。经济学家的工具箱：随机实验（RCT）、双重差分（DID，用义务教育法改革）、工具变量（IV，出生季度、离家距离）、断点回归（RD，录取分数线）。共识：教育回报真实且显著（每多一年 schooling 工资约升 8%–10%），但<strong>低于</strong>天真回归的估计——人力资本为主，信号为辅。</p>
+      </aside>
+
+      <div class="formula">ln W = α + β·S + γ₁·X + γ₂·X² + ε<span class="f-note">明瑟方程（Mincer Equation）：工资对数对受教育年限 S 与工作经验 X 回归，β 即"其他条件不变时，每多一年教育的工资增长百分比"。注意：只有当 S 与能力无关（随机分配）或能力被控制住时，β 才是因果回报。</span></div>
+
+      <figure class="fig">
+        <div class="fig-title">图 5-1 · 教育回报的因果识别实验室</div>
+        <p class="fig-sub">试一试：同一批"人"（灰/粉按能力分色），分别用三种策略估计"多上一年学值多少钱"。点击按钮切换：原始相关会把斜率高估到什么程度？控制能力或随机分配后又如何？</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 420" role="img" aria-label="散点图：横轴为受教育年限，纵轴为月工资。图中包含一条灰色虚线表示真实因果效应每多一年 0.8 千元，以及一条随按钮切换的拟合回归线。原始相关模式下斜率明显偏大，控制能力与随机分配模式下斜率回落到真实值附近。">
+            <line class="axis" x1="70" y1="340" x2="600" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="382" text-anchor="middle">受教育年限 S（年）</text>
+            <text class="chart-label" x="24" y="190" text-anchor="middle" transform="rotate(-90 24 190)">月工资 W（千元）</text>
+            <path id="er-true" fill="none" stroke="#475569" stroke-width="2" stroke-dasharray="6 4"/>
+            <text class="chart-label" x="76" y="300" style="fill:#475569">真实因果线（+0.8/年）</text>
+            <g id="er-pts"></g>
+            <path id="er-line" class="curve curve-c1"/>
+            <text id="er-leg" class="chart-label" x="76" y="60" style="fill:#475569"></text>
+            <text id="er-t1" class="chart-title-sm" x="335" y="22" text-anchor="middle"></text>
+            <text id="er-t2" class="chart-label" x="335" y="44" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn" id="er-b1">原始相关（天真回归）</button>
+          <button class="btn ghost" id="er-b2">控制"能力"再回归</button>
+          <button class="btn ghost" id="er-b3">随机分配教育（RCT）</button>
+        </div>
+        <figcaption>读图要点：模拟世界里每个人的工资 = 3 + 0.8×教育年限 + 7×能力 + 随机项，且能力越高的人上学越久。①原始相关把"能力"的功劳记到教育头上，斜率显著高于 0.8；②控制能力后，同一能力水平内比较，斜率回落到真实值附近；③随机分配让能力与教育年限脱钩，此时简单回归即因果——这正是实验方法的价值。回想 03 分支：相关 ≠ 因果，缺的不是数据，而是识别策略。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">人力资本理论 <span class="term-en">Human Capital Theory</span></div><div class="term-def">贝克尔与舒尔茨的传统：教育是投资，直接安装生产力。预测教育补贴的社会回报高于私人回报。</div></div>
+        <div class="term"><div class="term-name">信号模型 <span class="term-en">Signaling Model (Spence)</span></div><div class="term-def">教育作为高能力者向雇主传递信息的昂贵信号。私人回报为正，社会回报取决于信号揭示的信息价值减去信号成本。</div></div>
+        <div class="term"><div class="term-name">能力偏差 <span class="term-en">Ability Bias</span></div><div class="term-def">不可观察的能力同时提高教育年限与工资，使教育回报的简单回归系数被高估。</div></div>
+        <div class="term"><div class="term-name">教育的外部性 <span class="term-en">Externalities of Education</span></div><div class="term-def">教育收益外溢给他人：同事生产率、公民参与、犯罪率下降、代际流动性提高——私人回报因此低估社会回报。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 义务教育法与出生季度：中国的 DID 与美国的 IV</div>
+        <p>中国 1986 年《义务教育法》在各省份分批实施，恰好构成双重差分（DID）的天然实验：受法律影响更大的队列（出生较晚、实施较早省份）受教育年限更长，工资随之上升——据此估计的因果回报<strong>低于</strong>原始相关，印证能力偏差的存在。纵向看，中国城镇的明瑟回报率从 1988 年的约 4% 一路升到 2000 年代的 8%–10%：市场化改革让教育第一次被"正确定价"。美国那边，安格里斯特与克鲁格用"出生季度"做工具变量（义务教育强制离校的年龄限制使出生较晚的孩子被动多上一小段学），估计回报同样约 8%——工具变量识别的回报低于天真回归，但显著为正：<strong>教育确实"生产"了些什么</strong>，只是没有原始数据显示的那么多。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>误区一："上大学的人挣得多，所以大学让你挣得多。"</strong>——典型的能力偏差 + 选择偏差：上大学的人本就不同（更聪明、更坚持、家庭资源更多），简单比较把前定差异记到了大学头上。识别因果要靠随机冲击（法律、距离、分数线）。<strong>误区二（反向）："信号模型成立，所以教育无用、上学是浪费。"</strong>——也错。实证共识是人力资本成分占主导：在职培训、学徒制、健康教育都提高生产率；即便信号部分，也改善了人岗匹配。教育外部性（更低的犯罪率、更高的公民参与、代际流动）更使社会回报高于私人回报——这是各国补贴公共教育的经济学根据。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.1</span>若教育对工资的作用纯属信号，那么扩张高等教育的社会收益主要来自？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>劳动生产率的普遍提高</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>更准确的人岗匹配与筛选，而非个体生产率被教育提高</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>没有任何社会收益，纯属资源浪费</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>纯信号模型中教育不安装生产力，A 是人力资本观的预测。但信号并非零价值：把合适的人放到合适的岗位上（匹配）本身就是社会收益，B 正确。C 过头了——只有当所有人同时多受教育而信号质量不改善时（纯"军备竞赛"版本），社会收益才趋近于零；即便如此匹配价值仍在。这个思想实验的意义在于：补贴教育的社会理由在人力资本世界更强，在信号世界更弱。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.2</span>不可观察的"能力"同时使人上学更久、工资更高。简单回归得到的教育回报系数会？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>低估真实因果回报</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>高估真实因果回报</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>不受影响，回归自动处理遗漏变量</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>能力与教育年限正相关、与工资正相关，遗漏它使教育系数吸收了能力的效果，方向向上偏——这正是图 5-1 中"原始相关"斜率偏大的原因。C 是对回归最常见的误解："保持其他不变"只对<strong>已包含</strong>的变量成立，遗漏的相关变量必然产生偏误。识别策略（RCT/DID/IV/RD）的全部意义就是切断这种相关。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>人力资本观（教育=工厂）与信号观（教育=筛子）都解释工资溢价，政策含义不同。</li>
+          <li>能力偏差使简单回归高估教育回报；RCT、DID、IV、RD 是四种主要识别策略。</li>
+          <li>实证共识：回报真实显著（约 8%–10%/年）但低于天真估计——人力资本为主、信号为辅。</li>
+          <li>教育外部性使社会回报高于私人回报，是公共补贴教育的经济学根据。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">第 6 章</span>福利国家与再分配：奥肯的漏桶</h2>
+
+      <p><strong>引入问题：</strong>阿瑟·奥肯 1975 年的思想实验：从最富的人的桶里舀一桶水，走过半个广场倒给最穷的人——路上一定会漏。如果每 1 元要漏掉 30 分，这桶水还该不该倒？漏掉多少才算太多？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：再分配是天平上的第三种选择</div>
+        <p>先测量：贫困用什么线（绝对/相对）、什么指标（贫困率、贫困深度）；不平等看<strong>洛伦兹曲线</strong>与<strong>基尼系数</strong>。再行动：工具箱里有累进税、普惠转移（如儿童津贴）与<strong>家计调查</strong>（Means-Testing，只补穷人，省钱但制造"福利悬崖"——多挣 1 元可能失去 2 元补贴，边际税率反而最高）。奥肯提醒：从富人转移到穷人的路上有两个漏洞——行政成本与<strong>激励楔子</strong>（高边际税率压低劳动供给），所以平等与效率存在权衡。但后来的研究补上了另一面：给低收入家庭的转移若缓解了儿童的信贷约束，会提高下一代的人力资本投资（健康、教育），可能<strong>同时</strong>改善平等与效率——权衡并非处处存在，"双赢区域"集中在儿童早期投资。至于 UBI（全民基本收入）：无家计调查、无悬崖、无污名、行政极简，覆盖灵活就业者；代价是要么水平低要么税率高。弗里德曼的<strong>负所得税</strong>（NIT）可看作"参加工作的 UBI"：收入低于某线不但不缴税反而领补贴，补贴随收入平滑退坡——UBI 与 NIT 是同一光谱上的两端。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 6-1 · 再分配前后：洛伦兹曲线与基尼系数</div>
+        <p class="fig-sub">试一试：拖动"再分配力度"滑块，看税收与转移支付如何把洛伦兹曲线从灰色虚线推向青色实线、把基尼系数压低，最穷 40% 与最富 10% 的份额如何变化。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 440" role="img" aria-label="洛伦兹曲线图：横轴为人口累计百分比，纵轴为收入累计份额。灰色虚线为再分配前的市场收入洛伦兹曲线，青色实线为随滑块移动的再分配后曲线，两者与对角均等线之间的阴影面积表示再分配压缩的不平等。文本显示前后基尼系数。">
+            <line class="axis" x1="70" y1="400" x2="470" y2="400"/>
+            <line class="axis" x1="70" y1="400" x2="70" y2="40"/>
+            <text class="chart-label" x="270" y="432" text-anchor="middle">人口累计（从最穷到最富，%）</text>
+            <text class="chart-label" x="24" y="220" text-anchor="middle" transform="rotate(-90 24 220)">收入累计份额（%）</text>
+            <line x1="70" y1="400" x2="470" y2="40" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <text class="chart-label" x="330" y="240" style="fill:#94a3b8">均等线（基尼=0）</text>
+            <path id="gz-diff" class="area-fill" fill="#db2777"/>
+            <path id="gz-pre" class="curve" stroke="#475569" stroke-dasharray="7 5"/>
+            <path id="gz-post" class="curve curve-c3"/>
+            <text class="chart-label" x="466" y="392" text-anchor="end" style="fill:#475569">再分配前（市场收入）</text>
+            <text class="chart-label" x="466" y="374" text-anchor="end" style="fill:#0d9488">再分配后（可支配收入）</text>
+            <text id="gz-t1" class="chart-title-sm" x="560" y="200" text-anchor="middle"></text>
+            <text id="gz-t2" class="chart-label" x="560" y="224" text-anchor="middle" style="fill:#475569"></text>
+            <text id="gz-t3" class="chart-label" x="560" y="248" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="gz-t">再分配力度（转移均等化程度）</label>
+            <input type="range" id="gz-t" min="0" max="100" step="5" value="40">
+            <output id="gz-ot" for="gz-t">40%</output></div>
+        </div>
+        <figcaption>读图要点：曲线越靠外（贴近对角线），分配越平等；基尼系数 = 对角线与曲线之间面积的两倍占对角三角形的比例。滑块调到 0 时两条线重合——税收与转移大约能解释发达国家不平等压缩的三到四成（例如北欧市场收入基尼约 0.4 出头，可支配收入约 0.25）。注意本图是简化演示：转移按比例缩小各十分位份额差距，未刻画行为反应与行政成本——那正是"漏桶"要补充的部分。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">洛伦兹曲线与基尼系数 <span class="term-en">Lorenz Curve &amp; Gini Coefficient</span></div><div class="term-def">按收入从低到高累计的人口份额与收入份额的关系曲线；基尼系数为对角线与曲线之间面积的两倍比，0 为完全平等，1 为极端不平等。</div></div>
+        <div class="term"><div class="term-name">家计调查 <span class="term-en">Means-Testing</span></div><div class="term-def">只向收入/资产低于门槛者发放福利。省钱、定向，但申请门槛高、易漏覆盖，且收入上升即失去福利，制造高边际税率的"福利悬崖"。</div></div>
+        <div class="term"><div class="term-name">奥肯漏桶 <span class="term-en">Okun's Leaky Bucket</span></div><div class="term-def">再分配过程中因激励扭曲与行政成本造成的效率损失。它定义了平等与效率的权衡，也定义了福利国家设计的工程问题：把桶补得越牢越好。</div></div>
+        <div class="term"><div class="term-name">全民基本收入与负所得税 <span class="term-en">UBI &amp; Negative Income Tax</span></div><div class="term-def">UBI 对全体公民无条件发放固定现金；NIT 让低收入者从"缴税"变为"领补贴"并随收入平滑退坡。两者都试图消除悬崖与污名，争议集中在融资成本与工作激励。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 精准扶贫：家计调查式再分配的中国实践</div>
+        <p>2013 年"精准扶贫"启动后，中国以"建档立卡"逐户识别贫困（典型的家计调查），配套"两不愁三保障"（不愁吃穿，义务教育、基本医疗、住房安全有保障）、危房改造、易地搬迁与东西部协作；2020 年宣布现行标准下 9899 万农村贫困人口全部脱贫、832 个贫困县全部摘帽，城市低保与农村低保继续兜底。同期，芬兰 2017–2018 年对失业者做过基本收入实验：就业影响很小、主观福祉与信任感明显改善——UBI 讨论至今仍在"成本、激励与尊严"三条线上拉锯，实验证据比口号更有用。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"再分配只是把钱从 A 的口袋搬到 B 的口袋，零和游戏而已。"</strong>——两头都不对。搬运会漏水（激励楔子 + 行政成本），所以不是无损的；但它也未必是零和：缓解儿童信贷约束、改善低收入者健康、平滑衰退中的消费，都可能提高长期产出（"把桶举起来"而非只是"把水倒来倒去"）。<strong>反向误区</strong>："北欧证明高福利无成本。"——北欧用高税率 + 强劲的（也是灵活的）劳动市场 + 普惠型制度把漏桶补得很牢，这是持续的制度改革成果，不是免费午餐；"弹性保障"（flexicurity）解雇容易但再培训与保障强，才撑得起大桶。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.1</span>某国市场收入基尼系数 0.45，税后转移后可支配收入基尼 0.28。这组数字说明？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>该国市场初次分配已经相当平等</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>该国税收与转移支付显著压缩了可支配收入的不平等</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>该国的转移支付大多流向了高收入者</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>基尼从 0.45 降到 0.28，即洛伦兹曲线在财政后再分配后明显外移，压缩幅度约四成——这是"财政再分配力度"的标准度量（OECD 国家大致落在 25%–40% 区间）。C 说反了：0.45 的市场基尼恰恰表明初次分配的不平等并不低，需要再分配来矫正。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.2</span>奥肯"漏桶"比喻中的"漏水"指的是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>福利资金被贪污挪用的部分</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>再分配引起的行为扭曲（劳动供给下降）与行政成本造成的效率净损失</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>穷人的边际消费倾向更高，钱花掉就"漏"了</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>奥肯的"漏"是经济学意义上的<strong>无谓损失</strong>：更高的边际税率改变工作与储蓄决策，加上瞄准与发放的行政成本，使转移途中每 1 元到账不足 1 元。A（腐败）是真实的治理问题，但不是该比喻的本义；C 恰恰说反了——高边际消费倾向使转移的短期乘数更大，是"倒水"的理由而不是漏水。政策艺术在于：漏得越少，可容忍的再分配越多。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.3</span>与家计调查式低保相比，全民基本收入（UBI）的一个主要制度优势是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>财政成本更低，因为人人有份</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>取消收入门槛后不存在"福利悬崖"与申请污名，覆盖更全、行政更简</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>自动消灭贫困，无须任何融资安排</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>家计调查的痛点：收入略升即整块失去福利，形成极高的隐性边际税率（"悬崖"），且申请繁琐、易漏覆盖、附带污名。UBI 人人有份，边际税率平滑、无须审查，行政链条最短——B 正确。A 明显反了：普惠意味着成本更高（这正是主要争议）；C 是乌托邦式说法：UBI 的水平完全取决于融资安排，贫困线之下的高福利社会里"UBI ≠ 无贫困"。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>测度先行：洛伦兹曲线与基尼系数刻画不平等，财政前后对比衡量再分配力度。</li>
+          <li>工具各有代价：普惠无悬崖但贵，家计调查省钱但制造悬崖与漏覆盖。</li>
+          <li>奥肯漏桶：行政成本 + 激励楔子；但儿童投资等领域存在平等与效率的双赢区。</li>
+          <li>UBI/NIT 之争的核心是融资与激励，而非"该不该帮助穷人"的价值问题。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">终点</span>进阶路线与延伸阅读</h2>
+      <p>健康与教育经济学站在微观理论（信息、保险、人力资本）、计量方法（因果识别）与公共政策（福利国家）的交叉点上。想继续深入，推荐三条路线：<strong>财政与再分配</strong>去看 <a href="../08-公共经济学/index.html">08 公共经济学</a>（税收、转移支付与最优税制）；<strong>人力资本与劳动市场</strong>回到 <a href="../09-劳动经济学/index.html">09 劳动经济学</a>（工资差异、歧视与培训）；<strong>因果识别工具</strong>复习 <a href="../03-计量经济学/index.html">03 计量经济学</a>（DID/IV/RD 的技术细节）；健康行为里的"非理性"（拖延体检、吸烟成瘾）则通往 <a href="../15-行为经济学/index.html">15 行为经济学</a>的助推设计。</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Folland, Goodman &amp; Stano,《健康经济学》（The Economics of Health and Health Care）</span>——健康经济学标准教材，覆盖本分支第 1–4 章的全部主题，中级难度。</li>
+          <li><span class="bk">Bhattacharya, Hyde &amp; Tu, Health Economics（开放教材）</span>——免费在线，直觉优先、数学克制，适合入门后通读一遍。</li>
+          <li><span class="bk">Gary S. Becker, Human Capital（《人力资本》）</span>——人力资本理论的原典，教育投资的微观基础。</li>
+          <li><span class="bk">Nicholas Barr, The Economics of the Welfare State（《福利国家经济学》）</span>——福利国家设计原理：为什么教育与医疗的市场失灵不同于一般商品。</li>
+          <li><span class="bk">Angrist &amp; Pischke, Mastering 'Metrics（《精通计量》）</span>——用教育回报等经典案例手把手讲 RCT/DID/IV/RD，第 5 章的进阶读物。</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../13-城市与区域经济学/index.html"><span class="pager-dir">上一分支</span><br><span class="pager-name">13 城市与区域经济学</span></a>
+        <a href="../15-行为经济学/index.html"><span class="pager-dir">下一分支</span><br><span class="pager-name">15 行为经济学</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../assets/econ.js"></script>
+<script>
+/* ================= 图 1-1 健康生产函数 ================= */
+(function () {
+  if (!document.getElementById("hp-s")) return;
+  var X0 = 70, X1 = 600, Y0 = 330, Y1 = 40;
+  function px(u) { return X0 + u / 100 * (X1 - X0); }
+  function py(h) { return Y0 - h / 100 * (Y0 - Y1); }
+  function hLow(u) { return 20 + 55 * (1 - Math.exp(-1.2 * u / 100)); }
+  function hHigh(u) { return 30 + 60 * (1 - Math.exp(-1.5 * u / 100)); }
+  function path(f) {
+    var pts = [];
+    for (var u = 0; u <= 100; u += 2) pts.push(px(u).toFixed(1) + "," + py(f(u)).toFixed(1));
+    return "M" + pts.join(" L");
+  }
+  document.getElementById("hp-lo").setAttribute("d", path(hLow));
+  document.getElementById("hp-hi").setAttribute("d", path(hHigh));
+  var d1 = document.getElementById("hp-d1"), d2 = document.getElementById("hp-d2");
+  var t1 = document.getElementById("hp-t1"), t2 = document.getElementById("hp-t2");
+  function mp(f, u) { return (f(Math.min(100, u + 2)) - f(u)) / 2; }
+  function draw() {
+    var u = parseFloat(document.getElementById("hp-s").value);
+    document.getElementById("hp-os").textContent = u;
+    var a = hLow(u), b = hHigh(u);
+    d1.setAttribute("cx", px(u)); d1.setAttribute("cy", py(a));
+    d2.setAttribute("cx", px(u)); d2.setAttribute("cy", py(b));
+    if (t1) t1.textContent = "医疗投入 " + u + "：低教育组健康存量 " + a.toFixed(1) + "，高教育组 " + b.toFixed(1);
+    if (t2) t2.textContent = "每增 1 单位投入的边际健康产出：低教育组 " + mp(hLow, u).toFixed(3) + "，高教育组 " + mp(hHigh, u).toFixed(3) + "（投入越多，边际产出越小）";
+  }
+  document.getElementById("hp-s").addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= 图 3-1 共付比例与道德风险 ================= */
+(function () {
+  if (!document.getElementById("mh-c")) return;
+  var X0 = 70, X1 = 600, Y0 = 330, Y1 = 40;
+  var PMAX = 120, QMAX = 150, P0 = 100;
+  function px(q) { return X0 + q / QMAX * (X1 - X0); }
+  function py(p) { return Y0 - p / PMAX * (Y0 - Y1); }
+  var d = document.getElementById("mh-d");
+  d.setAttribute("x1", px(20)); d.setAttribute("y1", py(140 - 20));
+  d.setAttribute("x2", px(140)); d.setAttribute("y2", py(0));
+  var mc = document.getElementById("mh-mc");
+  mc.setAttribute("x1", X0); mc.setAttribute("y1", py(P0));
+  mc.setAttribute("x2", X1); mc.setAttribute("y2", py(P0));
+  var pe = document.getElementById("mh-pe");
+  var dot = document.getElementById("mh-dot");
+  var dwl = document.getElementById("mh-dwl");
+  var pelab = document.getElementById("mh-pelab");
+  var t1 = document.getElementById("mh-t1"), t2 = document.getElementById("mh-t2");
+  function draw() {
+    var c = parseFloat(document.getElementById("mh-c").value) / 100;
+    document.getElementById("mh-oc").textContent = Math.round(c * 100) + "%";
+    var p = P0 * c;          /* 自付价 */
+    var qc = 140 - p;        /* 需求: P = 140 - Q */
+    pe.setAttribute("x1", X0); pe.setAttribute("y1", py(p));
+    pe.setAttribute("x2", X1); pe.setAttribute("y2", py(p));
+    pelab.setAttribute("y", Math.max(Y1 + 10, py(p) - 8));
+    pelab.textContent = "自付价 = " + Math.round(p);
+    dot.setAttribute("cx", px(qc)); dot.setAttribute("cy", py(p));
+    dwl.setAttribute("points",
+      px(40).toFixed(1) + "," + py(P0).toFixed(1) + " " +
+      px(qc).toFixed(1) + "," + py(P0).toFixed(1) + " " +
+      px(qc).toFixed(1) + "," + py(p).toFixed(1));
+    var loss = (qc - 40) * (qc - 40) / 2;
+    if (t1) t1.textContent = "共付 " + Math.round(c * 100) + "%：自付价 " + Math.round(p) + " 元，就诊量 " + Math.round(qc) + "（有效水平 40）";
+    if (t2) t2.textContent = "效率损失（阴影三角）≈ " + Math.round(loss) + " 单位；自付 " + Math.round(p * qc) + " 元，医保支付 " + Math.round((P0 - p) * qc) + " 元";
+  }
+  document.getElementById("mh-c").addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= 图 5-1 教育回报的因果识别 ================= */
+(function () {
+  if (!document.getElementById("er-b1")) return;
+  var X0 = 70, X1 = 600, Y0 = 340, Y1 = 40;
+  function px(s) { return X0 + (s - 3) / 14 * (X1 - X0); }
+  function py(w) { return Y0 - w / 24 * (Y0 - Y1); }
+  var seed = 42;
+  function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+  function noise(k) { return (rnd() - 0.5) * 2 * k; }
+  function gen(randomize) {
+    seed = 42;
+    var pts = [];
+    for (var i = 0; i < 42; i++) {
+      var a = rnd();
+      var s = randomize ? 9.5 + noise(5) : 6 + 6 * a + noise(1.6);
+      s = Math.max(4, Math.min(16, s));
+      var w = 3 + 0.8 * s + 7 * a + noise(2);
+      w = Math.max(1, Math.min(22, w));
+      pts.push({ s: s, w: w, a: a });
+    }
+    return pts;
+  }
+  function meanOf(pts, f) {
+    var m = 0;
+    for (var i = 0; i < pts.length; i++) m += f(pts[i]);
+    return m / pts.length;
+  }
+  function slopeOf(pts, fs, fw) {
+    var ms = meanOf(pts, fs), mw = meanOf(pts, fw);
+    var num = 0, den = 0;
+    pts.forEach(function (p) {
+      num += (fs(p) - ms) * (fw(p) - mw);
+      den += (fs(p) - ms) * (fs(p) - ms);
+    });
+    return den === 0 ? 0 : num / den;
+  }
+  function slopeCtrl(pts) {
+    var ma = meanOf(pts, function (p) { return p.a; });
+    var bsa = slopeOf(pts, function (p) { return p.a; }, function (p) { return p.s; });
+    var bwa = slopeOf(pts, function (p) { return p.a; }, function (p) { return p.w; });
+    var ms = meanOf(pts, function (p) { return p.s; });
+    var mw = meanOf(pts, function (p) { return p.w; });
+    var num = 0, den = 0;
+    pts.forEach(function (p) {
+      var rs = (p.s - ms) - bsa * (p.a - ma);
+      var rw = (p.w - mw) - bwa * (p.a - ma);
+      num += rs * rw; den += rs * rs;
+    });
+    return den === 0 ? 0 : num / den;
+  }
+  var obs = gen(false), rndPts = gen(true);
+  var g = document.getElementById("er-pts");
+  var line = document.getElementById("er-line");
+  var leg = document.getElementById("er-leg");
+  var t1 = document.getElementById("er-t1"), t2 = document.getElementById("er-t2");
+  document.getElementById("er-true").setAttribute("d",
+    "M" + px(4).toFixed(1) + "," + py(3 + 0.8 * 4).toFixed(1) +
+    " L" + px(16).toFixed(1) + "," + py(3 + 0.8 * 16).toFixed(1));
+  var NS = "http://www.w3.org/2000/svg";
+  function render(mode) {
+    while (g.firstChild) g.removeChild(g.firstChild);
+    var pts, b, fill;
+    if (mode === "ctrl") {
+      pts = obs;
+      b = slopeCtrl(pts);
+    } else if (mode === "rct") {
+      pts = rndPts;
+      b = slopeOf(pts, function (p) { return p.s; }, function (p) { return p.w; });
+    } else {
+      pts = obs;
+      b = slopeOf(pts, function (p) { return p.s; }, function (p) { return p.w; });
+    }
+    var ms = meanOf(pts, function (p) { return p.s; });
+    var mw = meanOf(pts, function (p) { return p.w; });
+    var inter = mw - b * ms;
+    line.setAttribute("d",
+      "M" + px(4).toFixed(1) + "," + py(inter + b * 4).toFixed(1) +
+      " L" + px(16).toFixed(1) + "," + py(Math.max(0.5, Math.min(23, inter + b * 16))).toFixed(1));
+    pts.forEach(function (p) {
+      var c = document.createElementNS(NS, "circle");
+      c.setAttribute("cx", px(p.s).toFixed(1));
+      c.setAttribute("cy", py(p.w).toFixed(1));
+      c.setAttribute("r", 5);
+      c.setAttribute("class", "dot");
+      if (mode === "ctrl") fill = p.a < 0.5 ? "#94a3b8" : "#db2777";
+      else if (mode === "rct") fill = "#0d9488";
+      else fill = "#db2777";
+      c.setAttribute("fill", fill);
+      g.appendChild(c);
+    });
+    var bTxt = "+ " + b.toFixed(2) + " 千元/年";
+    if (mode === "naive") {
+      if (leg) leg.textContent = "每人一点：月工资 vs 教育年限";
+      if (t1) t1.textContent = "原始相关：回归斜率 " + bTxt;
+      if (t2) t2.textContent = "能力高的人既上学更久又挣得更多，斜率把能力的功劳记到教育头上——高于真实因果效应";
+    } else if (mode === "ctrl") {
+      if (leg) leg.textContent = "灰点=低能力半组，粉点=高能力半组（同组内比较）";
+      if (t1) t1.textContent = "控制能力后：回归斜率 " + bTxt;
+      if (t2) t2.textContent = "剔除能力的影响后，教育与工资的关系回落到灰色虚线（真实 0.8）附近——能力偏差被剥离";
+    } else {
+      if (leg) leg.textContent = "同批人，教育年限随机重排（与能力脱钩）";
+      if (t1) t1.textContent = "随机分配后：简单回归斜率 " + bTxt;
+      if (t2) t2.textContent = "随机化切断能力与教育年限的相关，此时相关即因果——RCT 的全部力量就在这条线上";
+    }
+  }
+  var btns = { naive: "er-b1", ctrl: "er-b2", rct: "er-b3" };
+  Object.keys(btns).forEach(function (k) {
+    document.getElementById(btns[k]).addEventListener("click", function () {
+      Object.keys(btns).forEach(function (j) {
+        document.getElementById(btns[j]).className = j === k ? "btn" : "btn ghost";
+      });
+      render(k);
+    });
+  });
+  render("naive");
+})();
+
+/* ================= 图 6-1 洛伦兹曲线与基尼系数 ================= */
+(function () {
+  if (!document.getElementById("gz-t")) return;
+  var X0 = 70, X1 = 470, Y0 = 400, Y1 = 40;
+  var shares = [2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 9, 11, 14, 36];
+  function px(p) { return X0 + p / 100 * (X1 - X0); }
+  function py(l) { return Y0 - l / 100 * (Y0 - Y1); }
+  function cum(arr) {
+    var out = [], c = 0;
+    for (var i = 0; i < arr.length; i++) { c += arr[i]; out.push(c); }
+    return out;
+  }
+  function gini(cu) {
+    var area = 0, prev = 0;
+    for (var i = 0; i < cu.length; i++) {
+      area += 0.5 * (prev + cu[i]) * 10;
+      prev = cu[i];
+    }
+    return 1 - area / 5000;
+  }
+  var pre = cum(shares);
+  var prePath = "M" + px(0).toFixed(1) + "," + py(0).toFixed(1);
+  for (var i = 0; i < 10; i++) {
+    prePath += " L" + px((i + 1) * 10).toFixed(1) + "," + py(pre[i]).toFixed(1);
+  }
+  document.getElementById("gz-pre").setAttribute("d", prePath);
+  var post = document.getElementById("gz-post");
+  var diff = document.getElementById("gz-diff");
+  var t1 = document.getElementById("gz-t1"), t2 = document.getElementById("gz-t2");
+  var t3 = document.getElementById("gz-t3");
+  function draw() {
+    var t = parseFloat(document.getElementById("gz-t").value) / 100;
+    document.getElementById("gz-ot").textContent = Math.round(t * 100) + "%";
+    var now = [];
+    for (var i = 0; i < shares.length; i++) now.push(shares[i] + t * (10 - shares[i]));
+    var cu = cum(now);
+    var pts = "M" + px(0).toFixed(1) + "," + py(0).toFixed(1);
+    for (var j = 0; j < 10; j++) {
+      pts += " L" + px((j + 1) * 10).toFixed(1) + "," + py(cu[j]).toFixed(1);
+    }
+    post.setAttribute("d", pts);
+    var df = pts;
+    for (var k = 9; k >= 0; k--) {
+      df += " L" + px((k + 1) * 10).toFixed(1) + "," + py(pre[k]).toFixed(1);
+    }
+    df += " L" + px(0).toFixed(1) + "," + py(0).toFixed(1) + " Z";
+    diff.setAttribute("d", df);
+    var g0 = gini(pre), g1 = gini(cu);
+    if (t1) t1.textContent = "基尼系数";
+    if (t2) t2.textContent = "再分配前 " + g0.toFixed(3);
+    if (t3) t3.textContent = "再分配后 " + g1.toFixed(3);
+  }
+  document.getElementById("gz-t").addEventListener("input", draw);
+  draw();
+})();
+</script>
+</body>
+</html>

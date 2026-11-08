@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>博弈论与信息经济学 · EconLearn 经济学自学之路</title>
+<meta name="description" content="博弈论与信息经济学中文互动教程：纳什均衡、囚徒困境、重复博弈、柠檬市场、信号筛选与机制设计，配互动收益矩阵与自测。">
+<link rel="stylesheet" href="../assets/econ.css">
+</head>
+<body style="--branch:#7c3aed">
+<noscript><p class="noscript-tip">本页的互动图表与自测需要启用 JavaScript；未启用时仍可阅读全部正文。</p></noscript>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← 总览</a>
+  <div class="topbar-title"><span class="topbar-num">04</span>博弈论与信息经济学</div>
+  <button class="toc-toggle" aria-expanded="false">目录</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">本分支章节</p>
+    <nav aria-label="章节目录">
+      <a href="#overview">导读与学习目标</a>
+      <a href="#ch1">1 · 博弈的语言</a>
+      <a href="#ch2">2 · 纳什均衡</a>
+      <a href="#ch3">3 · 经典博弈与应用</a>
+      <a href="#ch4">4 · 信息不对称</a>
+      <a href="#ch5">5 · 信号与筛选</a>
+      <a href="#ch6">6 · 机制设计</a>
+      <a href="#path">进阶路线与延伸阅读</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · 经济学自学之路</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">分支 04 · 核心理论</span>
+        <h1>博弈论与信息经济学</h1>
+        <p class="hero-en">Game Theory &amp; Information Economics</p>
+        <p class="hero-lead">当你的最佳选择取决于别人的选择，而别人的最佳选择又取决于你——这就是博弈。博弈论给你一套分析"策略互动"的语言；信息经济学则研究当各方掌握的信息不同时，市场会发生什么扭曲。</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">学完本分支你将能</div>
+        <ul>
+          <li>读懂并构建<strong>收益矩阵</strong>与博弈树，识别<strong>占优策略</strong></li>
+          <li>用"最佳响应"思路找出<strong>纳什均衡</strong>，理解均衡 ≠ 集体最优</li>
+          <li>解释<strong>逆向选择</strong>与<strong>道德风险</strong>的区别及现实后果（柠檬市场、保险困局）</li>
+          <li>分析<strong>信号</strong>（教育、保修）与<strong>筛选</strong>（免赔额、合约条款）如何缓解信息问题</li>
+          <li>描述拍卖等<strong>机制设计</strong>如何"让说真话成为最优策略"</li>
+        </ul>
+      </div>
+      <div class="prereq">前置知识：
+        <a class="badge" href="../01-微观经济学/index.html">01 微观（边际思维）</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">第 1 章</span>博弈的语言</h2>
+
+      <p><strong>引入问题：</strong>两个嫌疑犯被分开审讯：都沉默，各判 1 年；一个检举一个沉默，检举者释放、沉默者判 10 年；都检举，各判 3 年。警察微笑着离开——为什么他确信两人都会招？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>把自己放进对方的鞋子里想一遍，再想一遍对方的"想"，这就是<strong>策略思维</strong>。博弈论的标准假设：<strong>人人理性</strong>（追求自己收益最大），且<strong>这本身是共同知识</strong>（你知道我理性，我知道你知道……）。囚徒困境里，无论对方沉默还是检举，"检举"对我都更好——这叫<strong>占优策略</strong>。双方都有占优策略时，结局几乎注定。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">博弈三要素 <span class="term-en">Players / Strategies / Payoffs</span></div><div class="term-def">参与者、可选策略、每种策略组合下的收益。把这三样写清楚，一个博弈就"建好模"了。</div></div>
+        <div class="term"><div class="term-name">占优策略 <span class="term-en">Dominant Strategy</span></div><div class="term-def">无论对手怎么做都最优的策略。有占优策略时，理性玩家不需要猜测对手。</div></div>
+        <div class="term"><div class="term-name">收益矩阵 <span class="term-en">Payoff Matrix</span></div><div class="term-def">两人同时博弈的表格：行是一方的策略，列是另一方的策略，格内写双方收益（行玩家, 列玩家）。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 1-1 · 囚徒困境试验场</div>
+        <p class="fig-sub">点击矩阵中的任意一格，查看该策略组合的结果与双方刑期。</p>
+        <figure class="fig-canvas">
+          <svg id="pd-svg" viewBox="0 0 640 400" role="group" aria-label="囚徒困境收益矩阵：行列各为沉默与检举两种策略，四个格子可用鼠标或键盘（Tab + 回车）查看双方刑期。双方沉默各判 1 年，双方检举各判 3 年，一方检举另一方沉默则检举者释放、沉默者判 10 年。">
+            <rect x="70" y="30" width="250" height="55" fill="#f5f3ff" stroke="#ddd6fe"/>
+            <rect x="320" y="85" width="250" height="55" fill="#f5f3ff" stroke="#ddd6fe"/>
+            <text class="chart-title-sm" x="445" y="63" text-anchor="middle">同伙的策略</text>
+            <text class="chart-title-sm" x="195" y="118" text-anchor="middle">你的策略</text>
+            <text class="chart-label" x="445" y="120" text-anchor="middle" style="font-weight:700">检举</text>
+            <text class="chart-label" x="320" y="120" text-anchor="middle" style="font-weight:700">沉默</text>
+            <text class="chart-label" x="195" y="180" text-anchor="middle" style="font-weight:700">沉默</text>
+            <text class="chart-label" x="195" y="310" text-anchor="middle" style="font-weight:700">检举</text>
+            <g id="pd-cells"></g>
+            <text id="pd-txt" class="chart-label" x="320" y="385" text-anchor="middle" style="font-weight:700">点击上方格子开始 →</text>
+          </svg>
+        </figure>
+        <figcaption>读图要点：数字是<strong>刑期（越短越好）</strong>。"检举"对每个人都是占优策略——这就是为什么（沉默, 沉默）这个对双方更好的结果不会被理性玩家选中。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界</div>
+        <p><strong>广告军备竞赛</strong>：可口可乐与百事都投巨额广告 vs 都不投（利润更高但市场份额怕被抢）；<strong>国家关税战</strong>：互相加税两败俱伤，但单方降税怕吃亏；<strong>内卷式加班</strong>：所有人都不加班更好，但单独加班者占优。囚徒困境的影子无处不在。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"博弈论假设人冷血自私，所以不真实。"</strong>——收益矩阵里的"收益"可以是任何你在乎的东西：公平感、声誉、他人福利。实验中很多人在最后通牒博弈里拒绝"不公平的 90/10 分成"，宁可两败俱伤——这不是推翻博弈论，而是说明他们的收益函数里装着公平（见 15 行为经济学）。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.1</span>囚徒困境中"检举"是占优策略，因为它？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>带来的绝对刑期最短</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>无论对方怎么选，检举都比沉默判得短</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>是双方合作时的最优反应</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>占优策略的定义是"<strong>对对手的每一种策略</strong>都至少不差"。对方沉默时：检举(释放) &gt; 沉默(1年)；对方检举时：检举(3年) &lt; 沉默(10年刑)。两种情况检举都严格更优。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.2</span>（沉默, 沉默）各判 1 年的结果，相比（检举, 检举）各判 3 年？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>前者帕累托优于后者，但不是均衡</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>前者是均衡，因此会被理性玩家选择</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>两者无法比较</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>帕累托优于（Pareto Superior）：没有任何一方更差、至少一方更好。（沉默,沉默）双方都更好——但每个人都有动机单方面偏离，所以它不是<strong>纳什均衡</strong>。个体理性 ≠ 集体理性，这是博弈论最深刻的教训。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>博弈 = 参与者 + 策略 + 收益；理性与共同知识是标准假设。</li>
+          <li>占优策略：无论对手如何都最优；囚徒困境 = 双方占优策略导致次优结局。</li>
+          <li>收益可以是任何在乎的东西（公平、声誉、长期利益）。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">第 2 章</span>纳什均衡</h2>
+
+      <p><strong>引入问题：</strong>很多博弈没有占优策略——我的最优选择取决于你怎么做。那"博弈的解"到底是什么？约翰·纳什的回答：找那种<strong>没有人愿意单方面改变</strong>的策略组合。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p><strong>纳什均衡（Nash Equilibrium）</strong>= 一组策略，使得每个玩家的策略都是<strong>针对其他人均衡策略的最佳响应</strong>（Best Response）。换位检查：固定别人的选择不动，我还能不能独自变得更好？如果不能，这个组合就"钉住"了。均衡不保证公平、不保证最好，只保证<strong>稳定</strong>——它是博弈的"引力中心"，而不是道德理想。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 2-1 · 均衡探测器</div>
+        <p class="fig-sub">切换两个经典博弈，点击"高亮纳什均衡"，查看哪些格子是"双方都不想单独离开"的稳定点。</p>
+        <figure class="fig-canvas">
+          <svg id="ne-svg" viewBox="0 0 640 400" role="img" aria-label="2×2 收益矩阵可视化，程序将高亮所有纳什均衡格子并给出解释。">
+            <text class="chart-title-sm" x="445" y="55" text-anchor="middle" id="ne-col-h">玩家乙</text>
+            <text class="chart-title-sm" x="195" y="110" text-anchor="middle" id="ne-row-h">玩家甲</text>
+            <g id="ne-cells"></g>
+            <text id="ne-txt1" class="chart-label" x="320" y="345" text-anchor="middle" style="font-weight:700"></text>
+            <text id="ne-txt2" class="chart-label" x="320" y="375" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn" id="ne-g1">博弈 A：协调博弈（看电影/宅家）</button>
+          <button class="btn ghost" id="ne-g2">博弈 B：性别之战</button>
+          <button class="btn ghost" id="ne-find">高亮纳什均衡</button>
+        </div>
+        <figcaption>读图要点：协调博弈中"都看电影"和"都宅家"都是均衡——<strong>多重均衡</strong>下，协调本身就是难题（谁的预期是关键）。性别之战同样有两个均衡，但双方偏好的均衡不同，"协调"变成了"博弈"。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">纳什均衡 <span class="term-en">Nash Equilibrium</span></div><div class="term-def">互为最佳响应的策略组合：没有人能通过单方面改变策略获益。</div></div>
+        <div class="term"><div class="term-name">最佳响应 <span class="term-en">Best Response</span></div><div class="term-def">给定对手策略时自己的最优选择。找均衡的通用方法：对每个对手策略画出最佳响应，找"互相命中"的组合。</div></div>
+        <div class="term"><div class="term-name">多重均衡与协调 <span class="term-en">Coordination Problems</span></div><div class="term-def">均衡不止一个时，"选哪个均衡"取决于预期、惯例与沟通——键盘布局、技术标准、社交平台都是协调博弈。</div></div>
+      </div>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"纳什均衡是博弈的'最好结果'。"</strong>——错得离谱但极其常见。均衡只意味着<strong>稳定</strong>（无人想单独偏离）。囚徒困境的均衡是双方互咬；公地悲剧的均衡是过度捕捞。正因如此，制度设计的任务常常是<strong>改变博弈的收益结构</strong>，让好的结果成为均衡（第 6 章）。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.1</span>检查某策略组合是否纳什均衡，标准问题是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>它是否让双方总收益最大？</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>它是否对每个人都公平？</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>固定他人策略，是否有人能靠单方面改变而获益？</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>这就是"互为最佳响应"的可操作化检查。只要有人能单方面改进，就不是均衡；如果没人能，组合就是稳定的。总收益最大（A）对应的是帕累托/社会最优概念，与均衡正交。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.2</span>协调博弈中出现"劣质均衡"（如 QWERTY 键盘、过时技术标准），最合理的经济学解释是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>多重均衡下，早期小事件把预期"锁"在次优均衡上（路径依赖）</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>消费者不理性，不懂选择更好的产品</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>纳什均衡理论预测总是选最优的均衡</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>协调博弈中，"别人用什么"决定"我该用什么"。当所有人都预期别人留在旧标准上，留在旧标准就是每个人的最佳响应——劣质均衡自我实现。这与理性与否无关，是<strong>预期协调</strong>问题，也是 10 产业组织"网络效应"与 16 制度经济学"路径依赖"的伏笔。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>纳什均衡 = 互为最佳响应 = 无人想单方面偏离。</li>
+          <li>均衡解释"稳定"，不解释"最好"；坏均衡无处不在。</li>
+          <li>多重均衡下，预期、惯例与沟通决定走向。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">第 3 章</span>经典博弈与应用</h2>
+
+      <p><strong>引入问题：</strong>如果囚徒困境只玩一次，背叛是必然的。但如果同样的两个人要打交道一辈子——"一锤子买卖"和"长期关系"的答案为什么完全不同？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：未来的影子</div>
+        <p>在<strong>重复博弈</strong>（Repeated Game）中，今天的背叛会招来明天的报复。著名的<strong>针锋相对策略</strong>（Tit-for-Tat）：第一轮合作，之后模仿对方上一轮的行为。只要双方足够重视未来（贴现因子够大），"永远合作"就能成为均衡——<strong>声誉</strong>由此诞生。反过来说：与永远不再见面的人打交道，最优策略往往就是"宰一刀"——旅游区餐厅的难吃，是博弈结构使然，不是道德滑坡。</p>
+      </aside>
+
+      <h3>三大经典结构</h3>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>博弈</th><th>结构</th><th>均衡的悲剧</th><th>现实对应</th></tr></thead>
+          <tbody>
+            <tr><td><strong>囚徒困境</strong></td><td>背叛是占优策略</td><td>个体理性 → 集体非理性</td><td>关税战、广告战、碳排放</td></tr>
+            <tr><td><strong>公地悲剧</strong></td><td>N 人囚徒困境</td><td>资源被过度使用直至枯竭</td><td>过度捕捞、拥堵、内卷</td></tr>
+            <tr><td><strong>懦夫博弈</strong></td><td>谁让步谁吃亏，都不让则同归于尽</td><td>对峙升级</td><td>债务上限博弈、价格战</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 石油输出国组织（OPEC）</div>
+        <p>OPEC 是卡特尔：共同限产抬价。但每个成员都有偷偷增产的诱惑（限产高价由别人扛，自己多卖多赚）——典型的多人囚徒困境。所以 OPEC 时不时出现"减产协议 + 成员超配额生产"并存的现象。维持卡特尔靠的正是重复博弈：背叛一次，招来未来的价格战。2014 年与 2020 年的油价崩盘，都可以读作"惩罚期"的启动。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"只要签了协议就能解决囚徒困境。"</strong>——协议本身不改变博弈：若违约无成本，签署仪式改变不了背叛的诱惑。真正起作用的是<strong>可置信的惩罚/执行机制</strong>（重复交往、抵押品、法律强制、声誉记录）。这引出一个深刻的洞察：<strong>制度 = 被执行改变的博弈规则</strong>（详见 16 政治经济学与制度经济学）。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.1</span>重复囚徒困境中合作更容易维持，当？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>双方都很在乎未来收益（贴现因子高）、关系预期长久</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>博弈次数已知且临近最后一轮</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>双方从未背叛过</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>合作的条件大致是"未来合作的价值 &gt; 今天背叛的诱惑"，即贴现因子足够大。反过来，<strong>已知末期的博弈</strong>会通过"倒推"瓦解合作：最后一轮必背叛 → 倒数第二轮无所谓声誉 → ……连锁崩塌（期末清仓大甩卖、离职工"摆烂"）。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.2</span>公地悲剧（草原过度放牧）的本质是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>牧民不了解可持续放牧知识</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>私人收益归己、过度放牧的成本由所有人分摊（负外部性 + 无人排他）</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>羊的数量太多</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>多放一只羊：增重收益全归我，草场退化的成本摊给全体。收益私有化 + 成本社会化 = 理性个体的最优选择汇成集体灾难。解法方向：产权界定（私人承包）、配额可交易、社区自治（奥斯特罗姆，见 12 环境经济学）。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>重复博弈让"未来的报复"约束今天的背叛——声誉是资本。</li>
+          <li>公地悲剧 = N 人囚徒困境：收益私有、成本公有。</li>
+          <li>协议本身无用，可置信的执行机制才是关键。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">第 4 章</span>信息不对称：柠檬市场与道德风险</h2>
+
+      <p><strong>引入问题：</strong>二手车市场里，好车值 10 万，次品只值 4 万，买卖双方却都看不准车况。买家只愿按"平均车况"出价 7 万——接下来会发生什么？诺贝尔奖得主阿克洛夫 1970 年的答案震撼了经济学：<strong>市场可能直接消失</strong>。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：逆向选择的死亡螺旋</div>
+        <p>卖家知道车况，买家不知道。买家按<strong>期望价值</strong>出价 → 好车卖家觉得亏，撤出市场 → 市场里次品比例上升 → 买家出价更低 → 更好的车也撤出……<strong>劣币驱逐良币</strong>，最终只剩柠檬（次品）。信息不对称毁掉的不是某一笔交易，而是市场本身的存在。保险市场同理：保费一刀切 → 健康人退保 → 池子里病人越来越多 → 保费再涨 → 健康人进一步退保。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 4-1 · 柠檬市场模拟器</div>
+        <p class="fig-sub">拖动"次品比例"滑块，观察买家报价与在市车源如何变化；越过临界点，好车彻底退市。</p>
+        <figure class="fig-canvas">
+          <svg id="lm-svg" viewBox="0 0 640 400" role="img" aria-label="数轴从0到12万元，显示买家报价随次品比例下降，与好车卖家底线7万元和次品底线3万元两条阈值线对比；当报价低于7万元时好车退出市场。">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <text class="chart-label" x="335" y="360" text-anchor="middle">价格（万元）</text>
+            <rect x="70" y="150" width="530" height="20" fill="#f1f5f9" rx="4"/>
+            <rect id="lm-price" x="70" y="150" width="380" height="20" fill="#7c3aed" rx="4"/>
+            <line x1="70" y1="140" x2="70" y2="330" stroke="#94a3b8" stroke-width="1"/>
+            <line id="lm-th7" x1="0" y1="120" x2="0" y2="330" stroke="#0d9488" stroke-width="2.5" stroke-dasharray="6 4"/>
+            <text class="chart-label" id="lm-th7t" x="0" y="110" text-anchor="middle" style="fill:#0d9488">好车底线 7 万</text>
+            <line id="lm-th3" x1="0" y1="200" x2="0" y2="330" stroke="#ea580c" stroke-width="2.5" stroke-dasharray="6 4"/>
+            <text class="chart-label" id="lm-th3t" x="0" y="220" text-anchor="middle" style="fill:#ea580c">次品底线 3 万</text>
+            <text id="lm-p" class="chart-label" x="0" y="146" text-anchor="middle" style="font-weight:700">买家报价</text>
+            <text id="lm-status" class="chart-title-sm" x="335" y="60" text-anchor="middle"></text>
+            <text id="lm-sub" class="chart-label" x="335" y="86" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="lm-q">次品比例</label><input type="range" id="lm-q" min="0" max="100" step="5" value="30"><output id="lm-o" for="lm-q">30%</output></div>
+        </div>
+        <figcaption>读图要点：买家最多出"期望价值"= 10×(1−q) + 4×q。当报价跌破好车卖家的底线（7 万），好车全部退市——此时次品比例跳到 100%，报价再跌到 4 万。市场没有"均衡的好车交易"，这就是逆向选择的<strong>市场崩溃</strong>。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">信息不对称 <span class="term-en">Information Asymmetry</span></div><div class="term-def">交易一方掌握另一方不知道的关键信息。发生在签约前引发逆向选择，发生在签约后引发道德风险。</div></div>
+        <div class="term"><div class="term-name">逆向选择 <span class="term-en">Adverse Selection</span></div><div class="term-def">信息优势方的"坏类型"自我选择进入交易（坏车、病重者买保险），价格机制把好类型挤出市场。</div></div>
+        <div class="term"><div class="term-name">道德风险 <span class="term-en">Moral Hazard</span></div><div class="term-def">签约后行为不可观察导致的偷懒/冒险：全险司机开车更鲁莽，被担保的银行敢做高风险贷款。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 2008 金融危机中的道德风险</div>
+        <p>次贷危机的一条主线：<strong>发起—分销模式</strong>。银行发放房贷后立刻证券化卖掉，违约风险与它无关——监督借款人的收益归别人，放贷的佣金归自己。信息不对称 + 激励错位 = 贷款质量崩塌。危机后的全球监管改革（多德—弗兰克法案）很大程度上就是一部"反道德风险设计手册"：风险自留、薪酬递延、压力测试。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.1</span>二手车市场崩塌的根本原因是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>二手车本来就质量差</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>买家无法区分车况，只能按平均出价，价格机制反向淘汰好车</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>卖家太贪婪</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>价格本应传递稀缺信息，但在不对称信息下价格<strong>传递了"平均质量"的预期</strong>，反过来塑造了留在市场里的商品组合——这正是"逆向"二字的含义：选择机制选中了坏类型。好车并非不存在，而是<strong>卖不出应有的价</strong>，于是退出。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.2</span>以下哪项属于道德风险（而非逆向选择）？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>知道自己容易生病的人更积极购买重疾险</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>买了全险之后，车主把车停在更容易被剐蹭的窄巷里</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>健康的人退出保险池</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>口诀：<strong>签约前隐藏类型 → 逆向选择；签约后隐藏行动 → 道德风险</strong>。A、C 都是"类型"问题（隐藏的健康状况驱动的选择），发生在缔约前/池子形成阶段；B 是缔约后的<strong>行为改变</strong>。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>逆向选择：隐藏类型，价格机制反向淘汰（柠檬市场）。</li>
+          <li>道德风险：隐藏行动，激励错位诱发偷懒与冒险。</li>
+          <li>信息不对称侵蚀市场存在本身，催生质量保证、强制披露、监管等制度。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">第 5 章</span>信号与筛选</h2>
+
+      <p><strong>引入问题：</strong>如果大学教的课程内容工作中根本用不上，为什么雇主还是偏爱名校毕业生，而学生还是拼命考？——斯宾塞的信号理论（Signaling）给出了一个令人不安又极具解释力的答案。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>有效的信号必须<strong>有成本，且成本与类型相关</strong>：能力强的人拿学位比能力弱的人轻松（学得快、不痛苦），于是"愿意付出代价拿学位"这件事本身就传递了信息。反过来，信息劣势方也可以主动设计菜单让对方<strong>自我暴露</strong>——保险公司提供"高免赔额低保费"和"低免赔高高费"两档，让健康者自选前者、病弱者自选后者，这叫<strong>筛选</strong>（Screening）。信号是知情人主动发，筛选是不知情方主动问。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">信号 <span class="term-en">Signaling</span></div><div class="term-def">信息优势方通过有代价的行动传递自己的类型。要点：信号成本必须与类型负相关，否则会被模仿而失效。</div></div>
+        <div class="term"><div class="term-name">筛选 <span class="term-en">Screening</span></div><div class="term-def">信息劣势方设计选项菜单（合约、价格、条款），让不同类型的人自我选择、暴露类型。</div></div>
+        <div class="term"><div class="term-name">分离均衡与混同均衡 <span class="term-en">Separating / Pooling Equilibrium</span></div><div class="term-def">分离：不同类型选择不同行动，信息被揭示；混同：大家选择相同行动，信息依旧隐藏。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 到处都是信号</div>
+        <p><strong>质保承诺</strong>：敢承诺"三年包换"的厂商在说"我的返修率很低"——返修率高的厂商模仿不起。<strong>彩礼与钻戒</strong>：昂贵且无实际用途的承诺性支出，信号理论给出的冷静解读。<strong>盲盒式联名与奢侈品 logo</strong>：消费作为身份信号（凡勃伦商品）。<strong>财报自愿性披露</strong>：好公司主动多披露，坏公司沉默——监管强制披露的经济学基础。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"信号理论说教育没用，读大学是浪费。"</strong>——不准确。教育可能同时是<strong>人力资本</strong>（真提升生产率，见 09 劳动经济学）和<strong>信号</strong>（展示能力）。两种效应都真实存在，只是比例之争。即便纯信号模型也有社会含义：当所有人都多读一年书来"证明自己"，信号军备竞赛使个体理性但社会浪费（类似的军备竞赛见第 1 章广告战）。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.1</span>一个信号要能区分类型，关键是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>信号足够醒目昂贵</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>不同类型发出同样信号的成本差异足够大</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>法律禁止伪装信号</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>若好、坏类型发信号的成本相同，坏类型会毫不费力地模仿，信号退化为噪音。"昂贵"本身不是目的，<strong>成本的类型差</strong>才是。这也解释了为什么"人人都能轻松考到的证书"很快贬值。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.2</span>保险公司设置"免赔额档位"让客户自选，属于？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>信号发送</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>筛选（信息劣势方设计菜单引发自我选择）</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>道德风险</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>谁是信息劣势方？保险公司（不了解你的健康）。它设计两档合约：高免赔额+低保费吸引对自己健康有信心的人；低免赔额+高保费吸引知道自己风险高的人。菜单让类型<strong>自动浮出水面</strong>——这是筛选的标准姿势。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>信号 = 知情方主动、有代价、成本与类型相关。</li>
+          <li>筛选 = 不知情方设计菜单，让类型自我选择。</li>
+          <li>分离均衡揭示信息，混同均衡维持无知；信号军备竞赛可能社会低效。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">第 6 章</span>机制设计：反向的博弈论</h2>
+
+      <p><strong>引入问题：</strong>拍卖同一个东西：英式加价、荷式降价、一级价格密封、二级价格密封（出价最高者赢，按第二高价付款）——哪种能替卖家卖出最高的价？哪种能让买家<strong>说真话</strong>？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>博弈论是"给定规则，预测行为"；<strong>机制设计（Mechanism Design）</strong>反过来："想要什么样的行为，倒推设计什么规则。"维克瑞的洞见：在二级价格拍卖中，<strong>报出你的真实估值是最优策略</strong>——报高不会让你付更多（按第二高价付），报低却可能让你白白输掉本可赚钱的拍卖。说真话成为占优策略，这是机制设计的圣杯：<strong>激励相容</strong>（Incentive Compatible）。</p>
+      </aside>
+
+      <h3>机制设计的三块试金石</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">激励相容 <span class="term-en">Incentive Compatibility</span></div><div class="term-def">在机制下，每个参与者如实报告（或采取期望行为）是自己的最优选择。规则与私利同向而行。</div></div>
+        <div class="term"><div class="term-name">个体理性 <span class="term-en">Individual Rationality</span></div><div class="term-def">参与比不参与划算，否则没人来。好机制同时满足 IR 与 IC。</div></div>
+        <div class="term"><div class="term-name">显示原理 <span class="term-en">Revelation Principle</span></div><div class="term-def">任何机制能达到的结果，都存在一个"直接说真话"的机制同样达到——分析时只需考虑说真话的机制。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 频谱拍卖与匹配市场</div>
+        <p><strong>1993 年起各国用拍卖分配无线电频谱</strong>，替代行政审批——斯坦福的米尔格罗姆与威尔逊为此拿下 2020 年诺贝尔经济学奖：他们设计的"同步多轮拍卖"让电信运营商在数千张牌照间协调组合出价，把公共资源卖出了公允价。<strong>肾脏配对交换</strong>：不相容的捐献者—患者两两互换，设计出的链式匹配救了数以万计的人。<strong>升学派位</strong>：波士顿与纽约的学校匹配机制改革（延迟接受算法）大幅减少了策略性填报——机制设计就在你的志愿表里。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"二级价格拍卖太便宜卖家了（只收第二高价）。"</strong>——直觉错觉。正因为说真话是占优策略，所有买家都会报足估值，竞争把"第二高价"推到与一级价格拍卖的均衡收入相近——这就是著名的<strong>收入等价定理</strong>的大致含义。规则不同，收入期望可以相同，但二级价格的简单性（无需猜别人）让它成为很多场景的首选。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.1</span>二级价格（维克瑞）拍卖中，你的最优出价是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>略低于真实估值，留出利润空间</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>恰好等于真实估值</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>尽可能高，反正不一定按你的价付</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>出真实估值 v：赢了按第二高价付（&lt; v，赚）；输了说明第二价 ≥ v，本来就不该赢。报低：可能在第二价 &lt; v 时输掉，白白损失 (v − 第二价)。报高：可能在第二价 &gt; v 时赢下亏本拍卖。因此 <strong>说真话弱占优</strong>——机制把诚实变成了私利。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.2</span>"机制设计"与"博弈论"的关系是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>两者是同义词</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>博弈论正向预测给定规则下的行为；机制设计反向寻找实现目标行为的规则</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>机制设计是博弈论的一个早期分支</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>"博弈论 = 给定游戏规则，玩家会怎么玩；机制设计 = 想要玩家这样玩，该定什么规则。" 赫维茨、马斯金、迈尔森因这一"反向工程"获得 2007 年诺贝尔奖。它是拍卖、监管、投票与平台规则设计的理论地基。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>机制设计：目标行为 → 倒推规则；检验 IR + IC。</li>
+          <li>二级价格拍卖让说真话成为占优策略。</li>
+          <li>从频谱到肾脏配对，机制设计正在重塑真实市场的规则。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">终点</span>进阶路线与延伸阅读</h2>
+      <p>博弈论与信息经济学是理解现代经济学的"第二支柱"：<strong>10 产业组织</strong>（寡头定价、平台策略）、<strong>16 政治经济学与制度经济学</strong>（制度 = 被执行的博弈规则）、<strong>12 环境与资源经济学</strong>（国际气候谈判 = 多阶段囚徒困境）都以它为地基。</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">迪克西特 &amp; 奈尔伯夫《策略思维》（Thinking Strategically）</span>——最好的入门读物，案例驱动的博弈直觉。</li>
+          <li><span class="bk">阿维纳什·迪克西特《博弈论教程》/ 吉本斯《博弈论基础》</span>——标准教材与精炼小册子。</li>
+          <li><span class="bk">Akerlof (1970), "The Market for Lemons"</span>——原文仅 14 页，改变经济学。</li>
+          <li><span class="bk">Alvin Roth,《谁得到什么？以及为什么？》</span>——匹配市场与机制设计的大众读物。</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../03-计量经济学/index.html"><span class="pager-dir">← 上一分支</span><br><span class="pager-name">计量经济学</span></a>
+        <a href="../05-货币经济学/index.html"><span class="pager-dir">下一分支 →</span><br><span class="pager-name">货币经济学</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../assets/econ.js"></script>
+<script>
+/* ================= 图 1-1 囚徒困境矩阵 ================= */
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  var g = document.getElementById("pd-cells");
+  var txt = document.getElementById("pd-txt");
+  if (!g || !txt) return;
+  // 单元格: [你的刑期, 同伙的刑期, 说明]
+  var cells = [
+    { x: 320, y: 140, my: "1 年", op: "1 年", note: "双方都沉默：各判 1 年。这是对两人最好的结果，但都不稳定——各自都有动机检举。" },
+    { x: 455, y: 140, my: "10 年", op: "释放", note: "你沉默、同伙检举：你判 10 年，他自由释放。你赌输了对方的忠诚。" },
+    { x: 320, y: 265, my: "释放", op: "10 年", note: "你检举、同伙沉默：你自由，他判 10 年。对方的沉默成了你的踏脚石。" },
+    { x: 455, y: 265, my: "3 年", op: "3 年", note: "双方都检举：各判 3 年。这就是纳什均衡——也是本博弈的必然结局。" }
+  ];
+  var rects = [];
+  cells.forEach(function (c, i) {
+    var r = document.createElementNS(NS, "rect");
+    r.setAttribute("x", c.x); r.setAttribute("y", c.y);
+    r.setAttribute("width", 135); r.setAttribute("height", 115);
+    r.setAttribute("fill", "#ffffff"); r.setAttribute("stroke", "#ddd6fe"); r.setAttribute("stroke-width", 2);
+    r.setAttribute("rx", 8); r.style.cursor = "pointer";
+    r.setAttribute("tabindex", "0");
+    r.setAttribute("role", "button");
+    r.setAttribute("aria-label", "查看结果：你判 " + c.my + "，同伙判 " + c.op);
+    var t1 = document.createElementNS(NS, "text");
+    t1.setAttribute("x", c.x + 67); t1.setAttribute("y", c.y + 34);
+    t1.setAttribute("text-anchor", "middle"); t1.setAttribute("class", "chart-label");
+    t1.textContent = "你: " + c.my;
+    var t2 = document.createElementNS(NS, "text");
+    t2.setAttribute("x", c.x + 67); t2.setAttribute("y", c.y + 58);
+    t2.setAttribute("text-anchor", "middle"); t2.setAttribute("class", "chart-label");
+    t2.textContent = "同伙: " + c.op;
+    g.appendChild(r); g.appendChild(t1); g.appendChild(t2);
+    rects.push(r);
+    function pick() {
+      rects.forEach(function (rr) { rr.setAttribute("stroke", "#ddd6fe"); rr.setAttribute("fill", "#ffffff"); });
+      r.setAttribute("stroke", "#7c3aed"); r.setAttribute("fill", "#f5f3ff");
+      txt.textContent = c.note;
+    }
+    r.addEventListener("click", pick);
+    r.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); }
+    });
+  });
+})();
+
+/* ================= 图 2-1 纳什均衡探测器 ================= */
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  var games = {
+    g1: {
+      name: "协调博弈（看电影/宅家）",
+      row: ["看电影", "宅家"],
+      col: ["看电影", "宅家"],
+      // pay[r][c] = [行玩家收益, 列玩家收益]
+      pay: [[[3, 3], [0, 0]], [[0, 0], [2, 2]]],
+      note: "两个纳什均衡：（看,看）与（宅,宅）。（看,看）总收益更高，但若对方预期你宅家，宅家就是你的最佳响应——协调失败时只能各拿 0。"
+    },
+    g2: {
+      name: "性别之战",
+      row: ["球赛", "芭蕾"],
+      col: ["球赛", "芭蕾"],
+      pay: [[[3, 2], [1, 1]], [[0, 0], [2, 3]]],
+      note: "两个均衡：（球赛,球赛）他更开心；（芭蕾,芭蕾）她更开心。只要在一起就好过分开，但'去哪儿'本身成为博弈——需要协调装置（惯例、先动优势、沟通）。"
+    }
+  };
+  var cur = "g1", shown = false;
+  var g = document.getElementById("ne-cells");
+  var t1 = document.getElementById("ne-txt1");
+  var t2 = document.getElementById("ne-txt2");
+  if (!g || !t1 || !t2) return;
+  function px(c) { return 320 + c * 140; }
+  function py(r) { return 140 + r * 115; }
+  function render() {
+    var gm = games[cur];
+    while (g.firstChild) g.removeChild(g.firstChild);
+    shown = false;
+    for (var r = 0; r < 2; r++) {
+      for (var c = 0; c < 2; c++) {
+        var rect = document.createElementNS(NS, "rect");
+        rect.setAttribute("x", px(c)); rect.setAttribute("y", py(r));
+        rect.setAttribute("width", 130); rect.setAttribute("height", 100);
+        rect.setAttribute("fill", "#fff"); rect.setAttribute("stroke", "#ddd6fe");
+        rect.setAttribute("stroke-width", 2); rect.setAttribute("rx", 8);
+        rect.setAttribute("data-r", r); rect.setAttribute("data-c", c);
+        g.appendChild(rect);
+        var tx = document.createElementNS(NS, "text");
+        tx.setAttribute("x", px(c) + 65); tx.setAttribute("y", py(r) + 58);
+        tx.setAttribute("text-anchor", "middle"); tx.setAttribute("class", "chart-label");
+        tx.textContent = "(" + gm.pay[r][c][0] + ", " + gm.pay[r][c][1] + ")";
+        g.appendChild(tx);
+      }
+    }
+    // 标签
+    var lbls = [
+      { x: 195, y: py(0) + 58, t: gm.row[0] }, { x: 195, y: py(1) + 58, t: gm.row[1] },
+      { x: px(0) + 65, y: 128, t: gm.col[0] }, { x: px(1) + 65, y: 128, t: gm.col[1] }
+    ];
+    lbls.forEach(function (l) {
+      var t = document.createElementNS(NS, "text");
+      t.setAttribute("x", l.x); t.setAttribute("y", l.y);
+      t.setAttribute("text-anchor", "middle"); t.setAttribute("class", "chart-label");
+      t.setAttribute("style", "font-weight:700");
+      t.textContent = l.t;
+      g.appendChild(t);
+    });
+    t1.textContent = "当前：" + gm.name;
+    t2.textContent = "点击『高亮纳什均衡』查看结果";
+  }
+  function findNE() {
+    var gm = games[cur];
+    var rects = g.querySelectorAll("rect[data-r]");
+    rects.forEach(function (rect) { rect.setAttribute("fill", "#fff"); rect.setAttribute("stroke", "#ddd6fe"); });
+    var count = 0;
+    for (var r = 0; r < 2; r++) {
+      for (var c = 0; c < 2; c++) {
+        var v = gm.pay[r][c];
+        var isNE = true;
+        for (var r2 = 0; r2 < 2; r2++) if (gm.pay[r2][c][0] > v[0]) isNE = false;
+        for (var c2 = 0; c2 < 2; c2++) if (gm.pay[r][c2][1] > v[1]) isNE = false;
+        if (isNE) {
+          var el = g.querySelector('rect[data-r="' + r + '"][data-c="' + c + '"]');
+          if (el) { el.setAttribute("fill", "#ede9fe"); el.setAttribute("stroke", "#7c3aed"); el.setAttribute("stroke-width", 4); }
+          count++;
+        }
+      }
+    }
+    t1.textContent = "找到 " + count + " 个纳什均衡（紫色格）";
+    t2.textContent = gm.note;
+  }
+  document.getElementById("ne-g1").addEventListener("click", function () { cur = "g1"; toggle(); render(); });
+  document.getElementById("ne-g2").addEventListener("click", function () { cur = "g2"; toggle(); render(); });
+  function toggle() {
+    document.getElementById("ne-g1").classList.toggle("ghost", cur !== "g1");
+    document.getElementById("ne-g2").classList.toggle("ghost", cur !== "g2");
+    document.getElementById("ne-g1").setAttribute("aria-pressed", cur === "g1" ? "true" : "false");
+    document.getElementById("ne-g2").setAttribute("aria-pressed", cur === "g2" ? "true" : "false");
+  }
+  document.getElementById("ne-find").addEventListener("click", findNE);
+  render();
+})();
+
+/* ================= 图 4-1 柠檬市场 ================= */
+(function () {
+  var slider = document.getElementById("lm-q");
+  var out = document.getElementById("lm-o");
+  if (!slider) return;
+  var X0 = 70, X1 = 600, PMAX = 12;
+  function px(v) { return X0 + v / PMAX * (X1 - X0); }
+  function draw() {
+    var q = parseFloat(slider.value) / 100;
+    out.textContent = Math.round(q * 100) + "%";
+    // 阶段1: 买家按期望出价; 好车是否在市取决于报价是否>=7
+    var price = 10 * (1 - q) + 4 * q;
+    var goodIn = price >= 7;
+    var status = document.getElementById("lm-status");
+    var sub = document.getElementById("lm-sub");
+    if (!goodIn) {
+      price = 4; // 好车退市后, 只剩次品, 报价跌到次品期望
+      status.textContent = "市场崩溃：好车全部退出，只剩柠檬";
+      sub.textContent = "报价 4 万 < 好车底线 7 万 → 好车卖家亏损离场 → 次品比例 100% → 报价跌至 4 万";
+    } else if (q > 0.3) {
+      status.textContent = "逆向选择进行中：好车正在被挤出";
+      sub.textContent = "次品比例 " + Math.round(q * 100) + "%，买家报价 " + price.toFixed(1) + " 万，逼近好车底线 7 万";
+    } else {
+      status.textContent = "市场尚可运转";
+      sub.textContent = "次品比例 " + Math.round(q * 100) + "%，买家报价 " + price.toFixed(1) + " 万 ≥ 7 万，好车暂留市场";
+    }
+    var bar = document.getElementById("lm-price");
+    bar.setAttribute("width", Math.max(2, px(price) - X0));
+    bar.setAttribute("fill", goodIn ? "#7c3aed" : "#dc2626");
+    var pT = document.getElementById("lm-p");
+    pT.setAttribute("x", Math.min(X1 - 30, Math.max(X0 + 30, px(price) / 2 + X0 / 2)));
+    var t7 = document.getElementById("lm-th7");
+    t7.setAttribute("x1", px(7)); t7.setAttribute("x2", px(7));
+    var t7t = document.getElementById("lm-th7t");
+    t7t.setAttribute("x", px(7));
+    var t3 = document.getElementById("lm-th3");
+    t3.setAttribute("x1", px(3)); t3.setAttribute("x2", px(3));
+    var t3t = document.getElementById("lm-th3t");
+    t3t.setAttribute("x", px(3));
+    pT.textContent = "买家报价 " + price.toFixed(1) + " 万";
+  }
+  slider.addEventListener("input", draw);
+  draw();
+})();
+</script>
+</body>
+</html>

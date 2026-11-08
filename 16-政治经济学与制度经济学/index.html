@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>政治经济学与制度经济学 · EconLearn 经济学自学之路</title>
+<meta name="description" content="政治经济学与制度经济学中文互动教程：产权与交易成本、企业边界、制度变迁、集体行动与寻租、体制比较，配互动演示与自测。">
+<link rel="stylesheet" href="../assets/econ.css">
+</head>
+<body style="--branch:#57534e">
+<noscript><p class="noscript-tip">本页的互动图表与自测需要启用 JavaScript；未启用时仍可阅读全部正文。</p></noscript>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← 总览</a>
+  <div class="topbar-title"><span class="topbar-num">16</span>政治经济学与制度经济学</div>
+  <button class="toc-toggle" aria-expanded="false">目录</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">本分支章节</p>
+    <nav aria-label="章节目录">
+      <a href="#overview">导读与学习目标</a>
+      <a href="#ch1">1 · 制度：规则、产权与契约</a>
+      <a href="#ch2">2 · 交易成本与企业边界</a>
+      <a href="#ch3">3 · 制度变迁与路径依赖</a>
+      <a href="#ch4">4 · 集体行动与寻租</a>
+      <a href="#ch5">5 · 政治与经济绩效</a>
+      <a href="#ch6">6 · 体制比较与社会秩序</a>
+      <a href="#path">进阶路线与延伸阅读</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · 经济学自学之路</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">分支 16 · 交叉与思想</span>
+        <h1>政治经济学与制度经济学</h1>
+        <p class="hero-en">Political Economy &amp; Institutional Economics</p>
+        <p class="hero-lead">价格配置资源，但什么配置价格？所有市场交换都发生在规则之内：谁拥有什么、承诺是否算数、国家站在哪一边。本分支研究这些"游戏的规则"——制度——从何而来、如何变迁，又为什么有些社会靠它走向繁荣，有些被它锁入贫困。</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">学完本分支你将能</div>
+        <ul>
+          <li>区分<strong>正式制度与非正式制度</strong>，解释产权与契约执行如何决定一个社会的"交易半径"</li>
+          <li>用<strong>交易成本</strong>画出"自制 vs 外购"的分界线，回答科斯之问：企业为什么存在</li>
+          <li>用<strong>报酬递增与关键节点</strong>解释路径依赖，判断哪些改革会"锁死"、哪些能改道</li>
+          <li>用<strong>奥尔森的集体行动逻辑</strong>预测哪类集团在政策竞争中胜出，并计算寻租的社会成本</li>
+          <li>解释<strong>中位选民、政治商业周期与国家能力</strong>如何共同塑造一国的政策质量</li>
+          <li>比较<strong>计划与市场</strong>、<strong>有限准入与权利开放</strong>两种社会秩序，理解转型的不同命运</li>
+        </ul>
+      </div>
+      <div class="prereq">前置知识：
+        <a class="badge" href="../01-微观经济学/index.html">01 微观（市场失灵、边际分析）</a>
+        <a class="badge" href="../04-博弈论与信息经济学/index.html">04 博弈论（纳什均衡、囚徒困境）</a>
+      </div>
+    </section>
+
+    <!-- ==================== 第 1 章 ==================== -->
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">第 1 章</span>制度：规则、产权与契约</h2>
+
+      <p><strong>引入问题：</strong>同一台自动售货机，放在东京街头无人看管也安然无恙，放在另一些城市却必须焊上铁笼、装上摄像头。机器没变、饮料没变——变的是什么？再想远一点：为什么一张纸片（提单）能让相隔万里、素不相识的两国商人放心地把上亿元的货物交给一艘远洋货轮？答案不在物，而在物背后的<strong>规则</strong>。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>道格拉斯·诺斯（Douglass North）给过经典定义：<strong>制度是社会的游戏规则（the rules of the game）</strong>，是人为设定的、塑造人们互动方式的约束。经济学通常假设"人们在约束下最优化"——价格约束、预算约束；制度经济学则追问：<strong>约束本身从哪来</strong>？</p>
+        <p>理解制度的钥匙是<strong>不确定性</strong>。如果我不能确信今天订的货明天会到、借出的钱会被归还、种下的地收获归我，那么一切长期交易、投资与合作都会缩水。好的制度不创造资源，它<strong>把陌生人的合作半径撑大</strong>：让相隔万里的人敢签约，让不曾谋面的人敢放款。坏的制度（或制度的缺失）则把交易半径压缩到"只敢跟熟人做生意"。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">制度 <span class="term-en">Institutions</span></div><div class="term-def">社会中人为设计的游戏规则：政治与经济活动的约束与激励，包括正式规则（法律、规章）与非正式约束（习俗、规范、声誉）及其实施特征。</div></div>
+        <div class="term"><div class="term-name">产权 <span class="term-en">Property Rights</span></div><div class="term-def">对资源的使用、收益与转让进行决策的权利束。产权清晰且可执行，是价格信号发挥作用的前提——没有主的物，不会被善待，也无法高效交易。</div></div>
+        <div class="term"><div class="term-name">契约执行机制 <span class="term-en">Contract Enforcement</span></div><div class="term-def">让承诺可信的一整套安排：法院、仲裁、抵押、声誉网络、平台评价。交易半径 ≈ 契约可执行的半径。</div></div>
+        <div class="term"><div class="term-name">交易成本 <span class="term-en">Transaction Costs</span></div><div class="term-def">达成和完成一笔交易所需的一切成本：搜寻伙伴、谈判条款、监督履约、惩罚违约。科斯指出，它是理解企业、市场乃至整个经济组织的钥匙。</div></div>
+        <div class="term"><div class="term-name">正式 / 非正式制度 <span class="term-en">Formal / Informal Institutions</span></div><div class="term-def">正式制度指成文并由专门机构执行的规则；非正式制度指靠社会压力与声誉维持的行为规范。两者可能互补，也可能互相抵消。</div></div>
+      </div>
+
+      <p>把制度拆开看，三根支柱撑起了市场：</p>
+      <ul>
+        <li><strong>产权界定</strong>——先说清"这是谁的"，才有交换可言。界定不清的资源（公海渔场、大气）会被过度使用（参见 12 环境与资源经济学的公地悲剧）。</li>
+        <li><strong>契约执行</strong>——违约必须付出可预期的代价，承诺才可信。执行可以靠国家法院，也可以靠声誉网络、商人行会或平台评分。</li>
+        <li><strong>规则稳定</strong>——今天定的规则明天还算数。政策朝令夕改等于变相没收，人们会缩短投资期限、藏起资产。</li>
+      </ul>
+      <p>注意一个重要的对称：<strong>市场需要国家，国家也能毁掉市场</strong>。没有国家，产权只能靠私力保护（成本高、范围小）；国家太强且不受约束，产权又可能被它本身侵犯。这个两难贯穿全分支，第 6 章正面处理。</p>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界</div>
+        <p><strong>票号与提单：两个时代的契约执行。</strong>清代山西票号"汇通天下"，靠的不是法院，而是学徒制、同乡网络与"身股"激励——伙计作弊即被整个行业逐出，声誉机制替掉了法律。今天国际贸易中，一张提单（Bill of Lading）加信用证，让买卖双方把信任寄托在银行与海运惯例构成的制度链上。技术变了，逻辑没变：<strong>谁能把承诺变得可信，谁就能做大交易</strong>。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"制度 = 写在纸上的法律。"</strong>——许多国家宪法写得漂亮，公司法与国际接轨，但法院排队十年、判决执行不了。真正起作用的制度是<strong>被预期、被执行的规则</strong>，纸面文本只是它的影子。判断一国的制度，别看它颁布了什么，看违约者是否付出代价、投资者是否敢把钱留在境内。另一个常见误解是把制度当成纯粹的"束缚"：好的制度恰恰是<strong>合作的脚手架</strong>——交通规则约束你，也让所有人能放心开车。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.1</span>一位商人愿意给万里之外素不相识的客户赊销发货，最关键的制度支撑是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>政府为该商品规定了统一价格</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>存在可预期的契约执行机制（法院、仲裁或声誉网络），违约会付出代价</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>两国使用同一种货币</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>赊销的本质是把"货先出去、钱后回来"的承诺变成可信承诺，靠的是违约成本。A 是价格管制，反而常常破坏激励；C 只影响汇兑便利，与信任无关。记住本章口诀：<strong>交易半径 ≈ 契约可执行的半径</strong>。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.2</span>关于习俗、声誉、关系网络这些非正式制度，下列说法最准确的是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>不成文就不算制度，只是文化习惯</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>它们能低成本地执行契约，但主要覆盖熟人小圈子；大规模陌生人合作通常需要正式制度补位</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>正式法律一旦颁布，非正式制度便自动失效</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>票号靠声誉网络执行契约，说明非正式制度货真价实（A 错）；但声誉机制依赖重复互动与可识别的身份，天然有边界——现代市场经济把数十亿陌生人连成网络，必须有法院、登记、征信这类正式制度（B 对）。C 与现实相反：法律若与习俗冲突，往往"法律不动，习俗照旧"，这正是许多制度移植失败的原因。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>制度 = 社会的游戏规则，功能是把不确定性降下来、把合作半径撑大。</li>
+          <li>市场立于三根支柱：产权界定、契约执行、规则稳定；三者缺一则交易萎缩。</li>
+          <li>正式与非正式制度可互补也可打架；真正起作用的制度是<strong>被执行</strong>的规则。</li>
+          <li>市场需要国家保护产权，又怕国家侵犯产权——这个两难是全分支的主线。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 第 2 章 ==================== -->
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">第 2 章</span>交易成本与企业边界</h2>
+
+      <p><strong>引入问题：</strong>如果市场真像教科书说的那么灵，为什么世界上不是人人都是个体户、一切生产都靠市场买卖拼起来？你所在的公司内部，明明是一小块"中央计划"——老板下令、层层汇报、按行政流程调资源——它为什么没被市场竞争淘汰？这就是 21 岁的罗纳德·科斯（Ronald Coase）在 1937 年《企业的性质》（<em>The Nature of the Firm</em>）里问的问题，答案让他拿了诺贝尔奖。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>市场上买一样东西，价格只是账单的一部分：先要<strong>找到</strong>靠谱的供应商（搜寻），再讨价还价签合同（谈判），交货后还得防着对方以次充好（监督），出了纠纷要打官司（执行）——这些统统是<strong>交易成本</strong>。当交易成本太高，人们干脆把交易搬进企业内部：不用每件事都谈判定价，一句"你去办"就行——用<strong>权威替代价格</strong>。</p>
+        <p>但企业不是免费的。层级一多，信息层层失真，员工干多干少一个样（激励弱化），部门争预算、推责任（官僚化）。科斯的答案一句话：<strong>企业的边界，画在"在企业内组织一笔交易的边际成本"追上"通过市场组织同一笔交易的边际成本"的地方</strong>。奥利弗·威廉姆森（Oliver Williamson）把它做细：关键变量是<strong>资产专用性</strong>——为一方客户定制的高度专门化投资，会让投资方在事后被"卡脖子"（要挟），于是人们用长期合同、持股、并购来保护它。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">企业的边界 <span class="term-en">Boundaries of the Firm</span></div><div class="term-def">哪些交易放进企业内部（自制），哪些留给市场（外购）。科斯：边界位于市场交易成本与企业内部组织成本的边际平衡点。</div></div>
+        <div class="term"><div class="term-name">资产专用性 <span class="term-en">Asset Specificity</span></div><div class="term-def">资产为特定交易方定制的程度。专用性越高，改作他用的价值损失越大，事后被对方压价的风险越大。</div></div>
+        <div class="term"><div class="term-name">要挟问题 <span class="term-en">Hold-up Problem</span></div><div class="term-def">一方做出专用性投资后，另一方面前"敲竹杠"、攫取投资收益的机会主义行为。预期到要挟，专用性投资会不足。</div></div>
+        <div class="term"><div class="term-name">纵向一体化 <span class="term-en">Vertical Integration</span></div><div class="term-def">把上下游交易从市场买进企业内部，用权威与长期雇佣替代反复谈判，是回应要挟问题的经典手段（也要付出管理成本）。</div></div>
+      </div>
+
+      <p>把科斯的逻辑写成一条公式：设市场采购每笔的<strong>单笔交易成本</strong>为 t（谈判、检验、防违约），企业内部每笔的<strong>边际管理成本</strong>为 m，但企业要先摊一笔固定组织成本 F。则两条总成本线相交处就是最优规模：</p>
+      <div class="formula">
+        q* = F / (t − m)
+        <span class="f-note">q*：企业应当内部化的交易量（= 企业规模）；F：企业固定组织成本超出市场采购固定成本的部分；t &gt; m 时才有解</span>
+      </div>
+      <p>这个简单的式子能推出一连串可检验的预测：降低市场交易成本（更好的法院、电商平台、标准合同）会缩小企业边界——外包与专业分工繁荣；资产专用性上升（专用设备、定制软件）会扩大企业边界——一体化增多。</p>
+
+      <figure class="fig">
+        <div class="fig-title">图 2-1 · 交易成本滑块决定"市场 vs 企业"的边界</div>
+        <p class="fig-sub">试一试：拖动"市场单笔交易成本 t"和"内部边际管理成本 m"，看两条成本线的交点 q*（企业的最优规模）如何移动；再拖动 q，看你所在的位置该自制还是外购。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="治理总成本随交易量变化的图：市场治理成本线从低位出发但斜率较高，企业内部治理成本线从高位出发但斜率较低，两线交点即企业最优规模 q*。拖动滑块可移动两线。">
+            <line class="gridline" x1="70" y1="254.3" x2="610" y2="254.3"/>
+            <line class="gridline" x1="70" y1="168.6" x2="610" y2="168.6"/>
+            <line class="gridline" x1="70" y1="82.9" x2="610" y2="82.9"/>
+            <line class="axis" x1="70" y1="340" x2="610" y2="340"/>
+            <line class="axis" x1="70" y1="40" x2="70" y2="340"/>
+            <text class="chart-label" x="62" y="344" text-anchor="end">0</text>
+            <text class="chart-label" x="62" y="258.3" text-anchor="end">200</text>
+            <text class="chart-label" x="62" y="172.6" text-anchor="end">400</text>
+            <text class="chart-label" x="62" y="86.9" text-anchor="end">600</text>
+            <text class="chart-label" x="70" y="358" text-anchor="middle">0</text>
+            <text class="chart-label" x="205" y="358" text-anchor="middle">25</text>
+            <text class="chart-label" x="340" y="358" text-anchor="middle">50</text>
+            <text class="chart-label" x="475" y="358" text-anchor="middle">75</text>
+            <text class="chart-label" x="610" y="358" text-anchor="middle">100</text>
+            <text class="chart-label" x="340" y="378" text-anchor="middle">年交易量 q（笔）</text>
+            <text class="chart-label" transform="rotate(-90 24 190)" x="24" y="190" text-anchor="middle">治理总成本（万元 / 年）</text>
+            <line id="fb-xline" x1="0" y1="0" x2="0" y2="0" stroke="#57534e" stroke-width="1.5" stroke-dasharray="5 4" opacity="0"/>
+            <line id="fb-qline" x1="0" y1="40" x2="0" y2="340" stroke="#4b5563" stroke-width="1" stroke-dasharray="2 5" opacity="0.7"/>
+            <line id="fb-market" class="curve curve-c1" x1="70" y1="322.9" x2="610" y2="168.6"/>
+            <line id="fb-firm" class="curve curve-c2" x1="70" y1="254.3" x2="610" y2="197.1"/>
+            <circle id="fb-dotm" class="dot" r="5" cx="0" cy="0" fill="#2f6fdb"/>
+            <circle id="fb-dotf" class="dot" r="5" cx="0" cy="0" fill="#ea580c"/>
+            <circle id="fb-x" class="eq-mark" r="7" cx="0" cy="0" opacity="0"/>
+            <text id="fb-mkt-lbl" class="chart-label" x="604" y="160" text-anchor="end" style="fill:var(--c1); font-weight:700">市场治理成本</text>
+            <text id="fb-firm-lbl" class="chart-label" x="604" y="220" text-anchor="end" style="fill:var(--c2); font-weight:700">企业内部治理成本</text>
+            <text id="fb-qstar" class="chart-label" x="0" y="0" text-anchor="start" style="fill:var(--branch); font-weight:700" opacity="0"></text>
+            <text id="fb-status" class="chart-label" x="340" y="395" text-anchor="middle" style="fill:var(--ink-strong)"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fb-t">市场单笔交易成本 t</label>
+            <input type="range" id="fb-t" min="2" max="6" step="0.1" value="4">
+            <output id="fb-t-o" for="fb-t">4.0</output></div>
+          <div class="ctrl"><label for="fb-m">内部边际管理成本 m</label>
+            <input type="range" id="fb-m" min="0.5" max="3" step="0.1" value="1.5">
+            <output id="fb-m-o" for="fb-m">1.5</output></div>
+          <div class="ctrl"><label for="fb-q">你的年交易量 q</label>
+            <input type="range" id="fb-q" min="5" max="100" step="5" value="50">
+            <output id="fb-q-o" for="fb-q">50 笔</output></div>
+        </div>
+        <figcaption>读图要点：交点 q* 左边，市场线更低——<strong>外购</strong>便宜；右边，企业线更低——<strong>自制</strong>便宜。把 t 拖小（想象电商比价、标准合同、可靠的法院），q* 右移还是左移？答案是<strong>右移</strong>（t−m 很小时甚至移出图外）——"自制"区域缩小、更多交易改从市场购买，企业边界收缩，这就是"外包时代"的科斯式解释。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界</div>
+        <p><strong>费雪车身与通用汽车：教科书级的一体化案例。</strong>20 世纪初，通用向费雪车身（Fisher Body）采购封闭式车身，车身模具与产线专为通用的车型定制——典型的专用性资产。合同怎么签都觉得吃亏：市场需求暴增时，费雪可以借"成本上涨"抬价（要挟）；需求萧条时，通用又可以压单。1926 年，通用干脆收购费雪，把交易搬进企业内部。今天的对照是苹果与富士康：苹果把制造外包出去（市场），却通过独家产能协议、派驻工程师、预付设备款把专用性投资"合同化"——<strong>一体化不是唯一答案，只是工具箱里最重的一件</strong>。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"既然市场有交易成本，企业越大越好。"</strong>——只看见了贼吃肉，没看见贼挨打。企业内部同样有成本：层级失真、激励弱化、大企业病；当内部管理成本超过市场交易成本，扩张就是在烧钱。反过来，数字化（电商平台、在线比价、云端 SaaS、跨境支付）大幅压低了 t，于是我们看到企业边界<strong>收缩</strong>：品牌把制造外包、把设计外包、把 IT 外包——不是企业变弱了，是市场变强了。科斯 1937 年的框架，精准预言了 90 年后的零工经济。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.1</span>科斯对"企业为什么存在"的回答，核心是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>企业能规避税收与监管，天然比市场划算</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>当通过市场组织一笔交易的成本高于在企业内部用权威组织它的成本时，把交易内部化就值得——边界停在两者边际成本相等处</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>因为员工在企业里比作为个体户更有干劲</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>科斯的洞见是<strong>两种治理模式的成本比较</strong>：市场用价格，企业用权威，各有成本曲线。B 是这条边际条件的准确表述。A 把企业当成避税工具，解释不了无法避税的企业；C 方向反了——企业内部的激励通常比市场更弱（干多干少一个样），这正是企业扩张的代价之一。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.2</span>供应商为了给你生产定制零件，投资了一条只能用于你产品的专用产线。威廉姆森框架预测，随后最可能发生什么？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>价格自动等于边际成本，双方相安无事</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>供应商自此获得了对你涨价的能力，因为换掉他成本很高</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>你获得了事后压价的空间，供应商预期到这一点，专用性投资会不足——除非用长期合同或一体化来保护</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>要挟的方向要看<strong>谁被锁定</strong>：供应商建了专用产线后，资产改作他用一文不值，讨价还价的天平倒向你——你可以压价。但博弈往前看一步：供应商预料到会被"敲竹杠"，一开始就不敢投资，或者要求高价补偿——这就是专用性投资不足。费雪车身案的双向纠结正在于此，最终通用选择一体化。B 把方向搞反了。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>企业 = 用权威替代价格的那块"计划孤岛"；它存在，因为市场有交易成本。</li>
+          <li>科斯边界条件：内部组织一笔交易的边际成本 = 通过市场的边际成本。</li>
+          <li>威廉姆森三要素：有限理性、机会主义、资产专用性 → 要挟 → 长期合同 / 一体化。</li>
+          <li>降低交易成本的技术与法治让市场变强、企业边界收缩——外包与平台经济的制度解释。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 第 3 章 ==================== -->
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">第 3 章</span>制度变迁与路径依赖</h2>
+
+      <p><strong>引入问题：</strong>QWERTY 键盘布局诞生于打字机时代，据说是为了故意放慢打字速度防止卡键——机械打字机早已进了博物馆，为什么全世界还在用它？放大到一个国家的尺度：为什么许多经济体明明"知道"更好的制度长什么样，却几十年原地打转，而另一些又能在危机中一夜改道？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>诺斯的制度变迁框架只有两拍：<strong>渐进</strong>与<strong>突变</strong>。平时，制度像河流一样缓慢改道——组织（企业、工会、官僚、政党）在现有规则下学习、投资、演化，规则被一点点磨出新的形状；偶尔，战争、革命、大危机这类<strong>关键节点（Critical Juncture）</strong>轰然打开一扇窗，社会在几年里做出的选择，会定调此后几十年的走向。</p>
+        <p>为什么窗户关闭后就难改？因为制度有<strong>报酬递增（Increasing Returns）</strong>：用的人越多，它越便宜、越熟练、越可信——协调效应、学习效应、网络效应层层叠加，形成<strong>路径依赖（Path Dependence）</strong>与<strong>锁定（Lock-in）</strong>。此时切换到"更优"制度的总成本，可能高到没有人愿意先动。小事情在报酬递增的复利下，会长成大格局——这就是为什么历史细节重要，也是为什么"照搬最优制度清单"常常失败。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">路径依赖 <span class="term-en">Path Dependence</span></div><div class="term-def">今天的可行选择集被昨天的选择锁定：早期的小差异经由报酬递增放大，决定长期的均衡位置。不等于"历史决定论"，而是"转换成本很高的历史"。</div></div>
+        <div class="term"><div class="term-name">报酬递增 <span class="term-en">Increasing Returns</span></div><div class="term-def">采用某一制度 / 技术的人越多，继续采用它的净收益越大（网络、学习、协调、适应性预期四种机制）。</div></div>
+        <div class="term"><div class="term-name">关键节点 <span class="term-en">Critical Juncture</span></div><div class="term-def">旧平衡被战争、危机、革命等外生冲击打破的短暂窗口期，此时小集团的选择可以重设长期路径（明治维新、战后改革、1978 年改革开放）。</div></div>
+        <div class="term"><div class="term-name">制度漂移 <span class="term-en">Institutional Drift</span></div><div class="term-def">环境缓慢变化而制度未动，两者之间出现的缝隙逐渐累积，直到某次冲击把缝隙撕成变革。</div></div>
+      </div>
+
+      <aside class="callout history">
+        <div class="callout-title">历史注脚</div>
+        <p><strong>QWERTY 之谜与它的争议。</strong>保罗·大卫 1985 年用 QWERTY 键盘讲路径依赖：1873 年的机械防卡键设计 + 打字学校的培训投资，锁定了布局；此后即便 Dvorak 等布局号称更高效，转换成本（重训几十亿人的手指）高不可攀，于是"次优"胜出。这个故事是路径依赖最著名的比喻，但实证上也有争议——有研究认为 Dvorak 的优势被夸大了。把它当作<strong>机制寓言</strong>而非测量事实来用：重要的不是键盘，是"早期小事件 × 报酬递增 = 长期大结局"这条逻辑。</p>
+      </aside>
+
+      <p>制度变迁还有一种黏性来源：<strong>既得利益</strong>。规则塑造了在规则里长大的组织，组织反过来用资源保卫规则。计划体制下的部委与国企、土地制度下的地产链条、牌照制度下的在位者——即使新制度对全社会更优，只要它要动掉某个强组织的"租金"，变革就会遇到系统性的抵抗。这正是下一章奥尔森的领地。</p>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界</div>
+        <p><strong>双轨制：一次教科书级的渐进变迁。</strong>1978 年后的中国没有一夜放开价格，而是先在计划轨旁边开一条市场轨：同一产品，计划内按牌价调拨，计划外可按市价交易；农村承包、经济特区、试点—评估—推广，都是"在旧制度旁边长出新制度"的办法。好处是没有人被立刻打碎（既得利益者不至于拼死反抗），新的既得利益者（个体户、外资、乡镇企业）不断壮大，最终市场轨吃掉计划轨。代价是双轨之间的套利与腐败窗口。对照苏联的休克疗法：一夜私有化，但执行制度（法治、统计、银行监管）没有跟上，旧官僚摇身变成寡头——<strong>拆掉旧制度不等于自动长出新制度</strong>。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"路径依赖 = 宿命论，落后国家只能认命。"</strong>——把"转换成本高"误读成"不可能"。历史上反例不少：日本明治维新、韩国与台湾地区的转型、中国改革开放，都是在关键节点上主动改道的案例。路径依赖的正确用法是提醒你：<strong>改革要算转换成本、要找补偿方案、要给既得利益者出路</strong>，而不是宣布无解。另一个误区是"文化决定论"——把一切归为"国民性"，实际上同一种文化下的制度表现可以天差地别（对照朝韩、东西德、改革前后的中国）。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.1</span>报酬递增导致制度锁定的核心机制是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>政府立法禁止任何制度变化</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>采用者越多，协调、学习与网络效应使继续沿用该制度的净收益越大，切换的相对成本随之上升</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>旧制度在效率上始终最优，无需更换</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>锁定不需要禁止，只需要"先动的人吃亏"：当所有人都用同一套规则，协调效应让单方面偏离者付出巨大代价——即使存在对全社会更优的替代（QWERTY、左侧通行、插座制式都是例子）。A 是强制情形，属于特例；C 与锁定无关——锁定的恰恰可能是次优均衡，这正是它可怕的地方。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.2</span>"休克疗法"与"渐进改革"之争，从制度经济学看最有洞察力的结论是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>速度越快越好，市场会在一夜之间自动建成</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>制度是多层嵌套的（法律—执行机构—行为规范），哪一层缺失，其他层都难以单独发挥作用；转型速度必须与制度配套能力匹配</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>转型速度根本无关紧要</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>苏联解体后的教训正是 B：价格放开了，但没有反垄断与法治，私有化变成内部人瓜分；货币放开了，但没有可靠银行监管，储蓄被洗劫。中国双轨制的相对成功也印证 B——它未必每一步都"最优"，但每一步的推进速度与执行能力大体匹配。A 把"市场"当成开关而非生态；C 无视了转型顺序与配套的巨大影响。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>制度变迁 = 平时的渐进演化 + 关键节点上的突变选择。</li>
+          <li>报酬递增（协调、学习、网络、适应性预期）造成路径依赖与锁定。</li>
+          <li>既得利益组织会保卫塑造它的规则，改革必须设计转换路径与补偿。</li>
+          <li>渐进（双轨）与休克（大爆炸）的分野在于制度配套能否跟上变化速度。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 第 4 章 ==================== -->
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">第 4 章</span>集体行动与寻租</h2>
+
+      <p><strong>引入问题：</strong>一项关税让全国 14 亿消费者每人每年多花 10 元（总计 140 亿元），却让几千家受保护企业的股东与工人每家多赚上百万元。受损的一方人数是获益方的上万倍、总损失也更大——为什么在政策斗争中，输的总是"多数"？<strong>"人民"为什么打不过"特殊利益"？</strong>曼瑟·奥尔森（Mancur Olson）1965 年的《集体行动的逻辑》给出了至今最好的答案。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>奥尔森的出发点朴素得惊人：<strong>为一个群体争取集体利益，本身就是一种公共品的生产</strong>。关税取消后，每个消费者省下的 10 元钱不会因为"你参加过游行"而多一分——收益按人头摊薄，而组织、游说、上访的成本却要自己扛。于是每个人都等着别人去争取，自己<strong>搭便车（Free Riding）</strong>。群体越大、人均利害越小，搭便车越理性，集体行动越不可能。</p>
+        <p>反过来，几千家企业组成的行业协会人均利害巨大、成员容易互相盯梢、组织成本又低——小的"特权集团"天然行动一致。于是政策市场上出现系统性的<strong>供求错配</strong>：集中的利益 versus 分散的成本，保护主义、补贴、牌照、准入限制因此长盛不衰。戈登·图洛克（Gordon Tullock）接着补刀：当人们争抢这种人为制造的转移（租金）时，游说、公关、排队、贿赂消耗的都是<strong>真实资源</strong>——这就是<strong>寻租（Rent-Seeking）</strong>，它不创造任何产出，只决定谁拿到产出。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">集体行动问题 <span class="term-en">Collective Action Problem</span></div><div class="term-def">理性个体不愿为群体利益出力，导致对所有人更好的结果无法实现的困境（N 人囚徒困境）。</div></div>
+        <div class="term"><div class="term-name">搭便车 <span class="term-en">Free Riding</span></div><div class="term-def">不出成本却分享集体行动收益的策略。群体越大、贡献越难被观察到，搭便车越普遍。</div></div>
+        <div class="term"><div class="term-name">选择性激励 <span class="term-en">Selective Incentives</span></div><div class="term-def">奥尔森的药方：把集体利益与只有成员才享有的私人利益捆绑（会刊、保险、人脉、惩罚背叛者），让大集团也能组织起来。</div></div>
+        <div class="term"><div class="term-name">寻租 <span class="term-en">Rent-Seeking</span></div><div class="term-def">用真实资源争取人为转移（垄断、关税、补贴、牌照）的活动。由 Tullock 提出、Krueger 命名推广。</div></div>
+        <div class="term"><div class="term-name">租金耗散 <span class="term-en">Rent Dissipation</span></div><div class="term-def">寻租者相互竞争时，争夺租金的投入总额在均衡中趋近甚至等于租金本身——社会的净损失因此从"三角形"扩大到"三角形 + 矩形"。</div></div>
+      </div>
+
+      <p>先用一个最简单的"志愿者困境"把搭便车算出来：n 个人都希望公共品被供给（每人价值 B），只要<strong>至少一个人</strong>站出来承担成本 c（B &gt; c）就行。每个人的盘算都是"让别人去"——均衡中每个人只以概率 p 挺身而出，且 p 随群体规模 n 增大而骤降：</p>
+      <div class="formula">
+        p = 1 − (c/B)<sup>1/(n−1)</sup>
+        <span class="f-note">混合策略均衡中，每个人在"站出来"与"搭便车"之间无差异；p 随 n 增大而趋近 0，公共品供给失败的概率趋近 c/B</span>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 4-1 · 集体行动博弈：群体越大，越没人站出来</div>
+        <p class="fig-sub">试一试：拖动"群体人数 n"，看个人愿意站出来的概率（蓝线）如何崩塌，而"至少有一人站出来"的概率（绿线）如何踩着薄冰下移；再调高成本收益比，观察冰层变薄。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="概率对群体人数的曲线图：个人贡献率曲线随人数增加而急剧下降趋近零，公共品被供给的概率曲线缓慢下降并趋近一个常数。当前人数处有虚线标记。">
+            <line class="gridline" x1="70" y1="265" x2="600" y2="265"/>
+            <line class="gridline" x1="70" y1="190" x2="600" y2="190"/>
+            <line class="gridline" x1="70" y1="115" x2="600" y2="115"/>
+            <line class="gridline" x1="70" y1="40" x2="600" y2="40"/>
+            <line class="axis" x1="70" y1="340" x2="600" y2="340"/>
+            <line class="axis" x1="70" y1="40" x2="70" y2="340"/>
+            <text class="chart-label" x="62" y="344" text-anchor="end">0%</text>
+            <text class="chart-label" x="62" y="269" text-anchor="end">25%</text>
+            <text class="chart-label" x="62" y="194" text-anchor="end">50%</text>
+            <text class="chart-label" x="62" y="119" text-anchor="end">75%</text>
+            <text class="chart-label" x="62" y="44" text-anchor="end">100%</text>
+            <text class="chart-label" x="70" y="358" text-anchor="middle">2</text>
+            <text class="chart-label" x="178.6" y="358" text-anchor="middle">20</text>
+            <text class="chart-label" x="287.1" y="358" text-anchor="middle">40</text>
+            <text class="chart-label" x="395.7" y="358" text-anchor="middle">60</text>
+            <text class="chart-label" x="504.3" y="358" text-anchor="middle">80</text>
+            <text class="chart-label" x="600" y="358" text-anchor="middle">100</text>
+            <text class="chart-label" x="335" y="378" text-anchor="middle">群体人数 n</text>
+            <text class="chart-label" transform="rotate(-90 24 190)" x="24" y="190" text-anchor="middle">概率</text>
+            <line id="ca-line" x1="0" y1="40" x2="0" y2="340" stroke="#4b5563" stroke-width="1" stroke-dasharray="2 5" opacity="0.7"/>
+            <path id="ca-pr" class="curve curve-c3" d=""/>
+            <path id="ca-p" class="curve curve-c1" d=""/>
+            <circle id="ca-dotpr" class="dot" r="6" cx="0" cy="0" fill="#0d9488"/>
+            <circle id="ca-dotp" class="dot" r="6" cx="0" cy="0" fill="#2f6fdb"/>
+            <text class="chart-label" x="430" y="80" text-anchor="start" style="fill:var(--c3); font-weight:700">公共品被供给的概率</text>
+            <text class="chart-label" x="150" y="230" text-anchor="start" style="fill:var(--c1); font-weight:700">个人愿意站出来的概率 p</text>
+            <text id="ca-txt" class="chart-label" x="335" y="395" text-anchor="middle" style="fill:var(--ink-strong)"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="ca-n">群体人数 n</label>
+            <input type="range" id="ca-n" min="2" max="100" step="1" value="10">
+            <output id="ca-n-o" for="ca-n">10 人</output></div>
+          <div class="ctrl"><label for="ca-cb">成本收益比 c/B</label>
+            <input type="range" id="ca-cb" min="5" max="60" step="5" value="20">
+            <output id="ca-cb-o" for="ca-cb">20%</output></div>
+          <div class="ctrl">搭便车率 <output id="ca-f-o">84%</output></div>
+          <div class="ctrl">供给概率 <output id="ca-s-o">83%</output></div>
+        </div>
+        <figcaption>读图要点：把 n 从 2 拖到 100——个人贡献率从 80% 崩到 2% 上下（搭便车成为常态），供给概率虽不至于归零，却始终压在 c/B 这条"薄冰线"上。这正是"一个和尚挑水吃，三个和尚没水吃"的数学形式，也解释了为什么大群体要靠选择性激励、代表制与强制（税收）来供给公共品。</figcaption>
+      </figure>
+
+      <p>寻租这一半同样可以算清楚。垄断者抬高价格，传统分析只数"哈伯格三角形"（无谓损失）；但图洛克问：<strong>垄断地位本身是怎么来的？</strong>如果是靠游说争来的，那么在自由进入的寻租竞争中，为争夺它投入的资源会一路膨胀，直到吃掉整块"塔洛克矩形"（垄断利润）：</p>
+      <div class="formula">
+        耗散比例 = (n − 1) / n　→　n 越大，耗散越接近 100%
+        <span class="f-note">n 家势均力敌的寻租者（图洛克彩票模型）；n → ∞ 时社会总损失 = 无谓损失三角形 + 全部垄断租金矩形（波斯纳命题）</span>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 4-2 · 寻租竞争的社会福利损耗</div>
+        <p class="fig-sub">试一试：拖动"寻租竞争者数量 n"，看橙色租金矩形中被粉色"烧掉"的部分如何扩大；注意右下角社会总损失占租金的比例如何逼近 150%。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 420" role="img" aria-label="垄断定价图：需求曲线、边际收益曲线与边际成本线围出垄断租金矩形与无谓损失三角形；随着寻租者数量增加，租金矩形中被寻租耗散的部分扩大。">
+            <line class="gridline" x1="70" y1="284" x2="450" y2="284"/>
+            <line class="gridline" x1="70" y1="228" x2="450" y2="228"/>
+            <line class="gridline" x1="70" y1="172" x2="450" y2="172"/>
+            <line class="gridline" x1="70" y1="116" x2="450" y2="116"/>
+            <line class="gridline" x1="70" y1="60" x2="450" y2="60"/>
+            <line class="axis" x1="70" y1="340" x2="450" y2="340"/>
+            <line class="axis" x1="70" y1="40" x2="70" y2="340"/>
+            <text class="chart-label" x="62" y="344" text-anchor="end">0</text>
+            <text class="chart-label" x="62" y="288" text-anchor="end">2</text>
+            <text class="chart-label" x="62" y="232" text-anchor="end">4</text>
+            <text class="chart-label" x="62" y="176" text-anchor="end">6</text>
+            <text class="chart-label" x="62" y="120" text-anchor="end">8</text>
+            <text class="chart-label" x="62" y="64" text-anchor="end">10</text>
+            <text class="chart-label" x="70" y="358" text-anchor="middle">0</text>
+            <text class="chart-label" x="165" y="358" text-anchor="middle">25</text>
+            <text class="chart-label" x="260" y="358" text-anchor="middle">50</text>
+            <text class="chart-label" x="355" y="358" text-anchor="middle">75</text>
+            <text class="chart-label" x="450" y="358" text-anchor="middle">100</text>
+            <text class="chart-label" x="260" y="378" text-anchor="middle">数量 Q（万件）</text>
+            <text class="chart-label" transform="rotate(-90 24 190)" x="24" y="190" text-anchor="middle">价格 P（元）</text>
+            <rect x="70" y="172" width="152" height="112" fill="#fdba74" opacity="0.38"/>
+            <rect id="rk-diss" x="70" y="172" width="0" height="112" fill="#db2777" opacity="0.5"/>
+            <polygon points="222,172 222,284 374,284" fill="#2f6fdb" class="area-fill"/>
+            <line class="curve curve-c1" x1="70" y1="60" x2="450" y2="340"/>
+            <line class="curve curve-c4" x1="70" y1="60" x2="260" y2="340"/>
+            <line class="curve curve-c3" x1="70" y1="284" x2="450" y2="284"/>
+            <line x1="70" y1="172" x2="222" y2="172" stroke="#4b5563" stroke-width="1" stroke-dasharray="4 4"/>
+            <line x1="222" y1="172" x2="222" y2="284" stroke="#4b5563" stroke-width="1" stroke-dasharray="4 4"/>
+            <text class="chart-label" x="430" y="316" text-anchor="middle" style="fill:var(--c1); font-weight:700">需求 D</text>
+            <text class="chart-label" x="160" y="168" text-anchor="start" style="fill:var(--c4); font-weight:700">边际收益 MR</text>
+            <text class="chart-label" x="378" y="276" text-anchor="start" style="fill:var(--c3); font-weight:700">边际成本 MC = 2</text>
+            <text class="chart-label" x="146" y="272" text-anchor="middle" style="fill:#92400e; font-weight:700">垄断租金 160 亿</text>
+            <text id="rk-diss-lbl" class="chart-label" x="80" y="200" text-anchor="start" style="fill:#9d174d; font-weight:700">寻租耗散 0 亿</text>
+            <text class="chart-label" x="300" y="264" text-anchor="middle" style="fill:#1d4ed8; font-weight:700">无谓损失 80 亿</text>
+            <text class="chart-label" x="222" y="304" text-anchor="middle">Qm=40</text>
+            <text class="chart-label" x="378" y="304" text-anchor="middle">Qc=80</text>
+            <text class="chart-label" x="86" y="166" text-anchor="start">Pm=6</text>
+            <rect x="70" y="388" width="14" height="14" fill="#fdba74" opacity="0.6"/>
+            <text class="chart-label" x="90" y="400">垄断租金（转移）</text>
+            <rect x="240" y="388" width="14" height="14" fill="#db2777" opacity="0.6"/>
+            <text class="chart-label" x="260" y="400">寻租耗散（净损失）</text>
+            <rect x="420" y="388" width="14" height="14" fill="#2f6fdb" opacity="0.25"/>
+            <text class="chart-label" x="440" y="400">无谓损失（净损失）</text>
+            <text id="rk-status" class="chart-label" x="70" y="416" text-anchor="start" style="fill:var(--ink-strong)"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="rk-n">寻租竞争者数量 n</label>
+            <input type="range" id="rk-n" min="1" max="20" step="1" value="5">
+            <output id="rk-n-o" for="rk-n">5 家</output></div>
+          <div class="ctrl">租金耗散比例 <output id="rk-d-o">80%</output></div>
+          <div class="ctrl">社会总损失 <output id="rk-loss-o">208 亿元</output></div>
+        </div>
+        <figcaption>读图要点：垄断把价格抬到 6 元、产量压到 40 万件，消费者多付的 160 亿本"只是"转移（矩形），产出损失是 80 亿（三角形）。但只要这块租金是可争的，寻租竞争就会把矩形也烧掉一大块——n 趋向无穷时，矩形 + 三角形全部化为灰烬，垄断的社会成本是账面三角形的近三倍。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界</div>
+        <p><strong>食糖配额：奥尔森 + 图洛克的合订本。</strong>美国长期对进口食糖实行配额，教科书常用估计：消费者每年为此多付约 30～40 亿美元，摊到每个消费者头上不过十几美元——没人会为十几美元去组织游说、研究投票记录；而受益的糖厂与蔗农就业集中在少数几个州、人数以万计，人均收益以万计——他们有行业协会、有游说预算、有选票筹码。结果这项保护跨越政党轮替屹立数十年。出租车牌照是另一个例子：限量牌照制造出百万级的"租金"，围绕它发生的是排队、炒卖、游说与寻租繁荣——乘客付的钱变多，社会的出租车服务却没变好。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>第一，"垄断的社会损失只是那个三角形。"</strong>——如果垄断地位来自管制与保护，矩形租金会被寻租竞争耗散掉，真实损失远大于三角形。<strong>第二，"游说至少传递了信息，不算浪费。"</strong>——传递信息的部分或有价值，但当报酬结构奖励的是"争夺转移"而非"创造产出"时，最聪明的人去排队、公关、钻审批，而不是去搞研发生产——这部分人力资本的错配是看不见的损耗。<strong>第三，"寻租 = 腐败。"</strong>——寻租完全可以合法：合规的游说、竞选献金、标准制定中的博弈都是寻租；合法与否不改变"消耗资源争夺转移"的本质。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.1</span>按奥尔森的集体行动逻辑，下列哪类集团最可能在政策竞争中获胜？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>人数最多的集团，因为票最多</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>人数少、人均利害大、成员易监督的组织成本低的集团</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>在福利分析上最有道理（总收益最大）的政策主张</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>政策市场的胜负不取决于人数或道理，而取决于<strong>组织成本与人均利害的对比</strong>。消费者人数千万但人均损失十几元，搭便车理性，组织不起来；行业协会人数少但人均利害巨大，且成员彼此可见、易惩罚背叛——行动一致。这正是"集中的利益打败分散的成本"的机制。A 高估了人数的作用；C 混淆了规范分析与实证预测——"应该赢"不等于"会赢"。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.2</span>按图洛克—波斯纳的分析框架，垄断造成的社会总损失应包括？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>只有哈伯格三角形，矩形只是转移、不是损失</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>三角形之外，还应加上为争夺垄断租金而耗散的资源——竞争充分时矩形被全部烧掉</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>矩形和三角形都是转移，都不构成社会损失</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>关键的分类是<strong>转移 vs 耗散</strong>：矩形从消费者转到垄断者手里，若垄断地位是天上掉下来的，它确实只是转移（A 在那个假设下没错）；但现实中的垄断地位往往要靠寻租去争、去保，图洛克彩票模型显示 n 家竞争者的均衡总投入是租金的 (n−1)/n 倍——这些投入是真实资源，烧掉就是净损失。C 连三角形（本可生产的产出永久消失）都否认，错得最远。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>争取集体利益 = 生产公共品：搭便车使大群体瘫痪，小而集中的集团胜出。</li>
+          <li>破解之道：选择性激励、代表制、强制征税——把"应该"变成"值得"。</li>
+          <li>寻租消耗真实资源去争夺人为转移；竞争使租金趋于完全耗散。</li>
+          <li>垄断的社会成本 = 三角形 + 耗散的矩形；评估管制先问"租金给谁、争它烧了多少"。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 第 5 章 ==================== -->
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">第 5 章</span>政治与经济绩效</h2>
+
+      <p><strong>引入问题：</strong>同样是全民选举，为什么有的国家选出繁荣与稳定，有的选出三位数的通胀？为什么"人人都知道不对"的政策——选举前猛发补贴、印钞修路——在投票日之前几乎不可能被否决？政治不是经济的背景板，它本身就是一台政策机器：这一章拆开看它的三个齿轮——<strong>选票、周期与国家能力</strong>。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p><strong>齿轮一：中位选民（Median Voter）。</strong>唐斯的两党竞争模型：选民按政策偏好排成一列，两党都想赢，就都要争取"正中间"那位选民——均衡政策收敛到<strong>中位选民的最偏好</strong>，而不是平均数或最优值。这个看似平凡的结论威力惊人：谁能移动中位选民（移民、教育、媒体、人口结构），谁就移动了政策。把收入分布代进来，就是梅尔泽—理查德模型：收入分布右偏时，中位选民比平均收入穷，会投票支持累进税与转移支付——<strong>分配越不平等，再分配压力越大</strong>。</p>
+        <p><strong>齿轮二：政治商业周期（Political Business Cycle）。</strong>选前刺激、选后紧缩的节奏感，来自短期菲利普斯曲线（见 05 货币经济学）与<strong>承诺问题</strong>：政客的目标函数（连任）与选民福利存在时间不一致，于是"选举经济"的扩张与通胀被制度性地周期化。药方也是制度性的：独立央行、财政规则、任期限制。<strong>齿轮三：国家能力（State Capacity）。</strong>再好的政策也要有人能收税、能统计、能执行——无能的国家与不受约束的国家同样致命，理想是"有力且被拴住"的国家。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">中位选民定理 <span class="term-en">Median Voter Theorem</span></div><div class="term-def">在单峰偏好与两党（或多数决胜）竞争下，均衡政策收敛于中位选民的最偏好位置。</div></div>
+        <div class="term"><div class="term-name">政治商业周期 <span class="term-en">Political Business Cycle</span></div><div class="term-def">执政者为选举收益操纵宏观政策造成的产出—通胀波动：选前扩张、选后紧缩（Nordhaus 机会主义模型）。</div></div>
+        <div class="term"><div class="term-name">国家能力 <span class="term-en">State Capacity</span></div><div class="term-def">国家实现其政策意图的实际能力：征税与统计能力、官僚体系与执行能力、法治与产权保护能力。</div></div>
+        <div class="term"><div class="term-name">时间不一致性 <span class="term-en">Time Inconsistency</span></div><div class="term-def">事前最优的政策承诺，在事后激励下被抛弃的困境。政治周期的根源之一，药方是约束未来自己的制度（规则、独立机构）。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 5-1 · 收入分布与再分配压力：中位数 vs 平均数</div>
+        <p class="fig-sub">试一试：拖动"高收入群体收入倍数"，让收入分布的右尾伸长。观察平均数（橙线）被少数高收入者拉起，而中位数（绿线）几乎不动——中位选民与平均收入之间的鸿沟，就是投票箱里的再分配压力。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 410" role="img" aria-label="一百名选民按收入从低到高排序的柱状图，上方标注平均数与中位数两条水平参考线。右尾收入倍数增大时，平均数上升而中位数基本不变。">
+            <line class="gridline" x1="60" y1="265" x2="600" y2="265"/>
+            <line class="gridline" x1="60" y1="190" x2="600" y2="190"/>
+            <line class="gridline" x1="60" y1="115" x2="600" y2="115"/>
+            <line class="gridline" x1="60" y1="40" x2="600" y2="40"/>
+            <line class="axis" x1="60" y1="340" x2="600" y2="340"/>
+            <line class="axis" x1="60" y1="40" x2="60" y2="340"/>
+            <text class="chart-label" x="52" y="344" text-anchor="end">0</text>
+            <text class="chart-label" x="52" y="269" text-anchor="end">20</text>
+            <text class="chart-label" x="52" y="194" text-anchor="end">40</text>
+            <text class="chart-label" x="52" y="119" text-anchor="end">60</text>
+            <text class="chart-label" x="52" y="44" text-anchor="end">80</text>
+            <text class="chart-label" x="60" y="358" text-anchor="middle">0</text>
+            <text class="chart-label" x="195" y="358" text-anchor="middle">25</text>
+            <text class="chart-label" x="330" y="358" text-anchor="middle">50</text>
+            <text class="chart-label" x="465" y="358" text-anchor="middle">75</text>
+            <text class="chart-label" x="600" y="358" text-anchor="middle">100</text>
+            <text class="chart-label" x="330" y="378" text-anchor="middle">选民（按收入从低到高排序）</text>
+            <text class="chart-label" transform="rotate(-90 18 190)" x="18" y="190" text-anchor="middle">收入（万元）</text>
+            <g id="mv-bars"></g>
+            <line id="mv-meanline" x1="60" y1="300" x2="600" y2="300" stroke="#ea580c" stroke-width="2.5" stroke-dasharray="7 4"/>
+            <line id="mv-medline" x1="60" y1="325" x2="600" y2="325" stroke="#0d9488" stroke-width="2.5" stroke-dasharray="7 4"/>
+            <text id="mv-meanlbl" class="chart-label" x="596" y="292" text-anchor="end" style="fill:var(--c2); font-weight:700" stroke="#ffffff" stroke-width="3" paint-order="stroke"></text>
+            <text id="mv-medlbl" class="chart-label" x="596" y="338" text-anchor="end" style="fill:var(--c3); font-weight:700" stroke="#ffffff" stroke-width="3" paint-order="stroke"></text>
+            <text id="mv-txt" class="chart-label" x="330" y="400" text-anchor="middle" style="fill:var(--ink-strong)"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="mv-tail">高收入群体收入倍数</label>
+            <input type="range" id="mv-tail" min="1" max="8" step="0.5" value="3">
+            <output id="mv-tail-o" for="mv-tail">×3.0</output></div>
+          <div class="ctrl">平均数 <output id="mv-mean-o">—</output></div>
+          <div class="ctrl">中位数 <output id="mv-med-o">—</output></div>
+          <div class="ctrl">示意均衡税率 <output id="mv-tax-o">—</output></div>
+        </div>
+        <figcaption>读图要点：粉色柱是收入最高的 10% 选民。分配越右偏，平均数越是"被平均"出来的天文数字，而真正握着决胜票的中位选民离它越远——梅尔泽—理查德模型据此预测：不平等扩大 → 再分配税率上升。反过来想：若高收入者能游说把税收政策做成对自己有利（上一章的逻辑），中位选民的怒火就会转向更极端的选项。</figcaption>
+      </figure>
+
+      <aside class="callout keypoint">
+        <div class="callout-title">关键点</div>
+        <p><strong>国家能力的两难：能力 × 约束的四种组合。</strong>无能且无约束（索马里式失序）、有能且无约束（掠夺机器）、无能有约束（想做事做不成）、有能有约束（现代财政国家）。发展经济学近年反复发现：贫穷国家的问题常常不是"政府做了坏事"，而是<strong>政府做不了事</strong>——收不上税、统计不出人口、执行不了判决。没有能力，再好的制度设计也只是纸面文章；没有约束，能力本身就是危险品。"有力且被拴住"是普鲁士—斯堪的纳维亚一系的财政军事国家用两百年走出来的窄路。</p>
+      </aside>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界</div>
+        <p><strong>阿根廷：政治商业周期的百年标本。</strong>1913 年阿根廷人均收入位居全球前列，布宜诺斯艾利斯号称"南美巴黎"。此后一个世纪，它反复上演同一出戏：选前扩张财政、补贴与工资，选后通胀失控、违约贬值——庇隆主义以降，"再分配—通胀—危机—紧缩"的循环成为制度性的路径依赖（第 3 章的锁定），央行长期缺乏独立性，时间不一致问题从未被制度性解决。同为资源丰富的大国，澳大利亚与加拿大走出了依赖法治与央行的另一条路。制度差别，百年后是收入水平的数倍差距。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"民主自动带来增长"或"威权自动带来增长"。</strong>——两种简单论都错。威权发展主义既有韩国、新加坡的佳绩，也有扎伊尔、海地的灾难——差别不在权威本身，而在权威被用来保护产权还是攫取；民主既有印度的长期低效，也有战后西欧的奇迹。实证研究（如阿西莫格鲁等 2019 年《民主确实促进增长》）发现民主的长期增长效应平均为正，但机制复杂、初始条件重要。把"民主 / 威权"当成一个变量去问"好不好"，就像问"药好不好"——不问剂量、病种与配伍。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.1</span>中位选民定理预测两党政策向中间收敛，其成立的关键前提是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>选民人数必须为奇数</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>选民的偏好沿单一政策维度呈单峰分布，且两党都可自由定位</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>所有选民的年收入必须相同</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>单峰偏好保证每人都有唯一最优点，且"中间"对两端都有吸引力；两党可自由定位时，偏离中位就会被对手抢占中间地带，于是双双收敛。A 只影响"平票"的技术细节；C 完全无关。注意现实提醒：当政策是多维的（经济 + 文化议题）或存在初选、弃保、投票率的差异时，收敛会松动——定理是基准，不是铁律。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.2</span>机会主义政治商业周期（选前扩张、选后紧缩）反复出现的根源是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>政客不懂宏观经济学，纯属无心之失</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>短期菲利普斯曲线上存在产出—通胀取舍，且政客的连任激励与选民长期福利之间存在时间不一致</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>中央银行独立性太强，逼得政府只能扩张</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>周期需要两个条件同时成立：宏观上有短期的取舍可利用（预期未调整时刺激能买来增长与就业），政治上有动机去利用它（选票集中在当下，通胀的账单寄到选后）。这是教科书级的<strong>时间不一致</strong>：事前承诺"绝不搞选前刺激"在事后不可信。药方因此是制度性的——独立央行、财政规则、透明统计。A 低估了激励的力量；C 恰好相反，央行独立性正是治这个病的药。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>两党竞争下政策收敛于中位选民；移动中位选民 = 移动政策。</li>
+          <li>收入分布越右偏，中位数越低于平均数，再分配压力越大。</li>
+          <li>政治商业周期 = 短期取舍 + 时间不一致；解药是规则与独立机构。</li>
+          <li>国家能力是政策的物理载体：有力而无约束是掠夺，有约束而无力是空谈。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 第 6 章 ==================== -->
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">第 6 章</span>体制比较与社会秩序</h2>
+
+      <p><strong>引入问题：</strong>20 世纪做了一场覆盖半个地球的社会实验：取消市场，用中央计划配置一切资源。实验初期工业狂飙，中期普遍短缺，后期相继转轨——为什么计划起初能动员、最终却输给市场？转型国家为什么有的融入发达经济体（波兰、波罗的海三国），有的沦为寡头经济（俄罗斯 1990 年代）？把镜头拉到最远：同文同种的朝鲜半岛，夜间灯光一侧亮如星河、一侧近乎黑暗——这一明一暗之间，隔着的是什么？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>计划体制的死穴有两个。<strong>信息问题</strong>：哈耶克指出，"用什么知识配置资源"的知识本身分散在亿万人手中、无法集中上报——价格是人类发明的信息压缩器，一价含万物；取消价格，计委面对的是天文数字般的产品向量与真实偏好。<strong>激励问题</strong>：科尔奈（János Kornai）指出，计划经济下的企业面对<strong>软预算约束（Soft Budget Constraint）</strong>——亏损会被救助，于是争指标、争投资、瞒产能、囤投入，短缺成为制度性的常态而非偶然事故。</p>
+        <p>那什么样的社会秩序能长期繁荣？两套互补的语言：诺斯—沃利斯—温加斯特（NWW）区分<strong>有限准入秩序</strong>（自然国家：靠限制竞争创造租金，让强势精英从秩序中获益，从而支持秩序）与<strong>权利开放秩序</strong>（人人可进组建组织、竞争不受人身限制，秩序靠中立制度维持）；阿西莫格鲁—罗宾逊则区分<strong>包容性制度</strong>与<strong>攫取性制度</strong>：前者允许广泛参与与创造性破坏，后者把权力与财富锁在小圈子里。两套语言指向同一件事：<strong>长期繁荣 = 有能力维持和平的国家 + 不让这个国家变成掠夺机器的开放与制衡</strong>。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">软预算约束 <span class="term-en">Soft Budget Constraint</span></div><div class="term-def">科尔奈术语：企业预期亏损也会被（上级 / 银行 / 财政）救助，预算约束不硬化，激励随之扭曲——争投入、瞒产出、无止损。</div></div>
+        <div class="term"><div class="term-name">有限准入秩序 <span class="term-en">Limited Access Order / Natural State</span></div><div class="term-def">NWW 框架：通过限制稀缺品（贸易、土地、官职）的准入制造租金，租金让强势联盟从秩序中获益，从而以利益（而非纯粹暴力）维系和平。</div></div>
+        <div class="term"><div class="term-name">权利开放秩序 <span class="term-en">Open Access Order</span></div><div class="term-def">人人可以自由组建组织、获得非人身化的法人与公民权利，竞争靠中立规则协调；和平不再依赖租金分配。</div></div>
+        <div class="term"><div class="term-name">包容性 / 攫取性制度 <span class="term-en">Inclusive / Extractive Institutions</span></div><div class="term-def">阿西莫格鲁—罗宾逊的对偶：包容性制度保障广泛产权与进入自由、允许创造性破坏；攫取性制度为少数人抽取多数人而设。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 6-1 · 制度矩阵：政治权力 × 经济制度</div>
+        <p class="fig-sub" id="im-desc">试一试：点击（或用 Tab + 回车选中）任意格子，查看该制度组合的运行逻辑与真实案例。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="二乘二制度矩阵：横轴为经济制度从攫取性到包容性，纵轴为政治权力从集中到多元竞争。四个格子分别为攫取性秩序、威权发展主义、民粹拉锯与包容性增长，点击可查看说明。">
+            <text class="chart-title-sm" x="285" y="26" text-anchor="middle">攫取性经济制度（产权窄、垄断多）</text>
+            <text class="chart-title-sm" x="505" y="26" text-anchor="middle">包容性经济制度（产权广、进入自由）</text>
+            <text class="chart-label" x="168" y="115" text-anchor="end" style="font-weight:700">政治权力</text>
+            <text class="chart-label" x="168" y="135" text-anchor="end" style="font-weight:700">集中</text>
+            <text class="chart-label" x="168" y="258" text-anchor="end" style="font-weight:700">政治权力</text>
+            <text class="chart-label" x="168" y="278" text-anchor="end" style="font-weight:700">多元竞争</text>
+            <g id="im-cells"></g>
+            <text class="chart-label" x="395" y="360" text-anchor="middle">经济制度的包容性 →（包权于众）</text>
+            <text class="chart-label" transform="rotate(-90 30 190)" x="30" y="190" text-anchor="middle">政治权力分布 ↓（分权制衡）</text>
+            <text id="im-foot" class="chart-label" x="320" y="390" text-anchor="middle" style="fill:var(--branch); font-weight:700">点击格子查看案例</text>
+          </svg>
+        </figure>
+        <figcaption>读图要点：右下角（经济包容 + 政治多元）是长期表现最稳的象限；右上是"赶超奇迹"的孵化器，也是风险的赌桌——产权系于上层意志；左下用选票购买当下的转移，代价是通胀与投资萎缩；左上则是纯粹的抽取机器。注意：矩阵是<strong>类型学工具</strong>而非打分表，现实中各国在格子之间移动，移动本身正是第 3 章的制度变迁。</figcaption>
+      </figure>
+
+      <aside class="callout history">
+        <div class="callout-title">历史注脚</div>
+        <p><strong>社会主义计算之争（1920–1945）。</strong>米塞斯 1920 年发难：没有生产资料市场，就没有真实价格，理性计算无从谈起；兰格回应：可以让"计委试错模拟市场"，解出一般均衡价格；哈耶克 1945 年《知识在社会中的运用》给出更深的一击：即便理论上可解，所需的知识是分散的、默会的、瞬息万变的，价格真正的功能不是"求解"而是<strong>通信</strong>。半个世纪后，计划局的实践与大数据时代的争论（算法计划经济可行吗？）仍在延续这条辩论线——大多数人仍未读完哈耶克与科尔奈的全部反驳。</p>
+      </aside>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界</div>
+        <p><strong>半岛灯光与两种转型。</strong>夜间灯光卫星照片里，朝鲜半岛以北纬 38 度线为界一暗一亮，是制度经济学最著名的"自然实验"：同文同种、相似资源与起点，制度分野数十年后造成人均收入量级差距。转型谱系同样有教益：波兰凭借事前的法治建设与加入欧盟的"制度锚"，增长快速恢复；俄罗斯 1990 年代把证券私有化跑在没有法治与竞争的荒地上，经理与官员用信息优势收走全民的股份——没有执行的产权不是产权，正是第 1 章的教训在转型中的重演。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>第一，"计划失败是因为领导人蠢或贪。"</strong>——把结构问题降格为人品问题：即使廉洁且天纵英才，信息与激励两座大山依然矗立；反过来，市场也不需要任何人是天才。<strong>第二，"把好制度抄进宪法就完成了改革。"</strong>——制度移植的失败率极高：拉美许多国家的宪法与美国神似，运行结果天差地别；执行机构、行为规范、政治力量的均衡（第 3 章的路径依赖）才是制度的血肉。<strong>第三，"包容性制度万能药，一次到位。"</strong>——制度是多层嵌套的生态，拔苗助长常换来反弹；改革者的真问题是排序与配套，而非清单勾选。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.1</span>科尔奈的"软预算约束"指的是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>企业可以随时自由调整产品价格</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>企业预期亏损也会被上级或银行救助，约束不硬化，于是争投入、瞒产能、无止损</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>政府财政纪律过于严格，把预算卡得太死</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>软预算约束的"软"在于<strong>事后期望</strong>：预算线本该是硬的生死线，但计划体制下企业知道超支、亏损终会被兜底，于是理性策略是尽可能多地争要投资与物资、藏起真实产能。这解释了短缺为何是制度性的。A 是定价权问题；C 恰好说反——硬化预算约束（让亏损真的破产）正是转轨与国企改革的核心处方。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.2</span>按诺斯—沃利斯—温加斯特的理论，"自然国家"（有限准入秩序）维持内部和平的主要机制是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>普遍开放竞争，让价格自然协调各方</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>限制精英内部的竞争准入、有控制地创造并分配租金，使强势集团从秩序本身获益，因而愿意维护秩序</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>彻底消灭一切精英与特权，实现绝对平等</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>自然国家的深刻之处在于：秩序不靠道德，靠<strong>利益结构</strong>——国王授予贵族垄断与官职（租金），贵族因此支持王权而非内战；谁捣乱，谁就丢租金。这解释了为何限制准入（低效）却能换来和平（有序），也解释了向权利开放秩序转型的难点：要精英放弃租金，必须让他们确信开放后的秩序对他们也安全。A 描述的是权利开放秩序；C 是乌托邦，历史上消灭租金分配机制的尝试往往带来更残酷的再分配冲突。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>计划的两大死穴：信息（价格是分散知识的通信系统）与激励（软预算约束）。</li>
+          <li>转型成败取决于制度配套与执行，而非私有化速度本身。</li>
+          <li>自然国家靠租金分配买和平；权利开放秩序靠中立制度容纳竞争。</li>
+          <li>长期繁荣 = 国家能力 × 开放制衡；缺一即滑向失序或掠夺。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 终点 ==================== -->
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">终点</span>进阶路线与延伸阅读</h2>
+      <p>本分支给你的是一副"规则的眼镜"：市场配置资源，制度配置市场。往前走，<strong>11 发展与创新经济学</strong>把制度变量放进增长核算（地理 / 制度 / 文化假说之争）；<strong>08 公共经济学</strong>从财政侧处理政府失灵与寻租的微观机制；<strong>04 博弈论与信息经济学</strong>提供本章所有模型的形式基础；<strong>17 经济思想史与经济史</strong>则回到制度思想的来龙去脉——从斯密、马克思到凡勃伦、哈耶克与科斯。</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">道格拉斯·诺思《制度、制度变迁与经济绩效》</span>——本分支的理论基石：产权、路径依赖与制度变迁的完整框架，中等难度。</li>
+          <li><span class="bk">曼瑟·奥尔森《集体行动的逻辑》与《国家的兴衰》</span>——小册子级别的清晰论证，读罢再看新闻里的行业协会会心一笑。</li>
+          <li><span class="bk">阿西莫格鲁、罗宾逊《国家为什么会失败》</span>——包容性 / 攫取性框架的大众版，案例宏富，宜带着批判眼光读。</li>
+          <li><span class="bk">奥利弗·威廉姆森《资本主义经济制度》</span>——交易成本经济学的完整大厦，偏难，可先读企业与合同两章。</li>
+          <li><span class="bk">雅诺什·科尔奈《社会主义体制：共产主义政治经济学》</span>——计划体制的权威解剖，软预算约束概念的出处。</li>
+          <li><span class="bk">阿西莫格鲁、罗宾逊《自由的窄廊》</span>——国家与社会如何在窄廊中互相成就，接续本分支第 6 章的讨论。</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../15-行为经济学/index.html"><span class="pager-dir">← 上一分支</span><br><span class="pager-name">行为经济学</span></a>
+        <a href="../17-经济思想史与经济史/index.html"><span class="pager-dir">下一分支 →</span><br><span class="pager-name">经济思想史与经济史</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../assets/econ.js"></script>
+<script>
+/* ================= 图 2-1 交易成本与企业边界 ================= */
+(function () {
+  var tEl = document.getElementById("fb-t"), mEl = document.getElementById("fb-m"), qEl = document.getElementById("fb-q");
+  if (!tEl || !mEl || !qEl) return;
+  var market = document.getElementById("fb-market"), firm = document.getElementById("fb-firm");
+  var dot = document.getElementById("fb-x"), xl = document.getElementById("fb-xline"), qt = document.getElementById("fb-qstar");
+  var ql = document.getElementById("fb-qline"), dm = document.getElementById("fb-dotm"), df = document.getElementById("fb-dotf");
+  var mLbl = document.getElementById("fb-mkt-lbl"), fLbl = document.getElementById("fb-firm-lbl");
+  var st = document.getElementById("fb-status");
+  var tO = document.getElementById("fb-t-o"), mO = document.getElementById("fb-m-o"), qO = document.getElementById("fb-q-o");
+  function px(q) { return 70 + q * 5.4; }
+  function py(c) { return 340 - c * 300 / 700; }
+  function draw() {
+    var t = parseFloat(tEl.value), m = parseFloat(mEl.value), q = parseFloat(qEl.value);
+    tO.textContent = t.toFixed(1);
+    mO.textContent = m.toFixed(1);
+    qO.textContent = q.toFixed(0) + " 笔";
+    var mEnd = py(40 + 100 * t), fEnd = py(200 + 100 * m);
+    market.setAttribute("x1", 70); market.setAttribute("y1", py(40));
+    market.setAttribute("x2", 610); market.setAttribute("y2", mEnd);
+    firm.setAttribute("x1", 70); firm.setAttribute("y1", py(200));
+    firm.setAttribute("x2", 610); firm.setAttribute("y2", fEnd);
+    mLbl.setAttribute("x", 604); mLbl.setAttribute("y", Math.max(52, mEnd - 12));
+    fLbl.setAttribute("x", 604); fLbl.setAttribute("y", Math.min(332, fEnd + 24));
+    var qx = px(q);
+    ql.setAttribute("x1", qx); ql.setAttribute("x2", qx);
+    ql.setAttribute("y1", 40); ql.setAttribute("y2", 340);
+    var cM = 40 + t * q, cF = 200 + m * q;
+    dm.setAttribute("cx", qx); dm.setAttribute("cy", py(cM));
+    df.setAttribute("cx", qx); df.setAttribute("cy", py(cF));
+    var who = cM <= cF ? "市场（外包）" : "企业（自制）";
+    var diff = Math.abs(cM - cF);
+    var msg;
+    if (t <= m) {
+      dot.setAttribute("opacity", 0); xl.setAttribute("opacity", 0); qt.setAttribute("opacity", 0);
+      msg = "t ≤ m：每笔交易市场都更便宜 → 企业没有边界（全部外包）";
+    } else {
+      var qs = 160 / (t - m);
+      if (qs > 100) {
+        dot.setAttribute("opacity", 0); xl.setAttribute("opacity", 0); qt.setAttribute("opacity", 0);
+        msg = "q* = " + qs.toFixed(0) + " 笔已超出图面：市场线始终更低 → 全部外包";
+      } else {
+        var ix = px(qs), iy = py(40 + t * qs);
+        dot.setAttribute("opacity", 1); dot.setAttribute("cx", ix); dot.setAttribute("cy", iy);
+        xl.setAttribute("opacity", 1);
+        xl.setAttribute("x1", ix); xl.setAttribute("x2", ix);
+        xl.setAttribute("y1", iy); xl.setAttribute("y2", 340);
+        qt.setAttribute("opacity", 1);
+        if (ix > 470) { qt.setAttribute("x", ix - 12); qt.setAttribute("text-anchor", "end"); }
+        else { qt.setAttribute("x", ix + 12); qt.setAttribute("text-anchor", "start"); }
+        qt.setAttribute("y", Math.max(56, iy - 14));
+        qt.textContent = "q* = " + qs.toFixed(0) + " 笔";
+        msg = "q* = " + qs.toFixed(0) + " 笔（交点：企业最优规模）";
+      }
+    }
+    st.textContent = msg + "；当前 q = " + q.toFixed(0) + " → " + who + "更省（差 " + diff.toFixed(0) + " 万元/年）";
+  }
+  tEl.addEventListener("input", draw);
+  mEl.addEventListener("input", draw);
+  qEl.addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= 图 4-1 集体行动博弈（志愿者困境） ================= */
+(function () {
+  var nEl = document.getElementById("ca-n"), cbEl = document.getElementById("ca-cb");
+  if (!nEl || !cbEl) return;
+  var pPath = document.getElementById("ca-p"), prPath = document.getElementById("ca-pr");
+  var dotp = document.getElementById("ca-dotp"), dotpr = document.getElementById("ca-dotpr");
+  var line = document.getElementById("ca-line"), txt = document.getElementById("ca-txt");
+  var nO = document.getElementById("ca-n-o"), fO = document.getElementById("ca-f-o"), sO = document.getElementById("ca-s-o"), cbO = document.getElementById("ca-cb-o");
+  function px(n) { return 70 + (n - 2) * 530 / 98; }
+  function py(v) { return 340 - v * 300; }
+  function draw() {
+    var n = parseInt(nEl.value, 10);
+    var cb = parseFloat(cbEl.value) / 100;
+    nO.textContent = n + " 人";
+    cbO.textContent = Math.round(cb * 100) + "%";
+    var p = 1 - Math.pow(cb, 1 / (n - 1));
+    var prov = 1 - Math.pow(cb, n / (n - 1));
+    fO.textContent = Math.round((1 - p) * 100) + "%";
+    sO.textContent = Math.round(prov * 100) + "%";
+    function pathOf(fn) {
+      var d = "";
+      for (var k = 2; k <= 100; k++) {
+        var y = Math.max(42, Math.min(338, py(fn(k))));
+        d += (k === 2 ? "M" : "L") + px(k).toFixed(1) + " " + y.toFixed(1);
+      }
+      return d;
+    }
+    pPath.setAttribute("d", pathOf(function (k) { return 1 - Math.pow(cb, 1 / (k - 1)); }));
+    prPath.setAttribute("d", pathOf(function (k) { return 1 - Math.pow(cb, k / (k - 1)); }));
+    var x = px(n);
+    line.setAttribute("x1", x); line.setAttribute("x2", x);
+    dotp.setAttribute("cx", x); dotp.setAttribute("cy", py(p));
+    dotpr.setAttribute("cx", x); dotpr.setAttribute("cy", py(prov));
+    txt.textContent = "n = " + n + "：每人挺身而出的概率仅 " + (p * 100).toFixed(1) +
+      "%（搭便车 " + Math.round((1 - p) * 100) + "%），『至少一人站出来』的概率 " + (prov * 100).toFixed(1) + "%";
+  }
+  nEl.addEventListener("input", draw);
+  cbEl.addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= 图 4-2 寻租竞争的社会福利损耗 ================= */
+(function () {
+  var nEl = document.getElementById("rk-n");
+  if (!nEl) return;
+  var diss = document.getElementById("rk-diss"), dLbl = document.getElementById("rk-diss-lbl");
+  var nO = document.getElementById("rk-n-o"), dO = document.getElementById("rk-d-o"), lO = document.getElementById("rk-loss-o");
+  var st = document.getElementById("rk-status");
+  function draw() {
+    var n = parseInt(nEl.value, 10);
+    var d = (n - 1) / n;
+    var w = 152 * d;
+    diss.setAttribute("width", Math.max(0, w));
+    var amt = 160 * d;
+    if (w >= 78) { dLbl.setAttribute("x", 70 + w / 2); dLbl.setAttribute("text-anchor", "middle"); }
+    else { dLbl.setAttribute("x", 70 + w + 10); dLbl.setAttribute("text-anchor", "start"); }
+    dLbl.textContent = "寻租耗散 " + amt.toFixed(0) + " 亿";
+    nO.textContent = n + " 家";
+    dO.textContent = Math.round(d * 100) + "%";
+    var loss = 80 + amt;
+    lO.textContent = loss.toFixed(0) + " 亿元";
+    st.textContent = "n = " + n + " 家竞争 → 耗散比例 (n−1)/n = " + Math.round(d * 100) +
+      "%：社会总损失 = 三角形 80 + 耗散 " + amt.toFixed(0) + " = " + loss.toFixed(0) +
+      " 亿元，相当于租金的 " + Math.round((0.5 + d) * 100) + "%";
+  }
+  nEl.addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= 图 5-1 中位选民与再分配压力 ================= */
+(function () {
+  var tEl = document.getElementById("mv-tail");
+  if (!tEl) return;
+  var g = document.getElementById("mv-bars");
+  if (!g) return;
+  var medL = document.getElementById("mv-medline"), meanL = document.getElementById("mv-meanline");
+  var medT = document.getElementById("mv-medlbl"), meanT = document.getElementById("mv-meanlbl");
+  var meanO = document.getElementById("mv-mean-o"), medO = document.getElementById("mv-med-o"), taxO = document.getElementById("mv-tax-o");
+  var tO = document.getElementById("mv-tail-o"), txt = document.getElementById("mv-txt");
+  var NS = "http://www.w3.org/2000/svg";
+  // 100 根柱只创建一次, 之后复用并仅更新 y/height
+  var rects = [];
+  for (var k = 0; k < 100; k++) {
+    var r0 = document.createElementNS(NS, "rect");
+    r0.setAttribute("x", (60 + k * 5.4).toFixed(1));
+    r0.setAttribute("width", "5");
+    r0.setAttribute("fill", k >= 90 ? "#db2777" : "#2f6fdb");
+    r0.setAttribute("opacity", k >= 90 ? "0.75" : "0.55");
+    g.appendChild(r0);
+    rects.push(r0);
+  }
+  function draw() {
+    var tail = parseFloat(tEl.value);
+    tO.textContent = "×" + tail.toFixed(1);
+    var inc = [];
+    for (var i = 0; i < 100; i++) {
+      var v = 1 + 9 * Math.pow(i / 99, 1.5);
+      if (i >= 90) v *= tail;
+      inc.push(v);
+    }
+    var sum = 0;
+    for (var s = 0; s < 100; s++) sum += inc[s];
+    var mean = sum / 100;
+    var median = (inc[49] + inc[50]) / 2;
+    var gap = Math.max(0, (mean - median) / mean);
+    var tax = Math.min(0.65, 1.1 * gap);
+    for (var j = 0; j < 100; j++) {
+      var h = inc[j] / 80 * 300;
+      rects[j].setAttribute("y", (340 - h).toFixed(1));
+      rects[j].setAttribute("height", Math.max(1, h).toFixed(1));
+    }
+    var ym = 340 - median / 80 * 300, ya = 340 - mean / 80 * 300;
+    medL.setAttribute("y1", ym); medL.setAttribute("y2", ym);
+    meanL.setAttribute("y1", ya); meanL.setAttribute("y2", ya);
+    meanT.setAttribute("y", Math.max(48, ya - 8));
+    meanT.textContent = "平均数 " + mean.toFixed(1) + " 万";
+    medT.setAttribute("y", Math.min(336, ym + 20));
+    medT.textContent = "中位数 " + median.toFixed(1) + " 万";
+    meanO.textContent = mean.toFixed(1) + " 万元";
+    medO.textContent = median.toFixed(1) + " 万元";
+    taxO.textContent = Math.round(tax * 100) + "%";
+    txt.textContent = "平均数高出中位数 " + Math.round(gap * 100) +
+      "% → 中位选民投票支持更高税收与转移支付（示意税率 " + Math.round(tax * 100) + "%）：分配越右偏，再分配压力越大";
+  }
+  tEl.addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= 图 6-1 制度矩阵 2×2 ================= */
+(function () {
+  var g = document.getElementById("im-cells");
+  var desc = document.getElementById("im-desc");
+  var foot = document.getElementById("im-foot");
+  if (!g || !desc) return;
+  var NS = "http://www.w3.org/2000/svg";
+  var cells = [
+    { x: 180, y: 40, title: "攫取性秩序", sub: "增长有限且脆弱",
+      desc: "产权与经营权集中于精英，靠强制与垄断抽取（劳役、矿租、专营）。可以靠榨取造出一时的宫殿与纪念碑，但没有广域的产权保护与进入自由，普通人的投资与创新无从谈起。",
+      ex: "案例：西属美洲殖民地、刚果自由邦——制度为宗主国输送白银与橡胶而设，本地长期陷于抽取。" },
+    { x: 400, y: 40, title: "威权发展主义", sub: "增长可快，但系于上层",
+      desc: "经济上大体尊重市场激励、鼓励储蓄出口与投资，政治权力却高度集中。绩效取决于上层的自律与目标；一旦上层转向抽取或继承失序，产权便失去保障——它是赶超的孵化器，也是风险的赌桌。",
+      ex: "案例：韩国 1961–1987 年威权时期的高速增长，1987 年转向多元政治后制度得以巩固。" },
+    { x: 180, y: 190, title: "民粹拉锯", sub: "选票购买与通胀循环",
+      desc: "竞争性选举存在，但产权常被政策随意侵犯：补贴、价格管制、货币超发轮番上阵，用未来的通胀购买今天的选票。政策不可预期，私人投资随之萎缩。",
+      ex: "案例：阿根廷 20 世纪多次陷入『再分配—通胀—危机—紧缩』的循环（见第 5 章）。" },
+    { x: 400, y: 190, title: "包容性增长", sub: "长期表现最稳",
+      desc: "广泛的产权保护 + 自由进入 + 法治约束政治权力：创造性破坏被允许，利益集团受到多元制衡，国家有能力做事但不被用来抽取。不是没有危机，而是危机之后规则仍然算数。",
+      ex: "案例：西北欧、北美、日本、澳新——长期人均收入与稳定性俱佳的象限。" }
+  ];
+  cells.forEach(function (c) {
+    var rect = document.createElementNS(NS, "rect");
+    rect.setAttribute("x", c.x); rect.setAttribute("y", c.y);
+    rect.setAttribute("width", "210"); rect.setAttribute("height", "140");
+    rect.setAttribute("rx", "10");
+    rect.setAttribute("fill", "#ffffff");
+    rect.setAttribute("stroke", "#d6d3d1");
+    rect.setAttribute("stroke-width", "2");
+    rect.style.cursor = "pointer";
+    rect.setAttribute("tabindex", "0");
+    rect.setAttribute("role", "button");
+    rect.setAttribute("aria-label", c.title + "：" + c.sub);
+    var t1 = document.createElementNS(NS, "text");
+    t1.setAttribute("x", c.x + 105); t1.setAttribute("y", c.y + 64);
+    t1.setAttribute("text-anchor", "middle");
+    t1.setAttribute("class", "chart-title-sm");
+    t1.textContent = c.title;
+    var t2 = document.createElementNS(NS, "text");
+    t2.setAttribute("x", c.x + 105); t2.setAttribute("y", c.y + 94);
+    t2.setAttribute("text-anchor", "middle");
+    t2.setAttribute("class", "chart-label");
+    t2.style.fill = "#4b5563";
+    t2.textContent = c.sub;
+    g.appendChild(rect); g.appendChild(t1); g.appendChild(t2);
+    function pick() {
+      var rects = g.querySelectorAll("rect");
+      for (var i = 0; i < rects.length; i++) {
+        rects[i].setAttribute("stroke", "#d6d3d1");
+        rects[i].setAttribute("stroke-width", "2");
+        rects[i].setAttribute("fill", "#ffffff");
+      }
+      rect.setAttribute("stroke", "#57534e");
+      rect.setAttribute("stroke-width", "3");
+      rect.setAttribute("fill", "#efece7");
+      desc.textContent = c.desc;
+      if (foot) foot.textContent = c.ex;
+    }
+    rect.addEventListener("click", pick);
+    rect.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

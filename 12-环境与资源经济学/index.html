@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>环境与资源经济学 · EconLearn 经济学自学之路</title>
+<meta name="description" content="环境与资源经济学中文互动教程：外部性与庇古税、科斯定理、公地悲剧、渔业资源动态与气候变化的贴现率之争，配互动图表与自测。">
+<link rel="stylesheet" href="../assets/econ.css">
+</head>
+<body style="--branch:#65a30d">
+<noscript><p class="noscript-tip">本页的互动图表与自测需要启用 JavaScript；未启用时仍可阅读全部正文。</p></noscript>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← 总览</a>
+  <div class="topbar-title"><span class="topbar-num">12</span>环境与资源经济学</div>
+  <button class="toc-toggle" aria-expanded="false">目录</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">本分支章节</p>
+    <nav aria-label="章节目录">
+      <a href="#overview">导读与学习目标</a>
+      <a href="#ch1">1 · 外部性与社会成本</a>
+      <a href="#ch2">2 · 庇古税与补贴</a>
+      <a href="#ch3">3 · 产权与科斯定理</a>
+      <a href="#ch4">4 · 公地悲剧与公共品</a>
+      <a href="#ch5">5 · 渔业模型与霍特林规则</a>
+      <a href="#ch6">6 · 气候变化经济学</a>
+      <a href="#path">进阶路线与延伸阅读</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · 经济学自学之路</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">分支 12 · 应用领域</span>
+        <h1>环境与资源经济学</h1>
+        <p class="hero-en">Environmental and Resource Economics</p>
+        <p class="hero-lead">环境为什么被污染、资源为什么被用光？答案往往不是"人心变坏"，而是价格没有把损害与稀缺算进来。本分支研究市场失灵在环境与资源上的形态——外部性、公地悲剧、代际问题——以及三类矫正工具：给污染定价、界定产权、设定总量。</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">学完本分支你将能</div>
+        <ul>
+          <li>在供需图上画出<strong>私人边际成本与社会边际成本</strong>，解释污染品为何被"生产过多"，并标出无谓损失</li>
+          <li>说明<strong>庇古税</strong>的税率为何应等于边际外部成本，并解释它与统一排放标准、税收中性的"双重红利"之辩</li>
+          <li>陈述<strong>科斯定理</strong>的条件与结论，解释交易成本为何让"谈判解决"在气候变化上失灵</li>
+          <li>用<strong>逻辑斯蒂增长模型</strong>解释渔业崩溃的机制，说出最大可持续产量与开放获取均衡的区别</li>
+          <li>复述<strong>霍特林规则</strong>，解释价格信号如何自动调节不可再生资源的开采节奏</li>
+          <li>解释<strong>贴现率</strong>如何决定碳社会成本，区分减缓与适应，并说明全球合作的搭便车难题</li>
+        </ul>
+      </div>
+      <div class="prereq">前置知识：
+        <a class="badge" href="../01-微观经济学/index.html">01 微观（供需、剩余、市场失灵）</a>
+        <a class="badge" href="../08-公共经济学/index.html">08 公共经济学（税收、公共品）</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">第 1 章</span>环境问题的经济学本质：外部性与社会成本</h2>
+
+      <p><strong>引入问题：</strong>1952 年 12 月，伦敦被浓雾锁了五天。燃煤释放的硫化物无处可散，随后研究估计逾万人死于呼吸系统疾病。可是烧煤的工厂和家庭，从没为这些死亡支付过一分钱——他们需要付吗？市场价格在这里漏掉了什么？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：不出现在账单上的成本，没人会心疼</div>
+        <p>想象一家餐厅可以把垃圾免费倒进邻居的院子：它一定会"生产"出过多的垃圾——不是因为老板缺德，而是因为倒垃圾对它是免费的。<strong>价格是社会的信息系统</strong>：当一部分真实成本（邻居的健康、渔场的存量、后代的气候）不出现在决策者的账单上，理性人就会过度使用这块"免费"的部分。这就是<strong>外部性</strong>——它不是道德问题，是价格缺位的结构问题。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">外部性 <span class="term-en">Externality</span></div><div class="term-def">一个经济主体的行为对旁观者福利的影响，且这种影响<strong>不通过市场价格结算</strong>。分负外部性（损害，如污染）与正外部性（收益，如疫苗接种）。</div></div>
+        <div class="term"><div class="term-name">边际外部成本 <span class="term-en">Marginal External Cost, MEC</span></div><div class="term-def">每多生产一单位产出，施加给外部的边际损害。社会边际成本 = 私人边际成本 + 边际外部成本。</div></div>
+        <div class="term"><div class="term-name">社会成本与私人成本 <span class="term-en">Social Cost vs Private Cost</span></div><div class="term-def">私人成本是决策者自己承担的；社会成本是全社会承担的总额。两者之差正是市场没有定价的部分——污染品的市场均衡因此系统性地偏离社会最优。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 1-1 · 负外部性：市场产量为何过多</div>
+        <p class="fig-sub">先看静态图。供给曲线只是私人边际成本 PMC，把边际外部成本 MEC=30 叠上去，得到社会边际成本 SMC——真正的"全成本"曲线。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="供需图：需求曲线与私人边际成本交于产量40（市场均衡），与社会边际成本交于产量25（社会最优）。25到40之间的三角形为社会无谓损失，私人边际成本与社会边际成本的垂直距离恒为30。">
+            <line class="axis" x1="70" y1="320" x2="610" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <line class="gridline" x1="70" y1="138.8" x2="238.8" y2="138.8"/>
+            <line class="gridline" x1="70" y1="175" x2="340" y2="175"/>
+            <line class="gridline" x1="238.8" y1="138.8" x2="238.8" y2="320"/>
+            <line class="gridline" x1="340" y1="175" x2="340" y2="320"/>
+            <line class="curve curve-c1" x1="70" y1="78.3" x2="610" y2="271.7"/>
+            <line class="curve" x1="70" y1="271.7" x2="610" y2="78.3" stroke="#475569"/>
+            <line class="curve" x1="70" y1="199.2" x2="542.5" y2="30" stroke="#b91c1c"/>
+            <polygon points="238.8,138.8 340,175 340,102.5" fill="#b91c1c" fill-opacity="0.12"/>
+            <text class="chart-label" x="600" y="288" text-anchor="end" fill="#2f6fdb">D 需求</text>
+            <text class="chart-label" x="604" y="66" text-anchor="end" fill="#475569">PMC 私人边际成本（供给）</text>
+            <text class="chart-label" x="536" y="46" text-anchor="end" fill="#b91c1c">SMC 社会边际成本</text>
+            <line x1="398" y1="154.7" x2="398" y2="82.2" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <text class="chart-label-en" x="404" y="122" fill="#b91c1c">MEC=30</text>
+            <text class="chart-label" x="300" y="150" fill="#b91c1c">DWL 无谓损失</text>
+            <circle class="dot" cx="340" cy="175" r="6" fill="#475569"/>
+            <circle class="dot" cx="238.8" cy="138.8" r="6" fill="#0d9488"/>
+            <text class="chart-label" x="352" y="192" fill="#475569">市场均衡 (40, 60)</text>
+            <text class="chart-label" x="230" y="122" text-anchor="end" fill="#0d9488">社会最优 (25, 75)</text>
+            <text class="chart-label-en" x="238.8" y="338" text-anchor="middle">25</text>
+            <text class="chart-label-en" x="340" y="338" text-anchor="middle">40</text>
+            <text class="chart-label" x="340" y="362" text-anchor="middle">产量 Q（吨）</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">价格 / 成本 P（元）</text>
+          </svg>
+        </figure>
+        <figcaption>读图要点：在产量 25 与 40 之间，消费者对每吨的估值（需求曲线，75→60 元）低于其社会成本（SMC，75→90 元）——这些吨位"社会的账"是亏的，但"私人的账"是赚的，于是被生产出来。多生产的 15 吨累计造成 225 元无谓损失。注意：最优污染量不是零，是 25 吨对应的排放水平。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 从伦敦烟雾到北京蓝天下</div>
+        <p>1952 年伦敦烟雾事件直接催生了英国 1956 年《清洁空气法》：家庭禁烧高硫软煤、电厂迁出城区——用<strong>行政手段</strong>补上了缺席的价格。对照中国：2013 年"大气十条"、2018 年"蓝天保卫战"密集出手后，北京 PM2.5 年均浓度从 2013 年的 89.5 微克/立方米降到 2022 年的 30 微克/立方米，降幅约三分之二。治理耗资巨大，但健康收益（呼吸疾病、早逝减少）同样巨大——环境政策的本质，是把原本由肺和医院"垫付"的 MEC，重新计入能源与产业的账单。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"零污染才是最优。"</strong>——减排要消耗真实的稀缺资源（工程师、催化剂、风电场）。最优污染量在<strong>边际损害 = 边际减排成本</strong>处：把污染从 25 吨压到 0，意味着放弃大量消费者估值高于社会成本的产出。环境容量本身也是一种要精打细算的"资产"。<strong>另一个误区："外部性说明企业缺德。"</strong>——在价格缺失的结构里，守法逐利的理性企业必然过度排污；换谁来经营都一样。解法是改激励，而不是只换人。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.1</span>图 1-1 中，无干预的市场均衡产量为 40 吨，社会最优产量为 25 吨。以下判断正确的是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>市场均衡是有效率的，因为买卖双方都是自愿的</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>产量过多：第 25~40 吨之间每吨的社会价值都低于社会成本，却因私人有利可图被生产出来</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>产量过少：存在外部性时应补贴企业扩大生产</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>自愿交易只保证<strong>交易双方</strong>的剩余最大化；受害者（第三方）根本没上谈判桌。在 25~40 吨之间，需求价（100−Q）低于社会边际成本（50+Q），这些吨位的社会净收益为负。A 混淆了"自愿"与"有效"；C 方向反了——补贴扩大生产适用于正外部性（见自测 1.2）。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.2</span>下列哪种情形下，市场数量会"少于"社会最优？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>楼下餐馆的油烟让住户整个夏天不敢开窗</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>打流感疫苗的人降低了他人的感染风险，但自己只算自己的账</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>完全竞争、无外部性、信息完全的市场</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>正外部性 = 收益外溢给别人。决策者只按<strong>私人收益</strong>权衡，于是"做好事"的行为太少——接种、教育、研发、养蜂都是经典例子。矫正方法是补贴（相当于"负庇古税"）。A 是负外部性、数量过多；C 是效率基准，市场数量恰等于社会最优。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>外部性 = 不经市场结算的溢出影响；负外部性使市场产量过多，正外部性使其过少。</li>
+          <li>SMC = PMC + MEC；有效产量在需求与 SMC 的交点，而非与 PMC 的交点。</li>
+          <li>最优污染不为零：均衡条件是边际损害 = 边际减排成本。</li>
+          <li>外部性是价格缺位的结构问题，矫正之道是让决策者面对真实成本。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">第 2 章</span>庇古税与补贴：把外部成本写进价格</h2>
+
+      <p><strong>引入问题：</strong>既然价格缺了一块，最直接的办法就是把它补上——给每吨污染开一张"账单"。1920 年英国经济学家庇古提出：对单位污染征税，税额等于它造成的边际损害。政府不需要知道哪家厂该怎么减排，只需要把价格定对。这真的可行吗？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：税不是惩罚，是"寄回账单"</div>
+        <p>庇古税（Pigouvian Tax）的本质，是把别人替你垫付的成本<strong>内部化</strong>：你排多少，就按每吨边际损害多少钱补回给社会。当税率恰等于最优产量处的 MEC，厂商的私人成本曲线就被整体"抬"到 SMC 上，市场自己会找到 25 吨——<strong>不用命令任何一家企业</strong>。减排成本低的企业会多减（省下的税是利润），成本高的少减、多缴税；最后一吨减排的成本在所有企业相等，这就是"给定减排总量，总成本最小"的魔法。政府只要定对一个数字，分散在千万家企业里的知识自动被价格动员起来。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 2-1 · 庇古税税率滑块：让产量回到社会最优</div>
+        <p class="fig-sub">试一试：把税率从 0 慢慢拖到 30 元/吨，观察绿色"含税供给线"如何抬升、市场产量如何逼近 25 吨、红色无谓损失三角如何缩小。再拖过头试试——过犹不及。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="供需图，含固定的需求、私人边际成本与社会边际成本三条线，以及随税率上移的含税供给线。滑块改变税率时，含税线与需求的交点（税后均衡）移动，无谓损失三角形在税率等于30时消失，税率继续升高则重新出现。">
+            <line class="axis" x1="70" y1="320" x2="610" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <line class="curve curve-c1" x1="70" y1="78.3" x2="610" y2="271.7"/>
+            <line class="curve" x1="70" y1="271.7" x2="610" y2="78.3" stroke="#475569"/>
+            <line class="curve" x1="70" y1="199.2" x2="542.5" y2="30" stroke="#b91c1c" stroke-dasharray="8 5"/>
+            <line class="gridline" x1="238.8" y1="138.8" x2="238.8" y2="320"/>
+            <polygon id="pig-dwl" points="" fill="#b91c1c" fill-opacity="0.12"/>
+            <line id="pig-eff" class="curve" x1="70" y1="271.7" x2="610" y2="78.3" stroke="#65a30d"/>
+            <line id="pig-vline" x1="340" y1="175" x2="340" y2="320" stroke="#65a30d" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <circle id="pig-dot" class="dot" cx="340" cy="175" r="7" fill="#65a30d"/>
+            <circle class="dot" cx="238.8" cy="138.8" r="6" fill="#0d9488"/>
+            <text class="chart-label" x="600" y="288" text-anchor="end" fill="#2f6fdb">D 需求</text>
+            <text class="chart-label" x="604" y="66" text-anchor="end" fill="#475569">PMC</text>
+            <text class="chart-label" x="536" y="46" text-anchor="end" fill="#b91c1c">SMC = PMC + 30</text>
+            <text class="chart-label" x="230" y="122" text-anchor="end" fill="#0d9488">社会最优 Q*=25</text>
+            <text id="pig-status" class="chart-title-sm" x="340" y="52" text-anchor="middle"></text>
+            <text class="chart-label-en" x="238.8" y="338" text-anchor="middle">25</text>
+            <text class="chart-label" x="340" y="362" text-anchor="middle">产量 Q（吨）</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">价格 / 成本 P（元）</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="pig-t">庇古税税率（元/吨）</label><input type="range" id="pig-t" min="0" max="40" step="1" value="0"><output id="pig-ot" for="pig-t">0</output></div>
+          <div class="ctrl"><label for="pig-oq">市场产量</label><output id="pig-oq" for="pig-t">40 吨</output></div>
+          <div class="ctrl"><label for="pig-or">税收收入</label><output id="pig-or" for="pig-t">0 元</output></div>
+          <div class="ctrl"><label for="pig-od">无谓损失</label><output id="pig-od" for="pig-t">225 元</output></div>
+        </div>
+        <figcaption>读图要点：税率 30 = 边际外部成本，含税线恰好覆盖 SMC，产量自动落在 25 吨，无谓损失归零——企业"自愿"减排，无需任何人下命令。税率低于 30，污染仍偏多；高于 30，则压掉了社会净收益为正的产量，制造<strong>新的</strong>无谓损失。税收收入（税率 × 税后产量）只是副产品：目标是矫正价格，不是筹钱。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">庇古税 <span class="term-en">Pigouvian Tax</span></div><div class="term-def">对每单位外部损害征收、税率等于最优产量处边际外部成本的税。它把外部成本"寄回"决策者，使其面对真实的社会成本。</div></div>
+        <div class="term"><div class="term-name">内部化 <span class="term-en">Internalizing the Externality</span></div><div class="term-def">通过税收、补贴或产权安排，把原本外部承担的成本/收益变成决策者的私人成本/收益。是一切环境政策工具的共同目标。</div></div>
+        <div class="term"><div class="term-name">双重红利 <span class="term-en">Double Dividend</span></div><div class="term-def">环境税改善环境（第一重），若把税收用来降低所得税等扭曲性税收，还能减少税收体系的效率损失（第二重）。现实争论：环境税往往具有累退性，需配套返还。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 瑞典碳税与中国碳市场</div>
+        <p><strong>瑞典</strong>1991 年开征碳税，从约 250 克朗/吨起步逐步加码到约 1,200 克朗/吨（约合 115 美元，全球最高之列）。此后三十年，瑞典实际 GDP 累计增长约八成，温室气体净排放下降约三分之一，区域供热与交通脱碳明显——<strong>增长与减排可以并行</strong>，而税收同步降低了劳动收入税，正是"双重红利"的现实注脚。<strong>中国</strong>2021 年启动全国碳排放权交易市场（先覆盖电力行业 2,000 余家重点排放单位，覆盖排放约 45 亿吨/年，为全球覆盖量最大），从免费配额、强度控制起步，启动价约 48 元/吨，2024 年一度突破 100 元/吨——价格信号由弱渐强，方向正是庇古式的。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"庇古税是为了给政府筹钱，税率越高越好。"</strong>——看图 2-1：税率超过 30 元后无谓损失重新扩大。庇古税的目标函数是<strong>效率</strong>而非财政收入；理论上最优庇古税的收入应当通过减税或等额返还中性化，否则就成了普通扭曲性税收。另一个常见误解：<strong>"给每家工厂定同一个排放上限，效果一样还更简单。"</strong>——统一标准忽视减排成本的巨大差异：让低成本企业多减、高成本企业少减，同样总量能省下大笔社会成本（见自测 2.2），而且只有税给"超标准再减一点"持续留出利润动机。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.1</span>庇古税的最优税率应当等于？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>社会最优产量处的边际外部成本（本例中 = 30 元/吨）</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>能把污染压到零的税率</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>使税收收入最大的税率</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>税率 = MEC 时，厂商面对的私人成本恰与社会成本重合，均衡产量自动等于社会最优。B 忘了减排本身有成本——把产量压到零会牺牲所有社会净收益为正的产出（图 2-1 中拖到 40 就能看到新损失）。C 是拉弗曲线的逻辑（见 08 分支），与矫正外部性的目标无关：收入最大化的税率通常远高于 MEC。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.2</span>与"每厂同一排放标准"相比，庇古税（或可交易配额）的核心效率优势是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>总能实现更低的排放总量</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>让减排成本低的企业多减、成本高的少减，给定总量下社会总成本最小，且给持续创新留出利润动机</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>不需要监测排放，执行成本为零</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>税率统一，各企业都会减排到"边际减排成本 = 税率"为止——所有企业的最后一吨减排成本相等，这就是成本有效的均衡边际原则。统一标准强迫高成本企业与低成本企业减同样多，白白浪费。总量由税率间接决定（A 说反了：标准直接定总量，税定的是边际激励）；两套工具都需要监测排放（C 错）。税的额外好处：减得比要求更多还能省税钱，创新激励不封顶。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>庇古税税率 = 最优产量处的边际外部成本，目的是矫正价格而非筹资。</li>
+          <li>税率定对时企业"自愿"达到社会最优；过头则制造新的无谓损失。</li>
+          <li>统一价格让减排在企业间成本有效配置，且创新激励持续存在。</li>
+          <li>双重红利：环境税收入用于降低其他扭曲性税收，一举两得（注意累退性配套）。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">第 3 章</span>产权与科斯定理：谈判能替代税收吗</h2>
+
+      <p><strong>引入问题：</strong>庇古说"政府来定价"，1960 年科斯在《社会成本问题》里反问：伤害是相互的——让工厂停产，不也是"伤害"工厂吗？如果法律把权利判清楚，当事人自己能不能把价格谈出来，根本不需要政府定税率？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：先别急着惩罚，让当事人谈一谈</div>
+        <p>牧场的牛跑到农夫的麦田里吃麦。若法律判"牛可以随便吃"， 农夫可以付钱请牧人修栅栏；若判"麦田神圣不可侵犯"，牧人可以付钱买"吃麦权"。只要谈判不花成本，<strong>无论权利判给谁</strong>，双方都会谈到同一处：麦子被吃掉的亩数，恰好使"牧人多养一头牛的收益 = 农夫多损失的麦子"。这就是<strong>科斯定理</strong>：产权界定清楚 + 交易成本为零 → 资源配置有效率，初始产权只决定<strong>谁给谁付钱</strong>（分配），不决定<strong>资源怎么用</strong>（效率）。这面镜子的价值在于照出现实：真实世界的谈判人数成千上万、信息不对称、执行有成本——交易成本才是环境问题的主战场。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">科斯定理 <span class="term-en">Coase Theorem</span></div><div class="term-def">在产权明晰且交易成本为零的条件下，无论初始权利如何分配，当事人通过谈判都能达到资源的有效配置；初始分配只影响收入分配。1991 年科斯获诺贝尔经济学奖。</div></div>
+        <div class="term"><div class="term-name">交易成本 <span class="term-en">Transaction Costs</span></div><div class="term-def">谈判、签约、监督与执行的一切成本：找人、议价、信息、打官司。交易成本越大，"私下谈判解决外部性"越不可行，制度（税、管制、法院）的价值越大。</div></div>
+        <div class="term"><div class="term-name">总量管制与交易 <span class="term-en">Cap-and-Trade</span></div><div class="term-def">政府设定排放总量上限，把配额分配或拍卖给企业并允许交易——相当于"科斯化"的庇古税：总量由政府定，价格由市场谈出来。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 美国酸雨计划：最成功的"科斯式"实验</div>
+        <p>1990 年《清洁空气法》修正案针对酸雨元凶二氧化硫设立<strong>可交易排污配额</strong>：总量封顶、逐年递减，电厂之间可自由买卖配额，配额价格公开挂牌。结果：1990 年代美国 SO₂ 排放减半、提前达标，而实际减排成本只有事前专家预测的约三分之一——因为低成本电厂拼命多减、把富余配额卖给高成本电厂，完全按图 2-1 的"均衡边际"逻辑运转。它成了全球模板（欧盟碳市场、区域温室气体行动 RGGI、加州-魁北克市场皆由此而来）。反面教训同样宝贵：欧盟碳市场第一阶段<strong>配额超发</strong>，价格一度跌到接近零——产权工具的成色取决于总量设定与分配的政治经济学。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"科斯定理证明政府应该靠边站，一切私有化即可。"</strong>——恰恰读反了。定理的假设（零交易成本、当事人清晰、可执行）在现实中昂贵稀缺：法院、登记、监测执行本身就是<strong>公共制度</strong>。气候变化是"全人类（含后代）对全人类"的谈判，交易成本天文数字，只能用税收或总量管制做"科斯谈判的规模化替身"。另一个误区：<strong>"空气能私有化吗？所以产权思路无效。"</strong>——不能私有化"大气"，但可以界定"排放权"并让它在企业间流转，碳市场正是这样运作的产权安排。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.1</span>交易成本为零、产权界定清晰时，科斯定理预测：法律把"免受牛吃麦的权利"判给农夫还是判给牧人，最终麦子被吃掉的亩数会？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>完全不同：权利判给谁，结果就由谁说了算</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>相同：两种产权分配下谈判都收敛到同一有效率的亩数，只是付钱方向不同</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>都不有效率：必须政府征税才行</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>零交易成本下双方会一直谈到没有互利空间为止，即"牧人最后一头牛的边际收益 = 农夫的边际麦损"处——这与权利初始归属无关。判给农夫则牧人付钱买吃麦权，判给牧人则农夫付钱修栅栏：<strong>效率相同，分配不同</strong>。A 混淆了分配与配置；C 否定了谈判机制本身，而谈判正是定理的核心（现实中失效的原因是交易成本不为零，不是谈判逻辑错误）。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.2</span>为什么科斯式的私人谈判难以解决气候变化？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>因为二氧化碳对气候没有实际危害</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>受害者与排放者人数众多、跨越国界与世代，谈判与执行成本巨大，且人人想搭便车</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>因为排放权在法律上完全无法界定</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>科斯框架适用于当事人少、因果清晰、可执行的场景。气候把 80 亿人、近两百个国家与尚未出生的后代拉进同一场"谈判"，组织成本与搭便车激励都趋向无穷——这正是第 6 章全球合作难题的微观基础。A 与科学共识相悖；C 错：排放权完全可以界定（碳配额就是被界定出的产权），难点不在"能不能界定"，而在"界定之后的政治与执行"。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>科斯定理：产权清晰 + 交易成本为零 → 谈判达到效率，初始产权只管分配。</li>
+          <li>定理的价值是"基准镜"：照出现实中交易成本有多大、公共制度有多重要。</li>
+          <li>可交易配额 = 政府定量、市场定价，是科斯思想与庇古工具的合流。</li>
+          <li>配额工具的命门：总量设定与分配（超发 → 价格崩塌，欧盟 ETS 的教训）。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">第 4 章</span>公地悲剧与公共品：个体理性、集体毁灭</h2>
+
+      <p><strong>引入问题：</strong>渔民都知道过度捕捞会毁掉渔场，为什么每条船还是拼命加船下网？哈丁 1968 年的《公地悲剧》给出了冷酷的答案：悲剧不靠坏人也能上演——一群理性的个体，足以毁灭大家共同赖以为生的资源。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：好处归自己，代价大家摊</div>
+        <p>我多派一条船，多赚的鱼获<strong>全归我</strong>；渔场存量的损耗却由<strong>所有船</strong>分摊——我只承担损失的几分之一。只要"私人收益 &gt; 私人分摊的成本"，每条船都会扩张，直到利润被完全稀释为止。这是 N 人版的囚徒困境：每个人单独的选择都理性，加总起来却是集体毁灭。与第 1 章一脉相承：<strong>开放获取（Open Access）下的公地，本质是人人对人人施加外部性</strong>——只不过这次没有人是干净的旁观者。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 4-1 · 公地悲剧模拟：渔船一艘艘挤进来</div>
+        <p class="fig-sub">试一试：从 2 艘船开始，一艘艘把船加进去。看蓝线（总利润）与紫线（单船利润）：每条新船进的依据是"单船还有得赚"，而集体命运在 3 艘时就已经开始走下坡。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="渔船数与利润图：总利润为抛物线，在3艘时最大值9万元后下降，6艘时降为零并转为负；单船利润为直线，从1艘时的5万元线性下降，6艘时为零，之后为负。滑块改变船数，两个圆点分别在两条曲线上移动。">
+            <line class="axis" x1="70" y1="320" x2="610" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <line x1="70" y1="133.6" x2="610" y2="133.6" stroke="#94a3b8" stroke-width="1"/>
+            <text class="chart-label-en" x="60" y="138" text-anchor="end">0</text>
+            <text class="chart-label-en" x="60" y="86" text-anchor="end">5</text>
+            <text class="chart-label-en" x="60" y="190" text-anchor="end">−5</text>
+            <text class="chart-label-en" x="60" y="242" text-anchor="end">−10</text>
+            <path class="curve curve-c1" d="M70 133.6 L100 105.1 130 81.8 160 63.7 190 50.7 220 43 250 40.4 280 43 310 50.7 340 63.7 370 81.8 400 105.1 430 133.6 460 169.8 490 206.1 520 250.1 550 299.3"/>
+            <line class="curve curve-c4" x1="70" y1="71.4" x2="550" y2="154.3"/>
+            <line class="gridline" x1="250" y1="60" x2="250" y2="133.6"/>
+            <line class="gridline" x1="430" y1="95" x2="430" y2="320"/>
+            <circle id="gc-dt" class="dot" cx="190" cy="50.7" r="7" fill="#2f6fdb"/>
+            <circle id="gc-dp" class="dot" cx="190" cy="102.5" r="7" fill="#7c3aed"/>
+            <text class="chart-label" x="160" y="32" fill="#2f6fdb">总利润 Π(N) = 6N − N²</text>
+            <text class="chart-label" x="80" y="60" fill="#7c3aed">单船利润 π(N) = 6 − N</text>
+            <text class="chart-label" x="250" y="54" text-anchor="middle" fill="#475569">社会最优 N*=3</text>
+            <text class="chart-label" x="430" y="88" text-anchor="middle" fill="#475569">开放获取 N=6</text>
+            <text id="gc-status" class="chart-title-sm" x="340" y="375" text-anchor="middle"></text>
+            <text class="chart-label-en" x="250" y="338" text-anchor="middle">3</text>
+            <text class="chart-label-en" x="430" y="338" text-anchor="middle">6</text>
+            <text class="chart-label" x="310" y="362" text-anchor="middle">渔船数 N（艘）</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">利润（万元/年）</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="gc-n">渔船数量（艘）</label><input type="range" id="gc-n" min="1" max="8" step="1" value="2"><output id="gc-on" for="gc-n">2 艘</output></div>
+          <div class="ctrl"><label for="gc-ot">总利润</label><output id="gc-ot" for="gc-n">8 万元</output></div>
+          <div class="ctrl"><label for="gc-op">单船利润</label><output id="gc-op" for="gc-n">4 万元</output></div>
+        </div>
+        <figcaption>读图要点：总利润在 3 艘船时最大（9 万元），但单船利润要到 6 艘才降到零——只要单船还有一分钱利润，外面的船就有动力挤进来，直到利润完全耗散。这就是"利润耗散"：开放获取下资源租金被过度进入的资本与劳动成本吃光，全社会白忙一场；若继续加船，连老本都亏。产权（配额、渔权）的作用，就是把"进入"卡在社会最优的 3 艘上。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">公地悲剧 <span class="term-en">Tragedy of the Commons</span></div><div class="term-def">开放获取资源被过度使用直至退化的结构性问题：收益私有、成本共担，个体理性加总为集体毁灭。哈丁 1968 年提出。</div></div>
+        <div class="term"><div class="term-name">开放获取 <span class="term-en">Open Access</span></div><div class="term-def">任何人都可以自由进入使用的资源状态——悲剧的真正根源。<strong>公共池塘资源</strong>（Common-Pool Resources，如渔场、草场、地下水）本身可以治理，问题出在"没有排他规则"。</div></div>
+        <div class="term"><div class="term-name">公共品 <span class="term-en">Public Goods</span></div><div class="term-def">同时具备非排他（无法阻止别人使用）与非竞争（一人使用不减少他人可用）的物品：国防、灯塔、温室气体减排。市场自愿供给必然不足。</div></div>
+        <div class="term"><div class="term-name">搭便车 <span class="term-en">Free-Riding</span></div><div class="term-def">享受公共品的收益却不分担成本。人数越多、监督越难，搭便车越普遍——公共品供给不足与气候谈判僵局的共同微观机制。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 纽芬兰鳕鱼：一场五百年的渔场如何五年崩塌</div>
+        <p>纽芬兰大浅滩的鳕鱼养了欧洲渔民五百年。1950~60 年代拖网与声呐把捕捞变成工业，1970 年代加拿大设立 200 海里经济区排挤外国船队——结果本国产能爆炸式填补空缺，政府还补贴造船。1992 年存量崩塌，加拿大宣布全面禁渔，约 3 万渔民与加工工人一夜失业，政府此后累计支付数十亿加元补偿。<strong>三十年过去，鳕鱼仍未商业性恢复</strong>——可再生资源一旦越过生态阈值，就暂时变成"不可再生资源"。开放获取 + 补贴助推，正是教科书级的公地悲剧剧本。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"悲剧的根源是人性贪婪，无解。"</strong>——错在归因。同一批渔民，在配额制或社区自治下可以世代可持续。2009 年诺贝尔经济学奖得主奥斯特罗姆研究瑞士高山草场、西班牙灌溉社区、日本村有林地等<strong>公共池塘资源</strong>，发现当地人用"边界清晰 + 规则本地化 + 分级惩罚 + 低成本冲突解决"等设计原则，让公有资源长期免于悲剧。<strong>"公共所有必然悲剧、私有化是唯一出路"</strong>——同样错：悲剧来自"开放获取"而非"公有"；国有、私有、社区自治都可能成功，也都可能失败，关键在制度细节。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.1</span>公地悲剧中"个体理性、集体非理性"的根源是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>人性天生贪婪，渔民的道德水平不够</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>收益归自己、成本由所有人分摊：多捕一船的私人收益大于私人分摊的存量损失</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>渔船数量太多而鱼的数量太少</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>这是结构问题：在开放获取的激励下，<strong>换任何人</strong>都会扩张——不扩张等于把资源让给别人榨干。C 只是现象（"船多鱼少"）而非原因，而且即便鱼多船少，激励结构不变，悲剧仍会重演。奥斯特罗姆的田野研究证明：改的是制度，不是人性。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.2</span>灯塔、国防这类公共品若完全依靠市场自愿供给，会供给不足，因为？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>它们的生产成本太高，企业造不起</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>非排他使收费困难，每个人都想等别人出钱、自己搭便车</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>根本没有人需要灯塔和国防</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>非排他 → 没法把不付钱的人挡在收益之外 → 每个人的最优策略是隐瞒真实需求、等别人买单（N 人囚徒困境）→ 自愿供给低于效率水平。这与成本高低（A）和需求有无（C）无关——需求越公共、越刚需，反而越没人愿意第一个掏钱。解法：政府用强制性的税收供给，或用技术/制度改变排他性（如加密的卫星导航信号）。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>公地悲剧 = 开放获取下的相互外部性：收益私有、成本共摊，进入持续到利润耗散。</li>
+          <li>社会最优船数少于开放获取均衡船数；差距就是被浪费的资源租金。</li>
+          <li>公共品因搭便车而市场供给不足，需要税收或制度创新来解决。</li>
+          <li>奥斯特罗姆：在国有与私有之间存在成功的社区自治——制度设计决定命运。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">第 5 章</span>可再生与不可再生资源：渔业模型与霍特林规则</h2>
+
+      <p><strong>引入问题：</strong>鱼会自己"下崽"，煤不会——这句话概括了资源经济学的两半。渔场是一笔会生息的本钱：捕多了伤本金，捕少了浪费利息；矿藏是一笔不会生息的存款：唯一的问题是"今年卖还是留到明年"。两种逻辑分别叫什么？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：把资源存量当作一笔资产来经营</div>
+        <p><strong>可再生资源（渔场、森林、地下水）</strong>：存量越大，自然增长越多，但增长先升后降（存量太小时繁殖基数不足，接近环境承载力时彼此挤兑），呈钟形曲线。捕捞像一条从原点拉起的斜线，与钟形曲线的交点就是"可持续均衡"。努力量越大，斜线越陡，均衡存量越小；越过钟形顶点后，<strong>船更多、鱼更少、产量反而降</strong>；再超过临界值，斜线把整条增长曲线压在下面——唯一的均衡是零，崩溃。<strong>不可再生资源（石油、煤炭、矿产）</strong>：存量天生不减不增，"留一桶在地下"是一笔投资，必须与买债券的回报看齐——均衡中资源净价格（租）按利率上涨，这就是霍特林规则。它解释了为什么末日预言一再落空：价格上升同时点燃勘探、替代与节约三盏灯。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 5-1 · 渔业资源动态：努力量滑块看崩溃</div>
+        <p class="fig-sub">试一试：把捕捞努力量从 0 慢慢拉大。看橙色捕捞线如何翘起、均衡点（绿点）如何沿青色增长曲线从右向左滑动，越过最高点后产量不升反降；拉过 10，资源走向灭亡。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="渔业均衡图：青色钟形曲线为存量自然增长量，随存量先升后降，最高点12.5千吨每年对应存量50千吨；橙色直线为捕捞量，斜率随努力量增大。均衡点为两线交点；努力量达到10时交点退到原点，资源崩溃。">
+            <line class="axis" x1="70" y1="320" x2="610" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <line class="gridline" x1="70" y1="78.3" x2="340" y2="78.3"/>
+            <line class="gridline" x1="340" y1="78.3" x2="340" y2="320"/>
+            <path class="curve curve-c3" d="M70 320 L97 274.1 124 233 151 196.8 178 165.3 205 138.8 232 117 259 100.1 286 88 313 80.8 340 78.3 367 80.8 394 88 421 100.1 448 117 475 138.8 502 165.3 529 196.8 556 233 583 274.1 610 320"/>
+            <line id="fs-harv" class="curve" x1="70" y1="320" x2="610" y2="78.3" stroke="#ea580c"/>
+            <line id="fs-xline" x1="475" y1="138.8" x2="475" y2="320" stroke="#65a30d" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <circle id="fs-dot" class="dot" cx="475" cy="138.8" r="7" fill="#65a30d"/>
+            <text class="chart-label" x="470" y="120" fill="#0d9488">存量增长 g(x)（钟形）</text>
+            <text class="chart-label" x="425" y="66" fill="#ea580c">捕捞线 H = qE·x</text>
+            <text class="chart-label" x="352" y="74" fill="#475569">MSY = 12.5</text>
+            <text id="fs-status" class="chart-title-sm" x="340" y="52" text-anchor="middle"></text>
+            <text class="chart-label-en" x="340" y="338" text-anchor="middle">50</text>
+            <text class="chart-label-en" x="610" y="338" text-anchor="middle">100</text>
+            <text class="chart-label" x="596" y="310" text-anchor="end" fill="#475569">承载力 K=100</text>
+            <text class="chart-label" x="340" y="362" text-anchor="middle">资源存量 x（千吨）</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">每年增长 / 捕捞（千吨/年）</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fs-e">捕捞努力量 E</label><input type="range" id="fs-e" min="0" max="12" step="0.5" value="2.5"><output id="fs-oe" for="fs-e">2.5</output></div>
+          <div class="ctrl"><label for="fs-ox">均衡存量 x*</label><output id="fs-ox" for="fs-e">75 千吨</output></div>
+          <div class="ctrl"><label for="fs-oy">可持续产量 Y</label><output id="fs-oy" for="fs-e">9.38 千吨/年</output></div>
+        </div>
+        <figcaption>读图要点：均衡存量 x* = 100 − 10E 随努力量线性下降。E=5 时产量达到最大（MSY=12.5 千吨/年）；E 在 5 与 10 之间，船更多、存量更瘦、产量反而更低——生物性过度捕捞；E ≥ 10（= r/q），捕捞线完全高于增长曲线，存量趋向零。注意开放获取不会自动停在 MSY：只要还有利润，进入就继续（第 4 章），所以真实世界的危险区比图中更早到来。</figcaption>
+      </figure>
+
+      <div class="formula">
+        g(x) = r·x·(1 − x/K)&nbsp;&nbsp;→&nbsp;&nbsp;MSY = rK/4 = 12.5；&nbsp;x*(E) = K·(1 − qE/r)；&nbsp;E<sub>崩溃</sub> = r/q
+        <span class="f-note">数学角：谢弗模型（Schaefer Model）——本例环境承载力 K=100 千吨、内禀增长率 r=0.5、可捕系数 q=0.05，故临界努力量为 10。开放获取均衡还要再减去成本：进入持续到利润为零，对应的存量与产量都低于 MSY。</span>
+      </div>
+
+      <div class="formula">
+        (P<sub>t+1</sub> − c) = (1 + i)·(P<sub>t</sub> − c)
+        <span class="f-note">数学角：霍特林规则（Hotelling Rule, 1931）——开采成本 c 之上的"租"必须按利率 i 增长，否则没有人愿意把资源留到明天。价格长期路径由利率、稀缺租与后备技术成本共同封顶。</span>
+      </div>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">最大可持续产量 <span class="term-en">Maximum Sustainable Yield, MSY</span></div><div class="term-def">增长曲线顶点对应的可持续捕捞量。注意：MSY 是<strong>生物</strong>最优，不是经济最优——计入捕捞成本后，经济最优（MEY）的努力量低于 MSY。</div></div>
+        <div class="term"><div class="term-name">个体可转让配额 <span class="term-en">Individual Transferable Quota, ITQ</span></div><div class="term-def">把总可捕量切成配额分到渔民手中并允许买卖：总量由科学设定，效率由交易实现——给渔场装上"产权 + 市场"的双重治理。</div></div>
+        <div class="term"><div class="term-name">霍特林规则 <span class="term-en">Hotelling Rule</span></div><div class="term-def">竞争均衡中不可再生资源的净价格（租）按利率上升：把资源留在地下是一笔投资，均衡要求其回报率与利率相等。1931 年霍特林奠定资源经济学基础。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 长江十年禁渔与新西兰 ITQ</div>
+        <p><strong>长江</strong>曾是"淡水渔业的摇篮"，酷捕与生态恶化让四大家鱼锐减、白鱀豚功能性灭绝。2021 年起长江重点水域实行<strong>十年禁渔</strong>：23 万余渔民退捕转产。2022 年科考显示长江江豚回升至 1,249 头（2017 年为 1,012 头），实现历史性止跌回升——把"存量本钱"完整地存回去，增长曲线才有重新爬坡的资本。<strong>新西兰</strong>1986 年率先全面推行 ITQ：总可捕量由科学评估逐年设定、配额可自由交易，渔民从"追着鱼抢"变成"经营一份可增值的渔权"，渔业由长期亏损转向可持续盈利，成为全球 ITQ 的范本（冰岛、澳大利亚等相继跟进）。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"MSY 就是渔业的经济学最优。"</strong>——MSY 只看生物增长，无视捕捞成本与鱼价。把成本画进来，经济最优产量（MEY）出现在努力量<strong>小于</strong> MSY 处：为多捕最后一吨"免费增长"，付出的燃油与折旧可能不值。<strong>另一个极端："资源末日论 vs 技术无忧论，总有一边对。"</strong>——1972 年《增长的极限》预言矿产资源快速耗竭，落空的原因是"储量"是经济概念：价格上升 → 勘探更多、开采更省、替代更便宜（霍特林机制 + 诱导创新）。但<strong>可再生资源</strong>有阈值与不可逆性，纽芬兰鳕鱼证明悲观论在渔业上可能成真。不可再生靠价格与替代，可再生怕开放获取——两边各对一半。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.1</span>谢弗模型中，努力量从 MSY 水平继续上升，均衡存量与可持续产量将？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>双双下降——船更多、鱼更少、产量更低</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>产量继续上升：捕得越狠收获得多</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>存量下降但产量保持不变</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>可持续产量 = 自然增长量 = g(x*)，而 x* = 100 − 10E 随努力量线性下滑。E &gt; 5 后，均衡点滑到钟形曲线左半坡：存量更小 → 增长更少 → 可持续捕捞更少。B 混淆了"短期渔获"与"可持续产量"（抢存量可以猛赚一阵，随后无鱼可捕）；C 只有在增长曲线变为水平时才成立，现实中不存在。</div>
+      </div>
+
+      <div class="quiz" data-quiz">
+        <div class="quiz-q"><span class="quiz-tag">自测 5.2</span>按霍特林规则，竞争均衡中不可再生资源的"净价格（租）"长期将？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>保持不变，随产量稳定</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>按利率增长：留资源在地下是一笔投资，回报必须跑赢债券</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>长期趋近于零，资源终将不值钱</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>若租不按利率涨，矿主的最优策略是今天全部卖掉、买成债券——集体抛售压低今天价格、抬高未来稀缺性，直到"多留一年"的增值恰好等于利率。这一逻辑同时解释了资源价格的长期上限：当租的路径把价格推到后备技术（如光伏制氢替代燃油）的成本线，需求转移、路径封顶。A 忽略了持有的机会成本；C 与稀缺性方向相反。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>可再生资源：增长钟形曲线 × 捕捞斜线；努力量过大 → 存量与产量双降直至崩溃（临界 E=r/q）。</li>
+          <li>MSY 是生物上限；经济最优 MEY 低于 MSY（要计捕捞成本）；开放获取均衡更糟。</li>
+          <li>ITQ 用"总量 + 可交易产权"同时解决数量与效率问题。</li>
+          <li>霍特林规则：不可再生资源的租按利率上涨；价格信号诱导勘探、节约与替代。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">第 6 章</span>气候变化经济学：碳社会成本与贴现率之争</h2>
+
+      <p><strong>引入问题：</strong>今天多烧一吨煤，损害散布在全球与未来几百年：海平面、庄稼、热浪、迁徙。给这吨煤定一个"正确的价格"——碳社会成本——可能是经济学史上最重要的一道计算题。而答案几乎完全取决于一个小数点后几位的参数：贴现率。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：贴现率是"未来换算成今天"的汇率</div>
+        <p>碳社会成本（SCC）= 这吨 CO₂ 在未来几百年造成的全部边际损害的<strong>现值</strong>之和。贴现率 ρ 就是那个汇率：ρ=3% 时，100 年后 100 元的灾难只值今天的 5 元；损害偏偏又集中在远期——于是 SCC 对 ρ 极度敏感（近似与 1/ρ² 成比例）。<strong>斯特恩</strong>（2006 年《斯特恩报告》）主张代际伦理：近乎零的纯时间偏好，ρ≈1.4%，SCC 高企 → 立即强力减排；<strong>诺德豪斯</strong>（2018 年诺奖）主张用市场资本回报率贴现，ρ≈4~5%，SCC 低得多 → 渐进减排。两人争的不是一个技术参数，而是"<strong>我们欠未来多少</strong>"这一伦理立场——经济学把它压缩进了一个希腊字母。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 6-1 · 贴现率滑块：一个参数决定碳价量级</div>
+        <p class="fig-sub">试一试：把贴现率从 3% 拖到 2%，再拖到 4%，看 SCC 如何跳变。灰色圆点是 EPA 官方估计——曲线为风格化拟合（SCC ≈ 720/ρ²），用于看清量级关系。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="碳社会成本随贴现率上升而急剧下降的曲线图：贴现率1.4%时约367美元每吨，2%时180美元，3%时80美元，5%时29美元。图上标有美国环保署在2%、2.5%、3%贴现率下的官方估计圆点190、120、80美元。滑块改变贴现率时圆点沿曲线移动。">
+            <line class="axis" x1="70" y1="320" x2="610" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <line class="gridline" x1="70" y1="247.5" x2="610" y2="247.5"/>
+            <line class="gridline" x1="70" y1="175" x2="610" y2="175"/>
+            <line class="gridline" x1="70" y1="102.5" x2="610" y2="102.5"/>
+            <text class="chart-label-en" x="62" y="251" text-anchor="end">100</text>
+            <text class="chart-label-en" x="62" y="179" text-anchor="end">200</text>
+            <text class="chart-label-en" x="62" y="106" text-anchor="end">300</text>
+            <path class="curve" d="M70 53.7 L85 88 100 116.1 115 139.4 130 158.9 145 175.4 160 189.5 190 212.1 220 229.4 250 242.8 280 253.4 310 262 340 269 370 274.8 400 279.7 430 283.8 460 287.4 490 290.4 520 293 550 295.4 580 297.3 610 299.1" stroke="#65a30d"/>
+            <circle class="dot" cx="160" cy="182.3" r="5" fill="#475569"/>
+            <circle class="dot" cx="235" cy="233" r="5" fill="#475569"/>
+            <circle class="dot" cx="310" cy="262" r="5" fill="#475569"/>
+            <text class="chart-label-en" x="168" y="180" fill="#475569">EPA 2%：190 美元</text>
+            <text class="chart-label-en" x="243" y="229" fill="#475569">EPA 2.5%：120</text>
+            <text class="chart-label-en" x="318" y="266" fill="#475569">EPA 3%：80</text>
+            <line id="dr-vline" x1="310" y1="262" x2="310" y2="320" stroke="#65a30d" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <circle id="dr-dot" class="dot" cx="310" cy="262" r="7" fill="#65a30d"/>
+            <text class="chart-label" x="470" y="235" fill="#65a30d">SCC(ρ) ≈ 720/ρ²（风格化）</text>
+            <text id="dr-status" class="chart-title-sm" x="340" y="52" text-anchor="middle"></text>
+            <text class="chart-label-en" x="160" y="338" text-anchor="middle">2%</text>
+            <text class="chart-label-en" x="310" y="338" text-anchor="middle">3%</text>
+            <text class="chart-label-en" x="460" y="338" text-anchor="middle">4%</text>
+            <text class="chart-label" x="340" y="362" text-anchor="middle">贴现率 ρ（%/年）</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">SCC（美元/吨 CO₂）</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="dr-r">贴现率 ρ（%/年）</label><input type="range" id="dr-r" min="1.4" max="5" step="0.1" value="3"><output id="dr-or" for="dr-r">3.0 %</output></div>
+          <div class="ctrl"><label for="dr-os">碳社会成本</label><output id="dr-os" for="dr-r">80 美元/吨</output></div>
+          <div class="ctrl"><label for="dr-of">100 年后 1 美元的现值</label><output id="dr-of" for="dr-r">0.050 美元</output></div>
+        </div>
+        <figcaption>读图要点：贴现率从 2% 升到 4%（翻倍），SCC 缩为约四分之一——远期损害被指数级抹去。美国 EPA 2023 年把官方 SCC 从 51 美元（3% 贴现）提高到 190 美元/吨（2% 贴现），整个成本收益天平随之倾向强力减排。斯特恩与诺德豪斯之争的全部杀伤力，就在这条曲线的陡度上。</figcaption>
+      </figure>
+
+      <div class="formula">
+        PV = D·e<sup>−ρt</sup>；&nbsp;ρ=2% 时 100 年后 1 美元 ≈ 0.135 美元，ρ=5% 时 ≈ 0.007 美元
+        <span class="f-note">数学角：损害近似随时间累积、贴现按指数衰减，现值积分 ∫t·e<sup>−ρt</sup>dt ∝ 1/ρ²——这就是"贴现率翻倍、SCC 缩为四分之一"的来源。</span>
+      </div>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">碳社会成本 <span class="term-en">Social Cost of Carbon, SCC</span></div><div class="term-def">多排放 1 吨 CO₂ 造成的全部未来边际损害的现值，是最优碳税（或碳配额拍卖底价）的理论基准。</div></div>
+        <div class="term"><div class="term-name">社会贴现率 <span class="term-en">Social Discount Rate</span></div><div class="term-def">把未来收益与损害折算成现值的比率，由纯时间偏好、消费增长与风险厌恶（拉姆齐公式）构成。既是市场参数，更是代际伦理选择。</div></div>
+        <div class="term"><div class="term-name">减缓与适应 <span class="term-en">Mitigation vs Adaptation</span></div><div class="term-def">减缓：减少排放或增加碳汇，降低损害的<strong>产生</strong>；适应：修堤坝、育耐旱品种，降低损害的<strong>承受</strong>。二者互补，对不可逆阈值而言适应无法替代减缓。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 从《巴黎协定》到中国"双碳"</div>
+        <p>2015 年《巴黎协定》把"较工业化前升温控制在 2℃ 之内、力争 1.5℃"写成全球目标，靠"自主贡献 + 每五年盘点加严"的棘轮机制推动——承认搭便车，转而用互惠与透明度捆住它。2020 年中国宣布"2030 年前碳达峰、2060 年前碳中和"；2023 年中国风电与光伏新增装机合计约 2.9 亿千瓦，约占全球新增的四成以上，可再生装机历史性超过煤电。同一时期，欧盟推出碳边境调节机制（CBAM），把碳价钉在进口商品上——气候俱乐部的雏形：共同减排者互免关税，搭便车者付费。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"贴现率是技术细节，交给模型就行。"</strong>——看图 6-1：它不是细节，是结论的开关。给未来多大的权重，本质是伦理判断：尚未出生的人没有市场代表权，"市场利率"替不了他们投票。<strong>"适应可以替代减排。"</strong>——海堤能挡 30 厘米海平面，挡不住西南极冰盖失稳这种<strong>不可逆阈值</strong>：越过临界点的损害不服从"付钱就能承受"的逻辑，适应的边际成本会趋近无穷。<strong>"别国减排我搭车最划算。"</strong>——单看一国博弈确实如此，这正是气候是"全球公共品"的含义；但若 190 余国都这么想，就是第 4 章公地悲剧的星球级重演——所以才有碳俱乐部、CBAM 与棘轮机制。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.1</span>其他假设不变，贴现率从 3% 降到 2%，碳社会成本（SCC）将？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>小幅上升，量级不变</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>大幅上升——SCC 近似与 1/ρ² 成比例，2% 对 3% 意味着约 2.25 倍</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>下降：更低的贴现率说明社会更"耐心"、损害更小</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>气候损害主要落在几十年到几百年后。ρ 变小 → 远期损害在今天的"权重"指数级放大。EPA 2023 年将贴现率从 3% 改为 2%，官方 SCC 从约 51 美元跳到约 190 美元/吨——同一套损害模型，政策结论天差地别。C 因果颠倒：耐心（低 ρ）恰恰让<strong>远期的损害</strong>进入视野，SCC 更高而不是更低。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.2</span>"用修堤坝、耐旱作物去适应，就不必花钱减排了"——这句话错在哪里？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>错在适应的成本永远高于减缓</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>错在大幅升温存在不可逆阈值（冰盖、永冻土、生态系统），无法"适应过去"；适应是必要补充，不能替代减缓</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>错在减缓技术还不成熟，谈不上替代</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>适应降低的是损害的<strong>承受</strong>，减缓降低的是损害的<strong>产生</strong>。对连续、可量的损害（海平面升 30 厘米）适应有效；对不可逆阈值（西南极冰盖崩解、永冻土碳释放、物种灭绝），适应的边际成本趋向无穷——钱买不回临界点。A 太绝对：很多适应措施（预警系统）成本效益极高；C 与逻辑无关：成熟与否不改变"适应≠替代"的结构。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>SCC = 边际排放的全部未来损害现值，是最优碳价的理论基准。</li>
+          <li>SCC 对贴现率极度敏感（≈1/ρ²）：斯特恩与诺德豪斯之争是伦理之争的数学化。</li>
+          <li>减缓减少损害的产生，适应降低损害的承受；对不可逆阈值，适应替代不了减缓。</li>
+          <li>气候是全球公共品：搭便车 → 公地悲剧星球版；俱乐部、CBAM 与棘轮机制是现阶段的解药。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">终点</span>进阶路线与延伸阅读</h2>
+      <p>本分支把微观工具（外部性、公共品、税收、产权）应用到环境与资源，下一步自然走向：<a href="../13-城市与区域经济学/index.html">13 城市与区域经济学</a>（拥堵负外部性与拥堵费）、<a href="../15-行为经济学/index.html">15 行为经济学</a>（现时偏好——为什么气候承诺总是"明天再说"）、<a href="../16-政治经济学与制度经济学/index.html">16 政治经济学与制度经济学</a>（奥斯特罗姆与制度设计）、<a href="../03-计量经济学/index.html">03 计量经济学</a>（用双重差分评估环保政策的真实效果）。</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Tietenberg &amp; Lewis《环境与自然资源经济学》</span>——标准中级教材，本分支全部主题的系统展开，有中译本；考研/进阶首选。</li>
+          <li><span class="bk">William Nordhaus《气候赌场》（The Climate Casino）</span>——2018 年诺奖得主写给公众的气候经济学全景：DICE 模型、贴现、碳价一路讲清。</li>
+          <li><span class="bk">Elinor Ostrom《公共事物的治理之道》（Governing the Commons）</span>——公地悲剧并非无解：公共池塘资源自治的八项设计原则，制度分析的丰碑。</li>
+          <li><span class="bk">Nicholas Stern《地球安全愿景》（A Blueprint for a Safer Planet）</span>——低贴现率立场的代表作，理解"斯特恩 vs 诺德豪斯"之争的另一极。</li>
+          <li><span class="bk">Partha Dasgupta《生物多样性经济学：达斯古普塔评述》（The Dasgupta Review, 2021）</span>——把自然资本纳入国民财富核算的最新框架，环境经济学的当代前沿。</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../11-发展与创新经济学/index.html"><span class="pager-dir">上一分支</span><br><span class="pager-name">发展与创新经济学</span></a>
+        <a href="../13-城市与区域经济学/index.html"><span class="pager-dir">下一分支</span><br><span class="pager-name">城市与区域经济学</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+<script src="../assets/econ.js"></script>
+<script>
+(function () {
+  "use strict";
+  function $(id) { return document.getElementById(id); }
+
+  /* ============ 图 2-1 · 庇古税 ============
+     需求 P = 100 − Q；PMC = 20 + Q；MEC = 30（常数）；SMC = 50 + Q
+     社会最优 Q* = 25；无税市场均衡 Q0 = 40；税后 Q(t) = (80 − t)/2
+     无谓损失 DWL = (30 − t)²/4；税收 = t·Q(t) */
+  var pigT = $("pig-t");
+  if (pigT) {
+    function pigX(q) { return 70 + (q / 80) * 540; }
+    function pigY(p) { return 320 - (p / 120) * 290; }
+    function pigUpdate() {
+      var t = Number(pigT.value);
+      var q = (80 - t) / 2;
+      var pd = 100 - q;
+      var qEnd = (100 + t <= 120) ? 80 : 100 - t;
+      $("pig-eff").setAttribute("x1", pigX(0));
+      $("pig-eff").setAttribute("y1", pigY(20 + t));
+      $("pig-eff").setAttribute("x2", pigX(qEnd));
+      $("pig-eff").setAttribute("y2", pigY(20 + qEnd + t));
+      $("pig-dot").setAttribute("cx", pigX(q));
+      $("pig-dot").setAttribute("cy", pigY(pd));
+      $("pig-vline").setAttribute("x1", pigX(q));
+      $("pig-vline").setAttribute("x2", pigX(q));
+      $("pig-vline").setAttribute("y1", pigY(pd));
+      $("pig-vline").setAttribute("y2", 320);
+      $("pig-dwl").setAttribute("points",
+        pigX(q) + "," + pigY(100 - q) + " " +
+        pigX(q) + "," + pigY(50 + q) + " " +
+        pigX(25) + "," + pigY(75));
+      var dwl = (30 - t) * (30 - t) / 4;
+      var rev = t * q;
+      $("pig-ot").textContent = t + " 元/吨";
+      $("pig-oq").textContent = q + " 吨";
+      $("pig-or").textContent = Econ.fmt(rev, 0) + " 元";
+      $("pig-od").textContent = Econ.fmt(dwl, 0) + " 元";
+      var st;
+      if (t < 30) st = "税率 " + t + " < 30：污染仍偏多";
+      else if (t === 30) st = "税率 = 30：恰为社会最优，DWL = 0 ✓";
+      else st = "税率 " + t + " > 30：矫枉过正，新 DWL = " + Econ.fmt(dwl, 0) + " 元";
+      $("pig-status").textContent = st;
+    }
+    pigT.addEventListener("input", pigUpdate);
+    pigUpdate();
+  }
+
+  /* ============ 图 4-1 · 公地悲剧 ============
+     总利润 Π(N) = 6N − N²；单船利润 π(N) = 6 − N；N = 1..8
+     社会最优 N* = 3；开放获取（利润耗散）N = 6 */
+  var gcN = $("gc-n");
+  if (gcN) {
+    function gcX(n) { return 70 + (n / 9) * 540; }
+    function gcY(v) { return 320 - ((v + 18) / 28) * 290; }
+    function gcUpdate() {
+      var n = Number(gcN.value);
+      var tot = 6 * n - n * n;
+      var per = 6 - n;
+      $("gc-dt").setAttribute("cx", gcX(n));
+      $("gc-dt").setAttribute("cy", gcY(tot));
+      $("gc-dp").setAttribute("cx", gcX(n));
+      $("gc-dp").setAttribute("cy", gcY(per));
+      $("gc-on").textContent = n + " 艘";
+      $("gc-ot").textContent = Econ.fmt(tot, 1) + " 万元";
+      $("gc-op").textContent = Econ.fmt(per, 1) + " 万元";
+      var st;
+      if (per > 0) st = "单船利润 > 0：外面的船还想挤进来";
+      else if (per === 0) st = "开放获取均衡：利润耗散殆尽";
+      else st = "过度进入：全体亏损";
+      $("gc-status").textContent = st;
+    }
+    gcN.addEventListener("input", gcUpdate);
+    gcUpdate();
+  }
+
+  /* ============ 图 5-1 · 渔业资源动态 ============
+     增长 g(x) = 0.5·x·(1 − x/100)，K = 100，r = 0.5，q = 0.05
+     捕捞 H = 0.05·E·x；均衡存量 x* = 100 − 10E；MSY = 12.5（E = 5）；E ≥ r/q = 10 崩溃 */
+  var fsE = $("fs-e");
+  if (fsE) {
+    function fsX(x) { return 70 + (x / 100) * 540; }
+    function fsY(g) { return 320 - (g / 15) * 290; }
+    function fsUpdate() {
+      var e = Number(fsE.value);
+      var slope = 0.05 * e;
+      var x2, y2;
+      if (e <= 0) { x2 = 100; y2 = 0; }
+      else {
+        x2 = (slope * 100 <= 15) ? 100 : 15 / slope;
+        y2 = Math.min(15, slope * 100);
+      }
+      $("fs-harv").setAttribute("x1", fsX(0));
+      $("fs-harv").setAttribute("y1", fsY(0));
+      $("fs-harv").setAttribute("x2", fsX(x2));
+      $("fs-harv").setAttribute("y2", fsY(y2));
+      var xs = Math.max(0, 100 - 10 * e);
+      var yld = (e < 10) ? (0.05 * e * xs) : 0;
+      if (e < 10) {
+        $("fs-dot").setAttribute("cx", fsX(xs));
+        $("fs-dot").setAttribute("cy", fsY(yld));
+        $("fs-dot").style.display = "";
+        $("fs-xline").setAttribute("x1", fsX(xs));
+        $("fs-xline").setAttribute("x2", fsX(xs));
+        $("fs-xline").setAttribute("y1", fsY(yld));
+        $("fs-xline").setAttribute("y2", 320);
+        $("fs-xline").style.display = "";
+      } else {
+        $("fs-dot").style.display = "none";
+        $("fs-xline").style.display = "none";
+      }
+      $("fs-oe").textContent = Econ.fmt(e, 1);
+      $("fs-ox").textContent = Econ.fmt(xs, 0) + " 千吨";
+      $("fs-oy").textContent = Econ.fmt(yld, 2) + " 千吨/年";
+      var st;
+      if (e <= 0) st = "无捕捞：存量趋向承载力 K = 100";
+      else if (e < 5) st = "可持续：存量偏高，产量 < MSY";
+      else if (e === 5) st = "MSY：最大产量 12.5 千吨/年";
+      else if (e < 10) st = "生物性过度捕捞：船多鱼少";
+      else st = "崩溃：努力量 ≥ 临界值 r/q = 10";
+      $("fs-status").textContent = st;
+    }
+    fsE.addEventListener("input", fsUpdate);
+    fsUpdate();
+  }
+
+  /* ============ 图 6-1 · 贴现率与碳社会成本 ============
+     风格化 SCC(ρ) = 720/ρ²（ρ 为百分数），量级对齐 EPA(2023) 与 Stern(2006)
+     100 年现值因子 = e^(−ρ·100/100) = e^(−ρ) */
+  var drR = $("dr-r");
+  if (drR) {
+    function drX(r) { return 70 + ((r - 1.4) / 3.6) * 540; }
+    function drY(s) { return 320 - (s / 400) * 290; }
+    function scc(r) { return 720 / (r * r); }
+    function drUpdate() {
+      var r = Number(drR.value);
+      var s = scc(r);
+      $("dr-dot").setAttribute("cx", drX(r));
+      $("dr-dot").setAttribute("cy", drY(s));
+      $("dr-vline").setAttribute("x1", drX(r));
+      $("dr-vline").setAttribute("x2", drX(r));
+      $("dr-vline").setAttribute("y1", drY(s));
+      $("dr-vline").setAttribute("y2", 320);
+      $("dr-or").textContent = Econ.fmt(r, 1) + " %";
+      $("dr-os").textContent = Econ.fmt(s, 0) + " 美元/吨";
+      $("dr-of").textContent = Econ.fmt(Math.exp(-r / 100 * 100), 3) + " 美元";
+      $("dr-status").textContent =
+        "SCC ≈ " + Econ.fmt(s, 0) + " 美元/吨 · 2% → " + Econ.fmt(scc(2), 0) +
+        " · 4% → " + Econ.fmt(scc(4), 0);
+    }
+    drR.addEventListener("input", drUpdate);
+    drUpdate();
+  }
+})();
+</script>
+</body>
+</html>

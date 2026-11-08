@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>公共经济学（财政学） · EconLearn 经济学自学之路</title>
+<meta name="description" content="公共经济学中文互动教程：税收无谓损失与归宿、税制设计、再分配漏桶、公共选择与成本收益分析，配互动图表与自测。">
+<link rel="stylesheet" href="../assets/econ.css">
+</head>
+<body style="--branch:#be185d">
+<noscript><p class="noscript-tip">本页的互动图表与自测需要启用 JavaScript；未启用时仍可阅读全部正文。</p></noscript>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← 总览</a>
+  <div class="topbar-title"><span class="topbar-num">08</span>公共经济学（财政学）</div>
+  <button class="toc-toggle" aria-expanded="false">目录</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">本分支章节</p>
+    <nav aria-label="章节目录">
+      <a href="#overview">导读与学习目标</a>
+      <a href="#ch1">1 · 为什么需要政府</a>
+      <a href="#ch2">2 · 税收的经济学</a>
+      <a href="#ch3">3 · 税制设计</a>
+      <a href="#ch4">4 · 公共支出与再分配</a>
+      <a href="#ch5">5 · 公共选择</a>
+      <a href="#ch6">6 · 成本收益分析</a>
+      <a href="#path">进阶路线与延伸阅读</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · 经济学自学之路</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">分支 08 · 部门与国际</span>
+        <h1>公共经济学（财政学）</h1>
+        <p class="hero-en">Public Economics / Public Finance</p>
+        <p class="hero-lead">市场解决不了的事交给谁？政府收的每一分税从谁口袋里掏出、又让多少交易消失？本分支研究政府这只"有形之手"该伸多长：税收、支出、再分配与公共决策本身。</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">学完本分支你将能</div>
+        <ul>
+          <li>盘点五类<strong>市场失灵</strong>，并解释为什么"市场失灵"不自动等于"政府该接管"（政府失灵）</li>
+          <li>在供需图上画出<strong>从量税</strong>的无谓损失，说明 DWL 随税率平方与弹性如何变化</li>
+          <li>用弹性预测<strong>税收归宿</strong>（谁真正承担税负），解释拉弗曲线的含义与政策边界</li>
+          <li>区分累进 / 比例 / 累退税，比较主要税种在效率与公平之间的权衡（含拉姆齐规则）</li>
+          <li>解释再分配的<strong>漏桶效应</strong>与负所得税设计，分析投票悖论、中位选民与寻租</li>
+          <li>用<strong>社会贴现率</strong>与影子价格对一个公共项目做成本收益判定</li>
+        </ul>
+      </div>
+      <div class="prereq">前置知识：
+        <a class="badge" href="../01-微观经济学/index.html">01 微观（供需、剩余与市场失灵）</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">第 1 章</span>为什么需要政府：市场失灵盘点</h2>
+
+      <p><strong>引入问题：</strong>超市货架上摆得下面包和手机，为什么摆不下"国防""路灯"和"防洪堤"？更扎心的问题反过来问：既然政府也会犯错，凭哪些证据我们才敢说"这件事该交给政府"？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：价格是台自动记账机，但它有三处盲区</div>
+        <p>市场价格像一台神奇的记账机：谁想要、谁出得起、谁该生产，全部自动对账。但这台机器只在两个前提下运转——<strong>产权清晰可交易</strong>、<strong>交易双方信息对称</strong>。烟囱排的烟没有"股东"，路灯的光没法对路人逐个收费（<strong>搭便车 Free-rider</strong>），二手车卖家知道的比买家多——价格机制在这些地方失灵。于是需要政府用税收与公共支出"补账"。但别忘了：政府也是由信息有限、有自身利益的人组成的机构，<strong>用一只会抖的手去修另一只看不见的手</strong>，本身就是一道权衡题。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">市场失灵 <span class="term-en">Market Failure</span></div><div class="term-def">价格机制无法把资源配置到社会最优的状态。五大类：垄断势力、外部性、公共品、信息不对称、宏观波动与收入分配问题。</div></div>
+        <div class="term"><div class="term-name">公共品 <span class="term-en">Public Goods</span></div><div class="term-def">同时具备<strong>非排他性</strong>（无法阻止不付费者使用）与<strong>非竞争性</strong>（一人使用不减少他人可用量）的物品，如国防、灯塔。市场因搭便车而供给不足。</div></div>
+        <div class="term"><div class="term-name">外部性 <span class="term-en">Externality</span></div><div class="term-def">行为对旁观者造成的未计价影响：污染是负外部性，疫苗接种的正外部性使私人供给偏低。治理工具：庇古税、补贴、产权界定。</div></div>
+        <div class="term"><div class="term-name">信息不对称 <span class="term-en">Information Asymmetry</span></div><div class="term-def">交易一方掌握的信息多于另一方，导致逆向选择与道德风险（如保险、信贷、医疗市场），详见分支 04。</div></div>
+        <div class="term"><div class="term-name">政府失灵 <span class="term-en">Government Failure</span></div><div class="term-def">政府干预使结果比市场更糟：信息不足、激励扭曲、被利益集团俘获、决策机制本身有缺陷（见第 5 章公共选择）。</div></div>
+      </div>
+
+      <p>把"哪里该有政府"整理成一张盘点表——市场失灵类型、对应干预工具与新的风险：</p>
+      <ul>
+        <li><strong>垄断与市场势力</strong> → 反垄断、价格监管 → 风险：监管者被俘获、管制定价失准；</li>
+        <li><strong>外部性</strong> → 庇古税 / 补贴、可交易配额 → 风险：边际损害测不准，税率一刀切；</li>
+        <li><strong>公共品</strong> → 税收融资、公共提供 → 风险：需求显示不出真实偏好，过度供给或供给不足；</li>
+        <li><strong>信息不对称</strong> → 强制披露、社会保险、资质管制 → 风险：道德风险反被放大；</li>
+        <li><strong>分配与宏观稳定</strong> → 累进税、转移支付、财政政策 → 风险：激励扭曲、政策时滞。</li>
+      </ul>
+      <p>判断标准不是"市场是否完美"，而是<strong>不完美的市场与不完美的政府哪个代价更小</strong>——这是公共经济学反复出现的比较基准思维。</p>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 灯塔与 22% 的账本</div>
+        <p>灯塔长期是"纯公共品必须政府提供"的教科书例证，直到科斯（Ronald Coase）翻查英国航运史：17–19 世纪的英国灯塔大多由私人建造，向靠港船主打包收费，运转了两百年——公共品<strong>可以由私人生产</strong>，难的是收费制度设计。另一个方向的事实：2023 年中国一般公共预算支出约 27.5 万亿元，约占 GDP 的 22%；若计入政府性基金等"四本账"，全口径接近三分之一；OECD 国家平均更高。现代经济中，"有形之手"早已不是边角料，而是与市场平起平坐的资源配置者——所以它的对与错，值得用一整个分支来研究。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"公共品 = 政府生产的物品；政府提供的 = 公共品。"</strong>两个方向都错。义务教育由财政出资，但课本和校舍是<strong>私人物品</strong>（可以排除、会耗损）；灯塔是公共品，却曾由私人建造运营。经济学上"公共提供"（谁出钱）与"公共生产"（谁造）是两个独立决策——路灯可以外包给私人企业生产，国企也可能生产着完全竞争的私人物品。另一个误区是<strong>"存在市场失灵，就该接管"</strong>——只有当干预的净收益（扣除政府失灵的代价）为正时才成立。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.1</span>下列哪一项最接近"纯公共品"（同时满足非排他与非竞争）？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>早高峰的地铁车厢</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>收费高速公路</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>国防</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>财政出资印制的免费课本</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>国防无法把任何一个居民排除在保护之外（非排他），多保护一人也不减少他人所得（非竞争），是纯公共品的标准例子。地铁高峰期一人上车就挤占空间（竞争性）；收费公路可设卡排除（排他性）；课本本身是私人物品——"由财政出资"改变的是提供方式，不是物品属性。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.2</span>"某市场存在失灵，所以政府接管一定能改善福利。"这句话错在哪？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>错在市场失灵其实并不存在</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>错在忽略了政府失灵：干预自身有信息、激励与俘获成本，需与市场失灵比大小</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>错在政府从不犯错误</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>没错，这句话完全正确</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>正确的决策规则是比较"次优对次优"：不完美的市场 vs 不完美的政府。监管者可能缺信息、被俘获、面临扭曲的选举激励（第 5 章），官僚机构缺少利润约束（第 16 章）。存在市场失灵只说明<strong>有改进的可能</strong>，不保证干预就更好——每一项政策都要过第 6 章的成本收益检验。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>市场失灵五类：垄断、外部性、公共品、信息不对称、分配与稳定问题。</li>
+          <li>公共品的判定看两个属性（非排他、非竞争），与"谁出钱、谁生产"无关。</li>
+          <li>政府失灵与市场失灵对称存在：判断基准是"哪个不完美更小"。</li>
+          <li>公共部门规模：中国全口径支出约占 GDP 三成上下，OECD 平均更高。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">第 2 章</span>税收的经济学：无谓损失、归宿与拉弗曲线</h2>
+
+      <p><strong>引入问题：</strong>同样是每件多收 1 元，为什么对香烟征税几乎不减少吸烟量、代价大多由烟民承担，而对珠宝征税交易量骤减、商家叫苦不迭？税收这把刀，切下去的到底是谁的蛋糕、又洒了多少在桌上？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：税是一个楔子，消失的交易是纯损失</div>
+        <p>从量税在买方支付价与卖方实得价之间打进一个<strong>税楔子（Tax Wedge）</strong>：买贵了、卖贱了，一些双方原本都愿意做的交易被挤掉。被挤掉的交易本来的好处（买方剩余 + 卖方剩余）凭空消失——这就是<strong>无谓损失（Deadweight Loss, DWL）</strong>：谁也没拿到，纯粹漏掉的社会福利。而"税到底谁承担"与法律规定谁缴税毫无关系，只看<strong>弹性</strong>：哪一方更"走不掉"（弹性更小），哪一方就承担更多——就像挤地铁，谁更赶时间谁被挤得更扁。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">无谓损失 <span class="term-en">Deadweight Loss</span></div><div class="term-def">税收（或其他干预）使交易量偏离均衡而净损失的社会剩余，几何上是供需曲线之间的三角形，近似与税率的平方成正比。</div></div>
+        <div class="term"><div class="term-name">税收归宿 <span class="term-en">Tax Incidence</span></div><div class="term-def">税负在经济体中的真实落点。由供需<strong>相对弹性</strong>决定，与法定纳税人是谁无关；弹性小的一方承担份额大。</div></div>
+        <div class="term"><div class="term-name">税楔子 <span class="term-en">Tax Wedge</span></div><div class="term-def">买方价格与卖方价格之间的差额。楔子越厚，交易收缩越多，无谓损失越大。</div></div>
+        <div class="term"><div class="term-name">拉弗曲线 <span class="term-en">Laffer Curve</span></div><div class="term-def">税率与税收总额的倒 U 关系：税率为零与百分百时税收皆为零。它说明存在收入最大税率，但<strong>不</strong>说明减税总能增收。</div></div>
+      </div>
+
+      <div class="formula">DWL ≈ ½ × t × ΔQ<span class="f-note">t 为每单位税额，ΔQ 为交易量收缩；由于 ΔQ 本身与 t 成正比，故 DWL 近似随 t 的平方增长——税率翻倍，损失约四倍</span></div>
+
+      <figure class="fig">
+        <div class="fig-title">图 2-1 · 税收的无谓损失：弹性与税率滑块</div>
+        <p class="fig-sub">试一试：先把税率固定在 1.5，把需求弹性从 0.5 拖到 4.0，观察 DWL 三角形（红色）与买方承担份额如何变化；再把税率拉到 3.0，体会"平方增长"。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="供需图上的从量税：供给线向上倾斜，需求线绕均衡点随弹性转动，绿色矩形为政府税收，红色三角形为无谓损失，虚线显示税后买方价与卖方价。">
+            <defs><clipPath id="dwl-clip"><rect x="70" y="40" width="530" height="280"/></clipPath></defs>
+            <g clip-path="url(#dwl-clip)">
+              <polygon id="dwl-rev" fill="#15803d" fill-opacity="0.16" points=""/>
+              <polygon id="dwl-tri" fill="#b91c1c" fill-opacity="0.18" points=""/>
+              <line id="dwl-pb" class="gridline" x1="70" y1="0" x2="0" y2="0"/>
+              <line id="dwl-ps" class="gridline" x1="70" y1="0" x2="0" y2="0"/>
+              <line id="dwl-qv" class="gridline" x1="0" y1="0" x2="0" y2="320"/>
+              <line id="dwl-s" class="curve curve-c3" x1="70" y1="292" x2="600" y2="124"/>
+              <line id="dwl-d" class="curve curve-c1" x1="0" y1="0" x2="0" y2="0"/>
+            </g>
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="40"/>
+            <text class="chart-label" x="335" y="376" text-anchor="middle">数量 Q（万件）</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">价格 P（元）</text>
+            <circle id="dwl-e0" class="dot" cx="388" cy="191.2" r="5" fill="#475569"/>
+            <circle id="dwl-dotb" class="dot" r="6" fill="#2f6fdb"/>
+            <circle id="dwl-dots" class="dot" r="6" fill="#0d9488"/>
+            <text class="chart-label" x="548" y="112" style="fill:#0d9488">S（供给）</text>
+            <text id="dwl-labd" class="chart-label" style="fill:#2f6fdb">D（需求）</text>
+            <text id="dwl-txt" class="chart-title-sm" x="335" y="24" text-anchor="middle"></text>
+            <text id="dwl-sub" class="chart-label" x="335" y="46" text-anchor="middle" style="fill:#4b5563"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="dwl-ed">需求弹性 Ed</label><input type="range" id="dwl-ed" min="0.5" max="4" step="0.1" value="1"><output id="dwl-oed" for="dwl-ed">1.0</output></div>
+          <div class="ctrl"><label for="dwl-t">从量税 t（元/件）</label><input type="range" id="dwl-t" min="0" max="3" step="0.1" value="1.5"><output id="dwl-ot" for="dwl-t">1.5</output></div>
+        </div>
+        <figcaption>读图要点：供给线固定，需求线始终过无税均衡 E0（P = 4.60，Q = 60）。需求越缺乏弹性（Ed 趋向 0.5），买方价格涨得越多、承担份额越大，但交易量收缩越小、DWL 越小——"<strong>好收的税效率高、但公平差</strong>"正是这枚硬币的两面（数据为示意标度）。</figcaption>
+      </figure>
+
+      <p><strong>税收归宿：</strong>法定归宿（谁开发票缴税）与经济归宿（谁实际变穷）是两回事。对卖方征收，卖方会随弹性把税向前转嫁给买方或向后转嫁给要素所有者。极端情形好记：需求完全无弹性（救命药），税全由买方承担、DWL 为零；供给完全无弹性（市区土地），税全由卖方承担、DWL 也为零——<strong>税基越"死"，效率损失越小，但分配越狠</strong>。这也是房产税、土地财政受经济学家青睐的效率理由。</p>
+
+      <p><strong>拉弗曲线：</strong>税率提高有两股相反的力量——税率本身抬升收入，但税基（人们申报的收入、发生的交易）随税率收缩。避税、地下经济、劳动供给收缩、资本外流都是"税基响应"。当响应足够强，存在一个收入最大税率 t*：越过它，加税反而减收。</p>
+
+      <figure class="fig">
+        <div class="fig-title">图 2-2 · 拉弗曲线：税率与税收收入</div>
+        <p class="fig-sub">试一试：把"经济对税率的响应强度 e"从 0.2 拖到 2.0，看峰值税率 t* 如何左移、禁区（浅红区）如何扩大；再拖动税率滑块进入禁区，读一读提示。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 380" role="img" aria-label="拉弗曲线：税收收入随税率先升后降，峰值为 t*，其右侧浅红色区域为增税减收的禁区；响应强度参数改变曲线形状与峰值位置。">
+            <rect id="laf-zone" x="335" y="40" width="265" height="280" fill="#b91c1c" opacity="0.06"/>
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="40"/>
+            <text class="chart-label" x="335" y="366" text-anchor="middle">税率 t（%）</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">税收收入 R（指数）</text>
+            <text class="chart-label" x="70" y="338" text-anchor="middle">0</text>
+            <text class="chart-label" x="202" y="338" text-anchor="middle">25</text>
+            <text class="chart-label" x="335" y="338" text-anchor="middle">50</text>
+            <text class="chart-label" x="467" y="338" text-anchor="middle">75</text>
+            <text class="chart-label" x="596" y="338" text-anchor="middle">100</text>
+            <polyline id="laf-curve" class="curve curve-c1" points=""/>
+            <line id="laf-peakline" class="gridline" x1="0" y1="40" x2="0" y2="320"/>
+            <circle id="laf-peak" class="dot" r="5" fill="#475569"/>
+            <circle id="laf-dot" class="dot" r="7" fill="#be185d"/>
+            <text id="laf-tstar" class="chart-label" style="fill:#b91c1c"></text>
+            <text class="chart-label" x="86" y="60" style="fill:#2f6fdb">R = 30 · t · (1−t)^e</text>
+            <text id="laf-txt" class="chart-title-sm" x="335" y="24" text-anchor="middle"></text>
+            <text id="laf-sub" class="chart-label" x="335" y="46" text-anchor="middle" style="fill:#4b5563"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="laf-t">税率 t</label><input type="range" id="laf-t" min="0" max="100" step="1" value="30"><output id="laf-ot" for="laf-t">30%</output></div>
+          <div class="ctrl"><label for="laf-e">税基响应强度 e</label><input type="range" id="laf-e" min="2" max="20" step="1" value="10"><output id="laf-oe" for="laf-e">1.0</output></div>
+        </div>
+        <figcaption>读图要点：本演示用 R = 30·t·(1−t)<sup>e</sup> 刻画税基收缩（示意）。响应强度 e 越大（避税、地下经济、劳动供给与资本流动越敏感），峰值税率 t* = 1/(1+e) 越低、禁区越宽。经验上，多数发达经济体的综合税率被认为处于禁区左侧——所以"全面减税自动增收"在多数情形并不成立，但对特定税种（如瑞典 1980 年代的边际税率、个别消费税）确有禁区证据。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 窗户税与烟草税</div>
+        <p>1696 年英国开征<strong>窗户税</strong>：按窗户数量计税，本想对"房子大的人"课税。结果全国掀起封窗潮，狄更斯笔下出租屋漆黑一片——税收把"采光"这种好东西直接挤出消费，教科书级的无谓损失，1851 年被迫废除。今天的对照是<strong>烟草消费税</strong>：烟瘾使需求极度缺乏弹性，加税几乎全额传导给烟民、几乎不减少税基——财政上"高效"，还附送控烟的正外部性；但低收入烟民比例更高，税负呈现累退性。同一个工具，效率、公平与健康目标纠缠在一起，这正是第 3 章税制设计的开场。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"法律让商家缴税，税就是商家承担的。"</strong>错。向卖方征收与向买方征收，归宿完全相同——价格会自动调整，弹性说了算（图 2-1 里两条价格线的差距与谁开发票无关）。第二个高频误区：<strong>"拉弗曲线证明减税总能增加税收。"</strong>只有在现行税率已越过峰值（处于禁区）时才成立；处于左侧时，减税就是减收。曲线本身还提醒一个更深的点：<strong>税收最大的税率不等于社会福利最大的税率</strong>——福利还要扣除 DWL 并考虑公平。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.1</span>法律规定每瓶饮料 1 元的税由便利店（卖方）缴纳。若消费者对价格很不敏感（需求缺乏弹性），税负主要由谁承担？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>便利店，因为是它在缴税</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>消费者——缺乏弹性的一方"走不掉"，承担更多</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>双方各承担一半，与弹性无关</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>由政府承担，因为税进了国库</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>归宿由相对弹性决定，与法定缴纳人无关。需求缺乏弹性时，便利店提价几乎不流失客人，于是把税负向前转嫁，买方支付价大涨、卖方实得价几乎不变（图 2-1 中 Ed 调到 0.5 即可看到买方承担份额超过一半）。反过来，若供给缺乏弹性（如市中心土地），税负主要落在卖方头上。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.2</span>其他条件不变，从量税税率从每件 1 元提高到 2 元，无谓损失大约变为原来的几倍？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>2 倍</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>3 倍</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>约 4 倍（DWL 近似随税率平方增长）</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>不变，损失只取决于弹性</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>DWL ≈ ½·t·ΔQ，而 ΔQ 本身与 t 成正比，所以 DWL ∝ t²：税率翻倍，损失约四倍；税率翻三倍，损失约九倍。这解释了两个政策直觉：<strong>宽税基、低税率</strong>优于窄税基、高税率；以及对一次性大额筹税，分散在多个税基上比压单一税基便宜得多。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.3</span>关于拉弗曲线的政策含义，正确的是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>任何时候减税都会增加税收</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>只有当现行税率高于收入最大化税率（禁区）时，减税才可能既减负又增收</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>税率越高，税收一定越高</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>曲线证明最优税率恰好是 50%</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>两端税率（0 与 100%）税收皆为零，所以存在峰值 t*，但它的位置取决于避税与劳动供给等响应强度（图 2-2 中随 e 移动），没有理由恰好是 50%。A、C 各错一边：减税增收只在禁区成立，加税增收只在左侧成立。对多数发达经济体的整体税负，实证研究大多认为在峰值左侧——但对特定群体的高边际税率，禁区证据确实存在。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>税是打进买价与卖价之间的楔子：交易量收缩，消失的剩余即 DWL，随 t² 与弹性增长。</li>
+          <li>归宿由相对弹性决定，与谁法定缴税无关：弹性小的一方承担多。</li>
+          <li>税基越无弹性，效率损失越小（土地、刚需品），但分配冲击越集中。</li>
+          <li>拉弗曲线存在峰值 t*，位置取决于税基响应；减税增收仅在其右侧成立，且税收最大 ≠ 福利最大。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">第 3 章</span>税制设计：效率与公平的平衡术</h2>
+
+      <p><strong>引入问题：</strong>同样筹集 1 亿元，向工资征、向消费征、向房产征、向利润征，结果天差地别。一个国家的税制不是一张税率表，而是上千个这样的权衡叠在一起——好税制的标准是什么？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：好税制的四个字——宽基、低率</div>
+        <p>评价税制有两条主轴。<strong>效率</strong>：少扭曲决策——第 2 章说过 DWL 随税率平方增长，所以"在许多税基上各征一点"远比"在一个税基上狠征"便宜，这就是"宽税基、低税率"。<strong>公平</strong>分两层：横向公平（处境相同的人缴同样的税）与纵向公平（能者多担，即累进）。两轴经常打架：累进要求高边际税率，而高边际税率在收入顶端扭曲最狠。最优税收理论（Mirrlees）研究的正是这道最优化题：给定再分配目标，让效率损失最小。跑赢的方案往往朴素得意外：堵漏洞、扩税基、对劳动收入比对资本存量更温和。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">累进 / 比例 / 累退 <span class="term-en">Progressive / Proportional / Regressive</span></div><div class="term-def">按税额占收入的比例随收入上升、不变或下降来分类。判断看<strong>平均税率</strong>，不是边际税率表。</div></div>
+        <div class="term"><div class="term-name">横向公平与纵向公平 <span class="term-en">Horizontal &amp; Vertical Equity</span></div><div class="term-def">横向：同等支付能力者同等纳税；纵向：能力更强者纳更多税。前者要求税基干净（少漏洞），后者定义累进。</div></div>
+        <div class="term"><div class="term-name">税基与税率 <span class="term-en">Tax Base &amp; Tax Rate</span></div><div class="term-def">对什么征（收入、消费、财产、利润）与征多少。税收 = 税基 × 税率：漏洞侵蚀税基，逼高税率，放大扭曲——恶性循环。</div></div>
+        <div class="term"><div class="term-name">拉姆齐规则 <span class="term-en">Ramsey Rule</span></div><div class="term-def">最优商品税结构：各商品税率与需求弹性成反比——弹性小的多征、弹性大的少征，以最小化总扭曲；但与纵向公平冲突（刚需品恰是穷人支出大头）。</div></div>
+      </div>
+
+      <div class="formula">税率 ∝ 1 / 需求弹性<span class="f-note">拉姆齐反弹性规则（Ramsey, 1927）：效率最优的商品税让各商品的交易量等比例收缩；但"专挑弹性小的下手"会系统性地把税负压向必需品——效率与公平正面相撞</span></div>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>税种</th><th>主要税基</th><th>累进性</th><th>主要扭曲 / 难点</th><th>中国例</th></tr></thead>
+          <tbody>
+            <tr><td>个人所得税</td><td>综合所得（工资、劳务等）</td><td class="num">较累进</td><td>高边际税率伤劳动供给；隐性收入难征管</td><td>综合与分类相结合，最高边际 45%</td></tr>
+            <tr><td>增值税</td><td>消费额（各个环节增值）</td><td class="num">偏累退</td><td>对消费征税，低收入者消费占收入比更高</td><td>标准税率 13%，发票抵扣链条</td></tr>
+            <tr><td>消费税</td><td>特定商品（烟、酒、油、车）</td><td class="num">混合</td><td>寓禁于征；弹性低的品类税负重落在消费者</td><td>成品油、卷烟批发环节从价从量复合</td></tr>
+            <tr><td>财产税</td><td>存量不动产评估值</td><td class="num">累进</td><td>评估难、流动性差、"有房无钱"老人的支付能力问题</td><td>沪渝试点房产税；土地出让金并存</td></tr>
+            <tr><td>企业所得税</td><td>企业利润</td><td class="num">有争议</td><td>跨国转移定价避税；税负部分转嫁给工人与消费者</td><td>法定税率 25%，小型微利优惠</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>把表里各税种合起来看才见真章：直接税（个税）累进，间接税（增值税）累退，两者部分抵消。研究整体税制的累进性，必须把<strong>税收与转移支付合起来</strong>算净再分配效应（第 4 章），单看任何一张税率表都会误判。</p>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 全球最低企业税与专项附加扣除</div>
+        <p>2021 年 136 个辖区在 OECD 框架下同意设立<strong>15% 的全球最低企业税率</strong>（2024 年起在欧盟等地落地）——动机正是税收竞争的囚徒困境：各国竞相压税率吸引利润入账，税基被"利润转移"掏空，谁都不敢单边加税。协调之后，竞争的战场从"谁更低"转向"谁的基础设施更好"，纳税人共同省下了逐底竞赛的租金耗散。另一个方向的中国实践：2019 年起个税引入<strong>专项附加扣除</strong>（子女教育、赡养老人、房贷利息、婴幼儿照护等），本质是把"名义收入"调整为更接近"真实支付能力"的税基——横向公平的精细化。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"税率表累进，税制就累进。"</strong>错两处：其一，增值税、消费税等间接税是累退的，整体累进性取决于各税种加权与税基漏洞（高收入者的资本利得与隐性收入最难征）；其二，累进与否要看<strong>净</strong>效应——北欧国家直接税并不极端累进，但靠高额消费税筹资、再通过普惠公共服务与转移支付回馈中低收入者，净再分配幅度反而居前列。评价税制要看"从谁那里收来、又回到谁手里"的完整循环。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.1</span>增值税按统一比例对消费征税，为什么通常被认为是累退的？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>因为税率随收入提高而下降</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>因为高收入者不购物消费</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>因为低收入家庭消费占收入的比例更高，税额占收入的比例因而更高</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>因为企业可以把进项税全部抵扣</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>累退的定义是税额 / 收入随收入上升而下降。增值税名义比例统一，但低收入家庭恩格尔系数高（收入大部分必须花掉、且花在税负较重的必需品上），储蓄率低；高收入家庭消费占收入比小得多。于是同样的 13%，落在低收入者收入上的份额更大——"比例税在消费端是累退的"。A 错因为名义税率确实统一；D 的抵扣机制只是避免重复征税，不改变最终消费者承担。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.2</span>按拉姆齐规则，对需求弹性低的商品征更高的税在效率上更优。为什么现实中仍要警惕这种做法？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>因为效率不应成为政策目标</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>因为弹性低的商品多是必需品，税负会系统性地压在最缺乏弹性、往往也最缺钱的群体身上——效率与纵向公平冲突</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>因为弹性根本无法测量</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>因为低弹性商品征不到多少税</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>拉姆齐规则是纯效率命题：让所有商品的交易量等比例收缩，总 DWL 最小。但"专挑刚需下手"意味着食品、水、基础药品承担高税负——第 2 章的归宿分析告诉我们，需求弹性小的一方承担更多，而这些商品的需求方正集中在低收入家庭。最优税收理论（Diamond–Mirrlees 等）在此基础上引入分配权重修正。C 错在弹性可以估计；D 恰恰相反，弹性低的税基最好收。经典权衡案例：对食品零税率或低税率（多国增值税实践）。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>税制评价两主轴：效率（少扭曲）与公平（横向同等待遇、纵向能者多担）。</li>
+          <li>DWL 随税率平方增长 → 宽税基、低税率优于窄税基、高税率。</li>
+          <li>拉姆齐规则：税率与弹性成反比最有效率，但与保护低收入者的纵向公平冲突。</li>
+          <li>整体累进性看税收 + 转移支付的净效应，不是单张税率表。</li>
+          <li>税收竞争是全球囚徒困境：全球最低企业税是协调的一次尝试。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">第 4 章</span>公共支出与再分配：漏桶效应</h2>
+
+      <p><strong>引入问题：</strong>把一桶水从富人那里提到穷人那里，一路上会洒掉一些。洒掉多少，决定了我们到底该提多少水——奥肯（Arthur Okun）用这只"漏桶"问了一个所有福利国家都要回答的问题：再分配的边界在哪里？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：转移支付不是搬家，是换桶</div>
+        <p>直觉上再分配像搬家：从 A 桶舀一瓢倒进 B 桶，总量不变。但真实的转移支付会"漏"：<strong>行政成本</strong>（审核、征管、防欺诈）、<strong>激励扭曲</strong>（高边际税率让人少干、福利退出机制让人不敢多挣）、<strong>避税与迁移</strong>（资本和高技能者用脚投票）。漏掉的不是谁的收入，是整个蛋糕的缩小。于是最优再分配不是"越多越公平"，而是在<strong>边际上：多转移 1 元的社会收益 = 多漏掉的效率成本</strong>处收手。设计艺术在于把桶换得更结实——比如只补贴有工作的人（保住劳动激励），就是给桶补了一块板。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">漏桶效应 <span class="term-en">Leaky Bucket</span></div><div class="term-def">奥肯的比喻：再分配过程中效率损失不可避免；最优再分配规模在边际社会收益等于边际漏损处。漏损来自行政成本与激励扭曲。</div></div>
+        <div class="term"><div class="term-name">负所得税 <span class="term-en">Negative Income Tax</span></div><div class="term-def">弗里德曼倡导的设计：收入低于某线者不仅不缴税、反而获得补助，补助随收入上升逐步退出（退出率低于 100% 以保留工作激励），统一替代分类低保。</div></div>
+        <div class="term"><div class="term-name">自动稳定器 <span class="term-en">Automatic Stabilizer</span></div><div class="term-def">税收与转移支付随经济周期自动反向调节（衰退时税收降、失业金升），无需新立法即可托底总需求，与相机抉择政策互补。</div></div>
+        <div class="term"><div class="term-name">现收现付制 <span class="term-en">Pay-As-You-Go, PAYG</span></div><div class="term-def">当期工作者的缴费直接支付当期退休者的养老金，而非储蓄给未来。优点是代际共担、无投资风险；软肋是人口老龄化推高缴费率（详见分支 14）。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 4-1 · 再分配的漏桶：转移率与双重后果</div>
+        <p class="fig-sub">试一试：固定漏损系数 c = 1.0，把转移率 τ 从 0 拖到 100%，观察"底层收入"曲线的峰与"社会平均收入"的持续下滑；再把 c 调到 1.6，看峰顶如何大幅左移。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 380" role="img" aria-label="再分配示意图：横轴为转移率，橙色曲线为社会平均收入随转移率上升而下降，粉色曲线为底层两成人口的收入，先升后降，峰值为最优转移率。">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="40"/>
+            <text class="chart-label" x="335" y="366" text-anchor="middle">转移与再分配率 τ（%）</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">收入指数（无再分配时平均 = 100）</text>
+            <text class="chart-label" x="70" y="338" text-anchor="middle">0</text>
+            <text class="chart-label" x="335" y="338" text-anchor="middle">50</text>
+            <text class="chart-label" x="596" y="338" text-anchor="middle">100</text>
+            <line id="lb-vline" class="gridline" x1="282" y1="40" x2="282" y2="320"/>
+            <line id="lb-peakv" class="gridline" x1="335" y1="40" x2="335" y2="320"/>
+            <polyline id="lb-a" class="curve curve-c1" points=""/>
+            <polyline id="lb-b" class="curve curve-c2" points=""/>
+            <circle id="lb-dota" class="dot" r="6" fill="#2f6fdb"/>
+            <circle id="lb-dotb" class="dot" r="6" fill="#be185d"/>
+            <text id="lb-laba" class="chart-label" text-anchor="end" style="fill:#2f6fdb"></text>
+            <text id="lb-labb" class="chart-label" text-anchor="end" style="fill:#be185d"></text>
+            <text id="lb-tstar" class="chart-label" style="fill:#92400e"></text>
+            <text id="lb-txt" class="chart-title-sm" x="335" y="24" text-anchor="middle"></text>
+            <text id="lb-sub" class="chart-label" x="335" y="46" text-anchor="middle" style="fill:#4b5563"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="lb-tau">转移率 τ</label><input type="range" id="lb-tau" min="0" max="100" step="1" value="40"><output id="lb-otau" for="lb-tau">40%</output></div>
+          <div class="ctrl"><label for="lb-c">漏损系数 c</label><input type="range" id="lb-c" min="4" max="16" step="1" value="10"><output id="lb-oc" for="lb-c">1.0</output></div>
+        </div>
+        <figcaption>读图要点：模型为示意——蛋糕 A(τ) = 100(1 − 0.35cτ²)，底层收入 B(τ) = 20 + 60τ(1 − cτ)（图内下限为 0）。τ 很小时转移改善底层远快于蛋糕缩小；越过 τ* = 1/(2c) 后，蛋糕缩水开始吞噬转移所得，<strong>底层自己的收入不升反降</strong>。漏损系数越大（征管越差、激励越敏感），最优转移率越低——"桶的结实程度"决定能提多少水。</figcaption>
+      </figure>
+
+      <p>两个延伸。<strong>其一，社会保障不只是再分配</strong>：养老金（现收现付）、医保、失业保险同时承担保险功能——对冲个人无法独自承担的长寿、疾病、失业风险；这让"该不该"的讨论比"漏损多少"更复杂（分支 14 展开）。<strong>其二，自动稳定器</strong>：累进税与失业金让财政在衰退时自动少收多支，是宏观稳定的第一道防线（分支 02 的财政政策），优点是无时滞、不受政治周期干扰。</p>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · EITC 与精准扶贫：给桶补板</div>
+        <p>美国<strong>劳动所得税抵免（EITC）</strong>是负所得税思想的现实版本：只补贴<strong>有工作</strong>的低收入者，收入越高补贴先增后缓退，2023 年前后每年惠及约 3000 万个家庭，是美国最大的现金转移项目之一。它把"补收入"与"保激励"焊在一起——领取者必须就业，避免福利陷阱，被两党先后支持。中国的一侧是<strong>低保与精准扶贫</strong>：2020 年现行标准下农村贫困人口全部脱贫，靠的是收入、教育、医疗、住房"两不愁三保障"的组合拳，再加基层干部驻村识别的行政投入——用高强度行政成本压低"错配漏损"，代价是征管与核实成本可观。两种设计没有谁更优，只是在不同漏损结构与行政能力下的不同补板位置。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p>两个对称的极端都错。<strong>"再分配只是搬家，零成本。"</strong>——忽略了行政成本与激励扭曲：100% 的边际退出率会让受助者拒绝加班甚至放弃就业（福利陷阱），这是漏桶最直观的一块漏。<strong>"只要漏就一分不该分。"</strong>——同样错：漏损衡量的是成本，不是否定理由；只要社会对公平的评价足够高（或转移的边际社会收益为正），有漏的再分配仍优于不分。真正的争论不在"要不要"，而在"补哪块板、提到哪一站"。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.1</span>奥肯"漏桶"比喻的核心含义是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>再分配侵犯产权，因此不合法</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>从富到穷的转移途中会漏（行政成本 + 激励扭曲），最优再分配规模在边际收益 = 边际漏损处</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>漏桶证明任何再分配都得不偿失</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>只要制度设计完善，漏损可以降为零</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>漏桶说的是<strong>权衡</strong>而非否定：转移有不可避免的效率成本，成本随规模递增，所以存在内点最优（图 4-1 的 τ*）。C 与 D 各占一个极端——前者否认社会对公平的评价可以压过漏损，后者否认行政与激励成本的最小值大于零。A 把经济学命题换成了法律命题，漏桶本身并不讨论合法性。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.2</span>负所得税（NIT）与"每多挣 1 元就等额扣减 1 元补助"的低保相比，关键优势是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>补助金额更高，受益面更广</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>不需要任何行政审核</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>补助退出率低于 100%，受助者多工作仍能提高总收入，保留劳动激励</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>等于对受助者征收 100% 边际税率</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>"挣 1 元扣 1 元"的低保让受助者面临 100% 的有效边际税率——多干不多得，理性选择是停留在门槛内（福利陷阱）。NIT 的退出率（如 30%–50%）意味着每多挣 1 元只少领 0.3–0.5 元，工作始终有回报，这是"给桶补板"的经典设计，也是 EITC 的机制核心。D 描述的恰是被 NIT 修正的旧问题；B 错在 NIT 仍需收入申报与核查。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>再分配有漏：行政成本、劳动供给扭曲、避税迁移——蛋糕随之缩小。</li>
+          <li>最优再分配在边际收益 = 边际漏损处，不是越多越好、更不是一分不分。</li>
+          <li>负所得税 / EITC：补收入同时保就业激励，是"给桶补板"的设计典范。</li>
+          <li>社会保障兼具保险功能；累进税 + 失业金是宏观自动稳定器。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">第 5 章</span>公共选择：投票、议程与寻租</h2>
+
+      <p><strong>引入问题：</strong>如果有 3 个人、3 个方案，多数决会不会总能选出"多数人想要"的结果？孔多塞（Condorcet）在 1785 年就给出了否定的答案——而且问题的严重程度超乎直觉：有时候，<strong>决定"按什么顺序投票"的人，比投票的人权力更大</strong>。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：偏好无法总被"加总"</div>
+        <p>每人心里都有一张有序的偏好清单，但把许多清单加总成一个"社会的清单"时，怪事发生：三人分别持 A&gt;B&gt;C、B&gt;C&gt;A、C&gt;A&gt;B， pairwise 表决会得出 A 胜 B、B 胜 C、C 胜 A——<strong>循环</strong>，没有稳定赢家。此时控制议程（先表决哪一对）就能控制结果。当偏好"单峰"（每人只有一个最优点、两侧递减）时，循环消失，均衡落在<strong>中位选民</strong>的最优点上——这解释了为什么两党竞选会向中间靠拢（唐斯模型）。而阿罗（Kenneth Arrow）证明了更冷峻的一般定理：任何加总机制都无法同时满足一组合理条件。<strong>政治不是完美的加总机器，而是一个有自身供给与需求的市场</strong>——选票、权力与租金在其中交易，寻租者花真金白银影响"分蛋糕"的规则，而不是去做大蛋糕。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">孔多塞循环 / 循环多数 <span class="term-en">Condorcet Cycle</span></div><div class="term-def">多数决在若干方案间出现 A 胜 B、B 胜 C、C 胜 A 的传递性失效；源于偏好存在多峰，使"社会多数偏好"不存在稳定排序。</div></div>
+        <div class="term"><div class="term-name">中位选民定理 <span class="term-en">Median Voter Theorem</span></div><div class="term-def">单峰偏好、单维议题、简单多数决下，结果收敛于中位选民最偏好的方案；两人竞选政纲向中间趋同（Downs, 1957）。</div></div>
+        <div class="term"><div class="term-name">阿罗不可能定理 <span class="term-en">Arrow's Impossibility Theorem</span></div><div class="term-def">不存在同时满足无限制域、帕累托、无关备选独立性与非独裁的（3 个及以上备选的）社会排序机制——"完美投票规则"在数学上不存在。</div></div>
+        <div class="term"><div class="term-name">寻租 <span class="term-en">Rent-Seeking</span></div><div class="term-def">为获取或保护由政府创造的人为租金（牌照、关税、垄断权）而耗费资源（Tullock, 1967；Krueger, 1974）。游说成本是社会的净损失——花在分蛋糕，而非做大蛋糕。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 5-1 · 循环多数：议程决定一切</div>
+        <p class="fig-sub">试一试：委员会里三人偏好构成循环（见上图）。依次点击三个不同的表决议程，比较最终的获胜方案——同一批选民、同一组偏好，赢家却换了三次。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 360" role="img" aria-label="循环多数演示：三名选民的偏好排序构成 A 胜 B、B 胜 C、C 胜 A 的循环；点击不同议程按钮，最终获胜方案在 A、B、C 之间切换。">
+            <text class="chart-title-sm" x="335" y="24" text-anchor="middle">三人委员会的偏好（&gt; 表示"更偏好"）</text>
+            <text class="chart-label" x="90" y="56">选民 1：A &gt; B &gt; C</text>
+            <text class="chart-label" x="90" y="80">选民 2：B &gt; C &gt; A</text>
+            <text class="chart-label" x="90" y="104">选民 3：C &gt; A &gt; B</text>
+            <line class="gridline" x1="70" y1="124" x2="600" y2="124"/>
+            <text id="vt-r1" class="chart-label" x="70" y="152"></text>
+            <text id="vt-r2" class="chart-label" x="70" y="178"></text>
+            <text id="vt-fin" class="chart-title-sm" x="70" y="214" style="fill:#be185d"></text>
+            <text class="chart-label" x="70" y="244" style="fill:#4b5563">表决结果（高亮框为当选方案）</text>
+            <rect id="vt-ba" x="145" y="254" width="90" height="54" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+            <rect id="vt-bb" x="275" y="254" width="90" height="54" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+            <rect id="vt-bc" x="405" y="254" width="90" height="54" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+            <text id="vt-ta" x="190" y="290" text-anchor="middle" style="font-size:24px;font-weight:700" fill="#1f2937">A</text>
+            <text id="vt-tb" x="320" y="290" text-anchor="middle" style="font-size:24px;font-weight:700" fill="#1f2937">B</text>
+            <text id="vt-tc" x="450" y="290" text-anchor="middle" style="font-size:24px;font-weight:700" fill="#1f2937">C</text>
+            <text id="vt-note" class="chart-label" x="70" y="340" style="fill:#4b5563"></text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn ghost" id="vt-ag1">议程 ①：先表决 A 对 B</button>
+          <button class="btn ghost" id="vt-ag2">议程 ②：先表决 B 对 C</button>
+          <button class="btn ghost" id="vt-ag3">议程 ③：先表决 C 对 A</button>
+          <button class="btn" id="vt-reset">重置</button>
+        </div>
+        <figcaption>读图要点：每个议程进行两轮简单多数表决，首轮胜者对阵剩余方案。三个议程分别产生 C、A、B 三个不同赢家——<strong>议程设置权就是结果决定权</strong>。这解释了为什么议会程序规则（委员会主席、修正案顺序、"拆分表决"）本身就是兵家必争之地，也是阿罗定理最直观的一次现场演出。</figcaption>
+      </figure>
+
+      <p>从投票失灵走向更一般的洞察：<strong>政治市场也有供需</strong>。选民理性无知（单票影响近零，不值得深究政策）、政治家最大化选票、官僚最大化预算与编制、利益集团集中受益而组织有力——于是小而集中的利益（关税受益的产业、持牌从业者）常常打败大而分散的公众。寻租理论的推论冷静得刺骨：垄断或管制造成的福利损失，不止是哈伯格三角，<strong>还包括为争夺这张许可证而耗散的全部游说成本</strong>——它们本可以用来生产。</p>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 纽约出租车牌照：一枚租金的兴衰</div>
+        <p>纽约自 1937 年起限量发放出租车牌照（medallion），数量几十年几乎冻结在 13,000 余枚。人为稀缺让牌照成为资产：2013 年前后一张牌照被炒到<strong>百万美元以上</strong>——这笔钱不是买车、不是服务乘客，而是购买"排他性经营权"本身，是持牌者对未来租金的贴现。大量司机贷款买牌、负债押上后半生。网约车冲击后牌照价格崩跌，留下一地债务。寻租视角的账本：游说维持限量、贷款利息、牌照溢价，全是社会为"分蛋糕的权利"付出的真实成本，没有一分钱做出蛋糕。对照案例：克鲁格（Anne Krueger, 1974）研究印度许可证与海运配额时正式命名 rent-seeking，估算相关耗散达 GDP 的可观比例。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"投票结果就是人民意志。"</strong>在循环多数下，"人民意志"这个加总根本不存在——换一个议程就换一个"民意"（图 5-1）。即便偏好单峰、结果稳定在中位选民，也只是<strong>中位的</strong>意志：多数决对强度信息失聪（51% 的温和偏好碾过 49% 的强烈偏好）。第二误区：<strong>"游说只是表达意见。"</strong>当政策创造人为租金时，围绕租金的支出（律师、说客、关系、排队）是社会净损失——这正是塔洛克指出而传统分析漏掉的部分。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.1</span>单峰偏好、单维议题、简单多数决、两候选人竞选——均衡政纲会落在哪里？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>平均（算术平均）选民的偏好</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>中位选民的偏好：偏离中位就会被对手抢走多数</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>最激进选民的偏好</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>随机位置，无稳定均衡</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>中位选民定理（Black, 1948；Downs, 1957）：只要偏好单峰、议题一维，任何偏离中位选民立场的政纲，都会被"移动到中位另一侧紧贴你"的对手击败——两党因此向中间趋同。A 的平均不成立：偏好分布右偏时，平均被富人拉高而中位不动；这就是"中位数投票者说了算、均值只反映收入"的经典含义（也见分支 09 的工资分布讨论）。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.2</span>三人三方案出现循环多数（A 胜 B、B 胜 C、C 胜 A）时，最终结果事实上由谁决定？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>被多数真实偏好的方案——只是投票的人没发现</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>控制表决议程的人——不同的表决顺序产生不同的赢家</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>得票总数最高的方案自动当选</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>由抽签决定，因为结果本来就是随机的</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>循环之下不存在被多数稳定偏好的方案（A 错在前提不存在）。控制议程（先表决哪一对、让哪个方案"轮空"进入第二轮）即可选出任何想要的结果——图 5-1 的三个按钮各产生一个不同赢家。这是"议程设置权"的制度意义：议会规则、委员会安排与修正案顺序的争夺绝非程序小事。C 混淆了多数决与博尔达计分等其他规则；D 无视了结果的确定性——对议程控制者而言，结果高度可控、绝非随机。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>多峰偏好的多数决产生孔多塞循环：没有稳定赢家，议程决定结果。</li>
+          <li>单峰偏好 + 单维议题 → 中位选民定理：竞选向中间趋同。</li>
+          <li>阿罗不可能定理：完美的社会偏好加总机制在数学上不存在。</li>
+          <li>寻租：为分蛋糕的权利而耗散的资源是社会净损失（牌照、关税游说）。</li>
+          <li>集体受益分散、损失集中的政策最容易被组织化的少数击败。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">第 6 章</span>成本收益分析：给无价之物标价</h2>
+
+      <p><strong>引入问题：</strong>一条高铁、一座大坝、一项气候政策，值不值？成本与收益里混着钢铁水泥，也混着时间、生命、清洁空气与子孙后代的福祉。政府投资没有利润表，<strong>成本收益分析（Cost-Benefit Analysis, CBA）</strong>就是给它造一张。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：把一切折成同一把尺子，然后小心两个旋钮</div>
+        <p>CBA 的思路朴素：列出所有年份的成本与收益，折成<strong>现值</strong>加总，NPV 为正才值得做。难处在于两个旋钮。<strong>旋钮一：贴现率 r</strong>——未来收益除以 (1+r) 的 t 次方，r 看似技术参数，实则是一道伦理题：贴现意味着<strong>子孙的福利在我们今天的天平上更轻</strong>，r 取 1% 还是 5%，足以让气候政策从"刻不容缓"翻转为"缓缓再说"。<strong>旋钮二：影子价格</strong>——市场价格失真（失业、管制、税收楔子）时，用资源的<strong>社会机会成本</strong>计价：雇一个失业者的真实成本不是工资，而是他放弃的闲暇与别处产出。两个旋钮各拧一格，结论可能天差地别——所以 CBA 的诚实做法是把参数敏感性摆在桌面上，而不是只报一个数。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">社会贴现率 <span class="term-en">Social Discount Rate</span></div><div class="term-def">公共项目评估中把未来效益折算为现值的比率。其选择兼具实证（资本回报率）与规范（代际公平）维度；对远期项目结论影响巨大。</div></div>
+        <div class="term"><div class="term-name">影子价格 <span class="term-en">Shadow Price</span></div><div class="term-def">资源的社会机会成本。当市场价失真时替代市价入账：失业劳动的影子工资低于市场工资，外汇、土地、环境容量各有其影子价格。</div></div>
+        <div class="term"><div class="term-name">统计生命价值 <span class="term-en">Value of a Statistical Life, VSL</span></div><div class="term-def">通过工资—风险权衡（愿为降低死亡概率支付多少）估计的群体生命价值，用于交通安全、环境与医疗监管的收益评估；估计的不是"一条命的价格"，而是微小风险变化的支付意愿加总。</div></div>
+        <div class="term"><div class="term-name">条件价值评估 <span class="term-en">Contingent Valuation</span></div><div class="term-def">用问卷直接询问人们对非市场物品（景观、物种存在价值）的支付意愿；争议在于假想偏差，需谨慎设计（如实支付、追问不确定）。</div></div>
+      </div>
+
+      <div class="formula">NPV = Σ (B_t − C_t) / (1 + r)^t<span class="f-note">B、C 为第 t 年的效益与成本；NPV 大于 0 的项目通过检验。分母的 r 每大一个百分点，第 50 年的效益就缩水近四成——远期项目对 r 极度敏感</span></div>
+
+      <figure class="fig">
+        <div class="fig-title">图 6-1 · 贴现率如何改写项目排序</div>
+        <p class="fig-sub">试一试：拖动社会贴现率 r 从 0% 拉到 10%，观察两个项目的 NPV 曲线（甲：近期收益型基建；乙：远期收益型气候减缓）如何剧烈分化，排名在交点处翻转。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 380" role="img" aria-label="两条净现值曲线随贴现率上升而下降：乙曲线起点更高但下降更快，与甲曲线相交；交点右侧甲项目净现值更高，两条曲线先后跌破零线。">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="40"/>
+            <text class="chart-label" x="335" y="366" text-anchor="middle">社会贴现率 r（%/年）</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">净现值 NPV（亿元，示意）</text>
+            <text class="chart-label" x="70" y="338" text-anchor="middle">0</text>
+            <text class="chart-label" x="176" y="338" text-anchor="middle">2</text>
+            <text class="chart-label" x="282" y="338" text-anchor="middle">4</text>
+            <text class="chart-label" x="388" y="338" text-anchor="middle">6</text>
+            <text class="chart-label" x="494" y="338" text-anchor="middle">8</text>
+            <text class="chart-label" x="596" y="338" text-anchor="middle">10</text>
+            <line class="gridline" x1="70" y1="258.8" x2="600" y2="258.8"/>
+            <text class="chart-label" x="74" y="254" style="fill:#4b5563">NPV = 0</text>
+            <line id="npv-vline" class="gridline" x1="229" y1="40" x2="229" y2="320"/>
+            <polyline id="npv-a" class="curve curve-c1" points=""/>
+            <polyline id="npv-b" class="curve curve-c2" points=""/>
+            <circle id="npv-cross" class="dot" r="4.5" fill="#475569" opacity="0.85"/>
+            <circle id="npv-dot-a" class="dot" r="6" fill="#2f6fdb"/>
+            <circle id="npv-dot-b" class="dot" r="6" fill="#be185d"/>
+            <text class="chart-label" x="86" y="66" style="fill:#be185d">乙 · 远期收益型</text>
+            <text class="chart-label" x="86" y="212" style="fill:#2f6fdb">甲 · 近期收益型</text>
+            <text id="npv-txt" class="chart-title-sm" x="335" y="24" text-anchor="middle"></text>
+            <text id="npv-sub" class="chart-label" x="335" y="46" text-anchor="middle" style="fill:#4b5563"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="npv-r">社会贴现率 r</label><input type="range" id="npv-r" min="0" max="10" step="0.1" value="3"><output id="npv-or" for="npv-r">3.0%</output></div>
+        </div>
+        <figcaption>读图要点：甲项目当年投入 100、此后 30 年每年收益 8；乙项目当年投入 130、第 16 年起 45 年内每年收益 13（示意数据）。r = 0 时乙的 NPV 高得多；r 上升到交点后甲反超；再往上两者先后转负。结论：贴现率不是细节，<strong>是谁主张远期项目、谁反对它的核心战场</strong>——斯特恩与诺德豪斯关于气候政策的著名分歧正在于此。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 清洁空气法的 30 : 1 与 8% 的参数表</div>
+        <p>美国把 CBA 制度化了：行政规章要过白宫预算办公室（OIRA）的审查。EPA 对《1990 年清洁空气法修正案》的回顾评估估计，到 2020 年当年收益约 2 万亿美元、成本约 650 亿美元，<strong>收益成本比约 30 : 1</strong>——其中大部分收益来自颗粒物污染降低所减少的早逝，用的正是统计生命价值（VSL）把"健康"折成货币。中国的对应制度是可行性研究中的<strong>国民经济评价</strong>：《建设项目经济评价方法与参数（第三版）》（2006）长期规定 8% 的社会折现率，并要求对影子价格、影子工资做参数调整——同一个学科，两种语言。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"贴现率是技术细节，取多少无所谓。"</strong>第 50 年的收益，按 r = 1% 贴现剩六成，按 5% 只剩不到一成——对气候、基建这类跨代项目，r 的选择就是代际伦理立场：斯特恩报告取约 1.4%（接近零的纯时间偏好率），主张立即大力减排；诺德豪斯主张用约 3% 以上的市场回报率，结论则温和得多。第二个误区：<strong>"NPV 为负 = 项目一无是处。"</strong>NPV 度量效率总和，不含分配权重——一个 NPV 略负但让最贫困地区通电的项目，仍可能通过"分配加权"的检验。诚实的 CBA 报告敏感性分析，而不是把价值判断藏进参数里。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.1</span>评估一个大量雇佣失业工人的公共项目，人工成本应如何计入？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>按市场工资足额计入</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>按低于工资的影子工资计入——社会机会成本是放弃的闲暇与其他产出</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>记为零，反正他们本来就没工作</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>按当地最低工资计入</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>影子价格 = 资源的社会机会成本。若工人原本失业且不挤出其他项目用工，雇用他们的社会成本不是工资（那只是转移支付），而是放弃的闲暇与再就业机会，通常低于工资——按市价高估成本会错杀就业密集型公共项目。但 C 错得太远：闲暇有价值、培训有成本，且长期看劳动供给并非完全无弹性；影子工资的估算还须考虑"挤出效应"（就业市场紧张时影子工资趋近市价）。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.2</span>关于社会贴现率 r，下列说法最准确的是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>纯技术参数，与价值判断无关</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>r 越高，说明越重视后代福利</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>r 的选择本质上是代际伦理判断，且对远期收益为主的项目影响巨大（斯特恩 vs 诺德豪斯之争）</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>应一律采用市场利率，别无选择</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>r 越高，远期效益被折得越狠，说明越<strong>不</strong>重视后代（B 方向反了）。它同时牵扯资本回报率（实证侧）与纯时间偏好、代际公平（规范侧），这正是斯特恩（约 1.4%）与诺德豪斯（3% 以上）在气候经济学上分歧的根源——两人的模型结构相近，r 一不同，政策结论天差地别。D 的问题在于市场利率含税收、风险溢价与市场不完备，未必代表社会应当如何权衡子孙的福利。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>CBA 把全部成本效益折现加总：NPV 大于 0 通过检验。</li>
+          <li>社会贴现率是代际伦理旋钮：r 的高低能翻转远期项目的排序与生死。</li>
+          <li>影子价格用社会机会成本替代失真的市价（失业劳动、外汇、环境容量）。</li>
+          <li>非市场价值用 VSL、条件价值评估等方法估计，需警惕假想偏差。</li>
+          <li>诚实的研究报告敏感性分析与分配权重，而不是藏起价值判断。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">终点</span>进阶路线与延伸阅读</h2>
+      <p>本分支向上承接 <a href="../01-微观经济学/index.html">01 微观</a>（剩余分析与市场失灵），向下衔接：<a href="../12-环境与资源经济学/index.html">12 环境与资源</a>（庇古税与碳定价的实战）、<a href="../14-健康与教育经济学/index.html">14 健康与教育</a>（福利国家与社会保险的微观机制）、<a href="../16-政治经济学与制度经济学/index.html">16 政治经济学</a>（集体行动与国家能力）、<a href="../09-劳动经济学/index.html">09 劳动经济学</a>（个税与劳动供给）。推荐书单按难度递进：</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">罗森、盖伊《财政学》</span>（Public Finance, Harvey Rosen &amp; Ted Gayer）——全球使用最广的中级教材，税收与支出并重，本章结构与其框架同源。</li>
+          <li><span class="bk">斯蒂格利茨《公共部门经济学》</span>（Economics of the Public Sector, Joseph Stiglitz）——信息经济学视角的公共经济学，中级偏进阶。</li>
+          <li><span class="bk">奥肯《平等与效率：重大抉择》</span>（Equality and Efficiency: The Big Tradeoff, Arthur Okun）——"漏桶"的原始出处，薄而深刻，适合所有人。</li>
+          <li><span class="bk">布坎南、塔洛克《同意的计算》</span>（The Calculus of Consent, Buchanan &amp; Tullock）——公共选择学派的奠基之作，第 5 章的深层展开。</li>
+          <li><span class="bk">阿特金森、斯蒂格利茨《公共经济学讲义》</span>（Lectures on Public Economics, Atkinson &amp; Stiglitz）——最优税收理论的经典高级文献，数学密度高。</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../07-国际经济学/index.html"><span class="pager-dir">上一分支</span><br><span class="pager-name">国际经济学</span></a>
+        <a href="../09-劳动经济学/index.html"><span class="pager-dir">下一分支</span><br><span class="pager-name">劳动经济学</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+<script src="../assets/econ.js"></script>
+<script>
+/* ================= 图 2-1 税收无谓损失：弹性与税率 ================= */
+(function () {
+  if (!document.getElementById("dwl-d")) return;
+  var X0 = 70, X1 = 600, Y0 = 320, TOP = 40;
+  function px(q) { return X0 + q / 100 * (X1 - X0); }
+  function py(p) { return Y0 - p / 10 * (Y0 - TOP); }
+  var P0 = 4.6, Q0 = 60;                 // 无税均衡
+  var dLine = document.getElementById("dwl-d");
+  var labD = document.getElementById("dwl-labd");
+  function draw() {
+    var ed = parseFloat(document.getElementById("dwl-ed").value);
+    var t = parseFloat(document.getElementById("dwl-t").value);
+    document.getElementById("dwl-oed").textContent = ed.toFixed(1);
+    document.getElementById("dwl-ot").textContent = t.toFixed(1);
+    var s = (P0 / Q0) / ed;              // 需求斜率(绝对值)，过均衡点
+    function pd(q) { return P0 + s * (Q0 - q); }
+    dLine.setAttribute("x1", px(-40)); dLine.setAttribute("y1", py(pd(-40)));
+    dLine.setAttribute("x2", px(170)); dLine.setAttribute("y2", py(pd(170)));
+    labD.setAttribute("x", px(12) + 8);
+    labD.setAttribute("y", Math.max(TOP + 12, py(pd(12)) - 12));
+    var qt = (3.6 + 60 * s - t) / (s + 0.06);   // 税后数量
+    var pb = 1 + t + 0.06 * qt;                 // 买方支付价
+    var ps = pb - t;                            // 卖方实得价
+    document.getElementById("dwl-rev").setAttribute("points",
+      X0 + "," + py(ps) + " " + px(qt) + "," + py(ps) + " " +
+      px(qt) + "," + py(pb) + " " + X0 + "," + py(pb));
+    document.getElementById("dwl-tri").setAttribute("points",
+      px(qt) + "," + py(ps) + " " + px(qt) + "," + py(pb) + " " +
+      px(Q0) + "," + py(P0));
+    var g = document.getElementById("dwl-pb");
+    g.setAttribute("x1", X0); g.setAttribute("x2", px(qt));
+    g.setAttribute("y1", py(pb)); g.setAttribute("y2", py(pb));
+    g = document.getElementById("dwl-ps");
+    g.setAttribute("x1", X0); g.setAttribute("x2", px(qt));
+    g.setAttribute("y1", py(ps)); g.setAttribute("y2", py(ps));
+    g = document.getElementById("dwl-qv");
+    g.setAttribute("x1", px(qt)); g.setAttribute("x2", px(qt));
+    g.setAttribute("y1", py(ps)); g.setAttribute("y2", Y0);
+    var db = document.getElementById("dwl-dotb");
+    db.setAttribute("cx", px(qt)); db.setAttribute("cy", py(pb));
+    var ds = document.getElementById("dwl-dots");
+    ds.setAttribute("cx", px(qt)); ds.setAttribute("cy", py(ps));
+    var rev = t * qt, dwl = 0.5 * t * (Q0 - qt);
+    Econ.setTxt("dwl-txt", "政府税收 T = " + rev.toFixed(1) +
+      " ｜ 无谓损失 DWL = " + dwl.toFixed(2) +
+      (rev > 0 ? "（约为税收的 " + Math.round(dwl / rev * 100) + "%）" : ""));
+    if (t <= 0.001) {
+      Econ.setTxt("dwl-sub", "税率 t = 0：回到无税均衡（P = 4.60, Q = 60），无任何损失。");
+    } else {
+      Econ.setTxt("dwl-sub", "买方支付 " + pb.toFixed(2) + "，卖方实得 " + ps.toFixed(2) +
+        "（原价 4.60）→ 买方承担 " + Math.round((pb - P0) / t * 100) +
+        "%，卖方承担 " + Math.round((P0 - ps) / t * 100) + "%。弹性越小的一方承担越多。");
+    }
+  }
+  ["dwl-ed", "dwl-t"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", draw);
+  });
+  draw();
+})();
+
+/* ================= 图 2-2 拉弗曲线 ================= */
+(function () {
+  if (!document.getElementById("laf-curve")) return;
+  var X0 = 70, X1 = 600, Y0 = 320, TOP = 40;
+  function px(t) { return X0 + t * (X1 - X0); }
+  function py(r) { return Y0 - r / 20 * (Y0 - TOP); }
+  function R(t, e) { return 30 * t * Math.pow(1 - t, e); }
+  function draw() {
+    var tPct = parseFloat(document.getElementById("laf-t").value);
+    var e = parseFloat(document.getElementById("laf-e").value) / 10;
+    document.getElementById("laf-ot").textContent = tPct + "%";
+    document.getElementById("laf-oe").textContent = e.toFixed(1);
+    var pts = [], t;
+    for (t = 0; t <= 1.0001; t += 0.02) {
+      pts.push(px(t).toFixed(1) + "," + py(R(t, e)).toFixed(1));
+    }
+    document.getElementById("laf-curve").setAttribute("points", pts.join(" "));
+    var ts = 1 / (1 + e), rs = R(ts, e);
+    var zone = document.getElementById("laf-zone");
+    zone.setAttribute("x", px(ts).toFixed(1));
+    zone.setAttribute("width", (X1 - px(ts)).toFixed(1));
+    var pk = document.getElementById("laf-peak");
+    pk.setAttribute("cx", px(ts)); pk.setAttribute("cy", py(rs));
+    var pl = document.getElementById("laf-peakline");
+    pl.setAttribute("x1", px(ts)); pl.setAttribute("x2", px(ts));
+    pl.setAttribute("y1", TOP); pl.setAttribute("y2", Y0);
+    var lb = document.getElementById("laf-tstar");
+    if (ts > 0.6) { // 峰值靠右时标签改放左侧, 避免超出画布
+      lb.setAttribute("x", px(ts) - 6); lb.setAttribute("y", 56);
+      lb.setAttribute("text-anchor", "end");
+    } else {
+      lb.setAttribute("x", px(ts) + 6); lb.setAttribute("y", 56);
+      lb.setAttribute("text-anchor", "start");
+    }
+    lb.textContent = "t* = " + Math.round(ts * 100) + "%（禁区在其右侧）";
+    var u = tPct / 100, ru = R(u, e);
+    var dot = document.getElementById("laf-dot");
+    dot.setAttribute("cx", px(u)); dot.setAttribute("cy", py(ru));
+    Econ.setTxt("laf-txt", "税率 t = " + tPct + "% → 税收指数 R = " + ru.toFixed(2) +
+      "（峰值 " + rs.toFixed(2) + " @ t* = " + Math.round(ts * 100) + "%）");
+    var msg;
+    if (u < ts - 0.005) msg = "t 低于 t*：提高税率仍能增收——但收入不是唯一目标，还要权衡 DWL 与公平。";
+    else if (u > ts + 0.005) msg = "t 高于 t*（拉弗禁区）：再加税反而减收——避税、地下经济与劳动供给收缩吞掉了税基。";
+    else msg = "t 恰在 t*：税收最大化——注意，税收最大不等于社会福利最大。";
+    Econ.setTxt("laf-sub", msg);
+  }
+  ["laf-t", "laf-e"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", draw);
+  });
+  draw();
+})();
+
+/* ================= 图 4-1 再分配漏桶 ================= */
+(function () {
+  if (!document.getElementById("lb-b")) return;
+  var X0 = 70, X1 = 600, Y0 = 320, TOP = 40;
+  function px(u) { return X0 + u * (X1 - X0); }
+  function py(v) { return Y0 - v / 120 * (Y0 - TOP); }
+  function fA(u, c) { return 100 * (1 - 0.35 * c * u * u); }
+  function fB(u, c) { return 20 + 60 * u * (1 - c * u); }
+  function draw() {
+    var u = parseFloat(document.getElementById("lb-tau").value) / 100;
+    var c = parseFloat(document.getElementById("lb-c").value) / 10;
+    document.getElementById("lb-otau").textContent = Math.round(u * 100) + "%";
+    document.getElementById("lb-oc").textContent = c.toFixed(1);
+    var pa = [], pb2 = [], v;
+    for (v = 0; v <= 1.0001; v += 0.02) {
+      pa.push(px(v).toFixed(1) + "," + py(fA(v, c)).toFixed(1));
+      pb2.push(px(v).toFixed(1) + "," + py(Math.max(0, fB(v, c))).toFixed(1));
+    }
+    document.getElementById("lb-a").setAttribute("points", pa.join(" "));
+    document.getElementById("lb-b").setAttribute("points", pb2.join(" "));
+    var raw = 1 / (2 * c), tsc = Math.min(1, raw);
+    var pk = document.getElementById("lb-peakv");
+    pk.setAttribute("x1", px(tsc)); pk.setAttribute("x2", px(tsc));
+    pk.setAttribute("y1", TOP); pk.setAttribute("y2", Y0);
+    var lb = document.getElementById("lb-tstar");
+    if (raw < 1) {
+      lb.setAttribute("x", px(tsc) + 6); lb.setAttribute("y", 56);
+      lb.setAttribute("text-anchor", "start");
+      lb.textContent = "τ* = " + Math.round(tsc * 100) + "%（底层收入最大）";
+    } else {
+      lb.setAttribute("x", X1 - 6); lb.setAttribute("y", 56);
+      lb.setAttribute("text-anchor", "end");
+      lb.textContent = "τ* ≥ 100%：该参数下 B 在图内单调上升（但蛋糕仍在缩小）";
+    }
+    var A = fA(u, c), B = Math.max(0, fB(u, c));
+    var da = document.getElementById("lb-dota");
+    da.setAttribute("cx", px(u)); da.setAttribute("cy", py(fA(u, c)));
+    var db = document.getElementById("lb-dotb");
+    db.setAttribute("cx", px(u)); db.setAttribute("cy", py(B));
+    var vl = document.getElementById("lb-vline");
+    vl.setAttribute("x1", px(u)); vl.setAttribute("x2", px(u));
+    vl.setAttribute("y1", TOP); vl.setAttribute("y2", Y0);
+    Econ.setTxt("lb-txt", "τ = " + Math.round(u * 100) + "% ｜ 底层20%收入指数 B = " +
+      B.toFixed(1) + "（较无再分配 " + (B >= 20 ? "+" : "") +
+      Math.round((B - 20) / 20 * 100) + "%）｜ 平均收入 A = " + A.toFixed(1) +
+      "（蛋糕 −" + Math.round(100 - A) + "%）");
+    var msg;
+    if (u < tsc - 0.005) msg = "τ 低于 τ*：还有加码再分配同时让底层变富的空间。";
+    else if (u > tsc + 0.005) msg = "τ 已越过 τ*：漏损超过所得，底层的实际收入不升反降。";
+    else msg = "τ 恰在 τ*：底层收入最大化——但社会福利最大化还取决于社会如何加权公平与效率。";
+    Econ.setTxt("lb-sub", msg);
+    var la = document.getElementById("lb-laba");
+    la.setAttribute("x", X1 - 6); la.setAttribute("y", py(fA(1, c)) - 12);
+    la.textContent = "社会平均收入 A";
+    var lbb = document.getElementById("lb-labb");
+    lbb.setAttribute("x", X1 - 6); lbb.setAttribute("y", py(20) - 12);
+    lbb.textContent = "底层20%收入 B";
+  }
+  ["lb-tau", "lb-c"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", draw);
+  });
+  draw();
+})();
+
+/* ================= 图 5-1 循环多数投票 ================= */
+(function () {
+  if (!document.getElementById("vt-r1")) return;
+  var prefs = [["A", "B", "C"], ["B", "C", "A"], ["C", "A", "B"]];
+  function beats(x, y) {
+    var n = 0;
+    prefs.forEach(function (p) { if (p.indexOf(x) < p.indexOf(y)) n++; });
+    return n;
+  }
+  function winner(x, y) { return beats(x, y) >= 2 ? x : y; }
+  var box = { A: ["vt-ba", "vt-ta"], B: ["vt-bb", "vt-tb"], C: ["vt-bc", "vt-tc"] };
+  function reset() {
+    Econ.setTxt("vt-r1", "请选择一个表决议程（点击下方按钮）");
+    Econ.setTxt("vt-r2", "规则：两轮简单多数表决，首轮胜者对阵剩余方案。");
+    Econ.setTxt("vt-fin", "最终获胜：？");
+    Econ.setTxt("vt-note", "偏好循环：A 胜 B、B 胜 C、C 胜 A——没有稳定的多数赢家，议程说了算。");
+    ["A", "B", "C"].forEach(function (k) {
+      document.getElementById(box[k][0]).setAttribute("fill", "#ffffff");
+      document.getElementById(box[k][1]).setAttribute("fill", "#1f2937");
+    });
+  }
+  function runAgenda(a, b, rest) {
+    var w1 = winner(a, b), wf = winner(w1, rest);
+    Econ.setTxt("vt-r1", "第一轮：" + a + " 对 " + b + " → " + w1 + " 以 " +
+      Math.max(beats(a, b), beats(b, a)) + ":" + Math.min(beats(a, b), beats(b, a)) + " 胜出");
+    var w2 = wf === w1 ? rest : w1;
+    Econ.setTxt("vt-r2", "第二轮：" + w1 + " 对 " + rest + " → " + wf + " 以 " +
+      Math.max(beats(wf, w2), beats(w2, wf)) + ":" + Math.min(beats(wf, w2), beats(w2, wf)) + " 胜出");
+    Econ.setTxt("vt-fin", "最终获胜：" + wf);
+    Econ.setTxt("vt-note", "同一批选民、同一组偏好，只换了表决顺序，赢家就换了人。把三个议程都点一遍：①→C、②→A、③→B。");
+    ["A", "B", "C"].forEach(function (k) {
+      var win = k === wf;
+      document.getElementById(box[k][0]).setAttribute("fill", win ? "#be185d" : "#ffffff");
+      document.getElementById(box[k][1]).setAttribute("fill", win ? "#ffffff" : "#1f2937");
+    });
+  }
+  document.getElementById("vt-ag1").addEventListener("click", function () { runAgenda("A", "B", "C"); });
+  document.getElementById("vt-ag2").addEventListener("click", function () { runAgenda("B", "C", "A"); });
+  document.getElementById("vt-ag3").addEventListener("click", function () { runAgenda("C", "A", "B"); });
+  document.getElementById("vt-reset").addEventListener("click", reset);
+  reset();
+})();
+
+/* ================= 图 6-1 社会贴现率与 NPV ================= */
+(function () {
+  if (!document.getElementById("npv-a")) return;
+  var X0 = 70, X1 = 600, Y0 = 320, TOP = 40;
+  function px(r) { return X0 + r / 0.10 * (X1 - X0); }
+  function py(v) { return Y0 - (v + 140) / 640 * (Y0 - TOP); }
+  function ann(n, r) {
+    var s = 0;
+    for (var i = 1; i <= n; i++) s += 1 / Math.pow(1 + r, i);
+    return s;
+  }
+  function npvA(r) { return -100 + 8 * ann(30, r); }
+  function npvB(r) { return -130 + 13 * (ann(60, r) - ann(15, r)); }
+  var pa = [], pb2 = [], r;
+  for (r = 0; r <= 0.100001; r += 0.001) {
+    pa.push(px(r).toFixed(1) + "," + py(npvA(r)).toFixed(1));
+    pb2.push(px(r).toFixed(1) + "," + py(npvB(r)).toFixed(1));
+  }
+  document.getElementById("npv-a").setAttribute("points", pa.join(" "));
+  document.getElementById("npv-b").setAttribute("points", pb2.join(" "));
+  var rc = 0.1;
+  for (r = 0.0005; r <= 0.1; r += 0.0005) {
+    if (npvA(r) > npvB(r)) { rc = r; break; }
+  }
+  var cross = document.getElementById("npv-cross");
+  cross.setAttribute("cx", px(rc)); cross.setAttribute("cy", py(npvA(rc)));
+  Econ.setTxt("npv-sub", "曲线交点 r* ≈ " + (rc * 100).toFixed(1) +
+    "%：低于它乙优先，高于它甲优先；r 过乙的 IRR（约 4.5%）与甲的 IRR（约 7%）后先后转负。");
+  function draw() {
+    var pct = parseFloat(document.getElementById("npv-r").value);
+    var rr = pct / 100;
+    document.getElementById("npv-or").textContent = pct.toFixed(1) + "%";
+    var vA = npvA(rr), vB = npvB(rr);
+    var da = document.getElementById("npv-dot-a");
+    da.setAttribute("cx", px(rr)); da.setAttribute("cy", py(vA));
+    var db = document.getElementById("npv-dot-b");
+    db.setAttribute("cx", px(rr)); db.setAttribute("cy", py(vB));
+    var vl = document.getElementById("npv-vline");
+    vl.setAttribute("x1", px(rr)); vl.setAttribute("x2", px(rr));
+    vl.setAttribute("y1", TOP); vl.setAttribute("y2", Y0);
+    var judge = (vA <= 0 && vB <= 0) ? "两者皆不通过（NPV 均为负）"
+      : (vA > vB ? "均通过或甲较高：甲优先" : (vB > vA ? "乙优先" : "无差异"));
+    Econ.setTxt("npv-txt", "r = " + pct.toFixed(1) + "% ｜ 甲 NPV = " +
+      (vA >= 0 ? "+" : "") + vA.toFixed(1) + " ｜ 乙 NPV = " +
+      (vB >= 0 ? "+" : "") + vB.toFixed(1) + " → " + judge);
+  }
+  document.getElementById("npv-r").addEventListener("input", draw);
+  draw();
+})();
+</script>
+</body>
+</html>

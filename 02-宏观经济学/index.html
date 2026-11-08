@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>宏观经济学 · EconLearn 经济学自学之路</title>
+<meta name="description" content="宏观经济学中文互动教程：GDP 与循环流、索洛增长模型、AD-AS 波动、菲利普斯曲线与宏观经济政策，配互动图表与自测。">
+<link rel="stylesheet" href="../assets/econ.css">
+</head>
+<body style="--branch:#b91c1c">
+<noscript><p class="noscript-tip">本页的互动图表与自测需要启用 JavaScript；未启用时仍可阅读全部正文。</p></noscript>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← 总览</a>
+  <div class="topbar-title"><span class="topbar-num">02</span>宏观经济学</div>
+  <button class="toc-toggle" aria-expanded="false">目录</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">本分支章节</p>
+    <nav aria-label="章节目录">
+      <a href="#overview">导读与学习目标</a>
+      <a href="#ch1">1 · 宏观经济与 GDP</a>
+      <a href="#ch2">2 · 经济增长与索洛模型</a>
+      <a href="#ch3">3 · 总需求、总供给与乘数</a>
+      <a href="#ch4">4 · 货币、通胀与失业</a>
+      <a href="#ch5">5 · 开放的宏观经济学</a>
+      <a href="#ch6">6 · 宏观经济政策</a>
+      <a href="#path">进阶路线与延伸阅读</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · 经济学自学之路</p>
+  </aside>
+  <main class="main" id="main">
+
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">分支 02 · 核心理论</span>
+        <h1>宏观经济学</h1>
+        <p class="hero-en">Macroeconomics</p>
+        <p class="hero-lead">把镜头拉远：不再问单个市场如何出清，而是问整个经济为什么增长、为什么波动，财政与中央银行能做什么、做不到什么。</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">学完本分支你将能</div>
+        <ul>
+          <li>解释 GDP 三种算法（生产法、收入法、支出法）为何必然一致，并计算名义与实际增速</li>
+          <li>画出索洛模型图形，说明储蓄率、折旧与人口增长如何决定稳态人均资本与人均消费</li>
+          <li>用 AD-AS 模型分析需求冲击与供给冲击的短期效果，并用乘数公式量化一笔支出的总效应</li>
+          <li>区分短期与长期菲利普斯曲线，解释自然失业率与预期调整在其中的作用</li>
+          <li>用三元悖论与蒙代尔-弗莱明直觉判断开放经济中财政与货币政策的有效性</li>
+          <li>比较财政与货币政策的时滞结构，复述规则与相机抉择之争的核心论点</li>
+        </ul>
+      </div>
+      <div class="prereq">前置知识：
+        <a class="badge" href="../01-微观经济学/index.html">01 微观经济学 · 供需与边际分析</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">第 1 章</span>宏观经济与 GDP</h2>
+
+      <h3>引入问题</h3>
+      <p>新闻里说"2023 年中国国内生产总值 126.1 万亿元"。这个天文数字是怎么算出来的？为什么你卖掉一台二手 iPhone 不算进 GDP，而中介帮你卖房收的佣金却算？为什么一个每家每户都勤俭节约的国家，反而可能"省"出一场衰退？宏观经济学从回答"整个经济总共生产了多少"开始。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>微观经济学像走进集市研究一个个摊位；宏观经济学像坐上直升机俯瞰整座城市。俯瞰时最关键的图景是<strong>循环流</strong>（Circular Flow）：你的支出是别人的收入，别人的支出又是你的收入，钱在家庭、企业、政府与国外之间循环不息。因此<strong>国内生产总值</strong>（Gross Domestic Product, GDP）既是"生产的总量"，也是"挣到的总收入"，还是"花掉的总支出"——三种算法就像从三个城门数同一支游行队伍，人数必然相同。</p>
+        <p>对单个家庭成立的结论，对整体经济未必成立（<strong>合成谬误</strong>，Fallacy of Composition）：一家储蓄是美德，家家同时压缩支出，收入循环就会失速——这正是衰退的雏形。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">国内生产总值</span><span class="term-en">Gross Domestic Product (GDP)</span><div class="term-def">一个经济体在一段时期内（通常一年）新生产的全部最终产品与服务的市场价值。按"地域"口径：在中国境内生产即计入，无论生产者国籍。</div></div>
+        <div class="term"><span class="term-name">循环流</span><span class="term-en">Circular Flow</span><div class="term-def">支出与收入在部门之间的循环：一人的支出即另一人的收入。GDP 三种算法的一致性正源于此。</div></div>
+        <div class="term"><span class="term-name">名义与实际 GDP</span><span class="term-en">Nominal vs Real GDP</span><div class="term-def">按当期价格计算与按不变价格计算的 GDP。只有剔除价格因素的实际 GDP 才能跨年比较真实产出。</div></div>
+        <div class="term"><span class="term-name">GDP 平减指数</span><span class="term-en">GDP Deflator</span><div class="term-def">名义 GDP ÷ 实际 GDP × 100，覆盖国内全部产出的价格指数，比 CPI 口径更宽。</div></div>
+        <div class="term"><span class="term-name">消费者物价指数</span><span class="term-en">Consumer Price Index (CPI)</span><div class="term-def">固定一篮子消费品与服务价格的变化（拉氏指数），衡量居民生活成本，是通胀最常用的仪表盘。</div></div>
+      </div>
+
+      <h3>互动演示</h3>
+      <p>核算中最容易踩的坑，是把名义增长当成真增长。用下面的计算器亲手试一试：名义增速与价格（平减指数）一起决定实际增速。</p>
+      <figure class="fig">
+        <div class="fig-title">图 1-1 · 名义 vs 实际：把"涨价"从增长里剔除</div>
+        <p class="fig-sub">分别拖动两个滑块，观察第三根柱子（实际增速）如何变化。</p>
+        <figure class="fig-canvas">
+          <svg id="figGdpSvg" viewBox="0 0 640 400" role="img" aria-label="三根柱子对比名义增速、平减指数与实际增速，实际增速随两个滑块变化">
+            <line class="gridline" x1="70" y1="116" x2="610" y2="116"></line>
+            <text class="chart-label-en" x="62" y="120" text-anchor="end">+6%</text>
+            <line class="gridline" x1="70" y1="284" x2="610" y2="284"></line>
+            <text class="chart-label-en" x="62" y="288" text-anchor="end">−6%</text>
+            <line class="axis" x1="60" y1="200" x2="615" y2="200"></line>
+            <text class="chart-label-en" x="62" y="196" text-anchor="end">0</text>
+            <rect id="gdpBarN" x="110" y="180" width="80" height="20" rx="3" fill="#2f6fdb"></rect>
+            <rect id="gdpBarP" x="300" y="180" width="80" height="20" rx="3" fill="#ea580c"></rect>
+            <rect id="gdpBarR" x="490" y="180" width="80" height="20" rx="3" fill="#0d9488"></rect>
+            <text id="gdpValN" class="chart-label" x="150" y="172" text-anchor="middle">8.0%</text>
+            <text id="gdpValP" class="chart-label" x="340" y="172" text-anchor="middle">3.0%</text>
+            <text id="gdpValR" class="chart-label" x="530" y="172" text-anchor="middle">4.9%</text>
+            <line class="axis" x1="60" y1="360" x2="615" y2="360"></line>
+            <text class="chart-label" x="150" y="384" text-anchor="middle">名义增速 g</text>
+            <text class="chart-label" x="340" y="384" text-anchor="middle">平减指数 π</text>
+            <text class="chart-label" x="530" y="384" text-anchor="middle">实际增速 r</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="gdpGRange">名义增速 g</label>
+            <input type="range" id="gdpGRange" min="0" max="12" value="8" step="0.5">
+            <output id="gdpGOut" for="gdpGRange">8.0%</output></div>
+          <div class="ctrl"><label for="gdpPiRange">平减指数 π</label>
+            <input type="range" id="gdpPiRange" min="0" max="8" value="3" step="0.5">
+            <output id="gdpPiOut" for="gdpPiRange">3.0%</output></div>
+        </div>
+        <figcaption>读图要点：<span id="gdpRead">实际增速 =（1+g）/（1+π）− 1。</span>当名义 8%、物价涨 3% 时，"真增长"只有约 4.9%；若物价涨 8%，实际增长接近零——名义繁荣可能只是涨价。</figcaption>
+      </figure>
+
+      <div class="formula">实际 GDP 增速 r = (1 + g) ÷ (1 + π) − 1
+        <span class="f-note">g 为名义增速，π 为平减指数涨幅；粗略估算可用 r ≈ g − π</span>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界</div>
+        <p>中国国家统计局同时用生产法、收入法、支出法核算 GDP，理论上结果一致，实践中以生产法为准、误差控制在较小区间。支出法视角下 2023 年 GDP 126.1 万亿元中，最终消费、资本形成与净出口"三驾马车"各占其位。另一个经典提醒：家务劳动与志愿服务不计入 GDP——同样一小时打扫，外包给家政公司计入 GDP，自己动手不计。所以 GDP 衡量的是市场化生产，不等于福利总量。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p>①把二手货与股票交易计入 GDP——错，它们是存量转移，只有中介服务等新生产部分计入；②把养老金、失业金计入——错，转移支付不对应任何当期产出；③GDP 高就等于日子好——水平不等于分配，也不包含健康、环境与闲暇；④拿名义 GDP 直接跨国跨年比较，被汇率与物价骗。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.1</span>下列哪一项应计入当年的 GDP？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>小李买下一套 2015 年建成的二手房（不含中介费）</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>政府出资当年新建一座跨江大桥</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>政府向退休人员发放养老金</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>小李自己在家打扫卫生三小时</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>GDP 核算当年新生产的最终产品与服务。A 中旧房是过去生产的存量，交易本身不计（若付中介费，中介服务计入）；C 养老金是转移支付，不对应产出；D 属非市场家务劳动，不计入。B 是当年新生产的最终产品，无论财政出钱还是私人出钱都计入，故选 B。</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.2</span>某国名义 GDP 增长 6%，GDP 平减指数上升 4%，实际增速约为多少？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>10%</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>约 2%</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>6%</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>24%</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>实际 = (1.06 ÷ 1.04) − 1 ≈ 1.9%，约等于 6% − 4% = 2%，选 B。A 把名义与价格相加，方向反了；C 忽略了涨价，把名义当实际；D 属于错误的相乘。名义增长里必须剔除"涨价"的部分，剩下的才是真实产出增长。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>GDP 是一段时期内新生产的最终产品与服务的市场价值；三种算法（生产、收入、支出）必然一致，因为循环流中支出即收入。</li>
+          <li>二手货交易、转移支付、中间品与家务劳动不计入 GDP。</li>
+          <li>名义/实际之别是宏观第一课：实际增速 = (1+g)/(1+π) − 1。</li>
+          <li>GDP 平减指数覆盖全部国内产出，CPI 只覆盖居民消费篮子。</li>
+          <li>GDP 衡量市场化生产，不衡量分配、环境与闲暇，"GDP 高"不等于"福利高"。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">第 2 章</span>经济增长与索洛模型</h2>
+
+      <h3>引入问题</h3>
+      <p>为什么你的祖辈辛苦一辈子买不起的东西，如今一个普通工薪家庭几年就能攒够？为什么 1978 年中国人均 GDP 只有约 156 美元，而 2023 年超过 1.27 万美元？更根本地：增长的发动机是什么，以及——只靠多建工厂，增长能永远持续吗？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>增长有三台发动机：<strong>资本积累</strong>（机器厂房）、<strong>劳动与人力资本</strong>（更多人、更有技能的人）、<strong>技术进步</strong>（更好的点子，统计上表现为全要素生产率）。<strong>索洛模型</strong>（Solow Model）的关键洞察是<strong>资本边际报酬递减</strong>：第一台拖拉机能改变一个村庄，第一千台只是替换旧的。因此仅靠资本积累，人均产出终将停在<strong>稳态</strong>（Steady State）——人均储蓄恰好够补上折旧并为新增人口"配上"资本；长期人均增长只能靠技术进步这台不熄火的发动机。复利是增长的魔法：<strong>70 规则</strong>说年增 2% 约 35 年翻番，年增 1% 要 70 年——0.5 个百分点的差距，一两代人后就是天壤之别。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">索洛模型</span><span class="term-en">Solow Growth Model</span><div class="term-def">以资本积累为核心的增长模型：储蓄 s·f(k) 转化为投资，与"收支平衡投资线"（折旧+人口增长）相交处即稳态。</div></div>
+        <div class="term"><span class="term-name">稳态</span><span class="term-en">Steady State</span><div class="term-def">人均资本不再变化的状态：人均储蓄恰好等于折旧加人口增长所需投资，s·f(k*) = (δ+n)·k*。</div></div>
+        <div class="term"><span class="term-name">全要素生产率</span><span class="term-en">Total Factor Productivity (TFP)</span><div class="term-def">资本与劳动投入无法解释的产出部分，即技术、组织与效率之"残差"，是长期人均增长的最终来源。</div></div>
+        <div class="term"><span class="term-name">趋同</span><span class="term-en">Convergence</span><div class="term-def">初始更穷的经济体增长更快的倾向。世界证据支持"条件趋同"：控制储蓄、人口、人力资本与制度后，穷国确实更快追上。</div></div>
+        <div class="term"><span class="term-name">黄金律</span><span class="term-en">Golden Rule</span><div class="term-def">使稳态人均消费最大化的储蓄率；储蓄超过它，产出虽更高，人均消费反而下降。</div></div>
+      </div>
+
+      <h3>互动演示</h3>
+      <p>下面的图形是索洛模型的心脏：横轴人均资本 k，纵轴人均投资/产出。曲线 s·f(k) 是人均储蓄（投资），直线 γk 是"折旧+人口增长"所需的收支平衡投资，交点即稳态。拖动储蓄率滑块，看看稳态资本、产出与消费如何响应。</p>
+      <figure class="fig">
+        <div class="fig-title">图 2-1 · 索洛模型：储蓄率与稳态</div>
+        <p class="fig-sub">拖动储蓄率 s，观察交点、人均产出 y* 与人均消费 c* 的变化；把 s 推到 0.5 以上试试。</p>
+        <figure class="fig-canvas">
+          <svg id="figSolowSvg" viewBox="0 0 640 400" role="img" aria-label="索洛模型图：人均储蓄曲线与收支平衡投资线的交点决定稳态，储蓄率滑块改变交点位置">
+            <line class="gridline" x1="70" y1="242.5" x2="600" y2="242.5"></line>
+            <text class="chart-label-en" x="62" y="246.5" text-anchor="end">1</text>
+            <line class="gridline" x1="70" y1="155" x2="600" y2="155"></line>
+            <text class="chart-label-en" x="62" y="159" text-anchor="end">2</text>
+            <line class="gridline" x1="70" y1="67.5" x2="600" y2="67.5"></line>
+            <text class="chart-label-en" x="62" y="71.5" text-anchor="end">3</text>
+            <path id="solowF" class="curve" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 5" d=""></path>
+            <path id="solowBe" class="curve curve-c2" d=""></path>
+            <path id="solowSf" class="curve curve-c1" d=""></path>
+            <line id="solowGk" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <line id="solowGy" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <line id="solowGi" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <line id="solowCBr" x1="0" y1="0" x2="0" y2="0" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="3 3"></line>
+            <circle id="solowDotI" class="dot" r="6" fill="#b91c1c"></circle>
+            <circle id="solowDotY" class="dot" r="6" fill="#ffffff" stroke="#b91c1c" stroke-width="2.5"></circle>
+            <text id="solowValY" class="chart-label" x="62" y="200" text-anchor="end"></text>
+            <text id="solowValI" class="chart-label-en" x="62" y="230" text-anchor="end"></text>
+            <text id="solowValK" class="chart-label" x="0" y="350" text-anchor="middle"></text>
+            <text id="solowCLbl" class="chart-label" x="0" y="0" style="fill:#b91c1c"></text>
+            <text id="solowLblF" class="chart-label-en" x="494" y="74" text-anchor="end">f(k) 人均产出</text>
+            <text id="solowLblBe" class="chart-label" x="284" y="272" text-anchor="end" style="fill:#ea580c">γk 折旧+人口增长</text>
+            <text id="solowLblSf" class="chart-label" x="0" y="0" text-anchor="end" style="fill:#2f6fdb">s·f(k) 人均储蓄</text>
+            <text id="solowRead" class="chart-title-sm" x="335" y="30" text-anchor="middle"></text>
+            <line class="axis" x1="60" y1="330" x2="615" y2="330"></line>
+            <line class="axis" x1="70" y1="340" x2="70" y2="44"></line>
+            <text class="chart-label" x="605" y="356" text-anchor="end">人均资本 k</text>
+            <text class="chart-label" transform="translate(24,190) rotate(-90)" text-anchor="middle">人均投资 / 产出</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="solowRange">储蓄率 s</label>
+            <input type="range" id="solowRange" min="0.05" max="0.6" value="0.3" step="0.01">
+            <output id="solowOut" for="solowRange">0.30</output></div>
+        </div>
+        <figcaption>读图要点：本图取 f(k)=√k、γ=0.20（折旧+人口增长）。交点上移右移意味着更高的 k* 与 y*；空心点是稳态人均产出 y*，实心点是稳态投资 i*，两者之间的高度差正是人均消费 c*。<span id="solowNote"></span></figcaption>
+      </figure>
+
+      <div class="formula">稳态条件：s · f(k*) = (δ + n) · k*
+        <span class="f-note">储蓄曲线与收支平衡投资线的交点；储蓄率只有"水平效应"，没有长期"增长效应"</span>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界</div>
+        <p>战后最壮观的趋同样本在东亚：1960 年韩国人均 GDP 与加纳不相上下，2023 年已超过 3.3 万美元；日本从废墟跃入高收入行列。中国 1978 年人均 GDP 约 156 美元，2023 年超 1.27 万美元，45 年名义增长约 80 倍。增长核算显示，东亚奇迹中资本深化的贡献巨大，但 TFP 与人力资本同样不可或缺——这正呼应索洛模型的判断：资本积累能解释追赶，解释不了前沿上的持续增长。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p>①"投资率越高越好"——超过黄金律储蓄率后，人均消费不升反降，苏联式高积累低消费即是教训；②"把高增长外推几十年"——增长回归均值是实证研究中最稳健的规律之一；③"穷国必然追上富国"（绝对趋同）——世界样本并不支持，控制制度与人力资本等条件后的条件趋同才成立。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.1</span>索洛模型中，储蓄率一次性永久提高，长期稳态下会发生什么？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>人均资本与人均产出都更高，但人均产出的长期增长率不变</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>人均产出的长期增长率永久提高</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>人均消费必然提高</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>储蓄率上升使储蓄曲线上移，与收支平衡线交于更高的 k*、y*，但稳态中人均增长率由技术进步率决定——储蓄率只有水平效应，没有增长效应，选 A。B 是最常见的误读；C 不必然：若储蓄率已越过黄金律，c* 反而下降。</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.2</span>关于国家间的"趋同"，以下说法最准确的是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>只要时间够长，所有国家的人均收入都会完全相同</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>控制储蓄率、人口、人力资本与制度等条件后，初始更穷的经济体趋向更快增长（条件趋同）</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>穷国一定比富国增长快，因为基数低、起点低</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>跨国实证支持的是条件趋同：在储蓄、人口、人力资本与制度相近的组内（如 OECD 内部、东亚各经济体之间），穷者更快追赶；全世界样本的绝对趋同并不成立，撒哈拉以南非洲长期落后即为反例。故 B 正确，A、C 把条件趋同误读为无条件趋同。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>增长三发动机：资本积累、劳动与人力资本、技术进步（TFP）。</li>
+          <li>资本边际报酬递减 → 仅靠投资，经济收敛到稳态 s·f(k*)=(δ+n)k*。</li>
+          <li>储蓄率决定稳态水平（k*、y*），不决定长期人均增长率；后者靠技术进步。</li>
+          <li>黄金律储蓄率使稳态人均消费最大，储蓄过多反而降低消费。</li>
+          <li>跨国证据支持条件趋同而非绝对趋同；70 规则展示复利的力量。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">第 3 章</span>总需求、总供给与乘数</h2>
+
+      <h3>引入问题</h3>
+      <p>经济为什么不是匀速前进，而是像发烧与着凉交替：2007 年还订单排到半年后，2008 年底出口企业突然成片停工？如果一家工厂裁员，损失会不会像多米诺骨牌一样放大到整个经济？又是什么力量能在衰退时把总需求重新点燃？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>把经济想象成身体，潜在产出是正常体温。<strong>总需求</strong>（Aggregate Demand, AD）由四驾马车加总：消费 C、投资 I、政府购买 G、净出口 NX，价格越高总需求越低，曲线向右下方倾斜。<strong>短期总供给</strong>（Short-Run Aggregate Supply, SRAS）因工资与价格黏性而向右上方倾斜：物价涨了工资还没涨，企业觉得有利可图就多生产。<strong>乘数效应</strong>（Multiplier Effect）则是循环流的放大器：政府修桥花掉 100 亿，工人拿到 100 亿收入，花掉其中的 80 亿；面包师收入又增加 80 亿，再花 64 亿……像一列逐渐变矮的多米诺骨牌，每一轮都比上一轮矮一截（因为边际消费倾向小于 1），但总效应远大于第一张牌。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">总需求</span><span class="term-en">Aggregate Demand (AD)</span><div class="term-def">每一价格水平上全社会的意愿支出总量 C+I+G+NX；向右下方倾斜，靠财富效应、利率效应与汇率效应。</div></div>
+        <div class="term"><span class="term-name">短期总供给</span><span class="term-en">Short-Run Aggregate Supply (SRAS)</span><div class="term-def">价格与工资黏性下，物价越高企业愿意供给越多，曲线向右上方倾斜；长期则垂直于潜在产出。</div></div>
+        <div class="term"><span class="term-name">乘数效应</span><span class="term-en">Multiplier Effect</span><div class="term-def">初始支出经"支出→收入→再支出"链条放大的倍数，k = 1/(1−MPC)；税收、进口与储蓄是漏出。</div></div>
+        <div class="term"><span class="term-name">产出缺口</span><span class="term-en">Output Gap</span><div class="term-def">实际产出与潜在产出之差：正为过热（通胀压力），负为衰退（失业压力）。</div></div>
+      </div>
+
+      <h3>互动演示</h3>
+      <p>先看乘数链条怎么一环环展开，再用 AD-AS 图看需求与供给冲击如何改变均衡。</p>
+      <figure class="fig">
+        <div class="fig-title">图 3-1 · 支出乘数：一笔钱的多米诺</div>
+        <p class="fig-sub">设定边际消费倾向 c，点"逐轮演示"看 100 亿元初始注入如何一轮轮变成收入与支出。</p>
+        <figure class="fig-canvas">
+          <svg id="figMultSvg" viewBox="0 0 640 400" role="img" aria-label="支出乘数演示：十根柱子表示前十轮新增支出，随边际消费倾向递减，说明文字给出乘数与合计">
+            <line class="gridline" x1="70" y1="90" x2="610" y2="90"></line>
+            <text class="chart-label-en" x="62" y="94" text-anchor="end">100</text>
+            <line class="gridline" x1="70" y1="210" x2="610" y2="210"></line>
+            <text class="chart-label-en" x="62" y="214" text-anchor="end">50</text>
+            <g id="multBars"></g>
+            <line class="axis" x1="70" y1="330" x2="70" y2="40"></line>
+            <line class="axis" x1="60" y1="330" x2="615" y2="330"></line>
+            <text id="multPart" class="chart-label" x="70" y="28"></text>
+            <text id="multTotal" class="chart-label" x="70" y="50"></text>
+            <text id="multK" class="chart-title-sm" x="610" y="28" text-anchor="end"></text>
+            <text class="chart-label" x="605" y="384" text-anchor="end">支出轮次</text>
+            <text class="chart-label" transform="translate(22,190) rotate(-90)" text-anchor="middle">每轮新增支出（初始注入 100）</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="mpcRange">边际消费倾向 c</label>
+            <input type="range" id="mpcRange" min="0" max="0.9" value="0.8" step="0.05">
+            <output id="mpcOut" for="mpcRange">0.80</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="multPlay" type="button">逐轮演示</button>
+          <button class="btn ghost" id="multReset" type="button">显示全部十轮</button>
+        </div>
+        <figcaption>读图要点：每轮新增支出 = 上一轮 × c。前十轮之外还有无穷小的尾巴，全部轮次加总恰为 100 × 1/(1−c)。c 越接近 1，链条衰减越慢、乘数越大——但税收与进口漏出会让现实乘数远小于公式值。</figcaption>
+      </figure>
+
+      <figure class="fig">
+        <div class="fig-title">图 3-2 · AD-AS：需求冲击与供给冲击</div>
+        <p class="fig-sub">分别拖动两条滑块，观察均衡点 P*、Y* 与产出缺口如何变化；试试"AD 右移 + SRAS 左移"的组合。</p>
+        <figure class="fig-canvas">
+          <svg id="figAdasSvg" viewBox="0 0 640 400" role="img" aria-label="AD-AS 模型：总需求与短期总供给曲线相交决定均衡物价与产出，滑块移动曲线">
+            <defs>
+              <clipPath id="adasClip"><rect x="70" y="50" width="530" height="280"></rect></clipPath>
+            </defs>
+            <line class="gridline" x1="70" y1="274" x2="610" y2="274"></line>
+            <text class="chart-label-en" x="62" y="278" text-anchor="end">P=2</text>
+            <line class="gridline" x1="70" y1="218" x2="610" y2="218"></line>
+            <text class="chart-label-en" x="62" y="222" text-anchor="end">4</text>
+            <line class="gridline" x1="70" y1="162" x2="610" y2="162"></line>
+            <text class="chart-label-en" x="62" y="166" text-anchor="end">6</text>
+            <line class="gridline" x1="70" y1="106" x2="610" y2="106"></line>
+            <text class="chart-label-en" x="62" y="110" text-anchor="end">8</text>
+            <line x1="361.5" y1="50" x2="361.5" y2="330" stroke="#7c3aed" stroke-width="2" stroke-dasharray="7 5"></line>
+            <text class="chart-label-en" x="369" y="66" style="fill:#7c3aed">潜在产出（长期总供给）</text>
+            <g clip-path="url(#adasClip)">
+              <path id="adasAd" class="curve curve-c1" d=""></path>
+              <path id="adasSras" class="curve curve-c2" d=""></path>
+            </g>
+            <line id="adasGx" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <line id="adasGy" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <circle id="adasDot" class="dot" r="6" fill="#b91c1c"></circle>
+            <text id="adasPLabel" class="chart-label" x="76" y="0"></text>
+            <text id="adasYLabel" class="chart-label" x="0" y="350" text-anchor="middle"></text>
+            <text id="adasAdLbl" class="chart-label" x="0" y="0" style="fill:#2f6fdb">AD</text>
+            <text id="adasSrasLbl" class="chart-label" x="0" y="0" text-anchor="end" style="fill:#ea580c">SRAS</text>
+            <text id="adasGap" class="chart-title-sm" x="335" y="28" text-anchor="middle"></text>
+            <line class="axis" x1="60" y1="330" x2="615" y2="330"></line>
+            <line class="axis" x1="70" y1="340" x2="70" y2="40"></line>
+            <text class="chart-label" x="605" y="384" text-anchor="end">总产出 Y</text>
+            <text class="chart-label" transform="translate(22,190) rotate(-90)" text-anchor="middle">物价水平 P</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="adasAdRange">总需求 AD 移动</label>
+            <input type="range" id="adasAdRange" min="-2" max="2" value="0" step="0.5">
+            <output id="adasAdOut" for="adasAdRange">+0.0</output></div>
+          <div class="ctrl"><label for="adasSrasRange">总供给 SRAS 移动</label>
+            <input type="range" id="adasSrasRange" min="-2" max="2" value="0" step="0.5">
+            <output id="adasSrasOut" for="adasSrasRange">+0.0</output></div>
+        </div>
+        <figcaption>读图要点：AD 右移 → 产出与物价同升（复苏或过热）；AD 左移 → 同降（衰退）；SRAS 左移 → 物价升、产出降（滞胀，如 1970 年代石油危机）；SRAS 右移 → 物价降、产出升（如 1990 年代末信息技术的成本红利）。均衡点距"潜在产出"垂线的水平距离即产出缺口。</figcaption>
+      </figure>
+
+      <div class="formula">支出乘数 k = 1 ÷ (1 − MPC)
+        <span class="f-note">MPC 为边际消费倾向；ΔY = k × ΔG。漏出越多（税收、进口、储蓄），现实乘数越小</span>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界</div>
+        <p>2008 年 11 月，面对全球金融危机，中国推出两年四万亿元的刺激计划：高铁、高速公路与保障房带动钢铁、水泥、工程机械，产业链上的就业与收入回升，2009 年 GDP 增长 9.4%，走出罕见的 V 型反弹。争论同样著名：刺激在多大程度上挤出了民间投资、推高了地方债务与房价——乘数不是免费的午餐，它的大小取决于经济闲置程度、融资方式与预期。这正说明：同一张 AD-AS 图，画在繁荣期与画在深度衰退期，含义并不相同。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p>①混淆"沿线移动"与"整条移动"：物价下降引起的需求量变化是沿 AD 线移动；降息、减税、出口回暖使每一物价水平下需求都更多，才是 AD 整条右移。②把微观需求曲线直接当成 AD：宏观的向下倾斜靠财富效应、利率效应与汇率效应，不是消费者的替代效应。③以为乘数无限大或恒定：c 越高乘数越大，但税收与进口漏出、以及央行可能的反向操作，都会让现实乘数远小于教科书公式。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.1</span>中央银行降息，最可能在 AD-AS 图上引起什么？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>AD 右移，短期均衡产出与物价同时上升</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>SRAS 右移，产出上升、物价下降</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>沿既定的 AD 曲线向右下方移动</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>降息降低融资成本，刺激企业投资与居民耐用品消费，总需求在每一物价水平上都增加，AD 整条右移，短期均衡沿 SRAS 上移到更高的 Y* 与 P*，选 A。B 混淆了需求政策与供给曲线（降息不直接降低生产成本）；C 混淆了曲线移动与沿线移动——政策改变的是需求本身，不是物价引起的数量调整。</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.2</span>国际油价暴涨对短期的典型影响是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>AD 左移：产出与物价都下降</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>SRAS 左移：物价上升、产出下降（滞胀）</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>AD 右移：产出与物价都上升</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>原油是遍布生产链的投入品，成本上升意味着每一产出水平上企业要求的物价更高，SRAS 左移，结果物价涨、产出缩，即滞胀，选 B。这恰是货币政策最难受的处境：压通胀会进一步伤产出，保产出会纵容通胀——1970 年代美国的两轮石油危机即为典型。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>AD = C + I + G + NX，向右下倾斜；SRAS 因黏性工资与价格向右上倾斜。</li>
+          <li>需求冲击移动 AD（产出与物价同向变化）；供给冲击移动 SRAS（产出与物价反向变化，滞胀）。</li>
+          <li>乘数 k = 1/(1−MPC)：支出经循环流层层放大，漏出越多乘数越小。</li>
+          <li>产出缺口衡量实际产出对潜在产出的偏离：正为过热，负为衰退。</li>
+          <li>区分"沿线移动"与"整条移动"是本模型的第一纪律。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">第 4 章</span>货币、通胀与失业</h2>
+
+      <h3>引入问题</h3>
+      <p>1979 年的美国，物价一年上涨超过 13%，同时失业率节节攀升——教科书上的菲利普斯曲线明明说通胀与失业应该此消彼长，怎么两头一起恶化？反过来，1960 年代的政策者曾以为自己握有一张"菜单"，点上高通胀就能换来低失业。这张菜单真的存在吗？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>通胀的本质是太多货币追逐太少商品——持久的高通胀几乎总与货币超发相伴。短期菲利普斯曲线（Phillips Curve）的"通胀—失业"替代，其实是<strong>意外通胀</strong>的产物：只有当物价涨得超出预期、而工资合同还没来得及调整时，实际工资被悄悄压低，企业才愿意多雇人。一旦人人预期到 5% 的通胀，工资谈判自动加上 5%，替代关系就消失了——所以<strong>长期菲利普斯曲线垂直于自然失业率</strong>（Natural Rate of Unemployment）：你能骗所有人于一时，骗不了所有人于一世。连接实体与价格的另一条经验规律是<strong>奥肯定律</strong>（Okun's Law）：失业率每高于自然率 1 个百分点，产出缺口约 2%。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">通货膨胀</span><span class="term-en">Inflation</span><div class="term-def">一般物价水平的持续上升；个别商品涨价只是相对价格变化，不等于通胀。恶性通胀通常伴随财政主导的货币超发。</div></div>
+        <div class="term"><span class="term-name">菲利普斯曲线</span><span class="term-en">Phillips Curve</span><div class="term-def">通胀与失业的短期负相关关系；长期预期调整后垂直于自然失业率，替代关系消失。</div></div>
+        <div class="term"><span class="term-name">自然失业率</span><span class="term-en">Natural Rate of Unemployment</span><div class="term-def">摩擦性失业与结构性失业之和，是长期失业围绕的水平，与通胀率高低无关。</div></div>
+        <div class="term"><span class="term-name">奥肯定律</span><span class="term-en">Okun's Law</span><div class="term-def">经验规律：失业率每高于自然率 1 个百分点，实际 GDP 比潜在水平低约 2%（美国数据）。</div></div>
+      </div>
+
+      <h3>互动演示</h3>
+      <p>用下图亲手检验"菜单"的幻觉：短期里你确实能把失业压到自然率之下，代价是通胀升高；但切到长期视角，预期一旦调整，失业必然回到 5%，只剩更高的通胀。</p>
+      <figure class="fig">
+        <div class="fig-title">图 4-1 · 菲利普斯曲线：短期替代与长期垂直</div>
+        <p class="fig-sub">拖动"预期通胀"滑块使 SRPC 上下平移，再点按钮对比短期与长期的均衡位置。</p>
+        <figure class="fig-canvas">
+          <svg id="figPhSvg" viewBox="0 0 640 400" role="img" aria-label="菲利普斯曲线：向右下倾斜的短期曲线随预期通胀上下平移，长期为失业率等于 5% 处的垂直线">
+            <defs>
+              <clipPath id="phClip"><rect x="70" y="50" width="530" height="280"></rect></clipPath>
+              <marker id="phArrowM" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="#475569"></path>
+              </marker>
+            </defs>
+            <line class="gridline" x1="70" y1="274" x2="610" y2="274"></line>
+            <text class="chart-label-en" x="62" y="278" text-anchor="end">π=2</text>
+            <line class="gridline" x1="70" y1="218" x2="610" y2="218"></line>
+            <text class="chart-label-en" x="62" y="222" text-anchor="end">4</text>
+            <line class="gridline" x1="70" y1="162" x2="610" y2="162"></line>
+            <text class="chart-label-en" x="62" y="166" text-anchor="end">6</text>
+            <line class="gridline" x1="70" y1="106" x2="610" y2="106"></line>
+            <text class="chart-label-en" x="62" y="110" text-anchor="end">8</text>
+            <line x1="335" y1="50" x2="335" y2="330" stroke="#7c3aed" stroke-width="2" stroke-dasharray="7 5"></line>
+            <text class="chart-label-en" x="343" y="66" style="fill:#7c3aed">LRPC（u = 5%）</text>
+            <g clip-path="url(#phClip)">
+              <path id="phSrpc" class="curve curve-c1" d=""></path>
+            </g>
+            <line id="phGSx" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <line id="phGSy" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <line id="phGLx" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <line id="phGLy" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <circle id="phDotS" class="dot" r="6" fill="#ea580c"></circle>
+            <circle id="phDotL" class="dot" r="6" fill="#b91c1c"></circle>
+            <text id="phValS" class="chart-label" x="76" y="0" style="fill:#ea580c"></text>
+            <text id="phValL" class="chart-label" x="76" y="0" style="fill:#b91c1c"></text>
+            <text id="phULblS" class="chart-label" x="255" y="366" text-anchor="middle" style="fill:#ea580c">u=3.5%</text>
+            <text id="phULblL" class="chart-label" x="335" y="366" text-anchor="middle" style="fill:#7c3aed">u=5%</text>
+            <path id="phArrow" d="" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#phArrowM)" display="none"></path>
+            <text id="phLblSrpc" class="chart-label" x="0" y="0" style="fill:#2f6fdb">SRPC</text>
+            <text id="phState" class="chart-title-sm" x="335" y="28" text-anchor="middle"></text>
+            <text id="phNote" class="chart-label" x="320" y="386" text-anchor="middle"></text>
+            <line class="axis" x1="60" y1="330" x2="615" y2="330"></line>
+            <line class="axis" x1="70" y1="340" x2="70" y2="40"></line>
+            <text class="chart-label-en" x="176" y="350" text-anchor="middle">u=2</text>
+            <text class="chart-label-en" x="282" y="350" text-anchor="middle">4</text>
+            <text class="chart-label-en" x="388" y="350" text-anchor="middle">6</text>
+            <text class="chart-label-en" x="494" y="350" text-anchor="middle">8</text>
+            <text class="chart-label" x="605" y="384" text-anchor="end">失业率 u（%）</text>
+            <text class="chart-label" transform="translate(22,190) rotate(-90)" text-anchor="middle">通胀率 π（%）</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="phRange">预期通胀 πᵉ</label>
+            <input type="range" id="phRange" min="0" max="6" value="2" step="0.5">
+            <output id="phOut" for="phRange">2.0%</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="phBtnS" type="button">短期：扩张压低失业</button>
+          <button class="btn ghost" id="phBtnL" type="button">长期：预期调整之后</button>
+        </div>
+        <figcaption>读图要点：SRPC 的位置由预期通胀决定（π = πᵉ − 0.8×(u−5)）。短期可沿曲线用更高通胀换更低失业；长期预期上调使 SRPC 整体上移，经济被推回 LRPC 上的 5%，通胀却停在了更高位——替代只是一次性的、且以加速为代价。</figcaption>
+      </figure>
+
+      <div class="formula">奥肯定律：(Y − Y*) ÷ Y* = −2 × (u − u*)
+        <span class="f-note">u 为失业率，u* 为自然失业率；高失业对应负产出缺口</span>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界</div>
+        <p>保罗·沃尔克 1979 年接掌美联储时通胀已超过 11%。他把联邦基金利率推到 20%，1981–82 年失业率冲上 10.8%，通胀（1980 年见顶 13.5%）到 1983 年被压回 3.2%——"冷火鸡"式的紧缩以一场深度衰退为代价，验证了长期曲线垂直与反通胀的"牺牲率"。对照案例是 2021–2023 年：美联储起初把供应链推动的通胀称为"暂时性"，延误加息，2022 年 3 月起的约一年半里累计加息 5.25 个百分点才把通胀拽回轨道——对菲利普斯曲线斜率与持续性的误判，代价是真金白银。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p>①把菲利普斯曲线当永久"政策菜单"——1960 年代的乐观在 1970 年代的滞胀中破产；②把个别商品涨价等同于通胀——相对价格变化不是一般物价水平上升，通胀归根结底是货币现象；③忽视 CPI 的度量偏差——固定篮子无法反映消费者转向便宜替代品，生活成本常被高估；④以为自然失业率是常数——它随人口结构与劳动力市场制度而变。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.1</span>长期菲利普斯曲线是垂直的，其含义是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>长期中通胀与失业存在稳定的替代关系，可以永久点菜</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>长期中失业率回到自然率，靠永久性的高通胀买不到更低失业</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>长期中货币是中性的，因此通胀对经济毫无影响</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>预期完全调整后，任何通胀率都与 u = u* 相容，任何把失业压到自然率之下的尝试只会带来不断加速的通胀（加速主义假说），故 B 正确。A 正是被 1970 年代证伪的"菜单"幻觉；C 推过头了——货币中性说的是不影响实际变量，但通胀本身有鞋底成本、税收扭曲等福利损失，何况预期的通胀不等于波动的通胀。</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.2</span>按奥肯定律（美国经验），若失业率为 7%、自然失业率为 5%，产出缺口约为：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>−2%</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>−4%</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>+4%</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>失业率高出自然率 2 个百分点，每点对应约 2% 的产出缺口，故缺口约 −4%，选 B。A 只按 1 个百分点计算；C 方向弄反——高失业意味着产出低于潜在水平，是衰退缺口而非过热。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>通胀是一般物价水平持续上升，本质上是货币现象；相对价格变化不是通胀。</li>
+          <li>短期菲利普斯曲线的替代来自意外通胀压低实际工资；预期调整即失效。</li>
+          <li>长期菲利普斯曲线垂直于自然失业率：永久通胀买不到永久低失业。</li>
+          <li>奥肯定律把失业与产出缺口挂钩：失业每高 1 点，产出约低 2%。</li>
+          <li>反通胀有真实产出代价（牺牲率），沃尔克紧缩与 2021–23 误判是两面镜子。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">第 5 章</span>开放的宏观经济学</h2>
+
+      <h3>引入问题</h3>
+      <p>1997 年 7 月 2 日，泰国在投机冲击下耗尽外汇储备，被迫放弃钉住美元的汇率，泰铢此后近乎腰斩，危机席卷东南亚；同一年，中国香港却顶住了国际炒家的连环攻击，守住 7.8 港元兑 1 美元的联系汇率。同样是小型开放经济，为什么命运如此不同？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p><strong>汇率</strong>（Exchange Rate）不过是两种货币的相对价格；<strong>国际收支</strong>（Balance of Payments）是一国与全世界的账本，核心恒等式是经常账户差额等于国民储蓄与投资的差额（CA = S − I）。开放经济最重要的约束是<strong>三元悖论</strong>（Impossible Trinity）：汇率稳定、资本自由流动、独立货币政策三个目标最多同时要两个——像三选二的三角形玩具。蒙代尔-弗莱明模型把这个道理说透：资本完全流动的小国若钉住汇率，央行必须用全部货币操作维护汇率锚，利率只能跟着锚定国走，货币政策失效而财政政策强劲；若让汇率浮动，则利率自主权回归，而财政政策被汇率升值部分抵消。香港与泰国的分野，以及美元、欧元的选择，都发生在这只三角形的边与角上。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">汇率</span><span class="term-en">Exchange Rate</span><div class="term-def">一种货币兑换另一种货币的价格。直接标价法下数值上升即本币贬值、外币升值。</div></div>
+        <div class="term"><span class="term-name">国际收支</span><span class="term-en">Balance of Payments (BOP)</span><div class="term-def">一国居民与世界其余地区全部交易的复式账本：经常账户、资本与金融账户、储备资产变动，整体必然平衡。</div></div>
+        <div class="term"><span class="term-name">三元悖论</span><span class="term-en">Impossible Trinity</span><div class="term-def">汇率稳定、资本自由流动、货币政策独立性三者不可兼得，至多取其二。</div></div>
+        <div class="term"><span class="term-name">蒙代尔-弗莱明模型</span><span class="term-en">Mundell-Fleming Model</span><div class="term-def">小国开放经济的 IS-LM：固定汇率下货币政策无效、财政政策强；浮动汇率下结论反转。</div></div>
+      </div>
+
+      <h3>互动演示</h3>
+      <p>在三角形上亲手做一次"三选二"：任选一组两个目标，看看必须放弃哪一个，以及现实中的哪个经济体站在那个角上。</p>
+      <figure class="fig">
+        <div class="fig-title">图 5-1 · 三元悖论：三选二的选择器</div>
+        <p class="fig-sub">点按任一模式按钮，高亮的边是被选中的两个目标，灰色角是被放弃的目标。</p>
+        <figure class="fig-canvas">
+          <svg id="figTriSvg" viewBox="0 0 640 400" role="img" aria-label="三元悖论三角形：三个顶点分别是资本自由流动、汇率稳定、独立货币政策，任选一条边即放弃对面顶点">
+            <line id="triAB" x1="320" y1="70" x2="140" y2="310" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round"></line>
+            <line id="triBC" x1="140" y1="310" x2="500" y2="310" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round"></line>
+            <line id="triCA" x1="500" y1="310" x2="320" y2="70" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round"></line>
+            <circle id="triVA" class="dot" cx="320" cy="70" r="10" fill="#b91c1c"></circle>
+            <circle id="triVB" class="dot" cx="140" cy="310" r="10" fill="#b91c1c"></circle>
+            <circle id="triVC" class="dot" cx="500" cy="310" r="10" fill="#b91c1c"></circle>
+            <text class="chart-label" x="320" y="48" text-anchor="middle">资本自由流动</text>
+            <text class="chart-label" x="140" y="340" text-anchor="middle">汇率稳定</text>
+            <text class="chart-label" x="500" y="340" text-anchor="middle">独立货币政策</text>
+            <text id="triSacA" class="chart-label" x="320" y="96" text-anchor="middle" style="fill:#b91c1c" display="none">↓ 放弃</text>
+            <text id="triSacB" class="chart-label" x="140" y="288" text-anchor="middle" style="fill:#b91c1c" display="none">↑ 放弃</text>
+            <text id="triSacC" class="chart-label" x="500" y="288" text-anchor="middle" style="fill:#b91c1c" display="none">↑ 放弃</text>
+            <text id="triNote" class="chart-label" x="320" y="384" text-anchor="middle"></text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn ghost" id="triBtnAB" type="button">香港 / 金本位：资本流动 + 汇率稳定</button>
+          <button class="btn" id="triBtnBC" type="button">中国内地：汇率稳定 + 独立货币</button>
+          <button class="btn ghost" id="triBtnCA" type="button">美国：资本流动 + 独立货币</button>
+        </div>
+        <figcaption>读图要点：被高亮的边是保住的两个目标，对面的灰角必须放弃——没有例外。历史上的金本位、今天的联系汇率制、有管理的浮动与自由浮动，都是在这只三角形上选边站。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界</div>
+        <p>1997 年之前，泰国钉住美元并放开短期资本流入：热钱涌入推高股市楼市，经常账户巨额逆差。投机者嗅到错配，抛售泰铢；央行外汇储备耗尽后弃守，泰铢腰斩，外币债务负担骤然翻倍，危机蔓延至印尼、韩国。香港的联系汇率之所以守住，靠的是充足储备、严格的货币局纪律与内地背书——代价是 1997 年 10 月隔夜利率一度飙升至 280%，用高息冻结需求换取汇率锚。同一个三角形，两种站位，两种命运。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p>①"贬值是国耻、升值是国强"——汇率没有抽象的好坏，取决于冲击来自需求还是供给、外债以何种货币计价；本币贬值加重美元债务国的负担，却利好出口部门。②只盯对美元的双边汇率，忽略按贸易权重加权的有效汇率。③"顺差=赢、逆差=输"的重商主义直觉——美国近 40 年经常账户逆差与美元储备货币地位并存，恒等式 CA = S − I 告诉我们顺差只说明储蓄多于投资。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.1</span>资本完全流动的小型开放经济选择固定汇率，按蒙代尔-弗莱明逻辑，结果是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>财政政策有效，货币政策失效</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>货币政策有效，财政政策失效</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>两者都完全有效</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>固定汇率下，央行的全部货币操作都必须服务于汇率锚：本想加息抑制过热，利差会引发资本流入、本币升值压力，被迫买汇回吐流动性，利率被迫回到锚定国水平——货币政策失效；财政扩张则通过收入上升与货币内生扩张得到放大。选 A。浮动汇率下结论恰好反转（B 描述的正是浮动汇率情形）。</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.2</span>其他条件不变，人民币对美元由 6.5 贬至 7.2，短期内最可能出现：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>出口更贵、进口更便宜，净出口立即下降</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>出口更便宜、进口更贵，净出口趋于上升，但可能先经历 J 曲线的短暂恶化</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>只影响出境旅游，对贸易没有影响</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>直接标价法下数值变大即贬值：中国商品的外币价格下降、进口品的本币价格上升，净出口的均衡反应是上升。但数量调整受合同黏性拖慢——短期内进出口量来不及变，价格效应先吃亏，净出口可能先降后升，即 J 曲线，故 B 正确。A 方向弄反；C 显然低估了汇率的价格传递。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>汇率是货币的相对价格；国际收支是总账本，CA = S − I 是核心恒等式。</li>
+          <li>三元悖论：汇率稳定、资本自由流动、独立货币政策至多取其二。</li>
+          <li>蒙代尔-弗莱明：固定汇率下货币政策失效、财政政策强；浮动汇率下反转。</li>
+          <li>贬值的短期与长期效果可能相反（J 曲线），外币债务结构决定其代价。</li>
+          <li>1997 年亚洲金融危机是三元悖论站在"错配组合"上的教科书案例。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">第 6 章</span>宏观经济政策</h2>
+
+      <h3>引入问题</h3>
+      <p>既然我们有财政与货币两大工具，为什么 1929 年的衰退仍演变成四年大萧条、1970 年代仍陷入滞胀、2008 年仍爆发全球危机？政策之手为什么不能精准地把经济扶回潜在产出——是工具不够，还是我们对经济的观察与影响都太慢？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>开一辆挡风玻璃起雾、方向盘带延迟的车：数据一个季度后才公布（<strong>认识时滞</strong>），减税增支要过立法审批（<strong>决策时滞</strong>），利率调整需经投资、消费、信贷层层传导（<strong>见效时滞</strong>）。等你打满方向盘，弯道可能已经过去——政策常常在错误的时点发力，反而放大波动。于是有两派长期争论：<strong>规则派</strong>（弗里德曼的固定货币增速、泰勒规则、通胀目标制）主张先定好车速，免去人为误判；<strong>相机抉择派</strong>强调每个弯道不同，需要灵活应对。更深的一刀来自<strong>卢卡斯批判</strong>（Lucas Critique）：政策规则一变，人们的预期与行为随之而变，用历史数据估出的关系预测新政策效果并不可靠。现代央行的答案是混合——通胀目标制之下保留有限的相机空间，即"有约束的相机"。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">财政政策</span><span class="term-en">Fiscal Policy</span><div class="term-def">政府通过税收与支出调节总需求，含自动稳定器与相机抉择的刺激/紧缩方案。</div></div>
+        <div class="term"><span class="term-name">货币政策</span><span class="term-en">Monetary Policy</span><div class="term-def">中央银行通过政策利率、准备金与资产负债表（量化宽松）调节信贷条件与总需求。</div></div>
+        <div class="term"><span class="term-name">自动稳定器</span><span class="term-en">Automatic Stabilizers</span><div class="term-def">税收与转移支付随周期自动反向变化：衰退时税收少、失业金多，无需新立法即托底总需求。</div></div>
+        <div class="term"><span class="term-name">政策时滞</span><span class="term-en">Policy Lags</span><div class="term-def">认识、决策、见效三段时滞；财政政策输在决策慢，货币政策输在见效慢。</div></div>
+        <div class="term"><span class="term-name">卢卡斯批判</span><span class="term-en">Lucas Critique</span><div class="term-def">政策变化会改变私人部门的预期与行为参数，因此不能机械地用历史计量关系评估新政策。</div></div>
+      </div>
+
+      <h3>互动演示</h3>
+      <p>同一场衰退冲击袭来，两条政策通道各自要等多久才见效？按下按钮，看时滞如何展开。</p>
+      <figure class="fig">
+        <div class="fig-title">图 6-1 · 政策时滞：谁慢在哪里</div>
+        <p class="fig-sub">点"重播时滞动画"，对比财政与货币政策从冲击到见效的时间结构。</p>
+        <figure class="fig-canvas">
+          <svg id="figLagSvg" viewBox="0 0 640 400" role="img" aria-label="政策时滞对比图：财政政策认识六个月、决策十个月、随后见效；货币政策认识六个月、决策两个月、但见效缓慢持续">
+            <line class="gridline" x1="225" y1="80" x2="225" y2="330"></line>
+            <line class="gridline" x1="350" y1="80" x2="350" y2="330"></line>
+            <line class="gridline" x1="475" y1="80" x2="475" y2="330"></line>
+            <text class="chart-label-en" x="100" y="372" text-anchor="middle">0 月</text>
+            <text class="chart-label-en" x="225" y="372" text-anchor="middle">6</text>
+            <text class="chart-label-en" x="350" y="372" text-anchor="middle">12</text>
+            <text class="chart-label-en" x="475" y="372" text-anchor="middle">18</text>
+            <text class="chart-label-en" x="600" y="372" text-anchor="middle">24</text>
+            <text class="chart-label" x="92" y="132" text-anchor="end">财政政策</text>
+            <text class="chart-label" x="92" y="262" text-anchor="end">货币政策</text>
+            <g id="lagF1g"><rect x="100" y="110" width="125" height="34" rx="4" fill="#475569"></rect><text class="chart-label-en" x="162" y="162" text-anchor="middle" style="fill:#475569">认识 6 个月</text></g>
+            <g id="lagF2g"><rect x="225" y="110" width="208" height="34" rx="4" fill="#ea580c"></rect><text class="chart-label-en" x="329" y="162" text-anchor="middle" style="fill:#ea580c">决策（立法审批）10 个月</text></g>
+            <g id="lagF3g"><rect x="433" y="110" width="167" height="34" rx="4" fill="#2f6fdb"></rect><polygon points="602,120 616,127 602,134" fill="#2f6fdb"></polygon><text class="chart-label-en" x="516" y="162" text-anchor="middle" style="fill:#2f6fdb">直接进入总需求</text></g>
+            <g id="lagM1g"><rect x="100" y="240" width="125" height="34" rx="4" fill="#475569"></rect><text class="chart-label-en" x="162" y="292" text-anchor="middle" style="fill:#475569">认识 6 个月</text></g>
+            <g id="lagM2g"><rect x="225" y="240" width="42" height="34" rx="4" fill="#ea580c"></rect><text class="chart-label-en" x="246" y="292" text-anchor="middle" style="fill:#ea580c">决策 2 个月</text></g>
+            <g id="lagM3g"><rect x="267" y="240" width="333" height="34" rx="4" fill="#2f6fdb"></rect><polygon points="602,250 616,257 602,264" fill="#2f6fdb"></polygon><text class="chart-label-en" x="433" y="292" text-anchor="middle" style="fill:#2f6fdb">经投资、消费、信贷渐次传导（6–18 个月）</text></g>
+            <line class="axis" x1="90" y1="330" x2="615" y2="330"></line>
+            <text class="chart-label" x="605" y="390" text-anchor="end">时间（冲击发生后的月数）</text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn" id="lagReplay" type="button">重播时滞动画</button>
+        </div>
+        <figcaption>读图要点：同一时点上，财政政策输在"决策慢"（立法审批），一旦执行便直接进入总需求；货币政策赢在"决策快"（央行例会即可调整利率），却要等传导链条走完才见效。时滞错配正是逆周期政策常常变成顺周期政策的原因——也为"按规则行事"提供了最有力的论据。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界</div>
+        <p>1929–1933 年，美联储放任九千多家银行倒闭、货币存量缩水约三分之一，通货紧缩推高实际利率与实际债务，把衰退酿成大萧条——这是弗里德曼与施瓦茨《美国货币史》的著名论断。2002 年，在弗里德曼 90 岁生日会上，研究大萧条出身的美联储理事伯南克致辞："关于大萧条，你们是对的，是我们干的，我们非常抱歉，不会再犯。"2008 年危机爆发，已是美联储主席的伯南克火速降息至零、启动量化宽松与银行压力测试，衰退深度远浅于 1929——同一场课堂，两代答卷，正是宏观政策工具箱进化的缩影。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p>①"央行一降息，经济立刻起来"——传导要 6–18 个月，货币是慢药；②"财政赤字必然挤出私人投资"——挤出的大小取决于经济是否闲置：深度衰退中利率已到下限，挤出很小；③"卢卡斯批判证明政策无用"——它说的是不能机械外推历史关系，恰恰要求把预期与行为反应纳入政策评估；④把"规则"理解为僵化教条——通胀目标制等规则为相机抉择划定了边界，而非取消判断。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.1</span>关于两类政策的时滞结构，以下说法正确的是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>财政政策决策时滞短，货币政策见效时滞短</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>财政政策决策（立法）时滞长，货币政策见效时滞长</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>两类政策的各种时滞都差不多</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>减税与增支须经过预算与立法程序，决策时滞以季度甚至年计，但一旦执行便直接进入总需求；央行例会即可调整利率，决策快，却要等待投资、消费与信贷传导，通常 6–18 个月才充分见效，选 B。A 恰好把两者的长处安错了位置；C 忽略了两种工具完全不同的制度结构与传导链条。</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.2</span>按弗里德曼与施瓦茨的论断，1929–1933 年美联储的关键失误是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>降息过快，引发恶性通胀</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>放任货币存量收缩约三分之一，未在银行恐慌中充当最后贷款人</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>过早实施大规模财政刺激，挤出了私人投资</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>《美国货币史》的核心论断是：银行挤兑浪潮中美联储袖手旁观，1933 年货币存量比 1929 年缩水约三分之一，通缩推高实际利率与实际债务，需求螺旋崩溃，选 B。A 与事实相反——当时的问题是通缩而非通胀；C 亦与史实不符：胡佛时期恰恰以平衡预算为导向，大规模财政刺激要到 1933 年罗斯福新政才登场。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>财政与货币政策是两大总需求工具，各配自动稳定器与非常规手段（量化宽松）。</li>
+          <li>时滞三段论：认识、决策、见效；财政输在决策、货币输在见效。</li>
+          <li>规则与相机抉择之争的现代答案是有约束的相机：通胀目标制、泰勒规则式反应函数。</li>
+          <li>卢卡斯批判：政策改变预期与行为，历史关系不能机械外推。</li>
+          <li>大萧条与 2008 年的对照，是政策学习最昂贵也最有价值的一课。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">终点</span>进阶路线与延伸阅读</h2>
+      <p>宏观是理解应用领域的地基：想深入货币创造、银行体系与危机，请继续 <a href="../05-货币经济学/index.html">05 货币经济学</a>；关心贸易、汇率与全球失衡，前往 <a href="../07-国际经济学/index.html">07 国际经济学</a>；被增长问题吸引，读 <a href="../11-发展与创新经济学/index.html">11 发展与创新经济学</a>；若想检验宏观命题的真伪，<a href="../03-计量经济学/index.html">03 计量经济学</a>是必备工具箱。</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">《宏观经济学》（第 11 版）</span> — N. 格里高利·曼昆：中级标准教材，直觉与模型并重，最适合系统进阶。</li>
+          <li><span class="bk">《宏观经济学》（第 8 版）</span> — 奥利维尔·布兰查德：以利率与预期为主线，政策视角突出，全球案例丰富。</li>
+          <li><span class="bk">《美国货币史（1867—1960）》</span> — 米尔顿·弗里德曼、安娜·施瓦茨：货币主义与大萧条的奠基性实证巨著。</li>
+          <li><span class="bk">《高级宏观经济学》（第 5 版）</span> — 戴维·罗默：研究生入门，增长、波动与投资模型的严格版本。</li>
+          <li><span class="bk">《国家为什么会失败》</span> — 德隆·阿西莫格鲁、詹姆斯·罗宾逊：制度与长期繁荣的通俗经典，衔接分支 11 与 16。</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../01-微观经济学/index.html"><span class="pager-dir">上一分支</span><br><span class="pager-name">微观经济学</span></a>
+        <a href="../03-计量经济学/index.html"><span class="pager-dir">下一分支</span><br><span class="pager-name">计量经济学</span></a>
+      </nav>
+    </section>
+
+  </main>
+</div>
+<script src="../assets/econ.js"></script>
+<script>
+(function () {
+  "use strict";
+  function $(id) { return document.getElementById(id); }
+  function fmt(x, d) {
+    if (d == null) d = 2;
+    return Number(x).toLocaleString("zh-CN", {
+      minimumFractionDigits: d,
+      maximumFractionDigits: d
+    });
+  }
+  function sign(x, d) { return (x > 0 ? "+" : "") + fmt(x, d); }
+
+  /* ---------- 图 1-1 · 名义 vs 实际 ---------- */
+  (function () {
+    var svg = $("figGdpSvg");
+    if (!svg) return;
+    var ZERO = 200, PX = 14;
+    var sG = $("gdpGRange"), sP = $("gdpPiRange"), oG = $("gdpGOut"), oP = $("gdpPiOut");
+    function setBar(rect, txt, v, cx) {
+      var h = Math.abs(v) * PX, top, ty;
+      if (h < 1) h = 1;
+      if (v >= 0) { top = ZERO - h; ty = top - 8; }
+      else { top = ZERO; ty = ZERO + h + 20; }
+      rect.setAttribute("y", top.toFixed(1));
+      rect.setAttribute("height", h.toFixed(1));
+      txt.setAttribute("x", cx);
+      txt.setAttribute("y", ty.toFixed(1));
+      txt.textContent = sign(v, 1) + "%";
+    }
+    function render() {
+      var g = parseFloat(sG.value), pi = parseFloat(sP.value);
+      oG.textContent = fmt(g, 1) + "%";
+      oP.textContent = fmt(pi, 1) + "%";
+      var r = ((1 + g / 100) / (1 + pi / 100) - 1) * 100;
+      setBar($("gdpBarN"), $("gdpValN"), g, 150);
+      setBar($("gdpBarP"), $("gdpValP"), pi, 340);
+      setBar($("gdpBarR"), $("gdpValR"), r, 530);
+      $("gdpRead").textContent = "实际增速 =（1+" + fmt(g, 1) + "%）÷（1+" + fmt(pi, 1) + "%）− 1 ≈ " + sign(r, 1) + "%：名义增长中剔除涨价，剩下的才是“真增长”。";
+      svg.setAttribute("aria-label", "名义增速 " + fmt(g, 1) + "%，平减指数 " + fmt(pi, 1) + "%，对应的实际增速约 " + sign(r, 1) + "%。");
+    }
+    sG.addEventListener("input", render);
+    sP.addEventListener("input", render);
+    render();
+  })();
+
+  /* ---------- 图 2-1 · 索洛稳态 ---------- */
+  (function () {
+    var svg = $("figSolowSvg");
+    if (!svg) return;
+    var X0 = 70, X1 = 600, Y0 = 330, Y1 = 50, KMAX = 10, VMAX = 3.2, GAMMA = 0.2;
+    function x(k) { return X0 + (k / KMAX) * (X1 - X0); }
+    function y(v) { return Y0 - (v / VMAX) * (Y0 - Y1); }
+    function pathOf(fn) {
+      var d = "", k;
+      for (k = 0; k <= KMAX + 0.0001; k += 0.25) {
+        d += (d === "" ? "M " : " L ") + x(k).toFixed(1) + " " + y(fn(k)).toFixed(1);
+      }
+      return d;
+    }
+    $("solowF").setAttribute("d", pathOf(function (k) { return Math.sqrt(k); }));
+    $("solowBe").setAttribute("d", "M " + x(0).toFixed(1) + " " + y(0).toFixed(1) + " L " + x(KMAX).toFixed(1) + " " + y(GAMMA * KMAX).toFixed(1));
+    var slider = $("solowRange"), out = $("solowOut");
+    function render() {
+      var s = parseFloat(slider.value);
+      out.textContent = fmt(s, 2);
+      $("solowSf").setAttribute("d", pathOf(function (k) { return s * Math.sqrt(k); }));
+      var kst = Math.pow(5 * s, 2), yst = 5 * s, ist = 5 * s * s, cst = (1 - s) * yst;
+      var cx = x(Math.min(kst, KMAX)), cyI = y(ist), cyY = y(yst);
+      $("solowDotI").setAttribute("cx", cx.toFixed(1));
+      $("solowDotI").setAttribute("cy", cyI.toFixed(1));
+      $("solowDotY").setAttribute("cx", cx.toFixed(1));
+      $("solowDotY").setAttribute("cy", cyY.toFixed(1));
+      $("solowGk").setAttribute("x1", cx.toFixed(1));
+      $("solowGk").setAttribute("x2", cx.toFixed(1));
+      $("solowGk").setAttribute("y1", Y0);
+      $("solowGk").setAttribute("y2", cyY.toFixed(1));
+      $("solowGy").setAttribute("x1", X0);
+      $("solowGy").setAttribute("x2", cx.toFixed(1));
+      $("solowGy").setAttribute("y1", cyY.toFixed(1));
+      $("solowGy").setAttribute("y2", cyY.toFixed(1));
+      $("solowGi").setAttribute("x1", X0);
+      $("solowGi").setAttribute("x2", cx.toFixed(1));
+      $("solowGi").setAttribute("y1", cyI.toFixed(1));
+      $("solowGi").setAttribute("y2", cyI.toFixed(1));
+      $("solowValK").setAttribute("x", cx.toFixed(1));
+      $("solowValK").textContent = "k*=" + fmt(kst, 2);
+      $("solowValY").setAttribute("y", (cyY + 4).toFixed(1));
+      $("solowValY").textContent = "y*=" + fmt(yst, 2);
+      $("solowValI").setAttribute("y", (cyI + 4).toFixed(1));
+      $("solowValI").textContent = "i*=" + fmt(ist, 2);
+      var gap = cyI - cyY, br = $("solowCBr"), bl = $("solowCLbl");
+      if (gap >= 34) {
+        var bx = cx + 20;
+        br.setAttribute("x1", bx.toFixed(1));
+        br.setAttribute("x2", bx.toFixed(1));
+        br.setAttribute("y1", (cyI - 5).toFixed(1));
+        br.setAttribute("y2", (cyY + 5).toFixed(1));
+        br.setAttribute("display", "inline");
+        bl.setAttribute("x", (bx + 8).toFixed(1));
+        bl.setAttribute("y", ((cyI + cyY) / 2 + 4).toFixed(1));
+        bl.textContent = "c*=" + fmt(cst, 2);
+        bl.setAttribute("display", "inline");
+      } else {
+        br.setAttribute("display", "none");
+        bl.setAttribute("display", "none");
+      }
+      $("solowLblSf").setAttribute("x", x(8.6).toFixed(1));
+      $("solowLblSf").setAttribute("y", (y(s * Math.sqrt(8.6)) - 12).toFixed(1));
+      $("solowRead").textContent = "稳态：k*=" + fmt(kst, 2) + "，y*=" + fmt(yst, 2) + "，i*=" + fmt(ist, 2) + "，人均消费 c*=(1−s)·y*=" + fmt(cst, 2);
+      var note = $("solowNote");
+      if (s > 0.505) {
+        note.textContent = "注意：s 已越过黄金律水平 0.50——产出虽更高，人均消费却比 s=0.50 时更低。";
+      } else if (s < 0.495) {
+        note.textContent = "提示：本图参数下黄金律储蓄率 s=0.50，届时稳态人均消费最大。";
+      } else {
+        note.textContent = "当前恰在黄金律储蓄率：稳态人均消费达到最大值 " + fmt(cst, 2) + "。";
+      }
+      svg.setAttribute("aria-label", "索洛模型：储蓄率 " + fmt(s, 2) + "，稳态人均资本 " + fmt(kst, 2) + "，人均产出 " + fmt(yst, 2) + "，人均消费 " + fmt(cst, 2) + "。");
+    }
+    slider.addEventListener("input", render);
+    render();
+  })();
+
+  /* ---------- 图 3-1 · 支出乘数 ---------- */
+  (function () {
+    var svg = $("figMultSvg");
+    if (!svg) return;
+    var NS = "http://www.w3.org/2000/svg";
+    var BASE_Y = 330, MAX_H = 240, BAR_W = 34, STEP = 54, X0 = 70, ROUNDS = 10;
+    var g = $("multBars"), bars = [], i;
+    for (i = 0; i < ROUNDS; i++) {
+      var r = document.createElementNS(NS, "rect");
+      r.setAttribute("x", String(X0 + i * STEP));
+      r.setAttribute("width", String(BAR_W));
+      r.setAttribute("rx", "3");
+      r.setAttribute("fill", i === 0 ? "#ea580c" : "#2f6fdb");
+      g.appendChild(r);
+      bars.push(r);
+      var t = document.createElementNS(NS, "text");
+      t.setAttribute("x", String(X0 + i * STEP + BAR_W / 2));
+      t.setAttribute("y", "352");
+      t.setAttribute("text-anchor", "middle");
+      t.setAttribute("class", "chart-label-en");
+      t.textContent = String(i + 1);
+      g.appendChild(t);
+    }
+    var slider = $("mpcRange"), out = $("mpcOut");
+    var timer = null, shown = ROUNDS;
+    function cumul(c, n) { return c <= 0 ? 100 : 100 * (1 - Math.pow(c, n)) / (1 - c); }
+    function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
+    function render() {
+      var c = parseFloat(slider.value);
+      out.textContent = fmt(c, 2);
+      for (var j = 0; j < ROUNDS; j++) {
+        var v = 100 * Math.pow(c, j);
+        var h = Math.max(2, (v / 100) * MAX_H);
+        bars[j].setAttribute("y", (BASE_Y - h).toFixed(1));
+        bars[j].setAttribute("height", h.toFixed(1));
+        bars[j].setAttribute("opacity", j < shown ? "1" : "0.15");
+      }
+      var n = Math.max(1, shown);
+      $("multPart").textContent = "前 " + n + " 轮合计 ΔY ≈ " + fmt(cumul(c, n), 0);
+      $("multTotal").textContent = "全部轮次合计 ΔY = 100 ÷ (1−c) ≈ " + fmt(100 / (1 - c), 0);
+      $("multK").textContent = "乘数 k = 1/(1−" + fmt(c, 2) + ") ≈ " + fmt(1 / (1 - c), 1);
+      svg.setAttribute("aria-label", "支出乘数：边际消费倾向 " + fmt(c, 2) + "，乘数约 " + fmt(1 / (1 - c), 1) + "，每轮新增支出逐轮递减。");
+    }
+    $("multPlay").addEventListener("click", function () {
+      stopTimer();
+      shown = 1;
+      render();
+      timer = setInterval(function () {
+        if (shown >= ROUNDS) { stopTimer(); return; }
+        shown += 1;
+        render();
+      }, 260);
+    });
+    $("multReset").addEventListener("click", function () {
+      stopTimer();
+      shown = ROUNDS;
+      render();
+    });
+    slider.addEventListener("input", function () {
+      stopTimer();
+      shown = ROUNDS;
+      render();
+    });
+    render();
+  })();
+
+  /* ---------- 图 3-2 · AD-AS ---------- */
+  (function () {
+    var svg = $("figAdasSvg");
+    if (!svg) return;
+    var X0 = 70, X1 = 600, Y0 = 330, Y1 = 50;
+    function x(v) { return X0 + (v / 10) * (X1 - X0); }
+    function y(p) { return Y0 - (p / 10) * (Y0 - Y1); }
+    var sAd = $("adasAdRange"), sSr = $("adasSrasRange");
+    function render() {
+      var d = parseFloat(sAd.value), s = parseFloat(sSr.value);
+      $("adasAdOut").textContent = sign(d, 1);
+      $("adasSrasOut").textContent = sign(s, 1);
+      $("adasAd").setAttribute("d", "M " + x(1).toFixed(1) + " " + y(11 + d - 1).toFixed(1) + " L " + x(10).toFixed(1) + " " + y(11 + d - 10).toFixed(1));
+      $("adasSras").setAttribute("d", "M " + x(0).toFixed(1) + " " + y(0.4 + s).toFixed(1) + " L " + x(10).toFixed(1) + " " + y(9.4 + s).toFixed(1));
+      var ys = (10.6 + d - s) / 1.9;
+      var ps = 11 + d - ys;
+      var cx = x(ys), cy = y(ps);
+      $("adasDot").setAttribute("cx", cx.toFixed(1));
+      $("adasDot").setAttribute("cy", cy.toFixed(1));
+      $("adasGx").setAttribute("x1", cx.toFixed(1));
+      $("adasGx").setAttribute("x2", cx.toFixed(1));
+      $("adasGx").setAttribute("y1", cy.toFixed(1));
+      $("adasGx").setAttribute("y2", Y0);
+      $("adasGy").setAttribute("x1", cx.toFixed(1));
+      $("adasGy").setAttribute("x2", X0);
+      $("adasGy").setAttribute("y1", cy.toFixed(1));
+      $("adasGy").setAttribute("y2", cy.toFixed(1));
+      $("adasPLabel").setAttribute("y", (cy - 8).toFixed(1));
+      $("adasPLabel").textContent = "P*=" + fmt(ps, 1);
+      $("adasYLabel").setAttribute("x", cx.toFixed(1));
+      $("adasYLabel").textContent = "Y*=" + fmt(ys, 1);
+      $("adasAdLbl").setAttribute("x", (x(8.4) + 6).toFixed(1));
+      $("adasAdLbl").setAttribute("y", (y(2.6 + d) + 20).toFixed(1));
+      $("adasSrasLbl").setAttribute("x", (x(7.6) - 12).toFixed(1));
+      $("adasSrasLbl").setAttribute("y", (y(7.24 + s) - 10).toFixed(1));
+      var gap = ys - 5.5, gtxt;
+      if (gap > 0.05) gtxt = "（过热）";
+      else if (gap < -0.05) gtxt = "（衰退）";
+      else gtxt = "（接近潜在）";
+      $("adasGap").textContent = "均衡 Y*=" + fmt(ys, 1) + " · P*=" + fmt(ps, 1) + " · 产出缺口 " + sign(gap, 1) + gtxt;
+      svg.setAttribute("aria-label", "AD-AS 模型：总需求移动 " + sign(d, 1) + "，总供给移动 " + sign(s, 1) + "，均衡产出 " + fmt(ys, 1) + "，物价 " + fmt(ps, 1) + "。");
+    }
+    sAd.addEventListener("input", render);
+    sSr.addEventListener("input", render);
+    render();
+  })();
+
+  /* ---------- 图 4-1 · 菲利普斯曲线 ---------- */
+  (function () {
+    var svg = $("figPhSvg");
+    if (!svg) return;
+    var X0 = 70, X1 = 600, Y0 = 330, Y1 = 50, UN = 5, BETA = 0.8;
+    function x(u) { return X0 + (u / 10) * (X1 - X0); }
+    function y(p) { return Y0 - (p / 10) * (Y0 - Y1); }
+    var slider = $("phRange"), out = $("phOut");
+    var btnS = $("phBtnS"), btnL = $("phBtnL");
+    var mode = "short";
+    function show(id, on) { var e = $(id); if (e) e.setAttribute("display", on ? "inline" : "none"); }
+    function render() {
+      var pe = parseFloat(slider.value);
+      out.textContent = fmt(pe, 1) + "%";
+      var su = 3.5, sp = pe + BETA * (UN - su);   // 短期通胀; 也是预期调整后的新 πᵉ
+      var peBase = mode === "short" ? pe : sp;    // 短期画当前 SRPC, 长期画上移后的 SRPC
+      $("phSrpc").setAttribute("d", "M " + x(0).toFixed(1) + " " + y(peBase + 4).toFixed(1) + " L " + x(10).toFixed(1) + " " + y(peBase - 4).toFixed(1));
+      $("phDotS").setAttribute("cx", x(su).toFixed(1));
+      $("phDotS").setAttribute("cy", y(sp).toFixed(1));
+      $("phDotL").setAttribute("cx", x(UN).toFixed(1));
+      $("phDotL").setAttribute("cy", y(sp).toFixed(1));
+      $("phGSx").setAttribute("x1", x(su).toFixed(1));
+      $("phGSx").setAttribute("x2", x(su).toFixed(1));
+      $("phGSx").setAttribute("y1", y(sp).toFixed(1));
+      $("phGSx").setAttribute("y2", Y0);
+      $("phGSy").setAttribute("x1", x(su).toFixed(1));
+      $("phGSy").setAttribute("x2", X0);
+      $("phGSy").setAttribute("y1", y(sp).toFixed(1));
+      $("phGSy").setAttribute("y2", y(sp).toFixed(1));
+      $("phValS").setAttribute("y", (y(sp) - 8).toFixed(1));
+      $("phValS").textContent = "π=" + fmt(sp, 1) + "%";
+      $("phGLx").setAttribute("x1", x(UN).toFixed(1));
+      $("phGLx").setAttribute("x2", x(UN).toFixed(1));
+      $("phGLx").setAttribute("y1", y(sp).toFixed(1));
+      $("phGLx").setAttribute("y2", Y0);
+      $("phGLy").setAttribute("x1", x(UN).toFixed(1));
+      $("phGLy").setAttribute("x2", X0);
+      $("phGLy").setAttribute("y1", y(sp).toFixed(1));
+      $("phGLy").setAttribute("y2", y(sp).toFixed(1));
+      $("phValL").setAttribute("y", (y(sp) - 8).toFixed(1));
+      $("phValL").textContent = "π=" + fmt(sp, 1) + "%";
+      $("phLblSrpc").setAttribute("x", (x(1.5) + 12).toFixed(1));
+      $("phLblSrpc").setAttribute("y", (y(peBase + 2.8) + 4).toFixed(1));
+      // 长期箭头: 从短期点 (3.5, sp) 水平回到自然失业率 (5, sp) —— 失业回归、通胀不变
+      $("phArrow").setAttribute("d", "M " + x(su + 0.3).toFixed(1) + " " + y(sp).toFixed(1) + " L " + x(UN - 0.3).toFixed(1) + " " + y(sp).toFixed(1));
+      var shortOn = mode === "short";
+      show("phGSx", shortOn); show("phGSy", shortOn); show("phValS", shortOn);
+      show("phDotS", shortOn); show("phULblS", shortOn);
+      show("phGLx", !shortOn); show("phGLy", !shortOn); show("phValL", !shortOn);
+      show("phArrow", !shortOn); show("phULblL", !shortOn);
+      if (shortOn) {
+        $("phState").textContent = "短期：预期通胀 " + fmt(pe, 1) + "% 时，把失业压到 3.5% 的代价是通胀升至 " + fmt(sp, 1) + "%";
+        $("phNote").textContent = "沿 SRPC 移动：失业每低于自然率 1 个百分点，通胀高 0.8 个百分点";
+      } else {
+        $("phState").textContent = "长期：预期上调后失业回到 5%，通胀停在 " + fmt(pe + 1.2, 1) + "%——SRPC 整体上移";
+        $("phNote").textContent = "预期调整 → SRPC 上移 → 失业回到自然率，替代消失、只剩更高通胀";
+      }
+      svg.setAttribute("aria-label", "菲利普斯曲线：预期通胀 " + fmt(pe, 1) + "%，" + (shortOn ? "短期可将失业降到 3.5%，通胀升至 " + fmt(sp, 1) + "%" : "长期失业回到自然率 5%") + "。");
+    }
+    function setMode(m) {
+      mode = m;
+      btnS.className = "btn" + (m === "short" ? "" : " ghost");
+      btnL.className = "btn" + (m === "long" ? "" : " ghost");
+      render();
+    }
+    btnS.addEventListener("click", function () { setMode("short"); });
+    btnL.addEventListener("click", function () { setMode("long"); });
+    slider.addEventListener("input", render);
+    setMode("short");
+  })();
+
+  /* ---------- 图 5-1 · 三元悖论 ---------- */
+  (function () {
+    var svg = $("figTriSvg");
+    if (!svg) return;
+    var ACTIVE = "#b91c1c", MUTED = "#cbd5e1";
+    var edges = { AB: $("triAB"), BC: $("triBC"), CA: $("triCA") };
+    var NOTES = {
+      AB: "选择『资本自由流动 + 汇率稳定』：利率必须跟随锚定国，放弃独立货币政策——中国香港的联系汇率与金本位时代即在此角。",
+      BC: "选择『汇率稳定 + 独立货币政策』：保留利率自主权，代价是资本不能完全自由流动——中国内地实行有管理的浮动汇率与资本项目管理。",
+      CA: "选择『资本自由流动 + 独立货币政策』：让汇率自由浮动，放弃汇率稳定——美国、日本与欧元区即在此角。"
+    };
+    function setCombo(edge, dropV) {
+      var k;
+      for (k in edges) {
+        if (edges.hasOwnProperty(k) && edges[k]) {
+          edges[k].setAttribute("stroke", k === edge ? ACTIVE : MUTED);
+          edges[k].setAttribute("stroke-width", k === edge ? "6" : "3.5");
+          edges[k].setAttribute("opacity", k === edge ? "1" : "0.45");
+        }
+      }
+      var names = ["A", "B", "C"], i, c, sac, kept;
+      for (i = 0; i < names.length; i++) {
+        c = $("triV" + names[i]);
+        sac = $("triSac" + names[i]);
+        kept = names[i] !== dropV;
+        if (c) c.setAttribute("fill", kept ? ACTIVE : MUTED);
+        if (sac) sac.setAttribute("display", kept ? "none" : "inline");
+      }
+      $("triNote").textContent = NOTES[edge];
+      svg.setAttribute("aria-label", "三元悖论选择器：" + NOTES[edge]);
+    }
+    var btns = [$("triBtnAB"), $("triBtnBC"), $("triBtnCA")];
+    var combos = [
+      { edge: "AB", drop: "C" },
+      { edge: "BC", drop: "A" },
+      { edge: "CA", drop: "B" }
+    ];
+    function choose(i) {
+      setCombo(combos[i].edge, combos[i].drop);
+      btns.forEach(function (b, j) {
+        if (b) b.className = "btn" + (i === j ? "" : " ghost");
+      });
+    }
+    btns.forEach(function (b, i) {
+      if (b) b.addEventListener("click", function () { choose(i); });
+    });
+    choose(1);
+  })();
+
+  /* ---------- 图 6-1 · 政策时滞 ---------- */
+  (function () {
+    var svg = $("figLagSvg");
+    if (!svg) return;
+    var ids = ["lagF1g", "lagM1g", "lagM2g", "lagF2g", "lagM3g", "lagF3g"];
+    var els = ids.map(function (id) { return $(id); });
+    var timer = null;
+    function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
+    function play() {
+      stopTimer();
+      els.forEach(function (e) { if (e) e.setAttribute("opacity", "0"); });
+      var i = 0;
+      timer = setInterval(function () {
+        if (i >= els.length) { stopTimer(); return; }
+        if (els[i]) els[i].setAttribute("opacity", "1");
+        i += 1;
+      }, 480);
+    }
+    $("lagReplay").addEventListener("click", play);
+    play();
+  })();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>微观经济学 · EconLearn 经济学自学之路</title>
+<meta name="description" content="微观经济学中文互动教程：稀缺与机会成本、供需与弹性、消费者与生产者理论、市场结构、市场失灵与福利经济学，配可拖动图表与自测。">
+<link rel="stylesheet" href="../assets/econ.css">
+</head>
+<body style="--branch:#2f6fdb">
+<noscript><p class="noscript-tip">本页的互动图表与自测需要启用 JavaScript；未启用时仍可阅读全部正文。</p></noscript>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← 总览</a>
+  <div class="topbar-title"><span class="topbar-num">01</span>微观经济学</div>
+  <button class="toc-toggle" aria-expanded="false">目录</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">本分支章节</p>
+    <nav aria-label="章节目录">
+      <a href="#overview">导读与学习目标</a>
+      <a href="#ch1">1 · 稀缺、选择与机会成本</a>
+      <a href="#ch2">2 · 供给、需求与市场均衡</a>
+      <a href="#ch3">3 · 消费者理论</a>
+      <a href="#ch4">4 · 生产者理论与成本</a>
+      <a href="#ch5">5 · 市场结构：竞争到垄断</a>
+      <a href="#ch6">6 · 市场失灵与政府干预</a>
+      <a href="#ch7">7 · 一般均衡与福利经济学</a>
+      <a href="#path">进阶路线与书目</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · 经济学自学之路</p>
+  </aside>
+  <main class="main" id="main">
+
+    <!-- ==================== 导读 ==================== -->
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">分支 01 · 核心理论</span>
+        <h1>微观经济学</h1>
+        <p class="hero-en">Microeconomics</p>
+        <p class="hero-lead">研究家庭与企业如何在资源稀缺的约束下做出选择，以及千百万个选择如何通过价格被协调起来。它是几乎所有经济学分支共同的语言——后面的宏观、金融、劳动、产业组织，都在使用本章打下的工具。</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">学完本分支你将能</div>
+        <ul>
+          <li>用机会成本（Opportunity Cost）分析真实决策，并画出生产可能性边界解释边际机会成本递增</li>
+          <li>用供需模型预测价格与数量的变化方向，并区分"曲线移动"与"沿线移动"</li>
+          <li>画出预算线与无差异曲线，写出消费者最优条件 MRS = 价格比</li>
+          <li>解释边际成本与平均成本的关系，并说明沉没成本为何不进入决策</li>
+          <li>比较完全竞争与垄断的产量、价格与福利损失（DWL），计算简单的无谓损失三角形</li>
+          <li>识别外部性、公共品、信息不对称四类市场失灵，说明庇古税与产权的矫正逻辑</li>
+          <li>用帕累托效率标准评估一种资源配置或一项政策，并说清效率与公平为何可以分开处理</li>
+        </ul>
+      </div>
+      <div class="prereq">前置知识：
+        <a class="badge" href="../index.html">无（入门分支）</a>
+      </div>
+      <div class="prereq">建议后续：
+        <a class="badge" href="../02-宏观经济学/index.html">02 宏观经济学</a>
+        <a class="badge" href="../03-计量经济学/index.html">03 计量经济学</a>
+        <a class="badge" href="../04-博弈论与信息经济学/index.html">04 博弈论与信息经济学</a>
+      </div>
+    </section>
+
+    <!-- ==================== 第 1 章 ==================== -->
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">第 1 章</span>稀缺、选择与机会成本</h2>
+
+      <h3>引入问题</h3>
+      <p>2023 年，中国约有 474 万人报考硕士研究生。假设你手里有一份年薪 15 万元的录用通知，此时去读三年研究生，"学费 + 住宿费"大约 10 万元。读研到底贵不贵？为什么经济学家会说：账单上的 10 万，远不是这项决策的主要成本？</p>
+
+      <h3>核心直觉</h3>
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>经济学研究的对象是<strong>稀缺条件下的选择</strong>：时间、金钱、注意力总是不够用，所以每做一个选择就意味着放弃另一些选择。一项决策真正的成本，是你<strong>因此放弃的最佳选项</strong>的价值——这就是机会成本。它常常不写在任何账单上：放弃的工资、错过的工作经验、失去的试错机会，都是隐含成本（Implicit Cost）。</p>
+        <p>第二个直觉是<strong>看边际、不看总量</strong>：决定"要不要再做一件事"的，是这一步新增加的收益与新增的成本（边际分析，Marginal Analysis），而不是过去已经投入了多少。把这两个直觉合起来，你就有了经济学最底层的思考方式。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">稀缺性</div><span class="term-en">Scarcity</span><div class="term-def">相对于人的欲望而言，资源总是有限的。稀缺不是"短缺"，而是永恒的约束——它迫使人们必须选择。</div></div>
+        <div class="term"><div class="term-name">机会成本</div><span class="term-en">Opportunity Cost</span><div class="term-def">为得到某物而放弃的诸多选项中价值最高的那一个。注意：只计最佳放弃项，不是所有放弃项之和。</div></div>
+        <div class="term"><div class="term-name">生产可能性边界</div><span class="term-en">Production Possibilities Frontier, PPF</span><div class="term-def">在资源与技术给定时，两种产品所有最大产量组合的轨迹。边界外的点不可达，边界内的点未用尽资源。</div></div>
+        <div class="term"><div class="term-name">边际分析</div><span class="term-en">Marginal Analysis</span><div class="term-def">比较"再多做一单位"带来的新增收益与新增成本。理性决策的准则：只要边际收益大于边际成本，就继续做。</div></div>
+        <div class="term"><div class="term-name">实证分析与规范分析</div><span class="term-en">Positive vs. Normative Analysis</span><div class="term-def">实证陈述回答"是什么、会怎样"，可以被证据检验；规范陈述回答"应该怎样"，包含价值判断。二者都重要，但不能混为一谈。</div></div>
+      </div>
+
+      <h3>互动演示</h3>
+      <figure class="fig">
+        <div class="fig-title">图 1-1 · 生产可能性边界与递增的机会成本</div>
+        <p class="fig-sub">拖动滑块，让生产组合沿边界从"多种粮食"移向"多种汽车"，观察边际机会成本如何变化。</p>
+        <figure class="fig-canvas">
+          <svg id="fig1-svg" viewBox="0 0 640 400" role="img" aria-label="生产可能性边界交互图：滑块沿边界移动生产组合，显示边际机会成本递增">
+            <line class="gridline" x1="335" y1="44" x2="335" y2="340"/>
+            <line class="gridline" x1="70" y1="192" x2="600" y2="192"/>
+            <line class="axis" x1="70" y1="340" x2="612" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="30"/>
+            <text class="chart-label" x="470" y="366">汽车产量（万辆）→</text>
+            <text class="chart-label" x="14" y="42">粮食产量（万吨）</text>
+            <path id="fig1-curve" class="curve curve-c1" d=""/>
+            <text class="chart-label" x="528" y="176">PPF</text>
+            <line id="fig1-gv" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line id="fig1-gh" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <circle id="fig1-dot" class="dot" r="6" fill="#2f6fdb" cx="0" cy="0"/>
+            <text id="fig1-labq" class="chart-label" x="0" y="0">汽车 2.3 万辆</text>
+            <text id="fig1-labv" class="chart-label" x="6" y="0">粮食 7.8 万吨</text>
+          </svg>
+        </figure>
+        <p class="fig-sub" id="fig1-read">正在加载读数……</p>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fig1-x">沿边界移动（粮食 → 汽车）</label>
+            <input type="range" id="fig1-x" min="0" max="100" step="1" value="20">
+            <output id="fig1-o" for="fig1-x">0.19</output></div>
+        </div>
+        <figcaption>读图要点：PPF 凹向原点（外凸），因为资源并非万能——适合种粮的土地不擅长造车。试一试：把滑块从最左端拖到最右端，读出"每多产 1 万辆汽车要放弃多少万吨粮食"，你会发现这个数字从 0.2 一路涨到 2.4 以上——这就是<strong>机会成本递增</strong>，也是 PPF 为什么是弯的。</figcaption>
+      </figure>
+
+      <h3>现实世界</h3>
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 考研热的机会成本</div>
+        <p>对一位放弃 15 万元年薪工作去读三年研究生的毕业生来说，显性成本（学费、住宿费）约 10 万元，而放弃的工资与晋升空间超过 45 万元——机会成本是账单的数倍。这解释了两个现象：一是在就业形势较好、工资上涨较快的年份，报名考研的人数增速往往放缓（机会成本变高了）；二是许多在职人士宁愿选择周末上课的非全日制项目——用降低"放弃的收入"来降低机会成本。评估任何"要不要"的决策时，请先问：被放弃的最佳替代选项值多少？</p>
+      </aside>
+
+      <h3>常见误区</h3>
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p>✗ 把机会成本当成"所有被放弃选项的价值之和"。正确做法：只计其中<strong>价值最高的一个</strong>——你不可能同时去两家公司上班。<br>
+        ✗ 只看显性成本、无视隐含成本：自己开店"不付工资"，但你的时间仍有市场价格。<br>
+        ✗ 用实证与规范互相冒充："最低工资会减少低端岗位就业"是可检验的实证命题；"政府应该提高最低工资"是规范主张，需要另外的价值论证。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.1</span>张先生月薪 1.2 万元，辞职读两年研究生，学费合计 4 万元。读研这两年的经济成本（机会成本视角）最完整的算法是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>只算学费与生活费，共约 4 万元</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">B</span>学费 4 万元，加上放弃的两年工资约 28.8 万元，合计约 32.8 万元</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>读研是人力资本投资，不算成本，只算收益</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>经济成本 = 显性成本 + 隐含成本。学费是显性成本；因读研而放弃的工资（以及晋升空间）是隐含成本，恰恰是最大的部分。A 严重低估；C 混淆了"成本"与"净收益"——正因为有成本，才需要比较成本与收益来决策。生活费一般不算增量成本，因为不读研也要吃饭。</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.2</span>生产可能性边界凹向原点（外凸），反映了：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>资源是完全通用的，可以无损耗地在两种用途间切换</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>技术水平在退步</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">C</span>机会成本递增：越偏向一种产品，再多生产一单位要放弃的另一种产品越多</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>资源有专用性——先被调去造汽车的一定是最擅长造车的资源；要继续增产，就得抽调越来越擅长种粮的资源，放弃的粮食越来越多，边界于是外凸。A 若成立，边界应是一条直线（机会成本恒定）；B 与 PPF 形状无关（技术退步会使整条边界内移）。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>稀缺性是一切经济学问题的起点：欲望无限，资源有限，必须选择。</li>
+          <li>机会成本 = 被放弃的最佳选项的价值；显性成本之外，别忘隐含成本。</li>
+          <li>PPF 展示资源约束下的最大产量组合；其外凸形状刻画机会成本递增。</li>
+          <li>理性决策看边际：比较新增收益与新增成本，而不是回头看总量。</li>
+          <li>区分实证（是什么）与规范（应该怎样），是讨论经济问题的第一纪律。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 第 2 章 ==================== -->
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">第 2 章</span>供给、需求与市场均衡</h2>
+
+      <h3>引入问题</h3>
+      <p>2019 年非洲猪瘟让中国生猪产能大幅收缩，猪肉价格在 2020 年一度翻倍；高价刺激养殖户疯狂补栏，2021 年猪价又跌破成本线。没有人指挥全国几百万养殖户和十几亿消费者，价格是谁"定"出来的？为什么它涨落得如此精准又如此剧烈？</p>
+
+      <h3>核心直觉</h3>
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>价格不是谁定的，是<strong>需求与供给两条曲线"碰"出来的</strong>。需求定律：价格越低，人们买得越多；供给定律：价格越高，企业卖得越多。价格高于均衡，出现过剩、卖家互相压价；低于均衡，出现短缺、买家互相抬价——讨价还价的结果把价格推回两条曲线的交点：市场均衡（Market Equilibrium）。</p>
+        <p>价格真正的作用是<strong>传递信息并协调行动</strong>：猪价上涨同时告诉消费者"少吃点"、告诉养殖户"多养点"、告诉资本"进入这个行业"——不需要任何中央计划。分析任何市场事件，只需回答两个问题：它移动了哪条曲线？移动之后交点怎么变？</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">需求定律</div><span class="term-en">Law of Demand</span><div class="term-def">其他条件不变时，价格上升、需求量下降，价格下降、需求量上升。注意"需求量变动"（沿线移动）与"需求变动"（整条曲线移动）的区别。</div></div>
+        <div class="term"><div class="term-name">市场均衡</div><span class="term-en">Market Equilibrium</span><div class="term-def">供给量恰好等于需求量的价格与数量组合。此时既无过剩也无短缺，价格没有再变动的压力。</div></div>
+        <div class="term"><div class="term-name">需求价格弹性</div><span class="term-en">Price Elasticity of Demand</span><div class="term-def">需求量变化百分比除以价格变化百分比，衡量买者对价格的敏感程度。替代品越多、时间越长、支出占比越大，弹性越大。</div></div>
+        <div class="term"><div class="term-name">价格管制</div><span class="term-en">Price Control</span><div class="term-def">政府规定的最高限价（价格上限）或最低限价（价格下限）。限价改变的是价格的分配功能，不改变稀缺本身。</div></div>
+      </div>
+
+      <div class="formula">
+        需求价格弹性 E<sub>d</sub> = 需求量变动% ÷ 价格变动%
+        <span class="f-note">|E<sub>d</sub>| 大于 1 为富有弹性（涨价会减少总收益），小于 1 为缺乏弹性（涨价反而增加总收益）</span>
+      </div>
+
+      <h3>互动演示</h3>
+      <figure class="fig">
+        <div class="fig-title">图 2-1 · 供需均衡：移动曲线，看价格管制</div>
+        <p class="fig-sub">用两个滑块左右移动需求或供给曲线，观察均衡价格与数量的变化；再叠加"最高限价"，看短缺如何出现。</p>
+        <figure class="fig-canvas">
+          <svg id="fig2-svg" viewBox="0 0 640 400" role="img" aria-label="供需均衡交互图：滑块移动需求或供给曲线，显示均衡价格与数量变化，可叠加价格管制">
+            <line class="gridline" x1="335" y1="36" x2="335" y2="340"/>
+            <line class="gridline" x1="70" y1="205" x2="600" y2="205"/>
+            <line class="axis" x1="70" y1="340" x2="612" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="30"/>
+            <text class="chart-label" x="480" y="366">数量 Q（万件）→</text>
+            <text class="chart-label" x="14" y="42">价格 P（元）</text>
+            <path id="fig2-dline" class="curve curve-c1" d=""/>
+            <path id="fig2-sline" class="curve curve-c3" d=""/>
+            <text id="fig2-labd" class="chart-label" x="76" y="80">D 需求</text>
+            <text id="fig2-labs" class="chart-label" x="566" y="130">S 供给</text>
+            <line id="fig2-ev" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line id="fig2-eh" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <circle id="fig2-e" class="dot" r="6" fill="#2f6fdb" cx="0" cy="0"/>
+            <text id="fig2-labe" class="chart-label" x="0" y="0">E</text>
+            <g id="fig2-grp" display="none">
+              <line id="fig2-pl" x1="0" y1="0" x2="0" y2="0" stroke="#475569" stroke-width="2" stroke-dasharray="7 5"/>
+              <circle id="fig2-dqd" class="dot" r="5" fill="#2f6fdb" cx="0" cy="0"/>
+              <circle id="fig2-dqs" class="dot" r="5" fill="#0d9488" cx="0" cy="0"/>
+              <path id="fig2-brk" d="" stroke="#ea580c" stroke-width="2" fill="none"/>
+              <text id="fig2-brkt" class="chart-label" x="0" y="0" fill="#ea580c">短缺</text>
+            </g>
+          </svg>
+        </figure>
+        <p class="fig-sub" id="fig2-read">正在加载读数……</p>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fig2-d">需求移动</label>
+            <input type="range" id="fig2-d" min="-60" max="60" step="1" value="0">
+            <output id="fig2-od" for="fig2-d">0</output></div>
+          <div class="ctrl"><label for="fig2-s">供给移动</label>
+            <input type="range" id="fig2-s" min="-60" max="60" step="1" value="0">
+            <output id="fig2-os" for="fig2-s">0</output></div>
+          <div class="ctrl"><label for="fig2-pc">管制价格</label>
+            <input type="range" id="fig2-pc" min="2" max="7" step="0.1" value="3">
+            <output id="fig2-oc" for="fig2-pc">3.0 元</output></div>
+        </div>
+        <div class="fig-actions"><button class="btn ghost" id="fig2-btn" type="button">叠加价格管制演示</button></div>
+        <figcaption>读图要点：需求右移 → 均衡价格与数量同升；供给右移 → 价格降、数量升（两条曲线移动的"方向组合"不同，务必分别记牢）。试一试：把限价拖到均衡价格之下，橙色区间显示<strong>短缺</strong>（想买的多于想卖的）；拖到均衡之上则出现过剩。坐标横轴上限为 10，极端移动时读数以文字为准。</figcaption>
+      </figure>
+
+      <h3>现实世界</h3>
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 猪周期：滞后供给制造的过山车</div>
+        <p>生猪从补栏母猪到育肥出栏约需 10—12 个月，供给对价格的反应存在天然时滞：猪瘟冲击使供给曲线左移，价格飙升；养殖户按<strong>今天的</strong>高价决定补栏，可等到出栏时供给已大量增加，价格转跌，又开始去产能——"价高伤民、价贱伤农"的猪周期因此循环往复。2020 年前后的一轮大涨大跌再次说明：读懂"哪条曲线在动、什么时候动"，比预测具体价格数字更有用。猪肉在中国 CPI 权重中占比可观，这一章也是下一分支宏观经济学的第一块垫脚石。</p>
+      </aside>
+
+      <h3>常见误区</h3>
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p>✗ "价格上涨说明需求增加。"不一定——供给收缩（如猪瘟、限产）同样推高价格，但成交量方向相反：需求增加量价齐升，供给减少则价升量降。看数量才能分清。<br>
+        ✗ 混淆"需求量变动"与"需求变动"：商品自身价格变化只让点沿曲线滑动；收入、偏好、替代品价格等变化才移动整条曲线。<br>
+        ✗ 认为限价能让所有人都买得起。限价不增加供给，只是改用排队、黄牛、抽签、质量缩水等方式配给——稀缺没有消失，只是换了分配规则。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.1</span>非洲猪瘟导致生猪大量死亡、产能下降。据此判断，短期猪肉市场将出现：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>需求曲线左移，价格与成交量同时下降</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">B</span>供给曲线左移，价格上升、成交量下降</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>均衡不变，消费者只是沿需求曲线移动，市场自动恢复原价</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>猪瘟打击的是卖方（产能），供给曲线左移，新交点位于原均衡的左上方——价升量减。A 把冲击安在了需求上（那会出现价量齐跌）。C 的错误在于：消费者沿线移动是结果不是原因，供给没有恢复时价格不会自动回落。</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.2</span>香烟需求高度缺乏弹性（成瘾），供给相对富有弹性。政府提高烟草税，税负主要由谁承担？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>主要由烟厂承担，因为它们更有钱</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>必然各承担一半，这才公平</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">C</span>主要由烟民承担，因为需求缺乏弹性，涨价后他们减少购买的程度很小</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>税负归宿取决于弹性，与"谁开税单""谁更有钱"无关：弹性小的一方躲不开，承担更多。烟民缺乏替代品、戒断困难（需求缺乏弹性），绝大部分税负通过提价转嫁给了消费者；供给方若强行提价，烟厂还可以减产、转产（供给较有弹性），所以承担较少。这也是烟税能成为可靠财政收入、同时被批评累退（低收入烟民负担相对更重）的原因。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>均衡价格在需求与供给的交点形成：数量恰好匹配，价格没有变动压力。</li>
+          <li>分析冲击的两步法：判断移动哪条曲线 → 找新交点，读出价格与数量的方向。</li>
+          <li>需求增加：价量齐升；供给增加：价跌量升——两者组合方向不同，别背混。</li>
+          <li>弹性衡量敏感程度，决定涨价对总收益的影响与税负归宿：弹性小者承担多。</li>
+          <li>限价改变分配规则而不消除稀缺：上限造成短缺，下限造成过剩。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 第 3 章 ==================== -->
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">第 3 章</span>消费者理论：如何做出最优选择</h2>
+
+      <h3>引入问题</h3>
+      <p>月底复盘账单：这个月外卖 22 次、电影 4 场、健身 8 次——为什么恰好是这组数字，而不是"外卖 15 次、电影 8 场"？如果公司突然每月多发 500 元补贴，你的组合会怎么变？为什么大部分人的答案不是"全部加到一种消费上"？</p>
+
+      <h3>核心直觉</h3>
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>消费者的选择被两样东西夹住：一是<strong>偏好</strong>（想吃什么组合），二是<strong>预算</strong>（买得起什么组合）。偏好用无差异曲线（Indifference Curve）刻画：同一条线上的组合同样满意；预算用预算线（Budget Line）刻画：花光所有钱能买到的组合。最优选择就是预算线上能碰到的最高的那条无差异曲线——<strong>切点</strong>。</p>
+        <p>切点有一个漂亮的含义：你心里愿意"用几份外卖换一场电影"（边际替代率 MRS），恰好等于市场要你付出的比例（两种价格之比）。愿意换的多、要付的少，就多换一点；反之就换回来——调到两者相等，就没有任何改进空间了。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">效用</div><span class="term-en">Utility</span><div class="term-def">对满意程度的序数度量，只用于排序组合的好坏，不能在不同人之间比较大小。</div></div>
+        <div class="term"><div class="term-name">无差异曲线</div><span class="term-en">Indifference Curve</span><div class="term-def">给消费者带来相同效用的所有组合连成的曲线。通常凸向原点：一种商品越少，越舍不得再换出去。</div></div>
+        <div class="term"><div class="term-name">预算约束线</div><span class="term-en">Budget Line</span><div class="term-def">花完全部预算所能购买的所有组合。斜率由两种商品的价格之比决定，位置由收入决定。</div></div>
+        <div class="term"><div class="term-name">边际替代率</div><span class="term-en">Marginal Rate of Substitution, MRS</span><div class="term-def">无差异曲线斜率的绝对值：愿意为多得一单位 X 而放弃的 Y 的数量。消费者最优条件：MRS = P<sub>x</sub>/P<sub>y</sub>。</div></div>
+      </div>
+
+      <aside class="callout keypoint">
+        <div class="callout-title">数学角（选读）</div>
+        <p>设效用 U = xy（两种商品各取其对数亦同），预算 P<sub>x</sub>x + P<sub>y</sub>y = m。无差异曲线 xy = U 上，MRS = y/x。最优时 y/x = P<sub>x</sub>/P<sub>y</sub>，与预算方程联立可得 x* = m/2P<sub>x</sub>，y* = m/2P<sub>y</sub>：收入翻倍，两种消费同比例翻倍（柯布—道格拉斯偏好的经典性质，下面图 3-1 中移动收入滑块即可验证）。价格变化的影响则分两步：替代效应沿原无差异曲线换组合，收入效应随实际购买力变动而平移——两者方向可能相反（如低档商品）。</p>
+      </aside>
+
+      <h3>互动演示</h3>
+      <figure class="fig">
+        <div class="fig-title">图 3-1 · 预算线与无差异曲线的切点</div>
+        <p class="fig-sub">调整月预算与电影票价，观察预算线如何平移或旋转，最优组合（切点 T）随之移动。</p>
+        <figure class="fig-canvas">
+          <svg id="fig3-svg" viewBox="0 0 640 400" role="img" aria-label="预算线与无差异曲线交互图：收入与票价滑块改变预算线，切点为消费者最优">
+            <line class="gridline" x1="335" y1="36" x2="335" y2="340"/>
+            <line class="gridline" x1="70" y1="188" x2="600" y2="188"/>
+            <line class="axis" x1="70" y1="340" x2="612" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="30"/>
+            <text class="chart-label" x="490" y="366">电影（场/月）→</text>
+            <text class="chart-label" x="14" y="42">外卖（份/月）</text>
+            <line id="fig3-bl" x1="0" y1="0" x2="0" y2="0" stroke="#0d9488" stroke-width="3" stroke-linecap="round"/>
+            <path id="fig3-ic" class="curve curve-c1" d=""/>
+            <text id="fig3-labbl" class="chart-label" x="0" y="0" fill="#0d9488">预算线</text>
+            <text id="fig3-labic" class="chart-label" x="0" y="0">无差异曲线 U=xy</text>
+            <line id="fig3-v" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line id="fig3-h" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <circle id="fig3-t" class="dot" r="6" fill="#2f6fdb" cx="0" cy="0"/>
+            <text class="chart-label" x="0" y="0">T 切点</text>
+          </svg>
+        </figure>
+        <p class="fig-sub" id="fig3-read">正在加载读数……</p>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fig3-m">月度预算</label>
+            <input type="range" id="fig3-m" min="600" max="1200" step="20" value="800">
+            <output id="fig3-om" for="fig3-m">800 元</output></div>
+          <div class="ctrl"><label for="fig3-px">电影票价</label>
+            <input type="range" id="fig3-px" min="40" max="120" step="2" value="60">
+            <output id="fig3-opx" for="fig3-px">60 元</output></div>
+        </div>
+        <figcaption>读图要点：预算线与纵轴的交点是"全部吃外卖"的份数，与横轴的交点是"全部看电影"的场数。试一试：只加预算 → 预算线平行外移，切点沿一条直线（收入扩展线）同比例移动；只降价 → 预算线绕纵轴交点向外旋转，电影消费增加的比例大于外卖。无论怎么调，读数里 MRS 始终等于价格比——切点条件永远成立。</figcaption>
+      </figure>
+
+      <h3>现实世界</h3>
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 满减凑单里的消费者理论</div>
+        <p>打开外卖或电商平台，"满 60 减 15""满 25 减 4"几乎无处不在。满减本质上是把你的预算线改成了折线：在 60 元以内，每 1 元钱买 1 元货；跨过门槛，最后那几元突然"更值钱"。于是原本位于旧预算线上的最优点，突然被推到门槛右侧的新组合——平台用改变预算集的方式，引导你"再凑一单"。理解了这一点，你就能分清：真正让你变好的是折扣本身，而"为了凑单多买的零食"多半只是移动了你的最优点，并没有增加你的效用。</p>
+      </aside>
+
+      <h3>常见误区</h3>
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p>✗ 画出相交的无差异曲线。两条无差异曲线相交意味着同一组合有两个不同效用水平，偏好自相矛盾。<br>
+        ✗ 在人与人之间比较效用："他的快乐比你多 30%"不是科学命题，效用只是个人内部的排序工具。<br>
+        ✗ 以为最优一定在切点、一定把钱花光。若偏好极端（比如几乎只吃食堂），最优可能落在预算线的端点（角点解）；储蓄也是合法的"第三种用途"。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.1</span>消费者在两种商品之间的最优选择（内点解）满足：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">A</span>边际替代率等于两种商品的价格之比，即 MRS = P<sub>x</sub>/P<sub>y</sub></button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>两种商品的购买数量相等</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>无差异曲线的斜率为零，预算线斜率最大</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>最优在预算线与无差异曲线的切点：心里的兑换率（MRS）恰好等于市场的兑换率（价格比）。若 MRS 大于价格比，说明你比市场更看重 X，多买 X 还有净收益；反之亦然——只有相等时才无改进空间。B 数量相等没有任何理由成立；C 两种斜率都不为零。</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.2</span>收入下降，两种商品的价格都不变，预算线将：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>绕横轴截距向内旋转</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>平行向外移动</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">C</span>平行向内移动，斜率不变</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>预算线斜率 = −P<sub>x</sub>/P<sub>y</sub>，只由价格决定；价格不变，斜率不变。收入只决定预算集的大小：收入下降，两个截距（m/P<sub>y</sub> 与 m/P<sub>x</sub>）同比例缩小，预算线平行内移。A 是一种商品价格变化的情形；B 方向反了。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>偏好（无差异曲线）与约束（预算线）共同决定选择，最优在切点。</li>
+          <li>最优条件：MRS = 价格比——心里的兑换率等于市场的兑换率。</li>
+          <li>收入变化平移预算线；价格变化旋转预算线。</li>
+          <li>价格变化的影响可分解为替代效应（换组合）与收入效应（变购买力）。</li>
+          <li>效用只可排序、不可跨人比较；最优也可能是角点解。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 第 4 章 ==================== -->
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">第 4 章</span>生产者理论与成本</h2>
+
+      <h3>引入问题</h3>
+      <p>每年"双十一"前，快递公司宁可以双倍工资雇临时工、高价租社会车辆，也不趁着业务量大"干脆多建几座自动化分拣中心"。既然旺季赚得盆满钵满，为什么不做一劳永逸的投资？反过来，为什么分拣中心一旦建成，即便淡季亏本也照样运转？</p>
+
+      <h3>核心直觉</h3>
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>答案藏在<strong>短期与长期的区别</strong>里。短期内至少有一种投入固定（厂房、设备）：往固定投入上不断加可变投入（人、车），新增的产出会越来越少——边际报酬递减（Diminishing Marginal Returns）；所以旺季加人加车越来越贵，但也来不及建厂，只能认。长期内一切投入可变，企业可以复制整套生产规模：若产量翻倍、成本不到翻倍，就是规模经济（Economies of Scale）——这正是自动化分拣中心存在的理由，也是它必须等长期才能建的原因。</p>
+        <p>决策的纪律只有三条：<strong>边际成本</strong>决定生产多少，<strong>平均成本</strong>决定还做不做这一行，<strong>沉没成本</strong>永远不进任何决策。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">生产函数</div><span class="term-en">Production Function</span><div class="term-def">投入组合与最大产出之间的技术关系：Q = f(L, K)。同样的投入产出更少，就是技术或效率的退步。</div></div>
+        <div class="term"><div class="term-name">边际报酬递减</div><span class="term-en">Diminishing Marginal Returns</span><div class="term-def">其他投入不变时，连续增加某一种可变投入，其边际产量最终会下降。短期概念，前提是"其他投入不变"。</div></div>
+        <div class="term"><div class="term-name">固定成本与可变成本</div><span class="term-en">Fixed vs. Variable Cost</span><div class="term-def">固定成本不随产量变化（租金、折旧），短期内无论是否生产都要支付；可变成本随产量增减（原料、计件工资）。</div></div>
+        <div class="term"><div class="term-name">规模经济</div><span class="term-en">Economies of Scale</span><div class="term-def">长期中产量扩大的比例超过成本扩大的比例，平均成本随规模下降。来源：固定投入分摊、专业化、大宗采购。规模过大引致协调成本上升则出现规模不经济。</div></div>
+        <div class="term"><div class="term-name">沉没成本</div><span class="term-en">Sunk Cost</span><div class="term-def">已经付出且无法收回的成本。它不影响任何边际比较，理性决策应当无视它。</div></div>
+      </div>
+
+      <h3>互动演示</h3>
+      <figure class="fig">
+        <div class="fig-title">图 4-1 · 边际成本与平均成本：谁拉动谁</div>
+        <p class="fig-sub">拖动产量滑块，观察 MC 与 ATC 两个读数及判定文字——并注意两曲线交点的特殊含义。</p>
+        <figure class="fig-canvas">
+          <svg id="fig4-svg" viewBox="0 0 640 400" role="img" aria-label="成本曲线交互图：产量滑块对比边际成本与平均总成本的关系">
+            <line class="gridline" x1="335" y1="36" x2="335" y2="340"/>
+            <line class="gridline" x1="70" y1="166" x2="600" y2="166"/>
+            <line class="axis" x1="70" y1="340" x2="612" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="30"/>
+            <text class="chart-label" x="500" y="366">产量 q（件）→</text>
+            <text class="chart-label" x="18" y="42">成本（元）</text>
+            <line id="fig4-mcl" x1="0" y1="0" x2="0" y2="0" stroke="#2f6fdb" stroke-width="3" stroke-linecap="round"/>
+            <path id="fig4-atc" class="curve curve-c2" d=""/>
+            <text class="chart-label" x="330" y="114" fill="#2f6fdb">MC 边际成本</text>
+            <text class="chart-label" x="452" y="208" fill="#ea580c">ATC 平均总成本</text>
+            <circle id="fig4-min" class="dot" r="5" fill="#fff" stroke="#ea580c" stroke-width="2" cx="0" cy="0"/>
+            <line id="fig4-v" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line id="fig4-h" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <circle id="fig4-dm" class="dot" r="5" fill="#2f6fdb" cx="0" cy="0"/>
+            <circle id="fig4-da" class="dot" r="5" fill="#ea580c" cx="0" cy="0"/>
+            <text id="fig4-labm" class="chart-label" x="0" y="0" fill="#2f6fdb">MC</text>
+            <text id="fig4-laba" class="chart-label" x="0" y="0" fill="#ea580c">ATC</text>
+          </svg>
+        </figure>
+        <p class="fig-sub" id="fig4-read">正在加载读数……</p>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fig4-q">产量 q</label>
+            <input type="range" id="fig4-q" min="1" max="12" step="0.25" value="6">
+            <output id="fig4-o" for="fig4-q">6.0</output></div>
+        </div>
+        <figcaption>读图要点：ATC 呈 U 形——产量小时固定成本被摊薄，ATC 下降；产量大时边际报酬递减推高可变成本，ATC 回升。MC 曲线从下方穿过 ATC 的最低点（空心圆标记）：只要多生产一件的成本低于平均，就会继续拉低平均。试一试：把滑块移到交点附近（q ≈ 4.5），验证判定文字变为"ATC 处于最低点"。</figcaption>
+      </figure>
+
+      <h3>现实世界</h3>
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 快递业的短期与长期</div>
+        <p>旺季爆仓时，快递企业的厂房与自动分拣线是固定投入，短期内只能靠加人、加班、租社会运力吸收峰值——可变投入堆在固定的分拣能力上，边际报酬迅速递减，于是出现"双倍工资招临时工"的新闻。而在长期，头部企业持续建设大型转运枢纽与自动化分拣中心：单位包裹的处理成本随规模下降（规模经济），这正是过去十年快递单价持续下降、企业仍能盈利的微观基础。同一章的逻辑还能解释淡季：分拣中心一旦建成，折旧是沉没/固定成本，只要运价能覆盖<strong>可变</strong>成本，继续运转就比停机更划算。</p>
+      </aside>
+
+      <h3>常见误区</h3>
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p>✗ 沉没成本谬误："这部电影票花了 60 元，再难看也要看完。"已付的票价收不回来，该比较的只是接下来的 90 分钟还有没有更好的用途。<br>
+        ✗ 用平均成本做生产决策。是否多生产一件，只看边际成本与边际收益；平均成本只用于判断长期去留与盈亏。<br>
+        ✗ 把"边际报酬递减"当成"规模不经济"。前者是短期、单一可变投入的故事；后者是长期、全部投入同比例扩张的故事，两者可以同时或分别出现。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.1</span>"边际报酬递减"指的是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>总产量随可变投入增加而下降</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">B</span>其他投入不变时，可变投入的边际产量最终下降——即使总产量仍在上升</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>企业规模扩大后平均成本上升</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>边际报酬递减说的是"新增一单位投入带来的新增产出"（边际产量）下降，此时总产量仍在增加，只是增速放缓——好比餐厅后厨不断加厨师，出菜量还在涨，但每加一个厨师多出的菜越来越少。A 描述的是边际产量跌为负之后的极端情形；C 描述的是规模不经济，是长期概念。</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.2</span>你花 60 元买了电影票，开场半小时确认是烂片。经济学的建议是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">A</span>不应让已付票价影响决定，只比较接下来时间的各种用途哪个最值</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>票这么贵，必须坚持看完才不亏</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>以后永远不再买电影票</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>票价是沉没成本：无论去留都无法收回，因此与"现在走不走"无关。理性做法是比较边际量：继续看 90 分钟烂片的负效用 vs. 离场做别的事的价值。B 是典型的沉没成本谬误；C 则矫枉过正——这次决策失误不改变电影本身的期望价值，正确的反思是下次买票前多看评测。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>短期至少一种投入固定 → 边际报酬递减；长期一切可变 → 规模经济或不经济。</li>
+          <li>边际成本决定产量，平均成本决定去留，沉没成本不进决策。</li>
+          <li>MC 从下方穿过 ATC 的最低点：边际值把平均值往自己的方向拉。</li>
+          <li>固定成本短期不可避，长期全可变；停业只需比较价格与平均可变成本。</li>
+          <li>规模经济来自分摊与专业化，是行业结构（下一章）的重要决定因素。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 第 5 章 ==================== -->
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">第 5 章</span>市场结构：从竞争到垄断</h2>
+
+      <h3>引入问题</h3>
+      <p>同一趟航班，你邻座的票价可能是你的三倍；同一场电影，学生票半价；同一款软件，企业版比个人版贵十倍。卖方明明手握定价权，为什么不干脆对所有人定最高的价？"能歧视价格的企业"到底在打什么算盘？</p>
+
+      <h3>核心直觉</h3>
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>把市场想成一条光谱：一端是<strong>完全竞争</strong>——企业多、产品同质，任何一家涨价都会失去全部客户，于是价格 = 边际成本，谁也别想赚取超额利润；另一端是<strong>垄断</strong>——只有一家卖方，面对整条向下倾斜的需求曲线，它可以按"边际收益 = 边际成本"选产量，再把价格抬到需求曲线上去。两端之间的垄断竞争（有差异、可进出）与寡头（几家互相盯着）各有精彩，寡头的战略互动留待分支 04 展开。</p>
+        <p>垄断的关键代价：产量被压到竞争水平之下，买方愿意支付的价格高于成本的那部分交易消失了——无谓损失（Deadweight Loss, DWL）。而价格歧视（Price Discrimination）本质上是垄断者放弃单一定价、按支付意愿分别收费，把一部分 DWL 和消费者剩余装进自己口袋；要做到这一点，它得能识别客户、并能阻止低价买家转卖。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">完全竞争</div><span class="term-en">Perfect Competition</span><div class="term-def">买卖双方众多、产品同质、自由进出的市场结构。单个企业是价格接受者，面对水平的需求曲线，长期经济利润为零。</div></div>
+        <div class="term"><div class="term-name">垄断与自然垄断</div><span class="term-en">Monopoly &amp; Natural Monopoly</span><div class="term-def">唯一卖方 + 无近替代品。若一家企业供应全市场的成本低于多家分摊（成本次可加性），称为自然垄断，如电网、铁路网。</div></div>
+        <div class="term"><div class="term-name">价格歧视</div><span class="term-en">Price Discrimination</span><div class="term-def">对同一商品向不同买方收取不同价格。分三级：按人（一级/完全歧视）、按量（二级）、按群体身份（三级，如学生票）。前提：可识别、可分割、不可转售。</div></div>
+        <div class="term"><div class="term-name">寡头垄断</div><span class="term-en">Oligopoly</span><div class="term-def">少数几家大企业占据市场，各自定价时必须顾忌对手反应——博弈论的天然舞台，详见分支 04。</div></div>
+      </div>
+
+      <h3>互动演示</h3>
+      <figure class="fig">
+        <div class="fig-title">图 5-1 · 垄断 vs 完全竞争：无谓损失三角形</div>
+        <p class="fig-sub">拖动边际成本滑块，观察垄断价格、产量与 DWL 三角形如何变化，以及弹性（勒纳指数）与加价的关系。</p>
+        <figure class="fig-canvas">
+          <svg id="fig5-svg" viewBox="0 0 640 400" role="img" aria-label="垄断与完全竞争对比交互图：边际成本滑块改变垄断定价与无谓损失三角形">
+            <line class="gridline" x1="335" y1="36" x2="335" y2="340"/>
+            <line class="gridline" x1="70" y1="195" x2="600" y2="195"/>
+            <line class="axis" x1="70" y1="340" x2="612" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="30"/>
+            <text class="chart-label" x="480" y="366">数量 Q（万件）→</text>
+            <text class="chart-label" x="14" y="42">价格 P（元）</text>
+            <line id="fig5-dl" x1="0" y1="0" x2="0" y2="0" stroke="#2f6fdb" stroke-width="3" stroke-linecap="round"/>
+            <line id="fig5-mr" x1="0" y1="0" x2="0" y2="0" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="8 5" stroke-linecap="round"/>
+            <text class="chart-label" x="482" y="322" fill="#2f6fdb">D 需求</text>
+            <text class="chart-label" x="282" y="322" fill="#7c3aed">MR 边际收益</text>
+            <line id="fig5-mcl" x1="0" y1="0" x2="0" y2="0" stroke="#475569" stroke-width="2.5" stroke-linecap="round"/>
+            <text id="fig5-labmc" class="chart-label" x="0" y="0" fill="#475569">MC</text>
+            <path id="fig5-prof" d="" fill="#ea580c" class="area-fill"/>
+            <path id="fig5-dwl" d="" fill="#db2777" opacity="0.2"/>
+            <line id="fig5-vm" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line id="fig5-hm" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line id="fig5-vc" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 4"/>
+            <circle id="fig5-dm" class="dot" r="6" fill="#2f6fdb" cx="0" cy="0"/>
+            <circle id="fig5-dc" class="dot" r="5" fill="#0d9488" cx="0" cy="0"/>
+            <text id="fig5-labp" class="chart-label" x="0" y="0" fill="#ea580c">垄断利润</text>
+            <text id="fig5-labw" class="chart-label" x="0" y="0" fill="#db2777">DWL</text>
+          </svg>
+        </figure>
+        <p class="fig-sub" id="fig5-read">正在加载读数……</p>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fig5-mcs">边际成本 MC</label>
+            <input type="range" id="fig5-mcs" min="1" max="7" step="0.1" value="3">
+            <output id="fig5-o" for="fig5-mcs">3.0 元</output></div>
+        </div>
+        <figcaption>读图要点：垄断产量由 MR = MC 决定（Qm 恰为竞争产量 Qc 的一半），价格再沿需求曲线抬到 Pm；竞争均衡则在 D 与 MC 的交点（P = MC）。粉色三角是社会福利净损失，橙色矩形是垄断利润。试一试：调低 MC，你会发现垄断加价（Pm − MC）与 DWL 变大、点弹性变小——加价程度恰好等于 1/|ε|（勒纳指数），这就是"弹性约束垄断者"的定量版本。</figcaption>
+      </figure>
+
+      <h3>现实世界</h3>
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 自然垄断与三级价格歧视</div>
+        <p>电网、铁路、城市供水具有典型的自然垄断属性：一套网络供应所有人的成本远低于各建一套，重复铺设反而是浪费。各国（包括中国）对此的对策不是拆分竞争，而是<strong>准入管制 + 价格（回报率）管制</strong>——承认垄断结构，约束垄断行为。另一方面，民航、影院、软件厂商是三级价格歧视的高手：学生票、早鸟票、老年人折扣、"新用户专享"，都是在用可观察的身份标签区分支付意愿，把原本买不起或不愿按原价买的人拉进市场（产量更接近竞争水平），同时从高价群体那里保留利润。近年"大数据杀熟"引发的争议，则是价格歧视走到"个性化定价"一步后，公平与隐私层面的反弹——《电子商务法》《个人信息保护法》均对此作出回应。</p>
+      </aside>
+
+      <h3>常见误区</h3>
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p>✗ "垄断者想定多高就定多高。"定价受需求曲线约束：价格越高销量越低，垄断者必须停在边际收益 = 边际成本处；在缺乏弹性的区间，提价甚至能增收，它反而不会停留（见自测 5.2）。<br>
+        ✗ "垄断 = 暴利。"垄断地位保证的是利润上限更高，不保证利润为正——成本高、需求弱时垄断者同样亏损。<br>
+        ✗ "价格歧视一律是坏事。"完全价格歧视消灭 DWL、产量达到竞争水平，社会总剩余反而最大（只是全归卖方）；评价歧视要看效率与分配两个维度，而不是直觉。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.1</span>完全竞争市场中，单个企业面对的需求曲线是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>向右下方倾斜的曲线</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">B</span>一条水平线：它可以按市场价格卖出任意数量，但高于市场价一件也卖不出</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>一条垂直线，产量与价格无关</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>完全竞争中企业众多且产品同质，任何一家相对于市场都微不足道：按市价想卖多少卖多少（价格接受者），涨价一分钱客户全部转向同质替代品。因此企业面对水平需求曲线，且 P = MR。A 是整个市场或垄断者面对的需求曲线；C 无经济含义。</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.2</span>若垄断者发现自己处于需求缺乏弹性（|ε| &lt; 1）的产量上，此时边际收益 MR &lt; 0。它的理性选择是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">A</span>减少产量、提高价格——需求缺乏弹性时提价会增加总收益，同时也降低成本</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>增加产量、降低价格，薄利多销</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>保持现状，反正垄断地位不变</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>缺乏弹性意味着价格上升 1%、需求量减少不到 1%，总收益不降反升；同时减产还省下边际成本。所以减产提价同时改善收益与成本，直到 MR 重新等于 MC——这也证明了垄断者必然定价在富有弹性的区间（线性需求下即是中点以上）。B 方向恰好相反；C 忽视了"垄断"只是给了选择权，具体定价仍要服从优化逻辑。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>市场结构光谱：完全竞争 → 垄断竞争 → 寡头 → 垄断，区分标准是替代品与进入壁垒。</li>
+          <li>竞争企业：P = MC，长期利润为零；垄断企业：MR = MC 定产量，价格沿需求曲线向上。</li>
+          <li>垄断的产量低于、价格高于竞争水平，差额部分形成 DWL 三角形。</li>
+          <li>勒纳指数 (P − MC)/P = 1/|ε|：需求越缺乏弹性，垄断加价空间越大。</li>
+          <li>价格歧视把消费者剩余转化为生产者剩余，完全歧视下产量与竞争相同。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 第 6 章 ==================== -->
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">第 6 章</span>市场失灵与政府干预</h2>
+
+      <h3>引入问题</h3>
+      <p>老小区想装路灯，物业说"谁受益谁掏钱"。结果显而易见：人人都盼着路灯亮，人人都等别人掏钱——最后路灯没装成，大家继续摸黑。人人受益的事，为什么市场做不成？反过来，工厂排污、人人受害，为什么市场也拦不住？</p>
+
+      <h3>核心直觉</h3>
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>价格体系之所以高效，是因为它强制<strong>决策者自担成本、自享收益</strong>。市场失灵（Market Failure）就是这个链条断了：<strong>外部性</strong>（Externality）让你的行为影响别人却不进你的账单——排污的损害由社会扛、路灯的收益邻居享；<strong>公共品</strong>（Public Goods）非排他、非竞争，没法向使用者收钱，于是搭便车（Free Riding）；<strong>信息不对称</strong>让劣质品驱逐优质品（柠檬市场）；<strong>市场势力</strong>（上一章的垄断）则直接扭曲价格。</p>
+        <p>矫正的基本思路不是取缔市场，而是<strong>把缺失的价格补上</strong>：对外部损害征税（庇古税）或补贴正外部性、界定产权让当事人谈判（科斯思路）、用可交易配额限量定价。同时也别忘了：政府也有信息与激励的局限——政府失灵（Government Failure）与市场失灵要放在同一架天平上权衡。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">外部性</div><span class="term-en">Externality</span><div class="term-def">行为对第三方造成的、未通过价格结算的影响。损害他人为负外部性（排污），便利他人为正外部性（接种疫苗、路灯）。</div></div>
+        <div class="term"><div class="term-name">公共品</div><span class="term-en">Public Goods</span><div class="term-def">同时具备非排他性（无法阻止不付费者使用）与非竞争性（一人使用不减少他人可用）的物品，如国防、路灯、基础研究。</div></div>
+        <div class="term"><div class="term-name">搭便车</div><span class="term-en">Free Riding</span><div class="term-def">不付出成本却享用集体成果的行为。公共品因搭便车而私人供给不足，是政府提供公共品的主要理由。</div></div>
+        <div class="term"><div class="term-name">信息不对称</div><span class="term-en">Asymmetric Information</span><div class="term-def">交易一方掌握另一方不知道的信息。事前隐藏信息导致逆向选择（柠檬市场），事后隐藏行为导致道德风险。详见分支 04。</div></div>
+        <div class="term"><div class="term-name">庇古税</div><span class="term-en">Pigouvian Tax</span><div class="term-def">按边际外部损害大小对负外部性行为征收的税，使私人边际成本上升到社会边际成本，产量回到社会最优。</div></div>
+      </div>
+
+      <h3>互动演示</h3>
+      <figure class="fig">
+        <div class="fig-title">图 6-1 · 庇古税：给外部损害定价</div>
+        <p class="fig-sub">某产品每件生产带来 4 元边际损害（MSC = 私人成本 + 4）。拖动税率滑块，看产量如何逼近社会最优、DWL 如何缩小归零。</p>
+        <figure class="fig-canvas">
+          <svg id="fig6-svg" viewBox="0 0 640 400" role="img" aria-label="庇古税交互图：税率滑块使产量趋向社会最优，无谓损失随之缩小">
+            <line class="gridline" x1="335" y1="36" x2="335" y2="340"/>
+            <line class="gridline" x1="70" y1="174" x2="600" y2="174"/>
+            <line class="axis" x1="70" y1="340" x2="612" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="30"/>
+            <text class="chart-label" x="480" y="366">数量 Q（万件）→</text>
+            <text class="chart-label" x="14" y="42">价格 P（元/件）</text>
+            <line id="fig6-dl" x1="0" y1="0" x2="0" y2="0" stroke="#2f6fdb" stroke-width="3" stroke-linecap="round"/>
+            <line id="fig6-mpc" x1="0" y1="0" x2="0" y2="0" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round"/>
+            <line id="fig6-msc" x1="0" y1="0" x2="0" y2="0" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+            <text class="chart-label" x="592" y="326" fill="#2f6fdb" text-anchor="end">D（边际社会收益）</text>
+            <text class="chart-label" x="76" y="276" fill="#0d9488">私人成本 S（P=2）</text>
+            <text class="chart-label" x="76" y="165" fill="#ea580c">社会成本 MSC = 私人成本 + 损害 4（P=6）</text>
+            <path id="fig6-dwl" d="" fill="#db2777" opacity="0.2"/>
+            <line id="fig6-tax" x1="0" y1="0" x2="0" y2="0" stroke="#7c3aed" stroke-width="2" stroke-dasharray="8 5"/>
+            <text id="fig6-labtax" class="chart-label" x="0" y="0" fill="#7c3aed">S + 税</text>
+            <line id="fig6-vq" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <circle id="fig6-dm" class="dot" r="5" fill="#fff" stroke="#475569" stroke-width="2" cx="494" cy="285"/>
+            <text class="chart-label" x="430" y="312">无干预市场 M（Q=8, P=2）</text>
+            <circle id="fig6-ds" class="dot" r="5" fill="#0d9488" cx="282" cy="174"/>
+            <text class="chart-label" x="290" y="160">社会最优 S（Q=4, P=6）</text>
+            <circle id="fig6-de" class="dot" r="6" fill="#7c3aed" cx="0" cy="0"/>
+          </svg>
+        </figure>
+        <p class="fig-sub" id="fig6-read">正在加载读数……</p>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fig6-t">庇古税税率 t</label>
+            <input type="range" id="fig6-t" min="0" max="8" step="0.25" value="0">
+            <output id="fig6-o" for="fig6-t">0.00 元</output></div>
+        </div>
+        <figcaption>读图要点：无干预时企业在私人成本线上生产（Q=8），超过社会最优（Q=4），粉色三角是过度生产造成的 DWL。试一试：把税率调到 4 元（恰等于边际损害），企业成本线上移至 MSC，产量正好落到社会最优、DWL 归零；继续加税到 4 以上反而矫枉过正，出现"生产不足"的新 DWL——最优税率是"恰好等于边际损害"，不是越高越好。</figcaption>
+      </figure>
+
+      <h3>现实世界</h3>
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 碳市场与柠檬市场</div>
+        <p>2021 年 7 月，全国碳排放权交易市场正式启动，发电行业首批纳入：政府设定排放总量上限，企业之间买卖排放配额——这本质上是庇古税的"可交易配额"版本，由市场而不是官员来决定谁减排最便宜。与之对照，二手车市场是信息不对称的经典现场：买家怕买到"柠檬"（有暗病的车），只肯出中等价格；好车车主嫌价低退出，车市平均质量进一步下滑——逆向选择让市场越缩越小。平台的应对（官方检测报告、质保、无理由退车）正是在<strong>制造信息</strong>以修复市场，这与信号、筛选机制一脉相承，分支 04 将展开。</p>
+      </aside>
+
+      <h3>常见误区</h3>
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p>✗ "市场失灵，所以政府应该接管。"政府同样面临信息不完全与激励扭曲（寻租、官僚低效、政策被俘获），正确的问法是：这件事交给市场、交给政府，还是交给社群与产权安排，哪边的总成本更低？<br>
+        ✗ 把庇古税当成收入工具。最优税率 = 边际外部损害；为了多收钱而加税，会把产量压到社会最优之下，制造新的 DWL。<br>
+        ✗ "公共品 = 政府生产的物品。"判据是物品的属性（非排他、非竞争），不是生产者身份——政府也生产私用品（国企商品），市场与 NGO 也能供给公共品（开源软件、维基百科）。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.1</span>小区路灯总是装不起来，其经济学根源是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>生产路灯的技术门槛太高</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">B</span>路灯非排他且非竞争，无法向受益者收费，人人想搭便车，私人供给不足</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>居民对路灯的需求缺乏弹性</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>路灯一旦亮起，无法把不缴费的居民排除在照明之外（非排他），一人享受也不减少他人的照亮（非竞争）。于是每人最优策略都是"等别人出钱"——搭便车导致自愿供给远低于社会需要的水平，这正是公共品由政府税收统一提供的理由。A、C 与问题无关：路灯技术成熟，需求也真实存在，卡住的是收费机制。</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.2</span>某产品生产的边际外部损害为每件 4 元。把庇古税定为 4 元/件，其效果是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>企业无利可图，全部退出市场</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>政府税收最大化，财政收入显著增加</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">C</span>企业面临的私人边际成本上升到社会边际成本，产量回到社会最优水平</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>庇古税的功能是把外部损害"写进"企业的成本表：税额恰等于边际损害时，企业内部优化（在自己的成本线上找需求交点）恰好复制社会优化（在 MSC 上找交点），产量达到社会最优。A 过度夸张——只是收缩产量而非清零；B 搞反了目标：庇古税旨在矫正外部性，税收是副产品，追求收入最大化的税率会把产量压得过低。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>市场失灵四大根源：外部性、公共品、信息不对称、市场势力。</li>
+          <li>外部性使私人成本 ≠ 社会成本：负外部性过度生产，正外部性供给不足。</li>
+          <li>公共品因非排他 + 非竞争而搭便车，私人供给不足。</li>
+          <li>矫正思路是补上缺失的价格：庇古税/补贴、产权与科斯谈判、可交易配额。</li>
+          <li>政策评估要同时称量市场失灵与政府失灵，选择总成本最低的治理方式。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 第 7 章 ==================== -->
+    <section class="chapter" id="ch7">
+      <h2><span class="ch-num">第 7 章</span>一般均衡与福利经济学</h2>
+
+      <h3>引入问题</h3>
+      <p>国际油价上涨，先是加油站排队，然后电动车销量上升、锂价飙升，接着电费听证会召开，连你楼下的充电桩都开始涨价。前六章我们一次只看一个市场，可现实里所有市场是同时联动的——有没有一套工具，能同时看清"所有市场一起出清"，并回答一个更大的问题：这样的经济算是"好"的吗？</p>
+
+      <h3>核心直觉</h3>
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>局部均衡（Partial Equilibrium）一次看一个市场；一般均衡（General Equilibrium）让所有市场同时出清，价格与数量由整张市场网络联立决定——油价变动会沿着替代、互补、要素需求的链条传导到四面八方。分析两个人、两种商品的纯粹交换，用的是<strong>埃奇沃斯盒</strong>（Edgeworth Box）：把乙的无差异图旋转 180 度扣在甲的上面，盒中每一点都是一种分配。</p>
+        <p>评估配置好坏的标准是<strong>帕累托效率</strong>（Pareto Efficiency）：不存在任何改动能让至少一人变好而无人变坏。交换效率要求所有人的 MRS 相等——满足这一条件的分配构成契约曲线。福利经济学两大定理则给出分工：<strong>第一定理</strong>说完全竞争均衡必然帕累托有效（市场擅长效率）；<strong>第二定理</strong>说任何有效配置原则上都能通过适当的初始禀赋再分配 + 市场交易达到（想要公平，先再分配，再让市场去干活）。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">一般均衡</div><span class="term-en">General Equilibrium</span><div class="term-def">所有市场同时出清的状态。局部均衡分析的"其他条件不变"在一般均衡中内生联动——一个市场的冲击会传导全局。</div></div>
+        <div class="term"><div class="term-name">帕累托效率与帕累托改进</div><span class="term-en">Pareto Efficiency / Improvement</span><div class="term-def">若能至少让一人变好而无人变坏，即帕累托改进；当不存在任何帕累托改进余地时，配置是帕累托有效的。该标准回避人际比较，但也因此对分配沉默。</div></div>
+        <div class="term"><div class="term-name">契约曲线</div><span class="term-en">Contract Curve</span><div class="term-def">埃奇沃斯盒中双方 MRS 相等的所有分配的轨迹，即交换中的帕累托有效集；谈判的最终落点（竞争均衡）是其中之一。</div></div>
+        <div class="term"><div class="term-name">福利经济学两大定理</div><span class="term-en">Two Fundamental Theorems of Welfare Economics</span><div class="term-def">第一定理：完全竞争均衡是帕累托有效的。第二定理：给定任一有效配置，可通过一次性禀赋再分配后由竞争市场实现。合起来：效率交给市场，公平交给再分配。</div></div>
+      </div>
+
+      <h3>互动演示</h3>
+      <figure class="fig">
+        <div class="fig-title">图 7-1 · 埃奇沃斯盒：寻找契约曲线</div>
+        <p class="fig-sub">甲、乙两人共 10 份茶叶、10 杯咖啡；甲固定持有 4 杯咖啡。拖动滑块改变甲的茶叶数量，看两人的无差异曲线何时相切（帕累托最优）。</p>
+        <figure class="fig-canvas">
+          <svg id="fig7-svg" viewBox="0 0 640 440" role="img" aria-label="埃奇沃斯盒交互图：茶叶配置滑块演示帕累托最优与契约曲线">
+            <rect x="150" y="26" width="360" height="360" fill="#f8fafc" stroke="#e5e7eb"/>
+            <line class="axis" x1="150" y1="386" x2="510" y2="386"/>
+            <line class="axis" x1="150" y1="386" x2="150" y2="26"/>
+            <line class="axis" x1="510" y1="386" x2="510" y2="26"/>
+            <line class="axis" x1="150" y1="26" x2="510" y2="26"/>
+            <text class="chart-label" x="290" y="416">甲的茶叶 x →（乙为 10 − x）</text>
+            <text class="chart-label" x="150" y="18">← 乙的茶叶</text>
+            <text class="chart-label" x="20" y="210" transform="rotate(-90 26 206)">甲的咖啡（固定 4）→</text>
+            <text class="chart-label" x="596" y="180" transform="rotate(90 596 186)">乙的咖啡（固定 6）→</text>
+            <text class="chart-label" x="166" y="376">甲的原点</text>
+            <text class="chart-label" x="438" y="44">乙的原点</text>
+            <line id="fig7-cc" x1="0" y1="0" x2="0" y2="0" stroke="#65a30d" stroke-width="2" stroke-dasharray="8 6"/>
+            <text class="chart-label" x="352" y="196" fill="#65a30d">契约曲线（MRS 甲 = MRS 乙）</text>
+            <circle id="fig7-po" class="dot" r="5" fill="#fff" stroke="#65a30d" stroke-width="2" cx="294" cy="242"/>
+            <path id="fig7-ica" class="curve curve-c1" d=""/>
+            <path id="fig7-icb" class="curve curve-c2" d=""/>
+            <text id="fig7-laba" class="chart-label" x="0" y="0" fill="#2f6fdb">甲的无差异曲线</text>
+            <text id="fig7-labb" class="chart-label" x="0" y="0" fill="#ea580c">乙的无差异曲线</text>
+            <circle id="fig7-dot" class="dot" r="6" fill="#2f6fdb" cx="0" cy="0"/>
+          </svg>
+        </figure>
+        <p class="fig-sub" id="fig7-read">正在加载读数……</p>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fig7-x">甲持有的茶叶 x</label>
+            <input type="range" id="fig7-x" min="0.5" max="9.5" step="0.1" value="6.5">
+            <output id="fig7-o" for="fig7-x">6.5</output></div>
+        </div>
+        <figcaption>读图要点：两条无差异曲线围出的"梭形"区域里，任何一点都能让两人同时变好——所以只要曲线相交（MRS 不等），配置就不是帕累托最优。试一试：把滑块移到 x = 4，两曲线恰好相切（绿色空心圆标记的契约曲线点），梭形消失，互利交易的机会用尽。甲的咖啡固定为 4、乙为 6 时，切点恰在契约曲线（对角线）上，此时两人的茶叶—咖啡兑换率完全一致。</figcaption>
+      </figure>
+
+      <h3>现实世界</h3>
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 增量改革：现实中的帕累托改进</div>
+        <p>1978 年前后的家庭联产承包责任制是教科书级的近似帕累托改进：土地仍归集体，农民按承包经营、缴足国家的、留够集体的、剩下是自己的——几乎没有人受损，粮食产量数年内大增。此后的<strong>价格双轨制</strong>同样暗含福利经济学的智慧：计划内价格与指标保持不动（存量不动，避免制造输家），计划外部分放开市场价格（增量先走，让改善者得利）。改革的推进顺序因此获得了广泛支持——这与第二定理的精神遥相呼应：效率与分配（谁受损、谁补偿）是可以分开设计的两件事，"把饼做大"与"把饼分好"需要不同的工具。</p>
+      </aside>
+
+      <h3>常见误区</h3>
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p>✗ "帕累托有效 = 公平。"契约曲线上既有均分点，也有"一人独占一切"的角落点——它们同样有效。效率只问"饼有没有做大"，不问"饼怎么分"。<br>
+        ✗ 把福利定理当成无条件真理。两个定理都依赖完全竞争、完备市场、无外部性等强前提——第 5、6 章的垄断与外部性恰恰是前提失守的地方，此时竞争均衡不再保证有效。<br>
+        ✗ "既然市场有效，就不需要再分配。"第一定理只保证落在契约曲线上的某一点，落在哪一点取决于初始禀赋；改变这个点的正当工具是一次性再分配，而不是扭曲价格。</p>
+      </aside>
+
+      <h3>自测</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 7.1</span>一项政策变动被称为"帕累托改进"，当且仅当：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">A</span>至少有一个人变好，且没有任何人变坏</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>社会总收入（GDP）增加</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>收入分配变得更加平均</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>帕累托改进的定义就是"有人变好、无人变坏"，它刻意回避人际效用比较，因而是最弱、争议最少的标准。B、C 都可能伴随一部分人受损——GDP 涨了但某行业工人失业、分配更平均但高收入者变差——它们既不充分也不必要，评价这类变动需要额外的价值判断（规范分析）。</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 7.2</span>福利经济学第二定理最重要的政策含义是：</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>效率与公平不可兼得，政府必须二选一</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">B</span>想要既公平又有效，可先做一次性禀赋再分配，再让市场自由交易去实现效率</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>市场交易的结果必然是公平的，无需任何再分配</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>第二定理把"效率"与"分配"拆成两道工序：市场是产生效率的机器，而想要的有效配置（包括更公平的那些）可以通过调整起点（一次性再分配）后交给市场达成。A 错在"不可兼得"；C 错在把效率混同于公平——竞争均衡落点由初始禀赋决定，可以非常不平等。当然，现实中一次性再分配（如对禀赋征税）也会遇到激励与执行问题，这是最优税收理论的课题（见分支 08）。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>一般均衡让所有市场同时出清，冲击沿替代与要素链条全局传导。</li>
+          <li>埃奇沃斯盒分析交换：无差异曲线相交即存在互利交易，相切即帕累托有效。</li>
+          <li>契约曲线 = 所有 MRS 相等的分配；竞争均衡落在其上。</li>
+          <li>第一定理：竞争均衡有效；第二定理：有效 + 公平可以经由禀赋再分配实现。</li>
+          <li>效率不等于公平；两定理的前提（完全竞争、无外部性）正是政策讨论的焦点。</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 进阶路线 ==================== -->
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">终点</span>进阶路线与延伸阅读</h2>
+      <p>微观经济学是整套地图的地基。顺着本分支往下走，最自然的三个方向是：</p>
+      <ul>
+        <li><a href="../02-宏观经济学/index.html">02 宏观经济学</a>：把这里的家庭与企业行为加总成 GDP、通胀与周期，猪周期的下一站就是 CPI 与货币政策。</li>
+        <li><a href="../03-计量经济学/index.html">03 计量经济学</a>：微观给出可检验的预测（最低工资、弹性、税负归宿），计量教你如何让数据诚实地说话。</li>
+        <li><a href="../04-博弈论与信息经济学/index.html">04 博弈论与信息经济学</a>：把第 5 章的寡头与第 6 章的信息不对称推向深入——战略互动的完整工具箱。</li>
+      </ul>
+      <p>应用分支（劳动、产业组织、公共、环境、行为……）几乎每一章都以本分支的供需、弹性、边际分析与福利工具为通用语言，值得反复回看。</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">曼昆《经济学原理：微观经济学分册》</span>——零基础首选，案例丰富，先读它建立全景。</li>
+          <li><span class="bk">平狄克、鲁宾菲尔德《微观经济学》</span>——中级标准教材，曲线与计算并重，适合系统进阶。</li>
+          <li><span class="bk">范里安《微观经济学：现代观点》</span>——中级偏数理，对交换、福利定理的讲解尤为清晰。</li>
+          <li><span class="bk">尼科尔森《微观经济理论：基本原理与扩展》</span>——高阶读本，为研究生学习铺路，选读。</li>
+          <li><span class="bk">弗兰克《牛奶可乐经济学》</span>——轻阅读，用机会成本与边际分析解释日常现象，通勤友好。</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../index.html"><span class="pager-dir">上一分支</span><br><span class="pager-name">总览 · 学习地图</span></a>
+        <a href="../02-宏观经济学/index.html"><span class="pager-dir">下一分支</span><br><span class="pager-name">宏观经济学</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+<script src="../assets/econ.js"></script>
+<script>
+/* ====== 本页图表交互（原生 JS，无外部依赖） ====== */
+(function () {
+  "use strict";
+  function $(id) { return document.getElementById(id); }
+  function f1(x) { return x.toFixed(1); }
+  function f2(x) { return x.toFixed(2); }
+  function clamp(v, lo, hi) { return Math.min(hi, Math.max(lo, v)); }
+  function attr(id, k, v) { var e = $(id); if (e) e.setAttribute(k, v); }
+  function txt(id, s) { var e = $(id); if (e) e.textContent = s; }
+  function path(id, d) { attr(id, "d", d); }
+  function dot(id, x, y) { attr(id, "cx", f1(x)); attr(id, "cy", f1(y)); }
+  function pos(id, x, y) { attr(id, "x", f1(x)); attr(id, "y", f1(y)); }
+  function seg(id, a, b, c, d) {
+    var e = $(id);
+    if (!e) return;
+    e.setAttribute("x1", f1(a)); e.setAttribute("y1", f1(b));
+    e.setAttribute("x2", f1(c)); e.setAttribute("y2", f1(d));
+  }
+
+  /* ---------- 图 1-1 PPF 机会成本 ---------- */
+  (function () {
+    var L = 70, R = 600, T = 44, B = 340, XM = 10, YM = 8;
+    function X(q) { return L + q * (R - L) / XM; }
+    function Y(v) { return B - v * (B - T) / YM; }
+    function ppf(q) { return YM * Math.sqrt(Math.max(0, 1 - (q / XM) * (q / XM))); }
+    var d = "", i, q;
+    for (i = 0; i <= 100; i++) {
+      q = XM * i / 100;
+      d += (i ? "L" : "M") + f1(X(q)) + " " + f1(Y(ppf(q)));
+    }
+    path("fig1-curve", d);
+    var sl = $("fig1-x"), out = $("fig1-o"), svg = $("fig1-svg");
+    function update() {
+      var t = Number(sl.value);
+      var xq = 0.5 + (t / 100) * 9;
+      var yv = ppf(xq);
+      var mc = (YM * xq) / (XM * XM * Math.sqrt(Math.max(1e-6, 1 - (xq / XM) * (xq / XM))));
+      dot("fig1-dot", X(xq), Y(yv));
+      seg("fig1-gv", X(xq), Y(yv), X(xq), B);
+      seg("fig1-gh", L, Y(yv), X(xq), Y(yv));
+      txt("fig1-labq", "汽车 " + f1(xq) + " 万辆");
+      pos("fig1-labq", clamp(X(xq) - 40, L, R - 96), B + 20);
+      txt("fig1-labv", "粮食 " + f1(yv) + " 万吨");
+      pos("fig1-labv", 6, clamp(Y(yv) + 4, T, B));
+      txt("fig1-read", "当前组合：汽车 " + f1(xq) + " 万辆、粮食 " + f1(yv) +
+        " 万吨。边际机会成本 ≈ " + f2(mc) + " 万吨粮食 / 每增加 1 万辆汽车（随汽车增多而递增）");
+      out.value = f2(mc);
+      svg.setAttribute("aria-label", "生产可能性边界图：当前生产汽车 " + f1(xq) +
+        " 万辆、粮食 " + f1(yv) + " 万吨，边际机会成本 " + f2(mc) + " 万吨粮食每万辆汽车");
+    }
+    sl.addEventListener("input", update);
+    update();
+  })();
+
+  /* ---------- 图 2-1 供需均衡 + 价格管制 ---------- */
+  (function () {
+    var L = 70, R = 600, T = 36, B = 340, QM = 10, PM = 9;
+    function X(q) { return L + q * (R - L) / QM; }
+    function Y(p) { return B - p * (B - T) / PM; }
+    var slD = $("fig2-d"), slS = $("fig2-s"), slP = $("fig2-pc"), btn = $("fig2-btn");
+    var on = false;
+    function update() {
+      var A = 7 + Number(slD.value) * 0.02;
+      var C = 1.5 + Number(slS.value) * 0.02;
+      var b = 0.5, s = 0.5;
+      var qe = (A - C) / (b + s), pe = A - b * qe;
+      var qd1 = clamp((A - 8.8) / b, 0, QM), qd2 = clamp((A - 0.2) / b, 0, QM);
+      path("fig2-dline", "M" + f1(X(qd1)) + " " + f1(Y(A - b * qd1)) +
+        "L" + f1(X(qd2)) + " " + f1(Y(A - b * qd2)));
+      var qs1 = clamp((0.2 - C) / s, 0, QM), qs2 = clamp((8.8 - C) / s, 0, QM);
+      path("fig2-sline", "M" + f1(X(qs1)) + " " + f1(Y(C + s * qs1)) +
+        "L" + f1(X(qs2)) + " " + f1(Y(C + s * qs2)));
+      pos("fig2-labd", clamp(X(qd1) + 6, L, R - 60), clamp(Y(A) + 16, 14, B));
+      pos("fig2-labs", clamp(X(qs2) - 40, L, R - 44), clamp(Y(C + s * qs2) - 10, 14, B));
+      dot("fig2-e", X(qe), Y(pe));
+      seg("fig2-ev", X(qe), B, X(qe), Y(pe));
+      seg("fig2-eh", L, Y(pe), X(qe), Y(pe));
+      pos("fig2-labe", clamp(X(qe) + 8, L, R - 24), clamp(Y(pe) - 10, 14, B));
+      var msg = "均衡：P* = " + f1(pe) + " 元，Q* = " + f1(qe) + " 万件";
+      $("fig2-grp").setAttribute("display", on ? "inline" : "none");
+      if (on) {
+        var pc = Number(slP.value);
+        var qdq = (A - pc) / b, qsq = (pc - C) / s;
+        seg("fig2-pl", L, Y(pc), R, Y(pc));
+        var xa = X(clamp(qsq, 0, QM)), xb = X(clamp(qdq, 0, QM));
+        dot("fig2-dqd", X(clamp(qdq, 0, QM)), Y(pc));
+        dot("fig2-dqs", xa, Y(pc));
+        var yb = Y(pc) - 16;
+        path("fig2-brk", "M" + f1(Math.min(xa, xb)) + " " + f1(yb) + "H" + f1(Math.max(xa, xb)) +
+          "M" + f1(xa) + " " + f1(yb - 6) + "V" + f1(yb + 6) +
+          "M" + f1(xb) + " " + f1(yb - 6) + "V" + f1(yb + 6));
+        var brk;
+        if (pc < pe - 0.05) brk = "短缺 " + f1(qdq - qsq) + " 万件";
+        else if (pc > pe + 0.05) brk = "过剩 " + f1(qsq - qdq) + " 万件";
+        else brk = "≈ 均衡价格";
+        txt("fig2-brkt", brk);
+        pos("fig2-brkt", (xa + xb) / 2 - 30, yb - 10);
+        msg += "｜限价 " + f1(pc) + " 元：需求量 " + f1(qdq) + "，供给量 " + f1(qsq) + "（横轴上限 10）";
+        $("fig2-oc").value = f1(pc) + " 元";
+      }
+      txt("fig2-read", msg);
+      $("fig2-od").value = (Number(slD.value) > 0 ? "+" : "") + slD.value;
+      $("fig2-os").value = (Number(slS.value) > 0 ? "+" : "") + slS.value;
+    }
+    slD.addEventListener("input", update);
+    slS.addEventListener("input", update);
+    slP.addEventListener("input", update);
+    btn.addEventListener("click", function () {
+      on = !on;
+      btn.textContent = on ? "隐藏价格管制" : "叠加价格管制演示";
+      update();
+    });
+    update();
+  })();
+
+  /* ---------- 图 3-1 预算线与无差异曲线切点 ---------- */
+  (function () {
+    var L = 70, R = 600, T = 36, B = 340, XM = 16, YM = 40, PY = 30;
+    function X(x) { return L + x * (R - L) / XM; }
+    function Y(y) { return B - y * (B - T) / YM; }
+    var slM = $("fig3-m"), slP = $("fig3-px");
+    function update() {
+      var m = Number(slM.value), px = Number(slP.value);
+      var x = m / (2 * px), y = m / (2 * PY), u = x * y;
+      var xend = Math.min(XM, m / px);
+      var yend = (m - px * xend) / PY;
+      seg("fig3-bl", L, Y(m / PY), X(xend), Y(yend));
+      var lo = Math.max(0.8, u / 39, x / 2.2), hi = Math.min(15.6, x * 2.2);
+      if (hi - lo < 0.6) hi = Math.min(15.9, lo + 0.6);
+      var d = "", i, xx;
+      for (i = 0; i <= 40; i++) {
+        xx = lo + (hi - lo) * i / 40;
+        d += (i ? "L" : "M") + f1(X(xx)) + " " + f1(Y(clamp(u / xx, 0.5, YM)));
+      }
+      path("fig3-ic", d);
+      dot("fig3-t", X(x), Y(y));
+      seg("fig3-v", X(x), Y(y), X(x), B);
+      seg("fig3-h", L, Y(y), X(x), Y(y));
+      pos("fig3-labbl", clamp(X(xend) - 64, L, R - 74), Y(yend) - 12);
+      pos("fig3-labic", clamp(X(lo) - 6, L, R - 170), clamp(Y(u / lo) - 12, 14, B));
+      txt("fig3-read", "最优组合 T：电影 " + f1(x) + " 场 + 外卖 " + f1(y) +
+        " 份（预算 " + m + " 元，票价 " + px + " 元，外卖 " + PY + " 元/份）。" +
+        "MRS = " + f2(y / x) + " = 票价/外卖价 = " + f2(px / PY) + "：切点条件恒成立");
+      $("fig3-om").value = m + " 元";
+      $("fig3-opx").value = px + " 元";
+    }
+    slM.addEventListener("input", update);
+    slP.addEventListener("input", update);
+    update();
+  })();
+
+  /* ---------- 图 4-1 边际成本与平均总成本 ---------- */
+  (function () {
+    var L = 70, R = 600, T = 36, B = 340, QM = 12, CM = 14;
+    function X(q) { return L + q * (R - L) / QM; }
+    function Y(c) { return B - c * (B - T) / CM; }
+    function mc(q) { return 2 + q; }
+    function atc(q) { return 10 / q + 2 + 0.5 * q; }
+    seg("fig4-mcl", X(0.5), Y(mc(0.5)), X(QM), Y(mc(QM)));
+    var q0 = 0.95, d = "", i, q;
+    for (i = 0; i <= 80; i++) {
+      q = q0 + (QM - q0) * i / 80;
+      d += (i ? "L" : "M") + f1(X(q)) + " " + f1(Y(clamp(atc(q), 0, CM)));
+    }
+    path("fig4-atc", d);
+    var qmin = Math.sqrt(20);
+    dot("fig4-min", X(qmin), Y(atc(qmin)));
+    var sl = $("fig4-q");
+    function update() {
+      var q = Number(sl.value);
+      var m = mc(q), a = atc(q);
+      dot("fig4-dm", X(q), Y(m));
+      dot("fig4-da", X(q), Y(a));
+      seg("fig4-v", X(q), T, X(q), B);
+      seg("fig4-h", L, Y(a), X(q), Y(a));
+      txt("fig4-labm", "MC " + f1(m));
+      pos("fig4-labm", clamp(X(q) + 8, L, R - 70), clamp(Y(m) - 8, 14, B));
+      txt("fig4-laba", "ATC " + f1(a));
+      pos("fig4-laba", clamp(X(q) + 8, L, R - 80), clamp(Y(a) + 18, 14, B));
+      var st = Math.abs(m - a) < 0.15 ? "MC = ATC，ATC 处于最低点（有效规模）"
+        : (m < a ? "MC < ATC：再生产一件会拉低平均成本" : "MC > ATC：再生产一件会推高平均成本");
+      txt("fig4-read", "产量 q = " + f1(q) + "：边际成本 MC = " + f1(m) +
+        " 元，平均总成本 ATC = " + f1(a) + " 元。判定：" + st);
+      $("fig4-o").value = f1(q);
+    }
+    sl.addEventListener("input", update);
+    update();
+  })();
+
+  /* ---------- 图 5-1 垄断与无谓损失 ---------- */
+  (function () {
+    var L = 70, R = 600, T = 36, B = 340, QM = 13, PM = 10.5;
+    function X(q) { return L + q * (R - L) / QM; }
+    function Y(p) { return B - p * (B - T) / PM; }
+    seg("fig5-dl", L, Y(10), X(10), Y(0));
+    seg("fig5-mr", L, Y(10), X(5), Y(0));
+    var sl = $("fig5-mcs");
+    function update() {
+      var c = Number(sl.value);
+      var qc = 10 - c, qm = qc / 2, pm = (10 + c) / 2;
+      seg("fig5-mcl", L, Y(c), X(QM), Y(c));
+      txt("fig5-labmc", "MC = " + f1(c));
+      pos("fig5-labmc", X(QM) - 84, Y(c) - 8);
+      path("fig5-prof", "M" + f1(L) + " " + f1(Y(c)) + "H" + f1(X(qm)) +
+        "V" + f1(Y(pm)) + "H" + f1(L) + "Z");
+      path("fig5-dwl", "M" + f1(X(qm)) + " " + f1(Y(pm)) + "L" + f1(X(qm)) + " " +
+        f1(Y(c)) + "L" + f1(X(qc)) + " " + f1(Y(c)) + "Z");
+      dot("fig5-dm", X(qm), Y(pm));
+      dot("fig5-dc", X(qc), Y(c));
+      seg("fig5-vm", X(qm), Y(c), X(qm), Y(pm));
+      seg("fig5-hm", L, Y(pm), X(qm), Y(pm));
+      seg("fig5-vc", X(qc), T, X(qc), Y(c));
+      pos("fig5-labp", L + 14, (Y(c) + Y(pm)) / 2 + 4);
+      pos("fig5-labw", clamp((X(qm) + X(qc)) / 2 - 14, L, R - 60), Y(c) - 10);
+      var e = (10 + c) / (10 - c), dwl = (10 - c) * (10 - c) / 8;
+      txt("fig5-read", "垄断：Pm = " + f1(pm) + " 元、Qm = " + f1(qm) +
+        "（MR = MC）；完全竞争：P = MC = " + f1(c) + " 元、Qc = " + f1(qc) +
+        "。垄断点弹性 |ε| = " + f2(e) + "，勒纳指数 (Pm−MC)/Pm = " + f2(1 / e) +
+        " = 1/|ε|，无谓损失 DWL ≈ " + f2(dwl) + " 万元");
+      $("fig5-o").value = f1(c) + " 元";
+    }
+    sl.addEventListener("input", update);
+    update();
+  })();
+
+  /* ---------- 图 6-1 庇古税 ---------- */
+  (function () {
+    var L = 70, R = 600, T = 36, B = 340, QM = 10, PM = 11;
+    function X(q) { return L + q * (R - L) / QM; }
+    function Y(p) { return B - p * (B - T) / PM; }
+    seg("fig6-dl", L, Y(10), X(QM), Y(0));
+    seg("fig6-mpc", L, Y(2), R, Y(2));
+    seg("fig6-msc", L, Y(6), R, Y(6));
+    var sl = $("fig6-t");
+    function update() {
+      var t = Number(sl.value);
+      var qc = clamp(8 - t, 0, QM), p = 2 + t;
+      seg("fig6-tax", L, Y(p), R, Y(p));
+      dot("fig6-de", X(qc), Y(p));
+      path("fig6-dwl", "M" + f1(X(4)) + " " + f1(Y(6)) + "L" + f1(X(qc)) + " " +
+        f1(Y(6)) + "L" + f1(X(qc)) + " " + f1(Y(p)) + "Z");
+      seg("fig6-vq", X(qc), T, X(qc), B);
+      txt("fig6-labtax", "S + 税（P = " + f1(p) + "）");
+      pos("fig6-labtax", X(2.1), Y(p) - 8);
+      var dwl = 0.5 * Math.abs(qc - 4) * Math.abs(4 - t);
+      var st = Math.abs(t - 4) < 0.01
+        ? "✓ 税率 = 边际损害（4 元）：产量恰为社会最优，DWL = 0"
+        : "当前 DWL ≈ " + f2(dwl) + "（税不足则生产过度，税过头则生产不足）";
+      txt("fig6-read", "庇古税 t = " + f2(t) + " 元/件：企业成本 2 + t = " + f1(p) +
+        " 元，市场产量 Q = 8 − t = " + f1(8 - t) + "（社会最优 4）。" + st);
+      $("fig6-o").value = f2(t) + " 元";
+    }
+    sl.addEventListener("input", update);
+    update();
+  })();
+
+  /* ---------- 图 7-1 埃奇沃斯盒 ---------- */
+  (function () {
+    var LF = 150, RT = 510, TP = 26, BM = 386, U = 36;
+    function X(x) { return LF + x * U; }
+    function Y(y) { return BM - y * U; }
+    seg("fig7-cc", X(0), Y(0), X(10), Y(10));
+    var sl = $("fig7-x");
+    function update() {
+      var x = Number(sl.value), ya = 4;
+      var ua = x * ya, ub = (10 - x) * (10 - ya);
+      var mrsa = ya / x, mrsb = (10 - ya) / (10 - x);
+      var lo = Math.max(0.5, ua / 9.7, x - 2.6), hi = Math.min(9.5, x + 2.6);
+      if (hi - lo < 0.6) hi = Math.min(9.5, lo + 0.6);
+      var d = "", i, xx;
+      for (i = 0; i <= 40; i++) {
+        xx = lo + (hi - lo) * i / 40;
+        d += (i ? "L" : "M") + f1(X(xx)) + " " + f1(Y(clamp(ua / xx, 0.3, 9.7)));
+      }
+      path("fig7-ica", d);
+      var xb0 = 10 - x;
+      var lob = Math.max(0.5, ub / 9.7, xb0 - 2.6), hib = Math.min(9.5, xb0 + 2.6);
+      if (hib - lob < 0.6) hib = Math.min(9.5, lob + 0.6);
+      d = "";
+      var xb, yb;
+      for (i = 0; i <= 40; i++) {
+        xb = lob + (hib - lob) * i / 40;
+        yb = clamp(ub / xb, 0.3, 9.7);
+        d += (i ? "L" : "M") + f1(X(10 - xb)) + " " + f1(Y(10 - yb));
+      }
+      path("fig7-icb", d);
+      dot("fig7-dot", X(x), Y(ya));
+      pos("fig7-laba", clamp(X(hi) - 96, LF, RT - 104), clamp(Y(clamp(ua / hi, 0.3, 9.7)) + 14, TP + 10, BM));
+      pos("fig7-labb", clamp(X(10 - hib) - 6, LF, RT - 104), clamp(Y(10 - clamp(ub / hib, 0.3, 9.7)) - 12, TP + 8, BM - 10));
+      var po = Math.abs(x - 4) < 0.06;
+      txt("fig7-read", "甲：茶叶 " + f1(x) + " 份、咖啡 4 杯，U甲 = " + f1(ua) +
+        "，MRS甲 = " + f2(mrsa) + "｜乙：茶叶 " + f1(10 - x) + " 份、咖啡 6 杯，U乙 = " +
+        f1(ub) + "，MRS乙 = " + f2(mrsb) + "｜" +
+        (po ? "✓ MRS 相等，位于契约曲线：帕累托最优，不存在互利交易空间"
+          : "✗ MRS 不等：曲线相交成梭形，仍存在使两人同时变好的交换（" +
+            (mrsa > mrsb ? "甲更看重茶叶，乙应把部分茶叶换给甲" : "乙更看重茶叶，甲应把部分茶叶换给乙") + "）"));
+      $("fig7-o").value = f1(x);
+    }
+    sl.addEventListener("input", update);
+    update();
+  })();
+})();
+</script>
+</body>
+</html>

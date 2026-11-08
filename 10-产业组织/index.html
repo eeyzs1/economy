@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>产业组织 · EconLearn 经济学自学之路</title>
+<meta name="description" content="产业组织中文互动教程：市场势力与 HHI、古诺与伯特兰竞争、卡特尔合谋、价格歧视、进入壁垒与平台网络效应，配互动图表与自测。">
+<link rel="stylesheet" href="../assets/econ.css">
+</head>
+<body style="--branch:#e11d48">
+<noscript><p class="noscript-tip">本页的互动图表与自测需要启用 JavaScript；未启用时仍可阅读全部正文。</p></noscript>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← 总览</a>
+  <div class="topbar-title"><span class="topbar-num">10</span>产业组织</div>
+  <button class="toc-toggle" aria-expanded="false">目录</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">本分支章节</p>
+    <nav aria-label="章节目录">
+      <a href="#overview">导读与学习目标</a>
+      <a href="#ch1">1 · 市场势力与 HHI</a>
+      <a href="#ch2">2 · 古诺 vs 伯特兰</a>
+      <a href="#ch3">3 · 合谋与卡特尔</a>
+      <a href="#ch4">4 · 价格歧视</a>
+      <a href="#ch5">5 · 进入壁垒与反垄断</a>
+      <a href="#ch6">6 · 网络效应与平台经济</a>
+      <a href="#path">进阶路线与延伸阅读</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · 经济学自学之路</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">分支 10 · 应用领域</span>
+        <h1>产业组织</h1>
+        <p class="hero-en">Industrial Organization</p>
+        <p class="hero-lead">微观经济学告诉我们完全竞争与垄断的极端世界，但真实市场几乎都活在这两者之间：几家航司、两大外卖平台、一个微信。产业组织（IO）研究<strong>真实市场如何运转、企业如何竞争与合谋、什么时候需要政府出手</strong>——它是微观理论落地为反垄断政策的那座桥。</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">学完本分支你将能</div>
+        <ul>
+          <li>用<strong>勒纳指数</strong>与 <strong>HHI</strong> 度量市场势力，并说明两者的信息基础与局限</li>
+          <li>在<strong>古诺</strong>与<strong>伯特兰</strong>框架下预测寡头价格，解释厂商数增加时价格如何趋近竞争水平</li>
+          <li>用重复博弈的<strong>贴现因子</strong>逻辑解释卡特尔为何不稳定、默契合谋何时可以维持</li>
+          <li>应用三级价格歧视的<strong>反向弹性法则</strong>，并区分合法差别定价与"大数据杀熟"</li>
+          <li>分析<strong>进入壁垒</strong>与掠夺性定价等策略性行为，理解反垄断的消费者福利标准</li>
+          <li>用<strong>网络效应、临界质量、双边市场</strong>解释平台竞争与"免费"商业模式</li>
+        </ul>
+      </div>
+      <div class="prereq">前置知识：
+        <a class="badge" href="../01-微观经济学/index.html">01 微观（垄断、生产者剩余）</a>
+        <a class="badge" href="../04-博弈论与信息经济学/index.html">04 博弈论（纳什均衡、重复博弈）</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">第 1 章</span>市场势力：谁能定价，谁只能接受价格</h2>
+
+      <p><strong>引入问题：</strong>同样一瓶水，便利店卖 2 元、山顶景区卖 10 元；茅台可以年年提价，面粉厂却只能随行就市。差别不在于成本——在于<strong>谁有定价权</strong>。产业组织的第一个任务，就是给"市场势力"（Market Power）装上刻度尺：它有多大？从哪里来？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：市场势力 = 定高价而不丢光顾客的能力</div>
+        <p>完全竞争厂商涨价一分钱，顾客全部跑光——它是"价格接受者"。有市场势力的厂商涨价，只会丢掉一部分对价格敏感的顾客，因为它卖的东西<strong>缺少相近替代品</strong>。势力的来源五花八门：独特产品、专利、牌照、规模经济、网络效应、转换成本……但测量只有两条路：一是看<strong>行为</strong>——价格比边际成本高出多少（勒纳指数）；二是看<strong>结构</strong>——市场集中到什么程度（HHI）。前者直观但边际成本难以观察，后者只需份额数据但只是势力的"代理指标"。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">市场势力 <span class="term-en">Market Power</span></div><div class="term-def">将价格定在边际成本之上而不失去全部顾客的能力。来源于替代品稀缺；是利润与政策分析的共同起点。</div></div>
+        <div class="term"><div class="term-name">勒纳指数 <span class="term-en">Lerner Index</span></div><div class="term-def">L = (P − MC)/P，取值 0（完全竞争）到 1（极端）。利润最大化下恰好等于 1/|ε|：需求越缺乏弹性，势力越大。</div></div>
+        <div class="term"><div class="term-name">赫芬达尔-赫希曼指数 <span class="term-en">Herfindahl-Hirschman Index, HHI</span></div><div class="term-def">所有厂商市场份额（百分数）的平方和，范围 0–10000。对大厂商更敏感：一家独占即 10000，无限多小厂商趋近 0。</div></div>
+        <div class="term"><div class="term-name">加成率 <span class="term-en">Markup</span></div><div class="term-def">价格相对边际成本的加成幅度，常写作 P/MC 或 (P − MC)/P。经验研究中"加成上升"是市场势力扩张的同义语。</div></div>
+      </div>
+
+      <div class="formula">HHI = s₁² + s₂² + … + sₙ²<span class="f-note">sᵢ 为第 i 家厂商的市场份额（百分数）。四家各 25% → HHI = 2500；独家独占 100% → 10000。</span></div>
+      <div class="formula">L = (P − MC) / P = 1 / |ε|<span class="f-note">利润最大化的加成法则：弹性 |ε| 越小（顾客越跑不掉），最优加成越高。完全竞争时 |ε|→∞，L→0。</span></div>
+
+      <h3>互动演示：HHI 计算器</h3>
+      <figure class="fig">
+        <div class="fig-title">图 1-1 · HHI 计算器：份额结构决定集中度</div>
+        <p class="fig-sub">拖动四家厂商的份额滑块，观察 HHI 与集中度档位如何变化。试着对比"四家均分"与"一家独大 + 三家陪跑"。</p>
+        <figure class="fig-canvas">
+          <svg id="hhi-svg" viewBox="0 0 640 400" role="img" aria-label="HHI 标尺与厂商份额条形图：四家厂商份额滑块决定 HHI 数值与低、中、高集中度档位。">
+            <text class="chart-title-sm" x="335" y="24" text-anchor="middle">HHI 标尺（0–10000）</text>
+            <line class="axis" x1="70" y1="70" x2="610" y2="70"/>
+            <line class="axis" x1="70" y1="64" x2="70" y2="76"/>
+            <line class="axis" x1="340" y1="64" x2="340" y2="76"/>
+            <line class="axis" x1="610" y1="64" x2="610" y2="76"/>
+            <text class="chart-label" x="70" y="92" text-anchor="middle">0</text>
+            <text class="chart-label" x="340" y="92" text-anchor="middle">5000</text>
+            <text class="chart-label" x="610" y="92" text-anchor="middle">10000</text>
+            <line x1="151" y1="62" x2="151" y2="78" stroke="#ea580c" stroke-width="3"/>
+            <line x1="205" y1="62" x2="205" y2="78" stroke="#ea580c" stroke-width="3"/>
+            <text class="chart-label" x="151" y="54" text-anchor="middle" fill="#ea580c">1500</text>
+            <text class="chart-label" x="205" y="54" text-anchor="middle" fill="#ea580c">2500</text>
+            <circle id="hhi-needle" class="dot" cy="70" r="8" fill="#e11d48"/>
+            <text id="hhi-val" class="chart-title-sm" x="335" y="118" text-anchor="middle">HHI = 2600</text>
+            <text id="hhi-cat" class="chart-label" x="335" y="140" text-anchor="middle">高度集中（&gt;2500）</text>
+            <line class="axis" x1="60" y1="345" x2="610" y2="345"/>
+            <rect id="hhi-b1" x="86" y="345" width="72" height="0" fill="#e11d48" rx="3"/>
+            <rect id="hhi-b2" x="186" y="345" width="72" height="0" fill="#2f6fdb" rx="3"/>
+            <rect id="hhi-b3" x="286" y="345" width="72" height="0" fill="#0d9488" rx="3"/>
+            <rect id="hhi-b4" x="386" y="345" width="72" height="0" fill="#7c3aed" rx="3"/>
+            <rect id="hhi-bo" x="486" y="345" width="72" height="0" fill="#94a3b8" rx="3"/>
+            <text id="hhi-t1" class="chart-label" x="122" y="337" text-anchor="middle">30%</text>
+            <text id="hhi-t2" class="chart-label" x="222" y="337" text-anchor="middle">30%</text>
+            <text id="hhi-t3" class="chart-label" x="322" y="337" text-anchor="middle">20%</text>
+            <text id="hhi-t4" class="chart-label" x="422" y="337" text-anchor="middle">20%</text>
+            <text id="hhi-to" class="chart-label" x="522" y="337" text-anchor="middle">0%</text>
+            <text class="chart-label" x="122" y="366" text-anchor="middle">厂商 A</text>
+            <text class="chart-label" x="222" y="366" text-anchor="middle">厂商 B</text>
+            <text class="chart-label" x="322" y="366" text-anchor="middle">厂商 C</text>
+            <text class="chart-label" x="422" y="366" text-anchor="middle">厂商 D</text>
+            <text class="chart-label" x="522" y="366" text-anchor="middle">其他</text>
+            <text class="chart-label" x="30" y="260" text-anchor="middle" transform="rotate(-90 30 260)">市场份额</text>
+            <text id="hhi-note" class="chart-label" x="335" y="388" text-anchor="middle" fill="#4b5563"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="h1">厂商 A 份额</label><input type="range" id="h1" min="0" max="95" step="5" value="30"><output id="oh1" for="h1">30%</output></div>
+          <div class="ctrl"><label for="h2">厂商 B 份额</label><input type="range" id="h2" min="0" max="95" step="5" value="30"><output id="oh2" for="h2">30%</output></div>
+          <div class="ctrl"><label for="h3">厂商 C 份额</label><input type="range" id="h3" min="0" max="95" step="5" value="20"><output id="oh3" for="h3">20%</output></div>
+          <div class="ctrl"><label for="h4">厂商 D 份额</label><input type="range" id="h4" min="0" max="95" step="5" value="20"><output id="oh4" for="h4">20%</output></div>
+        </div>
+        <figcaption>读图要点：四家均分（25×4）时 HHI = 2500；改成 70/10/10/10，HHI 跳到 5200——份额越不均等，平方和惩罚越重。这就是为什么反垄断机构更担心"一家独大"而非"群雄均分"。美国《横向合并指南》口径：HHI &lt; 1500 为低集中，1500–2500 中度，&gt; 2500 高度集中。注意"其他"由众多小厂商构成、平方和贡献接近零，故未计入；真实 HHI 须对每一家厂商逐一平方求和。把四家滑块全部拖到 0，看看"无限分散"的 HHI 是多少。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 可口可乐收购汇源为何被否</div>
+        <p>2008 年可口可乐拟以约 24 亿美元收购汇源果汁。2009 年 3 月，商务部依据刚施行半年的《反垄断法》禁止该项经营者集中——理由正是集中度逻辑：并购将使可口可乐在果汁类市场的份额显著上升，"集中度的增加将产生排除、限制竞争效果"，且对上游果农的买方势力同样有碍竞争。这是中国《反垄断法》实施后第一个被禁止的并购案，也是 HHI 式分析（份额 + 边际变化）进入中国监管实践的标志性事件。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"市场份额高 = 违法垄断。"</strong>——反垄断处罚的是<strong>滥用</strong>势力的行为，而非势力本身；高份额可能只是产品更好的回报。反向误区同样常见：<strong>"HHI 高 = 一定有高利润。"</strong>——若进入壁垒低，高集中度市场的利润会被潜在进入瞬间侵蚀（见第 5 章"可竞争市场"）。此外 HHI 完全取决于<strong>相关市场如何界定</strong>：把市场定义得越宽（"饮料"vs"100% 果汁"），HHI 就越低——"市场界定"往往是反垄断诉讼真正的第一战场。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.1</span>某市场四家厂商份额为 30%、30%、20%、20%。HHI 及集中度档位为？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>100，中度集中——HHI 等于四家份额之和</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>2600，高度集中——HHI 是份额的平方和：900+900+400+400</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>2600，中度集中——落在 1500–2500 区间</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>HHI = 30²+30²+20²+20² = 2600。A 混淆了集中率（CR4，四家之和=100%）与 HHI（平方和）；平方让大厂商权重更高，因此 HHI 对"一家独大"远比对"群雄均分"敏感。C 计算正确但档位记错：2600 &gt; 2500，按美国合并指南口径属高度集中。顺带一算：四家均分 25% 时 HHI 只有 2500，恰好压线。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.2</span>某厂商利润最大化售价对应的需求弹性 |ε| = 5。其勒纳指数为？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>5，弹性越大势力越大</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>0.5，即价格的一半是加成</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>0.2，即价格的两成是加成</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>利润最大化的一阶条件 MR = MC 展开即 (P − MC)/P = 1/|ε| = 1/5 = 0.2。A 把弹性与势力的关系弄反了：顾客越跑不掉（|ε| 越小），加成才越高；|ε|→∞ 时 L→0，正是完全竞争。B 是把 1/5 误算为 0.5。经验研究中经济学家常反过来用这把尺子：测出加成，反推弹性与势力。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>市场势力 = 定价高于边际成本而不流失全部顾客的能力，根源是<strong>替代品稀缺</strong></li>
+          <li>勒纳指数 L = (P − MC)/P = 1/|ε|，从行为侧测量势力；缺点是边际成本难以观察</li>
+          <li>HHI = 份额平方和（0–10000），从结构侧测量集中度；对大厂商权重更高</li>
+          <li>两条路都只是代理指标：HHI 忽略进入壁垒，L 难以核算——反垄断需要二者互证</li>
+          <li>相关市场界定先于一切计算：市场划宽划窄，HHI 天差地别</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">第 2 章</span>寡头竞争：古诺与伯特兰</h2>
+
+      <p><strong>引入问题：</strong>只有两三家厂商的市场，价格一定高吗？民航、水泥常年维持远高于成本的价格；可网约车、外卖的补贴大战却把价格杀到成本线以下。同样是寡头，为什么结局天差地别？答案是：竞争的<strong>变量</strong>不同——厂商抢的是"产量"还是"价格"。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：选数量像"分蛋糕"，选价格像"抢蛋糕"</div>
+        <p><strong>古诺竞争（Cournot）</strong>：各厂同时决定产量，价格由市场出清决定。你多产一单位，会压低所有人面对的价格——每家都只考虑自己对价格的影响，产量自然低于竞争但高于垄断。厂商越多，"自己对价格的影响力"越被稀释，均衡价格一路滑向边际成本。<strong>伯特兰竞争（Bertrand）</strong>：各厂同时标价，顾客全部涌向最便宜的一家。只要你的价格比对手高一分钱，你就颗粒无收——于是互相削价，直到价格 = 边际成本，<strong>哪怕只有两家</strong>。这就是"伯特兰悖论"：两家足以复现完全竞争。现实介于两者之间：产能约束让"价格战"打不完全（接近古诺），产品差异让低价者拿不走全部顾客（弱化悖论）。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">古诺竞争 <span class="term-en">Cournot Competition</span></div><div class="term-def">厂商同时选择产量、市场出清定价的寡头模型。n 家同质厂商的均衡价格介于垄断价与边际成本之间，且随 n 增大单调下降。</div></div>
+        <div class="term"><div class="term-name">伯特兰竞争 <span class="term-en">Bertrand Competition</span></div><div class="term-def">厂商同时标价、消费者只买最低价的模型。同质品 + 相同边际成本时，两家即可把价格压到边际成本。</div></div>
+        <div class="term"><div class="term-name">伯特兰悖论 <span class="term-en">Bertrand Paradox</span></div><div class="term-def">"只需两个对手就能得到竞争结果"的反直觉结论。靠产能约束、产品差异、重复互动三个现实因素化解。</div></div>
+        <div class="term"><div class="term-name">反应函数 <span class="term-en">Reaction Function / Best Response</span></div><div class="term-def">给定对手产量（或价格），自己的最优选择。纳什均衡即两条反应曲线的交点——"我对你的最优应对，恰是你的最优应对"。</div></div>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>模型</th><th>决策变量</th><th>同质品、两家厂商的均衡价格</th><th>直觉</th></tr></thead>
+          <tbody>
+            <tr><td>垄断</td><td>产量或价格</td><td class="num">P = (a + c)/2</td><td>独占全市场需求</td></tr>
+            <tr><td>古诺（n 家）</td><td>产量</td><td class="num">P = (a + n·c)/(n + 1)</td><td>各自忽视压价的外溢，产量偏高</td></tr>
+            <tr><td>伯特兰</td><td>价格</td><td class="num">P = c（边际成本）</td><td>低价者通吃，削价到成本线</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="formula">P* = (a + n·c) / (n + 1)　→　n = 1 时为垄断价，n → ∞ 时 P* → c<span class="f-note">线性需求 P = a − bQ、常数边际成本 c 下的对称古诺均衡。厂商数 n 是"竞争强度"的旋钮。</span></div>
+
+      <h3>互动演示：厂商数旋钮</h3>
+      <figure class="fig">
+        <div class="fig-title">图 2-1 · 古诺均衡：厂商数滑块看价格趋近竞争水平</div>
+        <p class="fig-sub">需求 P = 100 − Q、边际成本 MC = c。拖动厂商数 n 从 1 到 30：均衡点沿需求曲线下滑，无谓损失三角形逐渐缩小。</p>
+        <figure class="fig-canvas">
+          <svg id="cr-svg" viewBox="0 0 640 400" role="img" aria-label="需求曲线与边际成本线相交，古诺均衡点随厂商数增加沿需求曲线向右下方移动，趋近竞争产量；阴影三角形为无谓损失。">
+            <text id="cr-ptxt" class="chart-title-sm" x="335" y="26" text-anchor="middle"></text>
+            <text id="cr-ltxt" class="chart-label" x="335" y="46" text-anchor="middle" fill="#4b5563"></text>
+            <text id="cr-mono" class="chart-label" x="608" y="54" text-anchor="end" fill="#475569">垄断参照 P = 60</text>
+            <text id="cr-comp" class="chart-label" x="608" y="72" text-anchor="end" fill="#475569">竞争参照 P = MC = 20</text>
+            <line class="gridline" x1="70" y1="185" x2="570" y2="185"/>
+            <line class="gridline" x1="70" y1="50" x2="570" y2="50"/>
+            <text class="chart-label" x="62" y="189" text-anchor="end">50</text>
+            <text class="chart-label" x="62" y="54" text-anchor="end">100</text>
+            <polygon id="cr-dwl" class="area-fill" fill="#ea580c" points="336.7,266 470,266 336.7,194"/>
+            <line id="cr-mc" class="curve curve-c7" stroke-width="2.5" x1="70" y1="266" x2="570" y2="266"/>
+            <text id="cr-mclab" class="chart-label" x="556" y="256" text-anchor="end" fill="#475569">边际成本 MC</text>
+            <line class="curve curve-c1" x1="70" y1="50" x2="570" y2="320"/>
+            <text class="chart-label" x="512" y="268" text-anchor="start" fill="#2f6fdb">需求 D</text>
+            <line id="cr-gq" class="gridline" x1="336.7" y1="194" x2="336.7" y2="320"/>
+            <line id="cr-gp" class="gridline" x1="70" y1="194" x2="336.7" y2="194"/>
+            <circle id="cr-dot" class="dot" r="7" fill="#e11d48" cx="336.7" cy="194"/>
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="352" text-anchor="middle">数量 Q（行业合计）</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">价格 P</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="cr-n">厂商数 n</label><input type="range" id="cr-n" min="1" max="30" step="1" value="2"><output id="cr-on" for="cr-n">2</output></div>
+          <div class="ctrl"><label for="cr-c">边际成本 c</label><input type="range" id="cr-c" min="10" max="40" step="1" value="20"><output id="cr-oc" for="cr-c">20</output></div>
+        </div>
+        <figcaption>读图要点：n = 1 即垄断（P = 60，Q = 40）；n = 2 时 P ≈ 46.7；n = 10 时 P ≈ 27.3；n = 30 时 P 已逼近 MC = 20。橙色三角形是产量不足造成的无谓损失，随 n 增大而消失——"分散"本身就是一种反垄断。试一试：提高 c 看竞争参照线如何上移，垄断价与竞争价同时变化——两者的差距（= (100−c)/2）是扩大还是缩小？用 c=20 与 c=40 各看一眼。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 网约车补贴战：一场伯特兰实验</div>
+        <p>2014 年前后，滴滴、快的与后来的优步中国为争夺同质的出行服务，展开教科书级的伯特兰价格战：每单补贴、双向红包、周末免单——价格长期低于成本，三年累计"烧钱"以百亿计。同质品 + 零转换成本，顾客自然全流向补贴多的一家，任何一方都不敢先停。这场实验的结局同样经典：价格战无法盈利，2016 年滴滴与优步中国合并，补贴退坡，价格回归（偏古诺式的）常态。价格战的起点是伯特兰逻辑，终点往往是集中度上升——这正是第 5 章反垄断关注的"掠夺式补贴"争议。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"只有两三家厂商，必然勾结卖高价。"</strong>——伯特兰告诉我们：只要产品同质、无产能约束、一次性较量，两家就能把价格打到成本线。<strong>"价格战对消费者永远是大好事。"</strong>——短期是真，但若价格战的目的在于把对手打出市场、为日后提价铺路（掠夺性定价），长期未必。另一个技术误区：把古诺与伯特兰当成"对的 vs 错的"模型——它们是同一市场的两种极端制度，现实的产能投资（先定产能≈古诺）与菜单标价（先标价≈伯特兰）分别接近两者。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.1</span>两家厂商生产完全同质的产品，边际成本同为 10 元，一次性同时定价，低价者获得全部市场（并列则平分）。纳什均衡价格是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>略低于 10 元——必须比对手便宜才有生意</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>等于 10 元——任何高于 10 的价格都会被对手削价反超</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>垄断价格——两家心照不宣维持高价</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>P = 10 时谁也没有偏离动机：提价丢失全部顾客，降价则低于成本卖得越多亏得越多。A 错在低于成本无利可图；C 描述的是合谋，需要重复博弈的条件支撑（第 3 章），一次性博弈中"偷偷降价"是占优策略——这正是伯特兰悖论：两家足以复现完全竞争。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.2</span>在对称古诺模型中，厂商数 n 从 2 增加到 10，均衡价格将？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>上升——厂商多了协调更难，价格更乱更高</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>下降并向边际成本收敛——每家的价格影响力被稀释</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>保持不变——均衡只取决于需求与成本</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>P* = (a + n·c)/(n+1) 对 n 单调递减：n=1 是垄断价，n→∞ 时 P*→c。n=2 时 P≈46.7，n=10 时 P≈27.3（a=100、c=20）。古诺模型因此给出从垄断到竞争的连续谱——"原子式竞争"不是质变而是极限。A 把合谋直觉（第 3 章）套在了不合作模型上；C 忽略了策略互动的结构。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>寡头结果取决于竞争变量：<strong>古诺选产量</strong>（价格介于垄断与竞争之间），<strong>伯特兰选价格</strong>（直接打到成本线）</li>
+          <li>伯特兰悖论：同质品 + 相同成本 + 一次性博弈，两家厂商即得 P = MC</li>
+          <li>化解悖论的三个现实因素：产能约束、产品差异、重复互动</li>
+          <li>古诺价格随厂商数单调下降趋向边际成本：n 是竞争强度的旋钮</li>
+          <li>价格战（网约车案例）起点是伯特兰逻辑，终点常是集中度上升</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">第 3 章</span>合谋与卡特尔：为什么背叛是常态</h2>
+
+      <p><strong>引入问题：</strong>OPEC 开一次会，全球油价应声而动——合谋的力量毋庸置疑。可历史数据又显示：卡特尔成员几乎总是<strong>偷偷超产</strong>，组织一次次名存实亡。既然合谋利润那么高，为什么"坐在一张桌子上的人"总是貌合神离？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：合谋是场需要"未来"来维系的囚徒困境</div>
+        <p>把古诺双寡头换成"联合垄断"：两家各产垄断产量的一半，分得的利润都比古诺均衡高——合谋有利可图。但给定对方守约，你<strong>偷偷多产</strong>的那一部分按高价卖出，利润更高：背叛是占优策略。一次性博弈里，卡特尔必然瓦解，这就是卡特尔的<strong>内在不稳定性</strong>。唯一的解药是<strong>重复博弈</strong>：如果今天背叛、明天就遭到报复（大家回到古诺低价的"惩罚期"），而明天足够重要（贴现因子 δ 足够大），背叛的眼前便宜抵不过未来的损失，合作就能靠"未来的阴影"自我维持——甚至无需一纸协议，这叫<strong>默契合谋</strong>（Tacit Collusion）。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">卡特尔 <span class="term-en">Cartel</span></div><div class="term-def">以限制产量、抬高价格为目标的显式厂商联盟。多数法域属本身违法；国家间卡特尔（OPEC）不受任何反垄断法管辖。</div></div>
+        <div class="term"><div class="term-name">默契合谋 <span class="term-en">Tacit Collusion</span></div><div class="term-def">无协议、靠相互理解的协调涨价。法律上极难认定与打击——反垄断的前沿难题。</div></div>
+        <div class="term"><div class="term-name">触发策略 <span class="term-en">Grim Trigger</span></div><div class="term-def">重复博弈中的惩罚机制：只要没人偏离就一直合作；一旦有人偏离，永久回归低利润的惩罚均衡（如古诺）。</div></div>
+        <div class="term"><div class="term-name">贴现因子 <span class="term-en">Discount Factor δ</span></div><div class="term-def">明天的 1 元钱在今天的价值（0–1）。δ 越大说明未来越重要、参与者越有耐心，合谋越容易维持。</div></div>
+      </div>
+
+      <div class="formula">δ ≥ (π背 − π合) / (π背 − π纳)<span class="f-note">合谋可维持的条件：π合 = 守约利润，π背 = 一次性背叛利润，π纳 = 惩罚期（如古诺）利润，δ = 贴现因子。背叛诱惑越大，需要的耐心越大。</span></div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · OPEC 与两场价格战</div>
+        <p>2014 年 11 月，OPEC 拒绝减产保价，任由油价从约 100 美元跌至 2016 年初的 30 美元下方——市场普遍解读为对北美页岩油的<strong>惩罚性增产</strong>：用低价把高成本产能挤出市场，正是"触发策略"的国家队版本。2020 年 3 月，减产谈判破裂后沙特大幅调降官方售价、宣布增产，油价单日暴跌，史称"沙俄价格战"。与此同时，跨国卡特尔一旦进入司法视野则代价惨重：20 世纪 90 年代的国际维生素卡特尔（罗氏、巴斯夫等）在欧美被处以数十亿美元罚款，多位高管入狱——<strong>显式卡特尔赚的是垄断利润，赌的是刑期与罚金</strong>。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"合谋必须签协议、开密室会议。"</strong>——重复博弈可以让"心照不宣"成为均衡：跟随式调价、最惠国条款、公开宣布未来产量，都可能扮演协调装置，这让默契合谋成为执法难题。<strong>"价格上涨就是有卡特尔。"</strong>——成本冲击（原油、芯片短缺）同样推价；判断合谋要找的是"成本没变而价格齐步走"、丰水期限产之类的<strong>行为证据</strong>，而非只看价格。反过来，"卡特尔一旦成立就稳赚"也错：内部背叛动机 + 外部新进入 + 需求波动，三股力量随时撕扯它。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.1</span>以下哪种市场环境下，默契合谋最难维持？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>只有两三家厂商，订单大宗且公开，降价立刻会被发现</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>需求频繁大幅波动，难以区分"需求下滑"与"对手偷偷降价"</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>行业增长稳定，厂商重视长期关系（贴现因子 δ 高）</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>触发策略的前提是<strong>观测</strong>：能把"生意变少"归因于背叛才谈得上惩罚。B 中噪音掩盖了背叛信号，惩罚机制失灵，合谋最易瓦解——这正是"繁荣时期价格战更频"的理论解释。A、C 都是合谋的稳定剂：对手少、透明、δ 高，公式 δ ≥ (π背−π合)/(π背−π纳) 更容易满足。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.2</span>卡特尔"内在不稳定"的经济学根源是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>组建卡特尔的会议与律师费用太高</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>卡特尔价格高于边际成本，每个成员都有偷偷扩大产量的个体激励</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>反垄断法的惩罚使合谋无利可图</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>在卡特尔内部，P &gt; MC 意味着多卖一单位几乎是纯利：π背 &gt; π合 &gt; π纳的囚徒困境结构才是命门——即便没有执法，OPEC 也屡屡超产。A 是小数目摩擦；C 是<strong>外在</strong>约束且对国家间卡特尔（OPEC）根本不适用，谈不上"内在"不稳定。加上外部进入者蚕食超额利润，卡特尔内忧外患。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>合谋利润高于古诺均衡，但一次性博弈中背叛是占优策略——卡特尔是放大版囚徒困境</li>
+          <li>重复博弈 + 触发策略可以维持合作，条件：δ ≥ (π背−π合)/(π背−π纳)</li>
+          <li>合谋的稳定剂：厂商少、行为透明、需求平稳、δ 高；干扰项：噪音、秘密折扣、新进入</li>
+          <li>默契合谋无需协议，法律认定极难，是反垄断的前沿难题</li>
+          <li>OPEC 案例显示：增产惩罚可对外（挤走页岩油），成员超产则自内瓦解卡特尔</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">第 4 章</span>价格歧视：为同一瓶水付不同的钱</h2>
+
+      <p><strong>引入问题：</strong>同一航班、相邻座位、同一餐食，票价可能相差一倍；软件分"家庭版/专业版"，后者贵五倍却只多了些你用不到的功能；电影院的学生票几乎是成人价的对折。企业凭什么、又如何做到"看人下菜碟"？这对消费者是好事还是坏事？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：统一价格把消费者的钱"留在桌上"</div>
+        <p>统一定价时，支付意愿 500 元的顾客只付 300 元——200 元<strong>消费者剩余</strong>留在了桌上。厂商的梦想是按每个人的支付意愿逐个收价：<strong>一级价格歧视</strong>（完全歧视）把剩余全部收走，产量却达到有效水平；信息有限时退而求其次——<strong>二级</strong>靠"菜单自选"（数量折扣、版本划分）让顾客自己亮底牌；<strong>三级</strong>按可观察的群体特征（学生、老人、地区）分组定价。三级歧视的定价法则极其简洁：弹性低的群体定高价，弹性高的群体定低价——商务客赶时间别无选择（弹性低）付全价，学生时间充裕四处比价（弹性高）买折扣票。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">价格歧视 <span class="term-en">Price Discrimination</span></div><div class="term-def">对同一商品向不同顾客收取不同价格（且差异并非源于成本差异）。前提：市场势力 + 能区分支付意愿 + 能阻止转售。</div></div>
+        <div class="term"><div class="term-name">支付意愿 <span class="term-en">Willingness to Pay, WTP</span></div><div class="term-def">顾客愿为一件商品付出的最高金额。歧视的全部艺术就是让价格逼近每个人的 WTP。</div></div>
+        <div class="term"><div class="term-name">版本划分 <span class="term-en">Versioning</span></div><div class="term-def">二级歧视的自选菜单：刻意制造"高级版/阉割版"（软件、航班舱位），让高 WTP 顾客自费选择高价版本。</div></div>
+        <div class="term"><div class="term-name">个性化定价 <span class="term-en">Personalized Pricing</span></div><div class="term-def">依托用户画像按人报价，俗称"大数据杀熟"。信息时代的近似一级歧视，也是监管焦点。</div></div>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>类型</th><th>区分依据</th><th>典型例子</th><th>福利性质</th></tr></thead>
+          <tbody>
+            <tr><td>一级（完全）</td><td>逐人 WTP</td><td>一对一议价、大数据杀熟（近似）</td><td>产量有效，剩余全归厂商</td></tr>
+            <tr><td>二级（自选）</td><td>消费数量/版本</td><td>数量折扣、舱位、软件版本</td><td>不确定，常扩大覆盖面</td></tr>
+            <tr><td>三级（分群）</td><td>可观察群体</td><td>学生票、老年人优惠、区域定价</td><td>不明确：可能服务到原本没人服务的小市场</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="formula">(Pᵢ − MC) / Pᵢ = 1 / |εᵢ|<span class="f-note">三级歧视的反向弹性法则：各分市场独立套用勒纳加成公式——弹性 |εᵢ| 越小（顾客越不敏感），该市场价格越高。</span></div>
+
+      <h3>互动演示：两市场对比</h3>
+      <figure class="fig">
+        <div class="fig-title">图 4-1 · 三级价格歧视：反向弹性法则</div>
+        <p class="fig-sub">两个分市场（固定成本可忽略、边际成本 MC 相同）。拖动弹性滑块与 MC，看厂商如何对弹性小的市场定高价。</p>
+        <figure class="fig-canvas">
+          <svg id="pd-svg" viewBox="0 0 640 400" role="img" aria-label="两个市场的定价柱形图：弹性较小的市场定价高、加成大，弹性较大的市场定价低；虚线标出共同的边际成本。">
+            <text id="pd-stxt" class="chart-title-sm" x="335" y="24" text-anchor="middle"></text>
+            <text id="pd-sub2" class="chart-label" x="335" y="44" text-anchor="middle" fill="#4b5563"></text>
+            <line class="gridline" x1="90" y1="267" x2="610" y2="267"/>
+            <line class="gridline" x1="90" y1="205" x2="610" y2="205"/>
+            <line class="gridline" x1="90" y1="142" x2="610" y2="142"/>
+            <line class="gridline" x1="90" y1="80" x2="610" y2="80"/>
+            <text class="chart-label" x="82" y="271" text-anchor="end">50</text>
+            <text class="chart-label" x="82" y="209" text-anchor="end">100</text>
+            <text class="chart-label" x="82" y="146" text-anchor="end">150</text>
+            <text class="chart-label" x="82" y="84" text-anchor="end">200</text>
+            <line class="axis" x1="90" y1="330" x2="610" y2="330"/>
+            <line class="axis" x1="90" y1="330" x2="90" y2="70"/>
+            <rect id="pd-bara" x="170" y="255" width="120" height="75" fill="#e11d48" rx="4"/>
+            <rect id="pd-barb" x="400" y="280" width="120" height="50" fill="#0d9488" rx="4"/>
+            <text id="pd-ta" class="chart-title-sm" x="230" y="229" text-anchor="middle" fill="#e11d48"></text>
+            <text id="pd-ma" class="chart-label" x="230" y="247" text-anchor="middle"></text>
+            <text id="pd-tb" class="chart-title-sm" x="460" y="254" text-anchor="middle" fill="#0d9488"></text>
+            <text id="pd-mb" class="chart-label" x="460" y="272" text-anchor="middle"></text>
+            <line id="pd-mcl" class="curve curve-c7" stroke-width="2" stroke-dasharray="7 5" x1="90" y1="292" x2="560" y2="292"/>
+            <text id="pd-mclab" class="chart-label" x="556" y="284" text-anchor="end" fill="#475569"></text>
+            <text id="pd-la" class="chart-label" x="230" y="352" text-anchor="middle"></text>
+            <text id="pd-lb" class="chart-label" x="460" y="352" text-anchor="middle"></text>
+            <text class="chart-label" x="34" y="200" text-anchor="middle" transform="rotate(-90 34 200)">价格（元）</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="pd-ea">市场 A 弹性</label><input type="range" id="pd-ea" min="1.5" max="6" step="0.1" value="2"><output id="pd-oa" for="pd-ea">|ε|=2.0</output></div>
+          <div class="ctrl"><label for="pd-eb">市场 B 弹性</label><input type="range" id="pd-eb" min="1.5" max="6" step="0.1" value="4"><output id="pd-ob" for="pd-eb">|ε|=4.0</output></div>
+          <div class="ctrl"><label for="pd-mc">边际成本 MC</label><input type="range" id="pd-mc" min="10" max="60" step="1" value="30"><output id="pd-omc" for="pd-mc">30 元</output></div>
+        </div>
+        <figcaption>读图要点：定价公式 P = MC·|ε|/(|ε|−1)。把 A 的弹性拖到 1.5：价格飙到 MC 的 3 倍——"跑不掉的顾客"承担最重的加成；把 A、B 弹性调成相等，两个价格立刻拉平：无弹性差异则歧视无利可图。注意边际成本不变时，总产量在简单模型中不变，变化的是<strong>谁付多少</strong>；但若统一价高到 B 市场无人购买，歧视反而把 B 市场纳入服务范围。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 从收益管理到"大数据杀熟"监管</div>
+        <p>民航业是价格歧视的教科书：同一航班按购票时间、退改条件、渠道切出几十个票价桶，"收益管理"系统实时求解本图的加成公式——深夜出发、提前两月购票的休闲客（弹性高）拿到低价，临时必须出行的商务客（弹性低）付全价。数字时代把分组做得更狠：同一平台、同一商品，老用户看到更高价格——"大数据杀熟"。中国 2021 年施行的《个人信息保护法》第 24 条明确禁止"在交易价格等交易条件上实行不合理的差别待遇"，此前深圳等地已先行立法；监管的关键词恰是"不合理"：基于成本的差别定价（快递到偏远地区更贵）合法，基于"你懒得比价"的算法定价被禁。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"价格歧视总是让消费者更糟。"</strong>——未必：三级歧视可能把统一高价下"没人服务"的小市场（学生、小语区）纳入供给，一级歧视下总产量等于竞争水平、无谓损失为零（只是剩余换了口袋）。判断福利要看<strong>产量效应</strong>而非直觉义愤。反向误区：<strong>"凡是差别价格都算歧视。"</strong>——反映成本差异的定价（高峰电价、远途运费）不是歧视；真正的歧视要求价差不来自成本差。还有执行前提常被忽略：若能轻易转售，学生票会被倒卖到套利消失——所以歧视集中在<strong>服务与体验</strong>（须本人乘机）而非可转售的实物。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.1</span>电影院对学生半价、对成人全价。依据反向弹性法则，其定价逻辑是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>学生消费能力弱，厂商让利于贫困群体</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>学生看电影的弹性大（替代娱乐多），降价能显著增加销量；成人弹性小，维持高价</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>学生票的制作成本更低，属于成本定价</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>(P − MC)/P = 1/|ε| 对每个分市场分别成立：|ε学生| 大 → 最优加成低 → 低价；|ε成人| 小 → 高价。这不是慈善（A），也不是成本差异（C——同一场电影的座位成本人人相同），而是把"对价格敏感的人"筛出来低价供给、同时保住"不敏感者"的高价。前提是学生证可验证、票不可转售。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.2</span>在一级（完全）价格歧视下，市场的产量与剩余分配是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>产量低于竞争水平，存在无谓损失，厂商独占剩余</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>产量等于竞争（有效）水平，消费者剩余几乎全部转化为生产者剩余</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>产量高于竞争水平，消费者与厂商平分剩余</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>每单按买者 WTP 收价，只要 WTP ≥ MC 就成交——所有互利交易都发生，产量恰好是需求曲线与 MC 的交点，无谓损失消失；但每单的价格都擦着 WTP，消费者剩余被榨干，全部落入厂商。这是"效率与分配必须分开评价"的极好例子：一级歧视有效率上的"优点"与分配上的"难看"。A 描述的是普通垄断；C 无中生有——高于 WTP 的交易不会发生。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>价格歧视三前提：市场势力 + 可区分 WTP + 可阻断转售</li>
+          <li>一级逐人定价（剩余全归厂商、产量有效）；二级靠菜单自选（版本划分）；三级按群体分市场</li>
+          <li>三级歧视核心公式：(Pᵢ − MC)/Pᵢ = 1/|εᵢ|——弹性小者付高价</li>
+          <li>福利评价看产量效应：歧视可能扩大服务范围，也可能只是转移剩余</li>
+          <li>监管划线在"合理性"：成本性差异定价合法，算法杀熟被《个人信息保护法》禁止</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">第 5 章</span>进入壁垒与反垄断</h2>
+
+      <p><strong>引入问题：</strong>网约车平台曾以巨额补贴"先亏两年、再赚十年"——把对手烧死再提价，这在经济学上说得通吗？法律上又为什么极难定罪？更根本的问题：当一家企业占据大半市场，监管者该惩罚它的"大"，还是只管它对竞争的"坏"？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：垄断利润是块磁铁，壁垒是围栏</div>
+        <p>超额利润会像血腥味一样引来鲨鱼——新厂商闻风而入，产量扩大、价格回落。因此真正决定市场势力能否<strong>持续</strong>的，不是今天的份额，而是<strong>进入壁垒</strong>的高低。壁垒有的天生（结构性）：规模经济摊薄固定成本、专利保护、网络效应自我强化、用户转换成本；有的是<strong>故意的</strong>（策略性）：限制定价（压低价格让进入无利可图）、过剩产能威胁、捆绑排他、掠夺性定价（先亏本把对手赶走、垄断后加倍赚回）。反垄断的全部艺术，就是在"保护竞争"与"惩罚成功"之间走钢丝——现代主流采用<strong>消费者福利标准</strong>：看行为是否抬高了价格、减少了产量、抑制了创新，而非简单看企业大小。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">进入壁垒 <span class="term-en">Entry Barriers</span></div><div class="term-def">使在位者能持续把价格提至成本之上而新厂商仍不进入的因素。结构性：规模经济、专利、网络效应、转换成本；策略性：限制定价、排他协议。</div></div>
+        <div class="term"><div class="term-name">沉没成本 <span class="term-en">Sunk Cost</span></div><div class="term-def">进入后无法收回的支出（专用设备、品牌广告）。沉没成分越高，进入越谨慎——在位者可借此威慑。</div></div>
+        <div class="term"><div class="term-name">掠夺性定价 <span class="term-en">Predatory Pricing</span></div><div class="term-def">以低于成本的定价驱逐对手、再靠垄断定价收回损失的策略。理论上可行，法律上须证明"低于成本 + 事后补偿的可靠前景"。</div></div>
+        <div class="term"><div class="term-name">可竞争市场 <span class="term-en">Contestable Market</span></div><div class="term-def">进入退出无沉没成本时，哪怕一家独占也不敢定高价——潜在竞争替代实际竞争。敲打"只看集中度"的静态思维。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · "二选一"与平台反垄断风暴</div>
+        <p>2021 年 4 月，国家市场监管总局认定阿里巴巴滥用市场支配地位，禁止平台内商家"二选一"（不得同时在竞争平台开店），罚款 182.28 亿元；同年 10 月，美团因同类行为被罚 34.42 亿元。处罚的靶心不是"平台大"，而是<strong>排他行为</strong>：二选一既抬高了商家的经营成本，也削弱了其他平台获取供给的能力——典型的策略性壁垒，伤害的是竞争过程本身。同期整治还包括禁止大数据杀熟、屏蔽外链等。这一系列案件标志着中国平台经济监管从"包容审慎"转向"常态化监管"，分析框架则与国际接轨：界定相关市场 → 认定支配地位 → 审查行为是否排除、限制竞争。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"企业大了就该拆。"</strong>——反垄断保护的是<strong>竞争</strong>，不是竞争者，更不是"惩罚优秀"：高份额若源于更低成本与更好产品，拆分只会伤害消费者。<strong>"降价永远是好事。"</strong>——低价若属于掠夺性定价（低于成本 + 日后补偿），短期便宜是长期垄断的诱饵；但也别走向另一极端——看到低价就喊掠夺：法律要求证明价格低于恰当的成本基准、且掠夺者有能力回收"投资"，绝大多数降价只是效率。<strong>"亏损补贴 = 掠夺。"</strong>——还需要"补偿可能"这一环：若市场可自由进入，提价之日就是新对手进门之时，掠夺无从回本。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.1</span>法律上把掠夺性定价与合法降价区分开来，最关键的证据组合是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>在位企业规模巨大、资金雄厚，对手元气大伤</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>定价低于恰当的成本基准，且存在驱逐对手后靠市场势力提价收回损失的可靠前景</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>消费者短期享受了低价，但对手发起投诉</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>"低于成本"证明这是投资而非竞争（没人亏本卖是为乐趣）；"补偿前景"证明这是策略而非自杀（阿瑞达-特纳成本检验 + 事后回收分析）。缺一不可：只看低价会把效率竞争误判为掠夺，只看对手受伤会沦为保护竞争者而非竞争。A、C 都是情绪证据，不构成经济逻辑。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.2</span>决定一家厂商的市场势力能否<strong>长期持续</strong>的最关键因素是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>当前市场份额——份额即势力</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>进入壁垒的高低——无壁垒时高利润会迅速招致进入</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>历史利润率——过去赚钱说明未来赚钱</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>垄断利润是最醒目的广告：只要进入自由，超额利润必然被新产能侵蚀——可竞争市场理论甚至证明，进入威胁本身就足以压低价格。因此反垄断审查先问"对手能不能进来"（壁垒、沉没成本、排他协议），再看份额。A 忽略了份额可能是效率的结果且随时可被侵蚀；C 是最朴素的归纳谬误。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>垄断利润吸引进入：<strong>进入壁垒</strong>（结构性 + 策略性）决定势力能否持续</li>
+          <li>沉没成本越高，进入越慎重——在位者可借此威慑（限制定价、过剩产能、排他协议）</li>
+          <li>掠夺性定价认定 = 低于成本 + 补偿前景，二者缺一即沦为误判</li>
+          <li>现代反垄断主流采用消费者福利标准：保护竞争，而非保护竞争者、更非惩罚规模</li>
+          <li>"二选一"案：打击的是排他行为这一策略性壁垒，不是平台规模本身</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">第 6 章</span>网络效应与平台经济</h2>
+
+      <p><strong>引入问题：</strong>哪怕明天出现一款功能强一倍的聊天软件，你大概率也不会换——因为你的朋友都在微信上。为什么有的市场"赢家通吃"，而有的市场巨头林立？为什么平台对用户永远免费、对商家重抽佣金，甚至倒贴钱请用户上车？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：用户本身成为产品价值的一部分</div>
+        <p>一般商品的价值来自生产端；网络产品的价值却来自<strong>其他用户</strong>——用微信的人越多，微信对你越有用。这叫需求侧规模经济（网络效应），它带来三个后果：第一，<strong>临界质量</strong>——用户基数不够时没人想加入（负反馈死亡螺旋），跨过临界点后增长自我强化（正反馈）；第二，<strong>赢家通吃倾向</strong>——领先者吸走用户，落后者加速失血；第三，<strong>锁定</strong>——转换成本随社交图谱、数据、习惯累积。平台做的是<strong>双边市场</strong>生意：乘客越多司机越想加入，司机越多打车越快——两侧互相吸引。于是定价可以"非中性"：对弹性大、网络贡献高的一侧免费甚至补贴（用户），向弹性小、依赖性强的一侧收费（商家、司机）。免费不是慈善，用户侧本身就是"进货"。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">网络效应 <span class="term-en">Network Effects</span></div><div class="term-def">用户从产品中获得的效用随用户总数增加而上升。直接效应（社交网络）与交叉效应（平台两侧互吸，如买家与卖家）。</div></div>
+        <div class="term"><div class="term-name">双边市场 <span class="term-en">Two-sided Market</span></div><div class="term-def">平台连接两类用户群，一侧的规模影响另一侧的价值。最优定价看总的双边利润，因此常见"一侧补贴、一侧收费"。</div></div>
+        <div class="term"><div class="term-name">临界质量 <span class="term-en">Critical Mass</span></div><div class="term-def">使加入的净收益由负转正的用户基数。低于它网络萎缩，高于它增长自驱动——冷启动难题的解就是先烧钱买临界质量。</div></div>
+        <div class="term"><div class="term-name">赢家通吃 <span class="term-en">Winner-take-all</span></div><div class="term-def">强网络效应 + 低多归属 + 无差异化空间时的极端结果：市场由一家独占。多归属（同时装两个 App）与技术代际更替会削弱它。</div></div>
+      </div>
+
+      <h3>互动演示：临界质量</h3>
+      <figure class="fig">
+        <div class="fig-title">图 6-1 · 网络效应与临界质量</div>
+        <p class="fig-sub">新用户加入的净收益 U(n) = v + k·n − p：独立价值 v、网络强度 k、价格 p = 20。拖动 v 与 k，看零点（临界质量）如何移动。</p>
+        <figure class="fig-canvas">
+          <svg id="net-svg" viewBox="0 0 640 400" role="img" aria-label="用户基数与加入净收益的关系图：一条向上倾斜的直线穿过零线，左侧为无人加入的死亡区，右侧为自增强区；临界质量为零点位置。">
+            <text id="net-ttxt" class="chart-title-sm" x="335" y="26" text-anchor="middle"></text>
+            <text id="net-stxt" class="chart-label" x="335" y="46" text-anchor="middle" fill="#4b5563"></text>
+            <rect id="net-dz" x="70" y="90" width="162" height="240" fill="#e9edf2"/>
+            <text class="chart-label" x="80" y="108" text-anchor="start" fill="#4b5563">死亡区：净收益为负，无人愿先加入</text>
+            <text class="chart-label" x="600" y="130" text-anchor="end" fill="#4b5563">自增强区：越多人加入，吸引越大</text>
+            <line class="gridline" x1="70" y1="170" x2="610" y2="170"/>
+            <line class="axis" x1="70" y1="250" x2="610" y2="250"/>
+            <text class="chart-label" x="62" y="254" text-anchor="end">0</text>
+            <text class="chart-label" x="62" y="174" text-anchor="end">+50</text>
+            <text class="chart-label" x="62" y="334" text-anchor="end">−50</text>
+            <line id="net-cm" x1="232" y1="90" x2="232" y2="330" stroke="#ea580c" stroke-width="2" stroke-dasharray="6 5"/>
+            <line id="net-line" class="curve curve-c1" x1="70" y1="282" x2="610" y2="146"/>
+            <circle id="net-dot" class="dot" cx="232" cy="250" r="7" fill="#e11d48"/>
+            <line class="axis" x1="70" y1="330" x2="610" y2="330"/>
+            <line class="axis" x1="70" y1="80" x2="70" y2="330"/>
+            <text class="chart-label" x="70" y="350" text-anchor="middle">0%</text>
+            <text class="chart-label" x="205" y="350" text-anchor="middle">25%</text>
+            <text class="chart-label" x="340" y="350" text-anchor="middle">50%</text>
+            <text class="chart-label" x="475" y="350" text-anchor="middle">75%</text>
+            <text class="chart-label" x="610" y="350" text-anchor="middle">100%</text>
+            <text class="chart-label" x="340" y="380" text-anchor="middle">已加入用户比例 n</text>
+            <text class="chart-label" x="26" y="210" text-anchor="middle" transform="rotate(-90 26 210)">加入净收益 U</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="net-v">独立价值 v</label><input type="range" id="net-v" min="-30" max="20" step="1" value="-10"><output id="net-ov" for="net-v">−10</output></div>
+          <div class="ctrl"><label for="net-k">网络强度 k</label><input type="range" id="net-k" min="0.2" max="1.5" step="0.05" value="0.8"><output id="net-ok" for="net-k">0.80</output></div>
+        </div>
+        <figcaption>读图要点：临界质量 n* = (p − v)/k。默认参数下 n* ≈ 38%——平台必须靠补贴、预装、明星引流先"买"够这 38% 的用户，此后口碑接棒。把 v 拖到 +20：独立价值已覆盖价格，n* = 0，产品一上线即自我增长（这类产品无需烧钱）；把 v 拖到 −30、k 调小到 0.2：n* 超过 100%，任何补贴都填不满缺口——先改进产品（提高 v 或 k），再谈增长。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 红包大战：用钱买"临界质量"</div>
+        <p>2014 年春节，微信凭"抢红包"一夜之间完成数百万用户的银行卡绑定——被马云称为"珍珠港偷袭"。支付宝的反击同样直白：2016 年春晚联手央视首推"集五福"，集齐者平分超 2 亿元红包，此后"集五福"年年拉新。表面是营销战，本质是<strong>临界质量公式</strong>的应用：支付是典型的双边网络（付款方 ↔ 收款方），补贴（现金红包）等于临时抬高 v、把净收益线推过零点，让用户基数越过 n*；此后线下扫码场景的正反馈接棒。今天两大平台对个人转账免费、对商户收款抽成，正是"补贴弹性大的一侧、向依赖强的一侧收费"的双边定价。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"免费 = 没赚钱 = 没有市场势力。"</strong>——零价格不等于零价格势力：当用户以注意力、数据、社交关系"付款"，免费侧恰恰是平台的进货渠道；对免费侧的排他行为（屏蔽外链、限制分享）同样可能损害竞争。<strong>"网络效应必然赢家通吃。"</strong>——只有当网络效应强、用户难以多归属（同时用多个平台）、产品同质时才成立；反之，Instagram 与 TikTok 并存、滴滴与高德打车同框——多归属、细分场景与代际技术（从文字到短视频）都能维持多强格局。分析平台市场，先画清楚"哪几边、谁补贴谁"。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.1</span>网约车平台对新乘客发大额补贴、向司机抽成。双边市场理论的解释是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>平台做公益亏本拉新，司机成了被剥削对象</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>乘客侧弹性大且其加入直接提升平台对司机的价值，故对乘客侧低价（补贴）、向司机侧收费使双边总量最大化</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>司机数量过剩，抽成只是为了减少司机</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>双边定价看总利润而非单边：乘客多 → 打车快 → 司机更愿入驻 → 车多 → 乘客更多（交叉网络效应）。对价格敏感、网络贡献大的一侧收低价甚至补贴，能撬动整个循环（罗歇-梯若尔的"非中性"结果）。A 把策略当慈善；C 方向反了——抽成恰恰以司机端的依赖性（低弹性）为前提，而非以减少司机为目标。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.2</span>某社交产品当前用户基数低于临界质量，市场反馈将把它推向？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>自我增长——反正网络效应在，慢就是快</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>萎缩螺旋——净收益为负导致老用户流失、新用户却步，基数进一步下滑</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>稳态均衡——用户数原地不动，等对手犯错</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>低于临界质量时 U(n) &lt; 0：加入即亏、留下也亏，负反馈主导——这正是绝大多数社交产品死在"冷启动"的原因，也是烧钱补贴（临时抬高 v）的唯一理性：把基数推过 n*，让正反馈接棒。A 把"越过临界点之后"的逻辑错安到之前；C 的稳态不存在：两侧都是流失的漏斗，不进则退。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>网络效应 = 需求侧规模经济：用户越多产品越好用，价值由用户共同生产</li>
+          <li>临界质量 n* = (p − v)/k：线下是生死线，线上是补贴战的目的地</li>
+          <li>双边市场定价非中性：补贴弹性大、网络贡献高的一侧，向依赖强的一侧收费</li>
+          <li>赢家通吃需要强网络效应 + 低多归属 + 同质化；多归属与技术代际更替可打破</li>
+          <li>免费不等于无势力：注意力与数据是隐性价格，免费侧的排他行为同样受反垄断审视</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">终点</span>进阶路线与延伸阅读</h2>
+      <p>产业组织是应用微观经济学的中枢：向前衔接 <a href="../01-微观经济学/index.html">01 微观经济学</a>（垄断与剩余分析）与 <a href="../04-博弈论与信息经济学/index.html">04 博弈论与信息经济学</a>（本章反复使用的纳什均衡与重复博弈工具）；向后再回到 <a href="../15-行为经济学/index.html">15 行为经济学</a>（有限理性如何改写加成与合谋分析），也可顺路去 <a href="../11-发展与创新经济学/index.html">11 发展与创新经济学</a>（创新、专利与竞争的长期互动）。政策兴趣浓厚者，反垄断案例与产业监管是天然的第二课堂。</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">让·梯若尔《产业组织理论》</span>（Jean Tirole, <em>The Theory of Industrial Organization</em>）——领域圣经，诺奖得主的框架总装；数学要求高，宜作进阶。</li>
+          <li><span class="bk">路易斯·卡布拉尔《产业组织导论》</span>（Cabral, <em>Introduction to Industrial Organization</em>）——中级最优起点，案例与模型平衡。</li>
+          <li><span class="bk">谢勒《产业市场结构与经济绩效》</span>（Scherer &amp; Ross）——哈佛结构-行为-绩效（SCP）传统的集大成，反垄断案例如林。</li>
+          <li><span class="bk">佩帕德等《平台革命》</span>（Parker, Van Alstyne &amp; Choudary, <em>Platform Revolution</em>）——第 6 章的商业实证延伸，双边市场与网络效应的案例库。</li>
+          <li><span class="bk">吴军/王璞等平台反垄断研究文集</span>——中国平台经济监管的一手案例材料（阿里案、美团案处罚决定书值得一读原文）。</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../09-劳动经济学/index.html"><span class="pager-dir">上一分支</span><br><span class="pager-name">劳动经济学</span></a>
+        <a href="../11-发展与创新经济学/index.html"><span class="pager-dir">下一分支</span><br><span class="pager-name">发展与创新经济学</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../assets/econ.js"></script>
+<script>
+/* ===== 本页图表交互（图1-1 HHI / 图2-1 古诺 / 图4-1 价格歧视 / 图6-1 网络效应） ===== */
+(function () {
+  "use strict";
+  function $(id) { return document.getElementById(id); }
+
+  /* ---------- 图 1-1 · HHI 计算器 ---------- */
+  function updHHI() {
+    var i, raw = [], sum = 0;
+    for (i = 1; i <= 4; i++) {
+      var el = $("h" + i);
+      if (!el) return;
+      var v = Number(el.value);
+      raw.push(v);
+      sum += v;
+      var o = $("oh" + i);
+      if (o) o.textContent = v + "%";
+    }
+    var sc = sum > 100 ? 100 / sum : 1;
+    var others = 100, hhi = 0;
+    for (i = 0; i < 4; i++) {
+      var e = raw[i] * sc;
+      others -= e;
+      hhi += e * e;
+      var h = Math.max(0, e / 100 * 170);
+      var b = $("hhi-b" + (i + 1));
+      if (b) { b.setAttribute("height", h); b.setAttribute("y", 345 - h); }
+      var t = $("hhi-t" + (i + 1));
+      if (t) { t.textContent = e.toFixed(0) + "%"; t.setAttribute("y", 337 - h); }
+    }
+    var ho = Math.max(0, others);
+    var hOther = ho / 100 * 170;
+    var bo = $("hhi-bo");
+    if (bo) { bo.setAttribute("height", hOther); bo.setAttribute("y", 345 - hOther); }
+    var to = $("hhi-to");
+    if (to) { to.textContent = ho.toFixed(0) + "%"; to.setAttribute("y", 337 - hOther); }
+    var nd = $("hhi-needle");
+    if (nd) nd.setAttribute("cx", 70 + Math.min(10000, hhi) / 10000 * 540);
+    var hv = $("hhi-val");
+    if (hv) hv.textContent = "HHI = " + Math.round(hhi);
+    var hc = $("hhi-cat");
+    if (hc) hc.textContent = hhi < 1500 ? "低集中度（<1500）" : (hhi <= 2500 ? "中度集中（1500–2500）" : "高度集中（>2500）");
+    var note = $("hhi-note");
+    if (note) note.textContent = sum > 100
+      ? "四家份额合计 " + sum + "% > 100%，已按比例归一化到 100%"
+      : (ho > 0.5
+        ? "『其他』由众多小厂商构成（平方和贡献≈0，未计入）——严格 HHI 需逐家平方，会略高于此"
+        : "四家份额合计恰为 100%，无剩余份额");
+  }
+
+  /* ---------- 图 2-1 · 古诺均衡 ---------- */
+  function updCournot() {
+    var nEl = $("cr-n"), cEl = $("cr-c");
+    if (!nEl || !cEl) return;
+    var n = Math.max(1, Number(nEl.value)), c = Number(cEl.value);
+    var P = (100 + n * c) / (n + 1);
+    var Q = n * (100 - c) / (n + 1);
+    var Qc = 100 - c;
+    var mcy = 320 - c * 2.7;
+    var on = $("cr-on"); if (on) on.textContent = n;
+    var oc = $("cr-oc"); if (oc) oc.textContent = c;
+    var mc = $("cr-mc");
+    if (mc) { mc.setAttribute("y1", mcy); mc.setAttribute("y2", mcy); }
+    var mcl = $("cr-mclab");
+    if (mcl) mcl.setAttribute("y", mcy - 10);
+    var px = 70 + Q * 5, py = 320 - P * 2.7;
+    var dot = $("cr-dot");
+    if (dot) { dot.setAttribute("cx", px); dot.setAttribute("cy", py); }
+    var gq = $("cr-gq");
+    if (gq) { gq.setAttribute("x1", px); gq.setAttribute("x2", px); gq.setAttribute("y1", py); gq.setAttribute("y2", 320); }
+    var gp = $("cr-gp");
+    if (gp) { gp.setAttribute("y1", py); gp.setAttribute("y2", py); gp.setAttribute("x2", px); }
+    var dy = 320 - (100 - Q) * 2.7;
+    var dwl = $("cr-dwl");
+    if (dwl) dwl.setAttribute("points", px + "," + mcy + " " + (70 + Qc * 5) + "," + mcy + " " + px + "," + dy);
+    var pt = $("cr-ptxt");
+    if (pt) pt.textContent = "n = " + n + " 家：P* = " + P.toFixed(1) + "，Q* = " + Q.toFixed(1) + "（行业合计）";
+    var lt = $("cr-ltxt");
+    if (lt) lt.textContent = "勒纳指数 L = (P − c)/P = " + ((P - c) / P).toFixed(2) + "（n = 1 即垄断）";
+    var Pm = (100 + c) / 2;
+    var mo = $("cr-mono");
+    if (mo) mo.textContent = "垄断参照 P = " + Pm.toFixed(1);
+    var cp = $("cr-comp");
+    if (cp) cp.textContent = "竞争参照 P = MC = " + c;
+  }
+
+  /* ---------- 图 4-1 · 三级价格歧视 ---------- */
+  function updPD() {
+    var ea = $("pd-ea"), eb = $("pd-eb"), mcEl = $("pd-mc");
+    if (!ea || !eb || !mcEl) return;
+    var eA = Number(ea.value), eB = Number(eb.value), mc = Number(mcEl.value);
+    var oa = $("pd-oa"); if (oa) oa.textContent = "|ε|=" + eA.toFixed(1);
+    var ob = $("pd-ob"); if (ob) ob.textContent = "|ε|=" + eB.toFixed(1);
+    var omc = $("pd-omc"); if (omc) omc.textContent = mc + " 元";
+    var PA = mc * eA / (eA - 1), PB = mc * eB / (eB - 1);
+    function bar(bid, tid, mid, P) {
+      var h = Math.max(0, P * 1.25), top = 330 - h;
+      var b = $(bid);
+      if (b) { b.setAttribute("y", top); b.setAttribute("height", h); }
+      var t = $(tid);
+      if (t) { t.textContent = "P = " + P.toFixed(0) + " 元"; t.setAttribute("y", top - 26); }
+      var m = $(mid);
+      if (m) { m.textContent = "加成 +" + Math.round((P / mc - 1) * 100) + "%"; m.setAttribute("y", top - 8); }
+    }
+    bar("pd-bara", "pd-ta", "pd-ma", PA);
+    bar("pd-barb", "pd-tb", "pd-mb", PB);
+    var mcy = 330 - mc * 1.25;
+    var ml = $("pd-mcl");
+    if (ml) { ml.setAttribute("y1", mcy); ml.setAttribute("y2", mcy); }
+    var mlab = $("pd-mclab");
+    if (mlab) { mlab.textContent = "边际成本 MC = " + mc + " 元"; mlab.setAttribute("y", mcy - 8); }
+    var la = $("pd-la");
+    if (la) la.textContent = "市场 A（|ε| = " + eA.toFixed(1) + "）";
+    var lb = $("pd-lb");
+    if (lb) lb.textContent = "市场 B（|ε| = " + eB.toFixed(1) + "）";
+    var lo = Math.min(eA, eB), hi = Math.max(eA, eB);
+    var Phi = Math.max(PA, PB), Plo = Math.min(PA, PB);
+    var st = $("pd-stxt");
+    if (st) st.textContent = "市场 A：" + PA.toFixed(0) + " 元　vs　市场 B：" + PB.toFixed(0) + " 元";
+    var s2 = $("pd-sub2");
+    if (s2) {
+      if (Math.abs(eA - eB) < 0.05) {
+        s2.textContent = "两市场弹性几乎相同（|ε| ≈ " + eA.toFixed(1) + "）→ 统一定价即可，歧视无利可图";
+      } else {
+        s2.textContent = "弹性较小（|ε| = " + lo.toFixed(1) + "）→ 高价 " + Phi.toFixed(0) + " 元；弹性较大（|ε| = " + hi.toFixed(1) + "）→ 低价 " + Plo.toFixed(0) + " 元（反向弹性法则）";
+      }
+    }
+  }
+
+  /* ---------- 图 6-1 · 网络效应临界质量 ---------- */
+  function clipSeg(x1, y1, x2, y2, xmin, ymin, xmax, ymax) {
+    var t0 = 0, t1 = 1, dx = x2 - x1, dy = y2 - y1, i;
+    var p = [-dx, dx, -dy, dy];
+    var q = [x1 - xmin, xmax - x1, y1 - ymin, ymax - y1];
+    for (i = 0; i < 4; i++) {
+      if (p[i] === 0) {
+        if (q[i] < 0) return null;
+      } else {
+        var r = q[i] / p[i];
+        if (p[i] < 0) {
+          if (r > t1) return null;
+          if (r > t0) t0 = r;
+        } else {
+          if (r < t0) return null;
+          if (r < t1) t1 = r;
+        }
+      }
+    }
+    return [x1 + t0 * dx, y1 + t0 * dy, x1 + t1 * dx, y1 + t1 * dy];
+  }
+
+  function updNet() {
+    var vEl = $("net-v"), kEl = $("net-k");
+    if (!vEl || !kEl) return;
+    var v = Number(vEl.value), k = Math.max(0.05, Number(kEl.value)), p = 20;
+    var sgn = function (x) { return (x > 0 ? "+" : "") + x; };
+    var ov = $("net-ov"); if (ov) ov.textContent = sgn(v);
+    var ok = $("net-ok"); if (ok) ok.textContent = k.toFixed(2);
+    var U0 = v - p, U100 = v + 100 * k - p;
+    function y(U) { return 330 - (U + 50) * 1.6; }
+    var seg = clipSeg(70, y(U0), 610, y(U100), 70, 90, 610, 330);
+    var ln = $("net-line");
+    if (ln) {
+      if (seg) {
+        ln.setAttribute("x1", seg[0]); ln.setAttribute("y1", seg[1]);
+        ln.setAttribute("x2", seg[2]); ln.setAttribute("y2", seg[3]);
+        ln.style.display = "";
+      } else {
+        ln.style.display = "none";
+      }
+    }
+    var nstar = (p - v) / k;
+    var dz = $("net-dz"), dot = $("net-dot"), cm = $("net-cm"), tt = $("net-ttxt");
+    function hideMarks() {
+      if (dot) dot.setAttribute("cx", -100);
+      if (cm) { cm.setAttribute("x1", -100); cm.setAttribute("x2", -100); }
+    }
+    if (nstar <= 0) {
+      if (dz) dz.setAttribute("width", 0);
+      hideMarks();
+      if (tt) tt.textContent = "临界质量 ≈ 0%：独立价值已覆盖价格（v ≥ p），一上线即可自我增长";
+    } else if (nstar >= 100) {
+      if (dz) dz.setAttribute("width", 540);
+      hideMarks();
+      if (tt) tt.textContent = "临界质量 ≥ 100%：需整个市场全部加入才能自持——现实中无法起飞，先提高 v 或 k";
+    } else {
+      var cx = 70 + nstar / 100 * 540;
+      if (dz) dz.setAttribute("width", cx - 70);
+      if (dot) { dot.setAttribute("cx", cx); dot.setAttribute("cy", 250); }
+      if (cm) { cm.setAttribute("x1", cx); cm.setAttribute("x2", cx); }
+      if (tt) tt.textContent = "临界质量 ≈ " + nstar.toFixed(0) + "%：跨过它之前烧钱换用户，之后增长自我维持";
+    }
+    var st = $("net-stxt");
+    if (st) st.textContent = "净收益 U(n) = v + k·n − p = " + sgn(v) + " + " + k.toFixed(2) + "·n − " + p +
+      "　→　n = 0 时 " + sgn(U0.toFixed(0)) + "，n = 100% 时 " + sgn(U100.toFixed(0));
+  }
+
+  /* ---------- 绑定与初始化 ---------- */
+  function bind(ids, fn) {
+    ids.forEach(function (id) {
+      var el = $(id);
+      if (el) el.addEventListener("input", fn);
+    });
+    fn();
+  }
+  bind(["h1", "h2", "h3", "h4"], updHHI);
+  bind(["cr-n", "cr-c"], updCournot);
+  bind(["pd-ea", "pd-eb", "pd-mc"], updPD);
+  bind(["net-v", "net-k"], updNet);
+})();
+</script>
+</body>
+</html>

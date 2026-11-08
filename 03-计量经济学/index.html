@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>计量经济学 · EconLearn 经济学自学之路</title>
+<meta name="description" content="计量经济学中文互动教程：相关与因果、OLS 回归、标准误与置信区间、内生性与 RCT、双重差分等因果识别工具，配互动演示与自测。">
+<link rel="stylesheet" href="../assets/econ.css">
+</head>
+<body style="--branch:#0d9488">
+<noscript><p class="noscript-tip">本页的互动图表与自测需要启用 JavaScript；未启用时仍可阅读全部正文。</p></noscript>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← 总览</a>
+  <div class="topbar-title"><span class="topbar-num">03</span>计量经济学</div>
+  <button class="toc-toggle" aria-expanded="false">目录</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">本分支章节</p>
+    <nav aria-label="章节目录">
+      <a href="#overview">导读与学习目标</a>
+      <a href="#ch1">1 · 相关不等于因果</a>
+      <a href="#ch2">2 · 回归：画出那条线</a>
+      <a href="#ch3">3 · 控制变量</a>
+      <a href="#ch4">4 · 不确定性与显著性</a>
+      <a href="#ch5">5 · 内生性：识别的敌人</a>
+      <a href="#ch6">6 · 因果推断工具箱</a>
+      <a href="#path">进阶路线与延伸阅读</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · 经济学自学之路</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">分支 03 · 核心理论</span>
+        <h1>计量经济学</h1>
+        <p class="hero-en">Econometrics</p>
+        <p class="hero-lead">经济理论告诉我们"什么应该发生"，计量经济学告诉我们"数据里到底发生了什么"——以及多大程度上可以说"这是因为……"。它是经济学最锋利的工具，也是最容易被误用的工具。</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">学完本分支你将能</div>
+        <ul>
+          <li>区分<strong>相关</strong>与<strong>因果</strong>，识别混杂变量、反向因果与选择偏差</li>
+          <li>解释 OLS 回归在"做什么"，读懂回归表中的系数、标准误与 R²</li>
+          <li>说明控制变量的作用与"坏控制"的风险</li>
+          <li>正确解读 p 值与置信区间，避免常见统计误区</li>
+          <li>描述随机实验、双重差分、断点回归、工具变量这四种因果识别策略的逻辑</li>
+        </ul>
+      </div>
+      <div class="prereq">前置知识：
+        <a class="badge" href="../01-微观经济学/index.html">01 微观（散点与函数思维即可）</a>
+        <span>不需要先学统计——所需概念本页随讲随补</span>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">第 1 章</span>相关不等于因果</h2>
+
+      <p><strong>引入问题：</strong>一项发表在权威医学期刊的研究发现：一个国家的人均巧克力消费量，与该国每千万人口的诺贝尔奖得主数量<strong>高度正相关</strong>（r ≈ 0.79）。瑞士人巧克力吃得最多，诺贝尔奖也拿得最多。请问：多吃巧克力能提高获诺奖的概率吗？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>两个变量一起动（<strong>相关</strong>），有三种可能：A 导致 B；B 导致 A；或者<strong>第三个因素 C 同时导致 A 和 B</strong>。巧克力和诺奖正是第三种：国家富裕程度 C——富国吃得起巧克力，也养得起科研。这个"躲在背后的 C"，计量经济学称为<strong>混杂变量</strong>。因果推断的全部难题，归结为一句话：<strong>我们观察到的数据，缺少"如果没发生 X，Y 会怎样"的对照。</strong></p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">相关系数 <span class="term-en">Correlation Coefficient</span></div><div class="term-def">度量两个变量同向/反向变动的程度，取 −1 到 +1。它只描述"共动"，不承诺"谁导致谁"。</div></div>
+        <div class="term"><div class="term-name">混杂变量 <span class="term-en">Confounder</span></div><div class="term-def">同时影响原因和结果的第三方变量（上例中的"富裕程度"），是横在相关与因果之间的头号障碍。</div></div>
+        <div class="term"><div class="term-name">反事实 <span class="term-en">Counterfactual</span></div><div class="term-def">"如果当时没上大学，现在的收入会是多少？"这个未发生的状态就是反事实。因果效应 = 真实结果 − 反事实结果。麻烦在于：反事实永远无法直接观察。</div></div>
+        <div class="term"><div class="term-name">辛普森悖论 <span class="term-en">Simpson's Paradox</span></div><div class="term-def">分组看与合并看，相关性方向完全相反的现象——混杂变量在"反转"结论。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 1-1 · 辛普森悖论：学习时间与成绩</div>
+        <p class="fig-sub">同一组数据，切换"总体 / 分组"视角，斜率的<strong>方向</strong>竟然反了。点击按钮试试。</p>
+        <figure class="fig-canvas">
+          <svg id="simpson-svg" viewBox="0 0 640 380" role="img" aria-label="散点图：蓝色点为重点学校，青色点为普通学校。合并所有点时回归线向右上方倾斜；分组观察时每组内部回归线向右下方倾斜。">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="360" text-anchor="middle">每周自习时间（小时）</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">考试成绩</text>
+            <line class="gridline" x1="70" y1="230" x2="600" y2="230"/>
+            <line class="gridline" x1="70" y1="140" x2="600" y2="140"/>
+            <line class="gridline" x1="70" y1="50" x2="600" y2="50"/>
+            <g id="sim-pts"></g>
+            <line id="sim-ovr" class="curve" stroke="#475569" stroke-dasharray="8 5" stroke-width="2.5"/>
+            <line id="sim-g1" class="curve curve-c1" style="display:none"/>
+            <line id="sim-g2" class="curve curve-c3" style="display:none"/>
+            <text id="sim-note" class="chart-label" x="335" y="26" text-anchor="middle" style="font-weight:700"></text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn ghost" id="sim-btn-all">只看总体（合并所有学校）</button>
+          <button class="btn" id="sim-btn-grp">按学校类型分组</button>
+        </div>
+        <figcaption>读图要点：数据是虚构的。重点学校（蓝）生源好但作业重，校内自习越久往往基础越弱的学生在恶补；普通学校（青）整体成绩较低。合并后"自习越久成绩越高"是学校类型这个混杂变量制造的假象。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界</div>
+        <p>真实研究：Messerli (2012, <em>New England Journal of Medicine</em>) 报告了巧克力与诺奖的相关性，作者本人也强调这是相关性而非因果。类似的经典还有："冰淇淋销量与溺水人数同步上升"（混杂：夏天）、"消防员数量与火灾损失正相关"（反向因果：火灾多才派的多）。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"相关系数很高（0.79！），所以几乎可以肯定是因果。"</strong>——错。相关性的强弱与因果性<strong>无关</strong>：混杂变量可以把相关系数推到很高，而真实的因果关系也可能因为测量误差而表现得很弱。判断因果靠的是<strong>研究设计</strong>（第 6 章），不是系数大小。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.1</span>以下哪一项最可能是"人均巧克力消费量与诺奖人数高度正相关"的原因？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>巧克力中的黄酮醇确实能提升长期认知能力</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>国家富裕程度同时提高了两者</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>诺奖得主越多，国民越喜欢吃巧克力庆祝</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>富裕程度 C 同时导致 A（吃得起巧克力）与 B（科研投入大），这解释了两者共动。A 是作者明确否认的因果解释；C 是"反向因果"，逻辑上牵强。选 B 体现的是混杂变量思维。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.2</span>"每天喝咖啡的人死亡率更低。"要把它从相关推向因果，最该追问的问题是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>样本量是不是足够大？</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>相关系数是不是统计显著？</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>喝咖啡的人与不喝的人在健康习惯、收入等方面是否本来就不相同？</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>样本量和显著性只解决"相关是否真实存在"，不解决"是否因果"。喝咖啡者可能更年轻、更富裕、就医更频繁——这些<strong>系统差异</strong>才是因果结论的真正威胁。识别与追问混杂变量，是计量经济学的第一习惯。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>相关有三种解释：A→B、B→A、C→A 且 C→B（混杂）。</li>
+          <li>因果效应 = 真实 − 反事实；反事实不可观察，这是一切难题的根源。</li>
+          <li>辛普森悖论提醒我们：合并数据可能完全掩盖甚至反转真实关系。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">第 2 章</span>回归：画出那条线</h2>
+
+      <p><strong>引入问题：</strong>我们有 8 名毕业生的起薪与绩点数据，散点乱糟糟地铺在图上。"绩点每高 1 分，起薪大约高多少？"——我们需要一条穿过散点的直线，而穿过散点的直线有无数条，<strong>哪条最好？</strong></p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>给每条候选直线打分：对每个点，量出它到直线的竖直距离（<strong>残差</strong>），平方后加总（平方让"高估"和"低估"都算错，且大错误被重罚）。得分最小的直线就是<strong>普通最小二乘法</strong>（OLS，Ordinary Least Squares）选出的那条。下面亲手试试：你能在按下"最优解"按钮之前，把残差平方和调到接近最小吗？</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">因变量与自变量 <span class="term-en">Dependent / Independent Variable</span></div><div class="term-def">要解释的结果（起薪 Y）与用来解释它的变量（绩点 X）。记号：Y = β₀ + β₁X。</div></div>
+        <div class="term"><div class="term-name">回归系数 <span class="term-en">Regression Coefficient</span></div><div class="term-def">β₁ 是斜率：X 每增加 1 单位，Y 平均变化 β₁ 单位。β₀ 是截距：X=0 时的基准水平。</div></div>
+        <div class="term"><div class="term-name">残差 <span class="term-en">Residual</span></div><div class="term-def">实际值与直线预测值之差。OLS 的目标就是让残差平方和最小。</div></div>
+        <div class="term"><div class="term-name">R²（拟合优度）<span class="term-en">R-squared</span></div><div class="term-def">直线解释了 Y 波动的多少比例，取 0~1。0.49 意味着"解释了一半"。注意：R² 高不等于因果，也不等于模型正确。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 2-1 · 亲手做一次 OLS</div>
+        <p class="fig-sub">拖动截距与斜率滑块，让橙色残差线尽量短；右侧显示残差平方和（SSE）。然后点击"显示 OLS 最优解"对照。</p>
+        <figure class="fig-canvas">
+          <svg id="ols-svg" viewBox="0 0 640 400" role="img" aria-label="绩点与起薪的散点图，一条可由滑块调节的回归直线，各点到直线的竖直残差以橙色线段表示。">
+            <line class="axis" x1="70" y1="330" x2="600" y2="330"/>
+            <line class="axis" x1="70" y1="330" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="370" text-anchor="middle">大学绩点（4 分制）</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">起薪（千元/月）</text>
+            <line class="gridline" x1="70" y1="240" x2="600" y2="240"/>
+            <line class="gridline" x1="70" y1="150" x2="600" y2="150"/>
+            <line class="gridline" x1="70" y1="60" x2="600" y2="60"/>
+            <g id="ols-resid"></g>
+            <g id="ols-pts"></g>
+            <line id="ols-line" class="curve curve-c1"/>
+            <text id="ols-txt" class="chart-label" x="335" y="22" text-anchor="middle" style="font-weight:700"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="ols-b0">截距 β₀</label><input type="range" id="ols-b0" min="0" max="4" step="0.05" value="3"><output id="ols-o0" for="ols-b0">3.00</output></div>
+          <div class="ctrl"><label for="ols-b1">斜率 β₁</label><input type="range" id="ols-b1" min="0" max="2" step="0.01" value="0.5"><output id="ols-o1" for="ols-b1">0.50</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="ols-best">显示 OLS 最优解</button>
+        </div>
+        <figcaption>读图要点：OLS 直线不是"穿过最多点"的线，而是让<strong>竖直方向</strong>偏差平方和最小的线。直觉上，它被拉向点密集且偏离大的地方，像一根"绷紧的皮筋"。</figcaption>
+      </figure>
+
+      <div class="formula">
+        起薪&#770;<sub>i</sub> = β&#770;<sub>0</sub> + β&#770;<sub>1</sub> · 绩点<sub>i</sub>
+        <span class="f-note">读作：起薪的拟合值 = 截距 + 斜率 × 绩点。β 上加帽子表示"由样本估计出的"值。</span>
+      </div>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"R² 越高的模型越好。"</strong>——不一定。加一个噪声变量 R² 也几乎不会下降；时间序列里两个各自增长的趋势变量（GDP 与当地降雨量）能轻松跑出 R² &gt; 0.9。R² 衡量"贴合程度"，不衡量"正确程度"，更不衡量因果。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.1</span>OLS 选择直线标准是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>穿过数据点的条数最多</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>各点竖直残差的平方和最小</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>上下两侧的点数一样多</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>OLS = Ordinary <em>Least Squares</em>：让残差的<strong>平方和</strong>（SSE）最小的估计。平方处理让正负偏差不能互相抵消，并重罚离群的大偏差。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.2</span>回归得到 β&#770;<sub>1</sub> = 0.8（千元/绩点）。正确的读法是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>绩点提高 1 分会<strong>导致</strong>起薪提高 0.8 千元</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>在样本中，绩点高 1 分的学生起薪平均高 0.8 千元</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>任何绩点高 1 分的人，起薪都会高 0.8 千元</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>回归系数只描述样本中的<strong>平均关联</strong>。有没有"导致"要看研究设计（第 5、6 章）；对个体也只成立"平均而言"。养成说"平均关联"的习惯，是防止自己被回归表骗到的第一道防线。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>OLS = 最小化残差平方和；斜率的含义是"X 增 1 单位，Y 平均变化 β₁"。</li>
+          <li>R² 衡量拟合，不衡量正确或因果。</li>
+          <li>系数只能说"平均关联"，因果语言需要额外条件。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">第 3 章</span>控制变量：多元回归的思想</h2>
+
+      <p><strong>引入问题：</strong>冰淇淋销量与溺水人数高度相关，混杂变量是"季节"。如果我们在回归里<strong>加入季节变量</strong>（夏天=1，冬天=0），冰淇淋销量的系数会发生什么？——它会骤降，甚至消失。这就是<strong>控制变量</strong>的力量：在"其他条件相同"下比较。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>多元回归 y = β₀ + β₁x + β₂z 中，β₁ 回答的是：<strong>在 z 完全相同的两个人之间</strong>，x 每差 1 单位，y 平均差多少。形象地说，回归"先把数据按 z 切成薄片，在每片内部比较 x 的作用，再把各片结论加权汇总"。第 1 章的辛普森悖论，正是被"控制学校类型"修复的。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">多元回归 <span class="term-en">Multiple Regression</span></div><div class="term-def">同时纳入多个自变量的回归。各系数表示"保持其他变量不变"时该变量的偏效应。</div></div>
+        <div class="term"><div class="term-name">遗漏变量偏差 <span class="term-en">Omitted Variable Bias, OVB</span></div><div class="term-def">漏掉一个既影响 y 又与 x 相关的变量时，x 的系数会被"污染"。污染的方向取决于两个相关性的符号乘积。</div></div>
+        <div class="term"><div class="term-name">坏控制 <span class="term-en">Bad Control</span></div><div class="term-def">把"位于因果链条中间"的变量控制住，反而会吸收掉我们想估计的效应。例如估计教育回报时控制"收入"——收入正是结果本身。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界</div>
+        <p>估计"上大学是否提高收入"时，必须控制家庭背景（父母收入、户籍）——否则能力与背景的混杂会高估教育回报。但若控制"毕业后第一份工作的行业"，就可能控制过头：行业是教育影响收入的<strong>途径</strong>，压住它等于掐断因果链的一段。选控制变量是设计，不是"多多益善"。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"控制变量越多越严谨。"</strong>——错。两类风险：(1) <strong>坏控制</strong>吸收真实效应；(2) 控制变量本身是"处理后"的变量（受 x 影响），引入新的偏差。原则：控制发生在 x <strong>之前</strong>的背景变量，警惕任何可能是"x 的结果"的变量。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.1</span>估计"培训班提分效果"：好学生更爱报班。只比较报班与未报班学生会？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>高估培训班效果（好基础与报班正相关，且直接提高分数）</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>低估培训班效果</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>无偏，因为样本量大</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>遗漏"学生基础"与"报班"正相关、与"分数"正相关，OVB 方向 = (+)×(+) = 高估。样本量再大也救不了系统性偏差——大样本只是让"错的答案"估计得更精确。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.2</span>以下哪个变量作为"估计教育对收入的影响"的控制变量最合适？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>受访者当前的职位层级</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>受访者父母的教育程度</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>受访者大学的专业选择</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>父母教育发生在本人受教育<strong>之前</strong>，是干净的背景控制变量。职位层级与专业选择都位于"教育→收入"的因果链条上（教育影响专业与职位，它们再影响收入），控制它们会把教育的一部分真实效应"控制没了"——典型的坏控制。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>多元回归系数 = "保持其他变量不变"的偏效应。</li>
+          <li>遗漏相关混杂变量 → 偏差；方向 = 两个相关符号的乘积。</li>
+          <li>好的控制变量在因果时序上位于 x 之前；因果链上的变量是坏控制。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">第 4 章</span>不确定性与显著性</h2>
+
+      <p><strong>引入问题：</strong>你在 30 人的班级里估计出"补课每小时提高 1.2 分"。换个班再估一次，变成了 0.3 分。哪个可信？还是都不可信？我们缺一个语言来回答：<strong>这个估计有多不稳定？</strong></p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>样本只是总体的一次"抽样抽签"。换个样本，系数就会变。把抽取样本的过程在想象中重复很多次，系数的波动幅度就是<strong>标准误</strong>。标准误小 → 系数在不同样本间稳定 → 我们对它更有信心。95% 置信区间的意思是：<strong>按同样方法构造的区间，长期来看 95% 会盖住真值</strong>——不是"真值有 95% 的概率落在这个区间"。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">标准误 <span class="term-en">Standard Error, SE</span></div><div class="term-def">估计量的抽样波动幅度。样本量扩大 4 倍，标准误大约减半（SE ∝ 1/√n）。</div></div>
+        <div class="term"><div class="term-name">置信区间 <span class="term-en">Confidence Interval, CI</span></div><div class="term-def">估计值 ± 1.96×SE（大样本近似）。区间不含 0 时，通常称"在 5% 水平上统计显著"。</div></div>
+        <div class="term"><div class="term-name">p 值 <span class="term-en">p-value</span></div><div class="term-def"><strong>假设效应其实为零</strong>时，观察到当前数据（或更极端）的概率。p 小说明"零效应假设下数据很反常"，仅此而已。</div></div>
+        <div class="term"><div class="term-name">统计功效 <span class="term-en">Statistical Power</span></div><div class="term-def">真实效应存在时检测到它的概率。低功效的研究即使"显著"，效应量也往往被夸大。</div></div>
+      </div>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区（p 值三大错）</div>
+        <p>① "p = 0.03 表示原假设为真的概率是 3%"——错，p 值<strong>以原假设为真为前提</strong>；② "p &gt; 0.05 = 没有效应"——错，只能说不排除零效应，尤其样本小时功效不足；③ "显著 = 重要"——错，样本足够大时任何微不足道的差异都会显著。统计显著 ≠ 经济显著（效应量够不够大、值不值得行动，是另一个问题）。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.1</span>一项研究 p = 0.20，正确表述是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>证明了效应不存在</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>数据与"零效应"不矛盾，不足以拒绝零假设</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>效应为真的概率是 80%</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>"不显著"≠"不存在"。若样本小、功效低，真实存在的效应也常拿不到显著。反过来 p 值也不是"原假设为真的概率"。看见"不显著→无效应"的论证，要立刻警觉样本量与功效。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.2</span>大样本 (n=200 万) 回归中"上网时长对考试成绩的影响"系数 −0.002 分/小时，p&lt;0.001。合理的解读？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>高度显著，说明上网严重损害成绩</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>统计上显著但经济（实际）意义微乎其微：每天上网 3 小时，一年也只影响两三分</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>样本这么大，可以放心宣布因果结论</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>200 万样本让芝麻大的效应也"显著"。每天 3 小时 × 365 天 × 0.002 ≈ 每年 2 分，实际意义微乎其微。要点是：<strong>先看效应大小，再看显著性</strong>；且大样本毫不解决混杂与因果问题。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>标准误度量抽样波动；CI = 估计 ± 1.96SE。</li>
+          <li>p 值是"零假设下数据有多反常"，不是"假设为真的概率"。</li>
+          <li>统计显著 ≠ 经济显著；不显著 ≠ 无效应。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">第 5 章</span>内生性：识别的敌人</h2>
+
+      <p><strong>引入问题：</strong>统计数据：警力投入越多的城市，凶杀案越多。难道警察制造犯罪？还是高犯罪率城市雇佣了更多警察？——当 x 与 y 互相影响、或被共同因素牵引时，x 就是<strong>内生</strong>的，回归系数不可作因果解读。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>"内生性"（Endogeneity）是个伞形术语，涵盖一切让"x 与误差项相关"的毛病：① <strong>遗漏变量</strong>（性格同时影响教育与收入）；② <strong>反向因果</strong>（警力←犯罪）；③ <strong>测量误差</strong>（收入报少了，越穷报得越离谱）；④ <strong>自选择</strong>（读大学的是本来就会挣得多的人）。要得到因果答案，核心思路只有一个：<strong>寻找"像随机分配一样"的 x 变动来源</strong>。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">内生性 <span class="term-en">Endogeneity</span></div><div class="term-def">解释变量与影响 y 的其他未观测因素相关。存在内生性时，OLS 系数系统性偏离因果效应。</div></div>
+        <div class="term"><div class="term-name">自选择偏差 <span class="term-en">Self-selection Bias</span></div><div class="term-def">人们自己选择进入处理组（上大学、移民、创业），而这些"选择"背后藏着未观测的能力与动机。</div></div>
+        <div class="term"><div class="term-name">识别 <span class="term-en">Identification</span></div><div class="term-def">从观测数据中"认出"因果效应的研究设计问题。识别策略是现代实证经济学的灵魂。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 三大名场面</div>
+        <p><strong>医院悖论</strong>：在急诊室调查"系安全带者受伤率"更高——因为伤得重的人才被送进医院（选择偏差）。<strong>幸存者偏差</strong>：二战统计返航轰炸机弹孔分布来决定装甲位置——统计学家 Wald 指出该看"没回来的飞机"（选择样本）。<strong>健康使用者偏差</strong>：吃维生素的人本来就更健康，简单比较会把保健品效果抬得虚高。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.1</span>发现"小班成绩更好"。若班级大小由校长按学生能力分配（差生进小班），则？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>真实效应被低估</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>真实效应可能被低估也可能被高估，取决于分配规则与混杂方向</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>不影响估计，因为样本随机</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>若差生进小班，小班的"劣势生源"会压低估计（低估）；若家长期值高的孩子被塞进小班，则高估。方向取决于"谁被分进小班"与其对成绩的影响方向。OVB 公式给出的正是这个乘积方向。要点：先问"<strong>班级大小是谁决定的</strong>"。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.2</span>"买保险的人住院率更高，所以保险让人更爱生病。"最贴切的批评是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>样本量不够</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>自选择：健康差的人更倾向买保险（逆向选择）</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>p 值肯定不显著</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>谁买保险不是随机的——身体不好的人更需要保险（这正是 05 货币经济学/06 金融里"逆向选择"的健康版）。这是选择问题，不是统计功效问题。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>内生性四大来源：遗漏变量、反向因果、测量误差、自选择。</li>
+          <li>内生性是大样本也治不好的病；出路在研究设计。</li>
+          <li>看到任何关联，先问："进入'处理组'的方式是不是和结果有关？"</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">第 6 章</span>因果推断工具箱</h2>
+
+      <p><strong>引入问题：</strong>既然观察数据处处是陷阱，经济学家怎么还敢说"最低工资提高 10%，青少年就业仅下降 0~1%"这样具体的话？——靠的是四件"识别武器"。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：随机化是金标准</div>
+        <p>把研究对象<strong>随机</strong>分成处理组与对照组，两组在处理前<strong>在统计意义上完全相同</strong>（连未观测的能力、性格、运气都相同）。处理后的组间差异就只能是处理的效果——随机分配替我们"复制"了反事实。现实中做不到随机时，经济学家寻找<strong>近似随机</strong>的制度变异：政策一刀切的线、时机的先后、抽签的运气。</p>
+      </aside>
+
+      <h3>四件武器</h3>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>方法</th><th>核心思想</th><th>经典案例</th><th>关键前提</th></tr></thead>
+          <tbody>
+            <tr><td><strong>随机实验</strong> RCT</td><td>随机分配处理，组间差 = 因果效应</td><td>俄勒冈州医保抽签（2008）：随机获得 Medicaid</td><td>随机执行到位、无溢出</td></tr>
+            <tr><td><strong>双重差分</strong> DID</td><td>政策前后 × 处理/对照，扣掉组间固有差与共同趋势</td><td>Card &amp; Krueger (1994)：新泽西 vs 宾州最低工资</td><td>平行趋势（无政策时两组走势平行）</td></tr>
+            <tr><td><strong>断点回归</strong> RD</td><td>利用"过线才享受政策"的门槛，比较线两侧</td><td>奖学金分数线两侧的学生长期收入</td><td>个体不能精确操纵分数（跨线近似随机）</td></tr>
+            <tr><td><strong>工具变量</strong> IV</td><td>找一个只通过 x 影响 y 的外生变量</td><td>用"离大学远近"预测上学年限再估收入回报</td><td>相关性 + 排他性（工具只通过 x 起作用）</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 6-1 · 双重差分（DID）：以最低工资研究为例</div>
+        <p class="fig-sub">新泽西（处理）上调最低工资，相邻宾州（对照）不变。拖动"政策效应"滑块，看 DID 如何同时剔除两组的固有差距与共同的时间趋势。</p>
+        <figure class="fig-canvas">
+          <svg id="did-svg" viewBox="0 0 640 380" role="img" aria-label="折线图：横轴为政策前与政策后，宾州对照组从50到54，新泽西处理组从48到随政策效应变化的更高值；虚线为处理组若无政策的反事实趋势。">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="360" text-anchor="middle">时间 →</text>
+            <text class="chart-label" x="200" y="345" text-anchor="middle">政策前</text>
+            <text class="chart-label" x="500" y="345" text-anchor="middle">政策后</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">就业指数</text>
+            <line id="did-cf" class="curve" stroke="#94a3b8" stroke-dasharray="7 5" stroke-width="2.5"/>
+            <line id="did-ctl" class="curve curve-c3"/>
+            <line id="did-trt" class="curve curve-c1"/>
+            <circle id="did-c1" class="dot" r="6" fill="#0d9488"/>
+            <circle id="did-c2" class="dot" r="6" fill="#0d9488"/>
+            <circle id="did-t1" class="dot" r="6" fill="#2f6fdb"/>
+            <circle id="did-t2" class="dot" r="6" fill="#2f6fdb"/>
+            <text class="chart-label" x="540" y="70" text-anchor="end" style="fill:#0d9488">对照组（宾州）</text>
+            <text class="chart-label" x="540" y="90" text-anchor="end" style="fill:#2f6fdb">处理组（新泽西）</text>
+            <text class="chart-label" x="540" y="110" text-anchor="end" style="fill:#64748b">反事实（虚线）</text>
+            <text id="did-txt" class="chart-label" x="335" y="22" text-anchor="middle" style="font-weight:700"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="did-eff">政策效应</label><input type="range" id="did-eff" min="0" max="14" step="0.5" value="6"><output id="did-oe" for="did-eff">6.0</output></div>
+        </div>
+        <figcaption>读图要点：DID = (新泽西后 − 新泽西前) − (宾州后 − 宾州前)。即使两组水平天生不同（这里新泽西起点更低），只要"没有政策时走势平行"，差出的部分就是政策效应。Card 与 Krueger 发现效应约为 0，挑战了"最低工资必然减少就业"的传统预测。</figcaption>
+      </figure>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"用了 DID/RD/IV 就等于因果。"</strong>——每种方法都有"生死线"：DID 怕<strong>平行趋势不成立</strong>（处理组本来就在上行）；RD 怕<strong>精确操纵门槛</strong>（差一分上线的人本来就不同）；IV 怕<strong>排他性受损</strong>（离大学近除了影响上学还直接影响收入）。读实证论文，先读"识别假设是否可信"，再看系数。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.1</span>DID 最关键的前提是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>两组政策前的水平完全相同</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>若无政策，两组的<strong>变化趋势</strong>平行</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>样本量大于 1000</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>平行趋势管的是<strong>趋势（变化量）</strong>而非水平——DID 正是通过"前后相减"消掉固定水平差。所以"处理组起点更低"不致命，"处理组本来就在快速增长"才致命。实操中常用政策前多期数据检验趋势是否平行。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.2</span>RD（断点回归）研究中，最应该检查的图是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>样本量的直方图</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>断点两侧个体"精确扎堆"的密度图（McCrary 检验）</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>因变量的时间序列</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>如果人们能操纵决定变量（压线改分），断点两侧就不再"准随机"，RD 的根基崩塌。密度图上若断点处出现异常堆积（刚好过线的人畸多），说明存在操纵。这是 RD 论文的标配检查。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.3</span>"随机实验做不了"时，最接近"随机分配"的替代品是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>加大样本量重新跑回归</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>加入尽可能多的控制变量</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>寻找由制度/抽签/地理决定的、与个体动机无关的处理变动（自然实验）</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>识别的黄金标准是"处理分配与潜在结果无关"。A、B 都无法切断这种关联；自然实验（政策一刀切、抽签、出生月份决定的上学时点）之所以宝贵，正是因为它们像"上帝做的随机实验"。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>随机化复制了反事实；RCT 是金标准。</li>
+          <li>DID 靠平行趋势、RD 靠断点准随机、IV 靠相关性与排他性。</li>
+          <li>读实证研究：先审识别假设，再信系数。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">终点</span>进阶路线与延伸阅读</h2>
+      <p>计量经济学是所有应用分支的引擎：<strong>09 劳动</strong>（教育回报、最低工资）、<strong>11 发展</strong>（RCT 减贫实验的大本营）、<strong>14 健康与教育</strong>（保险实验）都会反复使用本章工具。想继续深入时间序列（预测、波动率）与面板数据方法，可按下方书目进阶。</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">伍德里奇《计量经济学导论：现代观点》</span>——本科标准教材，直觉与操作并重。</li>
+          <li><span class="bk">Joshua Angrist &amp; Jörn-Steffen Pischke,《Mostly Harmless Econometrics》</span>——因果推断路线的"武林秘籍"，对应本章 5~6 章。</li>
+          <li><span class="bk">Angrist &amp; Pischke,《精通计量：从原因到结果的探求之旅》</span>——普及版，五个武器讲透。</li>
+          <li><span class="bk">《基本无害的量化研究》系列讲义 / Mixtape (Scott Cunningham)</span>——免费在线，代码友好。</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../02-宏观经济学/index.html"><span class="pager-dir">← 上一分支</span><br><span class="pager-name">宏观经济学</span></a>
+        <a href="../04-博弈论与信息经济学/index.html"><span class="pager-dir">下一分支 →</span><br><span class="pager-name">博弈论与信息经济学</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../assets/econ.js"></script>
+<script>
+/* ================= 图 1-1 辛普森悖论 ================= */
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  // 数据: [x(自习小时), y(成绩0-100), group(0=重点/蓝,1=普通/青)]
+  // 重点学校(蓝): 生源好、作业重 → 自习多、成绩高; 组内自习越久成绩越低(恶补的是基础弱者)
+  // 普通学校(青): 自习少、成绩低。两组错位 → 合并斜率为正(辛普森悖论)
+  var data = [
+    [1, 52, 1], [1.5, 50, 1], [2, 49, 1], [2.5, 47, 1], [3, 45, 1], [3.5, 43, 1], [4, 41, 1],
+    [5, 72, 0], [5.5, 70, 0], [6, 68, 0], [6.5, 66, 0], [7, 63, 0], [7.5, 61, 0], [8, 59, 0]
+  ];
+  var X0 = 70, X1 = 600, Y0 = 320, Y1 = 40;
+  var xMin = 0.5, xMax = 8.5, yMin = 35, yMax = 80;
+  function px(x) { return X0 + (x - xMin) / (xMax - xMin) * (X1 - X0); }
+  function py(y) { return Y0 - (y - yMin) / (yMax - yMin) * (Y0 - Y1); }
+  function ols(pts) {
+    var n = pts.length, sx = 0, sy = 0, sxy = 0, sxx = 0, i, x, y;
+    for (i = 0; i < n; i++) { x = pts[i][0]; y = pts[i][1]; sx += x; sy += y; sxy += x * y; sxx += x * x; }
+    var b1 = (n * sxy - sx * sy) / (n * sxx - sx * sx);
+    var b0 = (sy - b1 * sx) / n;
+    return [b0, b1];
+  }
+  var g = document.getElementById("sim-pts");
+  if (g) {
+    data.forEach(function (p) {
+      var c = document.createElementNS(NS, "circle");
+      c.setAttribute("cx", px(p[0])); c.setAttribute("cy", py(p[1]));
+      c.setAttribute("r", 6); c.setAttribute("class", "dot");
+      c.setAttribute("fill", p[2] === 0 ? "#2f6fdb" : "#0d9488");
+      g.appendChild(c);
+    });
+    var all = ols(data);
+    var g0 = ols(data.filter(function (p) { return p[2] === 0; }));
+    var g1 = ols(data.filter(function (p) { return p[2] === 1; }));
+    function setLine(id, b, color) {
+      var el = document.getElementById(id);
+      var xa = xMin, xb = xMax;
+      el.setAttribute("x1", px(xa)); el.setAttribute("y1", py(b[0] + b[1] * xa));
+      el.setAttribute("x2", px(xb)); el.setAttribute("y2", py(b[0] + b[1] * xb));
+    }
+    setLine("sim-ovr", all);
+    setLine("sim-g1", g0);
+    setLine("sim-g2", g1);
+    var note = document.getElementById("sim-note");
+    var bAll = document.getElementById("sim-btn-all");
+    var bGrp = document.getElementById("sim-btn-grp");
+    function show(mode) {
+      var grp = mode === "grp";
+      document.getElementById("sim-ovr").style.display = grp ? "none" : "";
+      document.getElementById("sim-g1").style.display = grp ? "" : "none";
+      document.getElementById("sim-g2").style.display = grp ? "" : "none";
+      if (note) {
+        note.textContent = grp
+          ? "分组视角：两组内部斜率分别为 " + g0[1].toFixed(1) + " 与 " + g1[1].toFixed(1) + "（均为负！）"
+          : "总体视角：合并斜率 +" + all[1].toFixed(1) + "（正相关）";
+      }
+      bGrp.classList.toggle("ghost", grp);
+      bAll.classList.toggle("ghost", !grp);
+    }
+    bAll.addEventListener("click", function () { show("all"); });
+    bGrp.addEventListener("click", function () { show("grp"); });
+    show("all");
+  }
+})();
+
+/* ================= 图 2-1 亲手做 OLS ================= */
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  var data = [[2.0, 3.1], [2.3, 3.6], [2.6, 3.4], [2.9, 4.2], [3.2, 4.6], [3.5, 4.3], [3.8, 5.2], [3.3, 4.8]];
+  var X0 = 70, X1 = 600, Y0 = 330, Y1 = 40;
+  var xMin = 1.5, xMax = 4.2, yMin = 0, yMax = 8;
+  function px(x) { return X0 + (x - xMin) / (xMax - xMin) * (X1 - X0); }
+  function py(y) { return Y0 - (y - yMin) / (yMax - yMin) * (Y0 - Y1); }
+  var n = data.length, sx = 0, sy = 0, sxy = 0, sxx = 0, i, x, y;
+  for (i = 0; i < n; i++) { x = data[i][0]; y = data[i][1]; sx += x; sy += y; sxy += x * y; sxx += x * x; }
+  var b1h = (n * sxy - sx * sy) / (n * sxx - sx * sx);
+  var b0h = (sy - b1h * sx) / n;
+  var sseBest = 0;
+  for (i = 0; i < n; i++) { var d = data[i][1] - b0h - b1h * data[i][0]; sseBest += d * d; }
+  var line = document.getElementById("ols-line");
+  var resid = document.getElementById("ols-resid");
+  var ptsG = document.getElementById("ols-pts");
+  var txt = document.getElementById("ols-txt");
+  if (!line || !resid || !ptsG) return;
+  data.forEach(function (p) {
+    var c = document.createElementNS(NS, "circle");
+    c.setAttribute("cx", px(p[0])); c.setAttribute("cy", py(p[1]));
+    c.setAttribute("r", 6); c.setAttribute("class", "dot"); c.setAttribute("fill", "#334155");
+    ptsG.appendChild(c);
+  });
+  // 残差线只创建一次, 之后复用更新坐标
+  var segs = data.map(function () {
+    var seg = document.createElementNS(NS, "line");
+    seg.setAttribute("stroke", "#ea580c"); seg.setAttribute("stroke-width", 2);
+    resid.appendChild(seg);
+    return seg;
+  });
+  function draw() {
+    var b0 = parseFloat(document.getElementById("ols-b0").value);
+    var b1 = parseFloat(document.getElementById("ols-b1").value);
+    document.getElementById("ols-o0").textContent = b0.toFixed(2);
+    document.getElementById("ols-o1").textContent = b1.toFixed(2);
+    var xa = xMin, xb = xMax;
+    line.setAttribute("x1", px(xa)); line.setAttribute("y1", py(b0 + b1 * xa));
+    line.setAttribute("x2", px(xb)); line.setAttribute("y2", py(b0 + b1 * xb));
+    var sse = 0, i, p, yh;
+    for (i = 0; i < n; i++) {
+      p = data[i]; yh = b0 + b1 * p[0]; sse += (p[1] - yh) * (p[1] - yh);
+      segs[i].setAttribute("x1", px(p[0])); segs[i].setAttribute("y1", py(p[1]));
+      segs[i].setAttribute("x2", px(p[0])); segs[i].setAttribute("y2", py(yh));
+    }
+    if (txt) txt.textContent = "残差平方和 SSE = " + sse.toFixed(2) + "（OLS 最优: " + sseBest.toFixed(2) + "）";
+  }
+  document.getElementById("ols-b0").addEventListener("input", draw);
+  document.getElementById("ols-b1").addEventListener("input", draw);
+  document.getElementById("ols-best").addEventListener("click", function () {
+    document.getElementById("ols-b0").value = b0h.toFixed(2);
+    document.getElementById("ols-b1").value = b1h.toFixed(2);
+    draw();
+  });
+  draw();
+})();
+
+/* ================= 图 6-1 双重差分 ================= */
+(function () {
+  var X_B = 200, X_A = 500;
+  var Y0 = 320, Y1 = 40, vMin = 40, vMax = 78;
+  function py(v) { return Y0 - (v - vMin) / (vMax - vMin) * (Y0 - Y1); }
+  var ctl = [50, 54];          // 对照组: 前50 → 后54
+  var trtPre = 48, trend = 4;  // 处理组: 前48, 无政策趋势+4
+  var slider = document.getElementById("did-eff");
+  var out = document.getElementById("did-oe");
+  var txt = document.getElementById("did-txt");
+  if (!slider) return;
+  function draw() {
+    var eff = parseFloat(slider.value);
+    out.textContent = eff.toFixed(1);
+    var trtPost = trtPre + trend + eff;
+    var cfPost = trtPre + trend;
+    function ln(id, v1, v2) {
+      var el = document.getElementById(id);
+      el.setAttribute("x1", X_B); el.setAttribute("y1", py(v1));
+      el.setAttribute("x2", X_A); el.setAttribute("y2", py(v2));
+    }
+    ln("did-ctl", ctl[0], ctl[1]);
+    ln("did-trt", trtPre, trtPost);
+    ln("did-cf", trtPre, cfPost);
+    function dot(id, x, v) {
+      var el = document.getElementById(id);
+      el.setAttribute("cx", x); el.setAttribute("cy", py(v));
+    }
+    dot("did-c1", X_B, ctl[0]); dot("did-c2", X_A, ctl[1]);
+    dot("did-t1", X_B, trtPre); dot("did-t2", X_A, trtPost);
+    var did = (trtPost - trtPre) - (ctl[1] - ctl[0]);
+    if (txt) txt.textContent = "DID 估计 = (" + (trtPost - trtPre).toFixed(1) + ") − (" + (ctl[1] - ctl[0]).toFixed(1) + ") = " + did.toFixed(1) + "（即政策效应）";
+  }
+  slider.addEventListener("input", draw);
+  draw();
+})();
+</script>
+</body>
+</html>

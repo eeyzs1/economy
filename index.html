@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EconLearn · 经济学自学之路</title>
+<meta name="description" content="EconLearn 经济学自学之路：17 个主分支的中文互动经济学教程，含术语卡、可拖动图表、真实案例与即时反馈自测，可完全离线使用。">
+<link rel="stylesheet" href="assets/econ.css">
+<style>
+  /* —— 门户专属样式 —— */
+  .portal {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--s6) var(--s5) var(--s8);
+  }
+  .portal-hero {
+    padding: var(--s7) var(--s6);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, #eef4ff 0%, #f7f9fc 55%, #fdf6ec 100%);
+    border: 1px solid #dbe5f5;
+    margin-bottom: var(--s7);
+  }
+  .portal-hero .kicker {
+    display: inline-block;
+    font-size: var(--t-xs);
+    font-weight: 700;
+    letter-spacing: .16em;
+    color: #2f6fdb;
+    background: #e2ecfd;
+    border-radius: 999px;
+    padding: 4px 14px;
+    margin-bottom: var(--s4);
+  }
+  .portal-hero h1 {
+    margin: 0 0 var(--s3);
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
+    line-height: 1.25;
+    color: var(--ink-strong);
+  }
+  .portal-hero p { max-width: 42em; color: var(--ink); }
+  .portal-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s5);
+    margin-top: var(--s5);
+    font-size: var(--t-sm);
+    color: var(--ink-soft);
+  }
+  .portal-stats b {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--ink-strong);
+    font-variant-numeric: tabular-nums;
+  }
+  .path-box {
+    margin: var(--s7) 0;
+    padding: var(--s5) var(--s6);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow-x: auto;
+  }
+  .path-box h2 { margin: 0 0 var(--s3); font-size: var(--t-xl); color: var(--ink-strong); }
+  .path-box pre {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--t-sm);
+    line-height: 1.9;
+    color: var(--ink);
+  }
+  .group { margin: var(--s7) 0; }
+  .group > h2 {
+    display: flex;
+    align-items: baseline;
+    gap: var(--s3);
+    font-size: var(--t-xl);
+    color: var(--ink-strong);
+    margin: 0 0 var(--s2);
+  }
+  .group > h2 .g-sub { font-size: var(--t-sm); font-weight: 400; color: var(--ink-soft); }
+  .group > .g-line { height: 3px; border-radius: 2px; background: linear-gradient(90deg, var(--g-color, #2f6fdb), transparent 70%); margin-bottom: var(--s5); }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--s4);
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s2);
+    padding: var(--s5);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--g-color, #2f6fdb);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-1);
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-2);
+    border-color: color-mix(in srgb, var(--g-color, #2f6fdb) 45%, var(--line));
+  }
+  .card:focus-visible { outline: 3px solid var(--g-color, #2f6fdb); outline-offset: 2px; }
+  .card .c-num {
+    font-size: var(--t-xs);
+    font-weight: 800;
+    letter-spacing: .12em;
+    color: var(--g-color, #2f6fdb);
+  }
+  .card .c-name { font-size: var(--t-lg); font-weight: 700; color: var(--ink-strong); }
+  .card .c-en { font-size: var(--t-xs); color: var(--ink-soft); margin-top: -6px; }
+  .card .c-q { font-size: var(--t-sm); line-height: 1.65; color: var(--ink); }
+  .card .c-go { margin-top: auto; font-size: var(--t-sm); font-weight: 700; color: var(--g-color, #2f6fdb); }
+  .portal-foot {
+    margin-top: var(--s8);
+    padding-top: var(--s5);
+    border-top: 1px solid var(--line);
+    font-size: var(--t-sm);
+    color: var(--ink-soft);
+  }
+  .portal-foot a { color: var(--ink); }
+</style>
+</head>
+<body style="--branch:#2f6fdb">
+<a class="skip-link" href="#main">跳到正文</a>
+
+<div class="portal" id="main">
+  <header class="portal-hero">
+    <span class="kicker">ECONLEARN · 17 个主分支 · 互动教程</span>
+    <h1>经济学自学之路</h1>
+    <p>一套可离线浏览的中文经济学互动教程：每个主分支一份完整教材，里面有术语卡、可拖动的图表动画、真实案例、常见误区与即时反馈的自测题。按 JEL 学科分类覆盖经济学的全部主分支。</p>
+    <div class="portal-stats">
+      <div><b>17</b>主分支</div>
+      <div><b>100+</b>互动演示与自测</div>
+      <div><b>0</b>需要安装的东西（双击即开）</div>
+    </div>
+  </header>
+
+  <section class="path-box">
+    <h2>推荐学习路径</h2>
+<pre>阶段一 · 地基          阶段二 · 货币与国际      阶段三 · 应用（任选）     阶段四 · 视野
+─────────────        ─────────────         ─────────────          ─────────────
+01 微观 ─┬─ 02 宏观   05 货币   07 国际      09 劳动    12 环境资源   15 行为
+         ├─ 03 计量   06 金融   08 公共      10 产业    13 城市区域   16 政治经济与制度
+         └─ 04 博弈论                         11 发展    14 健康教育   17 思想史（随时可读）
+
+零基础 → 从 01 开始 ｜ 只想看懂新闻 → 01→02→05→07 ｜ 想做实证 → 尽早学 03</pre>
+  </section>
+
+  <!-- 第一组 -->
+  <section class="group" style="--g-color:#2f6fdb">
+    <h2>第一组 · 核心理论 <span class="g-sub">一切经济学分支的地图与语言，先学这里</span></h2>
+    <div class="g-line"></div>
+    <div class="cards">
+      <a class="card" href="01-微观经济学/index.html"><span class="c-num">01 · MICROECONOMICS</span><span class="c-name">微观经济学</span><span class="c-en">Microeconomics</span><span class="c-q">个体与单个市场如何决策：稀缺、机会成本、供需、市场结构与市场失灵。</span><span class="c-go">进入教程 →</span></a>
+      <a class="card" href="02-宏观经济学/index.html"><span class="c-num">02 · MACROECONOMICS</span><span class="c-name">宏观经济学</span><span class="c-en">Macroeconomics</span><span class="c-q">整体经济的运转：GDP、增长、波动、通胀与失业，以及政策如何起作用。</span><span class="c-go">进入教程 →</span></a>
+      <a class="card" href="03-计量经济学/index.html"><span class="c-num">03 · ECONOMETRICS</span><span class="c-name">计量经济学</span><span class="c-en">Econometrics</span><span class="c-q">让数据说话：回归、因果识别、RCT 与双重差分——区分相关与因果。</span><span class="c-go">进入教程 →</span></a>
+      <a class="card" href="04-博弈论与信息经济学/index.html"><span class="c-num">04 · GAME THEORY &amp; INFORMATION</span><span class="c-name">博弈论与信息经济学</span><span class="c-en">Game Theory &amp; Information Economics</span><span class="c-q">策略互动与信息不对称：纳什均衡、囚徒困境、柠檬市场与机制设计。</span><span class="c-go">进入教程 →</span></a>
+    </div>
+  </section>
+
+  <!-- 第二组 -->
+  <section class="group" style="--g-color:#b45309">
+    <h2>第二组 · 货币与金融 <span class="g-sub">关于"钱"的两个分支</span></h2>
+    <div class="g-line"></div>
+    <div class="cards">
+      <a class="card" href="05-货币经济学/index.html"><span class="c-num">05 · MONEY &amp; BANKING</span><span class="c-name">货币经济学</span><span class="c-en">Money &amp; Banking</span><span class="c-q">货币的本质与创造、中央银行如何调控经济、通货膨胀与金融危机。</span><span class="c-go">进入教程 →</span></a>
+      <a class="card" href="06-金融经济学/index.html"><span class="c-num">06 · FINANCIAL ECONOMICS</span><span class="c-name">金融经济学</span><span class="c-en">Financial Economics</span><span class="c-q">跨时间的资源配置：复利、风险与收益、资产定价与市场有效性。</span><span class="c-go">进入教程 →</span></a>
+    </div>
+  </section>
+
+  <!-- 第三组 -->
+  <section class="group" style="--g-color:#4d7c0f">
+    <h2>第三组 · 部门与国际 <span class="g-sub">跨越国界与政府部门的经济学</span></h2>
+    <div class="g-line"></div>
+    <div class="cards">
+      <a class="card" href="07-国际经济学/index.html"><span class="c-num">07 · INTERNATIONAL ECONOMICS</span><span class="c-name">国际经济学</span><span class="c-en">International Economics</span><span class="c-q">贸易为什么发生、谁赢谁输、汇率如何决定、三元悖论与货币危机。</span><span class="c-go">进入教程 →</span></a>
+      <a class="card" href="08-公共经济学/index.html"><span class="c-num">08 · PUBLIC ECONOMICS</span><span class="c-name">公共经济学（财政学）</span><span class="c-en">Public Economics</span><span class="c-q">政府的经济学角色：税收代价、公共品、再分配与公共选择。</span><span class="c-go">进入教程 →</span></a>
+    </div>
+  </section>
+
+  <!-- 第四组 -->
+  <section class="group" style="--g-color:#047857">
+    <h2>第四组 · 应用领域 <span class="g-sub">把理论用到具体市场与议题</span></h2>
+    <div class="g-line"></div>
+    <div class="cards">
+      <a class="card" href="09-劳动经济学/index.html"><span class="c-num">09 · LABOR ECONOMICS</span><span class="c-name">劳动经济学</span><span class="c-en">Labor Economics</span><span class="c-q">工资从哪来：人力资本、工资差异、最低工资之争与失业。</span><span class="c-go">进入教程 →</span></a>
+      <a class="card" href="10-产业组织/index.html"><span class="c-num">10 · INDUSTRIAL ORGANIZATION</span><span class="c-name">产业组织</span><span class="c-en">Industrial Organization</span><span class="c-q">市场势力、寡头竞争、价格歧视、反垄断与平台经济。</span><span class="c-go">进入教程 →</span></a>
+      <a class="card" href="11-发展与创新经济学/index.html"><span class="c-num">11 · DEVELOPMENT &amp; INNOVATION</span><span class="c-name">发展与创新经济学</span><span class="c-en">Development &amp; Innovation Economics</span><span class="c-q">贫困陷阱、增长奇迹、制度与技术进步的经济学。</span><span class="c-go">进入教程 →</span></a>
+      <a class="card" href="12-环境与资源经济学/index.html"><span class="c-num">12 · ENVIRONMENTAL &amp; RESOURCE ECONOMICS</span><span class="c-name">环境与资源经济学</span><span class="c-en">Environmental &amp; Resource Economics</span><span class="c-q">外部性、庇古税、公地悲剧、渔业崩溃与气候变化经济学。</span><span class="c-go">进入教程 →</span></a>
+      <a class="card" href="13-城市与区域经济学/index.html"><span class="c-num">13 · URBAN &amp; REGIONAL ECONOMICS</span><span class="c-name">城市与区域经济学</span><span class="c-en">Urban &amp; Regional Economics</span><span class="c-q">为什么有城市：集聚效应、地租、住房市场与区域差距。</span><span class="c-go">进入教程 →</span></a>
+      <a class="card" href="14-健康与教育经济学/index.html"><span class="c-num">14 · HEALTH &amp; EDUCATION ECONOMICS</span><span class="c-name">健康与教育经济学</span><span class="c-en">Health &amp; Education Economics</span><span class="c-q">医疗市场为何特殊、保险与道德风险、教育回报与福利国家。</span><span class="c-go">进入教程 →</span></a>
+    </div>
+  </section>
+
+  <!-- 第五组 -->
+  <section class="group" style="--g-color:#7c3aed">
+    <h2>第五组 · 交叉与思想 <span class="g-sub">放宽假设、拉长时间</span></h2>
+    <div class="g-line"></div>
+    <div class="cards">
+      <a class="card" href="15-行为经济学/index.html"><span class="c-num">15 · BEHAVIORAL ECONOMICS</span><span class="c-name">行为经济学</span><span class="c-en">Behavioral Economics</span><span class="c-q">真实的人如何决策：损失厌恶、现时偏好、助推与它的边界。</span><span class="c-go">进入教程 →</span></a>
+      <a class="card" href="16-政治经济学与制度经济学/index.html"><span class="c-num">16 · POLITICAL ECONOMY &amp; INSTITUTIONS</span><span class="c-name">政治经济学与制度经济学</span><span class="c-en">Political Economy &amp; Institutional Economics</span><span class="c-q">产权、交易成本、集体行动、寻租与国家能力。</span><span class="c-go">进入教程 →</span></a>
+      <a class="card" href="17-经济思想史与经济史/index.html"><span class="c-num">17 · HISTORY OF ECONOMIC THOUGHT</span><span class="c-name">经济思想史与经济史</span><span class="c-en">History of Economic Thought &amp; Economic History</span><span class="c-q">从斯密到凯恩斯再到当代流派；大分流与工业化的长时段故事。</span><span class="c-go">进入教程 →</span></a>
+    </div>
+  </section>
+
+  <footer class="portal-foot">
+    <p><b>使用说明</b>：全部页面为纯静态 HTML，离线可用；建议从 <a href="01-微观经济学/index.html">01 微观经济学</a> 开始。分支总览与学习路径另见 <a href="README.md">README.md</a>。教程结构与编写规范见 <a href="DESIGN_SPEC.md">DESIGN_SPEC.md</a>。</p>
+  </footer>
+</div>
+</body>
+</html>

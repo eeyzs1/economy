@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>金融经济学 · EconLearn 经济学自学之路</title>
+<meta name="description" content="金融经济学中文互动教程：现值与复利、风险与收益、分散化与 CAPM、市场有效性与期权入门，配互动图表与自测。">
+<link rel="stylesheet" href="../assets/econ.css">
+</head>
+<body style="--branch:#0e7490">
+<noscript><p class="noscript-tip">本页的互动图表与自测需要启用 JavaScript；未启用时仍可阅读全部正文。</p></noscript>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← 总览</a>
+  <div class="topbar-title"><span class="topbar-num">06</span>金融经济学</div>
+  <button class="toc-toggle" aria-expanded="false">目录</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">本分支章节</p>
+    <nav aria-label="章节目录">
+      <a href="#overview">导读与学习目标</a>
+      <a href="#ch1">1 · 货币的时间价值</a>
+      <a href="#ch2">2 · 风险与收益</a>
+      <a href="#ch3">3 · 分散化：唯一的免费午餐</a>
+      <a href="#ch4">4 · β 与资产定价</a>
+      <a href="#ch5">5 · 市场有效吗？</a>
+      <a href="#ch6">6 · 公司金融与衍生品入门</a>
+      <a href="#path">进阶路线与延伸阅读</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · 经济学自学之路</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">分支 06 · 货币与金融</span>
+        <h1>金融经济学</h1>
+        <p class="hero-en">Financial Economics</p>
+        <p class="hero-lead">金融的核心只有一个问题：跨越时间的价值交换。今天的钱和明天的钱如何比较？不确定的收益如何定价？风险能否被"配置"给最愿意承担的人？——理解了这三件事，你就理解了从房贷利率到期权定价的一切。</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">学完本分支你将能</div>
+        <ul>
+          <li>用<strong>现值/复利</strong>把不同时点的钱换算到同一尺度，并用 NPV 做投资决策</li>
+          <li>解释<strong>风险厌恶</strong>与风险溢价，计算期望收益与波动率</li>
+          <li>说明<strong>相关性</strong>如何决定分散化的效果，理解"有效前沿"</li>
+          <li>用 <strong>β</strong> 与证券市场线解释"只有系统风险才有回报"</li>
+          <li>评价市场有效性假说的证据与局限，读懂期权收益图</li>
+        </ul>
+      </div>
+      <div class="prereq">前置知识：
+        <a class="badge" href="../01-微观经济学/index.html">01 微观（边际效用）</a>
+        <a class="badge" href="../05-货币经济学/index.html">05 货币（利率）</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">第 1 章</span>货币的时间价值</h2>
+
+      <p><strong>引入问题：</strong>给你两个选择：今天拿 10000 元，或一年后拿 10500 元。多数人直觉选今天——为什么"更少的钱"反而更好？一年后的 10500 到底值多少？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：今天的钱更"大"</div>
+        <p>今天的 10000 元可以立即投资（哪怕只是存款），一年后变成 10000×(1+r)。所以比较跨期选择，必须把所有钱<strong>贴现到同一时点</strong>。一年后的 10500 在 5% 利率下，现值 = 10500/1.05 = 10000——恰好打平；利率高于 5%，就该选今天的 10000。复利的威力在于指数：72 法则告诉你，利率 r% 时翻倍大约需要 72/r 年（8% → 9 年）。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 1-1 · 复利增长模拟器</div>
+        <p class="fig-sub">拖动年化收益率与年限滑块，看 1 万元本金如何指数生长；对照"单利"感受复利的差距。</p>
+        <figure class="fig-canvas">
+          <svg id="ci-svg" viewBox="0 0 640 380" role="img" aria-label="复利与单利曲线图：横轴年数0到40，纵轴金额；复利曲线指数上升，单利直线；文字显示终值与倍数。">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="362" text-anchor="middle">年数</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">终值（万元）</text>
+            <line class="gridline" x1="70" y1="230" x2="600" y2="230"/>
+            <line class="gridline" x1="70" y1="140" x2="600" y2="140"/>
+            <line class="gridline" x1="70" y1="50" x2="600" y2="50"/>
+            <path id="ci-simple" class="curve curve-c3" fill="none"/>
+            <path id="ci-comp" class="curve curve-c1" fill="none"/>
+            <text class="chart-label" x="455" y="60" style="fill:#2f6fdb">复利 (1+r)ⁿ</text>
+            <text class="chart-label" x="455" y="80" style="fill:#0d9488">单利 1+rn</text>
+            <text id="ci-txt1" class="chart-title-sm" x="335" y="26" text-anchor="middle"></text>
+            <text id="ci-txt2" class="chart-label" x="335" y="46" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="ci-r">年化收益率</label><input type="range" id="ci-r" min="1" max="15" step="0.5" value="7"><output id="ci-or" for="ci-r">7%</output></div>
+          <div class="ctrl"><label for="ci-n">年数</label><input type="range" id="ci-n" min="5" max="40" step="1" value="30"><output id="ci-on" for="ci-n">30</output></div>
+        </div>
+        <figcaption>读图要点：7% 复利 30 年，1 元变 7.6 元；单利只有 3.1 元。差距就是"利滚利"。反过来看贴现：30 年后的 7.6 元现值恰好 1 元——<strong>长期资产的价值对利率极其敏感</strong>，这就是加息时成长股/长债跌得最狠的原因。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">现值 <span class="term-en">Present Value, PV</span></div><div class="term-def">未来现金流 ÷ (1+r)ⁿ。r 是"把未来打折扣"的折现率——风险越高、等待越久，折扣越狠。</div></div>
+        <div class="term"><div class="term-name">净现值 <span class="term-en">Net Present Value, NPV</span></div><div class="term-def">所有现金流现值之和减初始投入。NPV &gt; 0 的项目创造价值；NPV 决策是公司金融的第一定律。</div></div>
+        <div class="term"><div class="term-name">年金 <span class="term-en">Annuity</span></div><div class="term-def">等额定期支付的现金流（房贷月供就是年金）。整串支付可以折成一个现值公式——房价泡沫本质上是"低利率把年金贴现得很贵"。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 彩票大奖的"缩水"</div>
+        <p>美国彩票头奖"10 亿美元"几乎总是分期支付：每年约 2500 万起步、逐年递增（平均约 3300 万/年）× 30 年，名义加总约 10 亿美元。一次性领取只能拿约一半——因为分期款按市场利率贴现后，现值就是那个数。<strong>"10 亿"是名义加总，"5 亿"才是今天的价值。</strong>同理，30 年期房贷"总还款 200 万"听起来吓人，其现值可能不过 100 万出头。跨期数字不贴现直接相加，是最常见的财务错觉。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"NPV 为正 = 马上做。"</strong>NPV 只回答"创造价值吗"，不回答"这是最优用途吗"。比较的对象应是<strong>次优选择</strong>（机会成本）：把资本、管理精力投到别的项目能赚多少？此外折现率的选择（见第 2 章：风险溢价）会翻动结论——对远期现金流敏感的项目，务必做敏感性分析。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.1</span>市场利率从 4% 升到 8%，一张每年付息、30 年后到期的长期债券价格会？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>大幅下跌（远期现金流被折得更狠）</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>不变，票息是固定的</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>上涨，因为收益率更高</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>债券价格 = 未来所有现金流现值之和。期限越长，对利率越敏感（久期越长）。2022 年美联储加息周期中，30 年期美债一度下跌约 40%——"最安全资产"的深跌正是时间价值机制在展示力量。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.2</span>项目：今天投入 100 万，一年后回收 108 万。市场同类风险投资回报率 10%。应当？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>接受：108 &gt; 100，赚钱</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>拒绝：NPV = 108/1.10 − 100 ≈ −1.8 万 &lt; 0</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>看老板心情</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>会计上确实"赚了 8 万"，但经济上亏了：同样的 100 万投别处能变 110 万。NPV 的本质是把<strong>机会成本</strong>打进折现率——高于 8% 的要求回报率下，这个项目在毁灭价值。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>今天的钱 &gt; 明天的钱：一切金融定价从贴现开始。</li>
+          <li>NPV &gt; 0 才创造价值；折现率 = 资金的机会成本 + 风险溢价。</li>
+          <li>长期现金流对利率最敏感；72 法则速估复利。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">第 2 章</span>风险与收益</h2>
+
+      <p><strong>引入问题：</strong>两个投资：A 稳赚 5%；B 一半概率赚 25%、一半概率亏 15%（期望也是 5%）。如果只能选一个，几乎所有人都选 A——但凭什么"结果更稳"本身就值钱？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：边际效用递减 → 风险厌恶</div>
+        <p>因为钱越多，每一元带来的效用越少（见 01 微观）。B 的"赚 25%"发生在你较富的时候（效用增益打折），"亏 15%"发生在你较穷的时候（效用损失放大）——期望效用算下来低于 A。<strong>风险厌恶不是胆小，是数学</strong>。于是市场均衡的定价必然是：<strong>承担风险要有补偿</strong>（风险溢价 Risk Premium）——无风险利率 + 溢价 = 期望收益。度量风险最常用的尺子是<strong>波动率</strong>（收益率的标准差）。彩票与保险是同一枚硬币的两面：买彩票是付钱"买方差"（小概率大赢），买保险是付钱"卖方差"（消除大亏）——两者期望值都为负，但都可能提高效用。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">期望收益 <span class="term-en">Expected Return</span></div><div class="term-def">各情形收益的概率加权平均。它只刻画"平均"，不刻画"有多不确定"。</div></div>
+        <div class="term"><div class="term-name">标准差/波动率 <span class="term-en">Standard Deviation / Volatility</span></div><div class="term-def">收益偏离期望的典型幅度，是金融里最通行的风险代理指标。</div></div>
+        <div class="term"><div class="term-name">风险溢价 <span class="term-en">Risk Premium</span></div><div class="term-def">风险资产的期望收益超出无风险利率的部分——市场付给"愿意承担风险的人"的工资。</div></div>
+        <div class="term"><div class="term-name">风险厌恶 <span class="term-en">Risk Aversion</span></div><div class="term-def">效用函数的凹性：确定 5% 优于期望 5% 的赌局。它是保险、期权定价、资产定价共同的地基。</div></div>
+      </div>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"高风险资产预期一定高收益，闭眼买就行。"</strong>——反了。是<strong>均衡定价</strong>要求高风险资产提供高<strong>预期</strong>收益，否则没人持有；但"预期"不保证"实现"，高波动资产的长期实现收益可能长期低于低风险资产（风险确实会兑现）。更高预期收益是承担风险的<strong>补偿</strong>，不是免费的奖励。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.1</span>期望收益相同、波动不同的两项资产，风险厌恶者选择？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>低波动者：期望效用更高（边际效用递减）</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>高波动者：刺激</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>无差异：期望相同</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>期望收益相同、方差更小 → 期望效用严格更高（凹函数 + 詹森不等式）。这正是"分散化提高福利"的个体基础：不牺牲期望收益而降低波动，才被称为"免费午餐"（下一章）。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.2</span>彩票与保险期望值都为负，理性人会？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>都不买，期望值为负必亏</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>可能都买：效用不是钱的线性函数，改变分布形状本身可以创造效用</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>只买彩票</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>保险把"小概率巨亏"换成"确定的小额保费"，对风险厌恶者效用上升；彩票把"确定的小额"换成"小概率巨富"，若效用函数在低财富段相对陡峭（或干脆喜欢做梦），效用同样可能上升。期望值框架只是近似，效用框架才是本尊——但注意 15 行为经济学会告诉你：人们买彩票与保险的比例，常常偏离任何合理效用函数。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>风险厌恶源于边际效用递减，不是心理弱点。</li>
+          <li>均衡中风险必须有溢价：期望收益 = 无风险利率 + 溢价。</li>
+          <li>波动率是风险的第一代理指标；彩票与保险是同一原理的两面。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">第 3 章</span>分散化：唯一的免费午餐</h2>
+
+      <p><strong>引入问题：</strong>把 100 只彼此独立的股票组成组合，组合的风险（波动率）会怎样？——答案出人意料：降到接近只剩下"平均水平"，个别股票的风险几乎被抵消干净。这为什么可行？为什么免费？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：此消彼长</div>
+        <p>不同资产的涨跌不完全同步（<strong>相关性 ρ &lt; 1</strong>）。一个跌时另一个未必跌，互相烫平了彼此的波动。数学上：组合方差 = w²σ₁² + (1−w)²σ₂² + 2w(1−w)ρσ₁σ₂——<strong>ρ 越低，交叉项拖累越小，组合风险越低</strong>。ρ=1 时分散毫无用处；ρ=0 时大半的个别风险消失；ρ&lt;0 甚至可以对冲。持有足够多弱相关资产后，剩下的只有所有资产共担的<strong>系统风险</strong>（Systematic Risk），而<strong>特质风险</strong>（Idiosyncratic Risk）被摊薄——降低后者不需要牺牲任何期望收益，所以马克维茨称分散化为"唯一的免费午餐"。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 3-1 · 相关性实验台</div>
+        <p class="fig-sub">两只股票期望收益与波动相同（各 10%、20%），拖动相关性滑块，观察"半仓组合"的风险如何变化。</p>
+        <figure class="fig-canvas">
+          <svg id="dp-svg" viewBox="0 0 640 360" role="img" aria-label="组合风险随资产配置变化的曲线图：不同相关系数下，50/50组合的波动率从接近20%降到低相关时的约14%；当前相关系数下显示具体数值。">
+            <line class="axis" x1="70" y1="300" x2="600" y2="300"/>
+            <line class="axis" x1="70" y1="300" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="342" text-anchor="middle">资产1权重 w（资产2 占 1−w）</text>
+            <text class="chart-label" x="24" y="165" text-anchor="middle" transform="rotate(-90 24 165)">组合波动率 σ</text>
+            <path id="dp-curve" class="curve curve-c1" fill="none"/>
+            <line class="gridline" x1="70" y1="147" x2="600" y2="147"/>
+            <line class="gridline" x1="70" y1="83" x2="600" y2="83"/>
+            <text class="chart-label" x="590" y="141" text-anchor="end">σ ≈ 14.1%（ρ=0 的 50/50）</text>
+            <text class="chart-label" x="590" y="77" text-anchor="end">σ ≈ 20%（单只）</text>
+            <circle id="dp-dot" r="7" class="dot" fill="#0e7490"/>
+            <text id="dp-txt" class="chart-title-sm" x="335" y="30" text-anchor="middle"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="dp-w">配置 w</label><input type="range" id="dp-w" min="0" max="100" step="5" value="50"><output id="dp-ow" for="dp-w">0.5</output></div>
+          <div class="ctrl"><label for="dp-rho">相关性 ρ</label><input type="range" id="dp-rho" min="-100" max="100" step="10" value="0"><output id="dp-orho" for="dp-rho">0.0</output></div>
+        </div>
+        <figcaption>读图要点：ρ=+1 时组合风险是两资产的加权平均（分散无效）；ρ=0 时 50/50 组合波动只有 14.1%（不是 20%！）；ρ=−1 时风险可为零。<strong>关键洞察：期望收益是权重的线性平均，风险却不是</strong>——非线性就是免费午餐的来源。也正因如此，"买十只同一赛道的股票"伪分散：相关性太高。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">系统风险 <span class="term-en">Systematic Risk</span></div><div class="term-def">全市场共担的波动（利率、衰退、战争）——分散不掉，所以有溢价。</div></div>
+        <div class="term"><div class="term-name">特质风险 <span class="term-en">Idiosyncratic Risk</span></div><div class="term-def">个别资产特有的波动（CEO丑闻、产品失败）——分散可消除，市场不为它付一分钱补偿。</div></div>
+        <div class="term"><div class="term-name">有效前沿 <span class="term-en">Efficient Frontier</span></div><div class="term-def">给定期望收益下风险最小的组合集合。理性投资只在这条边界上选；加入无风险资产后演化为"资本市场线"。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 为什么指数基金赢了</div>
+        <p>如果特质风险不获补偿，那么持有几百家公司的指数基金，就以近乎零成本消除了个股风险。逻辑推论：多数人应持有"市场组合 + 无风险资产按风险胃口搭配"（两基金分离）。401(k) 目标日期基金、中国公募指数化大发展，都是这个定理的工程化。巴菲特 2008 年的十年赌局（标普500指数基金 vs 五只对冲基金组合）以指数大胜收官——不是运气，是成本与分散的结构性优势。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.1</span>市场不为特质风险支付补偿，因为？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>特质风险很小</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>它可以被分散化轻易消除，均衡中无人需要为可消除的东西付费</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>监管禁止</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>定价的核心问题永远是"风险由谁承担、能否转嫁"。特质风险通过持有足够多弱相关资产即可消失——若它还有溢价，人们会涌入套利直到溢价消失。反推：<strong>只有躲不掉的系统风险才配有风险溢价</strong>，这是 CAPM（下一章）的灵魂。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.2</span>以下哪组组合的分散效果最好？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>10 只白酒股</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>10 只沪深300成分股</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>股票 + 国债 + 黄金 + 海外股票</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>分散化看的是<strong>相关性结构</strong>而非数量。同行业股票相关性极高（A≈伪分散）；单一市场成分股仍共享同一宏观因子（B 一般）；跨资产、跨市场、跨币种（C）相关性最低，烫平效果最强。2008 年的教训：危机时刻相关性会集体飙向 1——真正的分散要留有"危机时也负相关"的资产（国债、现金）。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>ρ &lt; 1 ⇒ 组合风险低于加权平均：非线性即免费午餐。</li>
+          <li>特质风险可分散无补偿；系统风险不可分散有溢价。</li>
+          <li>分散看相关性结构，不是资产数量。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">第 4 章</span>β 与资产定价</h2>
+
+      <p><strong>引入问题：</strong>如果有 500 只股票，马克维茨的"协方差矩阵"要估 12 万多个参数——根本算不动。有没有一把更简洁的尺子，一个数字概括"这只股票有多危险"？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：只有"跟着大盘的波动"配得上补偿</div>
+        <p>CAPM（资本资产定价模型）的回答：把每只股票的风险压缩成一个数字 <strong>β = 该股收益对市场收益的敏感度</strong>。β=1.5 的股票，市场涨 1% 它平均涨 1.5%，跌也放大——它承担了更多<strong>系统</strong>风险；而它自身的特质波动（CEO 又上头条）因为可分散，不值钱。于是定价公式出奇简单：<strong>期望收益 = 无风险利率 + β × 市场风险溢价</strong>。这就是<strong>证券市场线</strong>（SML）：所有资产按 β 排队定价，掉到线下=便宜，浮到线上=贵。α 的含义也随之清晰：<strong>扣除 β 应得的补偿后，还多赚的部分</strong>——"战胜市场"的严格定义。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 4-1 · 证券市场线：你的股票该给多少收益</div>
+        <p class="fig-sub">拖动 β 滑块，看公平定价下的期望收益；再拨动"错价"开关，体会 α 从哪里来。</p>
+        <figure class="fig-canvas">
+          <svg id="sml-svg" viewBox="0 0 640 360" role="img" aria-label="证券市场线：横轴β从0到2，纵轴期望收益从2%到12%；直线上为公平定价点，错价点偏离直线形成正负α。">
+            <line class="axis" x1="70" y1="300" x2="600" y2="300"/>
+            <line class="axis" x1="70" y1="300" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="342" text-anchor="middle">β（对市场波动的敏感度）</text>
+            <text class="chart-label" x="24" y="165" text-anchor="middle" transform="rotate(-90 24 165)">期望收益</text>
+            <line id="sml-line" class="curve curve-c7" fill="none" stroke-width="2.5"/>
+            <circle id="sml-fair" r="7" class="dot" fill="#0e7490"/>
+            <circle id="sml-cheap" r="7" class="dot" fill="#15803d" style="display:none"/>
+            <text class="chart-label" x="85" y="292">rf 2%</text>
+            <text class="chart-label" x="560" y="60">市场组合 β=1 → 7%</text>
+            <text id="sml-txt" class="chart-title-sm" x="335" y="30" text-anchor="middle"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="sml-b">β</label><input type="range" id="sml-b" min="0" max="20" step="1" value="12"><output id="sml-ob" for="sml-b">1.2</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="sml-cheap-btn">显示"被低估"的股票</button>
+          <button class="btn ghost" id="sml-reset">回到公平定价</button>
+        </div>
+        <figcaption>读图要点：β=1.2 时公平期望收益 = 2% + 1.2×5% = 8%。若市场只给它 6.5%（点落在 SML 下方），它就是"贵了"；给 9.5%（点在上方）就是"便宜"——α 是价格偏离均衡的距离，而<strong>竞争会让 α 迅速消失</strong>（下一章）。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">β（贝塔） <span class="term-en">Beta</span></div><div class="term-def">个股收益对市场收益的回归斜率。β&gt;1 放大市场波动（成长股、高杠杆），β&lt;1 缓冲（公用事业、必需消费）。</div></div>
+        <div class="term"><div class="term-name">α（阿尔法） <span class="term-en">Alpha</span></div><div class="term-def">实际收益超出"β 应得收益"的部分。寻找 α 是主动投资的圣杯，也是效率市场理论宣布"基本不存在"的东西。</div></div>
+        <div class="term"><div class="term-name">CAPM <span class="term-en">Capital Asset Pricing Model</span></div><div class="term-def">E[R] = rf + β(E[Rm] − rf)。把"风险定价"压缩成一条直线，粗糙、可检验、影响深远。</div></div>
+      </div>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"β 高 = 坏股票。"</strong>β 高只意味着<strong>更多系统风险暴露</strong>，均衡中同时意味着<strong>更高期望收益</strong>——它既不更好也不更坏，只是风险口味的不同。真正要警惕的是把"高波动"当"高质量"或把"低 β"当"安全"：低 β 股照样可能因特质风险暴雷（β 只度量与市场的联动）。另注意 CAPM 是<strong>事前定价</strong>模型，事后实现的收益 ≠ 期望收益。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.1</span>无风险利率 3%，市场组合期望收益 8%，β=1.4 的股票公平期望收益？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>8%</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>3% + 1.4×(8%−3%) = 10%</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>3% + 1.4×8% = 14.2%</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>公式里乘上 β 的是<strong>风险溢价</strong>（市场收益−无风险利率），不是市场收益本身——C 是最常见的学生错误。直觉：溢价是"承担每一单位系统风险的价格"，β 是你买的份数。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.2</span>某股 β=1，长期年化跑赢指数 2%。最严格意义上这说明？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>市场无效，赶紧买入</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>实现了正 α；但要判断是运气还是技能，需检验统计显著性与逻辑来源</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>CAPM 被推翻</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>实现的 α ≠ 可预期的 α。即便纯随机，几千只股票里也必然"涌现"连续跑赢的幸运儿（类比：几千人抛硬币必有人连抛对十次）。判断真 α 要看：样本够长？统计显著？有无合理的经济学来源（信息、行为、结构）？以及可持续吗？——这正是主动与被动百年之争的核心（下一章）。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>β = 系统风险暴露；只有它获得溢价补偿。</li>
+          <li>SML：E[R] = rf + β×市场溢价；线外即错价，α 是偏离。</li>
+          <li>实现的 α 要区分运气与技能；CAPM 是定价的第一近似。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">第 5 章</span>市场有效吗？</h2>
+
+      <p><strong>引入问题：</strong>2013 年诺贝尔奖同时颁给了"市场不可战胜"的法玛和"靠泡沫理论赚钱"的席勒。委员会疯了吗？——不，它把经济学最迷人的争论同时钉上了荣誉墙。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：有效的意思不是"价格正确"，而是"白捡的便宜不存在"</div>
+        <p><strong>有效市场假说（EMH）</strong>三个层次：弱式（历史价格里没有免费信息）、半强式（所有公开信息已入价）、强式（连内幕都入价）。逻辑根基是套利竞争：便宜一出现就被人捡走，于是价格"充分反映信息"。<strong>它不承诺价格等于 fundamentals 的真值</strong>——席勒证明的波动率过大、泡沫与非理性，与"你很难系统性地占便宜"完全可以并存：因为套利有成本与限制（借不到券、清盘风险、时机风险），错误定价可以持续很久，还能让"纠正它的人先破产"（"市场保持非理性的时间，可以长过你保持不破产的时间"——传为凯恩斯所言）。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">有效市场假说 <span class="term-en">Efficient Market Hypothesis</span></div><div class="term-def">价格已反映可得信息，因而系统性跑赢市场不可得。三个强度层次逐级加码。</div></div>
+        <div class="term"><div class="term-name">噪声交易者与套利限制 <span class="term-en">Noise Traders &amp; Limits of Arbitrage</span></div><div class="term-def">非理性交易者存在，但理性的套利者无法无限纠正他们——因为套利本身有风险与成本。行为金融的突破口。</div></div>
+        <div class="term"><div class="term-name">被动投资 <span class="term-en">Passive Investing</span></div><div class="term-def">放弃选股，持有指数。逻辑：若市场大体有效，扣除费用后期望最优。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · GameStop 与巴菲特赌局</div>
+        <p><strong>2021 GameStop 事件</strong>：散户论坛合力把一只被重仓做空的股票拉涨数十倍，做空对冲基金巨亏。它同时支持争论双方：价格显然可以严重脱离基本面（反 EMH）；但试图"理性做空泡沫"的基金先被打到爆仓（套利限制——EMH 的救命稻草）。<strong>巴菲特十年赌局</strong>：标普500指数基金年化 7.1% vs 精选五只对冲基金 FOF 的 2.2%。两案合读，得到务实的结论：市场不总是"对"的，但"利用它的错"依然极难、极贵、极险——对普通人，被动+低成本是最优期望策略。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.1</span>"股价随机漫步"支持的是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>弱式有效：历史价格模式不含可预测的免费信息</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>强式有效：连内幕信息也无利可图</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>市场无效：价格胡乱波动</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>随机漫步只否定"从<strong>历史价格</strong>里赚钱"（技术分析的根基）。它不否认：基于深入研究、内幕或行为偏差的获利可能（半强/强式是更强的主张）。层次感是理解 EMH 争论的钥匙——大多数人吵的是不同层次。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.2</span>发现明显的错误定价，理性套利者为何可能不敢动手？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>法律禁止</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>错误定价可能加剧导致套利者先爆仓（清盘风险）、借券成本高企、时机不可知</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>套利者数学不好</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>教科书套利无风险无成本，真实套利两头挨打：价格更离谱时保证金追缴、投资人赎回、借券被召回。LTCM 1998（"收敛交易"的坟墓）与 GameStop 空头 2021 都是同一课：<strong>正确 + 杠杆 + 时机错误 = 破产</strong>。套利限制正是"泡沫存在"与"市场仍难战胜"的相容通道。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>EMH：价格反映信息 ≠ 价格正确；三层次逐级检验。</li>
+          <li>泡沫存在（席勒）与跑赢极难（法玛）并存，通道是套利限制。</li>
+          <li>低成本被动策略是普通人的期望最优解。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">第 6 章</span>公司金融与衍生品入门</h2>
+
+      <p><strong>引入问题：</strong>公司该靠借债还是发股票融资？直觉上"不欠钱最安全"——但为什么现实中的大公司几乎都背着巨额债务，甚至主动借债回购股票？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：MM 定理——馅饼怎么切不改变馅饼大小</div>
+        <p>莫迪利亚尼与米勒证明（理想市场下）：<strong>公司价值与资本结构无关</strong>——融资只是在债权人与股东之间切分现金流这块"馅饼"，切法不改变馅饼大小。这个"无关"结论的伟大在于它的<strong>失效条件</strong>：现实中利息可以抵税（税盾）、破产有成本、信息不对称影响融资选择。于是最优资本结构 = 税盾收益与财务困境成本的平衡——这就是"适度负债"的理论根源。衍生品则是把风险切片交易的合约：<strong>期货</strong>锁定未来价格（转移风险），<strong>期权</strong>花小钱买"权利而非义务"。看涨期权的收益图天然不对称：下行最多损失权利金，上行随股价线性放大——保险与杠杆的合体。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 6-1 · 看涨期权收益实验室</div>
+        <p class="fig-sub">拖动行权价与权利金滑块，看买方到期收益如何随股价变化；体会"下行有限、上行放大"的不对称结构。</p>
+        <figure class="fig-canvas">
+          <svg id="opt-svg" viewBox="0 0 640 360" role="img" aria-label="看涨期权买方到期收益图：横轴到期股价，纵轴收益；股价低于行权价时收益为负的权利金，高于行权价后线性上升，盈亏平衡点为行权价加权利金。">
+            <line class="axis" x1="70" y1="180" x2="600" y2="180"/>
+            <line class="axis" x1="70" y1="300" x2="70" y2="40"/>
+            <text class="chart-label" x="335" y="342" text-anchor="middle">到期股价 S</text>
+            <text class="chart-label" x="24" y="170" text-anchor="middle" transform="rotate(-90 24 170)">买方损益</text>
+            <path id="opt-path" class="curve curve-c1" fill="none"/>
+            <line id="opt-be" stroke="#94a3b8" stroke-dasharray="5 5" stroke-width="2"/>
+            <text id="opt-bet" class="chart-label" style="fill:#475569"></text>
+            <text id="opt-txt" class="chart-title-sm" x="335" y="28" text-anchor="middle"></text>
+            <text class="chart-label" x="560" y="70" style="fill:#2f6fdb">盈亏平衡 = K + 权利金</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="opt-k">行权价 K</label><input type="range" id="opt-k" min="60" max="140" step="5" value="100"><output id="opt-ok" for="opt-k">100</output></div>
+          <div class="ctrl"><label for="opt-p">权利金</label><input type="range" id="opt-p" min="2" max="20" step="1" value="8"><output id="opt-op" for="opt-p">8</output></div>
+        </div>
+        <figcaption>读图要点：期权 = 用确定的小损失（权利金）换取大幅上行空间。<strong>买方最大亏损锁定在权利金</strong>，盈亏平衡点 = 行权价 + 权利金。权利金由内在价值 + 时间价值构成，波动率越大权利金越贵（不确定性越值钱）。卖方则相反：赚小钱、扛大风险——2008 年卖出 CDS 的 AIG 就是"卖期权"的极端下场。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">税盾 <span class="term-en">Tax Shield</span></div><div class="term-def">利息在税前扣除，分红不能——债务因此天然便宜一截，是适度负债的第一理由。</div></div>
+        <div class="term"><div class="term-name">财务困境成本 <span class="term-en">Financial Distress Costs</span></div><div class="term-def">高负债触发破产/重组时的直接间接损失（律师费、客户流失、人才跳槽、被迫贱卖资产）——负债的第二重代价。</div></div>
+        <div class="term"><div class="term-name">期权 <span class="term-en">Option</span></div><div class="term-def">以约定价格在约定时间买入/卖出的<strong>权利</strong>而非义务。看涨（call）、看跌（put）；权利金是其价格。</div></div>
+        <div class="term"><div class="term-name">委托-代理问题 <span class="term-en">Principal-Agent Problem</span></div><div class="term-def">经理人花股东的钱，动机不完全一致。股权激励、董事会、并购威胁都是缓解装置（见 04 博弈论第 4 章）。</div></div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.1</span>MM 定理说资本结构与公司价值无关，其真正含义是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>负债多少真的无所谓，经理不必在意</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>在无税、无破产成本的理想世界中成立；正是偏离这些条件（税盾、困境成本）指引现实最优负债</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>公司应 100% 借债</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>MM 是"基准定理"：它告诉你<strong>什么时候切饼才改变饼的大小</strong>。现实偏离摩擦的方向，就是资本结构设计的指南针（税盾↑多借一点，困境成本↑少借一点）。"定理的假设错了所以定理没用"是对基准模型最流行的误解——恰恰相反，假设清单就是诊断清单。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.2</span>买入行权价 100、权利金 8 的看涨期权，到期股价 130，你的损益？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>+30</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>+22（(130−100) 行权利润 − 8 权利金）</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>−8</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>行权赚 130−100=30，扣除权利金 8，净 +22。若到期价 &lt; 100，放弃行权只亏 8；在 100~108 之间行权小赚但整体仍亏。盈亏平衡点 = 108 = K + 权利金。期权买方的损益结构天然"截断下行"——这正是保护性看跌（保险）与杠杆投机共同的骨架。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>MM 定理：理想世界切饼无关；现实摩擦（税盾/困境成本）决定最优负债。</li>
+          <li>期权 = 权利而非义务：下行有限、上行放大，权利金买不对称性。</li>
+          <li>公司治理的核心是缓解委托-代理冲突。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">终点</span>进阶路线与延伸阅读</h2>
+      <p>金融经济学向外衔接 <strong>07 国际经济学</strong>（汇率资产定价、利率平价），向行为侧衔接 <strong>15 行为经济学</strong>（套利限制与异象），宏观侧回看 <strong>05 货币经济学</strong>（利率期限结构与 QE）。</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">博迪 &amp; 凯恩 &amp; 马库斯《投资学》</span>——资产定价与组合理论的标准教材。</li>
+          <li><span class="bk">默顿·米勒《MM 定理三十年》 / 公司金融任意标准教材（罗斯等）</span>——理解资本结构的逻辑。</li>
+          <li><span class="bk">伯恩斯坦《投资革命》/《与天为敌》</span>——风险思想史，叙事精彩。</li>
+          <li><span class="bk">席勒《非理性繁荣》</span>——泡沫与行为金融的代表作。</li>
+          <li><span class="bk">约翰·赫尔《期权、期货及其他衍生品》</span>——衍生品圣经（进阶）。</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../05-货币经济学/index.html"><span class="pager-dir">← 上一分支</span><br><span class="pager-name">货币经济学</span></a>
+        <a href="../07-国际经济学/index.html"><span class="pager-dir">下一分支 →</span><br><span class="pager-name">国际经济学</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../assets/econ.js"></script>
+<script>
+/* ================= 图 1-1 复利 ================= */
+(function () {
+  var pathC = document.getElementById("ci-comp");
+  var pathS = document.getElementById("ci-simple");
+  var t1 = document.getElementById("ci-txt1");
+  var t2 = document.getElementById("ci-txt2");
+  if (!pathC) return;
+  var X0 = 70, X1 = 600, Y0 = 320, Y1 = 40;
+  function px(t, n) { return X0 + t / n * (X1 - X0); }
+  function draw() {
+    var r = parseFloat(document.getElementById("ci-r").value) / 100;
+    var n = parseFloat(document.getElementById("ci-n").value);
+    document.getElementById("ci-or").textContent = (r * 100).toFixed(1) + "%";
+    document.getElementById("ci-on").textContent = n;
+    var comp = Math.pow(1 + r, n), simple = 1 + r * n;
+    var maxV = Math.max(comp, simple);
+    function py(v) { return Y0 - (v / maxV) * (Y0 - Y1); }
+    var dc = "", ds = "", i, x, t;
+    for (i = 0; i <= n; i++) {
+      x = px(i, n).toFixed(1);
+      dc += (i === 0 ? "M" : "L") + x + "," + py(Math.pow(1 + r, i)).toFixed(1) + " ";
+      ds += (i === 0 ? "M" : "L") + x + "," + py(1 + r * i).toFixed(1) + " ";
+    }
+    pathC.setAttribute("d", dc);
+    pathS.setAttribute("d", ds);
+    if (t1) t1.textContent = "1 元本金 → 复利 " + comp.toFixed(2) + " 元 / 单利 " + simple.toFixed(2) + " 元";
+    if (t2) t2.textContent = "翻倍约需 " + Math.round(72 / (r * 100)) + " 年（72 法则）｜ 现值视角：期末 " + comp.toFixed(1) + " 元 ÷ (1+r)ⁿ = 1 元";
+  }
+  ["ci-r", "ci-n"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", draw);
+  });
+  draw();
+})();
+
+/* ================= 图 3-1 分散化 ================= */
+(function () {
+  var path = document.getElementById("dp-curve");
+  var dot = document.getElementById("dp-dot");
+  var txt = document.getElementById("dp-txt");
+  if (!path) return;
+  var X0 = 70, X1 = 600, Y0 = 300, Y1 = 40;
+  var s = 0.20, mu = 0.10; // 两资产相同: 波动20%, 期望10%
+  function px(w) { return X0 + w * (X1 - X0); }
+  function py(sig) { return Y0 - sig / 0.24 * (Y0 - Y1); }
+  function sigma(w, rho) {
+    return Math.sqrt(w * w * s * s + (1 - w) * (1 - w) * s * s + 2 * w * (1 - w) * rho * s * s);
+  }
+  function draw() {
+    var rho = parseFloat(document.getElementById("dp-rho").value) / 100;
+    var w = parseFloat(document.getElementById("dp-w").value) / 100;
+    document.getElementById("dp-orho").textContent = rho.toFixed(1);
+    document.getElementById("dp-ow").textContent = w.toFixed(2);
+    var d = "", i, ww;
+    for (i = 0; i <= 50; i++) {
+      ww = i / 50;
+      d += (i === 0 ? "M" : "L") + px(ww).toFixed(1) + "," + py(sigma(ww, rho)).toFixed(1) + " ";
+    }
+    path.setAttribute("d", d);
+    var sig = sigma(w, rho);
+    dot.setAttribute("cx", px(w)); dot.setAttribute("cy", py(sig));
+    if (txt) txt.textContent = "w=" + w.toFixed(2) + " 组合：期望 " + (mu * 100).toFixed(1) + "% 不变，波动 " + (sig * 100).toFixed(1) + "%（ρ=" + rho.toFixed(1) + "）";
+  }
+  ["dp-w", "dp-rho"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", draw);
+  });
+  draw();
+})();
+
+/* ================= 图 4-1 SML ================= */
+(function () {
+  var line = document.getElementById("sml-line");
+  var fair = document.getElementById("sml-fair");
+  var cheap = document.getElementById("sml-cheap");
+  var txt = document.getElementById("sml-txt");
+  if (!line) return;
+  var X0 = 70, X1 = 600, Y0 = 300, Y1 = 40;
+  var rf = 0.02, mpr = 0.05; // 无风险2%, 市场溢价5%
+  function px(b) { return X0 + b / 2 * (X1 - X0); }
+  function py(e) { return Y0 - (e - 0) / 0.14 * (Y0 - Y1); }
+  function fairRet(b) { return rf + b * mpr; }
+  line.setAttribute("x1", px(0)); line.setAttribute("y1", py(fairRet(0)));
+  line.setAttribute("x2", px(2)); line.setAttribute("y2", py(fairRet(2)));
+  function place(el, b, e) {
+    el.setAttribute("cx", px(b)); el.setAttribute("cy", py(e));
+  }
+  function draw() {
+    var b = parseFloat(document.getElementById("sml-b").value) / 10;
+    document.getElementById("sml-ob").textContent = b.toFixed(1);
+    var e = fairRet(b);
+    place(fair, b, e);
+    cheap.style.display = "none";
+    if (txt) txt.textContent = "β=" + b.toFixed(1) + " → 公平期望收益 " + (e * 100).toFixed(1) + "%（rf 2% + " + b.toFixed(1) + "×5%）";
+  }
+  document.getElementById("sml-b").addEventListener("input", draw);
+  document.getElementById("sml-cheap-btn").addEventListener("click", function () {
+    var b = parseFloat(document.getElementById("sml-b").value) / 10;
+    var e = fairRet(b) + 0.017;
+    cheap.style.display = "";
+    place(cheap, b, e);
+    if (txt) txt.textContent = "被低估：给 " + (e * 100).toFixed(1) + "% > 应得 " + (fairRet(b) * 100).toFixed(1) + "% → α = +1.7%，买入将推价格回到线上";
+  });
+  document.getElementById("sml-reset").addEventListener("click", draw);
+  draw();
+})();
+
+/* ================= 图 6-1 期权收益 ================= */
+(function () {
+  var path = document.getElementById("opt-path");
+  var be = document.getElementById("opt-be");
+  var bet = document.getElementById("opt-bet");
+  var txt = document.getElementById("opt-txt");
+  if (!path) return;
+  var X0 = 70, X1 = 600, Y0 = 300, Y1 = 40, Y0AX = 180;
+  var Smin = 60, Smax = 140;
+  var vTop = 40, vBot = -25; // 纵轴数值范围, 随滑块动态调整以防曲线越界
+  function px(s) { return X0 + (s - Smin) / (Smax - Smin) * (X1 - X0); }
+  function py(v) { return Y0AX - (v - vBot) / (vTop - vBot) * (Y0AX - Y1); }
+  function payoff(s, k, p) { return Math.max(0, s - k) - p; }
+  function draw() {
+    var k = parseFloat(document.getElementById("opt-k").value);
+    var p = parseFloat(document.getElementById("opt-p").value);
+    vTop = Math.max(40, payoff(Smax, k, p));   // K 低、权利金低时收益可达 ~78
+    vBot = Math.min(-25, -p - 5);
+    document.getElementById("opt-ok").textContent = k;
+    document.getElementById("opt-op").textContent = p;
+    var d = "", i, s;
+    for (i = 0; i <= 80; i++) {
+      s = Smin + (Smax - Smin) * i / 80;
+      d += (i === 0 ? "M" : "L") + px(s).toFixed(1) + "," + py(payoff(s, k, p)).toFixed(1) + " ";
+    }
+    path.setAttribute("d", d);
+    var bex = px(k + p);
+    be.setAttribute("x1", bex); be.setAttribute("x2", bex);
+    be.setAttribute("y1", Y1); be.setAttribute("y2", Y0);
+    bet.setAttribute("x", Math.min(X1 - 8, bex + 4)); bet.setAttribute("y", Y1 + 14);
+    bet.textContent = "S* = " + (k + p);
+    if (txt) txt.textContent = "K=" + k + "，权利金 " + p + " → 最大亏损锁定 " + p + "，盈亏平衡点 " + (k + p);
+  }
+  ["opt-k", "opt-p"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", draw);
+  });
+  draw();
+})();
+</script>
+</body>
+</html>

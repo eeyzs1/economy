@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>国际经济学 · EconLearn 经济学自学之路</title>
+<meta name="description" content="国际经济学中文互动教程：比较优势与贸易利益、关税福利分析、汇率决定、国际收支与三元悖论，配互动图表与自测。">
+<link rel="stylesheet" href="../assets/econ.css">
+</head>
+<body style="--branch:#4d7c0f">
+<noscript><p class="noscript-tip">本页的互动图表与自测需要启用 JavaScript；未启用时仍可阅读全部正文。</p></noscript>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← 总览</a>
+  <div class="topbar-title"><span class="topbar-num">07</span>国际经济学</div>
+  <button class="toc-toggle" aria-expanded="false">目录</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">本分支章节</p>
+    <nav aria-label="章节目录">
+      <a href="#overview">导读与学习目标</a>
+      <a href="#ch1">1 · 为什么贸易</a>
+      <a href="#ch2">2 · 贸易的赢家与输家</a>
+      <a href="#ch3">3 · 关税与贸易政策</a>
+      <a href="#ch4">4 · 汇率与外汇市场</a>
+      <a href="#ch5">5 · 国际收支</a>
+      <a href="#ch6">6 · 三元悖论与货币危机</a>
+      <a href="#path">进阶路线与延伸阅读</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · 经济学自学之路</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">分支 07 · 部门与国际</span>
+        <h1>国际经济学</h1>
+        <p class="hero-en">International Economics</p>
+        <p class="hero-lead">没有一个国家能生产自己需要的一切——即便能，也不该。国际经济学解释贸易为什么发生、谁赢谁输、汇率如何决定，以及为什么"不可能同时钉住汇率、放开资本、又独立加息"。</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">学完本分支你将能</div>
+        <ul>
+          <li>用<strong>机会成本</strong>定义比较优势，解释"样样落后也能从贸易中获益"</li>
+          <li>说明贸易的利益如何分配，预测哪些群体反对开放</li>
+          <li>在供需图上计算<strong>关税</strong>的福利代价（生产者、消费者、政府、无谓损失）</li>
+          <li>用外汇供需解释汇率变动，区分名义/实际汇率与购买力平价</li>
+          <li>写出国际收支恒等式，解释<strong>三元悖论</strong>与货币危机的机制</li>
+        </ul>
+      </div>
+      <div class="prereq">前置知识：
+        <a class="badge" href="../01-微观经济学/index.html">01 微观（供需、剩余）</a>
+        <a class="badge" href="../02-宏观经济学/index.html">02 宏观（利率、总需求）</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">第 1 章</span>为什么贸易：比较优势</h2>
+
+      <p><strong>引入问题：</strong>一个国家在所有产品上的生产率都不如邻国——它还有理由参与国际贸易吗？李嘉图 1817 年的答案改变了世界：<strong>有，而且能赚</strong>。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：比的是"放弃了多少"，不是"谁更强"</div>
+        <p><strong>绝对优势</strong>问"谁生产得更多"；<strong>比较优势</strong>问"谁生产它的机会成本更低"。律师打字比秘书快（绝对优势双料），但律师 1 小时律师工作值 2000 元、打字值 100 元——律师打字的机会成本极高，秘书有比较优势。贸易同理：中国造飞机的效率不如美国，但造飞机要放弃的衣服更多，于是"美国造飞机、中国造衣服"让<strong>两国都消费到超过自身生产能力的东西</strong>。贸易不是零和竞赛，是让每个人专注自己"最不亏"的事。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">比较优势 <span class="term-en">Comparative Advantage</span></div><div class="term-def">以更低机会成本生产某物的能力。比较优势<strong>永远存在</strong>（机会成本此消彼长），这是贸易普遍性的根源。</div></div>
+        <div class="term"><div class="term-name">贸易条件 <span class="term-en">Terms of Trade</span></div><div class="term-def">出口价与进口价之比。落在两国国内机会成本之间时，双方都赢；越靠近哪方的机会成本，利益分配越偏向哪方。</div></div>
+        <div class="term"><div class="term-name">生产可能性边界 <span class="term-en">PPF</span></div><div class="term-def">资源全开时的产出组合。贸易的作用：让消费可能突破本国的 PPF——"扩圆"。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 1-1 · 贸易扩圆：本国 PPF 之外的消费</div>
+        <p class="fig-sub">拖动"分工程度"滑块：从自给自足到完全专业化，看本国（小国）能消费的（衣服, 飞机）组合如何越过自己的生产可能性边界。</p>
+        <figure class="fig-canvas">
+          <svg id="trade-svg" viewBox="0 0 640 380" role="img" aria-label="本国生产可能性边界为直线，斜率表示衣服换飞机的机会成本；引入按世界价格贸易后，消费可能性线外移并更陡，消费点可越出生产边界。">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="362" text-anchor="middle">衣服（百万件）</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">飞机（架）</text>
+            <line id="tr-ppf" class="curve curve-c7" stroke-width="2.5"/>
+            <line id="tr-cpf" class="curve curve-c1" stroke-dasharray="7 5"/>
+            <circle id="tr-point" r="8" class="dot" fill="#4d7c0f"/>
+            <text class="chart-label" x="560" y="70" style="fill:#475569">本国 PPF</text>
+            <text class="chart-label" x="560" y="90" style="fill:#2f6fdb">贸易后的消费可能</text>
+            <text id="tr-txt" class="chart-title-sm" x="335" y="28" text-anchor="middle"></text>
+            <text id="tr-sub" class="chart-label" x="335" y="52" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="tr-w">分工与贸易程度</label><input type="range" id="tr-w" min="0" max="100" step="5" value="0"><output id="tr-ow" for="tr-w">0%</output></div>
+        </div>
+        <figcaption>读图要点：本国 1 架飞机的机会成本 = 40 万件衣服，世界市场只要 25 万件。于是本国少造 1 架飞机、把资源转去造衣服，按世界价格换回飞机——每让渡 1 架"自产"换来 1.6 架"进口"。消费点越过 PPF：这就是贸易利益的几何形态。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 一件 T 恤的环球之旅</div>
+        <p>棉花开局于美国德州 → 纺纱在巴基斯坦/越南 → 织布染整在孟加拉 → 缝制成衣 → 全球销售。没有任何一个环节"必须"发生在同一个国家：每一站都由当地的比较优势（资源、劳动力成本、技术积累、产业集群）决定。皮翠拉·里薇莉《一件T恤的全球经济之旅》用一条供应链讲透了比较优势、贸易政策与政治博弈的互动。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"比较优势来自技术领先。"</strong>——技术领先带来的是绝对优势；比较优势的关键是<strong>相对</strong>机会成本。即便一国全面领先，它的时间与资源也有限，只能把资源放在"领先最多"的领域，其余让渡给他国——贸易因此对强国弱国都有利。另一误区："自由贸易让国家整体受益，所以人人都该支持"——错，下一章：贸易内有赢家输家。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.1</span>A 国：1 天产 6 吨麦或 3 吨钢；B 国：1 天产 1 吨麦或 1 吨钢。以下正确的是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>A 国在麦上有比较优势</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>B 国在钢上有比较优势（A 国 1 吨钢 = 2 吨麦，B 国 1 吨钢 = 1 吨麦）</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>B 国没有比较优势，无法从贸易获益</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>A 国两种产品都有绝对优势，但机会成本：A 国钢=2 麦，B 国钢=1 麦 → B 国产钢"更便宜"，A 国产麦的机会成本（0.5 钢）低于 B 国（1 钢）。于是 A 出口麦、B 出口钢，双方互利——只要贸易条件落在 1 钢 = 1~2 麦之间。"样样落后"的 B 国照样靠比较优势获益。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.2</span>贸易利益的分配取决于？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>两国 GDP 之比</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>贸易条件落在两国机会成本区间的哪个位置</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>哪国的关税更高</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>上例中若成交价贴近 1 钢=2 麦，利益大头归 B 国（钢的买方 A 国几乎没省）；贴近 1:1 则利益大头归 A 国。谈判、市场力量、贸易规模都影响成交价——"双赢"不等于"均分"，这正是贸易政治学的起点。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>比较优势 = 更低的机会成本，与绝对优势无关。</li>
+          <li>贸易条件落在两国机会成本之间 → 双赢；位置决定分配。</li>
+          <li>贸易让消费越过本国 PPF——"扩圆"是利益的几何。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">第 2 章</span>贸易的赢家与输家</h2>
+
+      <p><strong>引入问题：</strong>经济学证明贸易让"国家"整体受益，可为什么总有声势浩大的反贸易运动？因为"国家受益"是加总后的幻觉——<strong>具体的每个群体，命运完全不同</strong>。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：稀缺要素买单</div>
+        <p>贸易压低了进口竞争品的价格 → 本国该产品的生产者（厂商+工人）受损，消费者受益。更深一层（赫克歇尔-俄林 + 斯托尔珀-萨缪尔森定理的直觉）：一国<strong>相对稀缺的要素</strong>是输家——资本富余的国家开放贸易，受益的是资本、受损的是劳工；劳动力富余的国家反过来。消费者赢是"每人赢一点"，生产者输是"少数人输很多"——<strong>集中受损 vs 分散受益</strong>，所以反贸易的组织化政治能量永远更强（集体行动逻辑，见 16）。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">斯托尔珀-萨缪尔森定理 <span class="term-en">Stolper-Samuelson Theorem</span></div><div class="term-def">贸易开放提高一国丰裕要素的实际报酬，降低稀缺要素的实际报酬——赢家中必有输家的镜像。</div></div>
+        <div class="term"><div class="term-name">要素禀赋 <span class="term-en">Factor Endowment</span></div><div class="term-def">一国拥有的资本、劳动、土地等生产要素的相对丰裕程度，决定其比较优势方向（H-O 模型）。</div></div>
+        <div class="term"><div class="term-name">贸易调整援助 <span class="term-en">Trade Adjustment Assistance</span></div><div class="term-def">对贸易受损者的再培训与补偿。理论依据：赢家收益 &gt; 输家损失，理论上可以补偿后仍整体改善。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 中国入世与美国"铁锈带"</div>
+        <p>2001 年中国加入 WTO 后的"中国冲击"（China Shock）研究（Autor, Dorn, Hanson）显示：受进口竞争冲击的美国制造业城镇，就业、工资、婚姻稳定性、公共健康长期受损，且劳动力并未如教科书预言般"平滑再流动"。整体上美国消费者与中国都大幅受益，但<strong>调整的成本高度集中于特定地区与人群</strong>，且远比模型假设的持久——这为理解当今的贸易政治提供了经济学地基。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.1</span>资本充裕、劳工稀缺的美国进一步开放与劳工充裕国家的贸易，长期最可能的受损者是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>美国的全部消费者</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>美国的非技能劳工（稀缺要素）</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>美国的资本所有者</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>S-S 定理：贸易使出口部门密集使用的<strong>丰裕要素</strong>（美国的资本/技能）实际报酬上升，使与进口竞争部门密集使用的<strong>稀缺要素</strong>（非技能劳工）实际报酬下降。消费者整体确实享受低价，但对靠工资吃饭的低技能群体，工资损失可能超过消费收益。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.2</span>"贸易整体收益为正"的政策含义是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>受损者活该，市场就是残酷的</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>赢家理论上可以补偿输家并仍有剩余——补偿与再分配应是贸易政策的组成部分</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>说明反贸易者都是不理性的</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>这是"潜在帕累托改进"的标准含义：贸易创造了补偿的空间。现实政治的失败恰恰在于补偿常常没发生或不到位（再培训计划规模小、覆盖差）。反贸易情绪不是"不懂经济学"，而常常是对<strong>补偿缺位</strong>的理性回应——把这一点讲清楚的经济学，才是成熟的经济学。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>贸易整体改善，但分布上必有输家：稀缺要素 + 进口竞争部门。</li>
+          <li>受益分散、损失集中 → 保护主义的政治能量天然更大。</li>
+          <li>补偿机制是自由贸易的配套工程，不是慈善。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">第 3 章</span>关税与贸易政策</h2>
+
+      <p><strong>引入问题：</strong>关税是最古老的贸易政策，也是政客最爱的工具："让外国卖家出钱保护本国就业"。问题是——关税到底由谁支付？代价有多大？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：关税是楔子</div>
+        <p>对<strong>小国</strong>（无力影响世界价格）征收关税 t：国内价格从世界价 Pw 抬到 Pw+t。消费者多付的钱分成三份：①政府税收（进口量×t）；②本国生产者的额外利润；③<strong>无谓损失</strong>（DWL）——生产端把资源从更有效率的部门拉来低效生产，消费端有人放弃购买。两块三角形就是"保护"的真实社会成本。而"外国卖家买单"在教科书里几乎为零：价格是他们定的，税后涨价落在本国消费者头上。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 3-1 · 关税代价计算器</div>
+        <p class="fig-sub">拖动关税税率滑块，看政府收入、生产者获益、消费者损失与无谓损失（DWL）如何同步变化。</p>
+        <figure class="fig-canvas">
+          <svg id="tar-svg" viewBox="0 0 640 400" role="img" aria-label="供需图：世界价格水平线，关税使国内价格上移，消费者剩余损失拆分为生产者剩余、政府税收与两块无谓损失三角形。">
+            <line class="axis" x1="70" y1="330" x2="600" y2="330"/>
+            <line class="axis" x1="70" y1="330" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="375" text-anchor="middle">数量</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">价格</text>
+            <line class="curve curve-c3" id="tar-sup" stroke-width="3"/>
+            <line class="curve curve-c2" id="tar-dem" stroke-width="3"/>
+            <line id="tar-pw" stroke="#475569" stroke-width="2.5" stroke-dasharray="6 4"/>
+            <line id="tar-pt" stroke="#4d7c0f" stroke-width="2.5"/>
+            <text class="chart-label" x="78" y="52" id="tar-slab" style="fill:#0d9488">S（本国供给）</text>
+            <text class="chart-label" x="78" y="72" id="tar-dlab" style="fill:#ea580c">D（本国需求）</text>
+            <text class="chart-label" x="300" y="330" dy="18" id="tar-pwlab" style="fill:#475569">Pw（世界价格）</text>
+            <text class="chart-label" id="tar-ptlab" style="fill:#4d7c0f">Pw + t</text>
+            <polygon id="tar-gov" fill="#4d7c0f" opacity="0.35"/>
+            <polygon id="tar-dwl" fill="#dc2626" opacity="0.35"/>
+            <text id="tar-txt" class="chart-title-sm" x="335" y="26" text-anchor="middle"></text>
+            <text id="tar-sub" class="chart-label" x="335" y="50" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="tar-t">关税 t（相对价格 %）</label><input type="range" id="tar-t" min="0" max="50" step="5" value="25"><output id="tar-ot" for="tar-t">25%</output></div>
+        </div>
+        <figcaption>读图要点：绿色矩形 = 政府税收；红色三角形 = 无谓损失（DWL）。t 越大，政府收入先增后减（拉弗曲线式穹顶），而 DWL 按 t² 加速膨胀——<strong>低税广征</strong>比<strong>高税窄征</strong>更"划算"，若一定要征税。对大国有例外：关税压低世界价格（贸易条件改善），理论上存在"最优关税"，但报复会让所有人均输（1930 斯姆特-霍利关税的教训）。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">无谓损失 <span class="term-en">Deadweight Loss</span></div><div class="term-def">干预后社会总剩余的净损失：被毁掉的交易本可创造的价值。</div></div>
+        <div class="term"><div class="term-name">配额 <span class="term-en">Quota</span></div><div class="term-def">进口数量上限。与关税类似抬价，但收入变成进口许可证持有人的"租"（或留给外国出口商）——通常比关税更糟。</div></div>
+        <div class="term"><div class="term-name">名义保护率与有效保护 <span class="term-en">Nominal vs Effective Protection</span></div><div class="term-def">对成品征关税保护的是"增加值"：若原材料也靠进口且免税，有效保护率可以远高于名义税率——产业政策的隐形放大器。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 2018-19 关税战的账单</div>
+        <p>美中互相加征关税后，多项实证研究（Amiti-Itskhoki-Konings 等）发现：美国进口价格的上涨幅度几乎等于关税全额——<strong>税负近乎百分之百由美国进口商与消费者承担</strong>，而非中国出口商降价消化。受保护行业确有就业净增，但下游行业成本上升与报复性关税造成的损失与之相当甚至更大。关税是真实的政治武器，也是真实的经济成本。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.1</span>小国征收关税后，国内价格上升幅度？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>≈ 全额关税（世界价格不受其影响）</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>为零，出口商消化</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>为关税的一半</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>"小国"的定义：在世界市场是价格接受者，买多买少都不改变 Pw。因此关税 t 全部落进国内价格——由消费者与下游企业支付。只有足够大的经济体才可能通过压低 Pw 把部分税负转嫁出去（大国情形），而这是以贸易伙伴的报复风险为代价的。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.2</span>相比关税，进口配额往往更糟，因为？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>配额不抬价格</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>配额的"收入"变成许可证租金，可能流向寻租者甚至外国出口商，且透明度更低</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>配额违反所有国际法</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>配额制造稀缺 → 许可证本身值钱（租金）。谁拿到许可证，谁坐收这份租：本国进口商（寻租、腐败温床）或——在"自愿出口限制"安排下——外国出口商（等于把关税收入送给外国）。经济学与公共选择的双重警告：不透明的数量管制比透明的税更易被俘获。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>小国关税全额落在本国价格上：消费者买单。</li>
+          <li>福利分解：政府收入 + 生产者剩余 − 消费者损失 = −DWL。</li>
+          <li>配额的租归许可证持有者，通常比关税更不透明、更易寻租。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">第 4 章</span>汇率与外汇市场</h2>
+
+      <p><strong>引入问题：</strong>1 美元今天换 7.2 元人民币，去年是 6.7，前年是 7.0。汇率每天在新闻里跳动——到底是什么力量在决定它？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：汇率也是一种价格</div>
+        <p>外汇市场是世界上最大的市场（日均交易超 7 万亿美元），但汇率的基础分析依然是<strong>供需</strong>：对外币的需求来自进口、出境游、对外投资与投机；供给来自出口收款、外商投资等。美联储加息 → 美元资产收益率↑ → 全球资金涌向美元 → 需求曲线右移 → 美元升值。长期看，<strong>购买力平价（PPP）</strong>像地心引力：同一种商品篮子按汇率换算后应等价，通胀高的货币长期趋贬（巨无霸指数的原理）。短期看，利率差与资本流动主导——汇率是"资产价格"，天然波动剧烈。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 4-1 · 外汇供需实验台</div>
+        <p class="fig-sub">拖动"本国利率相对外国"滑块，移动外汇需求曲线，观察均衡汇率（本币计价）如何移动。</p>
+        <figure class="fig-canvas">
+          <svg id="fx-svg" viewBox="0 0 640 380" role="img" aria-label="外汇供需图：纵轴为汇率（本币/外币），横轴为外币数量；供给曲线向上倾斜、需求曲线向下倾斜，利率差上升使外汇需求曲线左移，均衡汇率下降，本币对外升值。">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="362" text-anchor="middle">外汇（美元）数量</text>
+            <text class="chart-label" x="22" y="175" text-anchor="middle" transform="rotate(-90 22 175)">汇率（本币/美元）</text>
+            <line id="fx-s" class="curve curve-c3"/>
+            <line id="fx-d0" class="curve curve-c2" stroke-dasharray="5 5"/>
+            <line id="fx-d" class="curve curve-c2"/>
+            <circle id="fx-eq" r="7" class="dot" fill="#4d7c0f"/>
+            <text class="chart-label" x="540" y="80" style="fill:#0d9488">外汇供给 S</text>
+            <text class="chart-label" x="540" y="313" style="fill:#ea580c">外汇需求 D</text>
+            <text id="fx-txt" class="chart-title-sm" x="335" y="28" text-anchor="middle"></text>
+            <text id="fx-sub" class="chart-label" x="335" y="52" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fx-i">本国利率 − 外国利率</label><input type="range" id="fx-i" min="-4" max="4" step="0.5" value="0"><output id="fx-oi" for="fx-i">0.0%</output></div>
+        </div>
+        <figcaption>读图要点：本币利率相对上升 → 资本流入本币资产 → 市场上<strong>抛售美元换本币</strong> → 外汇需求曲线左移 → 均衡汇率（本币/美元）下降 = <strong>本币升值</strong>。反之利差走阔利好美元（2022 年美元大年的机制）。注意纵轴定义："汇率上升"在这里意味着本币贬值——读汇率新闻时先看清是哪种标价法。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">购买力平价 <span class="term-en">Purchasing Power Parity</span></div><div class="term-def">一价定律的宏观版：长期中汇率向"等价购买力"收敛。短期大幅偏离，但它是汇率的长期锚。</div></div>
+        <div class="term"><div class="term-name">实际汇率 <span class="term-en">Real Exchange Rate</span></div><div class="term-def">名义汇率 × 相对价格水平，衡量"竞争力的汇率"。实际贬值=竞争力提升，与名义波动不是一回事。</div></div>
+        <div class="term"><div class="term-name">利率平价 <span class="term-en">Interest Rate Parity</span></div><div class="term-def">利差 ≈ 预期汇率变化（+风险溢价）：高息货币预期贬值补偿利差，否则存在套利。它连接两个市场的定价。</div></div>
+      </div>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"本币贬值 = 国家吃亏了。"</strong>——贬值是双刃剑：出口与旅游竞争力上升（希腊危机中无法贬值之苦的镜像）、外币债务负担加重（阿根廷、地产美元债）。升值同样双刃。汇率没有简单的"荣辱"，只有与经济结构和政策目标的匹配度。另外，新闻里的"破 7"没有魔力——7 只是整数，心理意义远大于经济意义。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.1</span>美国加息而中国按兵不动，其他不变，人民币对美元趋于？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>升值</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>贬值（美元资产更吸金，美元需求↑）</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>不变（汇率由贸易决定）</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>利差驱动资本流动是短期汇率的第一推动力（利率平价）。2022 年美联储激进加息，美元指数冲上二十年高点、主要货币普贬，正是此机制的现场演示。贸易流量决定中长期基本盘，但资本流动的量级远超贸易。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.2</span>某国年通胀 20%，贸易伙伴通胀 2%。按购买力平价，长期其货币应？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>升值约 18%</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>贬值约 18%（购买力差距侵蚀）</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>保持稳定</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>PPP 的相对版本：两国通胀差 ≈ 汇率贬值率。高通胀国商品变贵，只有货币贬值才能维持"同一篮子商品等价"。观察任何长期高通胀国家（土耳其、阿根廷）的汇率曲线，都如教科书般贴合——短期可以偏离，长期从未豁免。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>汇率 = 外汇的价格：短期由资本流动与利差驱动。</li>
+          <li>长期锚是购买力平价：通胀差 ≈ 贬值率。</li>
+          <li>升贬无荣辱，关键看债务币种与出口结构。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">第 5 章</span>国际收支：一国的收支流水</h2>
+
+      <p><strong>引入问题：</strong>新闻说"中国经常账户顺差""美国贸易逆差创纪录"。顺差到底是储蓄的勋章，还是失衡的病历？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：逆差 = 花得比赚得多，差额靠"打欠条"</div>
+        <p>国际收支（BOP）是本国与世界的全部资金流水账，两大科目：<strong>经常账户</strong>（商品服务贸易 + 投资收益 + 转移）与<strong>资本金融账户</strong>（资产的买卖）。会计恒等式：经常账户 + 资本金融账户 ≡ 0（误差忽略）。贸易逆差必然对应资本净流入——外国人拿到本币后必然买本国资产（国债、股票、房产），即"打欠条"。更深的恒等式：<strong>经常账户 = 储蓄 − 投资</strong>。美国的逆差意味着国民储蓄不足（政府+私人过度借贷）；中国的顺差曾是高储蓄的自然出口。汇率与利率正是让这两个账户平衡的价格。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">经常账户 <span class="term-en">Current Account</span></div><div class="term-def">贸易余额 + 净收益 + 净转移。顺差=向世界净放贷，逆差=向世界净借债。</div></div>
+        <div class="term"><div class="term-name">外汇储备 <span class="term-en">Foreign Exchange Reserves</span></div><div class="term-def">央行持有的外币资产。干预汇率（逆差时卖出外汇）与危机保险的双重功能；过高则有低收益与通胀输入的成本。</div></div>
+        <div class="term"><div class="term-name">全球失衡 <span class="term-en">Global Imbalances</span></div><div class="term-def">大规模跨境失衡格局（如 2000s：亚洲+产油国顺差 vs 美国逆差）。伯南克"储蓄过剩"假说：顺差国的储备涌向美国国债，压低利率、吹大地产泡沫。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 顺差的另一面</div>
+        <p>中国 2000s 的"双顺差"（经常+资本）带来 4 万亿美元级的外汇储备积累：一边是出口引擎与就业，一边是被动投放的基础货币（对冲压力）、以及对美债的低收益敞口。"出口=好、进口=坏"的重商主义直觉只看到了流水的一半——<strong>顺差同样是把钱借给外国人消费</strong>，本国民众减少了当期消费。最优失衡不是越大越好，而是与储蓄-投资基本面匹配的失衡。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.1</span>美国贸易逆差必然意味着？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>美国在吃亏，出口输给了外国</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>外国人净增持美国资产（资本账户顺差），同时国民储蓄小于投资</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>美元即将崩溃</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>BOP 恒等式使"逆差"自动意味着"资本流入"：外国人卖给我们商品，再用赚到的美元买美国资产。因果可以双向（低储蓄诱发逆差；外国储蓄涌入压低利率刺激消费），但账一定平。把逆差道德化为"吃亏"，是把家庭记账的直觉错误套用到国家层面。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>BOP ≡ 0：经常账户逆差 ⇔ 资本流入。</li>
+          <li>更深一层：CA = S − I，逆差的本质是储蓄不足。</li>
+          <li>顺差/逆差无道德属性，与基本面匹配才健康。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">第 6 章</span>三元悖论与货币危机</h2>
+
+      <p><strong>引入问题：</strong>1997 年亚洲金融危机、2015 年瑞士法郎"脱锚"闪崩、2022 年英镑/日元暴贬——危机剧本惊人地相似：资本大规模出逃，央行守不住汇率。为什么守住汇率这么难？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：三选二</div>
+        <p><strong>三元悖论（不可能三角）</strong>：① 固定汇率、② 资本自由流动、③ 独立货币政策——三者<strong>最多同时要两个</strong>。逻辑：若汇率固定且资本自由，套利使国内外利率必须一致（否则资金无限流动冲击汇率），货币政策失效；若想既要固定汇率又要独立加息，就必须管住资本账户。香港（放弃③：货币局制度）、中国内地（部分管②）、美国/日本（放弃①：浮动汇率）各自选边。危机的典型剧本：选了"固定+自由流动"的经济体基本面恶化 → 投机资本押注贬值 → 央行为守汇率加息/抛储备 → 加息重创国内经济、储备见底 → <strong>弃守，一夜暴贬</strong>。索罗斯 1992 年狙击英镑，正是提前看到了这个不可守之局。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 6-1 · 三元悖论选择器</div>
+        <p class="fig-sub">三角形每条边代表放弃一项。点击三个政策目标中的两个，看现实中谁走了这条路线。</p>
+        <figure class="fig-canvas">
+          <svg id="tri-svg" viewBox="0 0 640 360" role="group" aria-label="不可能三角：三个顶点为固定汇率、资本自由流动、独立货币政策；用键盘或鼠标任意选两个顶点，对应一种现实制度选择，如香港、中国大陆、美国。">
+            <line x1="320" y1="60" x2="130" y2="300" class="axis"/>
+            <line x1="320" y1="60" x2="510" y2="300" class="axis"/>
+            <line x1="130" y1="300" x2="510" y2="300" class="axis"/>
+            <circle id="tri-v1" cx="320" cy="60" r="12" fill="#fff" stroke="#4d7c0f" stroke-width="3" style="cursor:pointer" tabindex="0" role="button" aria-label="选择目标：固定汇率" aria-pressed="false"/>
+            <circle id="tri-v2" cx="130" cy="300" r="12" fill="#fff" stroke="#4d7c0f" stroke-width="3" style="cursor:pointer" tabindex="0" role="button" aria-label="选择目标：资本自由流动" aria-pressed="false"/>
+            <circle id="tri-v3" cx="510" cy="300" r="12" fill="#fff" stroke="#4d7c0f" stroke-width="3" style="cursor:pointer" tabindex="0" role="button" aria-label="选择目标：独立货币政策" aria-pressed="false"/>
+            <text class="chart-label" x="320" y="40" text-anchor="middle" style="font-weight:700">固定汇率</text>
+            <text class="chart-label" x="118" y="330" text-anchor="middle" style="font-weight:700">资本自由流动</text>
+            <text class="chart-label" x="525" y="330" text-anchor="middle" style="font-weight:700">独立货币政策</text>
+            <text id="tri-txt" class="chart-title-sm" x="320" y="190" text-anchor="middle"></text>
+            <text id="tri-sub" class="chart-label" x="320" y="215" text-anchor="middle" style="fill:#475569"></text>
+            <text class="chart-label" x="320" y="352" text-anchor="middle" style="fill:#64748b">点击顶点选择目标（最多两个）</text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn ghost" id="tri-reset">重置选择</button>
+        </div>
+        <figcaption>读图要点：选"固定汇率 + 资本自由流动"= 香港的货币局（放弃独立利率）；选"独立货币政策 + 资本自由流动"= 美/日/欧的浮动汇率；选"固定汇率 + 独立货币政策"= 中国大陆的资本账户管理。三者都是<strong>自洽的选择</strong>，想全都要的经济体，1997 年的泰国就是结局。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">货币局制度 <span class="term-en">Currency Board</span></div><div class="term-def">最严格的固定汇率：基础货币 100% 外汇储备背书，利率完全跟随锚货币。香港联系汇率制 1983 年至今。</div></div>
+        <div class="term"><div class="term-name">自我实现的投机攻击 <span class="term-en">Self-fulfilling Attack</span></div><div class="term-def">投机者集体押注贬值 → 央行被迫加息伤经济 → 贬值"证明"合理。危机可以由预期本身点燃（博弈论的坏均衡再现）。</div></div>
+        <div class="term"><div class="term-name">原罪问题 <span class="term-en">Original Sin</span></div><div class="term-def">新兴市场无法以本币长期借债 → 汇率贬值瞬间放大外债负担 → 贬值自我强化。亚洲危机的核心放大器。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 1997 亚洲金融危机速写</div>
+        <p>泰国：固定汇率 + 资本自由 + 短期美元外债高企。投机者借泰铢抛售换美元 → 泰央行加息、抛储备应战 → 储备一个月内见底 → 7 月 2 日放弃固定汇率，泰铢当日贬值 ~15%，随后传导至韩、印尼（货币腰斩、GDP 两位数下滑）。教训清单：不可能三角不可违、短期外债是火药、储备的"充足性"要看口径、IMF 的紧缩方案争议至今。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.1</span>香港实行联系汇率（固定+资本自由），意味着香港金管局？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>利率必须跟随美联储，没有独立的货币政策</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>可以独立加息对抗本地楼市泡沫而不影响汇率</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>可以同时拥有三者，因为香港储备充足</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>三元悖论是逻辑约束，不是资源约束——储备再多也买不回第三个角。美联储 2022 加息时，港元利率被迫同步上行（港美利差逼近零），本地楼市与股市承受输入性紧缩。选择固定汇价的代价，就是把货币主权典当出去。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.2</span>投机性货币攻击能"自我实现"，最贴切的博弈结构是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>囚徒困境的占优策略</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>协调博弈：都攻/都不攻都是均衡，恐慌切换均衡</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>与银行挤兑毫无关系</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>货币攻击与银行挤兑（05 分支第 6 章）是同构的协调失败：如果没人攻击，汇率可守；如果人人攻击，守住的成本（加息衰退）高到不可持续。第二代的危机模型（Obstfeld）核心即"基本面的灰色地带里，预期决定命运"。防御之道：不给自己留下"可被挤兑的资产负债表"。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>三元悖论：固定汇率、资本自由、独立货币三选二。</li>
+          <li>危机剧本：基本面恶化 → 投机攻击 → 守汇率的成本爆炸 → 弃守暴贬。</li>
+          <li>货币攻击与银行挤兑同构：协调失败的坏均衡。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">终点</span>进阶路线与延伸阅读</h2>
+      <p>国际经济学向下扎根于 <strong>01 微观</strong>（贸易的供需分析）与 <strong>02 宏观</strong>（开放经济模型），向上衔接 <strong>11 发展与创新</strong>（贸易与增长）、<strong>13 城市与区域</strong>（经济地理与新贸易理论）、<strong>16 政治经济学</strong>（贸易政治经济学）。</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">克鲁格曼《国际经济学》（理论与政策）</span>——克鲁格曼-奥伯斯法尔德版，标准教材。</li>
+          <li><span class="bk">皮翠拉·里薇莉《一件T恤的全球经济之旅》</span>——用一条供应链讲活贸易理论。</li>
+          <li><span class="bk">克鲁格曼《流行的国际主义》/《贩卖忧虑的经济学》</span>——驳斥贸易恐慌论的经典科普。</li>
+          <li><span class="bk">《广场与奈何桥：亚洲金融危机》等危机史著作</span>——把三元悖论读成故事。</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../06-金融经济学/index.html"><span class="pager-dir">← 上一分支</span><br><span class="pager-name">金融经济学</span></a>
+        <a href="../08-公共经济学/index.html"><span class="pager-dir">下一分支 →</span><br><span class="pager-name">公共经济学</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../assets/econ.js"></script>
+<script>
+/* ================= 图 1-1 贸易扩圆 ================= */
+(function () {
+  var ppf = document.getElementById("tr-ppf");
+  var cpf = document.getElementById("tr-cpf");
+  var point = document.getElementById("tr-point");
+  var t1 = document.getElementById("tr-txt");
+  var t2 = document.getElementById("tr-sub");
+  if (!ppf) return;
+  // 本国: 最大 100 飞机 或 4000 衣服(机会成本 1飞机=40衣服); 世界价 1飞机=25衣服
+  var X0 = 70, X1 = 600, Y0 = 320, Y1 = 50;
+  var maxF = 100, maxC = 4000;
+  function px(c) { return X0 + c / (maxC * 1.6) * (X1 - X0); }
+  function py(f) { return Y0 - f / (maxF * 1.75) * (Y0 - Y1); } // 消费点最高可达 160 架(=maxC/25), 留足余量不出画布
+  // PPF: (0,maxF) 到 (maxC,0)
+  ppf.setAttribute("x1", px(0)); ppf.setAttribute("y1", py(maxF));
+  ppf.setAttribute("x2", px(maxC)); ppf.setAttribute("y2", py(0));
+  // CPF(完全专业化造衣服): 从 (maxC,0) 斜率 25 → 最大飞机 = maxC/25=160
+  cpf.setAttribute("x1", px(0)); cpf.setAttribute("y1", py(maxC / 25));
+  cpf.setAttribute("x2", px(maxC)); cpf.setAttribute("y2", py(0));
+  function draw() {
+    var w = parseFloat(document.getElementById("tr-w").value) / 100;
+    document.getElementById("tr-ow").textContent = Math.round(w * 100) + "%";
+    // 消费点: 自给自足取 PPF 中点(50飞机,2000衣服), 完全专业=全部造衣服换飞机
+    var f = 50 * (1 - w) + 0 * w;             // 自产飞机减少
+    var cSelf = (100 - f) * 40;               // 剩余资源造的衣服(PPF上)
+    var planesBought = w * (cSelf / 25);      // 用衣服按世界价换飞机
+    var cKept = cSelf - planesBought * 25;
+    var fTotal = f + planesBought;
+    point.setAttribute("cx", px(cKept)); point.setAttribute("cy", py(fTotal));
+    if (t1) t1.textContent = "消费组合：(" + Math.round(cKept) + " 万件衣服, " + fTotal.toFixed(0) + " 架飞机)";
+    if (t2) t2.textContent = w === 0 ? "自给自足：消费被锁死在本国 PPF 上" :
+      "已越过本国 PPF（最多 " + maxF + " 架）——贸易让消费扩圆 " + Math.round(w * 100) + "%";
+  }
+  document.getElementById("tr-w").addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= 图 3-1 关税 ================= */
+(function () {
+  var svgIds = ["tar-sup", "tar-dem", "tar-pw", "tar-pt", "tar-gov", "tar-dwl"];
+  if (!document.getElementById("tar-sup")) return;
+  var X0 = 70, X1 = 600, Y0 = 330, Y1 = 60;
+  // 线性供需: P = 40 + 0.10 Q (供给), P = 100 - 0.06 Q (需求) → 自给均衡 Q=375, P=77.5
+  // 世界价格 Pw = 55 → 无关税时: 本国供给 Qs=(55-40)/0.1=150, 需求 Qd=(100-55)/0.06=750, 进口600
+  function pS(q) { return 40 + 0.10 * q; }
+  function pD(q) { return 100 - 0.06 * q; }
+  var Pmin = 30, Pmax = 105;
+  function px(q) { return X0 + q / 850 * (X1 - X0); }
+  function py(p) { return Y0 - (p - Pmin) / (Pmax - Pmin) * (Y0 - Y1); }
+  var sup = document.getElementById("tar-sup");
+  sup.setAttribute("x1", px(0)); sup.setAttribute("y1", py(pS(0)));
+  sup.setAttribute("x2", px(700)); sup.setAttribute("y2", py(pS(700)));
+  var dem = document.getElementById("tar-dem");
+  dem.setAttribute("x1", px(60)); dem.setAttribute("y1", py(pD(60)));
+  dem.setAttribute("x2", px(830)); dem.setAttribute("y2", py(pD(830)));
+  var Pw = 55;
+  var pwLine = document.getElementById("tar-pw");
+  pwLine.setAttribute("x1", X0); pwLine.setAttribute("x2", X1);
+  pwLine.setAttribute("y1", py(Pw)); pwLine.setAttribute("y2", py(Pw));
+  var t1 = document.getElementById("tar-txt");
+  var t2 = document.getElementById("tar-sub");
+  function draw() {
+    var tPct = parseFloat(document.getElementById("tar-t").value);
+    document.getElementById("tar-ot").textContent = tPct + "%";
+    var Pt = Pw * (1 + tPct / 100);
+    var ptLine = document.getElementById("tar-pt");
+    ptLine.setAttribute("x1", X0); ptLine.setAttribute("x2", X1);
+    ptLine.setAttribute("y1", py(Pt)); ptLine.setAttribute("y2", py(Pt));
+    var ptLab = document.getElementById("tar-ptlab");
+    ptLab.setAttribute("x", X1 - 10); ptLab.setAttribute("y", py(Pt) - 8);
+    ptLab.setAttribute("text-anchor", "end");
+    ptLab.textContent = "Pw + t = " + Pt.toFixed(0);
+    var pwLab = document.getElementById("tar-pwlab");
+    pwLab.setAttribute("x", X0 + 8); pwLab.setAttribute("y", py(Pw) + 16);
+    var qs = (Pt - 40) / 0.10;            // 关税后本国供给
+    var qd = (100 - Pt) / 0.06;           // 关税后本国需求
+    var qs0 = (Pw - 40) / 0.10;
+    var qd0 = (100 - Pw) / 0.06;
+    var qA = 375, PA = 77.5;              // 自给自足均衡(两线交点)
+    var gov = document.getElementById("tar-gov");
+    var dwl = document.getElementById("tar-dwl");
+    if (qd > qs) {
+      gov.setAttribute("display", "inline");
+      gov.setAttribute("points",
+        px(qs) + "," + py(Pt) + " " + px(qd) + "," + py(Pt) + " " +
+        px(qd) + "," + py(Pw) + " " + px(qs) + "," + py(Pw));
+      dwl.setAttribute("points",
+        px(qs0) + "," + py(Pw) + " " + px(qs) + "," + py(Pw) + " " + px(qs) + "," + py(Pt) + " " +
+        px(qd0) + "," + py(Pw) + " " + px(qd) + "," + py(Pw) + " " + px(qd) + "," + py(Pt));
+      if (t1) t1.textContent = "进口从 " + Math.round(qd0 - qs0) + " 降至 " + Math.round(qd - qs);
+      if (t2) t2.textContent = "政府收入(绿) " + Math.round((qd - qs) * (Pt - Pw) * 10) / 10 + " 单位；DWL(红)≈ " + (tPct === 0 ? 0 : (tPct / 100) + "² 的价格尺度 × 面积") + "（随 t² 增长）";
+    } else {
+      // 禁止性关税: 进口归零, 价格升至自给自足水平
+      gov.setAttribute("display", "none");
+      dwl.setAttribute("points",
+        px(qs0) + "," + py(Pw) + " " + px(qd0) + "," + py(Pw) + " " + px(qA) + "," + py(PA));
+      if (t1) t1.textContent = "禁止性关税：进口归零（Pw+t 已达自给自足价 77.5）";
+      if (t2) t2.textContent = "国内价格升至自给自足水平；税率再高只抬价格、不增收入";
+    }
+  }
+  document.getElementById("tar-t").addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= 图 4-1 外汇供需 ================= */
+(function () {
+  if (!document.getElementById("fx-s")) return;
+  var X0 = 70, X1 = 600, Y0 = 320, Y1 = 50;
+  function px(q) { return X0 + q / 100 * (X1 - X0); }
+  function py(e) { return Y0 - (e - 5.5) / 4 * (Y0 - Y1); } // 汇率 5.5~9.5
+  var s = document.getElementById("fx-s");
+  // 供给 S: 美元越贵(汇率越高) → 出口收款换汇越多 → 向上倾斜 (5,6.0)→(95,9.0)
+  s.setAttribute("x1", px(5)); s.setAttribute("y1", py(6.0));
+  s.setAttribute("x2", px(95)); s.setAttribute("y2", py(9.0));
+  var d0 = document.getElementById("fx-d0");
+  d0.setAttribute("x1", px(5)); d0.setAttribute("y1", py(9.0));
+  d0.setAttribute("x2", px(95)); d0.setAttribute("y2", py(6.0));
+  var d = document.getElementById("fx-d");
+  var eq = document.getElementById("fx-eq");
+  var t1 = document.getElementById("fx-txt");
+  var t2 = document.getElementById("fx-sub");
+  function draw() {
+    var di = parseFloat(document.getElementById("fx-i").value);
+    document.getElementById("fx-oi").textContent = (di >= 0 ? "+" : "") + di.toFixed(1) + "%";
+    // 利差(本国-外国)越高 → 本币资产越吸引 → 外汇需求左移(负向)
+    var shift = -di * 4; // 需求量平行移动(百分点)
+    var tx1 = 5 + shift, tx2 = 95 + shift; // 需求线真实端点(可越出画布)
+    // 绘制时只画可见区间 [5,100] 内的部分, 端点取真实线上的对应点
+    var qa = Math.max(5, tx1), qb = Math.min(100, tx2);
+    d.setAttribute("x1", px(qa)); d.setAttribute("y1", py(9.0 - 3 / 90 * (qa - tx1)));
+    d.setAttribute("x2", px(qb)); d.setAttribute("y2", py(9.0 - 3 / 90 * (qb - tx1)));
+    // 均衡: S 与 D 交点。 S: e = 6.0 + 3/90*(q-5); D: e = 9.0 - 3/90*(q - tx1)
+    var qs = 5, es = 6.0;
+    for (var q = 5; q <= 100; q += 0.5) {
+      var eS = 6.0 + 3 / 90 * (q - 5);
+      var eD = 9.0 - 3 / 90 * (q - tx1);
+      if (eS >= eD) { qs = q; es = eS; break; }
+    }
+    eq.setAttribute("cx", px(qs)); eq.setAttribute("cy", py(es));
+    if (t1) t1.textContent = "均衡汇率 ≈ " + es.toFixed(2) + " 本币/美元";
+    if (t2) t2.textContent = di === 0 ? "利差为零：资本流动中性" :
+      (di > 0 ? "本国加息 " + di.toFixed(1) + "pp → 资本流入本币 → 本币升值（汇率数值下降）"
+              : "本国降息 " + Math.abs(di).toFixed(1) + "pp → 资本外流 → 本币贬值（汇率数值上升）");
+  }
+  document.getElementById("fx-i").addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= 图 6-1 三元悖论 ================= */
+(function () {
+  var vs = [
+    { id: "tri-v1", name: "固定汇率", combo: { pair: ["固定汇率", "资本自由流动"], who: "香港（货币局）", note: "放弃独立货币政策：利率必须跟随美元锚" } },
+    { id: "tri-v2", name: "资本自由流动", combo: { pair: ["资本自由流动", "独立货币政策"], who: "美国 / 日本 / 欧元区", note: "放弃固定汇率：汇率自由浮动" } },
+    { id: "tri-v3", name: "独立货币政策", combo: { pair: ["固定汇率", "独立货币政策"], who: "中国大陆（有管理浮动+资本账户管理）", note: "放弃资本完全自由流动：换取调控空间" } }
+  ];
+  var picked = { "tri-v1": false, "tri-v2": false, "tri-v3": false };
+  var txt = document.getElementById("tri-txt");
+  var sub = document.getElementById("tri-sub");
+  function chosen() { return vs.filter(function (v) { return picked[v.id]; }); }
+  function render() {
+    vs.forEach(function (v) {
+      var el = document.getElementById(v.id);
+      el.setAttribute("fill", picked[v.id] ? "#4d7c0f" : "#ffffff");
+      el.setAttribute("aria-pressed", picked[v.id] ? "true" : "false");
+    });
+    var sel = chosen();
+    if (sel.length === 0) {
+      if (txt) txt.textContent = "未选择目标";
+      if (sub) sub.textContent = "提示：三角形的三个角最多同时选两个";
+    } else if (sel.length === 1) {
+      if (txt) txt.textContent = "已选：" + sel[0].name;
+      if (sub) sub.textContent = "再选一个（第三个将被迫放弃）";
+    } else {
+      var match = null;
+      vs.forEach(function (v) {
+        if (v.combo.pair.indexOf(sel[0].name) >= 0 && v.combo.pair.indexOf(sel[1].name) >= 0) match = v.combo;
+      });
+      if (match) {
+        if (txt) txt.textContent = "组合：" + match.pair.join(" + ");
+        if (sub) sub.textContent = "现实案例：" + match.who + "｜" + match.note;
+      } else {
+        // 不可能组合: 固定汇率+资本自由+独立 其实两两都可能, 任意两个都对应一角
+      }
+    }
+  }
+  vs.forEach(function (v) {
+    var el = document.getElementById(v.id);
+    function toggle() {
+      var sel = chosen();
+      if (!picked[v.id] && sel.length >= 2) return;
+      picked[v.id] = !picked[v.id];
+      render();
+    }
+    el.addEventListener("click", toggle);
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+    });
+  });
+  var rst = document.getElementById("tri-reset");
+  if (rst) rst.addEventListener("click", function () {
+    picked = { "tri-v1": false, "tri-v2": false, "tri-v3": false };
+    render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>

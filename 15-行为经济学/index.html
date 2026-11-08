@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>行为经济学 · EconLearn 经济学自学之路</title>
+<meta name="description" content="行为经济学中文互动教程：有限理性与启发式、前景理论价值函数、双曲贴现、社会偏好与助推，配互动演示与自测。">
+<link rel="stylesheet" href="../assets/econ.css">
+</head>
+<body style="--branch:#9333ea">
+<noscript><p class="noscript-tip">本页的互动图表与自测需要启用 JavaScript；未启用时仍可阅读全部正文。</p></noscript>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← 总览</a>
+  <div class="topbar-title"><span class="topbar-num">15</span>行为经济学</div>
+  <button class="toc-toggle" aria-expanded="false">目录</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">本分支章节</p>
+    <nav aria-label="章节目录">
+      <a href="#overview">导读与学习目标</a>
+      <a href="#ch1">1 · 有限理性与启发式</a>
+      <a href="#ch2">2 · 前景理论与损失厌恶</a>
+      <a href="#ch3">3 · 跨期选择与自控</a>
+      <a href="#ch4">4 · 社会偏好与公平</a>
+      <a href="#ch5">5 · 助推与选择架构</a>
+      <a href="#ch6">6 · 边界与伦理</a>
+      <a href="#path">进阶路线与延伸阅读</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · 经济学自学之路</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">分支 15 · 交叉与思想</span>
+        <h1>行为经济学</h1>
+        <p class="hero-en">Behavioral Economics</p>
+        <p class="hero-lead">标准经济学说人是冷静的计算器；心理学的实验却一次次发现：人是可预测地"不理性"——怕损失胜过爱收益、今天的自己欺负明天的自己、为一口气撕掉白得的钱。行为经济学把这些人性的"系统偏差"请回模型，用来解释市场异象、设计更好的政策。</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">学完本分支你将能</div>
+        <ul>
+          <li>用<strong>系统 1 / 系统 2</strong> 框架判断一类决策何时省力、何时容易出错</li>
+          <li>识别<strong>锚定、可得性、代表性</strong>三种启发式及其带来的系统性偏差</li>
+          <li>用<strong>前景理论</strong>（参照点、损失厌恶、概率权重）解释处置效应与"既买保险又买彩票"</li>
+          <li>解释<strong>贴现不一致</strong>与偏好反转，并据此设计承诺机制</li>
+          <li>用<strong>最后通牒 / 独裁者博弈</strong>的证据评估社会偏好模型，讨论<strong>助推</strong>的设计与伦理边界</li>
+        </ul>
+      </div>
+      <div class="prereq">前置知识：
+        <a class="badge" href="../01-微观经济学/index.html">01 微观（效用与期望效用）</a>
+        <a class="badge" href="../04-博弈论与信息经济学/index.html">04 博弈论（最后通牒博弈，可选）</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">第 1 章</span>有限理性与启发式</h2>
+
+      <p><strong>引入问题：</strong>球拍和球一共 1.10 元，球拍比球贵 1 元，球多少钱？超过一半的名校学生脱口而出"0.10 元"——错了，是 0.05 元。聪明人为什么会栽在一道小学算术题上？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>大脑有两套运行模式：<strong>系统 1（System 1）</strong>快、自动、不费力——认脸、读语气、完成"2+2"；<strong>系统 2（System 2）</strong>慢、刻意、费力——心算 17×24、核对合同条款。系统 2 是懒惰的守门员，多数时候放行系统 1 的第一反应。问题出在：系统 1 的答案"看起来对"，我们便不再检查。诺贝尔奖得主赫伯特·西蒙提出<strong>有限理性（Bounded Rationality）</strong>：人的认知资源与时间稀缺，追求的不是"最优"，而是"够好"（satisfice，满意即可）。于是大脑走捷径——<strong>启发式（Heuristic）</strong>。捷径平时高效，但在特定环境下产生<strong>系统性、可预测</strong>的偏差（bias）——这正是行为经济学的起点。</p>
+      </aside>
+
+      <aside class="callout history">
+        <div class="callout-title">学科小史</div>
+        <p>1978 年西蒙因有限理性获奖；2002 年卡尼曼（与已故的特沃斯基）因把心理学实验带入不确定性下的判断与决策获奖；2017 年塞勒因把行为观点推进到储蓄、市场与政策获奖。行为经济学从"异端"变成主流工具箱，用了大约四十年。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">有限理性 <span class="term-en">Bounded Rationality</span></div><div class="term-def">认知能力、时间与信息都有限，人只能搜索到"够好"的选项即停止，而非穷尽最优。是行为经济学的总假设。</div></div>
+        <div class="term"><div class="term-name">系统 1 / 系统 2 <span class="term-en">System 1 / System 2</span></div><div class="term-def">卡尼曼的双过程比喻：系统 1 直觉、快、自动；系统 2 反思、慢、费力。两者是处理模式，并非大脑中两个真实区域。</div></div>
+        <div class="term"><div class="term-name">锚定效应 <span class="term-en">Anchoring</span></div><div class="term-def">不相关的初始数字会拉动后续数值估计。哪怕初始数字由轮盘随机产生，人们对"非洲国家在联合国的占比"的估计仍被它牵引。</div></div>
+        <div class="term"><div class="term-name">可得性启发式 <span class="term-en">Availability Heuristic</span></div><div class="term-def">越容易在脑中调取的例子，越被认为常见。空难上头条后，人们高估飞行风险——尽管统计上开车更危险。</div></div>
+        <div class="term"><div class="term-name">代表性启发式 <span class="term-en">Representativeness Heuristic</span></div><div class="term-def">按"像不像典型样本"判断概率，忽略基础比率与样本量。"琳达问题"与赌徒谬误（连开 5 次红后押黑）都源于它。</div></div>
+      </div>
+
+      <p>三种经典启发式各有一道"翻车现场"：</p>
+      <ul>
+        <li><strong>锚定</strong>：先问"甘地去世时超过 114 岁吗"再问"你猜他多少岁去世"，比不问的人估计高出十几岁。商业世界的"划线原价"就是给你递一个锚。</li>
+        <li><strong>可得性</strong>：新闻报道坠机后，机票预订下降、航空意外险销量上升；而真正高频的厨房摔倒从不占头条，于是被低估。</li>
+        <li><strong>代表性</strong>：描述"琳达：31 岁、哲学系毕业、关心歧视与社会公正"，问她更可能是（A）银行出纳，还是（B）热衷女权运动的银行出纳——多数人选 B，但"出纳且热衷女权"是"出纳"的子集，概率不可能更大。这个"合取谬误"正是代表性压倒了逻辑。</li>
+      </ul>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 划线价与限购锚</div>
+        <p>电商大促的"原价 999、现价 399"里，999 的作用往往不是信息而是<strong>锚</strong>：它抬高了你对商品价值的估计，让 399 显得划算——监管因此要求"原价"必须真实成交过。另一个经典现场研究：超市给汤罐头贴出"每人限购 12 罐"，人均购买量显著高于不限购时——"12"这个锚悄悄回答了"我该买几罐"这个你本来没想过的问题。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"启发式 = 谬误，应当消除。"</strong>——恰恰相反，启发式多数时候高效而稳健：吉仁泽（Gigerenzer）的<strong>生态理性（Ecological Rationality）</strong>研究表明，与所处环境匹配的简单规则（如等权重的 1/N 投资组合）表现可以匹敌复杂模型。行为经济学的要点不是嘲笑捷径，而是识别<strong>捷径在什么环境下会系统性失灵</strong>，然后改进那个环境。另一个误区：把系统 1 / 系统 2 当成大脑里的两个器官——它们只是方便的比喻。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.1</span>以下哪项任务主要依靠系统 2（慢思考）完成？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>一眼认出照片里的老朋友</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>心算 17 × 24</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>从语气里察觉对方不友善</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>认脸、读情绪、答"2+2"都是系统 1 的自动作业——快而省力。多位数乘法没有自动答案，必须占用工作记忆逐步演算，这正是系统 2 的标志：慢、费力、可被中断。经验法则：需要"闭眼想一下"的，多半是系统 2 在干活。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.2</span>某地空难被连续报道一个月后，乘机人数明显下降，尽管统计上开车更危险。人们高估坠机概率，最可能是哪种启发式在起作用？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>代表性启发式</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>可得性启发式</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>锚定效应</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>画面越容易在脑中"调取"（可得性越高），事件被估计得越常见——新闻反复播放空难正是人为提高了可得性。代表性是按"像不像典型"判断（琳达问题），锚定需要有一个初始数字拉动估计值；这里既无典型性比较，也无锚点，只有记忆的鲜活度。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>有限理性：认知资源稀缺，人追求"够好"而非最优。</li>
+          <li>系统 1 快而自动，系统 2 慢而费力；懒惰的系统 2 常放行系统 1 的第一反应。</li>
+          <li>锚定、可得性、代表性三条捷径平时高效，在特定环境下产生系统性、可预测的偏差。</li>
+          <li>行为经济学的目标是识别失灵环境并改进它，而非嘲笑捷径。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">第 2 章</span>前景理论：参照点与损失厌恶</h2>
+
+      <p><strong>引入问题：</strong>为什么股民急着卖掉赚钱的股票，却死死抱住亏损的股票不放？"割肉"明明只是按一下按钮的事。</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>标准理论说效用取决于<strong>最终财富</strong>；卡尼曼与特沃斯基 1979 年的<strong>前景理论（Prospect Theory）</strong>说：人感受的是<strong>相对某个参照点（Reference Point）</strong>的<strong>得失</strong>。参照点通常是现状（成本价、去年奖金、邻居的工资），于是有三件事发生：<strong>第一</strong>，<strong>损失厌恶（Loss Aversion）</strong>——失去 100 元的痛约等于得到 200 多元的快乐；<strong>第二</strong>，<strong>敏感度递减</strong>——从 0 到 100 元的快乐大于从 1000 到 1100 元，尽管差值相同；<strong>第三</strong>，<strong>概率权重（Probability Weighting）</strong>——极小概率被高估（"万分之一"被感受成千分之一都不止），接近确定的选项被额外加成（确定性效应）。这三条合起来，就是"人如何在风险下做决定"的行为地图。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">前景理论 <span class="term-en">Prospect Theory</span></div><div class="term-def">Kahneman &amp; Tversky (1979)：效用定义在相对参照点的得失上，损失侧更陡（损失厌恶），两侧敏感度递减，概率被非线性加权。</div></div>
+        <div class="term"><div class="term-name">参照点 <span class="term-en">Reference Point</span></div><div class="term-def">得失的分界线，通常是现状或预期（成本价、去年的奖金）。参照点一动，同一笔钱从"得"变"失"，偏好随之翻转。</div></div>
+        <div class="term"><div class="term-name">损失厌恶 <span class="term-en">Loss Aversion</span></div><div class="term-def">损失带来的痛大于同额收益带来的快乐，比值 λ 通常估计在 2 左右（典型值 2.25）。</div></div>
+        <div class="term"><div class="term-name">概率权重函数 <span class="term-en">Probability Weighting Function</span></div><div class="term-def">主观概率 π(p) ≠ p：小概率被高估，中大概率被低估。解释了确定性效应与"四重格局"。</div></div>
+        <div class="term"><div class="term-name">处置效应 <span class="term-en">Disposition Effect</span></div><div class="term-def">投资者倾向于过早卖出盈利资产、过久持有亏损资产——"卖盈持亏"，是损失厌恶在资本市场的标准指纹。</div></div>
+      </div>
+
+      <div class="formula">v(x) = x<sup>α</sup>（x ≥ 0）；　v(x) = −λ·(−x)<sup>β</sup>（x &lt; 0）
+        <span class="f-note">数学角：价值函数。经验估计 α、β ≈ 0.88（敏感度递减），损失厌恶系数 λ ≈ 2.25（Kahneman &amp; Tversky, 1992）</span>
+      </div>
+
+      <p>四重格局（收益/损失 × 高概率/低概率）给出一组漂亮预测：面对<strong>高概率的收益</strong>（确定得 900 vs 91% 得 1000）人们风险回避，落袋为安；面对<strong>高概率的损失</strong>（确定损 900 vs 90% 损 1000）人们风险寻求——"再赌一把，说不定能翻本"；面对<strong>低概率的巨奖</strong>买彩票（风险寻求），面对<strong>低概率的巨损</strong>买保险（风险回避）。同一个人既买保险又买彩票，在期望效用理论里是矛盾，在前景理论里是同一枚硬币的两面。</p>
+
+      <figure class="fig">
+        <div class="fig-title">图 2-1 · 价值函数绘制器</div>
+        <p class="fig-sub">试一试：拖动损失厌恶系数 λ 与敏感度参数 α，观察价值函数的形状如何变化；底部读出"失去 100 元有多痛"。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="前景理论价值函数图：横轴为相对参照点的得失，纵轴为主观价值。损失侧曲线比收益侧更陡，两侧均向远处弯平。拖动滑块可改变损失厌恶系数 λ 与敏感度参数 α。">
+            <line class="gridline" x1="330" y1="70" x2="590" y2="70"/>
+            <line class="gridline" x1="70" y1="350" x2="330" y2="350"/>
+            <line class="gridline" x1="590" y1="70" x2="590" y2="210"/>
+            <line class="gridline" x1="70" y1="210" x2="70" y2="350"/>
+            <line id="pt-gref" x1="330" y1="210" x2="590" y2="147.8" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <line id="pt-lref" x1="330" y1="210" x2="70" y2="272.2" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <text id="pt-reflab" class="chart-label-en" x="196" y="233" fill="#64748b">线性参照（λ=1，无递减）</text>
+            <line class="axis" x1="60" y1="210" x2="612" y2="210"/>
+            <line class="axis" x1="330" y1="352" x2="330" y2="48"/>
+            <text class="chart-label" x="456" y="198" text-anchor="middle">相对参照点的得失 x（元）</text>
+            <text class="chart-label" x="330" y="40" text-anchor="middle">主观价值 v(x)</text>
+            <text class="chart-label-en" x="590" y="228" text-anchor="middle">+100</text>
+            <text class="chart-label-en" x="70" y="228" text-anchor="middle">−100</text>
+            <text class="chart-label-en" x="330" y="228" text-anchor="middle">0</text>
+            <text class="chart-label-en" id="pt-onelab" x="322" y="142" text-anchor="end">+1</text>
+            <text class="chart-label-en" id="pt-lamlab" x="322" y="345" text-anchor="end">−λ = −2.25</text>
+            <path id="pt-gain" class="curve" stroke="#9333ea" d=""/>
+            <path id="pt-loss" class="curve" stroke="#9333ea" d=""/>
+            <text class="chart-label" x="480" y="180" text-anchor="middle" style="fill:#9333ea">收益侧 v = x^α</text>
+            <text class="chart-label" x="140" y="372" text-anchor="middle" style="fill:#9333ea">损失侧 v = −λ(−x)^α（更陡）</text>
+            <text id="pt-note" class="chart-label-en" x="320" y="392" text-anchor="middle" style="font-weight:700"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="pt-l">损失厌恶 λ</label><input type="range" id="pt-l" min="1" max="3" step="0.05" value="2.25"><output id="o-ptl" for="pt-l">2.25</output></div>
+          <div class="ctrl"><label for="pt-a">敏感度 α</label><input type="range" id="pt-a" min="0.5" max="1" step="0.01" value="0.88"><output id="o-pta" for="pt-a">0.88</output></div>
+        </div>
+        <figcaption>读图要点：损失侧曲线在原点附近明显更陡（λ 越大越陡），收益与损失两侧都向远处弯平（α&lt;1 的敏感度递减）。灰色虚线是"既无损失厌恶、也无递减"的线性参照。试试 λ=1（曲线左右对称）与 λ=3（损失极其疼痛），再看底部"五五赌局"的主观价值如何从"无所谓"变成"坚决拒绝"。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 处置效应很痛，还很贵</div>
+        <p>Odean（1998）用一万个经纪账户发现：散户卖出<strong>盈利</strong>股票的倾向显著高于卖出<strong>亏损</strong>股票——"卖盈持亏"正是参照点（成本价）加损失厌恶的直接推论；更扎心的是，被卖掉的盈利股随后平均<strong>跑赢</strong>被留下的亏损股。对中国 A 股账户的多项研究得到同样的模式：高换手的个人投资者"割肉"尤其迟缓，甚至越亏越加仓摊平。行为偏差不只是心理不适，它有真金白银的价格。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"损失厌恶就是风险厌恶。"</strong>——不是。标准理论的风险厌恶是效用函数的凹性，对<strong>最终财富</strong>的确定性敏感；损失厌恶是相对<strong>参照点</strong>的得失不对称，它预测的是"盈利时急于锁定（风险回避）、亏损时死扛甚至加仓（风险寻求）"这种<strong>不对称</strong>，这是凹效用函数给不出的。另一个误区：以为参照点固定不变——去年 3 个月年终奖，今年 2 个月就是"损失"；赌场里赢来的钱被记进另一个"心理账户"，输回去也不觉得太痛（庄家的钱效应）。参照点是会被经验与措辞移动的。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.1</span>王先生持有的股票跌了 20% 就是不卖，涨了 10% 却很快卖出。用前景理论解释这一"处置效应"，最关键的两个要素是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>参照点依赖与损失厌恶</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>风险厌恶与流动性约束</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>沉没成本与通胀幻觉</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>效用定义在相对<strong>买入价</strong>（参照点）的得失上。卖出亏损股等于把心理损失"落袋兑现"，痛感立刻放大（λ≈2），于是拖着不卖；卖出盈利股则是及时锁定"看得见的快乐"。标准的风险厌恶（B）解释不了同一个人在盈利时急卖、亏损时死扛的<strong>不对称</strong>——凹效用函数只会说"两边都不爱波动"。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.2</span>同一个人既买保险、又买彩票。最贴切的解释是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>他对风险的态度随机波动</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>概率权重高估小概率：损失侧避险买保险，收益侧冒险买彩票</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>买保险是被推销的，与偏好无关</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>前景理论的概率权重函数对极小概率赋予超比例权重（π(p)&gt;p）：坠机这种小概率大损失被放大 → 高价也愿买保险（损失侧回避风险）；中奖这种小概率大收益同样被放大 → 也愿买彩票（收益侧寻求风险）。这是"四重格局"的对角线组合，期望效用理论里统一的 risk-aversion 参数给不出这个模式。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>效用取决于相对参照点的得失，而非最终财富；参照点可被现状、预期与措辞移动。</li>
+          <li>损失厌恶 λ≈2.25：损失比同额收益更痛；损失域风险寻求、收益域风险回避。</li>
+          <li>敏感度递减（α&lt;1）使两侧曲线都弯平。</li>
+          <li>概率权重高估小概率、加成确定性 → 同时买保险与彩票、四重格局。</li>
+          <li>处置效应（卖盈持亏）是前景理论在资本市场最稳健的指纹之一。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">第 3 章</span>跨期选择与自控</h2>
+
+      <p><strong>引入问题：</strong>"今晚一定早睡"这句话你已经说了三个星期；年卡办了一年，健身去了四次。为什么计划时的你和执行时的你，好像是两个人？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>标准模型用<strong>指数贴现（Exponential Discounting）</strong>：每过一个时期，未来都按同一比例 δ 缩水。它有一个漂亮性质——<strong>时间一致</strong>：今天为"下个月"做的计划，到了下个月仍会执行。但真实的人更像<strong>双曲贴现（Hyperbolic Discounting）</strong>：对"现在到不久之后"的差距极其敏感，对"远期与更远期"的差距却很钝感——通俗说：<strong>眼前的诱惑被额外放大</strong>。经济学里常用<strong>准双曲贴现（β-δ 模型）</strong>来刻画：只要不在"现在"，未来统统先打一个 β 折扣（β&lt;1），这就是<strong>现时偏好（Present Bias）</strong>。于是出现<strong>偏好反转（时间不一致）</strong>：今天问你，选"下个月吃沙拉"；下个月真到嘴边，却选"今天先吃炸鸡"。计划的我与执行的我利益冲突，而执行的我总是赢。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">指数贴现 <span class="term-en">Exponential Discounting</span></div><div class="term-def">每期按固定比例 δ 缩水，曲线"匀速下滑"，蕴含时间一致：计划与执行不冲突。</div></div>
+        <div class="term"><div class="term-name">准双曲贴现 <span class="term-en">Quasi-hyperbolic Discounting（β-δ）</span></div><div class="term-def">未来所有时期先打 β 折扣再按 δ 递减。β 越小，"现在"相对未来的特权越大。</div></div>
+        <div class="term"><div class="term-name">现时偏好 <span class="term-en">Present Bias</span></div><div class="term-def">对当下的回报与成本过度加权：小事今天做舒服、难事推给明天的自己。</div></div>
+        <div class="term"><div class="term-name">承诺机制 <span class="term-en">Commitment Device</span></div><div class="term-def">主动限制未来的选择集，替"未来的自己"先做决定：自动转存、截止日期、可退不可用的押金。</div></div>
+      </div>
+
+      <div class="formula">U = u(c₀) + β · Σ<sub>t≥1</sub> δ<sup>t</sup> u(c<sub>t</sub>)，　β &lt; 1
+        <span class="f-note">数学角：准双曲贴现。β 只惩罚"未来"的全部消费（造成现在与未来的不对称），δ 是每期折现因子；β=1 时退回指数贴现</span>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 3-1 · 指数 vs 准双曲：推迟奖励选择模拟</div>
+        <p class="fig-sub">选项 A：t 个月后拿 100 元；选项 B：t+3 个月拿 130 元。拖动"决定时刻"t，切换两种模型，看同样的奖励结构如何给出不同的选择——甚至反转。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 432" role="img" aria-label="现值曲线图：横轴为等待月数，纵轴为元。蓝色实线为指数贴现下 100 元的现值，平滑下滑；橙色实线为准双曲贴现下的现值，在第一个月出现一次陡降。竖线标记当前决定时刻 t 与 t 加 3 个月，A、B 两点为两个选项的现值。">
+            <line class="gridline" x1="70" y1="240" x2="590" y2="240"/>
+            <line class="gridline" x1="70" y1="140" x2="590" y2="140"/>
+            <text class="chart-label-en" x="62" y="244" text-anchor="end">50</text>
+            <text class="chart-label-en" x="62" y="144" text-anchor="end">100</text>
+            <text class="chart-label-en" x="62" y="344" text-anchor="end">0</text>
+            <line class="axis" x1="70" y1="340" x2="600" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="55"/>
+            <text class="chart-label" x="200" y="358" text-anchor="middle">3</text>
+            <text class="chart-label-en" x="70" y="358" text-anchor="middle">0</text>
+            <text class="chart-label-en" x="330" y="358" text-anchor="middle">6</text>
+            <text class="chart-label-en" x="460" y="358" text-anchor="middle">9</text>
+            <text class="chart-label-en" x="590" y="358" text-anchor="middle">12</text>
+            <text class="chart-label" x="330" y="380" text-anchor="middle">决定时刻：距小奖 A 到手还需 t 个月（月）</text>
+            <text class="chart-label" transform="rotate(-90 24 210)" x="24" y="210" text-anchor="middle">现值（元）</text>
+            <path id="dc-exp" class="curve curve-c1" d=""/>
+            <path id="dc-hyp" class="curve curve-c2" d=""/>
+            <text id="dc-elab" class="chart-label-en" x="588" y="212" text-anchor="end" style="fill:#2f6fdb;font-weight:700">指数 δ^t</text>
+            <text id="dc-hlab" class="chart-label-en" x="588" y="240" text-anchor="end" style="fill:#ea580c;font-weight:700">准双曲 β·δ^t</text>
+            <text id="dc-btag" class="chart-label-en" x="120" y="200" style="fill:#ea580c">现时折扣 β</text>
+            <line id="dc-vt" x1="70" y1="55" x2="70" y2="340" stroke="#475569" stroke-width="1.5"/>
+            <line id="dc-vt3" x1="200" y1="55" x2="200" y2="340" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <circle id="dc-a" class="dot" r="6" cx="70" cy="140" fill="#2f6fdb"/>
+            <circle id="dc-b" class="dot" r="6" cx="70" cy="90" fill="#ea580c"/>
+            <text id="dc-alab" class="chart-label-en" x="48" y="144" text-anchor="end" style="font-weight:700">A</text>
+            <text id="dc-blab" class="chart-label-en" x="82" y="94" style="font-weight:700">B</text>
+            <text id="dc-ve" class="chart-label-en" x="70" y="404" style="font-weight:700"></text>
+            <text id="dc-vh" class="chart-label-en" x="70" y="424" style="font-weight:700"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="dc-t">决定时刻 t</label><input type="range" id="dc-t" min="0" max="9" step="1" value="0"><output id="dc-ot" for="dc-t">今天</output></div>
+          <div class="ctrl"><label for="dc-d">月度 δ</label><input type="range" id="dc-d" min="90" max="99" step="1" value="96"><output id="dc-od" for="dc-d">0.96</output></div>
+          <div class="ctrl"><label for="dc-bta">现时偏 β</label><input type="range" id="dc-bta" min="50" max="100" step="5" value="70"><output id="dc-ob" for="dc-bta">0.70</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="dc-m1">看指数模型</button>
+          <button class="btn ghost" id="dc-m2">看准双曲模型</button>
+        </div>
+        <figcaption>读图要点：指数曲线匀速下滑——晚 3 个月的 1 元与早 3 个月的 1 元之比恒定，因此无论何时决定，A、B 的优劣不变（时间一致）。准双曲曲线在第 1 个月出现一次"现时折扣 β"的陡降：当 A 恰好落在"现在"（t=0）时它免受 β 折扣，选择会随决定时刻而<strong>反转</strong>。把 β 拖到 1.00，反转消失；把 δ 拖到 0.90，连指数模型也改选 A——但仍然不随 t 变。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 健身房年卡与"外包的自控"</div>
+        <p>DellaVigna 与 Malmendier 研究美国连锁健身房账单发现：办月卡/年卡的用户平均每月到场不足 5 次，折算每次成本远高于按次付费——办卡那一刻的"未来我会天天来"是典型的过度乐观加现时偏好（先付出成本、把锻炼推给未来）。对应的解药是<strong>承诺机制</strong>：发薪日次日自动转存的养老金定投、"先付钱后消费"的圣诞储蓄俱乐部、断网写作用的押金应用（StickK：目标没达成，押金捐给你最讨厌的组织）。行为政策也用同一原理：把体检预约默认排在生日当周，比"记得去体检"的口号有效得多。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"双曲贴现 = 没耐心。"</strong>——不是。δ 很低只是<strong>一致地</strong>不耐烦：今天的计划明天照做。行为特征的关键是<strong>不一致</strong>：对小奖大奖的排序会随时间逼近而翻转。政策含义完全不同——对"一致的不耐心"该提高收益率或降低等待成本；对"现时偏好"该用承诺机制重排选择的时间结构。另一个误区是把现时偏好当成意志力薄弱的人格缺陷：它是一个可测量、可建模的偏好参数，企业用它设计"先用后付"，聪明人也该用它设计自己的环境。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.1</span>"今晚我肯定早睡"说了三个星期。用准双曲贴现（β-δ）刻画，最准确的诊断是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>偏好反转：睡觉的收益在未来，刷手机的诱惑在眼前，"今晚"一到选择就变</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>他根本不想早睡，一直在说谎</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>指数贴现下 δ 太低</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>做计划时，"今晚刷手机"和"今晚早睡"都在未来，统统打 β 折，健康的比较优势胜出；等"今晚"真的到来，刷手机变成"现在"，不再打 β 折，即时诱惑立刻放大——选择翻转。这正是图 3-1 里"今天选小奖、一个月后选大奖"的偏好反转。C 不对：δ 低只是"一致地不耐烦"，不会因为时间逼近而改变主意。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.2</span>把定投扣款设在发薪日次日"自动划走"，比指望月底"手动存"有效得多，主要因为它？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>自动划款的理财产品利率更高</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>在诱惑出现之前就移除了当下的选择，替"未来的自己"做了决定</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>人们对"自动"二字有天然的信任感</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>现时偏好者的困境是"当下的我"总是赢。自动转存把决定权交还给<strong>设定承诺时的自己</strong>：钱在进入可支配账户之前已被划走，"当下的我"根本没有选择机会——这是承诺机制的标准姿势：约束未来的选择集，而不是说服未来的自己。利率（A）通常并无差异，信任感（C）更非主因。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>指数贴现蕴含时间一致：计划与执行不冲突；δ 低只是"一致的不耐心"。</li>
+          <li>准双曲贴现（β-δ）刻画现时偏好：未来统打 β 折，"现在"拥有特权。</li>
+          <li>现时偏好导致偏好反转：今天选大奖励，临到头选小诱惑。</li>
+          <li>解药是承诺机制：自动转存、押金、截止日期——替未来的自己先做决定。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">第 4 章</span>社会偏好与公平博弈</h2>
+
+      <p><strong>引入问题：</strong>陌生人一次性分 100 元，你给对方 1 元、自己留 99 元，对方多半会拒绝——宁可一分不得，也要让你空手。按标准理论这是"非理性"的撕票；可它稳定地发生在全世界每一个实验室里。到底谁不理性？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>也许<em>人</em>没有错，是<em>模型</em>太窄。把<strong>公平、互惠、利他</strong>写进效用函数，"撕票"立刻说得通：惩罚一个贪婪的提议者，本身就有心理收益。<strong>最后通牒博弈（Ultimatum Game）</strong>：提议者分 100 元，响应者可以接受或拒绝（拒绝则双方得 0）。子博弈完美均衡是"给最小单位、对方接受"；实验里提议平均 30–40%，低于 20% 的提议约有一半被拒。<strong>独裁者博弈（Dictator Game）</strong>删掉拒绝环节，分配者仍平均给出两到三成——说明不只是怕被罚，还有纯粹的利他与公平偏好。<strong>信任博弈</strong>与<strong>公共品博弈</strong>进一步显示：人们愿意自掏腰包惩罚搭便车者（<strong>利他惩罚</strong>），而这种惩罚恰恰能维持合作——公平感不是噪音，是社会运转的润滑剂。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">社会偏好 <span class="term-en">Social Preferences</span></div><div class="term-def">效用不仅取决于自己的所得，还取决于他人的所得与意图：公平、互惠、利他、不平等厌恶。</div></div>
+        <div class="term"><div class="term-name">最后通牒博弈 <span class="term-en">Ultimatum Game</span></div><div class="term-def">提议者提出分法，响应者接受则按此分配、拒绝则双方为零。标准预测 s≈0；实验中平均提议 30–40%，低提议常被拒。</div></div>
+        <div class="term"><div class="term-name">独裁者博弈 <span class="term-en">Dictator Game</span></div><div class="term-def">去掉拒绝环节的单方分配。给出非零份额说明存在利他/公平偏好；双盲条件下份额下降，说明"被观察"也在起作用。</div></div>
+        <div class="term"><div class="term-name">负互惠 <span class="term-en">Negative Reciprocity</span></div><div class="term-def">对不善待己者施加报复，哪怕自己付出成本。拒绝低提议是最典型的负互惠；利他惩罚是其公共品版本。</div></div>
+        <div class="term"><div class="term-name">不平等厌恶 <span class="term-en">Inequality Aversion</span></div><div class="term-def">Fehr-Schmidt 模型：收益落后于人或领先于人都降低效用，用于参数化"公平进入效用函数"。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 4-1 · 最后通牒博弈模拟器</div>
+        <p class="fig-sub">你是提议者，总额 100 元。拖动滑块选择分给响应者的份额 s，看预计接受率与你的期望收益；点按钮与 100 名模拟响应者真刀真枪玩一轮。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 424" role="img" aria-label="最后通牒博弈图：横轴为提议份额，青色曲线为响应者接受率，橙色曲线为提议者期望收益。接受率随份额上升，期望收益先升后降，峰值在四分之一到三分之一之间。竖线与圆点标记当前提议份额。">
+            <line class="gridline" x1="70" y1="267.5" x2="570" y2="267.5"/>
+            <line class="gridline" x1="70" y1="205" x2="570" y2="205"/>
+            <line class="gridline" x1="70" y1="142.5" x2="570" y2="142.5"/>
+            <text class="chart-label-en" x="62" y="271" text-anchor="end">25</text>
+            <text class="chart-label-en" x="62" y="209" text-anchor="end">50</text>
+            <text class="chart-label-en" x="62" y="146" text-anchor="end">75</text>
+            <text class="chart-label-en" x="62" y="84" text-anchor="end">100</text>
+            <text class="chart-label-en" x="62" y="334" text-anchor="end">0</text>
+            <line class="axis" x1="70" y1="330" x2="580" y2="330"/>
+            <line class="axis" x1="70" y1="330" x2="70" y2="65"/>
+            <text class="chart-label-en" x="170" y="352" text-anchor="middle">10</text>
+            <text class="chart-label-en" x="270" y="352" text-anchor="middle">20</text>
+            <text class="chart-label-en" x="370" y="352" text-anchor="middle">30</text>
+            <text class="chart-label-en" x="470" y="352" text-anchor="middle">40</text>
+            <text class="chart-label-en" x="570" y="352" text-anchor="middle">50</text>
+            <text class="chart-label" x="320" y="382" text-anchor="middle">提议份额 s（%，总额 100 元）</text>
+            <text class="chart-label" transform="rotate(-90 24 200)" x="24" y="200" text-anchor="middle">接受率(%) / 期望收益(元)</text>
+            <line x1="80" y1="70" x2="80" y2="330" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <text class="chart-label-en" x="88" y="72">标准理论预测 s≈0</text>
+            <line x1="470" y1="70" x2="470" y2="330" stroke="#d8b4fe" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <text class="chart-label-en" x="470" y="62" text-anchor="middle">实验中最常见提议 40% 左右</text>
+            <path id="ug-acc" class="curve curve-c3" d=""/>
+            <path id="ug-ev" class="curve curve-c2" d=""/>
+            <text class="chart-label-en" x="558" y="70" text-anchor="end" style="fill:#0d9488;font-weight:700">接受率 p(s)</text>
+            <text class="chart-label-en" x="558" y="226" text-anchor="end" style="fill:#ea580c;font-weight:700">期望收益（元）</text>
+            <line id="ug-v" x1="370" y1="70" x2="370" y2="330" stroke="#475569" stroke-width="1.5"/>
+            <circle id="ug-adot" class="dot" r="5.5" cx="370" cy="93" fill="#0d9488"/>
+            <circle id="ug-dot" class="dot" r="6.5" cx="370" cy="164" fill="#ea580c"/>
+            <text id="ug-note" class="chart-label-en" x="320" y="402" text-anchor="middle" style="font-weight:700"></text>
+            <text id="ug-sim" class="chart-label-en" x="320" y="420" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="ug-s">分给对方的份额 s</label><input type="range" id="ug-s" min="0" max="50" step="1" value="30"><output id="ug-o" for="ug-s">30%</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="ug-run">模拟 100 名响应者</button>
+        </div>
+        <figcaption>读图要点：接受率曲线是"带公平感的响应者"（含惩罚动机），期望收益 = 接受率 × (100 − s)。标准理论的"只给 1%"在真实响应者面前期望收益几乎归零；期望收益的峰值落在 25–35%——与全世界实验中提议者的实际行为惊人地接近。"贪婪"在博弈的均衡里被响应者的负互惠惩罚掉了。</figcaption>
+      </figure>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead>
+            <tr><th>博弈</th><th>提议方平均给出</th><th>标准自利预测</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>独裁者博弈</td><td class="num">20–30%</td><td class="num">0（或最小单位）</td></tr>
+            <tr><td>最后通牒博弈</td><td class="num">30–40%</td><td class="num">≈1%</td></tr>
+            <tr><td>公共品博弈（含惩罚机制）</td><td class="num">贡献率大幅上升</td><td class="num">0 贡献</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:.8125rem;color:#4b5563;">各实验室结果的大致区间，具体数值随设计与文化变化；方向高度一致：真实提议显著高于自利预测。</p>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 公平感随生产方式生长</div>
+        <p>Henrich 等人在 15 个小规模社会（狩猎、游牧、捕鲸、刀耕火种）重复最后通牒博弈：与外界市场整合越深、合作生产越重要的社会，提议越慷慨（印尼 Lamalera 捕鲸村平均提议约 58%——集体捕鲸离不开公平分配）；而几乎自给自足的秘鲁 Machiguenga 农夫平均只给约 26%，拒绝率也低。公平规范不是普适常数，而是对当地谋生方式的<strong>适应</strong>——这正好呼应第 1 章"启发式与环境匹配"的生态理性思路。大额实验（总额数百美元）中低提议依旧被拒，说明这不是"钱太少无所谓"。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"拒绝低提议的人不理性。"</strong>——只在"最大化本次货币收益"这个窄定义下成立。在重复交往、有声誉的社会环境里，拒绝贪婪提议是对未来合作的最优投资：今天容忍 1 元的羞辱，明天就会遇到更多 1 元的提议。实验经济学还提醒第二个误区：独裁者给出的份额在<strong>双盲</strong>（连实验员都不知道谁给了多少）条件下明显下降——部分"利他"其实是社会形象管理。下结论前，先把"偏好"与"被观察"分开。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.1</span>最后通牒博弈中，响应者拒绝了 15% 的分法。以下哪个经济学解释最站得住脚？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>响应者不理性，没有最大化货币收益</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>响应者的效用函数包含公平与负互惠：惩罚贪婪提议的效用超过 15 元</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>15% 的绝对金额太小，不值得点"接受"</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>把公平写进效用函数，拒绝就是最大化效用的理性行为——花 15 元买到"惩罚贪婪者"的心理收益与声誉信号。大额实验（总额数百美元）中低份额仍被拒，排除 C；A 把"货币收益最大化"这个<strong>模型假设</strong>当成了理性的<strong>定义</strong>——模型错了改模型，而不是宣布人错了。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.2</span>独裁者博弈中分配者仍平均分出 20% 左右，且对方毫无惩罚能力。这说明？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>参与者没看懂规则</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>即便无惩罚风险，利他与公平偏好仍然存在，纯自利模型预测过窄</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>纯自利模型在"无人观察"时依然完全成立</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>独裁者博弈删掉了拒绝环节，分出的每一分钱都出自（利他、公平或形象考虑的）真金白银。份额不为零这一基本事实已足以拒绝"人人只最大化自己货币收益"的窄模型；同时双盲实验中份额下降说明"被观察"贡献了一部分——模型应同时容纳这两股力量，而不是非此即彼。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>最后通牒：平均提议 30–40%，低提议约半数被拒；独裁者仍给出 20–30%。</li>
+          <li>公平、互惠、利他、不平等厌恶可以进入效用函数，"撕票"因此是理性行为。</li>
+          <li>利他惩罚能维持公共品合作——社会偏好是社会运转的润滑剂。</li>
+          <li>公平规范的强度随生计方式与文化变异（跨文化实验），解释时区分偏好与形象管理。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">第 5 章</span>助推与选择架构</h2>
+
+      <p><strong>引入问题：</strong>只改一个表格的默认勾选框，器官捐献同意率能从 12% 变成 99% 以上——没加一分钱补贴，没删任何选项。一个印刷细节，凭什么有这么大的力量？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>既然人受惯性、拖延与默认的影响，那么<strong>选项如何被摆放</strong>本身就影响结果——塞勒与桑斯坦称之为<strong>选择架构（Choice Architecture）</strong>。<strong>助推（Nudge）</strong>的定义：不禁止任何选项、不显著改变经济激励，只重排选择环境，让人们的<strong>行为</strong>朝他们自己<strong>宣称想要</strong>的方向轻推一把，且随时可以反悔（"自由家长主义，Libertarian Paternalism"）。最强的一件武器是<strong>默认选项（Default Option）</strong>：多数人"想参加养老金、想捐器官"，但永远差一张表；把默认设为"参加"，"什么都不做"的人就从落在外面变成落在里面。<strong>框架效应（Framing Effect）</strong>是另一面：同一事实的"存活率 90%"与"死亡率 10%"说法，会导出不同的患者选择。措辞与默认一样，都是选择架构。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">助推 <span class="term-en">Nudge</span></div><div class="term-def">不禁止选项、不显著改变激励，仅重排选择环境以改善行为结果的干预；保留完全的选择自由。</div></div>
+        <div class="term"><div class="term-name">选择架构 <span class="term-en">Choice Architecture</span></div><div class="term-def">选项呈现的方式：默认、顺序、分组、措辞、反馈。任何"界面"都在助推，问题只在于朝哪个方向。</div></div>
+        <div class="term"><div class="term-name">默认选项 / 现状偏差 <span class="term-en">Default Option / Status Quo Bias</span></div><div class="term-def">人们倾向维持现状、避免行动成本；默认因此成为"不选择者的选择"，是政策中杠杆最大的细节。</div></div>
+        <div class="term"><div class="term-name">框架效应 <span class="term-en">Framing Effect</span></div><div class="term-def">同一信息的不同表述（存活率 vs 死亡率、得 vs 失）系统性改变选择，与参照点设定一脉相承。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 5-1 · 默认选项的杠杆：参与率对比</div>
+        <p class="fig-sub">同一群人、同样的真实偏好（w 的人真想参加），只改"不动的人"落在哪边。拖动两个滑块，看参与率如何被默认规则劈开。</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 300" role="img" aria-label="默认选项对比图：两条水平条形分别为需要主动报名与默认参加两种规则下的参与率。滑块调节真实想参加的比例与跟随默认的比例，两 bar 的长度随之变化。">
+            <text id="nj-diff" class="chart-title-sm" x="340" y="34" text-anchor="middle"></text>
+            <text class="chart-label" x="90" y="72">Opt-in：默认不参加，想参加须主动填表</text>
+            <rect x="90" y="82" width="500" height="38" fill="#f1f5f9" stroke="#e2e8f0" rx="6"/>
+            <rect id="nj-r1" x="90" y="82" width="2" height="38" fill="#ea580c" rx="6"/>
+            <text id="nj-v1" class="chart-label" x="598" y="107" style="font-weight:700">14%</text>
+            <text class="chart-label" x="90" y="152">Opt-out：默认参加，想退出须主动填表</text>
+            <rect x="90" y="162" width="500" height="38" fill="#f1f5f9" stroke="#e2e8f0" rx="6"/>
+            <rect id="nj-r2" x="90" y="162" width="2" height="38" fill="#0d9488" rx="6"/>
+            <text id="nj-v2" class="chart-label" x="598" y="187" style="font-weight:700">94%</text>
+            <line class="axis" x1="90" y1="230" x2="590" y2="230"/>
+            <line class="axis" x1="90" y1="230" x2="90" y2="236"/>
+            <line class="axis" x1="215" y1="230" x2="215" y2="236"/>
+            <line class="axis" x1="340" y1="230" x2="340" y2="236"/>
+            <line class="axis" x1="465" y1="230" x2="465" y2="236"/>
+            <line class="axis" x1="590" y1="230" x2="590" y2="236"/>
+            <text class="chart-label-en" x="90" y="252" text-anchor="middle">0%</text>
+            <text class="chart-label-en" x="215" y="252" text-anchor="middle">25%</text>
+            <text class="chart-label-en" x="340" y="252" text-anchor="middle">50%</text>
+            <text class="chart-label-en" x="465" y="252" text-anchor="middle">75%</text>
+            <text class="chart-label-en" x="590" y="252" text-anchor="middle">100%</text>
+            <text class="chart-label" x="340" y="284" text-anchor="middle">参与率（%）</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="nj-w">真想参加的比例 w</label><input type="range" id="nj-w" min="30" max="90" step="5" value="70"><output id="nj-ow" for="nj-w">70%</output></div>
+          <div class="ctrl"><label for="nj-d">跟随默认的比例 d</label><input type="range" id="nj-d" min="0" max="100" step="5" value="80"><output id="nj-od" for="nj-d">80%</output></div>
+        </div>
+        <figcaption>读图要点：Opt-in 参与率 = w×(1−d)（想参加还得真去填表），Opt-out 参与率 = w + (1−w)×d（不想参加的若懒得动，也被留在里面）。两 bar 的差距完全由"懒得行动"的比例 d 制造——默认选项不教育、不补贴，只决定"不动的人"落在哪里。注意橙色 bar 里也可能有被"困住"的少数：这正是下一章的伦理问题。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 两个改变国运的默认</div>
+        <p><strong>器官捐献</strong>：Johnson 与 Goldstein (2003) 的经典对比——默认"同意捐献"的奥地利同意率 99.98%，隔壁默认"不同意"的德国只有 12%，两国民众在问卷里对捐献的态度其实相当接近。<strong>英国养老金"自动加入"</strong>（2012 起）：不涨补贴、只改默认，私营部门雇员储蓄参与率从约 55% 升至 88%。配套的还有塞勒与贝纳茨的 <strong>Save More Tomorrow</strong>：请员工承诺"下次加薪时多存一点"，把牺牲推迟到未来、绑定在收入增加上，参与与续存率都大幅提高——把第 3 章的现时偏好直接变成政策零件。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"有了助推，就不用价格激励了。"</strong>——默认改变的是<strong>行动成本</strong>，不是真实偏好与预算约束。吸烟者面对"香烟不摆在收银台"仍会去找货架，此时烟草税仍是最有力的工具；反过来，若补贴方向错了，再顺滑的默认也只是在帮人更快地做错事。助推是工具箱里的新扳手，不替换锤子。第二个误区是"默认等于欺骗"——好的助推透明、可逆、且朝当事人自己宣称的目标用力；是否越界，正是下一章的主题。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.1</span>英国养老金"自动加入"改革没加一分钱补贴，参与率却从约 55% 升至 88%。最贴切的机制解释是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>默认参加改变了人们的真实偏好</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>惯性与拖延之下"不动"成为默认动作，新默认把"不动"引向参保</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>不参加的人被罚款了</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>多数人"想参加但一直没办"，行动成本（找表格、做决定）被现时偏好无限推迟。默认设为参加后，最省力路径恰好落在他们自己宣称想要的方向上——这就是助推：不改选项、不加激励，只重排选择架构。A 言过其实：想退的人随时能退，也确有少数人退了；C 与事实不符，自动加入正是"无补贴、无惩罚"的干预。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.2</span>同一台手术，说"术后一个月存活率 90%"与"术后一个月死亡率 10%"，患者的选择随之不同。这是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>锚定效应</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>框架效应</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>禀赋效应</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>两条信息完全等价，差别只在把参照设成"存活"（收益框架）还是"死亡"（损失框架）——损失框架下患者明显更愿意拒绝手术、赌一把，这正是框架效应，与第 2 章的参照点一脉相承。锚定需要"初始数字拉动估计值"，禀赋效应需要"拥有后估值上升"，此处既无锚点也无所有权。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>选择架构：默认、顺序、措辞、反馈都影响选择；"不设计"本身也是一种设计。</li>
+          <li>助推：不禁止选项、不显著改激励、可反悔——自由家长主义。</li>
+          <li>默认选项杠杆最大：器官捐献 12% vs 99.98%、英国养老金 55% → 88%。</li>
+          <li>框架效应：同一信息的得失措辞改变选择；Save More Tomorrow 把现时偏好变成政策零件。</li>
+          <li>助推不替代价格激励与信息，只降低"做对事"的行动成本。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">第 6 章</span>行为经济学的边界与伦理</h2>
+
+      <p><strong>引入问题：</strong>如果政府和企业确切知道，一个默认勾选框就能左右你的养老金、器官与数据授权——那么，谁应该拥有设置默认的权力？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>行为经济学有三重边界。<strong>伦理边界</strong>：助推与操纵的分界线在于透明性、可逆性、以及"为了谁的利益"——朝当事人自己宣称的目标用力是助推，利用其弱点收割是操纵（"污泥政策，sludge"：用繁琐手续让人放弃本该享有的权益，就是反向助推）。谁来助推助推者，是公共政策绕不开的问题。<strong>实证边界</strong>：心理学 2011 年前后爆发<strong>复制性危机（Replication Crisis）</strong>——2015 年大规模复制项目里，百项研究只有约三分之一复制成功；一些著名效应（如部分社会启动效应）大幅缩水。行为经济学必须靠预注册、大样本与直接复制站稳。<strong>适用边界</strong>：经验丰富、反馈及时、激励巨大、可套利的市场环境会"训练"出接近标准模型的行为——List 的体育卡市场研究发现，禀赋效应随交易经验显著减弱。所以正确的问题不是"哪个模型对"，而是"<strong>在这个环境里，哪个模型是更好的第一近似</strong>"。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">自由家长主义 <span class="term-en">Libertarian Paternalism</span></div><div class="term-def">塞勒与桑斯坦为助推定的规矩：保留完全选择自由（自由），同时让默认朝当事人长远利益使劲（家长主义）。批评者追问：谁来定义"你的利益"。</div></div>
+        <div class="term"><div class="term-name">复制性危机 <span class="term-en">Replication Crisis</span></div><div class="term-def">许多发表过的心理学/行为发现无法重复：小样本、发表偏倚、灵活分析（p-hacking）。解法：预注册、大样本、直接复制、报告效应量。</div></div>
+        <div class="term"><div class="term-name">生态理性 <span class="term-en">Ecological Rationality</span></div><div class="term-def">吉仁泽：判断规则好坏要看它与环境的匹配。简单启发式在匹配的环境里稳健有效——市场经验能"纠正"许多偏差。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 行为洞察团队：既做助推，也做实验</div>
+        <p>英国 2010 年成立"行为洞察团队"（BIT，绰号"助推小组"）。其著名实验：在拖欠税款的催缴信里加一句"你所在地区 10 个纳税人中有 9 个按时纳税"（社会规范），据其报告按时缴纳率提高约 5 个百分点——比威胁性语气有效，且几乎零成本。同样重要的是方法论：BIT 把随机对照试验与预注册设为标准流程，助推政策自己先接受检验。世界银行《2015 年世界发展报告：思维、社会与行为》把这套思路推向全球；中国近年"个人养老金"账户与器官捐献登记的默认与流程设计，也属于同一谱系的讨论。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"行为经济学已经取代了新古典经济学。"</strong>——主流是<strong>融合</strong>而非取代：把损失厌恶、现时偏好、社会偏好作为参数嵌入标准模型（行为产业组织、行为劳动、行为公共财政），用于回答"什么时候、多大程度偏离"。个体层面的偏差在市场聚合中常被竞争与套利削弱——偏差带来的定价错误正是别人的利润。反过来，也不能因为几个效应没复制成功就宣布整个领域破产：损失厌恶、默认效应、现时偏好有海量重复证据。<strong>分环境、看效应量</strong>，才是成年人的态度。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.1</span>关于行为科学的"复制性危机"，以下说法最恰当的是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>大规模复制项目显示相当多研究无法重复——应更看重效应量、预注册与重复验证，而非单个显著结果</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>危机证明行为经济学的结论全部是假的</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>危机只存在于心理学，与行为经济学无关</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>Open Science Collaboration（2015）复制 100 项心理学研究，仅约三分之一得到统计显著的成功复制；若干著名效应缩水或消失。正确教训是方法论的：预注册、大样本、直接复制、报告效应量。但"全部是假的"（B）与"和我们无关"（C）都错了——损失厌恶、默认效应等核心发现有大量跨实验室、跨场景的重复证据，而它们恰恰被反复直接复制过。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.2</span>以下哪个场景中，标准"理性人"模型大概率仍是更好的预测工具？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>第一次进免税店、一生只买一次手表的游客</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>经营了二十年、每天重复报价并即时结算的外汇做市商</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>深夜大促时冲动囤货的消费者</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>经验丰富 + 反馈及时 + 激励巨大 + 竞争可套利，会"训练"出接近最优的行为：List 的体育卡市场研究显示，禀赋效应随交易经验显著减弱；职业做市商的报价偏差远小于新手。反之，一次性的、情绪化的、陌生的、无反馈的选择（A、C）正是行为模型的主场。口诀：<strong>新手的第一次是行为的，老手的日常是理性的</strong>。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>伦理边界：透明、可逆、为当事人利益；反向利用摩擦的"污泥"是操纵。</li>
+          <li>实证边界：复制性危机 → 预注册、大样本、直接复制、看效应量。</li>
+          <li>适用边界：经验 + 反馈 + 激励 + 套利的环境里，标准模型常常更准。</li>
+          <li>主流是融合：把行为要素参数化地嵌入标准模型，按环境选择第一近似。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">终点</span>进阶路线与延伸阅读</h2>
+      <p>行为经济学是一副"修正镜片"，戴上它再看世界，很多分支会清晰一层：<strong>10 产业组织</strong>（大数据个性化定价——企业用行为信息"助推"你掏钱）、<strong>08 公共经济学</strong>（行为税收、默认缴存与助推政策评估）、<strong>14 健康与教育经济学</strong>（健康行为、依从性与助推式干预）、<strong>16 政治经济学与制度经济学</strong>（家长主义的制度约束与国家能力）。往前回顾，<strong>01 微观</strong>的期望效用与<strong>04 博弈论</strong>的最后通牒是本分支的两块地基。</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">丹尼尔·卡尼曼《思考，快与慢》（Thinking, Fast and Slow, 2011）</span>——系统 1/2 与偏差的百科全书，零数学，最值得先读。</li>
+          <li><span class="bk">理查德·塞勒《"错误"的行为》（Misbehaving, 2015）</span>——行为经济学四十年史的内幕叙事，兼有学术与政策。</li>
+          <li><span class="bk">塞勒 &amp; 桑斯坦《助推》（Nudge, 2008；2021 终极版）</span>——选择架构与自由家长主义的原典，读时请带着第 6 章的批判视角。</li>
+          <li><span class="bk">丹·艾瑞里《怪诞行为学》（Predictably Irrational, 2008）</span>——实验案例入门读物，轻松但需警惕部分效应的复制性。</li>
+          <li><span class="bk">Kahneman &amp; Tversky (1979), "Prospect Theory", Econometrica</span>——29 页原始论文，行为经济学的创世文献，引用数以十万计。</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../14-健康与教育经济学/index.html"><span class="pager-dir">← 上一分支</span><br><span class="pager-name">健康与教育经济学</span></a>
+        <a href="../16-政治经济学与制度经济学/index.html"><span class="pager-dir">下一分支 →</span><br><span class="pager-name">政治经济学与制度经济学</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../assets/econ.js"></script>
+<script>
+/* ================= 图 2-1 前景理论价值函数 ================= */
+(function () {
+  var l = document.getElementById("pt-l");
+  var a = document.getElementById("pt-a");
+  var gain = document.getElementById("pt-gain");
+  var loss = document.getElementById("pt-loss");
+  if (!l || !a || !gain || !loss) return;
+  var CX = 330, OY = 210, PX = 2.6;
+  var gRef = document.getElementById("pt-gref");
+  var lRef = document.getElementById("pt-lref");
+  var refLab = document.getElementById("pt-reflab");
+  var oneLab = document.getElementById("pt-onelab");
+  function px(x) { return CX + x * PX; }
+  function draw() {
+    var lam = parseFloat(l.value), al = parseFloat(a.value);
+    document.getElementById("o-ptl").textContent = "λ=" + lam.toFixed(2);
+    document.getElementById("o-pta").textContent = "α=" + al.toFixed(2);
+    // 两侧同刻度(每单位价值 = 140/λ 像素): 损失侧恒占满下方 140px、收益侧高 140/λ,
+    // 损失侧视觉斜率恰为收益侧的 λ 倍 —— 与文字描述一致
+    var unit = 140 / lam;
+    var dg = [], dl = [];
+    for (var x = 0; x <= 100; x += 5) {
+      var vg = Math.pow(x / 100, al);
+      dg.push((x === 0 ? "M" : "L") + px(x).toFixed(1) + "," + (OY - vg * unit).toFixed(1));
+    }
+    for (var y = -100; y <= 0; y += 5) {
+      var vl = lam * Math.pow(-y / 100, al);
+      dl.push((y === -100 ? "M" : "L") + px(y).toFixed(1) + "," + (OY + vl * unit).toFixed(1));
+    }
+    gain.setAttribute("d", dg.join(" "));
+    loss.setAttribute("d", dl.join(" "));
+    if (gRef) gRef.setAttribute("y2", (OY - unit).toFixed(1));
+    if (lRef) lRef.setAttribute("y2", (OY + unit).toFixed(1));
+    if (refLab) refLab.setAttribute("y", (OY + 0.5 * unit - 8).toFixed(1));
+    if (oneLab) oneLab.setAttribute("y", (OY - unit - 6).toFixed(1));
+    document.getElementById("pt-lamlab").textContent = "−λ = −" + lam.toFixed(2);
+    var sv = (1 - lam) / 2;
+    document.getElementById("pt-note").textContent =
+      "λ=" + lam.toFixed(2) + "：失去 100 元的痛 ≈ 得到 100 元的乐 ×" + lam.toFixed(2) +
+      "；±100 元五五赌局的主观价值 " + sv.toFixed(2) + " → " + (sv < 0 ? "拒绝" : (sv > 0 ? "接受" : "中立"));
+  }
+  l.addEventListener("input", draw);
+  a.addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= 图 3-1 指数 vs 准双曲贴现 ================= */
+(function () {
+  var tS = document.getElementById("dc-t");
+  var dS = document.getElementById("dc-d");
+  var bS = document.getElementById("dc-bta");
+  var pe = document.getElementById("dc-exp");
+  var ph = document.getElementById("dc-hyp");
+  if (!tS || !dS || !bS || !pe || !ph) return;
+  var X0 = 70, X1 = 590, TMAX = 12, Y0 = 340, VMAX = 140;
+  function px(t) { return X0 + t / TMAX * (X1 - X0); }
+  function py(v) { return Y0 - v / VMAX * 280; }
+  var mode = "e";
+  function delta() { return parseFloat(dS.value) / 100; }
+  function beta() { return parseFloat(bS.value) / 100; }
+  function dE(t) { return Math.pow(delta(), t); }
+  function dH(t) { return t <= 0 ? 1 : beta() * Math.pow(delta(), t); }
+  function buildPaths() {
+    var de = [], dh = [];
+    for (var t = 0; t <= TMAX + 0.001; t += 0.5) {
+      de.push((t === 0 ? "M" : "L") + px(t).toFixed(1) + "," + py(100 * dE(t)).toFixed(1));
+    }
+    dh.push("M" + px(0).toFixed(1) + "," + py(100).toFixed(1));
+    for (var u = 1; u <= TMAX + 0.001; u += 0.5) {
+      dh.push("L" + px(u).toFixed(1) + "," + py(100 * dH(u)).toFixed(1));
+    }
+    pe.setAttribute("d", de.join(" "));
+    ph.setAttribute("d", dh.join(" "));
+    document.getElementById("dc-elab").setAttribute("y", Math.max(60, py(100 * dE(TMAX)) - 12).toFixed(1));
+    document.getElementById("dc-hlab").setAttribute("y", Math.min(336, py(100 * dH(TMAX)) + 22).toFixed(1));
+    document.getElementById("dc-btag").setAttribute("y", Math.min(300, py(100 * dH(1)) + 20).toFixed(1));
+  }
+  function upd() {
+    var t = parseFloat(tS.value);
+    document.getElementById("dc-ot").textContent = t === 0 ? "今天" : "t=" + t + " 月";
+    document.getElementById("dc-od").textContent = delta().toFixed(2);
+    document.getElementById("dc-ob").textContent = beta().toFixed(2);
+    buildPaths();
+    var eA = 100 * dE(t), eB = 130 * dE(t + 3);
+    var hA = 100 * dH(t), hB = 130 * dH(t + 3);
+    var pePick = eB >= eA ? "B" : "A";
+    var phPick = hB >= hA ? "B" : "A";
+    var rev = t === 0 && hB < hA && eB >= eA;
+    document.getElementById("dc-ve").textContent =
+      "指数：A=" + Math.round(eA) + " vs B=" + Math.round(eB) + " → 选" + pePick +
+      "（无论 t=0 还是 9，选择不变：时间一致）";
+    document.getElementById("dc-vh").textContent =
+      "准双曲：A=" + Math.round(hA) + " vs B=" + Math.round(hB) + " → 选" + phPick +
+      (rev ? " —— 今天要小的、t≥1 后要大的：偏好反转！"
+           : (t === 0 ? (eB < eA ? "（δ 过低：连指数模型今天也选 A，谈不上反转——先把 δ 调高）"
+                                 : "（β 足够大，未反转）") : ""));
+    document.getElementById("dc-ve").setAttribute("fill", mode === "e" ? "#2f6fdb" : "#94a3b8");
+    document.getElementById("dc-vh").setAttribute("fill", mode === "h" ? "#ea580c" : "#94a3b8");
+    var vA = mode === "e" ? eA : hA, vB = mode === "e" ? eB : hB;
+    var ax = px(t);
+    document.getElementById("dc-vt").setAttribute("x1", ax.toFixed(1));
+    document.getElementById("dc-vt").setAttribute("x2", ax.toFixed(1));
+    document.getElementById("dc-vt3").setAttribute("x1", px(t + 3).toFixed(1));
+    document.getElementById("dc-vt3").setAttribute("x2", px(t + 3).toFixed(1));
+    var ca = Math.max(58, Math.min(336, py(vA)));
+    var cb = Math.max(58, Math.min(336, py(vB)));
+    document.getElementById("dc-a").setAttribute("cx", ax.toFixed(1));
+    document.getElementById("dc-a").setAttribute("cy", ca.toFixed(1));
+    document.getElementById("dc-b").setAttribute("cx", ax.toFixed(1));
+    document.getElementById("dc-b").setAttribute("cy", cb.toFixed(1));
+    document.getElementById("dc-alab").setAttribute("x", (ax - 14).toFixed(1));
+    document.getElementById("dc-alab").setAttribute("y", (ca + 4).toFixed(1));
+    document.getElementById("dc-blab").setAttribute("x", (ax + 12).toFixed(1));
+    document.getElementById("dc-blab").setAttribute("y", (cb + 4).toFixed(1));
+  }
+  var m1 = document.getElementById("dc-m1"), m2 = document.getElementById("dc-m2");
+  if (m1) m1.addEventListener("click", function () {
+    mode = "e"; m1.classList.remove("ghost"); m2.classList.add("ghost"); upd();
+  });
+  if (m2) m2.addEventListener("click", function () {
+    mode = "h"; m2.classList.remove("ghost"); m1.classList.add("ghost"); upd();
+  });
+  tS.addEventListener("input", upd);
+  dS.addEventListener("input", upd);
+  bS.addEventListener("input", upd);
+  upd();
+})();
+
+/* ================= 图 4-1 最后通牒博弈 ================= */
+(function () {
+  var s = document.getElementById("ug-s");
+  var acc = document.getElementById("ug-acc");
+  var ev = document.getElementById("ug-ev");
+  if (!s || !acc || !ev) return;
+  function p(x) { return 1 / (1 + Math.exp(-(x - 15) / 5)); }
+  var X0 = 70, W = 500, Y0 = 330, H = 250;
+  function px(x) { return X0 + x / 50 * W; }
+  function py(v) { return Y0 - v / 100 * H; }
+  var da = [], dv = [];
+  for (var x = 0; x <= 50; x += 1) {
+    da.push((x === 0 ? "M" : "L") + px(x).toFixed(1) + "," + py(p(x) * 100).toFixed(1));
+    var e = p(x) * (100 - x);
+    dv.push((x === 0 ? "M" : "L") + px(x).toFixed(1) + "," + py(e).toFixed(1));
+  }
+  acc.setAttribute("d", da.join(" "));
+  ev.setAttribute("d", dv.join(" "));
+  function upd() {
+    var ss = parseFloat(s.value);
+    document.getElementById("ug-o").textContent = ss + "%";
+    var pp = p(ss), ee = pp * (100 - ss);
+    var v = px(ss);
+    document.getElementById("ug-v").setAttribute("x1", v.toFixed(1));
+    document.getElementById("ug-v").setAttribute("x2", v.toFixed(1));
+    document.getElementById("ug-adot").setAttribute("cx", v.toFixed(1));
+    document.getElementById("ug-adot").setAttribute("cy", Math.max(70, Math.min(328, py(pp * 100))).toFixed(1));
+    document.getElementById("ug-dot").setAttribute("cx", v.toFixed(1));
+    document.getElementById("ug-dot").setAttribute("cy", Math.max(70, Math.min(328, py(ee))).toFixed(1));
+    document.getElementById("ug-note").textContent =
+      "提议 s=" + ss + "%：预计接受率 ≈" + Math.round(pp * 100) + "%，期望收益 = " +
+      Math.round(pp * 100) + "% × " + (100 - ss) + " 元 ≈ " + ee.toFixed(1) + " 元";
+  }
+  s.addEventListener("input", upd);
+  var run = document.getElementById("ug-run");
+  if (run) run.addEventListener("click", function () {
+    var ss = parseFloat(s.value), k = 0;
+    for (var i = 0; i < 100; i++) { if (Math.random() < p(ss)) k++; }
+    document.getElementById("ug-sim").textContent =
+      "模拟 100 局：接受 " + k + " 次、拒绝 " + (100 - k) + " 次；提议者平均每局到手 " +
+      (k * (100 - ss) / 100).toFixed(1) + " 元";
+  });
+  upd();
+})();
+
+/* ================= 图 5-1 默认选项参与率 ================= */
+(function () {
+  var w = document.getElementById("nj-w");
+  var d = document.getElementById("nj-d");
+  var r1 = document.getElementById("nj-r1");
+  var r2 = document.getElementById("nj-r2");
+  if (!w || !d || !r1 || !r2) return;
+  var W = 500;
+  function upd() {
+    var ww = parseFloat(w.value), dd = parseFloat(d.value) / 100;
+    var a = ww * (1 - dd);
+    var b = ww + (100 - ww) * dd;
+    r1.setAttribute("width", Math.max(2, a / 100 * W).toFixed(1));
+    r2.setAttribute("width", Math.max(2, b / 100 * W).toFixed(1));
+    document.getElementById("nj-v1").textContent = Math.round(a) + "%";
+    document.getElementById("nj-v2").textContent = Math.round(b) + "%";
+    document.getElementById("nj-ow").textContent = ww + "%";
+    document.getElementById("nj-od").textContent = Math.round(dd * 100) + "%";
+    document.getElementById("nj-diff").textContent =
+      "真实偏好相同（" + ww + "% 想参加），默认不同：参与率 " + Math.round(a) + "% vs " +
+      Math.round(b) + "%（差 " + Math.round(b - a) + " 个百分点）";
+  }
+  w.addEventListener("input", upd);
+  d.addEventListener("input", upd);
+  upd();
+})();
+</script>
+</body>
+</html>

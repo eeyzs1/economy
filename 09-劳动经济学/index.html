@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>劳动经济学 · EconLearn 经济学自学之路</title>
+<meta name="description" content="劳动经济学中文互动教程：劳动供给与收入效应、人力资本与明瑟方程、工资差异、最低工资之争与失业理论，配互动图表与自测。">
+<link rel="stylesheet" href="../assets/econ.css">
+</head>
+<body style="--branch:#4338ca">
+<noscript><p class="noscript-tip">本页的互动图表与自测需要启用 JavaScript；未启用时仍可阅读全部正文。</p></noscript>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← 总览</a>
+  <div class="topbar-title"><span class="topbar-num">09</span>劳动经济学</div>
+  <button class="toc-toggle" aria-expanded="false">目录</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">本分支章节</p>
+    <nav aria-label="章节目录">
+      <a href="#overview">导读与学习目标</a>
+      <a href="#ch1">1 · 劳动供给：工资与工时</a>
+      <a href="#ch2">2 · 人力资本与明瑟方程</a>
+      <a href="#ch3">3 · 工资差异与歧视</a>
+      <a href="#ch4">4 · 最低工资：竞争与买方垄断</a>
+      <a href="#ch5">5 · 失业与工作搜索</a>
+      <a href="#ch6">6 · 工会与劳动制度</a>
+      <a href="#path">进阶路线与延伸阅读</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · 经济学自学之路</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">分支 09 · 应用领域</span>
+        <h1>劳动经济学</h1>
+        <p class="hero-en">Labor Economics</p>
+        <p class="hero-lead">人们工作多少小时、为什么工资千差万别、最低工资和工会究竟改变什么——劳动经济学把微观理论用到人身上：它是经济学最古老的应用领域，也是当代"因果识别革命"的主战场。</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">学完本分支你将能</div>
+        <ul>
+          <li>用闲暇-消费选择解释工资上升的<strong>替代效应</strong>与<strong>收入效应</strong>，判断劳动供给曲线何时向后弯</li>
+          <li>写出<strong>明瑟方程</strong>并解释每个系数，区分教育的"人力资本"与"信号"两种解释</li>
+          <li>用补偿性差异、效率工资、超级明星与统计性歧视解释工资的横向与纵向差异</li>
+          <li>在供需图上比较<strong>最低工资</strong>在竞争市场与买方垄断市场的就业效应，并复述 Card–Krueger 的证据</li>
+          <li>区分摩擦性/结构性/周期性失业，用<strong>保留工资</strong>与搜索模型解释"失业与空缺并存"</li>
+          <li>比较工会、解雇保护等制度中"灵活性"与"安全性"的权衡（丹麦 flexicurity）</li>
+        </ul>
+      </div>
+      <div class="prereq">前置知识：
+        <a class="badge" href="../01-微观经济学/index.html">01 微观（无差异曲线、供需、垄断）</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">第 1 章</span>劳动供给：工资越高，工作越久吗？</h2>
+
+      <p><strong>引入问题：</strong>加班费翻倍的那个月，有人抢着加班，也有人干脆请假——为什么"涨工资"未必让人多干活？再看宏观数据：过去一百多年发达国家真实工资涨了数倍，周工时却从约 60 小时降到 35–40 小时。工资越高、工作越少，这讲得通吗？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：闲暇也是一种商品，工资是它的价格</div>
+        <p>每个人每周只有 168 小时，这是最铁的预算约束。不工作的时间叫<strong>闲暇</strong>（Leisure），它的价格恰好是你的小时工资：多休闲 1 小时，就放弃 1 小时工资。于是工资上升如同"闲暇涨价"，同时发生两件事：<strong>替代效应</strong>——闲暇变贵了，少买闲暇、多工作；<strong>收入效应</strong>——同样的工时挣得更多，人变富了，而闲暇通常是正常品，富人会"多买"闲暇。两个效应方向相反，谁赢看工资水平：穷时一小时工资很金贵（替代效应强），富到一定程度多挣的钱只想换休息（收入效应强）——于是劳动供给曲线在高工资段可能<strong>向后弯</strong>。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">劳动供给 <span class="term-en">Labor Supply</span></div><div class="term-def">个人或家庭在一定工资下愿意提供的工作时间（以及是否进入市场）。总时间 = 工作 + 闲暇，供给决策即闲暇-消费选择。</div></div>
+        <div class="term"><div class="term-name">收入效应与替代效应 <span class="term-en">Income &amp; Substitution Effect</span></div><div class="term-def">工资上升同时改变闲暇的相对价格（替代效应：少休闲）与真实总收入（收入效应：多休闲）。二者共同决定劳动供给对工资的反应。</div></div>
+        <div class="term"><div class="term-name">后弯劳动供给曲线 <span class="term-en">Backward-Bending Labor Supply Curve</span></div><div class="term-def">高工资段收入效应压过替代效应，工资继续上升反而使劳动供给量减少，供给曲线向左上方弯回。</div></div>
+        <div class="term"><div class="term-name">劳动力参与率 <span class="term-en">Labor Force Participation Rate</span></div><div class="term-def">就业者与失业者（即"劳动力"）占劳动年龄人口的比重。参与决策是"是否工作"的边际问题，与"工作多少小时"相互独立又相互影响。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 1-1 · 工资上升的收入/替代效应分解</div>
+        <p class="fig-sub">拖动两个滑块：①工资从 20 元/时升到 60 元/时，看预算线绕"全部闲暇"点旋转；②收入效应强度，看收入效应能否压过替代效应、让劳动供给曲线向后弯。试一试：先设收入效应 0.5×，再拉到 1.6×，对比右上角供给曲线的形状。</p>
+        <figure class="fig-canvas">
+          <svg id="ls-svg" viewBox="0 0 640 400" role="img" aria-label="闲暇-消费图：工资上升使预算线绕横轴端点旋转，最优点从E0移到E1；E0到E撇是替代效应，E撇到E1是收入效应。右侧小图显示对应的劳动供给曲线随收入效应强度可能向后弯曲。">
+            <defs>
+              <marker id="ls-ah1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#ea580c"/></marker>
+              <marker id="ls-ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4338ca"/></marker>
+            </defs>
+            <line class="gridline" x1="60" y1="280" x2="430" y2="280"/>
+            <line class="gridline" x1="60" y1="210" x2="430" y2="210"/>
+            <line class="gridline" x1="60" y1="140" x2="430" y2="140"/>
+            <text class="chart-label-en" x="54" y="284" text-anchor="end">1000</text>
+            <text class="chart-label-en" x="54" y="214" text-anchor="end">2000</text>
+            <text class="chart-label-en" x="54" y="144" text-anchor="end">3000</text>
+            <line class="gridline" x1="152.5" y1="350" x2="152.5" y2="42"/>
+            <line class="gridline" x1="245" y1="350" x2="245" y2="42"/>
+            <line class="gridline" x1="337.5" y1="350" x2="337.5" y2="42"/>
+            <line class="axis" x1="60" y1="350" x2="430" y2="350"/>
+            <line class="axis" x1="60" y1="350" x2="60" y2="42"/>
+            <text class="chart-label" x="245" y="380" text-anchor="middle">闲暇（小时/周，T=100）</text>
+            <text class="chart-label" x="22" y="196" text-anchor="middle" transform="rotate(-90 22 196)">消费（元/周）</text>
+            <line id="ls-b0" class="curve" stroke="#94a3b8" stroke-dasharray="7 5" stroke-width="2"/>
+            <line id="ls-b1" class="curve curve-c1" stroke-width="2.5"/>
+            <text class="chart-label-en" x="76" y="168" style="fill:#475569">预算线 w0=20</text>
+            <text id="ls-lb1" class="chart-label-en" x="100" y="90" style="fill:#2f6fdb"></text>
+            <polyline id="ls-ic0" class="curve" stroke="#94a3b8" stroke-dasharray="4 4" stroke-width="2"/>
+            <polyline id="ls-ic1" class="curve curve-c3" stroke-width="2.2"/>
+            <text class="chart-label-en" x="356" y="268" style="fill:#64748b">U0</text>
+            <text id="ls-lu1" class="chart-label-en" x="371" y="250" style="fill:#0d9488">U1</text>
+            <line id="ls-se" stroke="#ea580c" stroke-width="2.5" marker-end="url(#ls-ah1)"/>
+            <line id="ls-ie" stroke="#4338ca" stroke-width="2.5" marker-end="url(#ls-ah2)"/>
+            <text id="ls-lse" class="chart-label" x="200" y="230" style="fill:#ea580c">① 替代</text>
+            <text id="ls-lie" class="chart-label" x="260" y="210" style="fill:#4338ca">② 收入</text>
+            <circle id="ls-e0" r="6" class="dot" fill="#475569"/>
+            <circle id="ls-sub" r="6" class="dot" fill="#fff" stroke="#ea580c" stroke-width="2.5"/>
+            <circle id="ls-e1" r="7" class="dot" fill="#4338ca"/>
+            <text id="ls-l0" class="chart-label" x="270" y="266">E0</text>
+            <text id="ls-ls" class="chart-label" x="180" y="222">E'</text>
+            <text id="ls-l1" class="chart-label" x="250" y="188">E1</text>
+            <text id="ls-t1" class="chart-title-sm" x="245" y="20" text-anchor="middle"></text>
+            <text id="ls-t2" class="chart-label" x="245" y="38" text-anchor="middle" style="fill:#475569"></text>
+            <line class="axis" x1="470" y1="350" x2="610" y2="350"/>
+            <line class="axis" x1="470" y1="350" x2="470" y2="62"/>
+            <text class="chart-label" x="540" y="48" text-anchor="middle">劳动供给曲线</text>
+            <text class="chart-label-en" x="463" y="354" text-anchor="end">20</text>
+            <text class="chart-label-en" x="463" y="76" text-anchor="end">60</text>
+            <text class="chart-label-en" x="540" y="368" text-anchor="middle">工时 h</text>
+            <text class="chart-label-en" x="455" y="205" text-anchor="middle" transform="rotate(-90 455 205)">工资 w</text>
+            <polyline id="ls-sup" class="curve curve-c2" stroke-width="2.5"/>
+            <circle id="ls-sdot" r="5" class="dot" fill="#4338ca"/>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="ls-w">新工资 w</label>
+            <input type="range" id="ls-w" min="20" max="60" value="35" step="1">
+            <output id="ls-ow" for="ls-w">35 元/时</output></div>
+          <div class="ctrl"><label for="ls-s">收入效应强度</label>
+            <input type="range" id="ls-s" min="0" max="160" value="80" step="10">
+            <output id="ls-os" for="ls-s">0.80×</output></div>
+        </div>
+        <figcaption>读图要点：E0 → E' 是<strong>替代效应</strong>（沿原无差异曲线 U0 找新工资下的切点，闲暇减少）；E' → E1 是<strong>收入效应</strong>（真实收入上升，闲暇增加）。当①的长度小于②（收入效应强度 &gt; 1×），工资上升反而减少工时——右上角供给曲线出现后弯段。无差异曲线取 C·L = 常数型（柯布-道格拉斯偏好）配少量非劳动收入，"收入效应强度"刻画面对不同偏好的个体，两类效应的相对大小本来因人而异。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 工资涨了十倍，工时少了一半</div>
+        <p>工业革命初期，英美工人周工时普遍在 60 小时以上；如今 OECD 国家平均不足 40 小时，且越是高收入经济体，年均工时越短——这正是收入效应长期占上风的宏观证据。凯恩斯 1930 年在《我们后代的经济前景》中甚至预言"百年后人们每周只需工作 15 小时"。另一面的中国图景：国家统计局数据显示，2024 年前后中国企业就业人员周平均工作时间约 49 小时，处于偏高区间；同时中国女性劳动参与率长期显著高于世界平均水平，"是否工作"与"工作多久"两个边际都在起作用。同一个理论框架，解释了两类截然不同的现象。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"工资上升必然增加劳动供给。"</strong>——只看到了替代效应。对高收入者、对加班费边际上已经"够了"的人，收入效应完全可能反超。第二个误区：<strong>"劳动供给曲线就是一条固定的向上斜线。"</strong>——讨论最低工资、税收时若忽略曲线可能后弯、参与边际可能移动（有人被拉进市场、有人退出），预测就会失准。记住劳动供给有两道闸门：<strong>是否工作</strong>（参与）与<strong>工作多少</strong>（工时）。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.1</span>小时工资从 20 元涨到 60 元后，某人反而减少了每周工时。下面哪个判断必然成立？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>替代效应大于收入效应</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>收入效应大于替代效应</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>闲暇对该人是劣等品</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>工资上升时，替代效应促其多工作（闲暇变贵），收入效应促其少工作（变富后多买正常品闲暇）。工时减少说明净效应为负，即收入效应胜出——B 对。A 方向反了；C 错：正因为闲暇是正常品（收入越高越想消费），收入效应才会减少劳动，若是劣等品，两个效应会同向增加劳动。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.2</span>关于"后弯劳动供给曲线"，下列说法正确的是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>后弯段上，工资与劳动供给量负相关，说明收入效应占上风</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>后弯段通常出现在低工资区间</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>曲线后弯意味着劳动力参与率必然下降</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>后弯段位于高工资区间：工资本已很高，继续上升时收入效应压过替代效应，供给量反而减少——A 对。低工资段替代效应通常占优、曲线正常向上，B 错。C 混淆了两道闸门：曲线描述"工作多少小时"，参与率是"是否进入市场"，工时减少不等于退出劳动力。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>时间预算：总时间 = 闲暇 + 工作；工资是闲暇的机会成本，也是工作的报酬率。</li>
+          <li>工资上升的两种力量：替代效应（闲暇变贵 → 多工作）与收入效应（更富 → 多闲暇），方向相反。</li>
+          <li>低工资段替代效应常占优（供给曲线向上）；高工资段收入效应可能反超（曲线向后弯）。</li>
+          <li>劳动供给有两道闸门：参与决策（是否工作）与工时决策（工作多久），政策分析须同时考虑。</li>
+          <li>宏观证据：长期中收入效应占上风——工资涨数倍的同时，工时大幅缩短。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">第 2 章</span>人力资本：教育的回报如何测量？</h2>
+
+      <p><strong>引入问题：</strong>读四年大学，学费加住宿要花十几万，再加上"如果不读书本可以挣的钱"，总成本可能逼近三十万。为什么数以千万计的人仍然排着队去读？教育到底买到了什么——生产能力，还是仅仅一张"我很聪明"的证书？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：教育是一笔跨越四十年的投资</div>
+        <p>把教育当作买一台"挣工资的机器"：成本现在付（学费 + 放弃的工资 = <strong>机会成本</strong>），收益在未来四十多年里每个月一点点收回（更高的工资、更稳的工作、甚至更健康长寿）。只要未来工资增量的现值超过成本，读大学就是一笔正 NPV 的投资——这就是贝克尔（Gary Becker）<strong>人力资本</strong>框架的直觉。但还存在另一种解释：斯宾塞（Michael Spence）的<strong>信号</strong>观——教育也许不提高生产率，只是高能力者用"肯吃苦读完大学"向雇主自证，因为对低能力者而言模仿这个信号太贵。两种解释对"该不该补贴教育"的政策含义截然不同。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">人力资本 <span class="term-en">Human Capital</span></div><div class="term-def">凝结在人身上的知识、技能与健康，能提高未来生产率与收入。教育、培训、"干中学"都是人力资本投资。</div></div>
+        <div class="term"><div class="term-name">明瑟方程 <span class="term-en">Mincer Equation</span></div><div class="term-def">明瑟（Jacob Mincer, 1974）提出的工资方程：对数工资对教育年限与经验回归，是估计教育回报的标准工具。</div></div>
+        <div class="term"><div class="term-name">教育回报率 <span class="term-en">Returns to Education</span></div><div class="term-def">多受一年教育带来的工资百分比增幅。全球平均约每年 9%（Psacharopoulos &amp; Patrinos 汇总），女性与发展中国家通常更高。</div></div>
+        <div class="term"><div class="term-name">信号模型 <span class="term-en">Signaling Model</span></div><div class="term-def">斯宾塞提出：当能力难以观察、而"完成教育"对高能力者成本更低时，教育成为分离均衡中的自选信号，即便不提升生产率也能提高工资。</div></div>
+      </div>
+
+      <div class="formula">ln w = α + β·S + γ₁·X − γ₂·X²
+        <span class="f-note">S：受教育年限；X：工作经验（二次项刻画"先快后慢"的经验-收入曲线）；β 即教育回报率（半弹性）</span>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 2-1 · 教育-收入散点与明瑟回报滑块</div>
+        <p class="fig-sub">48 个模拟个体（固定随机种子，可复现）的教育年限与月薪如散点所示。拖动"教育回报率 β"，看拟合曲线如何贴合或偏离散点；再拖动"平均经验"，看经验项如何整体抬升工资。试一试：把 β 从 3% 拉到 12%，观察大学-高中溢价如何放大。</p>
+        <figure class="fig-canvas">
+          <svg id="mk-svg" viewBox="0 0 640 400" role="img" aria-label="教育年限与月薪散点图，纵轴月薪零到二十五千元，横轴教育年限五到二十年；一条指数形拟合曲线随教育回报率滑块改变陡度，曲线在十二与十六年处各有一个圆点标记高中与大学。">
+            <line class="gridline" x1="70" y1="274" x2="600" y2="274"/>
+            <line class="gridline" x1="70" y1="218" x2="600" y2="218"/>
+            <line class="gridline" x1="70" y1="162" x2="600" y2="162"/>
+            <line class="gridline" x1="70" y1="106" x2="600" y2="106"/>
+            <text class="chart-label-en" x="62" y="278" text-anchor="end">5</text>
+            <text class="chart-label-en" x="62" y="222" text-anchor="end">10</text>
+            <text class="chart-label-en" x="62" y="166" text-anchor="end">15</text>
+            <text class="chart-label-en" x="62" y="110" text-anchor="end">20</text>
+            <line class="gridline" x1="216" y1="330" x2="216" y2="50" stroke-dasharray="3 5"/>
+            <line class="gridline" x1="316" y1="330" x2="316" y2="50" stroke-dasharray="3 5"/>
+            <line class="axis" x1="70" y1="330" x2="600" y2="330"/>
+            <line class="axis" x1="70" y1="330" x2="70" y2="50"/>
+            <text class="chart-label" x="335" y="384" text-anchor="middle">受教育年限 S（年）</text>
+            <text class="chart-label" x="24" y="190" text-anchor="middle" transform="rotate(-90 24 190)">月薪（千元）</text>
+            <text class="chart-label-en" x="216" y="348" text-anchor="middle">高中 12</text>
+            <text class="chart-label-en" x="316" y="348" text-anchor="middle">大学 16</text>
+            <g id="mk-dots"></g>
+            <polyline id="mk-curve" class="curve curve-c2" stroke-width="3"/>
+            <circle id="mk-d12" r="6" class="dot" fill="#b45309"/>
+            <circle id="mk-d16" r="6" class="dot" fill="#b45309"/>
+            <text id="mk-t1" class="chart-title-sm" x="335" y="22" text-anchor="middle"></text>
+            <text id="mk-t2" class="chart-label" x="335" y="42" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="mk-b">教育回报率 β</label>
+            <input type="range" id="mk-b" min="0" max="12" value="7.5" step="0.5">
+            <output id="mk-ob" for="mk-b">7.5%</output></div>
+          <div class="ctrl"><label for="mk-x">平均经验 X</label>
+            <input type="range" id="mk-x" min="0" max="30" value="18" step="1">
+            <output id="mk-ox" for="mk-x">18 年</output></div>
+        </div>
+        <figcaption>读图要点：①因变量是<strong>对数</strong>工资，β 是半弹性——"每年 7.5%"意味着大学（16 年）对高中（12 年）的溢价约为 e<sup>0.075×4</sup>−1 ≈ +35%，而不是"多挣 7.5 元"；②经验项 0.045X−0.0008X² 是凹的：工资随资历先升后平，40 年职业曲线呈倒 U 形；③曲线在高 β 时冲出坐标顶端——指数增长永远比坐标轴快。数据由真实参数 β=7.5% 生成，滑回 7.5% 即"最佳拟合"。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 中国扩招前后的大学溢价</div>
+        <p>1999 年中国启动高校扩招，毛入学率从不到 10% 升至如今超过 60%。按简单供需逻辑，大学生供给暴增应压低溢价；但多家基于城镇住户调查的研究发现，教育的明瑟回报率自 1980 年代的 4% 上下一路升至 2000 年代后的 8%–10%——需求端（技术变迁偏向高技能、全球化、服务业升级）追得比供给更快。这与全球证据一致：教育回报在最穷的国家和女性群体中反而最高，"读书无用论"在数据面前站不住脚。不过要注意：高回报≠人人都该读博——回报随教育层级递减的边际、直接成本与生命周期长度都得算进 NPV。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"大学毕业生挣得多，所以读大学因果性地让你多挣 35%。"</strong>——这是把相关当因果：能读完大学的人本身能力、家庭资源、自律性可能就更强（<strong>能力偏差</strong>，ability bias），明瑟回归只是"条件相关"。识别因果需要工具变量、断点或随机实验（见 03 计量经济学分支）。第二个误区是把人力资本与信号当成非此即彼：实证研究普遍发现两者都存在，只是比例之争——即使教育有一半是信号，只要它还提升一部分生产率，社会回报仍可能为正。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.1</span>明瑟回归 ln w = 1.2 + 0.08·S + 0.045·X − 0.0008·X² 中，系数 0.08 的含义是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>多读 1 年书，月薪多 8 元</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>多读 1 年书，工资约提高 8%（严格说是 ×e<sup>0.08</sup>≈+8.3%）</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>教育解释了工资差异的 8%</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>被解释变量是对数工资，系数是半弹性：Δln w = 0.08 → 工资乘以 e<sup>0.08</sup>，约 +8.3%，习惯上简称 8%——B 对。A 把半弹性当成了绝对金额；C 把系数当成了 R²（拟合优度），完全是另一个统计量。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.2</span>在斯宾塞的信号模型中，即使教育完全不提高生产率，均衡里高教育者仍拿高工资，原因是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>法律规定高学历必须付高薪</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>拿到文凭的成本对低能力者更高，文凭因此成为可信的能力信号，企业据此筛选付薪</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>企业观察不到教育程度，只能按群体平均工资付钱</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>信号的要害是<strong>成本差异</strong>：高能力者读书更轻松（成本低），模仿成本使低能力者不敢跟进，于是"读大学"构成分离均衡中的可信信号——即便教育不改变生产率，工资差异也能在均衡中自我维持，B 对。C 描述的是"统计性歧视"（按群体均值推断不可观察的个体），属于下一章的内容，不是信号模型。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>教育是人力资本投资：成本现在付（学费 + 机会成本），收益以更高工资的形式持续终身。</li>
+          <li>明瑟方程 ln w = α + βS + γ₁X − γ₂X² 是测量教育回报的标准框架；β 是半弹性（每年约 9% 的全球平均）。</li>
+          <li>信号观：教育可以不提升生产率而仍抬高工资，前提是信号成本与能力负相关。</li>
+          <li>明瑟回归给出的"回报"是条件相关，因果解释需警惕能力偏差与家庭背景（工具变量、断点回归是解药）。</li>
+          <li>政策含义：教育的社会回报高于私人回报的部分（外部性）是补贴教育的理由；若教育纯为信号，过度投资反而浪费资源。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">第 3 章</span>工资差异：为什么薪水差这么远？</h2>
+
+      <p><strong>引入问题：</strong>夜班护士比白班多挣夜班津贴；同一条流水线的工人与总部程序员差两三倍；一个头部主播一晚的打赏可能超过一名话剧演员一年工资。如果市场真像教科书说的那样"竞争出清"，为什么均衡工资不是同一个数？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：比的是"总报酬"，不是工资单</div>
+        <p>竞争均衡把人推向"总报酬相等"的地方——总报酬 = 货币工资 + 工作的非货币特征（安全、体面、稳定、弹性、成长）。危险、夜班、枯燥的岗位必须<strong>加价</strong>才能招到人，这叫<strong>补偿性差异</strong>；反之，有趣、光鲜的岗位可以压价（博物馆讲解员工资低，部分因为"有人愿意付钱来干"）。在这个基准之上再叠加三类放大器：<strong>效率工资</strong>（企业主动付高薪买努力与忠诚）、<strong>超级明星</strong>（技术让最优者服务整个市场，赢家通吃）、以及<strong>歧视</strong>（对不可观察个体按群体均值判断，即统计性歧视，或偏好性歧视）。工资差异因此既包含"补偿"，也包含"扭曲"。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">补偿性差异 <span class="term-en">Compensating Differentials</span></div><div class="term-def">为弥补岗位的非货币劣势（风险、夜班、恶劣环境）而在均衡工资中出现的溢价。由亚当·斯密提出，是工资差异的"第一定律"。</div></div>
+        <div class="term"><div class="term-name">效率工资 <span class="term-en">Efficiency Wages</span></div><div class="term-def">企业自愿支付高于市场出清水平的工资：高薪提高怠工的机会成本（怠工模型）、降低离职与逆向选择，换取更高单位劳动效率。</div></div>
+        <div class="term"><div class="term-name">超级明星经济学 <span class="term-en">Superstar Economics</span></div><div class="term-def">罗森（Sherwin Rosen, 1981）：当个人的产出能以近零边际成本复制（演艺、软件、体育）且能力微小差异被放大时，报酬向头部极度集中。</div></div>
+        <div class="term"><div class="term-name">统计性歧视 <span class="term-en">Statistical Discrimination</span></div><div class="term-def">在信息不完全下，雇主用群体平均特征推断个体（如按生育概率压低女性起薪）。即使毫无偏见偏好，也可能产生系统性工资差距。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 3-1 · 危险岗位的补偿性差异</div>
+        <p class="fig-sub">静态图：安全岗位工资为 22 元/时的水平线；危险岗位的供给曲线反映劳动者对风险的厌恶，需求曲线反映企业愿意为省下防护成本支付的上限。二者交点高出安全工资的部分，就是均衡补偿性差异。</p>
+        <figure class="fig-canvas">
+          <svg id="comp-svg" viewBox="0 0 640 380" role="img" aria-label="危险岗位市场图：供给曲线自左下向右上，需求曲线自左上向右下，交点在工资二十九点一元、四百七十一点一个百个岗位（约四点七万个）处；安全岗位工资为二十二元的水平虚线，交点与其之间的垂直距离约七元标注为补偿性差异。">
+            <line class="gridline" x1="70" y1="239" x2="580" y2="239"/>
+            <line class="axis" x1="70" y1="320" x2="580" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="50"/>
+            <text class="chart-label" x="325" y="352" text-anchor="middle">危险岗位数量（百个）</text>
+            <text class="chart-label" x="24" y="185" text-anchor="middle" transform="rotate(-90 24 185)">工资（元/时）</text>
+            <line class="curve" x1="70" y1="63.5" x2="580" y2="279.5" stroke="#2f6fdb" stroke-width="3"/>
+            <line class="curve" x1="70" y1="286.3" x2="580" y2="124.3" stroke="#0d9488" stroke-width="3"/>
+            <line class="curve" x1="70" y1="239" x2="580" y2="239" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 5"/>
+            <text class="chart-label" x="155" y="95" style="fill:#2f6fdb">D 危险岗位需求</text>
+            <text class="chart-label" x="155" y="285" style="fill:#0d9488">S 危险岗位供给</text>
+            <text class="chart-label-en" x="575" y="232" text-anchor="end" style="fill:#64748b">安全岗位工资 22</text>
+            <circle cx="370" cy="191.1" r="7" class="dot" fill="#4338ca"/>
+            <line x1="370" y1="195" x2="370" y2="235" stroke="#b45309" stroke-width="2.5"/>
+            <polygon points="370,188 375,197 365,197" fill="#b45309"/>
+            <polygon points="370,242 375,233 365,233" fill="#b45309"/>
+            <text class="chart-label" x="382" y="220" style="fill:#b45309">补偿性差异 ≈ +7 元/时</text>
+            <text class="chart-label-en" x="382" y="186" style="fill:#475569">均衡 (471, 29.1)</text>
+          </svg>
+        </figure>
+        <figcaption>读图要点：若危险岗位只付 22 元，劳动者会流向安全岗位，危险岗位招不到人；供给曲线上移的停止点，恰好在工资差足以"补偿"风险之处。同理：夜班津贴、异地驻外补贴、高危行业工资溢价，都是同一机制。反过来，"体面有趣"的岗位存在负的补偿性差异——工资里的加价与减价，未必是不公平。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 风险溢价与头部集中</div>
+        <p>中国采矿业与建筑业的名义工资长期高于制造业平均，其中相当部分在控制学历、年龄、地区后仍显著存在——学界将其解释为风险与艰苦环境的补偿性差异；类似地，海外劳务与远洋渔船的工资溢价更为夸张。另一端是"超级明星"：直播与短视频把"全国最好的那一个"的产出复制到几亿块屏幕上，头部与腰部主播收入差出几个数量级，正是罗森机制的当代样本。性别工资差距则提供了一个测量样本：中国城镇女性对男性工资比长期在 0.8 左右，用教育、经验、行业、职业分解后，可解释部分之外仍留有明显残差——但残差是"不能解释的部分"，直接等同于"歧视"仍需谨慎。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"工资差距大 = 市场失灵。"</strong>——补偿性差异恰恰是市场<strong>正常工作</strong>的结果：危险岗位不溢价才不正常。第二个误区是反向的：<strong>"分解剩下的残差就是歧视。"</strong>——Oaxaca-Blinder 分解的残差还包含所有未被观测的生产率差异（如连续工龄、行业选择背后的自选择），把残差直接读成歧视会高估；但要求"拿出歧视的直接证据"又会低估。诚实的表述是：残差给出了歧视的<strong>可能区间</strong>，识别需要更精细的策略（如通信实验：同一份简历改名字性别投递）。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.1</span>其他条件相同，夜班与高危岗位通常支付更高工资。最恰当的解释是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>补偿性差异：为岗位的非货币劣势定价，否则招不到人</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>这些岗位的劳动生产率必然更高</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>这些行业的雇主恰好都更有钱</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>劳动者比较的是总报酬 = 货币工资 + 非货币特征。危险、昼夜颠倒属于负特征，市场必须用工资加价来"补偿"，供给才能到位——A 对。B 不必然：夜班保洁生产率未必更高；C 把长期、系统性的溢价归因于偶然，无法解释竞争下为何溢价不消失。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.2</span>在怠工版效率工资模型中，企业支付高于市场出清水平的工资，原因是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>工会在集体谈判中强制了这一工资</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>高薪提高被解雇的代价从而抑制怠工，还降低离职与逆向选择</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>任何高工资都自动提高利润，且不会带来失业</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>效率工资的核心是"工资本身影响劳动效率"：工资高于出清水平时，丢掉这份工作的代价变大，员工不敢偷懒（B）；同时高薪吸引更优秀的申请者、降低流失培训成本。A 是外生强制，与"企业自愿"相悖；C 过强——正因为工资高于出清水平，市场会出现<strong>想工作却找不到工作</strong>的非自愿失业，这是模型的标志性推论。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>均衡比较的是总报酬：货币工资 + 岗位非货币特征；补偿性差异是工资结构的第一层。</li>
+          <li>效率工资：企业自愿付高于出清水平的工资以买"努力、稳定、高素质"，代价是非自愿失业的可能。</li>
+          <li>超级明星经济学：产出可低成本复制时，能力的微小差异被放大为收入的巨大差距。</li>
+          <li>统计性歧视：用群体均值推断个体，即使无偏好歧视也能产生系统性差距；偏好性歧视在竞争中更难存活却未消失。</li>
+          <li>分解（如 Oaxaca-Blinder）的残差是歧视的候选区间而非直接证据，识别仍需更细的因果策略。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">第 4 章</span>最低工资：竞争与买方垄断</h2>
+
+      <p><strong>引入问题：</strong>标准教科书说：价格下限高于均衡必然减少交易量——所以涨最低工资就是砸低薪者的饭碗。可 1994 年，Card 与 Krueger 调查了新泽西与宾夕法尼亚边境的四百多家快餐店后发现：新泽西上调最低工资后，就业不但没降、相对宾州还略有上升。教科书错了吗——还是快餐店劳动力市场根本不是教科书里的那种市场？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：同一条价格下限，两种市场两副面孔</div>
+        <p>在<strong>竞争市场</strong>：最低工资钉在均衡工资之上时，企业沿需求曲线减少用工，愿意按新工资求职的人却更多，出现"愿意工作的人数 > 岗位数"的失业缺口——经典结论成立。但在<strong>买方垄断</strong>（Monopsony）市场：企业面对向上倾斜的劳动供给线，多雇一个人必须给所有人涨薪，边际支出高于工资，于是它压低工资、少雇人（工资低于边际产值的竞争水平）。此时设定一条适度的最低工资，反而<strong>封住了企业压价的空间</strong>：既然必须按 w 支付，边际支出曲线被"压平"，企业会一路雇到劳动需求等于最低工资——就业上升、工资上升。最低工资是好是坏，不取决于愿望，取决于市场结构在光谱上的位置。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">最低工资 <span class="term-en">Minimum Wage</span></div><div class="term-def">法律规定的工资下限（月薪或时薪）。中国由各省每 1–2 年至少调整一次；上海长期居全国首位。</div></div>
+        <div class="term"><div class="term-name">买方垄断 <span class="term-en">Monopsony</span></div><div class="term-def">市场上只有一个（或少数勾结的）买方。劳动市场中更广义地指企业拥有工资设定权：劳动者换工作有摩擦（通勤、搜索、户籍、竞业条款），企业面临向上倾斜的供给线。</div></div>
+        <div class="term"><div class="term-name">边际支出 <span class="term-en">Marginal Expense, ME</span></div><div class="term-def">多雇一单位劳动的总成本增量。供给线向上倾斜时 ME 位于其上方（若供给为线性，纵截距相同、斜率加倍）；买方垄断按 MRP = ME 决定雇用量，再按供给线支付工资。</div></div>
+        <div class="term"><div class="term-name">劳动需求弹性 <span class="term-en">Labor Demand Elasticity</span></div><div class="term-def">工资上升 1% 引起的劳动需求量变化百分比。它决定竞争市场中最低工资的就业代价大小：弹性越小，失业缺口越小。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 4-1 · 最低工资：竞争市场 vs 买方垄断</div>
+        <p class="fig-sub">左右两图共用同一组供给与需求曲线，唯一区别是右图多一条更陡的边际支出线（ME）。拖动最低工资滑块从 40 到 70 元：先看左图失业缺口如何张开，再看右图就业如何先升后降。试一试：把工资定在 52 元附近（≈竞争均衡），观察右图就业达到最大。</p>
+        <figure class="fig-canvas">
+          <svg id="mw-svg" viewBox="0 0 640 420" role="img" aria-label="左右两个劳动市场图，劳动数量以百人为单位。左图竞争市场：需求自左上向右下、供给自左下向右上，交点为五十二元、六点三六万人（六百三十六百人）；最低工资高于均衡时出现红色失业缺口。右图买方垄断：另有一条更陡的边际支出线，垄断点在四十二元、四点三八万人（四百三十八百人），最低工资从垄断水平升到竞争水平时就业沿供给线上升，超过竞争水平后沿需求线下降。">
+            <text class="chart-title-sm" x="195" y="20" text-anchor="middle">A · 竞争市场</text>
+            <text class="chart-title-sm" x="492" y="20" text-anchor="middle">B · 买方垄断</text>
+            <text id="mw-sum" class="chart-label" x="340" y="40" text-anchor="middle" style="fill:#4338ca"></text>
+            <line class="gridline" x1="60" y1="292.9" x2="330" y2="292.9"/>
+            <line class="gridline" x1="60" y1="255.7" x2="330" y2="255.7"/>
+            <line class="gridline" x1="60" y1="218.6" x2="330" y2="218.6"/>
+            <line class="gridline" x1="60" y1="181.4" x2="330" y2="181.4"/>
+            <line class="gridline" x1="60" y1="144.3" x2="330" y2="144.3"/>
+            <text class="chart-label-en" x="54" y="297" text-anchor="end">30</text>
+            <text class="chart-label-en" x="54" y="223" text-anchor="end">50</text>
+            <text class="chart-label-en" x="54" y="148" text-anchor="end">70</text>
+            <line class="axis" x1="60" y1="330" x2="330" y2="330"/>
+            <line class="axis" x1="60" y1="330" x2="60" y2="70"/>
+            <line class="axis" x1="365" y1="330" x2="620" y2="330"/>
+            <line class="axis" x1="365" y1="330" x2="365" y2="70"/>
+            <text class="chart-label" x="195" y="362" text-anchor="middle">劳动数量 L（百人）</text>
+            <text class="chart-label" x="492" y="362" text-anchor="middle">劳动数量 L（百人）</text>
+            <text class="chart-label" x="26" y="200" text-anchor="middle" transform="rotate(-90 26 200)">工资 w（元/时）</text>
+            <line class="curve" x1="60" y1="70" x2="330" y2="292.9" stroke="#2f6fdb" stroke-width="3"/>
+            <line class="curve" x1="60" y1="330" x2="330" y2="144.3" stroke="#0d9488" stroke-width="3"/>
+            <text class="chart-label-en" x="324" y="288" text-anchor="end" style="fill:#2f6fdb">D 需求</text>
+            <text class="chart-label-en" x="324" y="140" text-anchor="end" style="fill:#0d9488">S 供给</text>
+            <line class="curve" x1="365" y1="70" x2="620" y2="292.9" stroke="#2f6fdb" stroke-width="3"/>
+            <line class="curve" x1="365" y1="330" x2="620" y2="144.3" stroke="#0d9488" stroke-width="3"/>
+            <line class="curve" x1="365" y1="330" x2="541.5" y2="70" stroke="#db2777" stroke-width="2.5" stroke-dasharray="6 5"/>
+            <text class="chart-label-en" x="618" y="288" text-anchor="end" style="fill:#2f6fdb">D 需求(MRP)</text>
+            <text class="chart-label-en" x="618" y="140" text-anchor="end" style="fill:#0d9488">S 供给</text>
+            <text class="chart-label-en" x="536" y="92" text-anchor="end" style="fill:#db2777">ME 边际支出</text>
+            <line x1="60" y1="211.9" x2="620" y2="211.9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 5"/>
+            <text class="chart-label-en" x="616" y="206" text-anchor="end" style="fill:#64748b">wc ≈ 52（竞争均衡）</text>
+            <circle id="mw-m0" cx="476.9" cy="248.8" r="6" class="dot" fill="#fff" stroke="#475569" stroke-width="2.5"/>
+            <text class="chart-label-en" x="476.9" y="276" text-anchor="middle" style="fill:#475569">买方垄断 42 / 438</text>
+            <line id="mw-m1" stroke="#4338ca" stroke-width="3"/>
+            <line id="mw-m2" stroke="#4338ca" stroke-width="3"/>
+            <text id="mw-wlab" class="chart-label" x="324" y="120" text-anchor="end" style="fill:#4338ca"></text>
+            <line id="mw-ug1" stroke="#b91c1c" stroke-width="5" opacity="0.85"/>
+            <text id="mw-uglab" class="chart-label" x="195" y="150" text-anchor="middle" style="fill:#b91c1c"></text>
+            <circle id="mw-e1" r="7" class="dot" fill="#4338ca"/>
+            <circle id="mw-u1" r="6" class="dot" fill="#fff" stroke="#b91c1c" stroke-width="2.5"/>
+            <circle id="mw-e2" r="7" class="dot" fill="#4338ca"/>
+            <text id="mw-t1" class="chart-label" x="195" y="392" text-anchor="middle" style="fill:#475569"></text>
+            <text id="mw-t2" class="chart-label" x="492" y="392" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="mw-w">最低工资</label>
+            <input type="range" id="mw-w" min="40" max="70" value="52" step="1">
+            <output id="mw-ow" for="mw-w">52 元/时</output></div>
+        </div>
+        <figcaption>读图要点：左图把最低工资推到 52 元以上，就业沿 D 下移，红色线段是"愿意供给 − 企业需求"的失业缺口；右图从 42 元（买方垄断工资）往上抬最低工资，就业反而沿 S 增加到竞争水平 636，越过 52 元后才沿 D 下降。<strong>同一政策、相反符号</strong>——这正是 Card–Krueger 发现与教科书结论可以同时成立的理由。现实劳动力市场通常介于两个极端：企业有某种工资设定权，但也不是唯一买家。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · Card–Krueger 与最低工资实证战</div>
+        <p>1992 年 4 月，新泽西州时薪最低工资从 4.25 美元上调到 5.05 美元；Card 与 Krueger 电话调查了两州边境约 410 家快餐店，用宾州作对照组（双重差分的自然实验），发现新泽西快餐店全职岗位不降反略增。论文引发三十年论战：有人质疑电话数据，后续用工资单数据重现得到方向相似但更小的效应；数百项后续研究汇成的共识是——<strong>温和的最低工资就业效应通常很小</strong>，代价更多经由价格、利润、工时与岗位质量调整。这一研究传统也是 2021 年诺贝尔经济学奖授予 Card 的重要原因之一。中国自 1993 年《企业最低工资规定》建立制度、2004 年与 2008 年两度完善，各省分类分档并至少每两年调整一次；德国直到 2015 年才引入全国最低工资（8.50 欧元/时），此后就业并未出现预言中的崩塌。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"最低工资必然减少就业。"</strong>——只在完全竞争且工资显著高于均衡时成立；存在买方垄断势力时方向相反。<strong>"最低工资没有代价。"</strong>——同样错：即便就业不降，调整也可能发生在价格（汉堡涨价）、工时（减班）、福利、非工资待遇与进入率上，且超过某个水平后失业缺口必然出现。第三个误区：<strong>"买方垄断 = 全镇只有一家工厂。"</strong>——现代劳动经济学的买方垄断是摩擦意义上的：搜索成本、通勤、户籍、竞业限制让企业面对向上倾斜的供给线，哪怕城里有十家雇主。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.1</span>买方垄断劳动市场中，最低工资定在买方垄断工资与竞争均衡工资之间，结果是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>就业下降、工资上升</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>就业上升、工资上升</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>就业与工资都不变</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>最低工资把买方垄断者的边际支出曲线在政策区间内"压平"为水平线，压价空间被锁死；只要工资不超过竞争均衡，企业会一直雇到需求曲线 = 最低工资处，就业从 Lm 升向 L*，工资也上升——B 对。A 是竞争市场的预测；C 忽略了最低工资在两个区间都改变了激励（低于垄断工资时不生效，那才是"不变"的情形）。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.2</span>竞争市场中最低工资定在均衡工资之上，"失业"指什么？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>按最低工资愿意工作的人数超过企业需要的人数，形成排队缺口</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>所有劳动者都拒绝再工作</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>均衡工资被推高，市场重新出清</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>价格下限有约束力时，实际就业量由需求一侧决定（企业沿 D 减少用工），而更高工资吸引更多人求职，Ls(w̄) − Ld(w̄) 即失业缺口——A 对。B 混淆了个体选择与市场结果；C 与法定工资的性质矛盾：最低工资恰恰是<strong>不允许</strong>市场按低工资出清的法律约束。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>竞争市场中最低工资高于均衡：就业沿需求下降，失业缺口 = 供给量 − 需求量；弹性决定代价大小。</li>
+          <li>买方垄断：企业按 MRP = ME 雇工、按供给线付薪，结果是低工资 + 低就业双重扭曲。</li>
+          <li>买方垄断下适度最低工资同时提高工资与就业；越过竞争均衡后回到"挤出岗位"区间。</li>
+          <li>Card–Krueger 的新泽西快餐研究（DID）引发了持续至今的实证战；共识是温和最低工资的就业效应通常很小。</li>
+          <li>现代买方垄断 = 搜索摩擦带来的工资设定权，不要求"只有一家雇主"。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">第 5 章</span>失业：类型、自然率与搜索</h2>
+
+      <p><strong>引入问题：</strong>任何一天，经济里同时存在几百万失业者和几百万招不到人的空缺岗位——既然工资可以调整，为什么"人"和"岗"不能立刻配对？零失业是好事还是坏事？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：找工作像找房子，是"搜索"，不是"配对按钮"</div>
+        <p>工作不是同质商品：工资、地点、技能、团队各有不同，信息以随机报价的形式一点点出现。失业者每一期抽到一个报价，与心中底价——<strong>保留工资</strong>（Reservation Wage）——比较：接受就结束失业，拒绝则继续等。保留工资定得高，失业更久但匹配更好；定得低，速战速决却可能贱卖自己——最优保留工资权衡"等待的价值"与"等待的成本"（失业保险金 − 搜索成本）。这解释了为什么总有一部分失业（<strong>摩擦性</strong>）即使在经济最好时也存在；再叠加技能与地域错配（<strong>结构性</strong>）和总需求波动（<strong>周期性</strong>），就得到失业的三副面孔。稳态下失业率由流入速度与再就业速度共同决定——这就是<strong>自然失业率</strong>。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">摩擦性失业 <span class="term-en">Frictional Unemployment</span></div><div class="term-def">搜索与匹配过程造成的短期失业：换工作、初次入场都需要时间"抽报价"。只要流动与搜索存在，它就不为零。</div></div>
+        <div class="term"><div class="term-name">结构性失业 <span class="term-en">Structural Unemployment</span></div><div class="term-def">技能、地域与需求结构错配，叠加工资刚性造成的长期失业（衰退产业工人 vs 新兴行业空缺）。</div></div>
+        <div class="term"><div class="term-name">自然失业率 <span class="term-en">Natural Rate of Unemployment</span></div><div class="term-def">摩擦性 + 结构性失业对应的稳态失业率，即周期波动平复后仍然存在的部分；等于 s/(s+f)。</div></div>
+        <div class="term"><div class="term-name">保留工资 <span class="term-en">Reservation Wage</span></div><div class="term-def">使失业者在"接受当前工作"与"继续搜索"之间无差异的工资阈值；等于继续搜索的期望价值。</div></div>
+        <div class="term"><div class="term-name">贝弗里奇曲线 <span class="term-en">Beveridge Curve</span></div><div class="term-def">空缺率与失业率的负相关关系。曲线外移（同样空缺下失业更多）被解读为匹配效率下降——结构性问题的信号。</div></div>
+      </div>
+
+      <div class="formula">u* = s / (s + f)
+        <span class="f-note">s：就业者流入失业的比率（离职/裁员）；f：失业者每期再就业比率。搜索效率越低（f 越小），自然失业率越高</span>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 5-1 · 保留工资搜索模拟</div>
+        <p class="fig-sub">你是一名失业者：每期从 2000–9000 元/月的报价分布中随机抽一个录用，报价 ≥ 保留工资就接受。点击「抽 1 期报价」逐步搜索，或「自动搜索」直到接受；拖动保留工资滑块会以同一串报价重新开始（随机种子固定），方便对比。试一试：保留工资 3500 元与 6500 元各跑一遍，比较失业期数与最终工资。</p>
+        <figure class="fig-canvas">
+          <svg id="sr-svg" viewBox="0 0 640 260" role="img" aria-label="搜索模拟图：横轴为搜索期数零到四十期，纵轴为月薪二千到九千元；每期报价画成一个圆点并用细线串联，保留工资为一条水平线，高于该线的第一个报价以绿色大点标记为已接受。">
+            <line class="gridline" x1="70" y1="185.7" x2="600" y2="185.7"/>
+            <line class="gridline" x1="70" y1="137.1" x2="600" y2="137.1"/>
+            <line class="gridline" x1="70" y1="88.6" x2="600" y2="88.6"/>
+            <text class="chart-label-en" x="62" y="190" text-anchor="end">3000</text>
+            <text class="chart-label-en" x="62" y="141" text-anchor="end">5000</text>
+            <text class="chart-label-en" x="62" y="93" text-anchor="end">7000</text>
+            <line class="axis" x1="70" y1="210" x2="600" y2="210"/>
+            <line class="axis" x1="70" y1="210" x2="70" y2="40"/>
+            <text class="chart-label" x="335" y="240" text-anchor="middle">搜索期数（每期抽 1 个报价）</text>
+            <text class="chart-label" x="24" y="125" text-anchor="middle" transform="rotate(-90 24 125)">月薪（元）</text>
+            <polyline id="sr-path" class="curve" stroke="#cbd5e1" stroke-width="1.5"/>
+            <line id="sr-rwline" stroke="#4338ca" stroke-width="2.5" stroke-dasharray="8 5"/>
+            <text id="sr-rwlab" class="chart-label" x="594" y="120" text-anchor="end" style="fill:#4338ca"></text>
+            <g id="sr-dots"></g>
+            <text id="sr-t1" class="chart-title-sm" x="335" y="20" text-anchor="middle"></text>
+            <text id="sr-t2" class="chart-label" x="335" y="38" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="sr-rw">保留工资</label>
+            <input type="range" id="sr-rw" min="2500" max="7500" value="5000" step="100">
+            <output id="sr-orw" for="sr-rw">5000 元</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="sr-step" type="button">抽 1 期报价</button>
+          <button class="btn ghost" id="sr-auto" type="button">自动搜索至接受</button>
+          <button class="btn ghost" id="sr-reset" type="button">重新开始</button>
+        </div>
+        <figcaption>读图要点：接受概率 p = (9000 − 保留工资) / 7000，平均失业期数 ≈ 1/p——保留工资 3500 元时约 1.3 期，6500 元时约 2.8 期（本例每期机会成本按 800 元计）。更高的保留工资换来更高的<strong>匹配工资</strong>，代价是更长的失业与更大的搜索成本；失业保险金抬高保留工资，因而拉长失业期——这不是懒惰，是搜索理论对"保险 → 失业期变长"的机制解释。</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · "招工难"与"就业难"并存</div>
+        <p>近年来中国劳动力市场长期并存两种抱怨：制造业与家政"招工难"，高校毕业生"就业难"。这是教科书级的结构性 + 摩擦性组合：技能错配（流水线缺技工、写字楼挤满简历）、地域错配（岗位在沿海、劳动力在中西部）、预期错配（毕业生的保留工资高于市场首年报价）。类似地，2023 年 6 月 16–24 岁城镇青年调查失业率达 21.3% 的历史高位后统计暂停发布，2024 年起恢复发布并改为不含在校生的口径——同一现象、不同测量，提醒我们读失业数据先看口径。宏观层面，空缺与失业同升（贝弗里奇曲线外移）通常被解读为匹配效率下降，是结构性问题的信号。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"失业率越低越好，零失业才健康。"</strong>——零失业意味着没人敢辞职、没有人在比较机会，配置效率极低；健康经济保留正的<strong>自然失业率</strong>（摩擦 + 结构）。第二个误区：<strong>"失业率下降一定等于劳动市场变好。"</strong>——灰心工人（discouraged workers）退出劳动力会使失业率"改善"却毫无值得高兴之处；评估要看参与率、空缺率与长期失业占比的组合。第三个：<strong>"失业是因为人懒。"</strong>——搜索模型说明，哪怕人人勤奋，随机报价 + 保留工资的理性比较本身就产生一段正的失业期。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.1</span>其他条件不变，失业者提高保留工资，可以预期？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>预期失业期变短、接受工资变低</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>预期失业期变长、接受的匹配工资变高</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>两者都不变，保留工资只是心理安慰</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>保留工资越高，每期报价达标的概率 p 越低，几何分布的期望期数 1/p 越长；同时接受门槛更高，达标报价的条件期望越高——B 对。这正是失业保险的效果机制：给付提高等待价值 → 保留工资上升 → 失业更久但匹配更好，A、C 都与搜索模型的基本预测相反。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.2</span>某国煤炭业持续萎缩，大量矿工长期失业，而空缺岗位集中在千里之外的软件业。这类失业属于？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>摩擦性失业</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>结构性失业</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>周期性失业</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>技能与地域的双重错配、且随工资刚性长期化——这是结构性失业的标准画像，B 对。摩擦性失业是正常流动中的短期搜索（辞职换城市几周即上岗）；周期性失业随总需求涨落，回暖即消退，而矿工的技能在软件业回暖时也不会自动出现。政策含义不同：结构性问题靠培训与迁移支持，周期问题靠需求管理。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>失业三副面孔：摩擦性（搜索匹配）、结构性（技能/地域错配 + 工资刚性）、周期性（总需求波动）。</li>
+          <li>搜索模型：失业者按保留工资筛选随机报价；保留工资 = 继续搜索的期望价值。</li>
+          <li>保留工资越高 → 失业越久、匹配越好；失业保险通过抬高保留工资拉长失业期。</li>
+          <li>自然失业率 u* = s/(s+f)：由失业流入与再就业速度决定，健康经济中恒为正。</li>
+          <li>贝弗里奇曲线（空缺-失业负相关）外移是匹配效率下降、结构性问题加重的信号。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">第 6 章</span>工会与劳动制度</h2>
+
+      <p><strong>引入问题：</strong>北欧工会覆盖率超过三分之二，美国私营部门不足一成，两国劳动市场却都运转——工会到底是工人的救星，还是就业的绊脚石？同样地：解雇保护越严，劳动者越安全吗？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：工会是劳动市场的"卖方卡特尔"，制度是替代品组合</div>
+        <p>把最低工资图里的"政府"换成"工会"：集体谈判把分散的劳动者组成唯一的工资制定者，工资抬到出清水平之上时，在职工人获得<strong>工资溢价</strong>，代价是就业收缩与门外排队——<strong>局内人-局外人</strong>（insiders-outsiders）理论刻画了这种分配冲突。但工会的另一面是"发声"：单打独斗只能用辞职表达不满，集体谈判能用对话解决纠纷，降低离职率、提供在职培训的土壤。更宏观地看，各国制度是三种工具的不同组合：<strong>解雇保护</strong>（就业稳定）、<strong>失业保险</strong>（收入安全）、<strong>积极培训</strong>（再就业能力）。丹麦的答案是"灵活 + 安全"（Flexicurity）：企业容易招人也容易减人，但失业者拿到高替代率救济并被强力推向培训与新工作——用个人的"安全"替代岗位的"安全"。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">集体谈判 <span class="term-en">Collective Bargaining</span></div><div class="term-def">工会代表劳动者与雇主（或雇主组织）谈判工资与工作条件；覆盖率可以远高于工会密度（如行业协议外溢）。</div></div>
+        <div class="term"><div class="term-name">工会工资溢价 <span class="term-en">Union Wage Premium</span></div><div class="term-def">可比条件下工会会员相对非会员的工资优势，各国估计多在 5%–15%；代价常体现为就业与晋升机会。</div></div>
+        <div class="term"><div class="term-name">局内人-局外人理论 <span class="term-en">Insider-Outsider Theory</span></div><div class="term-def">Lindbeck &amp; Snower：在职工人（局内人）有谈判与转岗成本优势，工资被抬高后，失业的局外人反而更难进入。</div></div>
+        <div class="term"><div class="term-name">灵活与安全 <span class="term-en">Flexicurity</span></div><div class="term-def">丹麦模式：弱解雇保护（灵活）+ 强失业保障与再培训（安全），让劳动力流动而不让劳动者坠落。</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">图 6-1 · 工会工资溢价与就业代价</div>
+        <p class="fig-sub">静态图：工会通过集体谈判把工资从竞争水平 wc 抬到 wu。绿色区域是在职工人的工资增益（从企业转移而来），红色三角是就业收缩造成的无谓损失。</p>
+        <figure class="fig-canvas">
+          <svg id="un-svg" viewBox="0 0 640 380" role="img" aria-label="劳动市场图，就业以百人为单位：需求自左上向右下、供给自左下向右上，竞争均衡在五十二元、六点三六万人（六百三十六百人）；工会把工资抬到六十二元后就业降到四点六七万人（四百六十七百人），在职工人增益为均衡工资与工会工资之间的矩形，无谓损失为供给与需求之间的小三角形。">
+            <line class="axis" x1="70" y1="330" x2="580" y2="330"/>
+            <line class="axis" x1="70" y1="330" x2="70" y2="50"/>
+            <text class="chart-label" x="325" y="360" text-anchor="middle">就业 L（百人）</text>
+            <text class="chart-label" x="26" y="190" text-anchor="middle" transform="rotate(-90 26 190)">工资 w（元/时）</text>
+            <line class="curve" x1="70" y1="70" x2="580" y2="292.9" stroke="#2f6fdb" stroke-width="3"/>
+            <line class="curve" x1="70" y1="330" x2="580" y2="144.3" stroke="#0d9488" stroke-width="3"/>
+            <text class="chart-label-en" x="574" y="288" text-anchor="end" style="fill:#2f6fdb">D 企业劳动需求</text>
+            <text class="chart-label-en" x="574" y="136" text-anchor="end" style="fill:#0d9488">S 劳动供给</text>
+            <rect x="70" y="174" width="238" height="37.9" fill="#15803d" fill-opacity="0.15"/>
+            <polygon points="308,174 394.6,211.9 308,243.4" fill="#b91c1c" fill-opacity="0.12"/>
+            <text class="chart-label-en" x="189" y="196" text-anchor="middle" style="fill:#15803d">在职工人增益（转移）</text>
+            <text class="chart-label-en" x="341" y="222" text-anchor="middle" style="fill:#b91c1c">无谓损失 DWL</text>
+            <line x1="70" y1="211.9" x2="580" y2="211.9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 5"/>
+            <line x1="70" y1="174" x2="580" y2="174" stroke="#4338ca" stroke-width="2" stroke-dasharray="7 5"/>
+            <text class="chart-label-en" x="574" y="168" text-anchor="end" style="fill:#4338ca">wu = 62（工会工资）</text>
+            <text class="chart-label-en" x="574" y="206" text-anchor="end" style="fill:#64748b">wc = 52（无工会）</text>
+            <line class="gridline" x1="308" y1="174" x2="308" y2="330"/>
+            <line class="gridline" x1="394.6" y1="211.9" x2="394.6" y2="330"/>
+            <circle cx="308" cy="174" r="7" class="dot" fill="#4338ca"/>
+            <circle cx="394.6" cy="211.9" r="6" class="dot" fill="#475569"/>
+            <text class="chart-label-en" x="308" y="348" text-anchor="middle">Lu=467</text>
+            <text class="chart-label-en" x="394.6" y="348" text-anchor="middle">Lc=636</text>
+          </svg>
+        </figure>
+        <figcaption>读图要点：工会把工资推到 wu=62 元后，就业沿需求线收缩到 467：被保住岗位的人每人多拿 10 元（绿色矩形，来自企业剩余的转移），被挤出的人失去岗位，供给与需求之间的小三角（红色）是纯粹的效率损失。若工会同时能提高生产率（声诉效应、降低离职、组织培训），需求曲线本身右移，部分甚至全部抵消损失——工会的净效应是实证问题，不是立场问题。</figcaption>
+      </figure>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead>
+            <tr><th>体制</th><th>解雇保护</th><th>失业保障与再培训</th><th>工会与谈判</th><th>典型表现</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>丹麦（Flexicurity）</td><td>弱：企业易雇易裁</td><td>强：高替代率 + 强制激活培训</td><td>密度高、集中谈判</td><td>流动大、再就业快</td></tr>
+            <tr><td>美国</td><td>弱：雇佣自由原则为主</td><td>弱：保障以私人/州层面为主</td><td>密度约一成、分散谈判</td><td>工资差距大、双层市场</td></tr>
+            <tr><td>法国/南欧</td><td>强：程序与补偿门槛高</td><td>中等</td><td>密度低但行业协议覆盖率高</td><td>局内人受保护、青年失业高</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 工会密度的世纪滑坡与两种出路</div>
+        <p>美国工会会员占工资雇佣者的比重从 1950 年代中期约 35% 的峰值一路滑到如今的约 10%（私营部门不足 7%），同期工资中位数停滞与不平等扩大相伴——多数劳动经济学家认为二者有关但不完全是因果。欧洲走了另一条路：北欧工会密度仍在五到七成，但配合集中的工资协调与积极的劳动力市场政策，"高工资 + 低失业"得以并存。中国的制度路径不同：工会以中华全国总工会体系为唯一组织形态，主要通过集体协商机制（工资专项集体合同）与政府协调发挥作用；2008 年《劳动合同法》强化书面合同、无固定期限合同与解雇经济补偿，把相当一部分"岗位安全"写进了成文法——随之而来的灵活用工扩张（劳务派遣、平台用工）恰恰是局内人-局外人逻辑的另一种呈现。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"工会对工人总是好事。"</strong>——对<strong>在职工人</strong>（局内人）通常是；对被挤出岗位的局外人、对临时工与新人则未必，工会溢价的另一面就是就业收缩与内外分层。<strong>"解雇保护越严，劳动者越安全。"</strong>——保护的是<strong>岗位</strong>而非<strong>人</strong>：企业预期到解雇昂贵，便在入口处更谨慎——更少长期合同、更多派遣与试用期，青年与女性首当其冲。制度设计的关键词从来不是"越多越好"，而是组合：岗位安全、收入安全、再就业能力三者之间做替代。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.1</span>"局内人-局外人"理论主要解释了什么？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>工会主要提高非会员与失业者的就业机会</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>在职工人凭谈判优势抬高工资，代价部分由难以进入的局外人承担</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>工会只会出现在买方垄断的劳动市场</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>局内人（在职工人）受转岗、培训与谈判成本保护，能维持高于出清水平的工资；结果是局内人拿租金、局外人排队或转向非正规岗位——B 对，A 恰好说反。C 错：只要有集体谈判权，工会存在于各种市场结构，只是在买方垄断下其"对抗压价"的正面理由更强。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.2</span>丹麦"灵活-安全"（Flexicurity）模式的制度组合是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>解雇限制严格 + 失业保障微弱</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>解雇相对容易 + 高失业保障与强制性再培训</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>工会被取缔，工资完全由市场决定</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>Flexicurity = 职位流动的灵活 + 个人收入与技能的安全：企业敢快速调整人员，劳动者失业后获得高替代率救济并被迅速导入培训与新岗位——B 对。A 是"双弱"，C 与事实相反（丹麦工会密度与谈判覆盖率都属欧洲最高之列）。该模式的启示是：安全可以安装在"人"身上，而不必锁死在"岗"上。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>工会 = 劳动市场的卖方卡特尔：溢价给局内人，就业代价由局外人承担，另有无谓损失三角。</li>
+          <li>工会的"发声"功能（降低离职、组织培训、申诉渠道）可能右移需求曲线，部分抵消垄断损失。</li>
+          <li>解雇保护保护的是岗位而非人：入口歧视、临时工扩张与青年失业是其常见副作用。</li>
+          <li>丹麦 Flexicurity：弱岗位保护 + 强收入保障 + 强再培训，用"人的安全"替代"岗的安全"。</li>
+          <li>制度比较没有唯一最优解：工会密度、保护强度与保障水平是可替代的组合，关键看组合是否自洽。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">终点</span>进阶路线与延伸阅读</h2>
+      <p>劳动经济学是微观理论的直接应用，也是因果识别方法最好的训练场。继续学习推荐三条路线：<strong>方法</strong>上去 <a href="../03-计量经济学/index.html">03 计量经济学</a>（Card–Krueger 用到的双重差分、教育回报用到的工具变量都在那里展开）；<strong>应用</strong>上去 <a href="../14-健康与教育经济学/index.html">14 健康与教育经济学</a>（人力资本、教育与再分配的深化）；<strong>政策</strong>方向看 <a href="../08-公共经济学/index.html">08 公共经济学</a>（税收对劳动供给的扭曲、再分配设计），以及 <a href="../02-宏观经济学/index.html">02 宏观经济学</a>（失业的口径与周期性失业、菲利普斯曲线）。</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">George Borjas《劳动经济学》（Labor Economics）</span> · 全球使用最广的中级教材，供需框架 + 制度分析，覆盖本分支全部六章（有中译本）。</li>
+          <li><span class="bk">David Card &amp; Alan Krueger《最低工资：神话与测量》（Myth and Measurement, 1995）</span> · 新泽西快餐研究的专著版，因果识别的典范之作。</li>
+          <li><span class="bk">Jacob Mincer《Schooling, Experience, and Earnings》(1974)</span> · 明瑟方程的原典，选读；看一个方程如何定义了一个领域五十年。</li>
+          <li><span class="bk">Alan Manning《Monopsony in Motion》(2003)</span> · 把"摩擦性买方垄断"做成现代劳动经济学核心框架的代表作。</li>
+          <li><span class="bk">曾湘泉《劳动经济学》</span> · 中文入门教材，结合中国劳动力市场制度背景，适合与本教程对照阅读。</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../08-公共经济学/index.html"><span class="pager-dir">上一分支</span><br><span class="pager-name">公共经济学</span></a>
+        <a href="../10-产业组织/index.html"><span class="pager-dir">下一分支</span><br><span class="pager-name">产业组织</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../assets/econ.js"></script>
+<script>
+/* ================= 图 1-1 工资上升的收入/替代效应分解 ================= */
+(function () {
+  if (!document.getElementById("ls-b1")) return;
+  var T = 100, V = 200, W0 = 20, CMAX = 4400;
+  var MX0 = 60, MX1 = 430, MY0 = 350, MY1 = 42;
+  function px(l) { return MX0 + l / T * (MX1 - MX0); }
+  function py(c) { return MY0 - Math.max(0, c) / CMAX * (MY0 - MY1); }
+  /* 基准点 E0：柯布-道格拉斯偏好（C·L=常数）+ 非劳动收入 V */
+  var L0 = 0.5 * (T + V / W0), C0 = W0 * (T - L0) + V, K0 = C0 * L0;
+  var b0 = document.getElementById("ls-b0");
+  b0.setAttribute("x1", px(0)); b0.setAttribute("y1", py(W0 * T + V));
+  b0.setAttribute("x2", px(T)); b0.setAttribute("y2", py(0));
+  var p0 = [], l, c;
+  for (l = 18; l <= T; l += 2) {
+    c = K0 / l;
+    if (c <= CMAX * 0.98) p0.push(px(l).toFixed(1) + "," + py(c).toFixed(1));
+  }
+  document.getElementById("ls-ic0").setAttribute("points", p0.join(" "));
+  function curvePts(k) {
+    var arr = [];
+    var l0 = Math.max(14, k / (CMAX * 0.96));
+    for (var j = l0; j <= T; j += 2) arr.push(px(j).toFixed(1) + "," + py(k / j).toFixed(1));
+    return arr.join(" ");
+  }
+  /* 内嵌供给曲线坐标系 */
+  function isx(h) { return 470 + (Math.min(70, Math.max(25, h)) - 25) / 45 * 140; }
+  function isy(w) { return 350 - (w - 20) / 40 * 270; }
+  function arrow(id, x1, y1, x2, y2) {
+    var a = document.getElementById(id);
+    var dx = x2 - x1, dy = y2 - y1, len = Math.sqrt(dx * dx + dy * dy);
+    if (len < 16) { a.setAttribute("opacity", "0"); return null; }
+    a.setAttribute("opacity", "1");
+    var ux = dx / len, uy = dy / len;
+    a.setAttribute("x1", (x1 + ux * 12).toFixed(1)); a.setAttribute("y1", (y1 + uy * 12).toFixed(1));
+    a.setAttribute("x2", (x2 - ux * 15).toFixed(1)); a.setAttribute("y2", (y2 - uy * 15).toFixed(1));
+    return { mx: (x1 + x2) / 2, my: (y1 + y2) / 2 };
+  }
+  var slW = document.getElementById("ls-w"), slS = document.getElementById("ls-s");
+  function draw() {
+    var w = parseFloat(slW.value), s = parseFloat(slS.value) / 100;
+    document.getElementById("ls-ow").textContent = w + " 元/时";
+    document.getElementById("ls-os").textContent = s.toFixed(2) + "\u00d7";
+    var b1 = document.getElementById("ls-b1");
+    var cTop = Math.min(CMAX, w * T + V);
+    var lTop = cTop < CMAX ? 0 : Math.max(0, T - (CMAX - V) / w);
+    b1.setAttribute("x1", px(lTop)); b1.setAttribute("y1", py(cTop));
+    b1.setAttribute("x2", px(T)); b1.setAttribute("y2", py(0));
+    var lb = document.getElementById("ls-lb1");
+    lb.setAttribute("x", px(lTop) + 6); lb.setAttribute("y", Math.max(56, py(cTop) - 8));
+    lb.textContent = "新预算线 w=" + w;
+    /* 替代点 E'（沿 U0 的补偿切点）与按收入强度平移后的新点 E1 */
+    var Lsub = Math.sqrt(K0 / w), Csub = Math.sqrt(K0 * w);
+    var Lcd = 0.5 * (T + V / w);
+    var L1 = Math.min(92, Math.max(12, Lsub + s * (Lcd - Lsub)));
+    var C1 = w * (T - L1) + V;
+    document.getElementById("ls-e0").setAttribute("cx", px(L0));
+    document.getElementById("ls-e0").setAttribute("cy", py(C0));
+    document.getElementById("ls-sub").setAttribute("cx", px(Lsub));
+    document.getElementById("ls-sub").setAttribute("cy", py(Csub));
+    document.getElementById("ls-e1").setAttribute("cx", px(L1));
+    document.getElementById("ls-e1").setAttribute("cy", py(C1));
+    document.getElementById("ls-ic1").setAttribute("points", curvePts(C1 * L1));
+    document.getElementById("ls-lu1").setAttribute("y", py(C1 * L1 / 84) - 10);
+    function put(id, x, y) {
+      var el = document.getElementById(id);
+      el.setAttribute("x", x); el.setAttribute("y", y);
+    }
+    put("ls-l0", px(L0) + 10, py(C0) + 4);
+    put("ls-ls", px(Lsub) - 30, py(Csub) - 12);
+    put("ls-l1", px(L1) + 10, py(C1) - 10);
+    var m1 = arrow("ls-se", px(L0), py(C0), px(Lsub), py(Csub));
+    var m2 = arrow("ls-ie", px(Lsub), py(Csub), px(L1), py(C1));
+    var lse = document.getElementById("ls-lse"), lie = document.getElementById("ls-lie");
+    if (m1) {
+      lse.setAttribute("opacity", "1");
+      lse.setAttribute("x", m1.mx - 9); lse.setAttribute("y", m1.my - 10);
+    } else { lse.setAttribute("opacity", "0"); }
+    if (m2) {
+      lie.setAttribute("opacity", "1");
+      lie.setAttribute("x", m2.mx + 9); lie.setAttribute("y", m2.my - 10);
+    } else { lie.setAttribute("opacity", "0"); }
+    var ie = L1 - Lsub, net = L1 - L0, dWork = -net;
+    var t1 = document.getElementById("ls-t1"), t2 = document.getElementById("ls-t2");
+    if (Math.abs(w - W0) < 0.01) {
+      t1.textContent = "工资未变：拖高工资滑块，观察选择点如何移动";
+      t2.textContent = "E0 是 w0=20 元/时下的闲暇-消费最优；①替代效应沿 U0，②收入效应升至 U1";
+    } else {
+      t1.textContent = "替代效应：闲暇 " + (Lsub - L0).toFixed(1) + " 小时；收入效应：闲暇 +" + ie.toFixed(1) + " 小时";
+      var change = dWork > 0.05 ? "多工作 " + dWork.toFixed(1) + " 小时" :
+        (dWork < -0.05 ? "少工作 " + Math.abs(dWork).toFixed(1) + " 小时" : "工时基本不变");
+      t2.textContent = "净效应：周工时 " + (T - L0) + " → " + (T - L1).toFixed(0) + "（" + change + "）" +
+        (net > 0.05 ? " —— 收入效应占上风，供给曲线向后弯" : "");
+    }
+    /* 内嵌劳动供给曲线：以 w0=20 为基准、当前强度 s 描点 */
+    var pts = [];
+    for (var ww = W0; ww <= 60.01; ww += 2) {
+      var ls = Math.sqrt(K0 / ww), lc = 0.5 * (T + V / ww);
+      var h = T - (ls + s * (lc - ls));
+      pts.push(isx(h).toFixed(1) + "," + isy(ww).toFixed(1));
+    }
+    document.getElementById("ls-sup").setAttribute("points", pts.join(" "));
+    var sd = document.getElementById("ls-sdot");
+    sd.setAttribute("cx", isx(T - L1)); sd.setAttribute("cy", isy(w));
+  }
+  slW.addEventListener("input", draw);
+  slS.addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= 图 2-1 教育-收入散点与明瑟回报滑块 ================= */
+(function () {
+  if (!document.getElementById("mk-curve")) return;
+  var X0 = 70, X1 = 600, Y0 = 330, Y1 = 50, WMAX = 25;
+  function px(s) { return X0 + (s - 5) / 15 * (X1 - X0); }
+  function py(w) { return Math.max(Y1 - 4, Y0 - Math.max(0, w) / WMAX * (Y0 - Y1)); }
+  /* 固定种子的伪随机：每次加载得到同一批"个体" */
+  var seed = 20240901;
+  function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+  var dots = [];
+  for (var i = 0; i < 48; i++) {
+    var S = 6 + Math.floor(rnd() * 13);
+    var X = Math.floor(rnd() * 36);
+    var w = Math.exp(0.9 + 0.075 * S + 0.045 * X - 0.0008 * X * X + (rnd() - 0.5) * 0.16);
+    dots.push({ S: S, w: w });
+  }
+  var NS = "http://www.w3.org/2000/svg", g = document.getElementById("mk-dots");
+  dots.forEach(function (d) {
+    var el = document.createElementNS(NS, "circle");
+    el.setAttribute("cx", px(d.S).toFixed(1));
+    el.setAttribute("cy", py(d.w).toFixed(1));
+    el.setAttribute("r", "4.5");
+    el.setAttribute("class", "dot");
+    el.setAttribute("fill", "#2f6fdb");
+    el.setAttribute("opacity", "0.45");
+    g.appendChild(el);
+  });
+  var slB = document.getElementById("mk-b"), slX = document.getElementById("mk-x");
+  function draw() {
+    var b = parseFloat(slB.value) / 100;
+    var xb = parseFloat(slX.value);
+    var a = 0.9 + 0.045 * xb - 0.0008 * xb * xb;
+    document.getElementById("mk-ob").textContent = (b * 100).toFixed(1) + "%";
+    document.getElementById("mk-ox").textContent = xb + " 年";
+    var pts = [];
+    for (var s = 5; s <= 20.01; s += 0.25) {
+      var w = Math.exp(a + b * s);
+      if (w > WMAX * 0.99) break;
+      pts.push(px(s).toFixed(1) + "," + py(w).toFixed(1));
+    }
+    document.getElementById("mk-curve").setAttribute("points", pts.join(" "));
+    var w12 = Math.exp(a + b * 12), w16 = Math.exp(a + b * 16);
+    document.getElementById("mk-d12").setAttribute("cx", px(12));
+    document.getElementById("mk-d12").setAttribute("cy", py(w12));
+    document.getElementById("mk-d16").setAttribute("cx", px(16));
+    document.getElementById("mk-d16").setAttribute("cy", py(w16));
+    var prem = (Math.exp(4 * b) - 1) * 100;
+    document.getElementById("mk-t1").textContent =
+      "每多读 1 年 ≈ 工资 +" + (b * 100).toFixed(1) + "%；大学(16年)相对高中(12年)溢价 ≈ +" + prem.toFixed(0) + "%";
+    document.getElementById("mk-t2").textContent =
+      "拟合曲线 w = exp(a + β·S + 0.045·X − 0.0008·X²)，经验 X = " + xb + " 年（数据真实 β = 7.5%）";
+  }
+  slB.addEventListener("input", draw);
+  slX.addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= 图 4-1 最低工资：竞争 vs 买方垄断 ================= */
+(function () {
+  if (!document.getElementById("mw-m1")) return;
+  var LW = 60, LR = 330, RX = 365, RR = 620, Y0 = 330, Y1 = 70;
+  function plx(l) { return LW + Math.min(1000, Math.max(0, l)) / 1000 * (LR - LW); }
+  function prx(l) { return RX + Math.min(1000, Math.max(0, l)) / 1000 * (RR - RX); }
+  function py(w) { return Y0 - (w - 20) / 70 * (Y0 - Y1); }
+  function pD(l) { return 90 - 0.06 * l; }
+  function pS(l) { return 20 + 0.05 * l; }
+  var Lc = 70 / 0.11, Wc = pS(Lc);   /* 竞争均衡 ≈ 636, 51.8 */
+  var Lm = 70 / 0.16, Wm = pS(Lm);   /* 买方垄断 ≈ 438, 41.9 */
+  var sl = document.getElementById("mw-w");
+  function setLine(id, x1, y1, x2, y2) {
+    var el = document.getElementById(id);
+    el.setAttribute("x1", x1); el.setAttribute("y1", y1);
+    el.setAttribute("x2", x2); el.setAttribute("y2", y2);
+  }
+  function setDot(id, x, y, show) {
+    var el = document.getElementById(id);
+    el.setAttribute("cx", x); el.setAttribute("cy", y);
+    el.setAttribute("opacity", show ? "1" : "0");
+  }
+  function draw() {
+    var w = parseFloat(sl.value);
+    document.getElementById("mw-ow").textContent = w + " 元/时";
+    setLine("mw-m1", LW, py(w), LR, py(w));
+    setLine("mw-m2", RX, py(w), RR, py(w));
+    var lab = document.getElementById("mw-wlab");
+    lab.setAttribute("x", LR - 6); lab.setAttribute("y", py(w) - 8);
+    lab.textContent = "最低工资 " + w + " 元";
+    /* A 竞争市场 */
+    var Ld = (90 - w) / 0.06, Ls = (w - 20) / 0.05, gap = Math.max(0, Ls - Ld);
+    var t1 = document.getElementById("mw-t1");
+    var uglab = document.getElementById("mw-uglab");
+    if (w <= Wc + 0.01) {
+      setDot("mw-e1", plx(Lc), py(Wc), true);
+      setDot("mw-u1", 0, 0, false);
+      setLine("mw-ug1", 0, 0, 0, 0);
+      uglab.setAttribute("opacity", "0");
+      t1.textContent = "低于均衡 " + Wc.toFixed(0) + " 元：不生效，就业 " + Math.round(Lc);
+    } else {
+      setDot("mw-e1", plx(Ld), py(w), true);
+      setDot("mw-u1", plx(Ls), py(w), true);
+      setLine("mw-ug1", plx(Ld) + 6, py(w), plx(Ls) - 6, py(w));
+      uglab.setAttribute("opacity", "1");
+      uglab.setAttribute("x", (plx(Ld) + plx(Ls)) / 2);
+      uglab.setAttribute("y", py(w) - 9);
+      uglab.textContent = "失业 " + Math.round(gap);
+      t1.textContent = "就业 " + Math.round(Ld) + "（比均衡少 " + Math.round(Lc - Ld) + "）";
+    }
+    /* B 买方垄断 */
+    var emp2, t2 = document.getElementById("mw-t2");
+    if (w <= Wm + 0.01) {
+      emp2 = Lm;
+      setDot("mw-e2", prx(Lm), py(Wm), false);
+      t2.textContent = "低于垄断工资 " + Wm.toFixed(0) + " 元：不生效，就业 " + Math.round(Lm);
+    } else {
+      emp2 = w <= Wc ? (w - 20) / 0.05 : (90 - w) / 0.06;
+      setDot("mw-e2", prx(emp2), py(w), true);
+      t2.textContent = "就业 " + Math.round(emp2) + "（比垄断点多 " + Math.max(0, Math.round(emp2 - Lm)) + "）" +
+        (w > Wc ? "，越过均衡后开始挤出岗位" : "");
+    }
+    var dComp = w <= Wc + 0.01 ? 0 : Lc - Ld;
+    document.getElementById("mw-sum").textContent =
+      "同一最低工资 " + w + " 元：竞争市场就业 " + (dComp > 0 ? "−" + Math.round(dComp) : "持平") +
+      "；买方垄断就业 " + (emp2 > Lm ? "+" + Math.round(emp2 - Lm) : "持平") +
+      (w > Wc ? " —— 越过 " + Wc.toFixed(0) + " 元，两种市场都损失岗位" : " —— 市场结构决定结果");
+  }
+  sl.addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= 图 5-1 保留工资与工作搜索模拟 ================= */
+(function () {
+  if (!document.getElementById("sr-dots")) return;
+  var X0 = 70, X1 = 600, Y0 = 210, Y1 = 40, WLO = 2000, WHI = 9000, CAP = 40;
+  function px(i) { return X0 + Math.min(CAP, i) / CAP * (X1 - X0); }
+  function py(v) { return Y0 - (Math.min(WHI, Math.max(WLO, v)) - WLO) / (WHI - WLO) * (Y0 - Y1); }
+  var SEED = 20240901, seed = SEED, offers = [], accepted = -1;
+  function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+  var NS = "http://www.w3.org/2000/svg";
+  var sl = document.getElementById("sr-rw");
+  function render() {
+    var rw = parseFloat(sl.value);
+    document.getElementById("sr-orw").textContent = rw + " 元";
+    var rl = document.getElementById("sr-rwline");
+    rl.setAttribute("x1", X0); rl.setAttribute("x2", X1);
+    rl.setAttribute("y1", py(rw)); rl.setAttribute("y2", py(rw));
+    var rlab = document.getElementById("sr-rwlab");
+    rlab.setAttribute("x", X1 - 6); rlab.setAttribute("y", py(rw) - 7);
+    rlab.textContent = "保留工资 " + rw;
+    var g = document.getElementById("sr-dots");
+    while (g.firstChild) g.removeChild(g.firstChild);
+    var path = [];
+    for (var i = 0; i < offers.length; i++) {
+      var v = offers[i];
+      path.push(px(i).toFixed(1) + "," + py(v).toFixed(1));
+      var el = document.createElementNS(NS, "circle");
+      el.setAttribute("cx", px(i)); el.setAttribute("cy", py(v));
+      el.setAttribute("r", i === accepted ? "7" : "4.5");
+      el.setAttribute("class", "dot");
+      el.setAttribute("fill", i === accepted ? "#15803d" : "#94a3b8");
+      g.appendChild(el);
+    }
+    document.getElementById("sr-path").setAttribute("points", path.join(" "));
+    var t1 = document.getElementById("sr-t1"), t2 = document.getElementById("sr-t2");
+    if (!offers.length) {
+      t1.textContent = "点击「抽 1 期报价」：每期从 2000–9000 元/月随机抽一个录用";
+      t2.textContent = "报价 ≥ 保留工资 → 接受并结束失业；否则继续搜索（每期机会成本 800 元）";
+    } else {
+      var n = offers.length;
+      var mean = offers.reduce(function (a, b) { return a + b; }, 0) / n;
+      if (accepted >= 0) {
+        t1.textContent = "第 " + n + " 期接受报价 " + offers[accepted] + " 元（≥ 保留工资 " + rw + " 元）";
+        t2.textContent = "失业 " + n + " 期 · 搜索成本 " + (n * 800) + " 元 · 抽到的报价均值 " + Math.round(mean) + " 元";
+      } else if (n >= CAP) {
+        t1.textContent = "已抽满 " + CAP + " 期仍未达标——保留工资是不是定得太高？";
+        t2.textContent = "期间最好报价仅 " + Math.max.apply(null, offers) + " 元 · 累计搜索成本 " + (n * 800) + " 元";
+      } else {
+        t1.textContent = "第 " + n + " 期报价 " + offers[n - 1] + " 元 < 保留工资 " + rw + " 元，拒绝";
+        t2.textContent = "已失业 " + n + " 期 · 搜索成本 " + (n * 800) + " 元 · 报价均值 " + Math.round(mean) + " 元";
+      }
+    }
+  }
+  function step() {
+    if (accepted >= 0 || offers.length >= CAP) return;
+    var v = Math.round((2000 + rnd() * 7000) / 50) * 50;
+    offers.push(v);
+    if (v >= parseFloat(sl.value)) accepted = offers.length - 1;
+    render();
+  }
+  function restart() { seed = SEED; offers = []; accepted = -1; render(); }
+  document.getElementById("sr-step").addEventListener("click", step);
+  document.getElementById("sr-auto").addEventListener("click", function () {
+    var guard = 0;
+    while (accepted < 0 && offers.length < CAP && guard <= CAP) { step(); guard++; }
+  });
+  document.getElementById("sr-reset").addEventListener("click", restart);
+  sl.addEventListener("input", restart);
+  render();
+})();
+</script>
+</body>
+</html>

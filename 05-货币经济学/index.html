@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>货币经济学 · EconLearn 经济学自学之路</title>
+<meta name="description" content="货币经济学中文互动教程：货币职能与口径、银行货币创造与乘数、央行政策工具、利率传导、通货膨胀与金融危机，配互动演示与自测。">
+<link rel="stylesheet" href="../assets/econ.css">
+</head>
+<body style="--branch:#b45309">
+<noscript><p class="noscript-tip">本页的互动图表与自测需要启用 JavaScript；未启用时仍可阅读全部正文。</p></noscript>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← 总览</a>
+  <div class="topbar-title"><span class="topbar-num">05</span>货币经济学</div>
+  <button class="toc-toggle" aria-expanded="false">目录</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">本分支章节</p>
+    <nav aria-label="章节目录">
+      <a href="#overview">导读与学习目标</a>
+      <a href="#ch1">1 · 什么是货币</a>
+      <a href="#ch2">2 · 银行与货币创造</a>
+      <a href="#ch3">3 · 中央银行与政策工具</a>
+      <a href="#ch4">4 · 利率与传导机制</a>
+      <a href="#ch5">5 · 通货膨胀</a>
+      <a href="#ch6">6 · 金融稳定与危机</a>
+      <a href="#path">进阶路线与延伸阅读</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · 经济学自学之路</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">分支 05 · 货币与金融</span>
+        <h1>货币经济学</h1>
+        <p class="hero-en">Money &amp; Banking</p>
+        <p class="hero-lead">货币是经济的血液，银行是心脏，中央银行是起搏器。本分支回答三个问题：货币从哪里来（比你以为的多得多来自银行账本）、央行如何调控经济、以及通胀与危机为什么会发生。</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">学完本分支你将能</div>
+        <ul>
+          <li>说出货币的三大职能，解释为什么"法定货币"本身没有价值却人人接受</li>
+          <li>用<strong>部分准备金</strong>与<strong>货币乘数</strong>解释银行如何"创造"货币</li>
+          <li>描述中央银行的三大常规工具与利率走廊的操作逻辑</li>
+          <li>追踪一次加息如何沿传导链条影响物价与就业，以及为什么要看"实际利率"</li>
+          <li>解释通货膨胀的成因与代价、银行挤兑的机制与防御制度</li>
+        </ul>
+      </div>
+      <div class="prereq">前置知识：
+        <a class="badge" href="../02-宏观经济学/index.html">02 宏观经济学</a>
+        <a class="badge" href="../01-微观经济学/index.html">01 微观（供需）</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">第 1 章</span>什么是货币</h2>
+
+      <p><strong>引入问题：</strong>二战战俘营里没有政府、没有央行，经济学家 Radford 观察到：红十字会发的香烟逐渐变成了通用"货币"——茶叶、咖啡、衬衫都用香烟标价。为什么偏偏是香烟？一张纸凭什么值一百元？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉</div>
+        <p>货币的本质不是"有价值的东西"，而是<strong>大家都相信别人也会接受的东西</strong>。它要干三件事：当<strong>交易媒介</strong>（省去以物易物的双重巧合）、当<strong>计价单位</strong>（所有价格用同一把尺子）、当<strong>价值储藏</strong>（把今天的劳动存到明天花）。香烟在战俘营胜出，因为它标准化、可分割、耐储存、人人都想要——黄金在人类历史上胜出的理由几乎一样。今天的纸币与电子存款是<strong>法定货币</strong>：没有内在价值、不能兑换黄金，其被接受的根基是"国家规定它纳税必须收 + 所有人预期别人也收"。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">法定货币 <span class="term-en">Fiat Money</span></div><div class="term-def">由国家法令确立、不与任何商品挂钩的货币。它的价值来自集体预期与法律地位——也因此更怕通胀的侵蚀。</div></div>
+        <div class="term"><div class="term-name">货币口径 <span class="term-en">M0 / M1 / M2</span></div><div class="term-def">M0=流通现金；M1=现金+活期存款；M2=M1+定期存款等"准货币"。口径越宽，流动性越弱。新闻里"社融/M2 增速"说的就是最宽的口径。</div></div>
+        <div class="term"><div class="term-name">流动性 <span class="term-en">Liquidity</span></div><div class="term-def">变现而不损失价值的容易程度。现金最流动，房产最不流动。金融挤兑的本质，就是所有人都要求"最流动"的时刻同时到来。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 香烟货币与鲭鱼经济</div>
+        <p>Radford (1945) 记录：战俘营里香烟成为计价单位后，甚至出现了"信贷市场"——先抽烟后还账，以及价格随香烟供给波动引发的"营内通胀通缩"。更现代的版本：美国监狱禁烟后，真空包装的鲭鱼（mackerel）成了地下货币。教训：<strong>货币是一种社会技术，任何满足货币属性的物品都可能被"选"为货币</strong>——包括今天的电子支付余额与央行数字货币。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"钱在央行的大金库里，取出来才有货币。"</strong>——现代货币的绝大部分（M2 的九成以上）从来不是印出来的纸钞，而是<strong>银行账本上的数字</strong>，由贷款行为凭空创造（下一章）。"央行开动印钞机"是对货币体系的漫画式想象——除非涉及现金短缺，印钞机大部分时间与货币创造无关。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.1</span>香烟在战俘营成为货币，最关键的原因是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>香烟有内在使用价值</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>标准化、可分割、耐储、被普遍接受，足以承担货币职能</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>红十字会规定它是货币</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>有内在价值的物品很多（咖啡、衬衫），但货币需要在<strong>可标准化、可分割、可储存、普遍接受</strong>上综合最优。没人"规定"香烟是货币——它是被使用中自发"选"出来的，正如黄金。法定货币则叠加了国家强制与预期自我维持。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 1.2</span>把定期存款计入 M2 而不计入 M1，是因为它？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>金额更大</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>变现需付出成本（提前支取损失利息），流动性弱于现金与活期</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>不是银行发行的</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>货币口径的划分标准只有一个：<strong>流动性</strong>。口径不是"重要性"排序，而是"随时可用于支付的容易程度"排序。理解了这一点，就能理解央行为什么盯多个口径：不同口径的增速差异，反映资金在"活钱"与"死钱"之间的搬家。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>货币 = 交易媒介 + 计价单位 + 价值储藏；被接受靠集体预期。</li>
+          <li>法定货币无内在价值，靠法律与预期支撑。</li>
+          <li>货币口径按流动性分层：M0 ⊂ M1 ⊂ M2。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">第 2 章</span>银行与货币创造</h2>
+
+      <p><strong>引入问题：</strong>央行只"印"了 100 亿现金，为什么全社会的存款可以变成 500 亿？多出来的 400 亿是谁创造的？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：贷款创造存款</div>
+        <p>银行不需要先吸收存款才能放贷——<strong>放贷本身会创造存款</strong>。你贷款 100 万买房，银行在你的卖方账户上直接记上"存款 +100 万"，钱就这么诞生在账本上。当然，银行不能无限放贷：每笔存款要按<strong>准备金率</strong>上缴一部分"弹药"，放出的贷款又会回流成新存款、再放贷、再上缴……一轮轮递减，最终总存款 = 初始准备金 ÷ 准备金率。这就是<strong>货币乘数</strong>。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 2-1 · 货币创造流水线</div>
+        <p class="fig-sub">拖动准备金率滑块，再点击"下一轮"，看 100 万元基础货币如何逐轮膨胀成数倍存款。</p>
+        <figure class="fig-canvas">
+          <svg id="mm-svg" viewBox="0 0 640 380" role="img" aria-label="柱状图逐轮展示每一轮新创造的存款递减累积；文字显示累计存款总额与理论乘数上限。">
+            <line class="axis" x1="70" y1="300" x2="600" y2="300"/>
+            <g id="mm-bars"></g>
+            <text id="mm-txt1" class="chart-title-sm" x="335" y="36" text-anchor="middle"></text>
+            <text id="mm-txt2" class="chart-label" x="335" y="60" text-anchor="middle" style="fill:#475569"></text>
+            <text id="mm-rounds" class="chart-label" x="335" y="355" text-anchor="middle">第 1 轮 → 第 8 轮（每轮新增存款柱）</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="mm-r">准备金率</label><input type="range" id="mm-r" min="5" max="100" step="5" value="20"><output id="mm-or" for="mm-r">20%</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="mm-next">再来一轮 →</button>
+          <button class="btn ghost" id="mm-reset">重置</button>
+        </div>
+        <figcaption>读图要点：准备金率 20% 时，理论上限是 100 万 ÷ 0.2 = 500 万存款（乘数 = 1/0.2）。现实乘数更小——银行要留超额准备金、公众持有现金、贷款需求有限。但"存款是银行放贷创造的"这一点，是理解现代货币体系的钥匙。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">部分准备金制 <span class="term-en">Fractional Reserve Banking</span></div><div class="term-def">银行只保留存款的一部分作为准备金，其余放贷。它是货币创造之源，也埋下"存款可被挤兑"的种子。</div></div>
+        <div class="term"><div class="term-name">货币乘数 <span class="term-en">Money Multiplier</span></div><div class="term-def">总存款 ÷ 基础货币的倍数，理论上限 1/准备金率。乘数不是固定参数，随银行行为与公众现金偏好波动。</div></div>
+        <div class="term"><div class="term-name">基础货币 <span class="term-en">Monetary Base</span></div><div class="term-def">现金 + 银行在央行的准备金，是央行直接控制的部分；M2 等广义货币在此基础上乘数扩张。</div></div>
+      </div>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"银行把我存的钱借给别人，钱只是换了口袋。"</strong>——那是最古老的"中介观"。现代视角：银行放贷时<strong>同时</strong>创造存款（负债）与贷款（资产），资产负债表两边同时膨胀。整个银行体系的贷款，决定的不是"谁用这笔钱"，而是"经济里一共有多少存款货币"。个体银行与银行体系的行为逻辑完全不同——这是货币银行学最反直觉的一课。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.1</span>准备金率从 20% 降到 10%（其他不变），货币乘数理论上限？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>从 5 降到 2</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>从 5 升到 10</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>不变，乘数与准备金率无关</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>乘数上限 = 1/r。r=20% → 5 倍；r=10% → 10 倍。降准是"宽松"的强信号：每一元基础货币能支撑的存款更多。2008 年后主要央行转向"利率走廊 + 充足准备金"框架，乘数论的重要性下降，但它依然是理解货币层级的最清晰脚手架。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 2.2</span>银行体系"贷款创造存款"意味着货币供给？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>完全由央行外生决定</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>由央行、银行放贷意愿与贷款需求共同决定</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>与银行行为无关</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>央行管基础货币与利率，但每一笔"乘数扩张"需要银行愿意放贷（风控、资本充足率）且有人愿意借（需求）。这解释了衰退期的怪象：央行"放水"，但信贷萎缩——<strong>可以把马牵到水边，不能强迫它喝水</strong>（流动性陷阱的微观基础）。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>贷款创造存款；货币供给大部分是银行账本数字。</li>
+          <li>乘数上限 = 1/准备金率；现实乘数受行为约束。</li>
+          <li>央行控制基础货币与利率，广义货币是三方合舞。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">第 3 章</span>中央银行与政策工具</h2>
+
+      <p><strong>引入问题：</strong>美联储、欧洲央行、中国人民银行——它们不生产任何商品，却被称为"经济的第一引擎"。它们到底拿什么工具影响几十万亿的经济？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：央行管的是"资金的价格"</div>
+        <p>现代央行的常规武器库：<strong>① 公开市场操作</strong>（买卖国债/回购，吞吐基础货币，把短期利率钉在目标）；<strong>② 政策利率/利率走廊</strong>（央行贷款便利为顶、存款便利为底，市场利率被夹在走廊里）；<strong>③ 存款准备金率</strong>（改乘数上限，重武器，很少动）。危机时期再加<strong>④ 非常规工具</strong>：量化宽松（QE，直接买长债压低长期利率）、定向工具。框架殊途同归：<strong>影响市场利率，进而影响千万家庭的消费与企业的投资</strong>。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">公开市场操作 <span class="term-en">Open Market Operations</span></div><div class="term-def">央行买卖证券调节银行体系准备金，是最日常的利率微调手段。</div></div>
+        <div class="term"><div class="term-name">利率走廊 <span class="term-en">Interest Rate Corridor</span></div><div class="term-def">央行设定"商业银行向央行借款利率"（走廊上沿）与"存入央行的利率"（下沿），市场利率被夹在其中，无需频繁干预。</div></div>
+        <div class="term"><div class="term-name">量化宽松 <span class="term-en">Quantitative Easing, QE</span></div><div class="term-def">短期利率已到零仍需宽松时，央行直接购买长期债券，压缩期限溢价。它是危机时代的发明，副作用与退出难题至今争论不休。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 中国人民银行的工具箱</div>
+        <p>中国央行的日常工具：中期借贷便利（MLF）→ 贷款市场报价利率（LPR）的政策链条；逆回购调节短期流动性；再贷款再贴现定向支持小微、绿色领域；存款准备金率调整；以及结构性工具（科技创新再贷款等）。欧美的"单一目标（通胀）+ 政策利率"不同，中国央行实行多目标制（增长、物价、就业、国际收支、金融稳定），工具箱因此更宽。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"QE 就是撒钱给老百姓 / 直接印钱给政府。"</strong>——QE 的对象是<strong>金融机构</strong>，买的是它们持有的债券：央行资产端增加国债，负债端增加准备金存款。钱停在银行体系，是否变成信贷与支出取决于银行与企业。这就是为什么 2008-2019 美日欧 QE 天量，通胀却长期低迷；而 2020-21 年财政直接发钱 + 信贷激增后，通胀汹涌而至——<strong>谁拿到钱、拿钱去干什么，比钱从哪里出来更关键</strong>。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 3.1</span>央行想加息，最常规的操作是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>卖出证券/回笼资金，抬高走廊利率</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>命令商业银行提高房贷利率</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>印更多钞票</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>现代框架下，央行通过公开市场操作 ± 走廊设定，改变银行体系准备金的松紧，让市场利率自己"爬"到目标。直接命令特定利率（B）是行政手段，市场经济体极少用；C 方向相反——注入流动性通常对应降息。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>常规三件套：公开市场操作、利率走廊、准备金率；非常规：QE。</li>
+          <li>央行的支点：资金的价格（利率），不是数量（印钞）。</li>
+          <li>QE 之后通胀与否，取决于钱流向谁、用于什么。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">第 4 章</span>利率与传导机制</h2>
+
+      <p><strong>引入问题：</strong>2022 年 3 月起，美联储在约一年半里累计加息 5.25 个百分点。这一记重锤要经过多少站、走多久，才能砸到通胀头上？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：利率是万有引力</div>
+        <p>加息像给整个经济上调"资金引力"：货币市场利率 → 存贷款利率 → 债券与股票估值（贴现率上升，资产价格承压）→ 企业投资与居民购房消费（信贷变贵）→ 总需求降温 → 工资与物价涨势放缓。链条很长，<strong>时滞通常 6~18 个月</strong>——这也是货币政策最难的地方：今天动刀，伤口明年才疼，央行必须"看着未来开车"。判断松紧还要看<strong>实际利率 = 名义利率 − 通胀预期</strong>：名义 5% 配上 6% 的通胀仍是宽松，配上 1% 的通胀才是真紧。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 4-1 · 加息传导链：一站一站走</div>
+        <p class="fig-sub">点击"下一站"，跟随一次加息走完全部传导链条，注意每一站的时滞标记。</p>
+        <figure class="fig-canvas">
+          <svg id="chain-svg" viewBox="0 0 640 300" role="img" aria-label="六步传导链条图：政策利率、市场利率、资产价格、信贷与支出、总需求、物价与就业；当前步高亮显示。">
+            <g id="chain-nodes"></g>
+            <text id="chain-desc" class="chart-label" x="320" y="240" text-anchor="middle" style="font-weight:700"></text>
+            <text class="chart-label" x="320" y="272" text-anchor="middle" style="fill:#475569">点击下方按钮逐步观察 →</text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn" id="chain-next">下一站 →</button>
+          <button class="btn ghost" id="chain-reset">重置</button>
+        </div>
+        <figcaption>读图要点：传导不是瞬间完成的机械反应，每一步都有行为主体在权衡。任何一环卡壳（银行不敢放贷、企业不愿投资），政策效果就打折——这就是为什么央行说话如此小心：管理<strong>预期</strong>本身就是传导的第一站。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">实际利率 <span class="term-en">Real Interest Rate</span></div><div class="term-def">名义利率减通胀预期（费雪方程）。决策看实际利率：它才是"今天 vs 明天"消费的真实相对价格。</div></div>
+        <div class="term"><div class="term-name">政策时滞 <span class="term-en">Policy Lag</span></div><div class="term-def">认识时滞（发现问题）+ 决策时滞 + 传导时滞。货币政策长而可变（6~18 个月），财政政策相反。</div></div>
+        <div class="term"><div class="term-name">预期渠道 <span class="term-en">Expectations Channel</span></div><div class="term-def">央行指引未来利率路径，公众据此定价资产与合同。管好预期，就完成了传导的一半——这是央行沟通革命的根源。</div></div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.1</span>名义利率 4%，通胀预期 6%。货币政策实际姿态是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>实际利率 −2%，仍偏宽松</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>4% 是高利率，明显紧缩</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>取决于 M2 增速</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>实际利率 = 4% − 6% = −2%。借钱的真实成本为负——今天借明天还，通胀帮你还款。这正是 2021-22 年全球通胀初期"名义利率跟涨但实际利率深度为负、需求依旧火热"的局面，直到激进加息把实际利率推正。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 4.2</span>为什么说央行"必须看着未来开车"？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>因为统计部门数据滞后一年</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>政策发挥全部效力需要 6~18 个月，今天的行动针对的是明年的经济</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>因为金融市场每天交易</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>时滞意味着"等通胀起来再加息"必然过晚——今天踩刹车，车要到明年才减速，若届时经济已自己降温，刹车就会变成灾难（过度紧缩）。弗里德曼的"长而多变的时滞"是货币政策一切谨慎与规则化倾向（如通胀目标制）的出发点。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>传导链条：政策利率 → 市场利率 → 资产估值 → 信贷支出 → 总需求 → 物价。</li>
+          <li>看政策松紧盯实际利率，别被名义利率骗。</li>
+          <li>时滞 6~18 个月：货币政策是与未来博弈的艺术。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">第 5 章</span>通货膨胀</h2>
+
+      <p><strong>引入问题：</strong>2021 年底美联储还称通胀是"暂时的"，2022 年美国 CPI 冲上 9%。通胀到底从哪来？为什么一旦起来就如此难缠？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：太多的钱追逐太少的商品</div>
+        <p>最古老的框架是<strong>货币数量论</strong>：MV = PQ（货币量 × 流通速度 = 价格 × 实际产出）。长期看 V 与 Q 相对稳定，<strong>通胀归根结底是货币现象</strong>——持续的物价上涨没有超发的货币撑不住。短期看，通胀的"扳机"有两类：<strong>需求拉动</strong>（总需求过热：刺激政策、信贷繁荣）与<strong>成本推动</strong>（供给冲击：油价、疫情供应链）。两者用药不同：前者加息管用，后者加息治不了缺货，只能压制随之而来的工资—物价螺旋。通胀最阴险的成本不是"变贵"，而是<strong>价格信号失真</strong>与<strong>财富任意再分配</strong>（债权人→债务人）；而<strong>通缩</strong>往往更危险：消费与投资被"等更便宜"推迟，债务实际负担加重，经济陷入螺旋。</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">图 5-1 · MV = PQ 交互演算</div>
+        <p class="fig-sub">拖动货币增速与产出增速滑块，看长期物价通胀率如何被三者夹逼出来。</p>
+        <figure class="fig-canvas">
+          <svg id="mvq-svg" viewBox="0 0 640 360" role="img" aria-label="公式 MV=PQ 的动态演算：货币增速减去产出增速与速度变化的差即为通胀率，柱状显示各项贡献。">
+            <line class="axis" x1="70" y1="240" x2="600" y2="240"/>
+            <g id="mvq-bars"></g>
+            <text id="mvq-txt" class="chart-title-sm" x="335" y="28" text-anchor="middle"></text>
+            <text id="mvq-sub" class="chart-label" x="335" y="52" text-anchor="middle" style="fill:#475569"></text>
+            <text class="chart-label" x="335" y="344" text-anchor="middle">各因素对物价涨幅的贡献（个百分点）</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="mvq-m">货币增速 gM</label><input type="range" id="mvq-m" min="0" max="30" step="1" value="12"><output id="mvq-om" for="mvq-m">12%</output></div>
+          <div class="ctrl"><label for="mvq-y">实际产出增速 gY</label><input type="range" id="mvq-y" min="-5" max="10" step="0.5" value="5"><output id="mvq-oy" for="mvq-y">5.0%</output></div>
+          <div class="ctrl"><label for="mvq-v">流通速度变化 gV</label><input type="range" id="mvq-v" min="-4" max="4" step="0.5" value="0"><output id="mvq-ov" for="mvq-v">0.0%</output></div>
+        </div>
+        <figcaption>读图要点：π ≈ gM + gV − gY。货币增 12%、经济只长 5%，物价平均每年要涨 7%。短期 V 会波动掩盖关系，但十年尺度上"印钞远超增长"必然以通胀收场——这是 2020-2022 年全球经验的教训，也是所有恶性通胀的共同剧本。</figcaption>
+      </figure>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">通货膨胀税 <span class="term-en">Inflation Tax</span></div><div class="term-def">政府靠超发货币融资时，每个人手持的货币购买力被稀释——无需立法的税收。</div></div>
+        <div class="term"><div class="term-name">工资—物价螺旋 <span class="term-en">Wage-Price Spiral</span></div><div class="term-def">物价涨→工人要求涨薪→成本推物价再涨。预期"脱锚"后，通胀自我实现，治理成本剧增。</div></div>
+        <div class="term"><div class="term-name">通胀目标制 <span class="term-en">Inflation Targeting</span></div><div class="term-def">央行公开承诺把通胀维持在约 2%，用声誉锚定预期。预期锚住了，加息才不必过度。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 恶性通胀的温度计</div>
+        <p>1946 年的匈牙利：物价每 15 小时翻一倍，印出人类史上最大面额钞票（10 的 20 次方彭戈）；1948 年金圆券、2008 年津巴布韦、2023 年阿根廷（年通胀超 200%）。共同剧本：<strong>财政赤字货币化 → 预期脱锚 → 挤兑本币 → 加速贬值</strong>。治理无一例外需要"财政断粮 + 央行独立 + 新锚"三件套——德国 1923 年的"地租马克"与 1990 年代多国货币改革皆是如此。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.1</span>"通胀归根结底是货币现象"的含义是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>每次通胀都直接源于央行当月印钞</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>持续的高通胀没有货币供给的持续超发撑不住</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>油价上涨不会引起通胀</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>一次性供给冲击（油价、猪瘟）只能推高个别物价，除非货币配合，整体通胀难以持续。但"归根结底"是长期命题：短期通胀完全可以由供给冲击点燃、由预期与工资螺旋延烧——这也是"暂时论"误判的地方：货币已经超发，火药在，缺的只是火柴。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 5.2</span>未预期到的通胀 10%，最大的赢家与输家是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>赢家：固定利率储户；输家：房贷借款人</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>赢家：固定利率的长期债务人（如房贷族）；输家：固定利率的债权人（储户、持债人）</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>所有人均匀受损，无赢家</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>通胀稀释债务的实际价值：30 年期 4% 房贷在 9% 通胀下实际利率为 −5%——借款人躺着受益；储户与债券持有人则眼见购买力蒸发。通胀是一场<strong>未经立法的财富再分配</strong>，这也是"通胀是不公正的"最坚硬的理由：它惩罚谨慎储蓄的人。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>长期：MV=PQ，持续通胀必然伴随货币超发。</li>
+          <li>短期：需求拉动与成本推动用药不同；预期脱锚最难治。</li>
+          <li>通胀 = 信号失真 + 任意再分配；通缩螺旋往往更致命。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">第 6 章</span>金融稳定与危机</h2>
+
+      <p><strong>引入问题：</strong>2023 年 3 月，硅谷银行（SVB）在约 48 小时内从"绩优银行"到被接管。它没有坏账、没有挤兑的传统诱因——一家"好银行"怎么会在两天内死去？</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">核心直觉：银行的死法写在资产负债表里</div>
+        <p>银行的本业是<strong>期限错配</strong>：借短（存款随时可取）贷长（贷款与债券不能提前变现）。只要存款人<strong>不同时</strong>来取，一切安好；一旦都来——<strong>挤兑</strong>（Bank Run），再健康的银行也难逃（先到先得，晚到的血本无归 → 理性抢跑）。SVB 版本：存款高度集中于科技创业公司（一小撮人互相比快）+ 把大量存款买了长久期债券，加息后债券浮亏 + 存款流失 → 卖债兑现亏损 → 亏损曝光 → 挤兑。防御三件套：<strong>存款保险</strong>（让小储户不必跑）、<strong>最后贷款人</strong>（央行在恐慌时放贷，"好流动性，坏流动性"都要接）、<strong>审慎监管</strong>（资本与流动性要求）。代价是<strong>道德风险</strong>：保了险的银行敢更冒险——监管与风险之间的拉锯永远没有终局。</p>
+      </aside>
+
+      <h3>关键概念</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">银行挤兑 <span class="term-en">Bank Run</span></div><div class="term-def">存款人同时提款的自我实现恐慌：因为怕别人先跑，所以自己先跑。协调博弈的坏均衡（见 04 博弈论）。</div></div>
+        <div class="term"><div class="term-name">最后贷款人 <span class="term-en">Lender of Last Resort</span></div><div class="term-def">白芝浩原则：恐慌时央行应慷慨放贷，但要有抵押、收罚息——扑灭恐慌，又不奖励鲁莽。</div></div>
+        <div class="term"><div class="term-name">明斯基时刻 <span class="term-en">Minsky Moment</span></div><div class="term-def">稳定催生自满，自满催生杠杆，杠杆催生崩溃。市场越久不出事，离出事越近。</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">现实世界 · 一场大萧条的解剖（1930-33）</div>
+        <p>股市崩盘本身不等于大萧条。致命的第二击是<strong>银行恐慌潮</strong>：1930-33 年美国约 9000 家银行倒闭，货币供给收缩三分之一，Fed 却袖手旁观（名义上"清算主义"）。弗里德曼与施瓦茨的判词：<strong>大紧缩是货币政策的失败</strong>。这个教训直接塑造了此后百年：存款保险制度（1933）、最后贷款人职能、以及 2008 年与 2020 年"无论如何先止血"的激进救市——伯南克的学术生涯正因研究大萧条而赢得了 2022 年诺贝尔奖。</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">常见误区</div>
+        <p><strong>"存款保险让银行永不倒闭、储户零风险，多多益善。"</strong>——保险额度越高，储户越不挑银行、银行越敢赌（道德风险放大）。因此各国限额保险（美国 25 万美元、中国 50 万元人民币），<strong>超出部分自负</strong>正是要让大额储户有动力盯着银行。一切金融稳定设计都是同一道权衡题：恐慌成本 vs 道德风险成本。</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.1</span>挤兑是"自我实现的恐慌"，其博弈结构是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>囚徒困境：双方都不跑最优，但各自跑是占优策略</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>协调博弈的两个均衡：都跑与都不跑；恐慌把预期切换到坏均衡</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>单决策问题，与别人无关</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>别人不跑 → 我存着没事（好均衡）；别人跑 → 我必须跑得更早（坏均衡）。没有背叛的"占优"问题，纯粹是<strong>预期协调失败</strong>。所以解药不是道德劝告，而是改变博弈收益：存款保险让"跑"变得多余，坏均衡被直接摘掉。</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">自测 6.2</span>央行"最后贷款人"应遵循的白芝浩原则是？</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>无条件救助所有陷入困境的机构</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>慷慨但要有抵押、收罚息：救流动性，不救清偿力</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>只救国有银行</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>解析：</strong>区分"缺流动性但健康"（值得救）与"资不抵债"（该重组/破产）是百年经验的核心。A 会制造巨型道德风险（大而不倒）；B 用罚息与抵押惩罚鲁莽、又扑灭传染。2008 年的争议正在于：危机烈度下这条线很难守住。</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>本章小结</h3>
+        <ul>
+          <li>银行 = 期限错配的生意；挤兑 = 协调失败的坏均衡。</li>
+          <li>防御三件套：存款保险、最后贷款人、审慎监管；代价是道德风险。</li>
+          <li>大萧条的最大教训：恐慌时刻，央行必须做体系的锚。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">终点</span>进阶路线与延伸阅读</h2>
+      <p>货币经济学向上衔接 <strong>06 金融经济学</strong>（资产定价与利率期限结构）、向外衔接 <strong>07 国际经济学</strong>（汇率与三元悖论）、向后衔接 <strong>17 经济思想史</strong>（凯恩斯 vs 弗里德曼 vs 现代货币理论的争论史）。</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">弗雷德里克·米什金《货币金融学》</span>——全球标准教材，体系完整。</li>
+          <li><span class="bk">弗里德曼 &amp; 施瓦茨《美国货币史》</span>——大紧缩的权威解剖（大部头，可读相关章节）。</li>
+          <li><span class="bk">沃尔什《货币理论与政策》</span>——研究生级别进阶。</li>
+          <li><span class="bk">Adam Tooze,《Crashed》</span>——2008 金融危机十年全球史，叙事一流。</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../04-博弈论与信息经济学/index.html"><span class="pager-dir">← 上一分支</span><br><span class="pager-name">博弈论与信息经济学</span></a>
+        <a href="../06-金融经济学/index.html"><span class="pager-dir">下一分支 →</span><br><span class="pager-name">金融经济学</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../assets/econ.js"></script>
+<script>
+/* ================= 图 2-1 货币乘数 ================= */
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  var X0 = 90, X1 = 590, Y0 = 290, MAXBAR = 200;
+  var base = 100; // 万元
+  var rounds = [];
+  var offset = 0;
+  var barsG = document.getElementById("mm-bars");
+  var t1 = document.getElementById("mm-txt1");
+  var t2 = document.getElementById("mm-txt2");
+  var roundsLab = document.getElementById("mm-rounds");
+  var slider = document.getElementById("mm-r");
+  if (!barsG || !slider) return;
+  function reset() {
+    rounds = [];
+    offset = 0;
+    var r = parseFloat(slider.value) / 100;
+    var dep = base;
+    for (var i = 0; i < 8; i++) {
+      rounds.push(dep);
+      dep = dep * (1 - r);
+    }
+    draw();
+  }
+  function draw() {
+    var r = parseFloat(slider.value) / 100;
+    document.getElementById("mm-or").textContent = Math.round(r * 100) + "%";
+    while (barsG.firstChild) barsG.removeChild(barsG.firstChild);
+    var maxV = Math.max.apply(null, rounds);
+    var total = 0;
+    rounds.forEach(function (v, i) {
+      total += v;
+      var h = v / maxV * MAXBAR;
+      var x = X0 + i * (X1 - X0) / 8 + 8;
+      var w = (X1 - X0) / 8 - 16;
+      var rect = document.createElementNS(NS, "rect");
+      rect.setAttribute("x", x); rect.setAttribute("y", Y0 - h);
+      rect.setAttribute("width", Math.max(6, w)); rect.setAttribute("height", h);
+      rect.setAttribute("fill", i === 0 ? "#b45309" : "#d97706");
+      rect.setAttribute("rx", 3);
+      barsG.appendChild(rect);
+      var lbl = document.createElementNS(NS, "text");
+      lbl.setAttribute("x", x + w / 2); lbl.setAttribute("y", Y0 + 18);
+      lbl.setAttribute("text-anchor", "middle");
+      lbl.setAttribute("class", "chart-label-en");
+      lbl.textContent = "第" + (i + 1) + "轮";
+      barsG.appendChild(lbl);
+    });
+    var limit = base / r;
+    if (roundsLab) roundsLab.textContent = "第 " + (1 + offset) + " 轮 → 第 " + (8 + offset) + " 轮（每轮新增存款柱）";
+    if (t1) t1.textContent = "累计存款 " + total.toFixed(0) + " 万（显示最近 8 轮，初始 " + base + " 万）";
+    if (t2) t2.textContent = "理论乘数上限 1/" + r.toFixed(2) + " = " + (1 / r).toFixed(1) + " 倍 → 极限 " + limit.toFixed(0) + " 万存款";
+  }
+  slider.addEventListener("input", reset);
+  document.getElementById("mm-next").addEventListener("click", function () {
+    var r = parseFloat(slider.value) / 100;
+    var last = rounds[rounds.length - 1] || base;
+    rounds.push(last * (1 - r));
+    rounds.shift();
+    offset += 1;
+    draw();
+  });
+  document.getElementById("mm-reset").addEventListener("click", reset);
+  reset();
+})();
+
+/* ================= 图 4-1 传导链条 ================= */
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  var steps = [
+    { t: "① 央行加息", d: "公开市场操作回笼资金，政策利率上调（如 +0.25%）。时滞：即时生效于货币市场。" },
+    { t: "② 市场利率跟涨", d: "拆借、票据、国债短端利率迅速上行；银行负债成本抬升。时滞：数天至数周。" },
+    { t: "③ 资产重定价", d: "贴现率上升 → 债券价格下跌、股市承压、房贷利率上调。时滞：数周至数月。" },
+    { t: "④ 信贷与支出收缩", d: "企业投资、居民购房与大件消费对利率敏感，贷款需求与供给同时降温。时滞：数月。" },
+    { t: "⑤ 总需求降温", d: "投资消费下滑传导至产出与就业，劳动力市场松动。时滞：6~12 个月。" },
+    { t: "⑥ 物价与工资放缓", d: "需求回落 + 预期回落 → 通胀降温。整条链条走完：6~18 个月。" }
+  ];
+  var idx = 0;
+  var g = document.getElementById("chain-nodes");
+  var desc = document.getElementById("chain-desc");
+  if (!g || !desc) return;
+  var X0 = 70, W = 88, GAP = 8, Y = 90, H = 66;
+  function render() {
+    while (g.firstChild) g.removeChild(g.firstChild);
+    steps.forEach(function (s, i) {
+      var x = X0 + i * (W + GAP);
+      var rect = document.createElementNS(NS, "rect");
+      rect.setAttribute("x", x); rect.setAttribute("y", Y);
+      rect.setAttribute("width", W); rect.setAttribute("height", H);
+      rect.setAttribute("rx", 8);
+      rect.setAttribute("fill", i <= idx ? "#fef3e2" : "#ffffff");
+      rect.setAttribute("stroke", i <= idx ? "#b45309" : "#e5e7eb");
+      rect.setAttribute("stroke-width", i <= idx ? 2.5 : 1.5);
+      g.appendChild(rect);
+      var words = s.t.split(" ");
+      var label = document.createElementNS(NS, "text");
+      label.setAttribute("x", x + W / 2); label.setAttribute("y", Y + 40);
+      label.setAttribute("text-anchor", "middle");
+      label.setAttribute("class", "chart-label");
+      label.setAttribute("style", "font-weight:700");
+      label.textContent = words[words.length - 1];
+      g.appendChild(label);
+      var num = document.createElementNS(NS, "text");
+      num.setAttribute("x", x + W / 2); num.setAttribute("y", Y - 8);
+      num.setAttribute("text-anchor", "middle");
+      num.setAttribute("class", "chart-label-en");
+      num.textContent = (i + 1);
+      g.appendChild(num);
+      if (i < steps.length - 1) {
+        var arrow = document.createElementNS(NS, "text");
+        arrow.setAttribute("x", x + W + GAP / 2); arrow.setAttribute("y", Y + 40);
+        arrow.setAttribute("text-anchor", "middle");
+        arrow.setAttribute("class", "chart-label");
+        arrow.setAttribute("style", "fill:#92400e");
+        arrow.textContent = "→";
+        g.appendChild(arrow);
+      }
+    });
+    desc.textContent = steps[idx].d;
+  }
+  document.getElementById("chain-next").addEventListener("click", function () {
+    idx = (idx + 1) % steps.length;
+    render();
+  });
+  document.getElementById("chain-reset").addEventListener("click", function () { idx = 0; render(); });
+  render();
+})();
+
+/* ================= 图 5-1 MV=PQ ================= */
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  var g = document.getElementById("mvq-bars");
+  var txt = document.getElementById("mvq-txt");
+  var sub = document.getElementById("mvq-sub");
+  if (!g) return;
+  var X0 = 150, BASE = 240, SCALE = 4.5; // 每个百分点 4.5px; π 最低 −14%、gM 最高 30% 均不出画布
+  function bar(x, val, color, label) {
+    var h = Math.abs(val) * SCALE;
+    var y = val >= 0 ? BASE - h : BASE;
+    var rect = document.createElementNS(NS, "rect");
+    rect.setAttribute("x", x); rect.setAttribute("y", y);
+    rect.setAttribute("width", 60); rect.setAttribute("height", Math.max(2, h));
+    rect.setAttribute("fill", color); rect.setAttribute("rx", 3);
+    g.appendChild(rect);
+    var t = document.createElementNS(NS, "text");
+    t.setAttribute("x", x + 30); t.setAttribute("y", val >= 0 ? y - 8 : BASE + h + 16);
+    t.setAttribute("text-anchor", "middle"); t.setAttribute("class", "chart-label");
+    t.textContent = label;
+    g.appendChild(t);
+    var cap = document.createElementNS(NS, "text");
+    cap.setAttribute("x", x + 30); cap.setAttribute("y", BASE + 18);
+    cap.setAttribute("text-anchor", "middle"); cap.setAttribute("class", "chart-label-en");
+    g.appendChild(cap);
+    return cap;
+  }
+  function draw() {
+    var gm = parseFloat(document.getElementById("mvq-m").value);
+    var gy = parseFloat(document.getElementById("mvq-y").value);
+    var gv = parseFloat(document.getElementById("mvq-v").value);
+    document.getElementById("mvq-om").textContent = gm + "%";
+    document.getElementById("mvq-oy").textContent = gy.toFixed(1) + "%";
+    document.getElementById("mvq-ov").textContent = gv.toFixed(1) + "%";
+    while (g.firstChild) g.removeChild(g.firstChild);
+    var pi = gm + gv - gy;
+    var caps = [
+      bar(X0, gm, "#b45309", "+" + gm.toFixed(0)),
+      bar(X0 + 110, gv, "#d97706", (gv >= 0 ? "+" : "") + gv.toFixed(1)),
+      bar(X0 + 220, -gy, "#0d9488", gy.toFixed(1)),
+      bar(X0 + 340, pi, pi >= 0 ? "#dc2626" : "#2563eb", (pi >= 0 ? "+" : "") + pi.toFixed(1))
+    ];
+    caps[0].textContent = "货币 gM";
+    caps[1].textContent = "速度 gV";
+    caps[2].textContent = "产出 gY(−)";
+    caps[3].textContent = "通胀 π";
+    if (txt) txt.textContent = "长期通胀率 π ≈ " + pi.toFixed(1) + "%";
+    if (sub) {
+      var note = pi > 10 ? "恶性区间：货币失控是唯一剧本" : pi > 4 ? "偏高：央行会考虑收紧" : pi >= 0 ? "温和区间：多数央行的舒适带（约2%）" : "通缩警报：债务实际负担加重";
+      sub.textContent = note + "（π = gM + gV − gY）";
+    }
+  }
+  ["mvq-m", "mvq-y", "mvq-v"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", draw);
+  });
+  draw();
+})();
+</script>
+</body>
+</html>
