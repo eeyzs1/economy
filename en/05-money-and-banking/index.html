@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Money &amp; Banking · EconLearn Self-Study Path in Economics</title>
+<meta name="description" content="An interactive English tutorial on money and banking: the functions of money and monetary aggregates, bank money creation and the money multiplier, central bank policy tools, interest-rate transmission, inflation, and financial crises — with interactive demos and self-check quizzes.">
+<link rel="stylesheet" href="../../assets/econ.css">
+</head>
+<body style="--branch:#b45309">
+<noscript><p class="noscript-tip">The interactive figures and quizzes on this page require JavaScript; without it, the full text remains readable.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← Home</a>
+  <div class="topbar-title"><span class="topbar-num">05</span>Money &amp; Banking</div>
+  <a class="topbar-lang" href="../../05-货币经济学/index.html" hreflang="zh-CN">中文</a>
+  <button class="toc-toggle" aria-expanded="false">Contents</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">Chapters in this track</p>
+    <nav aria-label="Chapter contents">
+      <a href="#overview">Overview &amp; learning goals</a>
+      <a href="#ch1">1 · What is money</a>
+      <a href="#ch2">2 · Banks and money creation</a>
+      <a href="#ch3">3 · Central banks and policy tools</a>
+      <a href="#ch4">4 · Interest rates and the transmission mechanism</a>
+      <a href="#ch5">5 · Inflation</a>
+      <a href="#ch6">6 · Financial stability and crises</a>
+      <a href="#path">Next steps &amp; further reading</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · Self-Study Path in Economics</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">Track 05 · Money &amp; finance</span>
+        <h1>Money &amp; Banking</h1>
+        <p class="hero-en">货币经济学</p>
+        <p class="hero-lead">Money is the economy's blood, banks are its heart, and the central bank is its pacemaker. This track answers three questions: where money comes from (far more of it comes from bank ledgers than you think), how the central bank steers the economy, and why inflation and crises happen.</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">By the end of this track, you will be able to</div>
+        <ul>
+          <li>State the three functions of money and explain why fiat money, worthless in itself, is accepted by everyone</li>
+          <li>Use <strong>fractional reserves</strong> and the <strong>money multiplier</strong> to explain how banks "create" money</li>
+          <li>Describe the central bank's three conventional tools and the operating logic of the interest-rate corridor</li>
+          <li>Trace how one rate hike travels the transmission chain to prices and employment, and why the "real interest rate" is the one to watch</li>
+          <li>Explain the causes and costs of inflation, and the mechanics of — and defenses against — bank runs</li>
+        </ul>
+      </div>
+      <div class="prereq">Prerequisites:
+        <a class="badge" href="../02-macroeconomics/index.html">02 Macroeconomics</a>
+        <a class="badge" href="../01-microeconomics/index.html">01 Microeconomics (supply &amp; demand)</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">Chapter 1</span>What is money</h2>
+
+      <p><strong>Opening question:</strong> A World War II prisoner-of-war camp had no government and no central bank, yet the economist Radford observed that Red Cross cigarettes gradually became universal "money" — tea, coffee, and shirts were all priced in cigarettes. Why cigarettes of all things? And what makes a piece of paper worth a hundred yuan?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>The essence of money is not "something valuable" but <strong>something everyone believes everyone else will accept</strong>. It does three jobs: serve as a <strong>medium of exchange</strong> (sparing us barter's double coincidence of wants), a <strong>unit of account</strong> (one yardstick for all prices), and a <strong>store of value</strong> (banking today's labor for tomorrow's spending). Cigarettes won in the POW camp because they were standardized, divisible, durable, and universally wanted — for almost exactly the same reasons gold won out in human history. Today's paper currency and electronic deposits are <strong>fiat money</strong>: they have no intrinsic value and cannot be redeemed for gold; they are accepted because "the state decrees they must be accepted for taxes + everyone expects everyone else to accept them."</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Fiat Money <span class="term-en">法定货币</span></div><div class="term-def">Money established by state decree and untethered from any commodity. Its value rests on collective expectation and legal status — which is also why it is so vulnerable to erosion by inflation.</div></div>
+        <div class="term"><div class="term-name">Monetary Aggregates (M0/M1/M2) <span class="term-en">货币口径</span></div><div class="term-def">M0 = currency in circulation; M1 = currency + demand deposits; M2 = M1 + time deposits and other "near-monies." The broader the aggregate, the weaker its liquidity. When the news cites "TSF/M2 growth," it is talking about the broadest measures.</div></div>
+        <div class="term"><div class="term-name">Liquidity <span class="term-en">流动性</span></div><div class="term-def">How easily an asset can be converted into money without loss of value. Cash is the most liquid, real estate the least. A financial run is, at bottom, the moment when everyone demands "maximum liquidity" at once.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Cigarette money and the mackerel economy</div>
+        <p>Radford (1945) recorded that once cigarettes became the camp's unit of account, a "credit market" even emerged — smoke now, settle later — along with "camp inflation and deflation" as prices swung with the cigarette supply. A more modern version: after US prisons banned tobacco, vacuum-sealed pouches of mackerel became the underground currency. The lesson: <strong>money is a social technology, and any object with money's properties can be "selected" as money</strong> — including today's e-payment balances and central bank digital currencies.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Money sits in the central bank's great vault, and only becomes currency when withdrawn."</strong> — The overwhelming majority of modern money (more than nine-tenths of M2) was never printed paper at all; it is <strong>digits on banks' ledgers</strong>, created out of thin air by the act of lending (next chapter). "The central bank turning on the printing press" is a cartoon image of the monetary system — short of a cash shortage, the presses have little to do with money creation.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.1</span>Cigarettes became money in the POW camp most importantly because:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Cigarettes have intrinsic use value</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>They were standardized, divisible, durable, and widely accepted — good enough to perform money's functions</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The Red Cross decreed them to be money</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Many goods have intrinsic value (coffee, shirts), but money must be the all-around best at being <strong>standardizable, divisible, storable, and generally accepted</strong>. Nobody "decreed" cigarettes to be money — they were spontaneously "selected" through use, just like gold. Fiat money adds state fiat and self-sustaining expectations on top.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.2</span>Time deposits count in M2 but not in M1 because they are…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Larger in amount</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Costly to convert (early withdrawal forfeits interest), hence less liquid than cash and demand deposits</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Not issued by banks</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Monetary aggregates are ranked by exactly one criterion: <strong>liquidity</strong>. The tiers are not an ordering of "importance" but of "how readily the funds can be spent." Once you see this, you understand why central banks watch several aggregates at once: diverging growth rates across them trace money migrating between "live" money and "dead" money.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Money = medium of exchange + unit of account + store of value; acceptance rests on collective expectations.</li>
+          <li>Fiat money has no intrinsic value; it stands on law and expectations.</li>
+          <li>Aggregates are tiered by liquidity: M0 ⊂ M1 ⊂ M2.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">Chapter 2</span>Banks and money creation</h2>
+
+      <p><strong>Opening question:</strong> The central bank has "printed" only 10 billion yuan in cash, yet deposits across the whole economy can reach 50 billion. Who created the extra 40 billion?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: loans create deposits</div>
+        <p>A bank does not need to collect deposits before it can lend — <strong>the act of lending itself creates the deposit</strong>. When you borrow 1 million yuan to buy a home, the bank simply writes "deposit +1,000,000" into the seller's account; that is where the money is born, on a ledger. Of course, banks cannot lend without limit: under the <strong>reserve ratio</strong> a slice of every deposit must be posted as reserves, and the loans that go out flow back as new deposits — relent, re-posted… shrinking round by round, until total deposits = initial reserves ÷ reserve ratio. That is the <strong>money multiplier</strong>.</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 2-1 · The money-creation pipeline</div>
+        <p class="fig-sub">Drag the reserve-ratio slider and click "Another round" to watch 1 million yuan of base money swell, round by round, into several times as much in deposits.</p>
+        <figure class="fig-canvas">
+          <svg id="mm-svg" viewBox="0 0 640 380" role="img" aria-label="Bar chart showing each successive round of new deposits, diminishing as they accumulate; text readouts show cumulative total deposits and the theoretical multiplier cap.">
+            <line class="axis" x1="70" y1="300" x2="600" y2="300"/>
+            <g id="mm-bars"></g>
+            <text id="mm-txt1" class="chart-title-sm" x="335" y="36" text-anchor="middle"></text>
+            <text id="mm-txt2" class="chart-label" x="335" y="60" text-anchor="middle" style="fill:#475569"></text>
+            <text id="mm-rounds" class="chart-label" x="335" y="355" text-anchor="middle">Round 1 → Round 8 (one bar per round of new deposits)</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="mm-r">Reserve ratio</label><input type="range" id="mm-r" min="5" max="100" step="5" value="20"><output id="mm-or" for="mm-r">20%</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="mm-next">Another round →</button>
+          <button class="btn ghost" id="mm-reset">Reset</button>
+        </div>
+        <figcaption>How to read this figure: at a 20% reserve ratio the theoretical ceiling is 1 million ÷ 0.2 = 5 million yuan of deposits (multiplier = 1/0.2). The real-world multiplier is smaller — banks hold excess reserves, the public holds cash, and loan demand is finite. But the key fact — that deposits are created by banks' lending — is the doorway to understanding the modern monetary system.</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Fractional-Reserve Banking <span class="term-en">部分准备金制</span></div><div class="term-def">Banks keep only a fraction of deposits as reserves and lend the rest. It is the wellspring of money creation — and the seed of "deposits can be run on."</div></div>
+        <div class="term"><div class="term-name">Money Multiplier <span class="term-en">货币乘数</span></div><div class="term-def">The ratio of total deposits to the monetary base, with a theoretical ceiling of 1/reserve ratio. Not a fixed parameter: it moves with bank behavior and the public's cash preferences.</div></div>
+        <div class="term"><div class="term-name">Monetary Base <span class="term-en">基础货币</span></div><div class="term-def">Currency plus banks' reserves at the central bank — the part the central bank controls directly; broad money such as M2 expands on top of it through the multiplier.</div></div>
+      </div>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"The bank lends out my deposit — the money just changes pockets."</strong> — That is the oldest, "intermediary" view. The modern view: in lending, a bank <strong>simultaneously</strong> creates a deposit (a liability) and a loan (an asset), and both sides of its balance sheet expand at once. System-wide lending determines not "who gets to use this money" but "how much deposit money exists in the economy." An individual bank and the banking system as a whole behave by entirely different logics — the most counterintuitive lesson in money and banking.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.1</span>The reserve ratio falls from 20% to 10% (all else unchanged). What happens to the theoretical cap on the money multiplier?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>It falls from 5 to 2</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>It rises from 5 to 10</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Nothing — the multiplier has nothing to do with the reserve ratio</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The multiplier cap = 1/r. At r = 20% → 5×; at r = 10% → 10×. A reserve-ratio cut is a strong easing signal: each yuan of base money supports more deposits. After 2008 the major central banks moved to an "interest-rate corridor + ample reserves" framework, demoting multiplier theory — but it remains the clearest scaffolding for understanding the layers of money.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.2</span>For the banking system, "loans create deposits" means the money supply is…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Determined entirely, from outside, by the central bank</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Determined jointly by the central bank, banks' willingness to lend, and loan demand</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Unrelated to bank behavior</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The central bank controls the base and the policy rate, but every round of "multiplier expansion" needs a bank willing to lend (risk controls, capital adequacy) and someone willing to borrow (demand). This explains a recession oddity: the central bank "floods the system" while credit shrinks — <strong>you can lead a horse to water, but you can't make it drink</strong> (the microfoundation of the liquidity trap).</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Loans create deposits; most of the money supply is digits on bank ledgers.</li>
+          <li>Multiplier cap = 1/reserve ratio; the real-world multiplier is constrained by behavior.</li>
+          <li>The central bank controls the base and rates; broad money is a dance of three partners.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">Chapter 3</span>Central banks and policy tools</h2>
+
+      <p><strong>Opening question:</strong> The Federal Reserve, the European Central Bank, the People's Bank of China (PBOC) — they produce no goods at all, yet they are called "the economy's first engine." What tools do they actually use to move an economy worth tens of trillions?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: the central bank manages the price of money</div>
+        <p>The modern central bank's conventional arsenal: <strong>① open-market operations</strong> (buying and selling government bonds or conducting repos to inject and drain base money, pinning the short-term rate on target); <strong>② the policy rate / interest-rate corridor</strong> (the central bank's lending facility as the ceiling and its deposit facility as the floor, with the market rate caught in between); <strong>③ the reserve requirement ratio</strong> (moves the multiplier ceiling — a heavy weapon, rarely fired). In crises, add <strong>④ unconventional tools</strong>: quantitative easing (QE — buying long-term bonds outright to push down long rates) and targeted facilities. The frameworks all converge on the same destination: <strong>move market rates, and through them the spending of millions of households and the investment of firms</strong>.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Open-Market Operations <span class="term-en">公开市场操作</span></div><div class="term-def">The central bank buys and sells securities to adjust banking-system reserves — the everyday fine-tuning instrument for interest rates.</div></div>
+        <div class="term"><div class="term-name">Interest-Rate Corridor <span class="term-en">利率走廊</span></div><div class="term-def">The central bank sets the rate at which banks borrow from it (the corridor's upper edge) and the rate at which they deposit with it (the lower edge); the market rate is pinned inside, with no need for frequent intervention.</div></div>
+        <div class="term"><div class="term-name">Quantitative Easing (QE) <span class="term-en">量化宽松</span></div><div class="term-def">When short-term rates are already at zero but easing is still needed, the central bank buys long-term bonds outright, compressing the term premium. A crisis-era invention whose side effects and exit problems are still fiercely debated.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The PBOC's toolkit</div>
+        <p>The PBOC's everyday tools: the policy chain running from the medium-term lending facility (MLF) to the Loan Prime Rate (LPR); reverse repos to steer short-term liquidity; relending and rediscounting for targeted support of small businesses and green sectors; reserve-requirement adjustments; and structural instruments (such as relending for tech innovation). Unlike the Euro-American setup of "single target (inflation) + policy rate," the PBOC runs a multi-objective mandate (growth, prices, employment, the balance of payments, financial stability) — hence the broader toolkit.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"QE is just showering money on the public / printing it straight for the government."</strong> — QE's counterparties are <strong>financial institutions</strong>, and what it buys are the bonds they hold: Treasury securities enter the central bank's asset side, and reserve deposits enter its liability side. The money parks inside the banking system; whether it turns into credit and spending depends on banks and firms. That is why the enormous QE of 2008–2019 in the US, Japan, and Europe coexisted with chronically low inflation, while in 2020–21 — after fiscal checks went straight to households and credit surged — inflation came roaring in. <strong>Who gets the money, and what they do with it, matters more than where the money comes out.</strong></p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.1</span>The central bank wants to raise rates. Its most standard move is to…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>Sell securities / drain funds, lifting the corridor rates</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>Order commercial banks to raise mortgage rates</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Print more banknotes</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> In the modern framework, the central bank uses open-market operations ± corridor settings to tighten or loosen reserves, letting the market rate "climb" to target on its own. Directly commanding a particular rate (B) is an administrative device that market economies rarely use; and C has the direction backwards — injecting liquidity usually accompanies a rate cut.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The conventional three-piece kit: open-market operations, the interest-rate corridor, the reserve ratio; unconventional: QE.</li>
+          <li>The central bank's lever is the price of money (interest rates), not the quantity (printing).</li>
+          <li>Whether QE ends in inflation depends on who the money flows to and what it funds.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">Chapter 4</span>Interest rates and the transmission mechanism</h2>
+
+      <p><strong>Opening question:</strong> From March 2022, the Federal Reserve raised rates by a cumulative 5.25 percentage points in about a year and a half. How many stations must that hammer blow travel through — and for how long — before it lands on inflation?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: interest rates are gravity</div>
+        <p>A rate hike is like turning up the whole economy's "gravity on money": money-market rates → deposit and loan rates → bond and equity valuations (discount rates rise, and asset prices sag) → business investment and household home-buying (credit gets dearer) → aggregate demand cools → wage and price increases slow. The chain is long, and <strong>the lag typically runs 6–18 months</strong> — which is the hardest part of monetary policy: the knife moves today, the wound hurts next year, so the central bank must "drive looking at the future." Judging the stance also requires the <strong>real interest rate = nominal rate − expected inflation</strong>: a nominal 5% against 6% inflation is still easy money; against 1% inflation it is genuinely tight.</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 4-1 · The rate-hike transmission chain: station by station</div>
+        <p class="fig-sub">Click "Next station" to follow one rate hike down the entire transmission chain, and note the lag flagged at each station.</p>
+        <figure class="fig-canvas">
+          <svg id="chain-svg" viewBox="0 0 640 300" role="img" aria-label="Six-step transmission chain diagram: policy rate, market rates, asset prices, credit and spending, aggregate demand, prices and employment; the current step is highlighted.">
+            <g id="chain-nodes"></g>
+            <text id="chain-desc" class="chart-label" x="320" y="240" text-anchor="middle" style="font-weight:700"></text>
+            <text class="chart-label" x="320" y="272" text-anchor="middle" style="fill:#475569">Use the buttons below to step through →</text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn" id="chain-next">Next station →</button>
+          <button class="btn ghost" id="chain-reset">Reset</button>
+        </div>
+        <figcaption>How to read this figure: transmission is not an instantaneous mechanical response; at every step, real decision-makers are weighing trade-offs. If any link jams (banks afraid to lend, firms unwilling to invest), the policy effect is discounted — which is why central banks choose their words so carefully: managing <strong>expectations</strong> is itself the first station of transmission.</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Real Interest Rate <span class="term-en">实际利率</span></div><div class="term-def">The nominal rate minus expected inflation (the Fisher equation). Decisions hinge on the real rate: it is the true relative price of consuming today versus tomorrow.</div></div>
+        <div class="term"><div class="term-name">Policy Lag <span class="term-en">政策时滞</span></div><div class="term-def">Recognition lag (spotting the problem) + decision lag + transmission lag. For monetary policy they are long and variable (6–18 months); for fiscal policy the pattern runs the other way.</div></div>
+        <div class="term"><div class="term-name">Expectations Channel <span class="term-en">预期渠道</span></div><div class="term-def">The central bank guides the expected future path of rates, and the public prices assets and contracts accordingly. Manage expectations well and half the transmission is already done — the root of the central-bank communication revolution.</div></div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.1</span>The nominal interest rate is 4% and expected inflation is 6%. The actual stance of monetary policy is…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>A real rate of −2% — still on the loose side</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>4% is a high rate — clearly tight</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>It depends on M2 growth</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The real rate = 4% − 6% = −2%. The true cost of borrowing is negative — borrow today, repay tomorrow, and inflation chips in for you. That was exactly the situation in the opening phase of the 2021–22 global inflation: nominal rates rose, yet real rates stayed deeply negative and demand stayed hot, until aggressive hikes pushed real rates positive.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.2</span>Why must a central bank "drive looking at the future"?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Because the statistics office's data arrive a year late</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Because policy takes 6–18 months to reach full effect; today's moves target next year's economy</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Because financial markets trade every day</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The lag means "wait until inflation arrives, then hike" is always too late — brake today and the car only slows next year; and if the economy has cooled by then on its own, the brake becomes a disaster (over-tightening). Friedman's "long and variable lags" are the starting point of every cautious, rule-leaning tendency in monetary policy, inflation targeting included.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The transmission chain: policy rate → market rates → asset valuations → credit and spending → aggregate demand → prices.</li>
+          <li>Judge the stance by the real interest rate; don't be fooled by the nominal one.</li>
+          <li>Lags of 6–18 months: monetary policy is the art of playing against the future.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">Chapter 5</span>Inflation</h2>
+
+      <p><strong>Opening question:</strong> At the end of 2021 the Fed still called inflation "transitory"; in 2022 US CPI surged to 9%. Where does inflation actually come from? And why, once it gets going, is it so hard to subdue?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: too much money chasing too few goods</div>
+        <p>The oldest framework is the <strong>quantity theory of money</strong>: MV = PQ (money × velocity = prices × real output). Over the long run V and Q are fairly stable, so <strong>inflation is always and everywhere a monetary phenomenon</strong> — sustained price increases cannot stand without sustained excess money creation. In the short run, inflation has two kinds of triggers: <strong>demand-pull</strong> (aggregate demand overheating: stimulus programs, credit booms) and <strong>cost-push</strong> (supply shocks: oil prices, pandemic-era supply chains). The prescriptions differ: rate hikes work on the former; on the latter, hikes cannot cure the shortage — they can only suppress the wage–price spiral that follows. Inflation's most insidious cost is not "things get dearer" but <strong>blurred price signals</strong> and <strong>arbitrary redistribution of wealth</strong> (creditors → debtors). And <strong>deflation</strong> is often more dangerous still: consumption and investment are postponed while everyone "waits for cheaper," the real burden of debt grows heavier, and the economy spirals down.</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 5-1 · An interactive MV = PQ calculator</div>
+        <p class="fig-sub">Drag the money-growth and output-growth sliders and watch how the three of them together pin down the long-run rate of inflation.</p>
+        <figure class="fig-canvas">
+          <svg id="mvq-svg" viewBox="0 0 640 360" role="img" aria-label="A live calculation of the identity MV = PQ: money growth minus output growth and the change in velocity gives the inflation rate, with bars showing each factor's contribution.">
+            <line class="axis" x1="70" y1="240" x2="600" y2="240"/>
+            <g id="mvq-bars"></g>
+            <text id="mvq-txt" class="chart-title-sm" x="335" y="28" text-anchor="middle"></text>
+            <text id="mvq-sub" class="chart-label" x="335" y="52" text-anchor="middle" style="fill:#475569"></text>
+            <text class="chart-label" x="335" y="344" text-anchor="middle">Each factor's contribution to price growth (percentage points)</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="mvq-m">Money growth gM</label><input type="range" id="mvq-m" min="0" max="30" step="1" value="12"><output id="mvq-om" for="mvq-m">12%</output></div>
+          <div class="ctrl"><label for="mvq-y">Real output growth gY</label><input type="range" id="mvq-y" min="-5" max="10" step="0.5" value="5"><output id="mvq-oy" for="mvq-y">5.0%</output></div>
+          <div class="ctrl"><label for="mvq-v">Velocity change gV</label><input type="range" id="mvq-v" min="-4" max="4" step="0.5" value="0"><output id="mvq-ov" for="mvq-v">0.0%</output></div>
+        </div>
+        <figcaption>How to read this figure: π ≈ gM + gV − gY. With money growing 12% and the economy only 5%, prices must rise about 7% a year on average. In the short run swings in V can mask the relationship, but on a decade scale "printing far beyond growth" always ends in inflation — the lesson of the world's 2020–2022 experience, and the shared script of every hyperinflation.</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Inflation Tax <span class="term-en">通货膨胀税</span></div><div class="term-def">When the government finances itself by issuing money, the purchasing power of everyone's cash holdings is diluted — taxation without legislation.</div></div>
+        <div class="term"><div class="term-name">Wage–Price Spiral <span class="term-en">工资—物价螺旋</span></div><div class="term-def">Prices rise → workers demand raises → costs push prices higher still. Once expectations "unanchor," inflation becomes self-fulfilling and vastly costlier to cure.</div></div>
+        <div class="term"><div class="term-name">Inflation Targeting <span class="term-en">通胀目标制</span></div><div class="term-def">The central bank publicly commits to keeping inflation at about 2%, anchoring expectations with its reputation. With expectations anchored, rate hikes need not overshoot.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · A thermometer for hyperinflation</div>
+        <p>Hungary in 1946: prices doubled every 15 hours, and the state printed the largest banknote denomination in human history (10²⁰ pengő); then came China's 1948 gold yuan, Zimbabwe in 2008, and Argentina in 2023 (annual inflation above 200%). The shared script: <strong>monetized fiscal deficits → unanchored expectations → a run on the currency → accelerating depreciation</strong>. The cure, in every case without exception, has needed the same three-piece kit — cut off the fiscal tap, grant the central bank independence, install a new anchor — from Germany's 1923 Rentenmark to the currency reforms of the 1990s.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.1</span>"Inflation is ultimately a monetary phenomenon" means…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Every inflation stems directly from the central bank's printing that very month</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Sustained high inflation cannot persist without sustained excessive money creation</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Rising oil prices cannot cause inflation</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> A one-off supply shock (oil, hog epidemics) can push up particular prices, but economy-wide inflation can rarely persist unless money accommodates it. Yet "ultimately" is a long-run claim: in the short run inflation can perfectly well be ignited by supply shocks and kept burning by expectations and the wage spiral — which is exactly where the "transitory" call went wrong: money had already overshot; the powder was laid, and only the match was missing.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.2</span>Unexpected inflation hits 10%. The biggest winners and losers are…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Winners: savers at fixed rates; losers: mortgage borrowers</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Winners: long-term debtors at fixed rates (e.g., mortgage holders); losers: fixed-rate creditors (savers, bondholders)</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Everyone loses equally; there are no winners</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Inflation dilutes the real value of debt: a 30-year mortgage at 4% carries a real rate of −5% under 9% inflation — borrowers gain while lying down, while savers and bondholders watch their purchasing power evaporate. Inflation is <strong>a redistribution of wealth without legislation</strong>, and that is the hardest core of the claim that "inflation is unjust": it punishes the prudent saver.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Long run: MV = PQ; sustained inflation always rides on excessive money creation.</li>
+          <li>Short run: demand-pull and cost-push call for different medicine; unanchored expectations are the hardest to cure.</li>
+          <li>Inflation = blurred signals + arbitrary redistribution; the deflationary spiral is often deadlier.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">Chapter 6</span>Financial stability and crises</h2>
+
+      <p><strong>Opening question:</strong> In March 2023, Silicon Valley Bank (SVB) went from "star performer" to receivership in about 48 hours. It had no bad loans and none of the classic run triggers — so how does a "good bank" die in two days?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: a bank's cause of death is written on its balance sheet</div>
+        <p>A bank's core business is <strong>maturity mismatch</strong>: borrow short (deposits withdrawable at any time) and lend long (loans and bonds cannot be unwound early). As long as depositors do <strong>not</strong> all come at once, all is well; the moment they do — a <strong>bank run</strong> — even the healthiest bank can hardly escape (first come, first served; the latecomers are wiped out → rationally racing to be first through the door). The SVB version: deposits were highly concentrated among tech startups (a small crowd racing one another) + a large share of those deposits was parked in long-duration bonds; after rates rose, unrealized bond losses + deposit outflows → sell bonds and crystallize the losses → the losses become public → run. The three-piece defense: <strong>deposit insurance</strong> (so small depositors need not run), the <strong>lender of last resort</strong> (the central bank lends into the panic and takes "good liquidity and bad liquidity" alike), and <strong>prudential regulation</strong> (capital and liquidity requirements). The price is <strong>moral hazard</strong>: insured banks dare to run more risk — the tug-of-war between regulation and risk never has a final whistle.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Bank Run <span class="term-en">银行挤兑</span></div><div class="term-def">A self-fulfilling panic in which depositors all withdraw at once: because you fear others will run first, you run first. The bad equilibrium of a coordination game (see 04, Game Theory).</div></div>
+        <div class="term"><div class="term-name">Lender of Last Resort <span class="term-en">最后贷款人</span></div><div class="term-def">Bagehot's principle: in a panic the central bank should lend freely — against good collateral, at a penalty rate — extinguishing the panic without rewarding recklessness.</div></div>
+        <div class="term"><div class="term-name">Minsky Moment <span class="term-en">明斯基时刻</span></div><div class="term-def">Stability breeds complacency, complacency breeds leverage, leverage breeds collapse. The longer the markets stay calm, the closer the crash.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Anatomy of the Great Depression (1930–33)</div>
+        <p>The stock-market crash by itself did not make the Great Depression. The fatal second blow was the <strong>wave of banking panics</strong>: in 1930–33 roughly 9,000 US banks failed and the money supply contracted by one-third, while the Fed stood by (on nominally "liquidationist" grounds). Friedman and Schwartz's verdict: <strong>the Great Contraction was a failure of monetary policy</strong>. That lesson shaped the century that followed — deposit insurance (1933), the lender-of-last-resort function, and the "stop the bleeding first, whatever it takes" rescues of 2008 and 2020. Bernanke's academic career, built on studying the Depression, earned him the 2022 Nobel Prize.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"With deposit insurance, banks never fail, depositors face zero risk, and more coverage is always better."</strong> — The higher the coverage, the less depositors shop around for sound banks and the more boldly banks gamble (moral hazard amplified). That is why countries cap their insurance (US$250,000 in the United States, 500,000 yuan in China): leaving large depositors exposed above the cap is precisely what keeps them watching their bank. Every financial-stability design is the same trade-off question: the cost of panic versus the cost of moral hazard.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.1</span>A bank run is a "self-fulfilling panic." Its game structure is…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>A prisoner's dilemma: neither running is best, but running is each side's dominant strategy</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>A coordination game with two equilibria — all run or none run; panic flips expectations to the bad one</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>A single-person decision problem, unrelated to what others do</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> If others don't run, my deposit stays safe (good equilibrium); if others run, I must run even earlier (bad equilibrium). There is no "dominant strategy" defection problem here — it is pure <strong>failure of expectation coordination</strong>. So the remedy is not moral suasion but a change in the game's payoffs: deposit insurance makes "running" pointless, and the bad equilibrium is simply removed.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.2</span>In its lender-of-last-resort role, the Bagehot principle a central bank should follow is…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Rescue every distressed institution, unconditionally</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Lend freely, but against collateral and at a penalty rate: rescue illiquidity, not insolvency</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Rescue only state-owned banks</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Distinguishing "short of liquidity but solvent" (worth saving) from "insolvent" (belongs in restructuring or bankruptcy) is the heart of a century of experience. A would create giant moral hazard (too big to fail); B penalizes recklessness through the penalty rate and collateral while still extinguishing contagion. The controversy of 2008 was exactly this: in the furnace of a crisis, that line is very hard to hold.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>A bank = a maturity-mismatch business; a run = the bad equilibrium of a coordination failure.</li>
+          <li>The three-piece defense: deposit insurance, lender of last resort, prudential regulation; the price is moral hazard.</li>
+          <li>The Great Depression's biggest lesson: in a panic, the central bank must be the system's anchor.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">Wrap-up</span>Next steps &amp; further reading</h2>
+      <p>Money and banking leads upward into <strong>06 Financial Economics</strong> (asset pricing and the term structure of interest rates), outward into <strong>07 International Economics</strong> (exchange rates and the trilemma), and backward into <strong>17 History of Economic Thought</strong> (the running argument among Keynes, Friedman, and modern monetary theory).</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Frederic Mishkin, The Economics of Money, Banking, and Financial Markets</span> — the global standard textbook, complete in coverage.</li>
+          <li><span class="bk">Friedman &amp; Schwartz, A Monetary History of the United States</span> — the authoritative anatomy of the Great Contraction (a doorstop; the relevant chapters will do).</li>
+          <li><span class="bk">Carl Walsh, Monetary Theory and Policy</span> — for graduate-level ascent.</li>
+          <li><span class="bk">Adam Tooze, Crashed</span> — a first-rate narrative history of the decade after the 2008 crisis.</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../04-game-theory-and-information-economics/index.html"><span class="pager-dir">← Previous track</span><br><span class="pager-name">Game Theory &amp; Information Economics</span></a>
+        <a href="../06-financial-economics/index.html"><span class="pager-dir">Next track →</span><br><span class="pager-name">Financial Economics</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+<script src="../../assets/econ.js"></script>
+<script>
+/* ================= Figure 2-1 Money multiplier ================= */
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  var X0 = 90, X1 = 590, Y0 = 290, MAXBAR = 200;
+  var base = 100; // in units of 10k yuan
+  var rounds = [];
+  var offset = 0;
+  var barsG = document.getElementById("mm-bars");
+  var t1 = document.getElementById("mm-txt1");
+  var t2 = document.getElementById("mm-txt2");
+  var roundsLab = document.getElementById("mm-rounds");
+  var slider = document.getElementById("mm-r");
+  if (!barsG || !slider) return;
+  function reset() {
+    rounds = [];
+    offset = 0;
+    var r = parseFloat(slider.value) / 100;
+    var dep = base;
+    for (var i = 0; i < 8; i++) {
+      rounds.push(dep);
+      dep = dep * (1 - r);
+    }
+    draw();
+  }
+  function draw() {
+    var r = parseFloat(slider.value) / 100;
+    document.getElementById("mm-or").textContent = Math.round(r * 100) + "%";
+    while (barsG.firstChild) barsG.removeChild(barsG.firstChild);
+    var maxV = Math.max.apply(null, rounds);
+    var total = 0;
+    rounds.forEach(function (v, i) {
+      total += v;
+      var h = v / maxV * MAXBAR;
+      var x = X0 + i * (X1 - X0) / 8 + 8;
+      var w = (X1 - X0) / 8 - 16;
+      var rect = document.createElementNS(NS, "rect");
+      rect.setAttribute("x", x); rect.setAttribute("y", Y0 - h);
+      rect.setAttribute("width", Math.max(6, w)); rect.setAttribute("height", h);
+      rect.setAttribute("fill", i === 0 ? "#b45309" : "#d97706");
+      rect.setAttribute("rx", 3);
+      barsG.appendChild(rect);
+      var lbl = document.createElementNS(NS, "text");
+      lbl.setAttribute("x", x + w / 2); lbl.setAttribute("y", Y0 + 18);
+      lbl.setAttribute("text-anchor", "middle");
+      lbl.setAttribute("class", "chart-label-en");
+      lbl.textContent = "R" + (i + 1);
+      barsG.appendChild(lbl);
+    });
+    var limit = base / r;
+    if (roundsLab) roundsLab.textContent = "Round " + (1 + offset) + " → Round " + (8 + offset) + " (one bar per round of new deposits)";
+    if (t1) t1.textContent = "Cumulative deposits " + (total / 100).toFixed(2) + " million yuan (last 8 rounds shown; initial " + (base / 100).toFixed(0) + " million yuan)";
+    if (t2) t2.textContent = "Theoretical multiplier cap 1/" + r.toFixed(2) + " = " + (1 / r).toFixed(1) + "× → limit " + (limit / 100).toFixed(1) + " million yuan of deposits";
+  }
+  slider.addEventListener("input", reset);
+  document.getElementById("mm-next").addEventListener("click", function () {
+    var r = parseFloat(slider.value) / 100;
+    var last = rounds[rounds.length - 1] || base;
+    rounds.push(last * (1 - r));
+    rounds.shift();
+    offset += 1;
+    draw();
+  });
+  document.getElementById("mm-reset").addEventListener("click", reset);
+  reset();
+})();
+
+/* ================= Figure 4-1 Transmission chain ================= */
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  var steps = [
+    { t: "① Central bank hikes", d: "Open-market operations drain funds and the policy rate rises (say, +0.25%). Lag: hits the money market instantly." },
+    { t: "② Market rates follow", d: "Interbank, bill, and short-term Treasury rates climb quickly; banks' funding costs rise. Lag: days to weeks." },
+    { t: "③ Assets reprice", d: "Higher discount rates → bond prices fall, equities sag, mortgage rates rise. Lag: weeks to months." },
+    { t: "④ Credit contracts", d: "Business investment, home purchases, and big-ticket consumption are rate-sensitive; loan demand and supply cool together. Lag: months." },
+    { t: "⑤ Demand cools", d: "Falling investment and consumption spread to output and employment; the labor market loosens. Lag: 6–12 months." },
+    { t: "⑥ Prices slow", d: "Demand retreats + expectations retreat → inflation cools. The full chain takes: 6–18 months." }
+  ];
+  var idx = 0;
+  var g = document.getElementById("chain-nodes");
+  var desc = document.getElementById("chain-desc");
+  if (!g || !desc) return;
+  var X0 = 70, W = 88, GAP = 8, Y = 90, H = 66;
+  function render() {
+    while (g.firstChild) g.removeChild(g.firstChild);
+    steps.forEach(function (s, i) {
+      var x = X0 + i * (W + GAP);
+      var rect = document.createElementNS(NS, "rect");
+      rect.setAttribute("x", x); rect.setAttribute("y", Y);
+      rect.setAttribute("width", W); rect.setAttribute("height", H);
+      rect.setAttribute("rx", 8);
+      rect.setAttribute("fill", i <= idx ? "#fef3e2" : "#ffffff");
+      rect.setAttribute("stroke", i <= idx ? "#b45309" : "#e5e7eb");
+      rect.setAttribute("stroke-width", i <= idx ? 2.5 : 1.5);
+      g.appendChild(rect);
+      var words = s.t.split(" ");
+      var label = document.createElementNS(NS, "text");
+      label.setAttribute("x", x + W / 2); label.setAttribute("y", Y + 40);
+      label.setAttribute("text-anchor", "middle");
+      label.setAttribute("class", "chart-label");
+      label.setAttribute("style", "font-weight:700");
+      label.textContent = words[words.length - 1];
+      g.appendChild(label);
+      var num = document.createElementNS(NS, "text");
+      num.setAttribute("x", x + W / 2); num.setAttribute("y", Y - 8);
+      num.setAttribute("text-anchor", "middle");
+      num.setAttribute("class", "chart-label-en");
+      num.textContent = (i + 1);
+      g.appendChild(num);
+      if (i < steps.length - 1) {
+        var arrow = document.createElementNS(NS, "text");
+        arrow.setAttribute("x", x + W + GAP / 2); arrow.setAttribute("y", Y + 40);
+        arrow.setAttribute("text-anchor", "middle");
+        arrow.setAttribute("class", "chart-label");
+        arrow.setAttribute("style", "fill:#92400e");
+        arrow.textContent = "→";
+        g.appendChild(arrow);
+      }
+    });
+    desc.textContent = steps[idx].d;
+  }
+  document.getElementById("chain-next").addEventListener("click", function () {
+    idx = (idx + 1) % steps.length;
+    render();
+  });
+  document.getElementById("chain-reset").addEventListener("click", function () { idx = 0; render(); });
+  render();
+})();
+
+/* ================= Figure 5-1 MV=PQ ================= */
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  var g = document.getElementById("mvq-bars");
+  var txt = document.getElementById("mvq-txt");
+  var sub = document.getElementById("mvq-sub");
+  if (!g) return;
+  var X0 = 150, BASE = 240, SCALE = 4.5; // 4.5px per percentage point; pi down to -14% and gM up to 30% both stay on canvas
+  function bar(x, val, color, label) {
+    var h = Math.abs(val) * SCALE;
+    var y = val >= 0 ? BASE - h : BASE;
+    var rect = document.createElementNS(NS, "rect");
+    rect.setAttribute("x", x); rect.setAttribute("y", y);
+    rect.setAttribute("width", 60); rect.setAttribute("height", Math.max(2, h));
+    rect.setAttribute("fill", color); rect.setAttribute("rx", 3);
+    g.appendChild(rect);
+    var t = document.createElementNS(NS, "text");
+    t.setAttribute("x", x + 30); t.setAttribute("y", val >= 0 ? y - 8 : BASE + h + 16);
+    t.setAttribute("text-anchor", "middle"); t.setAttribute("class", "chart-label");
+    t.textContent = label;
+    g.appendChild(t);
+    var cap = document.createElementNS(NS, "text");
+    cap.setAttribute("x", x + 30); cap.setAttribute("y", BASE + 18);
+    cap.setAttribute("text-anchor", "middle"); cap.setAttribute("class", "chart-label-en");
+    g.appendChild(cap);
+    return cap;
+  }
+  function draw() {
+    var gm = parseFloat(document.getElementById("mvq-m").value);
+    var gy = parseFloat(document.getElementById("mvq-y").value);
+    var gv = parseFloat(document.getElementById("mvq-v").value);
+    document.getElementById("mvq-om").textContent = gm + "%";
+    document.getElementById("mvq-oy").textContent = gy.toFixed(1) + "%";
+    document.getElementById("mvq-ov").textContent = gv.toFixed(1) + "%";
+    while (g.firstChild) g.removeChild(g.firstChild);
+    var pi = gm + gv - gy;
+    var caps = [
+      bar(X0, gm, "#b45309", "+" + gm.toFixed(0)),
+      bar(X0 + 110, gv, "#d97706", (gv >= 0 ? "+" : "") + gv.toFixed(1)),
+      bar(X0 + 220, -gy, "#0d9488", gy.toFixed(1)),
+      bar(X0 + 340, pi, pi >= 0 ? "#dc2626" : "#2563eb", (pi >= 0 ? "+" : "") + pi.toFixed(1))
+    ];
+    caps[0].textContent = "Money gM";
+    caps[1].textContent = "Velocity gV";
+    caps[2].textContent = "Output gY(−)";
+    caps[3].textContent = "Inflation π";
+    if (txt) txt.textContent = "Long-run inflation π ≈ " + pi.toFixed(1) + "%";
+    if (sub) {
+      var note = pi > 10 ? "Hyperinflation zone: runaway money is the only script" : pi > 4 ? "High: the central bank will consider tightening" : pi >= 0 ? "Moderate zone: most central banks' comfort band (about 2%)" : "Deflation alert: the real burden of debt rises";
+      sub.textContent = note + " (π = gM + gV − gY)";
+    }
+  }
+  ["mvq-m", "mvq-y", "mvq-v"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", draw);
+  });
+  draw();
+})();
+</script>
+</body>
+</html>

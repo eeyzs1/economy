@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Industrial Organization · EconLearn Self-Study Path in Economics</title>
+<meta name="description" content="An interactive industrial organization tutorial in English: market power, the Lerner index, and the HHI; Cournot vs Bertrand competition; cartels, tacit collusion, and price discrimination; entry barriers, predatory pricing, and antitrust; and network effects and two-sided platform markets, with interactive figures and self-test quizzes.">
+<link rel="stylesheet" href="../../assets/econ.css">
+</head>
+<body style="--branch:#e11d48">
+<noscript><p class="noscript-tip">The interactive figures and quizzes on this page need JavaScript; with it disabled you can still read the full text.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← Home</a>
+  <div class="topbar-title"><span class="topbar-num">10</span>Industrial Organization</div>
+  <a class="topbar-lang" href="../../10-产业组织/index.html" hreflang="zh-CN">中文</a>
+  <button class="toc-toggle" aria-expanded="false">Contents</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">Chapters in this track</p>
+    <nav aria-label="Chapter contents">
+      <a href="#overview">Overview &amp; learning goals</a>
+      <a href="#ch1">1 · Market power &amp; HHI</a>
+      <a href="#ch2">2 · Cournot vs Bertrand</a>
+      <a href="#ch3">3 · Collusion &amp; cartels</a>
+      <a href="#ch4">4 · Price discrimination</a>
+      <a href="#ch5">5 · Entry barriers &amp; antitrust</a>
+      <a href="#ch6">6 · Network effects &amp; platform economics</a>
+      <a href="#path">Next steps &amp; further reading</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · Self-Study Path in Economics</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">Track 10 · Applied fields</span>
+        <h1>Industrial Organization</h1>
+        <p class="hero-en">产业组织</p>
+        <p class="hero-lead">Microeconomics teaches us the polar worlds of perfect competition and monopoly, but real markets almost all live in between: a handful of airlines, two dominant food-delivery platforms, one WeChat. Industrial organization (IO) studies <strong>how real markets work, how firms compete and collude, and when government should step in</strong> — it is the bridge that carries microeconomic theory into antitrust policy.</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">By the end of this track, you will be able to</div>
+        <ul>
+          <li>measure market power with the <strong>Lerner index</strong> and the <strong>HHI</strong>, and explain what information each rests on and where each falls short</li>
+          <li>predict oligopoly prices under <strong>Cournot</strong> and <strong>Bertrand</strong> competition, and explain how price converges to the competitive level as the number of firms grows</li>
+          <li>use the <strong>discount-factor</strong> logic of repeated games to explain why cartels are unstable and when tacit collusion can be sustained</li>
+          <li>apply the <strong>inverse-elasticity rule</strong> of third-degree price discrimination, and distinguish legal differential pricing from algorithmic price discrimination against loyal customers</li>
+          <li>analyze <strong>barriers to entry</strong> and strategic conduct such as predatory pricing, and understand the consumer welfare standard of antitrust</li>
+          <li>use <strong>network effects, critical mass, and two-sided markets</strong> to explain platform competition and "free" business models</li>
+        </ul>
+      </div>
+      <div class="prereq">Prerequisites:
+        <a class="badge" href="../01-microeconomics/index.html">01 Microeconomics (monopoly, producer surplus)</a>
+        <a class="badge" href="../04-game-theory-and-information-economics/index.html">04 Game theory (Nash equilibrium, repeated games)</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">Chapter 1</span>Market power: who can set prices, and who must take them</h2>
+
+      <p><strong>Opening question:</strong> The same bottle of water sells for 2 yuan at a convenience store and 10 yuan at a mountaintop scenic spot; Moutai can raise its price year after year, while a flour mill can only take the going price. The difference is not cost — it is <strong>who holds pricing power</strong>. The first task of industrial organization is to bolt a ruler onto "market power": how big is it, and where does it come from?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: market power = the ability to charge a higher price without losing all your customers</div>
+        <p>A perfectly competitive firm that raises its price by one cent loses every customer — it is a "price taker." A firm with market power that raises its price loses only its price-sensitive customers, because what it sells <strong>lacks close substitutes</strong>. The sources of power are a mixed bag: a unique product, patents, licenses, economies of scale, network effects, switching costs... But measurement takes only two routes: look at <strong>behavior</strong> — how far price sits above marginal cost (the Lerner index) — or look at <strong>structure</strong> — how concentrated the market is (the HHI). The former is intuitive, but marginal cost is hard to observe; the latter needs only share data, but is merely a proxy for power.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Market power</div><span class="term-en">市场势力</span><div class="term-def">The ability to price above marginal cost without losing all of your customers. Rooted in the scarcity of substitutes; the common starting point of profit analysis and policy analysis alike.</div></div>
+        <div class="term"><div class="term-name">Lerner index</div><span class="term-en">勒纳指数</span><div class="term-def">L = (P − MC)/P, ranging from 0 (perfect competition) to 1 (the extreme case). Under profit maximization it equals exactly 1/|ε|: the less elastic demand, the greater the power.</div></div>
+        <div class="term"><div class="term-name">Herfindahl–Hirschman Index (HHI)</div><span class="term-en">赫芬达尔-赫希曼指数</span><div class="term-def">The sum of the squared market shares (in percent) of all firms, ranging from 0 to 10,000. More sensitive to big firms: a pure monopolist scores 10,000, while an infinity of tiny firms approaches 0.</div></div>
+        <div class="term"><div class="term-name">Markup</div><span class="term-en">加成率</span><div class="term-def">How far price sits above marginal cost, often written P/MC or (P − MC)/P. In empirical work, "rising markups" is shorthand for expanding market power.</div></div>
+      </div>
+
+      <div class="formula">HHI = s₁² + s₂² + … + sₙ²<span class="f-note">sᵢ is firm i's market share in percent. Four firms at 25% each → HHI = 2500; a single firm holding 100% → 10,000.</span></div>
+      <div class="formula">L = (P − MC) / P = 1 / |ε|<span class="f-note">The profit-maximizing markup rule: the smaller the elasticity |ε| (the harder customers are to lose), the higher the optimal markup. Under perfect competition |ε|→∞, so L→0.</span></div>
+
+      <h3>Interactive demo: HHI calculator</h3>
+      <figure class="fig">
+        <div class="fig-title">Figure 1-1 · HHI calculator: the share structure sets concentration</div>
+        <p class="fig-sub">Drag the four firms' share sliders and watch how the HHI and its concentration band change. Try comparing "four equal shares" with "one giant plus three also-rans."</p>
+        <figure class="fig-canvas">
+          <svg id="hhi-svg" viewBox="0 0 640 400" role="img" aria-label="An HHI scale and a bar chart of firm shares: the four firms' share sliders set the HHI value and its low, moderate, or high concentration band.">
+            <text class="chart-title-sm" x="335" y="24" text-anchor="middle">HHI scale (0–10000)</text>
+            <line class="axis" x1="70" y1="70" x2="610" y2="70"/>
+            <line class="axis" x1="70" y1="64" x2="70" y2="76"/>
+            <line class="axis" x1="340" y1="64" x2="340" y2="76"/>
+            <line class="axis" x1="610" y1="64" x2="610" y2="76"/>
+            <text class="chart-label" x="70" y="92" text-anchor="middle">0</text>
+            <text class="chart-label" x="340" y="92" text-anchor="middle">5000</text>
+            <text class="chart-label" x="610" y="92" text-anchor="middle">10000</text>
+            <line x1="151" y1="62" x2="151" y2="78" stroke="#ea580c" stroke-width="3"/>
+            <line x1="205" y1="62" x2="205" y2="78" stroke="#ea580c" stroke-width="3"/>
+            <text class="chart-label" x="151" y="54" text-anchor="middle" fill="#ea580c">1500</text>
+            <text class="chart-label" x="205" y="54" text-anchor="middle" fill="#ea580c">2500</text>
+            <circle id="hhi-needle" class="dot" cy="70" r="8" fill="#e11d48"/>
+            <text id="hhi-val" class="chart-title-sm" x="335" y="118" text-anchor="middle">HHI = 2600</text>
+            <text id="hhi-cat" class="chart-label" x="335" y="140" text-anchor="middle">Highly concentrated (&gt;2500)</text>
+            <line class="axis" x1="60" y1="345" x2="610" y2="345"/>
+            <rect id="hhi-b1" x="86" y="345" width="72" height="0" fill="#e11d48" rx="3"/>
+            <rect id="hhi-b2" x="186" y="345" width="72" height="0" fill="#2f6fdb" rx="3"/>
+            <rect id="hhi-b3" x="286" y="345" width="72" height="0" fill="#0d9488" rx="3"/>
+            <rect id="hhi-b4" x="386" y="345" width="72" height="0" fill="#7c3aed" rx="3"/>
+            <rect id="hhi-bo" x="486" y="345" width="72" height="0" fill="#94a3b8" rx="3"/>
+            <text id="hhi-t1" class="chart-label" x="122" y="337" text-anchor="middle">30%</text>
+            <text id="hhi-t2" class="chart-label" x="222" y="337" text-anchor="middle">30%</text>
+            <text id="hhi-t3" class="chart-label" x="322" y="337" text-anchor="middle">20%</text>
+            <text id="hhi-t4" class="chart-label" x="422" y="337" text-anchor="middle">20%</text>
+            <text id="hhi-to" class="chart-label" x="522" y="337" text-anchor="middle">0%</text>
+            <text class="chart-label" x="122" y="366" text-anchor="middle">Firm A</text>
+            <text class="chart-label" x="222" y="366" text-anchor="middle">Firm B</text>
+            <text class="chart-label" x="322" y="366" text-anchor="middle">Firm C</text>
+            <text class="chart-label" x="422" y="366" text-anchor="middle">Firm D</text>
+            <text class="chart-label" x="522" y="366" text-anchor="middle">Others</text>
+            <text class="chart-label" x="30" y="260" text-anchor="middle" transform="rotate(-90 30 260)">Market share</text>
+            <text id="hhi-note" class="chart-label" x="335" y="388" text-anchor="middle" fill="#4b5563"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="h1">Firm A share</label><input type="range" id="h1" min="0" max="95" step="5" value="30"><output id="oh1" for="h1">30%</output></div>
+          <div class="ctrl"><label for="h2">Firm B share</label><input type="range" id="h2" min="0" max="95" step="5" value="30"><output id="oh2" for="h2">30%</output></div>
+          <div class="ctrl"><label for="h3">Firm C share</label><input type="range" id="h3" min="0" max="95" step="5" value="20"><output id="oh3" for="h3">20%</output></div>
+          <div class="ctrl"><label for="h4">Firm D share</label><input type="range" id="h4" min="0" max="95" step="5" value="20"><output id="oh4" for="h4">20%</output></div>
+        </div>
+        <figcaption>How to read this figure: with four equal shares (25×4), HHI = 2500; switch to 70/10/10/10 and HHI jumps to 5200 — the more unequal the shares, the harder the sum of squares punishes. That is why antitrust agencies worry more about "one dominant firm" than about "evenly matched rivals." Under the U.S. Horizontal Merger Guidelines: HHI &lt; 1500 is unconcentrated, 1500–2500 moderately concentrated, and &gt; 2500 highly concentrated. Note that "Others" consists of many small firms whose squared contribution is nearly zero, so it is left out; a true HHI squares every single firm. Drag all four sliders to 0 and see what the HHI is under "infinitely fragmented" shares.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Why Coca-Cola's bid for Huiyuan was blocked</div>
+        <p>In 2008 Coca-Cola offered about US$2.4 billion for Huiyuan Juice. In March 2009, China's Ministry of Commerce — invoking the Anti-Monopoly Law, then barely six months in force — prohibited the acquisition. The reasoning was pure concentration logic: the deal would significantly raise Coca-Cola's share of the juice market, and "the increase in concentration would have the effect of eliminating or restricting competition," with competition on the buyer side harmed as well, since it would also strengthen Coca-Cola's power over upstream fruit farmers. It was the first merger ever blocked under China's Anti-Monopoly Law, and a landmark moment for HHI-style analysis (shares plus the marginal change) entering Chinese regulatory practice.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"A high market share equals an illegal monopoly."</strong> Antitrust punishes the <strong>abuse</strong> of power, not power itself; a high share may simply be the reward for a better product. The reverse error is just as common: <strong>"a high HHI must mean high profits."</strong> If entry barriers are low, the profits of a concentrated market are instantly eroded by potential entrants (see the "contestable market" in Chapter 5). And the HHI depends entirely on <strong>how the relevant market is defined</strong>: the wider the market is drawn ("beverages" vs "100% juice"), the lower the HHI — market definition is often the real first battlefield of antitrust litigation.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.1</span>A market has four firms with shares of 30%, 30%, 20%, and 20%. What are the HHI and its concentration band?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>100, moderately concentrated — the HHI equals the sum of the four shares</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>2600, highly concentrated — the HHI is the sum of squared shares: 900+900+400+400</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>2600, moderately concentrated — it falls in the 1500–2500 range</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> HHI = 30²+30²+20²+20² = 2600. A confuses the concentration ratio (CR4, the sum of the top four = 100%) with the HHI (a sum of squares); squaring gives bigger firms more weight, which is why the HHI is far more sensitive to "one dominant firm" than to "evenly matched rivals." C gets the arithmetic right but the band wrong: 2600 &gt; 2500, which is highly concentrated under the U.S. merger guidelines. For reference: four equal shares of 25% give an HHI of exactly 2500, right on the line.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.2</span>A firm's profit-maximizing price corresponds to a demand elasticity of |ε| = 5. What is its Lerner index?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>5 — the bigger the elasticity, the bigger the power</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>0.5 — half the price is markup</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>0.2 — 20% of the price is markup</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Expanding the profit-maximizing first-order condition MR = MC gives (P − MC)/P = 1/|ε| = 1/5 = 0.2. A reverses the relationship between elasticity and power: the less customers can walk away (the smaller |ε|), the higher the markup; as |ε|→∞, L→0 — perfect competition. B is simply 1/5 miscomputed as 0.5. In empirical work, economists often run the ruler the other way: measure the markup, then back out the elasticity and the power.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Market power = the ability to price above marginal cost without losing all your customers; its root is the <strong>scarcity of substitutes</strong></li>
+          <li>The Lerner index L = (P − MC)/P = 1/|ε| measures power from the behavior side; the weakness is that marginal cost is hard to observe</li>
+          <li>The HHI = sum of squared shares (0–10,000) measures concentration from the structure side, weighting big firms more heavily</li>
+          <li>Both are only proxies: the HHI ignores entry barriers and L is hard to compute — antitrust needs the two to corroborate each other</li>
+          <li>Relevant market definition precedes all arithmetic: draw the market wide or narrow and the HHI changes beyond recognition</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">Chapter 2</span>Oligopoly competition: Cournot and Bertrand</h2>
+
+      <p><strong>Opening question:</strong> Must a market with only two or three firms charge high prices? Airlines and cement have long sustained prices far above cost, yet the subsidy wars in ride-hailing and food delivery slashed prices below cost. Same oligopoly — why such different endings? The answer lies in the <strong>variable</strong> of competition: are firms fighting over "quantities" or over "price"?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: choosing quantities is like dividing a pie; choosing prices is like fighting over it</div>
+        <p><strong>Cournot competition</strong>: each firm simultaneously decides its quantity, and the market-clearing price follows. If you produce one more unit, you push down the price everyone faces — each firm accounts only for its own effect on price, so output lands below the competitive level but above monopoly. The more firms there are, the more each one's influence on price is diluted, and the equilibrium price slides all the way toward marginal cost. <strong>Bertrand competition</strong>: firms simultaneously post prices, and all customers flock to the cheapest one. Price a single cent above your rival and you sell nothing — so they undercut each other until price = marginal cost, <strong>even with only two firms</strong>. That is the "Bertrand paradox": two is enough to reproduce perfect competition. Reality sits in between: capacity constraints keep the "price war" from playing out fully (closer to Cournot), and product differentiation stops the low-price firm from taking every customer (weakening the paradox).</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Cournot (quantity) competition</div><span class="term-en">古诺竞争</span><div class="term-def">An oligopoly model in which firms simultaneously choose quantities and the market clears at a price. With n identical firms, the equilibrium price lies between the monopoly price and marginal cost, and falls monotonically as n grows.</div></div>
+        <div class="term"><div class="term-name">Bertrand (price) competition</div><span class="term-en">伯特兰竞争</span><div class="term-def">A model in which firms simultaneously post prices and consumers buy only from the cheapest. With a homogeneous good and identical marginal costs, two firms are enough to push price down to marginal cost.</div></div>
+        <div class="term"><div class="term-name">Bertrand paradox</div><span class="term-en">伯特兰悖论</span><div class="term-def">The counterintuitive result that "two rivals suffice for the competitive outcome." Resolved in reality by three factors: capacity constraints, product differentiation, and repeated interaction.</div></div>
+        <div class="term"><div class="term-name">Reaction functions (best responses)</div><span class="term-en">反应函数</span><div class="term-def">Your optimal choice given your rival's quantity (or price). The Nash equilibrium is the intersection of the two reaction curves — "my best response to you is exactly your best response to me."</div></div>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Model</th><th>Decision variable</th><th>Equilibrium price: homogeneous good, two firms</th><th>Intuition</th></tr></thead>
+          <tbody>
+            <tr><td>Monopoly</td><td>Quantity or price</td><td class="num">P = (a + c)/2</td><td>Faces the whole market demand</td></tr>
+            <tr><td>Cournot (n firms)</td><td>Quantity</td><td class="num">P = (a + n·c)/(n + 1)</td><td>Each ignores the price-depressing spillover of its output; output too high</td></tr>
+            <tr><td>Bertrand</td><td>Price</td><td class="num">P = c (marginal cost)</td><td>Lowest price takes all; undercutting down to cost</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="formula">P* = (a + n·c) / (n + 1)  →  n = 1 gives the monopoly price; as n → ∞, P* → c<span class="f-note">The symmetric Cournot equilibrium with linear demand P = a − bQ and constant marginal cost c. The number of firms n is the dial that tunes the intensity of competition.</span></div>
+
+      <h3>Interactive demo: the firm-count dial</h3>
+      <figure class="fig">
+        <div class="fig-title">Figure 2-1 · Cournot equilibrium: slide the number of firms and watch price approach the competitive level</div>
+        <p class="fig-sub">Demand is P = 100 − Q and marginal cost MC = c. Drag the number of firms n from 1 to 30: the equilibrium point slides down the demand curve and the deadweight-loss triangle steadily shrinks.</p>
+        <figure class="fig-canvas">
+          <svg id="cr-svg" viewBox="0 0 640 400" role="img" aria-label="A demand curve and a marginal cost line: as the number of firms grows, the Cournot equilibrium moves down and to the right along the demand curve toward the competitive quantity; the shaded triangle is the deadweight loss.">
+            <text id="cr-ptxt" class="chart-title-sm" x="335" y="26" text-anchor="middle"></text>
+            <text id="cr-ltxt" class="chart-label" x="335" y="46" text-anchor="middle" fill="#4b5563"></text>
+            <text id="cr-mono" class="chart-label" x="608" y="54" text-anchor="end" fill="#475569">Monopoly benchmark P = 60</text>
+            <text id="cr-comp" class="chart-label" x="608" y="72" text-anchor="end" fill="#475569">Competitive benchmark P = MC = 20</text>
+            <line class="gridline" x1="70" y1="185" x2="570" y2="185"/>
+            <line class="gridline" x1="70" y1="50" x2="570" y2="50"/>
+            <text class="chart-label" x="62" y="189" text-anchor="end">50</text>
+            <text class="chart-label" x="62" y="54" text-anchor="end">100</text>
+            <polygon id="cr-dwl" class="area-fill" fill="#ea580c" points="336.7,266 470,266 336.7,194"/>
+            <line id="cr-mc" class="curve curve-c7" stroke-width="2.5" x1="70" y1="266" x2="570" y2="266"/>
+            <text id="cr-mclab" class="chart-label" x="556" y="256" text-anchor="end" fill="#475569">Marginal cost MC</text>
+            <line class="curve curve-c1" x1="70" y1="50" x2="570" y2="320"/>
+            <text class="chart-label" x="512" y="268" text-anchor="start" fill="#2f6fdb">Demand D</text>
+            <line id="cr-gq" class="gridline" x1="336.7" y1="194" x2="336.7" y2="320"/>
+            <line id="cr-gp" class="gridline" x1="70" y1="194" x2="336.7" y2="194"/>
+            <circle id="cr-dot" class="dot" r="7" fill="#e11d48" cx="336.7" cy="194"/>
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="352" text-anchor="middle">Quantity Q (industry total)</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">Price P</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="cr-n">Number of firms n</label><input type="range" id="cr-n" min="1" max="30" step="1" value="2"><output id="cr-on" for="cr-n">2</output></div>
+          <div class="ctrl"><label for="cr-c">Marginal cost c</label><input type="range" id="cr-c" min="10" max="40" step="1" value="20"><output id="cr-oc" for="cr-c">20</output></div>
+        </div>
+        <figcaption>How to read this figure: n = 1 is monopoly (P = 60, Q = 40); at n = 2, P ≈ 46.7; at n = 10, P ≈ 27.3; at n = 30, P is already closing in on MC = 20. The orange triangle is the deadweight loss from insufficient output, and it vanishes as n grows — dispersion is itself a form of antitrust. Try it: raise c and watch the competitive benchmark shift up while the monopoly and competitive prices move together — does the gap between them (=(100−c)/2) widen or shrink? Check once with c = 20 and once with c = 40.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The ride-hailing subsidy war: a Bertrand experiment</div>
+        <p>Around 2014, Didi and Kuaidi — later joined by Uber China — waged a textbook Bertrand price war over an identical mobility service: per-ride subsidies, double-sided red envelopes, free weekends. Prices stayed below cost for years, with cumulative "burn" measured in the tens of billions of yuan. Identical product plus zero switching costs meant customers simply flowed to whoever subsidized more, and no side dared stop first. The ending was equally classic: the price war could not turn a profit, Didi and Uber China merged in 2016, subsidies receded, and prices returned to a (Cournot-like) normal. Price wars start with Bertrand logic and often end with rising concentration — the "predatory subsidies" controversy that Chapter 5's antitrust discussion takes up.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"With only two or three firms, they must be colluding at high prices."</strong> Bertrand shows that with a homogeneous product, no capacity constraints, and one-shot interaction, two firms are enough to drive price down to cost. <strong>"Price wars are always great for consumers."</strong> True in the short run — but if the aim of the war is to drive rivals out of the market and pave the way for later price hikes (predatory pricing), the long run may tell a different story. Another technical pitfall: treating Cournot and Bertrand as the "right vs wrong" model — they are two polar institutions for the same market. Real-world capacity investment (capacity set first ≈ Cournot) and menu pricing (prices posted first ≈ Bertrand) each sit closer to one of them.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.1</span>Two firms produce a perfectly homogeneous product, both with a marginal cost of 10 yuan. They set prices simultaneously in a one-shot game; the lower price takes the whole market (a tie splits it). What is the Nash equilibrium price?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Just under 10 yuan — you must be cheaper than your rival to get any business</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Exactly 10 yuan — any price above 10 gets undercut by the rival</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The monopoly price — the two tacitly sustain a high price</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> At P = 10, no one wants to deviate: raising the price loses every customer, and cutting it means selling below cost — the more you sell, the more you lose. A fails because pricing below cost is unprofitable; C describes collusion, which needs the scaffolding of a repeated game (Chapter 3) — in a one-shot game, "quietly cutting the price" is the dominant strategy. That is exactly the Bertrand paradox: two firms suffice to reproduce perfect competition.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.2</span>In the symmetric Cournot model, what happens to the equilibrium price when the number of firms n rises from 2 to 10?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>It rises — more firms are harder to coordinate, so prices get messier and higher</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>It falls and converges toward marginal cost — each firm's influence on price is diluted</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>It stays unchanged — the equilibrium depends only on demand and cost</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> P* = (a + n·c)/(n+1) decreases monotonically in n: n = 1 is the monopoly price, and as n→∞, P*→c. With a = 100 and c = 20, P ≈ 46.7 at n = 2 and P ≈ 27.3 at n = 10. The Cournot model thus delivers a continuous spectrum from monopoly to competition — "atomic competition" is not a qualitative break but a limit. A grafts the collusion intuition (Chapter 3) onto a noncooperative model; C ignores the structure of strategic interaction.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Oligopoly outcomes hinge on the variable of competition: <strong>Cournot picks quantities</strong> (price between monopoly and competition), <strong>Bertrand picks prices</strong> (straight down to cost)</li>
+          <li>Bertrand paradox: homogeneous good + identical costs + one-shot game, and two firms already deliver P = MC</li>
+          <li>Three real-world factors dissolve the paradox: capacity constraints, product differentiation, repeated interaction</li>
+          <li>The Cournot price falls monotonically in the number of firms toward marginal cost: n is the dial of competitive intensity</li>
+          <li>Price wars (the ride-hailing case) start with Bertrand logic and often end with rising concentration</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">Chapter 3</span>Collusion and cartels: why cheating is the norm</h2>
+
+      <p><strong>Opening question:</strong> When OPEC holds a meeting, global oil prices move on the news — the power of collusion is beyond doubt. Yet the historical record shows that cartel members almost always quietly overproduce, and the organization repeatedly hollows out into a shell. If collusion is so profitable, why do the people sitting around one table never quite see eye to eye?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: collusion is a prisoner's dilemma that only "the future" can hold together</div>
+        <p>Swap the Cournot duopoly for a "joint monopoly": each of the two firms produces half the monopoly quantity, and both take home more profit than at the Cournot equilibrium — collusion pays. But given that your rival honors the deal, the extra units you quietly produce sell at the high price, so cheating is the dominant strategy. In a one-shot game the cartel necessarily collapses — the cartel's <strong>intrinsic instability</strong>. The only antidote is a <strong>repeated game</strong>: if cheating today brings retaliation tomorrow (everyone reverts to the low-price Cournot "punishment phase") and tomorrow matters enough (the discount factor δ is large enough), the short-run gain from cheating cannot outweigh the future loss, and cooperation sustains itself in the "shadow of the future" — with no written agreement at all. That is called <strong>tacit collusion</strong>.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Cartel</div><span class="term-en">卡特尔</span><div class="term-def">An explicit alliance of firms formed to restrict output and raise price. Per se illegal in most jurisdictions; cartels between states (OPEC) sit beyond the reach of any antitrust law.</div></div>
+        <div class="term"><div class="term-name">Tacit collusion</div><span class="term-en">默契合谋</span><div class="term-def">Coordinated price increases without an agreement, resting on mutual understanding. Extremely hard to establish in court and to police — the frontier problem of antitrust.</div></div>
+        <div class="term"><div class="term-name">Trigger strategies (grim trigger)</div><span class="term-en">触发策略</span><div class="term-def">A punishment scheme in repeated games: cooperate as long as no one deviates; once someone deviates, revert forever to the low-profit punishment equilibrium (such as Cournot).</div></div>
+        <div class="term"><div class="term-name">Discount factor δ</div><span class="term-en">贴现因子</span><div class="term-def">What one yuan tomorrow is worth today (between 0 and 1). A larger δ means the future matters more and players are more patient, making collusion easier to sustain.</div></div>
+      </div>
+
+      <div class="formula">δ ≥ (πdev − πcoop) / (πdev − πN)<span class="f-note">The condition for collusion to be sustainable: πcoop = the profit from honoring the agreement, πdev = the one-shot profit from deviating, πN = the punishment-phase profit (e.g., Cournot), and δ = the discount factor. The greater the temptation to cheat, the more patience it takes.</span></div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · OPEC and two price wars</div>
+        <p>In November 2014, OPEC refused to cut production to defend the price and let oil fall from about US$100 to below US$30 in early 2016 — widely read as punitive overproduction aimed at North American shale: squeezing higher-cost supply out of the market with low prices, a state-club version of the trigger strategy. In March 2020, after production-cut talks collapsed, Saudi Arabia slashed its official selling prices and announced higher output; oil crashed in a single day in what became known as the Saudi–Russia price war. Meanwhile, once a transnational cartel enters the courtroom, the price is steep: the international vitamins cartel of the 1990s (Roche, BASF, and others) drew fines of several billion dollars in Europe and the United States, and several executives went to jail — <strong>an explicit cartel earns monopoly profits and wagers prison time and fines against them</strong>.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Collusion requires a signed agreement and a smoke-filled room."</strong> Repeated games can make tacit understanding an equilibrium: price matching, most-favored-customer clauses, and public announcements of future output can all serve as coordinating devices — which is exactly why tacit collusion is such an enforcement headache. <strong>"If prices rise, there must be a cartel."</strong> Cost shocks (crude oil, chip shortages) push prices up too; what identifies collusion is <strong>behavioral evidence</strong> — prices marching upward in lockstep while costs stand still, output caps in peak season — not prices alone. And the converse error, "once formed, a cartel earns steadily," is also wrong: internal incentives to cheat, new entrants outside, and demand fluctuations — three forces tearing at it at any moment.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.1</span>In which of these market environments is tacit collusion hardest to sustain?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Two or three firms; orders are large and public, and a price cut is spotted instantly</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Demand swings sharply and often, making it hard to tell "falling demand" from "a rival's quiet price cut"</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The industry grows steadily and firms value long-term relationships (a high discount factor δ)</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Trigger strategies presuppose <strong>observation</strong>: punishment is possible only if "lost business" can be attributed to cheating. In B, noise buries the cheating signal, the punishment mechanism fails, and collusion is most likely to unravel — the theoretical explanation for why price wars are more frequent in booms. A and C are stabilizers of collusion: few rivals, transparency, and a high δ make the condition δ ≥ (πdev−πcoop)/(πdev−πN) easier to satisfy.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.2</span>What is the economic root of a cartel's "intrinsic instability"?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The meetings and legal fees required to set up a cartel are too costly</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The cartel price is above marginal cost, so every member has an individual incentive to quietly expand output</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Antitrust penalties make collusion unprofitable</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Inside a cartel, P &gt; MC means each extra unit sold is nearly pure profit: the prisoner's-dilemma structure πdev &gt; πcoop &gt; πN is the fatal flaw — even with no enforcement at all, OPEC members have repeatedly overproduced. A is small-change friction; C is an <strong>external</strong> constraint that simply does not apply to a cartel between states (OPEC), so it can hardly explain "intrinsic" instability. Add outside entrants nibbling away the excess profits, and the cartel is beset from within and without.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Collusion earns more than the Cournot equilibrium, but in a one-shot game cheating is the dominant strategy — a cartel is a prisoner's dilemma writ large</li>
+          <li>Repeated games with trigger strategies can sustain cooperation when δ ≥ (πdev−πcoop)/(πdev−πN)</li>
+          <li>Stabilizers of collusion: few firms, transparent behavior, stable demand, high δ; destabilizers: noise, secret discounts, entry</li>
+          <li>Tacit collusion needs no agreement and is extremely hard to prove in court — the frontier problem of antitrust</li>
+          <li>The OPEC record shows both faces: pumping more can punish outsiders (squeezing out shale), while member overproduction dissolves the cartel from within</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">Chapter 4</span>Price discrimination: different money for the same bottle of water</h2>
+
+      <p><strong>Opening question:</strong> Same flight, adjacent seats, same meal — and the fares can differ by a factor of two. Software comes in a "Home edition" and a "Pro edition," with the latter five times pricier for features you will never use. A student movie ticket runs at nearly half the adult price. How do firms size up each customer and charge accordingly — and is this good or bad for consumers?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: a uniform price leaves consumers' money "on the table"</div>
+        <p>Under uniform pricing, a customer willing to pay 500 yuan pays only 300 — 200 yuan of <strong>consumer surplus</strong> stays on the table. The firm's dream is to charge each person individually at their willingness to pay: <strong>first-degree price discrimination</strong> (perfect discrimination) captures all the surplus yet still delivers the efficient level of output. With limited information, the firm settles for less — <strong>second-degree</strong> relies on a self-selecting menu (quantity discounts, versioning) that lets customers reveal their own cards, while <strong>third-degree</strong> prices by observable group traits (students, seniors, regions). The pricing rule for third-degree discrimination is remarkably clean: charge the less elastic group a high price and the more elastic group a low price — business travelers racing the clock have no alternative (inelastic) and pay the full fare, while students with time on their hands shop around (elastic) and buy the discount ticket.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Price discrimination</div><span class="term-en">价格歧视</span><div class="term-def">Charging different customers different prices for the same good (with the differences not driven by cost). Preconditions: market power + the ability to distinguish willingness to pay + the ability to block resale.</div></div>
+        <div class="term"><div class="term-name">Willingness to pay (WTP)</div><span class="term-en">支付意愿</span><div class="term-def">The maximum amount a customer would pay for the good. The whole art of discrimination is to move price as close as possible to each person's WTP.</div></div>
+        <div class="term"><div class="term-name">Versioning</div><span class="term-en">版本划分</span><div class="term-def">The self-selection menu of second-degree discrimination: deliberately building "premium/stripped-down" versions (software, cabin classes) so that high-WTP customers pay for the expensive version by their own choice.</div></div>
+        <div class="term"><div class="term-name">Personalized pricing</div><span class="term-en">个性化定价</span><div class="term-def">Quoting a price per person based on their user profile — known in China as "big-data price discrimination against loyal customers." The information-age approximation of first-degree discrimination, and a focus of regulation.</div></div>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Type</th><th>Basis of distinction</th><th>Typical examples</th><th>Welfare properties</th></tr></thead>
+          <tbody>
+            <tr><td>First-degree (perfect)</td><td>Individual WTP</td><td>One-on-one haggling; big-data price discrimination against loyal customers (approximate)</td><td>Output efficient; all surplus goes to the firm</td></tr>
+            <tr><td>Second-degree (self-selection)</td><td>Quantity consumed / version</td><td>Quantity discounts, cabin classes, software versions</td><td>Ambiguous; often expands coverage</td></tr>
+            <tr><td>Third-degree (grouping)</td><td>Observable groups</td><td>Student tickets, senior discounts, regional pricing</td><td>Ambiguous: may serve small markets that uniform pricing would leave unserved</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="formula">(Pᵢ − MC) / Pᵢ = 1 / |εᵢ|<span class="f-note">The inverse-elasticity rule of third-degree discrimination: each market segment gets its own Lerner markup — the less elastic the segment (the smaller |εᵢ|), the higher its price.</span></div>
+
+      <h3>Interactive demo: comparing two markets</h3>
+      <figure class="fig">
+        <div class="fig-title">Figure 4-1 · Third-degree price discrimination: the inverse-elasticity rule</div>
+        <p class="fig-sub">Two market segments (fixed costs negligible, the same marginal cost MC). Drag the elasticity sliders and MC to see how the firm prices the less elastic market higher.</p>
+        <figure class="fig-canvas">
+          <svg id="pd-svg" viewBox="0 0 640 400" role="img" aria-label="A bar chart of prices in two markets: the less elastic market gets the higher price and the bigger markup, the more elastic market the lower price; a dashed line marks the common marginal cost.">
+            <text id="pd-stxt" class="chart-title-sm" x="335" y="24" text-anchor="middle"></text>
+            <text id="pd-sub2" class="chart-label" x="335" y="44" text-anchor="middle" fill="#4b5563"></text>
+            <line class="gridline" x1="90" y1="267" x2="610" y2="267"/>
+            <line class="gridline" x1="90" y1="205" x2="610" y2="205"/>
+            <line class="gridline" x1="90" y1="142" x2="610" y2="142"/>
+            <line class="gridline" x1="90" y1="80" x2="610" y2="80"/>
+            <text class="chart-label" x="82" y="271" text-anchor="end">50</text>
+            <text class="chart-label" x="82" y="209" text-anchor="end">100</text>
+            <text class="chart-label" x="82" y="146" text-anchor="end">150</text>
+            <text class="chart-label" x="82" y="84" text-anchor="end">200</text>
+            <line class="axis" x1="90" y1="330" x2="610" y2="330"/>
+            <line class="axis" x1="90" y1="330" x2="90" y2="70"/>
+            <rect id="pd-bara" x="170" y="255" width="120" height="75" fill="#e11d48" rx="4"/>
+            <rect id="pd-barb" x="400" y="280" width="120" height="50" fill="#0d9488" rx="4"/>
+            <text id="pd-ta" class="chart-title-sm" x="230" y="229" text-anchor="middle" fill="#e11d48"></text>
+            <text id="pd-ma" class="chart-label" x="230" y="247" text-anchor="middle"></text>
+            <text id="pd-tb" class="chart-title-sm" x="460" y="254" text-anchor="middle" fill="#0d9488"></text>
+            <text id="pd-mb" class="chart-label" x="460" y="272" text-anchor="middle"></text>
+            <line id="pd-mcl" class="curve curve-c7" stroke-width="2" stroke-dasharray="7 5" x1="90" y1="292" x2="560" y2="292"/>
+            <text id="pd-mclab" class="chart-label" x="556" y="284" text-anchor="end" fill="#475569"></text>
+            <text id="pd-la" class="chart-label" x="230" y="352" text-anchor="middle"></text>
+            <text id="pd-lb" class="chart-label" x="460" y="352" text-anchor="middle"></text>
+            <text class="chart-label" x="34" y="200" text-anchor="middle" transform="rotate(-90 34 200)">Price (yuan)</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="pd-ea">Market A elasticity</label><input type="range" id="pd-ea" min="1.5" max="6" step="0.1" value="2"><output id="pd-oa" for="pd-ea">|ε|=2.0</output></div>
+          <div class="ctrl"><label for="pd-eb">Market B elasticity</label><input type="range" id="pd-eb" min="1.5" max="6" step="0.1" value="4"><output id="pd-ob" for="pd-eb">|ε|=4.0</output></div>
+          <div class="ctrl"><label for="pd-mc">Marginal cost MC</label><input type="range" id="pd-mc" min="10" max="60" step="1" value="30"><output id="pd-omc" for="pd-mc">30 yuan</output></div>
+        </div>
+        <figcaption>How to read this figure: the pricing formula is P = MC·|ε|/(|ε|−1). Drag A's elasticity to 1.5 and the price rockets to three times MC — "captive" customers carry the heaviest markup. Set A's and B's elasticities equal and the two prices instantly level out: with no elasticity difference, discrimination yields no profit. Note that with marginal cost unchanged, total output is unchanged in this simple model — what changes is <strong>who pays how much</strong>. But if the uniform price would be so high that nobody in market B buys, discrimination actually brings market B into service.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · From revenue management to regulating big-data price discrimination</div>
+        <p>Airlines are the textbook case of price discrimination: a single flight is sliced into dozens of fare buckets by booking time, change conditions, and channel, and "revenue management" systems solve this figure's markup formula in real time — leisure travelers departing at midnight and booking two months ahead (elastic) get the low fares, while business travelers who must fly now (inelastic) pay full price. The digital age slices harder: same platform, same product, and longtime users see higher prices — algorithmic price discrimination against loyal customers, the practice known in China as "big-data shashou." Article 24 of China's Personal Information Protection Law, in force since 2021, explicitly prohibits "unreasonable differential treatment on transaction prices and other trading conditions," after Shenzhen and other cities had already legislated. The regulatory keyword is precisely "unreasonable": cost-based price differences (dearer express delivery to remote areas) are legal, while algorithmic pricing that bets on "you can't be bothered to comparison-shop" is banned.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Price discrimination always makes consumers worse off."</strong> Not necessarily: third-degree discrimination may bring small markets that a uniformly high price would leave unserved (students, small language communities) into supply, and under first-degree discrimination total output equals the competitive level with zero deadweight loss (only the surplus changes pockets). Judge welfare by the <strong>output effect</strong>, not by moral reflex. The reverse error: <strong>"any price difference counts as discrimination."</strong> Pricing that reflects cost differences (peak-load electricity prices, long-haul freight) is not discrimination; genuine discrimination requires that the price gap does not come from a cost gap. And the enforcement precondition is often forgotten: if resale were easy, student tickets would be scalped until the arbitrage vanished — which is why discrimination concentrates in <strong>services and experiences</strong> (you must board the plane yourself) rather than in resellable goods.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.1</span>A cinema charges students half price and adults full price. Under the inverse-elasticity rule, what is the logic?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Students have less spending power, so the firm is giving a break to the poor</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Students' demand for movies is elastic (many substitute entertainments), so a price cut sharply increases sales; adults' demand is inelastic, so the high price stands</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>A student ticket costs less to produce — this is cost-based pricing</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> (P − MC)/P = 1/|ε| holds for each market segment separately: a large |ε_students| → a low optimal markup → a low price; a small |ε_adults| → a high price. This is neither charity (A) nor a cost difference (C — a seat in the same screening costs the same for everyone): it screens out the price-sensitive and serves them cheaply while preserving the high price for the insensitive. The preconditions: verifiable student IDs and non-transferable tickets.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.2</span>Under first-degree (perfect) price discrimination, what happens to output and the division of surplus?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Output is below the competitive level, deadweight loss exists, and the firm takes all the surplus</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Output equals the competitive (efficient) level, and consumer surplus is converted almost entirely into producer surplus</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Output exceeds the competitive level, and consumers and the firm split the surplus</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Each transaction is priced at the buyer's WTP, and anyone with WTP ≥ MC buys — every mutually beneficial trade happens, output lands exactly where the demand curve meets MC, and deadweight loss vanishes. But each price grazes the buyer's WTP, so consumer surplus is squeezed dry and falls entirely to the firm. A perfect illustration of why efficiency and distribution must be judged separately: first-degree discrimination has efficiency going for it and distribution against it. A describes ordinary monopoly; C conjures something from nothing — trades above WTP never happen.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Three preconditions for price discrimination: market power + distinguishable WTP + blocked resale</li>
+          <li>First-degree prices person by person (all surplus to the firm, efficient output); second-degree relies on a self-selection menu (versioning); third-degree splits the market by group</li>
+          <li>The core formula of third-degree discrimination: (Pᵢ − MC)/Pᵢ = 1/|εᵢ| — the less elastic pay more</li>
+          <li>Judge welfare by the output effect: discrimination may expand what is served, or may merely transfer surplus</li>
+          <li>The regulatory line is "reasonableness": cost-based price differences are legal, algorithmic price discrimination against loyal customers is banned by the Personal Information Protection Law</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">Chapter 5</span>Entry barriers and antitrust</h2>
+
+      <p><strong>Opening question:</strong> Ride-hailing platforms once burned enormous subsidies to "lose money for two years, then profit for ten" — cook the rivals to death first, raise prices afterward. Does that story hold up economically? And why is it so hard to secure a conviction in court? The deeper question: when one firm occupies most of a market, should the regulator punish its bigness, or police only the harm it does to competition?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: monopoly profit is a magnet, and barriers are the fence</div>
+        <p>Excess profit attracts sharks the way blood does — new firms smell it and rush in, output expands, and prices fall back. So what determines whether market power can <strong>persist</strong> is not today's market share but the height of the <strong>barriers to entry</strong>. Some barriers are born (structural): scale economies spreading fixed costs, patent protection, self-reinforcing network effects, users' switching costs. Others are <strong>deliberate</strong> (strategic): limit pricing (holding price down so that entry is unprofitable), threats of excess capacity, exclusive tying, and predatory pricing (sell at a loss to drive rivals out, then earn it back with interest under monopoly). The whole art of antitrust is walking the tightrope between "protecting competition" and "punishing success" — the modern mainstream applies the <strong>consumer welfare standard</strong>: ask whether conduct raised prices, reduced output, or stifled innovation, not simply whether the firm is big.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Barriers to entry</div><span class="term-en">进入壁垒</span><div class="term-def">Factors that let an incumbent keep price above cost indefinitely without inducing entry. Structural: scale economies, patents, network effects, switching costs; strategic: limit pricing, exclusive dealing.</div></div>
+        <div class="term"><div class="term-name">Sunk costs</div><span class="term-en">沉没成本</span><div class="term-def">Expenditures that cannot be recovered once inside (specialized equipment, brand advertising). The larger the sunk component, the more cautious the entry — which incumbents can exploit to deter.</div></div>
+        <div class="term"><div class="term-name">Predatory pricing</div><span class="term-en">掠夺性定价</span><div class="term-def">A strategy of pricing below cost to drive rivals out, then recouping the losses through monopoly pricing. Theoretically coherent; legally it requires proof of "below cost + a credible prospect of ex post recoupment."</div></div>
+        <div class="term"><div class="term-name">Contestable market</div><span class="term-en">可竞争市场</span><div class="term-def">When entry and exit involve no sunk costs, even a sole monopolist dare not price high — potential competition substitutes for actual competition. A rebuke to static thinking that stares only at concentration.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · "Pick one of two" and the platform antitrust storm</div>
+        <p>In April 2021, China's State Administration for Market Regulation found that Alibaba had abused its dominant market position by forcing merchants on its platform to "pick one of two" (they could not open stores on rival platforms at the same time), and fined it 18.228 billion yuan; that October, Meituan was fined 3.442 billion yuan for the same conduct. The target of the penalties was not "the platforms are big" but <strong>exclusionary behavior</strong>: forced exclusivity both raised merchants' operating costs and blunted rival platforms' ability to attract supply — a textbook strategic barrier, wounding the competitive process itself. The same campaign banned big-data price discrimination against loyal customers, the blocking of outside links, and more. These cases marked China's shift in platform-economy regulation from "tolerant and prudent" to "normalized regulation," with an analytical framework aligned with international practice: define the relevant market → establish dominance → examine whether the conduct eliminates or restricts competition.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Big companies should be broken up."</strong> Antitrust protects <strong>competition</strong>, not competitors — still less does it punish excellence: if a high share comes from lower costs and better products, breaking the firm up only hurts consumers. <strong>"Price cuts are always a good thing."</strong> If the low price is predatory (below cost plus recoupment later), today's bargain is the bait for tomorrow's monopoly. But don't swing to the other extreme and cry predation at every low price: the law requires proof that the price falls below an appropriate cost benchmark and that the predator has the capacity to recoup its "investment" — the vast majority of price cuts are simply efficiency. <strong>"Subsidized losses equal predation."</strong> The recoupment link is still missing: if the market is freely enterable, the day prices rise is the day a new rival walks through the door, and the predation never pays back.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.1</span>Which combination of evidence is most critical for legally distinguishing predatory pricing from legitimate price cuts?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The incumbent is enormous and deep-pocketed, and rivals are badly wounded</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Price is below an appropriate cost benchmark, and there is a credible prospect of recouping the losses through higher prices once rivals are driven out</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Consumers enjoyed low prices for a while, but rivals filed complaints</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Pricing below cost shows this is an investment, not competition (nobody sells at a loss for fun); a credible recoupment prospect shows it is a strategy, not suicide (the Areeda–Turner cost test plus ex post recoupment analysis). Neither leg can be dropped: looking only at low prices misreads efficiency competition as predation, and looking only at injured rivals degenerates into protecting competitors rather than competition. A and C are emotional evidence, not economic logic.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.2</span>What is the most important determinant of whether a firm's market power can <strong>persist over the long run</strong>?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Current market share — share is power</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The height of entry barriers — without barriers, high profits quickly attract entry</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Historical profit rates — past profits prove future profits</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Monopoly profit is the loudest advertisement there is: as long as entry is free, excess profits are bound to be eroded by new capacity — contestable-market theory even shows that the mere threat of entry can hold prices down. Antitrust review therefore asks first "can rivals get in?" (barriers, sunk costs, exclusive contracts) and only then looks at share. A forgets that share may itself be the fruit of efficiency, and can be eroded at any moment; C is the naivest form of inductive fallacy.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Monopoly profit attracts entry: <strong>barriers to entry</strong> (structural + strategic) determine whether power persists</li>
+          <li>The higher the sunk costs, the more cautious the entry — incumbents can exploit this to deter (limit pricing, excess capacity, exclusive dealing)</li>
+          <li>Establishing predation = below cost + a credible recoupment prospect; drop either leg and you get a false verdict</li>
+          <li>Modern antitrust mainstream applies the consumer welfare standard: protect competition, not competitors, and certainly do not punish scale</li>
+          <li>The "pick one of two" cases: what was punished was exclusionary conduct as a strategic barrier, not platform size itself</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">Chapter 6</span>Network effects and platform economics</h2>
+
+      <p><strong>Opening question:</strong> Even if a messaging app twice as good launched tomorrow, you most likely would not switch — because all your friends are on WeChat. Why do some markets tip into winner-take-all while others sustain a crowd of giants? And why are platforms forever free to users, heavy on commissions to merchants, and sometimes even paying users to climb aboard?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: the users themselves become part of the product's value</div>
+        <p>Ordinary goods get their value from the production side; network goods get their value from <strong>other users</strong> — the more people on WeChat, the more useful WeChat is to you. This is economies of scale on the demand side (network effects), and it brings three consequences. First, <strong>critical mass</strong>: below a threshold user base nobody wants to join (a negative-feedback death spiral), while past the tipping point growth reinforces itself (positive feedback). Second, a <strong>winner-take-all tilt</strong>: the leader siphons away users while laggards bleed faster and faster. Third, <strong>lock-in</strong>: switching costs pile up with your social graph, your data, and your habits. A platform is in the <strong>two-sided market</strong> business: the more riders, the keener drivers are to join; the more drivers, the faster your ride arrives — each side attracts the other. Pricing can therefore be "non-neutral": free or even subsidized on the side that is more elastic and contributes more to the network (users), and charged on the less elastic, more dependent side (merchants, drivers). Free is not charity — on the user side, the platform is simply "buying its inventory."</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Network effects</div><span class="term-en">网络效应</span><div class="term-def">The utility a user derives from the product rises with the total number of users. Direct effects (social networks) and cross-side effects (each side of a platform attracting the other, like buyers and sellers).</div></div>
+        <div class="term"><div class="term-name">Two-sided (platform) market</div><span class="term-en">双边市场</span><div class="term-def">A platform joining two groups of users, where the size of one side affects the value of the other. Optimal pricing looks at total two-sided profit, hence the familiar "subsidize one side, charge the other."</div></div>
+        <div class="term"><div class="term-name">Critical mass</div><span class="term-en">临界质量</span><div class="term-def">The user base at which the net payoff to joining turns from negative to positive. Below it the network withers; above it growth drives itself — the solution to the cold-start problem is to burn cash buying critical mass first.</div></div>
+        <div class="term"><div class="term-name">Winner-take-all</div><span class="term-en">赢家通吃</span><div class="term-def">The extreme outcome when network effects are strong, multi-homing is limited, and there is no room for differentiation: one firm takes the whole market. Multi-homing (installing two apps at once) and technology generational shifts weaken it.</div></div>
+      </div>
+
+      <h3>Interactive demo: critical mass</h3>
+      <figure class="fig">
+        <div class="fig-title">Figure 6-1 · Network effects and critical mass</div>
+        <p class="fig-sub">The net payoff from joining is U(n) = v + k·n − p, with standalone value v, network strength k, and price p = 20. Drag v and k to see how the zero crossing (critical mass) moves.</p>
+        <figure class="fig-canvas">
+          <svg id="net-svg" viewBox="0 0 640 400" role="img" aria-label="A graph of the user base against the net payoff to joining: an upward-sloping line crosses the zero line, with a death zone where no one joins to the left and a self-reinforcing zone to the right; critical mass sits at the zero crossing.">
+            <text id="net-ttxt" class="chart-title-sm" x="335" y="26" text-anchor="middle"></text>
+            <text id="net-stxt" class="chart-label" x="335" y="46" text-anchor="middle" fill="#4b5563"></text>
+            <rect id="net-dz" x="70" y="90" width="162" height="240" fill="#e9edf2"/>
+            <text class="chart-label" x="80" y="108" text-anchor="start" fill="#4b5563">Death zone: net payoff negative, no one wants to move first</text>
+            <text class="chart-label" x="600" y="130" text-anchor="end" fill="#4b5563">Self-reinforcing zone: the more who join, the stronger the pull</text>
+            <line class="gridline" x1="70" y1="170" x2="610" y2="170"/>
+            <line class="axis" x1="70" y1="250" x2="610" y2="250"/>
+            <text class="chart-label" x="62" y="254" text-anchor="end">0</text>
+            <text class="chart-label" x="62" y="174" text-anchor="end">+50</text>
+            <text class="chart-label" x="62" y="334" text-anchor="end">−50</text>
+            <line id="net-cm" x1="232" y1="90" x2="232" y2="330" stroke="#ea580c" stroke-width="2" stroke-dasharray="6 5"/>
+            <line id="net-line" class="curve curve-c1" x1="70" y1="282" x2="610" y2="146"/>
+            <circle id="net-dot" class="dot" cx="232" cy="250" r="7" fill="#e11d48"/>
+            <line class="axis" x1="70" y1="330" x2="610" y2="330"/>
+            <line class="axis" x1="70" y1="80" x2="70" y2="330"/>
+            <text class="chart-label" x="70" y="350" text-anchor="middle">0%</text>
+            <text class="chart-label" x="205" y="350" text-anchor="middle">25%</text>
+            <text class="chart-label" x="340" y="350" text-anchor="middle">50%</text>
+            <text class="chart-label" x="475" y="350" text-anchor="middle">75%</text>
+            <text class="chart-label" x="610" y="350" text-anchor="middle">100%</text>
+            <text class="chart-label" x="340" y="380" text-anchor="middle">Share of users already joined n</text>
+            <text class="chart-label" x="26" y="210" text-anchor="middle" transform="rotate(-90 26 210)">Net payoff of joining U</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="net-v">Standalone value v</label><input type="range" id="net-v" min="-30" max="20" step="1" value="-10"><output id="net-ov" for="net-v">−10</output></div>
+          <div class="ctrl"><label for="net-k">Network strength k</label><input type="range" id="net-k" min="0.2" max="1.5" step="0.05" value="0.8"><output id="net-ok" for="net-k">0.80</output></div>
+        </div>
+        <figcaption>How to read this figure: critical mass n* = (p − v)/k. At the default settings n* ≈ 38% — the platform must first "buy" those 38% of users with subsidies, preinstalls, and celebrity-driven traffic, after which word of mouth takes the baton. Drag v to +20: standalone value already covers the price, n* = 0, and the product grows under its own power from launch (products like this need no cash-burning). Drag v to −30 and k down to 0.2: n* exceeds 100%, and no subsidy can fill the gap — improve the product first (raise v or k), then talk about growth.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The red-envelope wars: buying "critical mass" with cash</div>
+        <p>Over the 2014 Spring Festival, WeChat's "grab the red envelope" game got millions of users to bind their bank cards overnight — Jack Ma called it "the Pearl Harbor attack." Alipay's counterpunch was just as blunt: at the 2016 CCTV Spring Festival Gala it launched "Collect the Five Blessings," with everyone completing the set splitting a red-envelope pool of over 200 million yuan, and the campaign has recruited new users every year since. It looks like a marketing war; underneath it is the <strong>critical-mass formula</strong> at work. Payments are a classic two-sided network (payer ↔ payee): subsidies (cash red envelopes) temporarily raise v, pushing the net-payoff line past zero and the user base past n*; the positive feedback of offline QR-code payment scenarios then takes the baton. Today both platforms charge individuals nothing for transfers but take commissions on merchant receipts — textbook two-sided pricing: subsidize the elastic side, charge the dependent side.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Free = no revenue = no market power."</strong> A zero price does not mean zero power over price: when users "pay" with attention, data, and their social graphs, the free side is precisely the platform's supply channel; exclusionary conduct aimed at the free side (blocking outside links, restricting sharing) can also harm competition. <strong>"Network effects necessarily mean winner-take-all."</strong> That holds only when network effects are strong, users find multi-homing hard (using several platforms at once), and products are homogeneous. Otherwise Instagram and TikTok coexist, and Didi and Amap's ride-hailing share the same frame — multi-homing, niche scenarios, and generational technology shifts (from text to short video) can all sustain several strong players. When analyzing a platform market, first map out clearly "how many sides, and who subsidizes whom."</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.1</span>A ride-hailing platform showers new riders with large subsidies while taking a commission from drivers. What is the two-sided-market explanation?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The platform is a charity losing money to recruit riders, and drivers have become the exploited party</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Riders are price-sensitive and their joining directly raises the platform's value to drivers, so a low (subsidized) price on the rider side and a charge on the driver side maximize the two-sided total</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>There are too many drivers; the commission just thins their ranks</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Two-sided pricing looks at total profit, not one side at a time: more riders → faster pickups → drivers keener to join → more cars → more riders (cross-side network effects). Charging little or even subsidizing the price-sensitive, high-contribution side can lever the whole loop into motion (the "non-neutrality" result of Rochet and Tirole). A mistakes strategy for charity; C reverses the logic — the commission presupposes drivers' dependence (low elasticity) rather than aiming to shrink their numbers.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.2</span>A social product's user base is currently below critical mass. Where will market feedback push it?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Self-sustaining growth — the network effect is there anyway, and slow is just fast in disguise</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>A shrink spiral — negative net payoff drives existing users away and deters newcomers, so the base slides further</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>A steady state — the user count holds still and waits for rivals to blunder</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Below critical mass, U(n) &lt; 0: joining loses money and so does staying, and negative feedback dominates — this is why the overwhelming majority of social products die in the "cold start," and it is also the only rationale for cash-burning subsidies (temporarily raising v): push the base past n* and let positive feedback take the baton. A applies the after-the-tipping-point logic to before it; C's steady state does not exist — both ends are leaking funnels, and what does not advance retreats.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Network effects = economies of scale on the demand side: the more users, the better the product — value is produced jointly by the users</li>
+          <li>Critical mass n* = (p − v)/k: offline it is the line between life and death; online it is where the subsidy war is headed</li>
+          <li>Two-sided-market pricing is non-neutral: subsidize the elastic, high-contribution side, charge the dependent side</li>
+          <li>Winner-take-all requires strong network effects + limited multi-homing + homogeneous products; multi-homing and technology generational shifts can break it</li>
+          <li>Free does not mean powerless: attention and data are implicit prices, and exclusionary conduct on the free side faces antitrust scrutiny too</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">Wrap-up</span>Next steps &amp; further reading</h2>
+      <p>Industrial organization is the hub of applied microeconomics: it builds on <a href="../01-microeconomics/index.html">01 Microeconomics</a> (monopoly and surplus analysis) and <a href="../04-game-theory-and-information-economics/index.html">04 Game Theory and Information Economics</a> (the Nash equilibrium and repeated-game tools used again and again in this track); it then leads back to <a href="../15-behavioral-economics/index.html">15 Behavioral Economics</a> (how bounded rationality rewrites the analysis of markups and collusion), with a natural detour to <a href="../11-development-and-innovation-economics/index.html">11 Development and Innovation Economics</a> (the long-run interplay of innovation, patents, and competition). If policy is what pulls you, antitrust cases and industry regulation are the perfect second classroom.</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Jean Tirole, <em>The Theory of Industrial Organization</em></span> — the field's bible and the Nobel laureate's grand assembly of the framework; mathematically demanding, best taken as an advanced step.</li>
+          <li><span class="bk">Luis Cabral, <em>Introduction to Industrial Organization</em></span> — the best intermediate starting point, balancing cases and models.</li>
+          <li><span class="bk">F. M. Scherer &amp; D. Ross, <em>Industrial Market Structure and Economic Performance</em></span> — the summit of the Harvard structure–conduct–performance (SCP) tradition, dense with antitrust cases.</li>
+          <li><span class="bk">Parker, Van Alstyne &amp; Choudary, <em>Platform Revolution</em></span> — the business-side extension of Chapter 6: a casebook on two-sided markets and network effects.</li>
+          <li><span class="bk">Collected studies of platform antitrust in China (Wu Jun, Wang Pu, et al.)</span> — primary material on Chinese platform-economy regulation (the Alibaba and Meituan penalty decisions are worth reading in the original).</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../09-labor-economics/index.html"><span class="pager-dir">Previous track</span><br><span class="pager-name">Labor Economics</span></a>
+        <a href="../11-development-and-innovation-economics/index.html"><span class="pager-dir">Next track</span><br><span class="pager-name">Development &amp; Innovation Economics</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../../assets/econ.js"></script>
+<script>
+/* ===== Figure interactivity on this page (Figure 1-1 HHI / Figure 2-1 Cournot / Figure 4-1 price discrimination / Figure 6-1 network effects) ===== */
+(function () {
+  "use strict";
+  function $(id) { return document.getElementById(id); }
+
+  /* ---------- Figure 1-1 · HHI calculator ---------- */
+  function updHHI() {
+    var i, raw = [], sum = 0;
+    for (i = 1; i <= 4; i++) {
+      var el = $("h" + i);
+      if (!el) return;
+      var v = Number(el.value);
+      raw.push(v);
+      sum += v;
+      var o = $("oh" + i);
+      if (o) o.textContent = v + "%";
+    }
+    var sc = sum > 100 ? 100 / sum : 1;
+    var others = 100, hhi = 0;
+    for (i = 0; i < 4; i++) {
+      var e = raw[i] * sc;
+      others -= e;
+      hhi += e * e;
+      var h = Math.max(0, e / 100 * 170);
+      var b = $("hhi-b" + (i + 1));
+      if (b) { b.setAttribute("height", h); b.setAttribute("y", 345 - h); }
+      var t = $("hhi-t" + (i + 1));
+      if (t) { t.textContent = e.toFixed(0) + "%"; t.setAttribute("y", 337 - h); }
+    }
+    var ho = Math.max(0, others);
+    var hOther = ho / 100 * 170;
+    var bo = $("hhi-bo");
+    if (bo) { bo.setAttribute("height", hOther); bo.setAttribute("y", 345 - hOther); }
+    var to = $("hhi-to");
+    if (to) { to.textContent = ho.toFixed(0) + "%"; to.setAttribute("y", 337 - hOther); }
+    var nd = $("hhi-needle");
+    if (nd) nd.setAttribute("cx", 70 + Math.min(10000, hhi) / 10000 * 540);
+    var hv = $("hhi-val");
+    if (hv) hv.textContent = "HHI = " + Math.round(hhi);
+    var hc = $("hhi-cat");
+    if (hc) hc.textContent = hhi < 1500 ? "Unconcentrated (<1500)" : (hhi <= 2500 ? "Moderately concentrated (1500–2500)" : "Highly concentrated (>2500)");
+    var note = $("hhi-note");
+    if (note) note.textContent = sum > 100
+      ? "The four firms' shares add up to " + sum + "% > 100%; rescaled proportionally to 100%"
+      : (ho > 0.5
+        ? "'Others' is a crowd of many small firms (squared contribution ≈ 0, left out) — a strict HHI squares every firm individually and would be slightly higher"
+        : "The four firms' shares add up to exactly 100%; no share is left over");
+  }
+
+  /* ---------- Figure 2-1 · Cournot equilibrium ---------- */
+  function updCournot() {
+    var nEl = $("cr-n"), cEl = $("cr-c");
+    if (!nEl || !cEl) return;
+    var n = Math.max(1, Number(nEl.value)), c = Number(cEl.value);
+    var P = (100 + n * c) / (n + 1);
+    var Q = n * (100 - c) / (n + 1);
+    var Qc = 100 - c;
+    var mcy = 320 - c * 2.7;
+    var on = $("cr-on"); if (on) on.textContent = n;
+    var oc = $("cr-oc"); if (oc) oc.textContent = c;
+    var mc = $("cr-mc");
+    if (mc) { mc.setAttribute("y1", mcy); mc.setAttribute("y2", mcy); }
+    var mcl = $("cr-mclab");
+    if (mcl) mcl.setAttribute("y", mcy - 10);
+    var px = 70 + Q * 5, py = 320 - P * 2.7;
+    var dot = $("cr-dot");
+    if (dot) { dot.setAttribute("cx", px); dot.setAttribute("cy", py); }
+    var gq = $("cr-gq");
+    if (gq) { gq.setAttribute("x1", px); gq.setAttribute("x2", px); gq.setAttribute("y1", py); gq.setAttribute("y2", 320); }
+    var gp = $("cr-gp");
+    if (gp) { gp.setAttribute("y1", py); gp.setAttribute("y2", py); gp.setAttribute("x2", px); }
+    var dy = 320 - (100 - Q) * 2.7;
+    var dwl = $("cr-dwl");
+    if (dwl) dwl.setAttribute("points", px + "," + mcy + " " + (70 + Qc * 5) + "," + mcy + " " + px + "," + dy);
+    var pt = $("cr-ptxt");
+    if (pt) pt.textContent = "n = " + n + " firms: P* = " + P.toFixed(1) + ", Q* = " + Q.toFixed(1) + " (industry total)";
+    var lt = $("cr-ltxt");
+    if (lt) lt.textContent = "Lerner index L = (P − c)/P = " + ((P - c) / P).toFixed(2) + " (n = 1 is monopoly)";
+    var Pm = (100 + c) / 2;
+    var mo = $("cr-mono");
+    if (mo) mo.textContent = "Monopoly benchmark P = " + Pm.toFixed(1);
+    var cp = $("cr-comp");
+    if (cp) cp.textContent = "Competitive benchmark P = MC = " + c;
+  }
+
+  /* ---------- Figure 4-1 · Third-degree price discrimination ---------- */
+  function updPD() {
+    var ea = $("pd-ea"), eb = $("pd-eb"), mcEl = $("pd-mc");
+    if (!ea || !eb || !mcEl) return;
+    var eA = Number(ea.value), eB = Number(eb.value), mc = Number(mcEl.value);
+    var oa = $("pd-oa"); if (oa) oa.textContent = "|ε|=" + eA.toFixed(1);
+    var ob = $("pd-ob"); if (ob) ob.textContent = "|ε|=" + eB.toFixed(1);
+    var omc = $("pd-omc"); if (omc) omc.textContent = mc + " yuan";
+    var PA = mc * eA / (eA - 1), PB = mc * eB / (eB - 1);
+    function bar(bid, tid, mid, P) {
+      var h = Math.max(0, P * 1.25), top = 330 - h;
+      var b = $(bid);
+      if (b) { b.setAttribute("y", top); b.setAttribute("height", h); }
+      var t = $(tid);
+      if (t) { t.textContent = "P = " + P.toFixed(0) + " yuan"; t.setAttribute("y", top - 26); }
+      var m = $(mid);
+      if (m) { m.textContent = "Markup +" + Math.round((P / mc - 1) * 100) + "%"; m.setAttribute("y", top - 8); }
+    }
+    bar("pd-bara", "pd-ta", "pd-ma", PA);
+    bar("pd-barb", "pd-tb", "pd-mb", PB);
+    var mcy = 330 - mc * 1.25;
+    var ml = $("pd-mcl");
+    if (ml) { ml.setAttribute("y1", mcy); ml.setAttribute("y2", mcy); }
+    var mlab = $("pd-mclab");
+    if (mlab) { mlab.textContent = "Marginal cost MC = " + mc + " yuan"; mlab.setAttribute("y", mcy - 8); }
+    var la = $("pd-la");
+    if (la) la.textContent = "Market A (|ε| = " + eA.toFixed(1) + ")";
+    var lb = $("pd-lb");
+    if (lb) lb.textContent = "Market B (|ε| = " + eB.toFixed(1) + ")";
+    var lo = Math.min(eA, eB), hi = Math.max(eA, eB);
+    var Phi = Math.max(PA, PB), Plo = Math.min(PA, PB);
+    var st = $("pd-stxt");
+    if (st) st.textContent = "Market A: " + PA.toFixed(0) + " yuan  vs  Market B: " + PB.toFixed(0) + " yuan";
+    var s2 = $("pd-sub2");
+    if (s2) {
+      if (Math.abs(eA - eB) < 0.05) {
+        s2.textContent = "The two markets' elasticities are nearly identical (|ε| ≈ " + eA.toFixed(1) + ") → uniform pricing suffices; discrimination yields no profit";
+      } else {
+        s2.textContent = "Lower elasticity (|ε| = " + lo.toFixed(1) + ") → high price " + Phi.toFixed(0) + " yuan; higher elasticity (|ε| = " + hi.toFixed(1) + ") → low price " + Plo.toFixed(0) + " yuan (inverse-elasticity rule)";
+      }
+    }
+  }
+
+  /* ---------- Figure 6-1 · Network effects and critical mass ---------- */
+  function clipSeg(x1, y1, x2, y2, xmin, ymin, xmax, ymax) {
+    var t0 = 0, t1 = 1, dx = x2 - x1, dy = y2 - y1, i;
+    var p = [-dx, dx, -dy, dy];
+    var q = [x1 - xmin, xmax - x1, y1 - ymin, ymax - y1];
+    for (i = 0; i < 4; i++) {
+      if (p[i] === 0) {
+        if (q[i] < 0) return null;
+      } else {
+        var r = q[i] / p[i];
+        if (p[i] < 0) {
+          if (r > t1) return null;
+          if (r > t0) t0 = r;
+        } else {
+          if (r < t0) return null;
+          if (r < t1) t1 = r;
+        }
+      }
+    }
+    return [x1 + t0 * dx, y1 + t0 * dy, x1 + t1 * dx, y1 + t1 * dy];
+  }
+
+  function updNet() {
+    var vEl = $("net-v"), kEl = $("net-k");
+    if (!vEl || !kEl) return;
+    var v = Number(vEl.value), k = Math.max(0.05, Number(kEl.value)), p = 20;
+    var sgn = function (x) { return (x > 0 ? "+" : "") + x; };
+    var ov = $("net-ov"); if (ov) ov.textContent = sgn(v);
+    var ok = $("net-ok"); if (ok) ok.textContent = k.toFixed(2);
+    var U0 = v - p, U100 = v + 100 * k - p;
+    function y(U) { return 330 - (U + 50) * 1.6; }
+    var seg = clipSeg(70, y(U0), 610, y(U100), 70, 90, 610, 330);
+    var ln = $("net-line");
+    if (ln) {
+      if (seg) {
+        ln.setAttribute("x1", seg[0]); ln.setAttribute("y1", seg[1]);
+        ln.setAttribute("x2", seg[2]); ln.setAttribute("y2", seg[3]);
+        ln.style.display = "";
+      } else {
+        ln.style.display = "none";
+      }
+    }
+    var nstar = (p - v) / k;
+    var dz = $("net-dz"), dot = $("net-dot"), cm = $("net-cm"), tt = $("net-ttxt");
+    function hideMarks() {
+      if (dot) dot.setAttribute("cx", -100);
+      if (cm) { cm.setAttribute("x1", -100); cm.setAttribute("x2", -100); }
+    }
+    if (nstar <= 0) {
+      if (dz) dz.setAttribute("width", 0);
+      hideMarks();
+      if (tt) tt.textContent = "Critical mass ≈ 0%: standalone value already covers the price (v ≥ p) — it grows on its own from the day it launches";
+    } else if (nstar >= 100) {
+      if (dz) dz.setAttribute("width", 540);
+      hideMarks();
+      if (tt) tt.textContent = "Critical mass ≥ 100%: the entire market would have to join before the network sustains itself — it cannot take off in reality; raise v or k first";
+    } else {
+      var cx = 70 + nstar / 100 * 540;
+      if (dz) dz.setAttribute("width", cx - 70);
+      if (dot) { dot.setAttribute("cx", cx); dot.setAttribute("cy", 250); }
+      if (cm) { cm.setAttribute("x1", cx); cm.setAttribute("x2", cx); }
+      if (tt) tt.textContent = "Critical mass ≈ " + nstar.toFixed(0) + "%: burn cash for users before crossing it; after that, growth sustains itself";
+    }
+    var st = $("net-stxt");
+    if (st) st.textContent = "Net payoff U(n) = v + k·n − p = " + sgn(v) + " + " + k.toFixed(2) + "·n − " + p +
+      "  →  at n = 0 it is " + sgn(U0.toFixed(0)) + ", at n = 100% it is " + sgn(U100.toFixed(0));
+  }
+
+  /* ---------- Binding and initialization ---------- */
+  function bind(ids, fn) {
+    ids.forEach(function (id) {
+      var el = $(id);
+      if (el) el.addEventListener("input", fn);
+    });
+    fn();
+  }
+  bind(["h1", "h2", "h3", "h4"], updHHI);
+  bind(["cr-n", "cr-c"], updCournot);
+  bind(["pd-ea", "pd-eb", "pd-mc"], updPD);
+  bind(["net-v", "net-k"], updNet);
+})();
+</script>
+</body>
+</html>

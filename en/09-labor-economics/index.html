@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Labor Economics · EconLearn Self-Study Path in Economics</title>
+<meta name="description" content="An interactive English tutorial on labor economics: labor supply and income effects, human capital and the Mincer equation, wage differentials, the minimum-wage debate, and unemployment theory, with interactive figures and self-tests.">
+<link rel="stylesheet" href="../../assets/econ.css">
+</head>
+<body style="--branch:#4338ca">
+<noscript><p class="noscript-tip">The interactive figures and self-tests on this page require JavaScript; without it, the full main text remains readable.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← Home</a>
+  <div class="topbar-title"><span class="topbar-num">09</span>Labor Economics</div>
+  <a class="topbar-lang" href="../../09-劳动经济学/index.html" hreflang="zh-CN">中文</a>
+  <button class="toc-toggle" aria-expanded="false">Contents</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">Chapters in this track</p>
+    <nav aria-label="Chapter contents">
+      <a href="#overview">Overview &amp; learning goals</a>
+      <a href="#ch1">1 · Labor supply: wages and hours</a>
+      <a href="#ch2">2 · Human capital &amp; the Mincer equation</a>
+      <a href="#ch3">3 · Wage differentials &amp; discrimination</a>
+      <a href="#ch4">4 · Minimum wage: competition vs. monopsony</a>
+      <a href="#ch5">5 · Unemployment &amp; job search</a>
+      <a href="#ch6">6 · Unions &amp; labor institutions</a>
+      <a href="#path">Next steps &amp; further reading</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · Self-Study Path in Economics</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">Track 09 · Applied fields</span>
+        <h1>Labor Economics</h1>
+        <p class="hero-en">劳动经济学</p>
+        <p class="hero-lead">How many hours do people work, why do wages differ so widely, and what do minimum wages and unions actually change? Labor economics turns microeconomic theory on people themselves: it is the oldest applied field in economics and the main battlefield of today’s “credibility revolution” in causal inference.</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">By the end of this track, you will be able to</div>
+        <ul>
+          <li>Use the labor–leisure choice to explain the <strong>substitution</strong> and <strong>income effects</strong> of a wage rise, and tell when the labor supply curve bends backward</li>
+          <li>Write down the <strong>Mincer equation</strong>, interpret every coefficient, and distinguish the “human capital” and “signaling” readings of education</li>
+          <li>Explain horizontal and vertical wage differences with compensating differentials, efficiency wages, superstars, and statistical discrimination</li>
+          <li>Compare the employment effects of a <strong>minimum wage</strong> in competitive versus monopsonistic labor markets on a supply–demand diagram, and recount the Card–Krueger evidence</li>
+          <li>Distinguish frictional, structural, and cyclical unemployment, and use the <strong>reservation wage</strong> and search models to explain why unemployment and vacancies coexist</li>
+          <li>Weigh “flexibility” against “security” in institutions such as unions and employment protection (Danish flexicurity)</li>
+        </ul>
+      </div>
+      <div class="prereq">Prerequisites:
+        <a class="badge" href="../01-microeconomics/index.html">01 Microeconomics (indifference curves, supply &amp; demand, monopoly)</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">Chapter 1</span>Labor supply: do higher wages mean longer hours?</h2>
+
+      <p><strong>Opening question:</strong> In the month overtime pay doubles, some people grab every extra shift while others simply take leave—why doesn’t a “raise” necessarily make people work more? Now look at the macro data: over the past century and more, real wages in developed economies have risen several-fold, yet weekly hours have fallen from about 60 to 35–40. Higher wages, less work—does that make sense?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: leisure is a commodity too, and the wage is its price</div>
+        <p>Everyone has only 168 hours a week—the hardest of all budget constraints. Time spent not working is called <strong>leisure</strong>, and its price is exactly your hourly wage: one more hour of leisure costs one hour of forgone earnings. A wage rise is therefore like a price hike on leisure, and two things happen at once: the <strong>substitution effect</strong>—leisure has become dearer, so buy less of it and work more; and the <strong>income effect</strong>—the same hours now earn more, you are richer, and leisure is usually a normal good, so richer people “buy” more of it. The two effects point in opposite directions, and which wins depends on the wage level: when you are poor, an hour’s wage is precious (strong substitution effect); past a certain wealth, extra earnings are wanted only as rest (strong income effect)—so at high wages the labor supply curve can <strong>bend backward</strong>.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Labor supply <span class="term-en">劳动供给</span></div><div class="term-def">The hours of work (and the decision whether to enter the market at all) that an individual or household is willing to supply at a given wage. Total time = work + leisure; the supply decision is a leisure–consumption choice.</div></div>
+        <div class="term"><div class="term-name">Income and substitution effects <span class="term-en">收入效应与替代效应</span></div><div class="term-def">A wage rise changes both the relative price of leisure (substitution effect: less leisure) and real total income (income effect: more leisure). Together they determine how labor supply responds to the wage.</div></div>
+        <div class="term"><div class="term-name">Backward-bending labor supply curve <span class="term-en">后弯劳动供给曲线</span></div><div class="term-def">At high wages the income effect outweighs the substitution effect, so further wage rises actually reduce the quantity of labor supplied; the supply curve bends back up and to the left.</div></div>
+        <div class="term"><div class="term-name">Labor force participation rate <span class="term-en">劳动力参与率</span></div><div class="term-def">The share of the working-age population that is employed or unemployed (that is, in the labor force). The participation decision is the extensive margin—whether to work at all—and is distinct from, though entangled with, how many hours to work.</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 1-1 · Decomposing the income and substitution effects of a wage rise</div>
+        <p class="fig-sub">Drag the two sliders: ① raise the wage from 20 to 60 yuan/hour and watch the budget line pivot around the “all-leisure” point; ② set the strength of the income effect and see whether it can overpower the substitution effect and bend the labor supply curve backward. Try it: set the income effect to 0.5× first, then pull it to 1.6×, and compare the shape of the supply curve in the upper right.</p>
+        <figure class="fig-canvas">
+          <svg id="ls-svg" viewBox="0 0 640 400" role="img" aria-label="Leisure–consumption diagram: a wage rise pivots the budget line around its horizontal-intercept point and moves the optimum from E0 to E1; E0 to E-prime is the substitution effect and E-prime to E1 the income effect. The small panel at right shows the corresponding labor supply curve, which may bend backward depending on the strength of the income effect.">
+            <defs>
+              <marker id="ls-ah1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#ea580c"/></marker>
+              <marker id="ls-ah2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#4338ca"/></marker>
+            </defs>
+            <line class="gridline" x1="60" y1="280" x2="430" y2="280"/>
+            <line class="gridline" x1="60" y1="210" x2="430" y2="210"/>
+            <line class="gridline" x1="60" y1="140" x2="430" y2="140"/>
+            <text class="chart-label-en" x="54" y="284" text-anchor="end">1000</text>
+            <text class="chart-label-en" x="54" y="214" text-anchor="end">2000</text>
+            <text class="chart-label-en" x="54" y="144" text-anchor="end">3000</text>
+            <line class="gridline" x1="152.5" y1="350" x2="152.5" y2="42"/>
+            <line class="gridline" x1="245" y1="350" x2="245" y2="42"/>
+            <line class="gridline" x1="337.5" y1="350" x2="337.5" y2="42"/>
+            <line class="axis" x1="60" y1="350" x2="430" y2="350"/>
+            <line class="axis" x1="60" y1="350" x2="60" y2="42"/>
+            <text class="chart-label" x="245" y="380" text-anchor="middle">Leisure (hours/week, T=100)</text>
+            <text class="chart-label" x="22" y="196" text-anchor="middle" transform="rotate(-90 22 196)">Consumption (yuan/week)</text>
+            <line id="ls-b0" class="curve" stroke="#94a3b8" stroke-dasharray="7 5" stroke-width="2"/>
+            <line id="ls-b1" class="curve curve-c1" stroke-width="2.5"/>
+            <text class="chart-label-en" x="76" y="168" style="fill:#475569">Budget line w0=20</text>
+            <text id="ls-lb1" class="chart-label-en" x="100" y="90" style="fill:#2f6fdb"></text>
+            <polyline id="ls-ic0" class="curve" stroke="#94a3b8" stroke-dasharray="4 4" stroke-width="2"/>
+            <polyline id="ls-ic1" class="curve curve-c3" stroke-width="2.2"/>
+            <text class="chart-label-en" x="356" y="268" style="fill:#64748b">U0</text>
+            <text id="ls-lu1" class="chart-label-en" x="371" y="250" style="fill:#0d9488">U1</text>
+            <line id="ls-se" stroke="#ea580c" stroke-width="2.5" marker-end="url(#ls-ah1)"/>
+            <line id="ls-ie" stroke="#4338ca" stroke-width="2.5" marker-end="url(#ls-ah2)"/>
+            <text id="ls-lse" class="chart-label" x="200" y="230" style="fill:#ea580c">① Substitution</text>
+            <text id="ls-lie" class="chart-label" x="260" y="210" style="fill:#4338ca">② Income</text>
+            <circle id="ls-e0" r="6" class="dot" fill="#475569"/>
+            <circle id="ls-sub" r="6" class="dot" fill="#fff" stroke="#ea580c" stroke-width="2.5"/>
+            <circle id="ls-e1" r="7" class="dot" fill="#4338ca"/>
+            <text id="ls-l0" class="chart-label" x="270" y="266">E0</text>
+            <text id="ls-ls" class="chart-label" x="180" y="222">E'</text>
+            <text id="ls-l1" class="chart-label" x="250" y="188">E1</text>
+            <text id="ls-t1" class="chart-title-sm" x="245" y="20" text-anchor="middle"></text>
+            <text id="ls-t2" class="chart-label" x="245" y="38" text-anchor="middle" style="fill:#475569"></text>
+            <line class="axis" x1="470" y1="350" x2="610" y2="350"/>
+            <line class="axis" x1="470" y1="350" x2="470" y2="62"/>
+            <text class="chart-label" x="540" y="48" text-anchor="middle">Labor supply curve</text>
+            <text class="chart-label-en" x="463" y="354" text-anchor="end">20</text>
+            <text class="chart-label-en" x="463" y="76" text-anchor="end">60</text>
+            <text class="chart-label-en" x="540" y="368" text-anchor="middle">Hours h</text>
+            <text class="chart-label-en" x="455" y="205" text-anchor="middle" transform="rotate(-90 455 205)">Wage w</text>
+            <polyline id="ls-sup" class="curve curve-c2" stroke-width="2.5"/>
+            <circle id="ls-sdot" r="5" class="dot" fill="#4338ca"/>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="ls-w">New wage w</label>
+            <input type="range" id="ls-w" min="20" max="60" value="35" step="1">
+            <output id="ls-ow" for="ls-w">35 yuan/h</output></div>
+          <div class="ctrl"><label for="ls-s">Income-effect strength</label>
+            <input type="range" id="ls-s" min="0" max="160" value="80" step="10">
+            <output id="ls-os" for="ls-s">0.80×</output></div>
+        </div>
+        <figcaption>How to read this figure: E0 → E' is the <strong>substitution effect</strong> (slide along the original indifference curve U0 to the tangency at the new wage; leisure falls); E' → E1 is the <strong>income effect</strong> (real income rises; leisure rises). When ① is shorter than ② (income-effect strength &gt; 1×), a higher wage cuts hours instead—a backward-bending segment appears in the supply curve in the upper right. The indifference curves are of the C·L = constant type (Cobb–Douglas preferences) plus a little non-labor income; “income-effect strength” stands in for individuals with different preferences—the relative size of the two effects differs from person to person by nature.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Wages up tenfold, hours cut in half</div>
+        <p>In the early Industrial Revolution, British and American workers commonly put in more than 60 hours a week; today the OECD average is under 40, and the richer the economy, the shorter its annual hours—macro evidence that the income effect wins out in the long run. In 1930, in “Economic Possibilities for Our Grandchildren,” Keynes even predicted that a century on, people would need to work only 15 hours a week. The Chinese picture is the other side of the coin: data from the National Bureau of Statistics show that around 2024, employees in Chinese enterprises worked about 49 hours a week on average, on the high side; meanwhile Chinese women’s labor force participation has long run well above the world average. Both margins—whether to work and how long—are at work. One theoretical framework explains two very different phenomena.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>“A higher wage necessarily increases labor supply.”</strong>—That sees only the substitution effect. For high earners, and for people who already feel they have “enough” at the margin of overtime pay, the income effect can perfectly well prevail. A second pitfall: <strong>“The labor supply curve is just a fixed upward-sloping line.”</strong>—In debates over the minimum wage or taxes, ignore the possible backward bend and the shifting participation margin (some people pulled into the market, others out of it) and your predictions will miss. Remember that labor supply has two gates: <strong>whether to work</strong> (participation) and <strong>how much to work</strong> (hours).</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.1</span>After the hourly wage rises from 20 to 60 yuan, a worker actually cuts back her weekly hours. Which statement must be true?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The substitution effect exceeds the income effect</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The income effect exceeds the substitution effect</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Leisure is an inferior good for this worker</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> When the wage rises, the substitution effect pushes the worker toward more hours (leisure is dearer) and the income effect toward fewer (richer people buy more of the normal good, leisure). Hours falling means the net effect is negative—the income effect wins—so B. A has the direction backwards; C is wrong: precisely because leisure is a normal good (consumed more as income rises), the income effect reduces labor—if it were inferior, both effects would push labor up together.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.2</span>Which statement about the backward-bending labor supply curve is correct?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>Along the backward-bending segment, the wage and labor supplied move in opposite directions, showing the income effect dominates</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>The bend usually appears at low wages</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>A backward bend means labor force participation must fall</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The bend sits in the high-wage range: the wage is already high, and further rises let the income effect overpower the substitution effect, so quantity supplied falls—A. At low wages the substitution effect usually dominates and the curve slopes up normally, so B is wrong. C confuses the two gates: the curve describes how many hours, participation is whether one is in the market at all, and fewer hours do not mean leaving the labor force.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The time budget: total time = leisure + work; the wage is both the opportunity cost of leisure and the payoff rate for work.</li>
+          <li>Two forces from a wage rise: the substitution effect (leisure dearer → more work) and the income effect (richer → more leisure), pointing in opposite directions.</li>
+          <li>At low wages the substitution effect usually dominates (upward-sloping supply); at high wages the income effect can take over (the curve bends back).</li>
+          <li>Labor supply has two gates: participation (whether to work) and hours (how long)—policy analysis must consider both.</li>
+          <li>Macro evidence: in the long run the income effect wins—wages rise several-fold while hours fall sharply.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">Chapter 2</span>Human capital: how do we measure the return to education?</h2>
+
+      <p><strong>Opening question:</strong> Four years of college cost a hundred-odd thousand yuan in tuition and living expenses; add the money one could have earned instead, and the total can approach 300,000 yuan. Why do tens of millions of people still line up to enroll? What exactly does education buy—productive capacity, or merely a certificate saying “I am smart”?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: education is an investment spanning forty years</div>
+        <p>Think of education as buying a “wage-earning machine”: the cost is paid now (tuition + forgone earnings = <strong>opportunity cost</strong>), while the return is collected bit by bit over the next forty-odd years (higher wages, steadier jobs, even better health and longer life). As long as the present value of the future wage increments exceeds the cost, college is a positive-NPV investment—that is the intuition of Gary Becker’s <strong>human capital</strong> framework. But there is another reading: Michael Spence’s <strong>signaling</strong> view—education may not raise productivity at all; it simply lets high-ability people prove themselves to employers by being “willing to grind through college,” because imitating that signal is too costly for low-ability people. The two readings have sharply different policy implications for whether education should be subsidized.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Human capital <span class="term-en">人力资本</span></div><div class="term-def">The knowledge, skills, and health embodied in a person, which raise future productivity and earnings. Education, training, and learning by doing are all human capital investments.</div></div>
+        <div class="term"><div class="term-name">Mincer equation <span class="term-en">明瑟方程</span></div><div class="term-def">The wage equation proposed by Jacob Mincer (1974): log wages regressed on years of schooling and experience—the standard tool for estimating returns to education.</div></div>
+        <div class="term"><div class="term-name">Returns to education <span class="term-en">教育回报率</span></div><div class="term-def">The percentage increase in wages from one additional year of schooling. The global average is about 9% per year (as summarized by Psacharopoulos &amp; Patrinos), typically higher for women and in developing countries.</div></div>
+        <div class="term"><div class="term-name">Signaling model <span class="term-en">信号模型</span></div><div class="term-def">Proposed by Spence: when ability is hard to observe and completing education costs high-ability people less, education becomes a self-selecting signal in a separating equilibrium—it raises wages even without raising productivity.</div></div>
+      </div>
+
+      <div class="formula">ln w = α + β·S + γ₁·X − γ₂·X²
+        <span class="f-note">S: years of schooling; X: work experience (the quadratic captures the experience–earnings profile that rises fast then flattens); β is the return to education (a semi-elasticity)</span>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 2-1 · Education–earnings scatter with a Mincer-return slider</div>
+        <p class="fig-sub">The scatter shows years of schooling and monthly wages for 48 simulated individuals (fixed random seed, fully reproducible). Drag “return to education β” and watch the fitted curve hug or drift away from the scatter; then drag “average experience” to see how the experience term lifts wages overall. Try it: pull β from 3% to 12% and watch the college–high-school premium magnify.</p>
+        <figure class="fig-canvas">
+          <svg id="mk-svg" viewBox="0 0 640 400" role="img" aria-label="Scatter plot of years of schooling against monthly wage; the vertical axis runs from 0 to 25,000 yuan and the horizontal axis from 5 to 20 years of schooling. An exponential-shaped fitted curve steepens or flattens with the returns-to-education slider; dots on the curve at 12 and 16 years mark high school and college.">
+            <line class="gridline" x1="70" y1="274" x2="600" y2="274"/>
+            <line class="gridline" x1="70" y1="218" x2="600" y2="218"/>
+            <line class="gridline" x1="70" y1="162" x2="600" y2="162"/>
+            <line class="gridline" x1="70" y1="106" x2="600" y2="106"/>
+            <text class="chart-label-en" x="62" y="278" text-anchor="end">5</text>
+            <text class="chart-label-en" x="62" y="222" text-anchor="end">10</text>
+            <text class="chart-label-en" x="62" y="166" text-anchor="end">15</text>
+            <text class="chart-label-en" x="62" y="110" text-anchor="end">20</text>
+            <line class="gridline" x1="216" y1="330" x2="216" y2="50" stroke-dasharray="3 5"/>
+            <line class="gridline" x1="316" y1="330" x2="316" y2="50" stroke-dasharray="3 5"/>
+            <line class="axis" x1="70" y1="330" x2="600" y2="330"/>
+            <line class="axis" x1="70" y1="330" x2="70" y2="50"/>
+            <text class="chart-label" x="335" y="384" text-anchor="middle">Years of schooling S</text>
+            <text class="chart-label" x="24" y="190" text-anchor="middle" transform="rotate(-90 24 190)">Monthly wage (thousands of yuan)</text>
+            <text class="chart-label-en" x="216" y="348" text-anchor="middle">High school 12</text>
+            <text class="chart-label-en" x="316" y="348" text-anchor="middle">College 16</text>
+            <g id="mk-dots"></g>
+            <polyline id="mk-curve" class="curve curve-c2" stroke-width="3"/>
+            <circle id="mk-d12" r="6" class="dot" fill="#b45309"/>
+            <circle id="mk-d16" r="6" class="dot" fill="#b45309"/>
+            <text id="mk-t1" class="chart-title-sm" x="335" y="22" text-anchor="middle"></text>
+            <text id="mk-t2" class="chart-label" x="335" y="42" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="mk-b">Return to education β</label>
+            <input type="range" id="mk-b" min="0" max="12" value="7.5" step="0.5">
+            <output id="mk-ob" for="mk-b">7.5%</output></div>
+          <div class="ctrl"><label for="mk-x">Average experience X</label>
+            <input type="range" id="mk-x" min="0" max="30" value="18" step="1">
+            <output id="mk-ox" for="mk-x">18 years</output></div>
+        </div>
+        <figcaption>How to read this figure: ① the dependent variable is the <strong>log</strong> wage, so β is a semi-elasticity—“7.5% per year” means the college (16 years) premium over high school (12 years) is about e<sup>0.075×4</sup>−1 ≈ +35%, not “7.5 more yuan”; ② the experience term 0.045X−0.0008X² is concave: wages rise with seniority then flatten, tracing an inverted-U career path over 40 years; ③ at high β the curve shoots off the top of the chart—exponential growth always outruns the axes. The data were generated with the true β = 7.5%; slide back to 7.5% for the “best fit.”</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · China’s college premium before and after expansion</div>
+        <p>China launched its higher-education expansion in 1999, and the gross college enrollment ratio rose from under 10% to over 60% today. By simple supply-and-demand logic, the flood of graduates should have crushed the premium; yet a series of studies based on China’s Urban Household Survey find that the Mincer return to education climbed from around 4% in the 1980s to 8–10% after the 2000s—demand (skill-biased technical change, globalization, the upgrading of services) outran supply. This matches the global evidence: returns to education are highest in the poorest countries and among women, and the claim that “schooling is useless” does not survive the data. One caution, though: a high average return ≠ everyone should pursue a PhD—the diminishing marginal return by level, direct costs, and the length of the remaining life cycle all belong in the NPV.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>“College graduates earn more, so college causally makes you earn 35% more.”</strong>—That conflates correlation with causation: people who finish college may already be stronger in ability, family resources, and self-discipline (<strong>ability bias</strong>), and a Mincer regression yields only a conditional correlation. Causal identification needs instrumental variables, regression discontinuity, or randomized experiments (see Track 03, econometrics). A second pitfall is treating human capital and signaling as either–or: empirical work consistently finds both, in some proportion—even if half of education’s value is signaling, as long as it also raises productivity somewhat, the social return can still be positive.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.1</span>In the Mincer regression ln w = 1.2 + 0.08·S + 0.045·X − 0.0008·X², what does the coefficient 0.08 mean?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>One more year of schooling raises the monthly wage by 8 yuan</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>One more year of schooling raises wages by about 8% (strictly, ×e<sup>0.08</sup>≈+8.3%)</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Education explains 8% of the wage variation</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The dependent variable is the log wage, so the coefficient is a semi-elasticity: Δln w = 0.08 → multiply wages by e<sup>0.08</sup>, about +8.3%, customarily shortened to 8%—B. A treats a semi-elasticity as an absolute amount; C mistakes the coefficient for the R² (goodness of fit), an entirely different statistic.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.2</span>In Spence’s signaling model, highly educated workers still earn high wages in equilibrium even when education raises productivity not at all. Why?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The law requires highly educated workers to be paid more</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The diploma costs low-ability workers more, so it serves as a credible signal of ability, and firms screen and pay on that basis</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Firms cannot observe education and can only pay each group its average wage</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The crux of signaling is the <strong>cost difference</strong>: study comes easily to high-ability people (low cost), and the cost of imitation keeps low-ability people from following, so “finishing college” constitutes a credible signal in a separating equilibrium—even with education leaving productivity unchanged, wage differences can sustain themselves in equilibrium, so B. C describes statistical discrimination (inferring an unobservable individual from group averages), which belongs to the next chapter, not to signaling.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Education is a human capital investment: costs are paid now (tuition + opportunity cost); returns arrive as higher wages over a lifetime.</li>
+          <li>The Mincer equation ln w = α + βS + γ₁X − γ₂X² is the standard framework for measuring returns to education; β is a semi-elasticity (a global average of about 9% per year).</li>
+          <li>The signaling view: education can raise wages without raising productivity, provided the cost of the signal is negatively correlated with ability.</li>
+          <li>The “return” from a Mincer regression is a conditional correlation; causal interpretation must guard against ability bias and family background (instrumental variables and regression discontinuity are the remedies).</li>
+          <li>Policy implication: the part of education’s social return above the private return (an externality) is the case for subsidies; if education were pure signaling, overinvestment would waste resources instead.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">Chapter 3</span>Wage differentials: why are pay gaps so wide?</h2>
+
+      <p><strong>Opening question:</strong> Night-shift nurses out-earn day-shift nurses by a shift differential; an assembly-line worker earns two or three times less than a programmer at headquarters; a top livestreamer’s tips in a single night can exceed a stage actor’s annual salary. If markets really “compete to clearance” the way textbooks say, why isn’t the equilibrium wage a single number?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: what gets equalized is total compensation, not the paycheck</div>
+        <p>Competitive equilibrium pushes people toward equal total compensation—total compensation = money wages + the job’s nonmonetary traits (safety, prestige, stability, flexibility, growth). Dangerous, night-shift, tedious jobs must <strong>pay a premium</strong> to recruit at all—these are <strong>compensating differentials</strong>; conversely, fun and glamorous jobs can pay less (museum guides earn little partly because “people would pay to do it”). On top of that baseline come three amplifiers: <strong>efficiency wages</strong> (firms voluntarily overpay to buy effort and loyalty), the <strong>superstar</strong> effect (technology lets the very best serve the whole market—winner take all), and <strong>discrimination</strong> (judging an unobservable individual by group averages—statistical discrimination—or taste-based discrimination). Wage differentials thus contain both compensation and distortion.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Compensating differentials <span class="term-en">补偿性差异</span></div><div class="term-def">The premium that appears in equilibrium wages to offset a job’s nonmonetary disadvantages (risk, night shifts, harsh conditions). Proposed by Adam Smith—the “first law” of wage differences.</div></div>
+        <div class="term"><div class="term-name">Efficiency wages <span class="term-en">效率工资</span></div><div class="term-def">A wage above the market-clearing level, paid voluntarily by firms: higher pay raises the opportunity cost of shirking (the shirking model), lowers turnover and adverse selection, and buys more effort per unit of labor.</div></div>
+        <div class="term"><div class="term-name">Superstar economics <span class="term-en">超级明星经济学</span></div><div class="term-def">Sherwin Rosen (1981): when one person’s output can be replicated at near-zero marginal cost (entertainment, software, sports) and small ability differences are amplified, rewards concentrate extremely at the top.</div></div>
+        <div class="term"><div class="term-name">Statistical discrimination <span class="term-en">统计性歧视</span></div><div class="term-def">Under incomplete information, employers infer an individual’s traits from group averages (e.g., discounting women’s starting pay on expected maternity). Even with no taste for prejudice at all, systematic wage gaps can result.</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 3-1 · Compensating differentials for hazardous jobs</div>
+        <p class="fig-sub">Static diagram: the safe-job wage is a horizontal line at 22 yuan/hour; the supply curve for hazardous jobs reflects workers’ aversion to risk, and the demand curve reflects the most firms will pay to be spared the cost of protective measures. The height of the intersection above the safe wage is the equilibrium compensating differential.</p>
+        <figure class="fig-canvas">
+          <svg id="comp-svg" viewBox="0 0 640 380" role="img" aria-label="Market for hazardous jobs: the supply curve slopes up from lower left and the demand curve slopes down from upper left, intersecting at a wage of 29.1 yuan and 471.1 hundred jobs (about 47,000); the safe-job wage is a dashed horizontal line at 22 yuan, and the vertical gap between it and the intersection, about 7 yuan, is labeled the compensating differential.">
+            <line class="gridline" x1="70" y1="239" x2="580" y2="239"/>
+            <line class="axis" x1="70" y1="320" x2="580" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="50"/>
+            <text class="chart-label" x="325" y="352" text-anchor="middle">Hazardous jobs (hundreds)</text>
+            <text class="chart-label" x="24" y="185" text-anchor="middle" transform="rotate(-90 24 185)">Wage (yuan/hour)</text>
+            <line class="curve" x1="70" y1="63.5" x2="580" y2="279.5" stroke="#2f6fdb" stroke-width="3"/>
+            <line class="curve" x1="70" y1="286.3" x2="580" y2="124.3" stroke="#0d9488" stroke-width="3"/>
+            <line class="curve" x1="70" y1="239" x2="580" y2="239" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 5"/>
+            <text class="chart-label" x="155" y="95" style="fill:#2f6fdb">D demand (hazardous jobs)</text>
+            <text class="chart-label" x="155" y="285" style="fill:#0d9488">S supply (hazardous jobs)</text>
+            <text class="chart-label-en" x="575" y="232" text-anchor="end" style="fill:#64748b">Safe-job wage 22</text>
+            <circle cx="370" cy="191.1" r="7" class="dot" fill="#4338ca"/>
+            <line x1="370" y1="195" x2="370" y2="235" stroke="#b45309" stroke-width="2.5"/>
+            <polygon points="370,188 375,197 365,197" fill="#b45309"/>
+            <polygon points="370,242 375,233 365,233" fill="#b45309"/>
+            <text class="chart-label" x="382" y="220" style="fill:#b45309">Compensating differential ≈ +7 yuan/h</text>
+            <text class="chart-label-en" x="382" y="186" style="fill:#475569">Equilibrium (471, 29.1)</text>
+          </svg>
+        </figure>
+        <figcaption>How to read this figure: if hazardous jobs paid only 22 yuan, workers would flow into safe jobs and hazardous ones would go unfilled; the supply curve stops rising exactly where the wage gap is just enough to “compensate” for the risk. Same mechanism elsewhere: night-shift differentials, relocation allowances, and wage premia in high-risk industries. In reverse, “decent and interesting” jobs carry negative compensating differentials—premia and discounts embedded in wages are not necessarily unfair.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Risk premia and concentration at the top</div>
+        <p>In China, nominal wages in mining and construction have long exceeded the manufacturing average, and a sizable share survives controls for education, age, and region—the literature reads it as compensating differentials for risk and hardship; the premia for overseas labor service and deep-sea fishing crews are more extreme still. At the other end sit the “superstars”: livestreaming and short video replicate the output of “the single best in the country” onto hundreds of millions of screens, and top and mid-tier streamers differ in income by orders of magnitude—a contemporary specimen of Rosen’s mechanism. The gender wage gap offers a measurement exercise: the urban Chinese female-to-male wage ratio has long hovered around 0.8, and after decomposing by education, experience, industry, and occupation, a clear residual remains beyond the explained part—but a residual is “the unexplained part,” and equating it directly with “discrimination” calls for caution.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>“Large wage gaps = market failure.”</strong>—Compensating differentials are precisely the market <strong>working properly</strong>: a hazardous job without a premium would be the anomaly. The second pitfall runs the other way: <strong>“Whatever the decomposition leaves behind is discrimination.”</strong>—The residual of an Oaxaca–Blinder decomposition still contains all unobserved productivity differences (uninterrupted tenure, self-selection behind industry choice), so reading the residual directly as discrimination overstates it; yet demanding “direct proof of discrimination” understates it. The honest statement: the residual gives a <strong>possible range</strong> for discrimination, and identification needs finer strategies (such as correspondence studies—sending out identical résumés that vary only the name or gender).</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.1</span>Other things equal, night shifts and high-risk jobs usually pay higher wages. The best explanation is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>Compensating differentials: pricing the job’s nonmonetary disadvantages, or no one will take them</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>Labor productivity in these jobs is necessarily higher</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Employers in these industries just happen to be richer</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Workers compare total compensation = money wages + nonmonetary traits. Danger and disrupted schedules are negative traits, and the market must “compensate” with a wage premium before supply shows up—A. B is not necessary: a night-shift cleaner is not necessarily more productive; C attributes a persistent, systematic premium to chance and cannot explain why competition fails to compete it away.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.2</span>In the shirking version of the efficiency-wage model, why do firms pay above the market-clearing wage?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>A union forced this wage on them in collective bargaining</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Higher pay raises the cost of being fired and so deters shirking, while also lowering turnover and adverse selection</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Any high wage automatically raises profits and never creates unemployment</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The heart of efficiency wages is that “the wage itself affects labor efficiency”: above the clearing level, losing the job becomes costlier and employees dare not slack (B); high pay also attracts better applicants and cuts turnover and training costs. A is an external imposition, at odds with “the firm chooses this voluntarily”; C overreaches—precisely because the wage sits above the clearing level, the market exhibits workers who <strong>want jobs but cannot find them</strong>: involuntary unemployment, the model’s signature implication.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Equilibrium equalizes total compensation: money wages + the job’s nonmonetary traits; compensating differentials are the first layer of the wage structure.</li>
+          <li>Efficiency wages: firms voluntarily pay above the clearing level to buy effort, stability, and quality—the price is possible involuntary unemployment.</li>
+          <li>Superstar economics: when output can be replicated at low cost, small ability differences amplify into enormous income gaps.</li>
+          <li>Statistical discrimination: inferring individuals from group averages produces systematic gaps even without taste-based discrimination; taste-based discrimination is harder to sustain under competition but has not vanished.</li>
+          <li>The residual of a decomposition (e.g., Oaxaca–Blinder) is a candidate range for discrimination, not direct evidence; identification still requires finer causal strategies.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">Chapter 4</span>The minimum wage: competition vs. monopsony</h2>
+
+      <p><strong>Opening question:</strong> The standard textbook says a price floor above equilibrium must cut the quantity traded—so raising the minimum wage smashes the rice bowl of low-paid workers. Yet in 1994, Card and Krueger surveyed more than four hundred fast-food restaurants along the New Jersey–Pennsylvania border and found that after New Jersey raised its minimum wage, employment did not fall—it rose slightly relative to Pennsylvania. Is the textbook wrong—or is the fast-food labor market simply not the market in the textbook?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: one price floor, two markets, two outcomes</div>
+        <p>In a <strong>competitive market</strong>: with the minimum wage pinned above the equilibrium wage, firms move up the demand curve and hire less, while more people want to work at the new wage, creating an unemployment gap of “willing workers &gt; jobs”—the classic result holds. But in a <strong>monopsony</strong> market: the firm faces an upward-sloping labor supply curve, hiring one more worker means raising pay for everyone, so marginal expense exceeds the wage; the firm therefore suppresses the wage and hires too few (paying below the competitive level set by labor’s marginal product). Now set a moderate minimum wage: it <strong>seals off the firm’s room to squeeze</strong>—since it must pay w, the marginal-expense curve is “flattened,” and the firm hires all the way until labor demand equals the minimum wage—employment rises, and so does the wage. Whether a minimum wage helps or harms does not depend on intentions; it depends on where the market sits on the structural spectrum.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Minimum wage <span class="term-en">最低工资</span></div><div class="term-def">A legal floor on wages (monthly or hourly). In China each province adjusts it at least every 1–2 years; Shanghai has long held the top spot nationwide.</div></div>
+        <div class="term"><div class="term-name">Monopsony <span class="term-en">买方垄断</span></div><div class="term-def">A market with a single (or a few colluding) buyers. In labor markets, more broadly, it means the firm holds wage-setting power: switching jobs is costly (commuting, search, household registration, non-compete clauses), so the firm faces an upward-sloping supply curve.</div></div>
+        <div class="term"><div class="term-name">Marginal expense, ME <span class="term-en">边际支出</span></div><div class="term-def">The addition to total cost from hiring one more unit of labor. With an upward-sloping supply curve, ME lies above it (for linear supply, same vertical intercept and twice the slope); the monopsonist hires where MRP = ME, then pays the wage read off the supply curve.</div></div>
+        <div class="term"><div class="term-name">Labor demand elasticity <span class="term-en">劳动需求弹性</span></div><div class="term-def">The percentage change in the quantity of labor demanded from a 1% rise in the wage. It governs the employment cost of a minimum wage in a competitive market: the less elastic, the smaller the unemployment gap.</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 4-1 · The minimum wage: competitive market vs. monopsony</div>
+        <p class="fig-sub">Both panels share the same supply and demand curves; the only difference is the steeper marginal-expense line (ME) in the right panel. Drag the minimum-wage slider from 40 to 70 yuan: first watch the unemployment gap open up on the left, then watch employment rise before falling on the right. Try it: set the wage near 52 yuan (≈ the competitive equilibrium) and see employment reach its maximum in the right panel.</p>
+        <figure class="fig-canvas">
+          <svg id="mw-svg" viewBox="0 0 640 420" role="img" aria-label="Two side-by-side labor market diagrams, with labor measured in hundreds of workers. Left, competitive market: demand slopes down from upper left and supply slopes up from lower right, intersecting at 52 yuan and 636 hundred workers (63,600); a red unemployment gap appears when the minimum wage exceeds the equilibrium. Right, monopsony: a steeper marginal-expense line is added, the monopsony point sits at 42 yuan and 438 hundred workers (43,800); as the minimum wage rises from the monopsony level toward the competitive level, employment climbs along the supply curve, and beyond the competitive level it falls along the demand curve.">
+            <text class="chart-title-sm" x="195" y="20" text-anchor="middle">A · Competitive market</text>
+            <text class="chart-title-sm" x="492" y="20" text-anchor="middle">B · Monopsony</text>
+            <text id="mw-sum" class="chart-label" x="340" y="40" text-anchor="middle" style="fill:#4338ca"></text>
+            <line class="gridline" x1="60" y1="292.9" x2="330" y2="292.9"/>
+            <line class="gridline" x1="60" y1="255.7" x2="330" y2="255.7"/>
+            <line class="gridline" x1="60" y1="218.6" x2="330" y2="218.6"/>
+            <line class="gridline" x1="60" y1="181.4" x2="330" y2="181.4"/>
+            <line class="gridline" x1="60" y1="144.3" x2="330" y2="144.3"/>
+            <text class="chart-label-en" x="54" y="297" text-anchor="end">30</text>
+            <text class="chart-label-en" x="54" y="223" text-anchor="end">50</text>
+            <text class="chart-label-en" x="54" y="148" text-anchor="end">70</text>
+            <line class="axis" x1="60" y1="330" x2="330" y2="330"/>
+            <line class="axis" x1="60" y1="330" x2="60" y2="70"/>
+            <line class="axis" x1="365" y1="330" x2="620" y2="330"/>
+            <line class="axis" x1="365" y1="330" x2="365" y2="70"/>
+            <text class="chart-label" x="195" y="362" text-anchor="middle">Labor L (hundreds of workers)</text>
+            <text class="chart-label" x="492" y="362" text-anchor="middle">Labor L (hundreds of workers)</text>
+            <text class="chart-label" x="26" y="200" text-anchor="middle" transform="rotate(-90 26 200)">Wage w (yuan/hour)</text>
+            <line class="curve" x1="60" y1="70" x2="330" y2="292.9" stroke="#2f6fdb" stroke-width="3"/>
+            <line class="curve" x1="60" y1="330" x2="330" y2="144.3" stroke="#0d9488" stroke-width="3"/>
+            <text class="chart-label-en" x="324" y="288" text-anchor="end" style="fill:#2f6fdb">D demand</text>
+            <text class="chart-label-en" x="324" y="140" text-anchor="end" style="fill:#0d9488">S supply</text>
+            <line class="curve" x1="365" y1="70" x2="620" y2="292.9" stroke="#2f6fdb" stroke-width="3"/>
+            <line class="curve" x1="365" y1="330" x2="620" y2="144.3" stroke="#0d9488" stroke-width="3"/>
+            <line class="curve" x1="365" y1="330" x2="541.5" y2="70" stroke="#db2777" stroke-width="2.5" stroke-dasharray="6 5"/>
+            <text class="chart-label-en" x="618" y="288" text-anchor="end" style="fill:#2f6fdb">D demand (MRP)</text>
+            <text class="chart-label-en" x="618" y="140" text-anchor="end" style="fill:#0d9488">S supply</text>
+            <text class="chart-label-en" x="536" y="92" text-anchor="end" style="fill:#db2777">ME marginal expense</text>
+            <line x1="60" y1="211.9" x2="620" y2="211.9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 5"/>
+            <text class="chart-label-en" x="616" y="206" text-anchor="end" style="fill:#64748b">wc ≈ 52 (competitive)</text>
+            <circle id="mw-m0" cx="476.9" cy="248.8" r="6" class="dot" fill="#fff" stroke="#475569" stroke-width="2.5"/>
+            <text class="chart-label-en" x="476.9" y="276" text-anchor="middle" style="fill:#475569">Monopsony 42 / 438</text>
+            <line id="mw-m1" stroke="#4338ca" stroke-width="3"/>
+            <line id="mw-m2" stroke="#4338ca" stroke-width="3"/>
+            <text id="mw-wlab" class="chart-label" x="324" y="120" text-anchor="end" style="fill:#4338ca"></text>
+            <line id="mw-ug1" stroke="#b91c1c" stroke-width="5" opacity="0.85"/>
+            <text id="mw-uglab" class="chart-label" x="195" y="150" text-anchor="middle" style="fill:#b91c1c"></text>
+            <circle id="mw-e1" r="7" class="dot" fill="#4338ca"/>
+            <circle id="mw-u1" r="6" class="dot" fill="#fff" stroke="#b91c1c" stroke-width="2.5"/>
+            <circle id="mw-e2" r="7" class="dot" fill="#4338ca"/>
+            <text id="mw-t1" class="chart-label" x="195" y="392" text-anchor="middle" style="fill:#475569"></text>
+            <text id="mw-t2" class="chart-label" x="492" y="392" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="mw-w">Minimum wage</label>
+            <input type="range" id="mw-w" min="40" max="70" value="52" step="1">
+            <output id="mw-ow" for="mw-w">52 yuan/h</output></div>
+        </div>
+        <figcaption>How to read this figure: on the left, pushing the minimum wage above 52 yuan moves employment down along D, and the red segment is the unemployment gap “willing supply − firms’ demand”; on the right, raising the minimum wage from 42 yuan (the monopsony wage) moves employment up along S to the competitive level of 636, and only past 52 yuan does it fall along D. <strong>Same policy, opposite sign</strong>—that is exactly why the Card–Krueger finding and the textbook result can both be true. Real labor markets usually lie between the two extremes: firms hold some wage-setting power, yet are not the only buyer.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Card–Krueger and the minimum-wage empirics war</div>
+        <p>In April 1992, New Jersey raised its minimum wage from $4.25 to $5.05 an hour; Card and Krueger phoned roughly 410 fast-food restaurants on both sides of the border, used Pennsylvania as the control group (a natural experiment in difference-in-differences), and found that full-time positions in New Jersey restaurants rose slightly instead of falling. The paper ignited thirty years of debate: some questioned the phone data, and later replications with payroll records found effects in the same direction but smaller; the consensus distilled from hundreds of follow-up studies is that <strong>the employment effect of moderate minimum wages is usually small</strong>, with the cost absorbed more through prices, profits, hours, and job quality. This research tradition was also one major reason Card received the 2021 Nobel Prize in economics. China established its minimum-wage system with the 1993 Enterprise Minimum Wage Regulations and refined it in 2004 and 2008, with provinces setting tiered rates adjusted at least every two years; Germany did not introduce a national minimum wage until 2015 (8.50 euros an hour)—and employment did not collapse as prophesied.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>“A minimum wage necessarily reduces employment.”</strong>—True only in perfect competition with the wage pushed well above equilibrium; with monopsony power the sign flips. <strong>“A minimum wage has no costs.”</strong>—Equally wrong: even if employment holds, the adjustment can surface in prices (pricier burgers), hours (shorter shifts), benefits, non-wage conditions, and entry rates—and past some level the unemployment gap must appear. A third pitfall: <strong>“monopsony = the town’s only factory.”</strong>—In modern labor economics monopsony is frictional: search costs, commutes, household registration, and non-compete clauses give firms an upward-sloping supply curve even in a town with ten employers.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.1</span>In a monopsonistic labor market, a minimum wage set between the monopsony wage and the competitive wage results in:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Employment falls, the wage rises</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Employment rises, the wage rises</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Employment and the wage both stay unchanged</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Within the policy range, the minimum wage “flattens” the monopsonist’s marginal-expense curve into a horizontal line, locking out its room to squeeze; as long as the wage does not exceed the competitive equilibrium, the firm hires until demand = the minimum wage, employment rises from Lm toward L*, and the wage rises too—B. A is the competitive-market prediction; C ignores that the minimum wage changes incentives in both ranges (below the monopsony wage it is not binding—that is the true “no change” case).</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.2</span>In a competitive market with the minimum wage above the equilibrium wage, what does the “unemployment” refer to?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>More people are willing to work at the minimum wage than firms want to hire, creating a queueing gap</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>All workers refuse to work any longer</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The equilibrium wage is pushed up and the market clears again</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> When a price floor binds, actual employment is determined by the demand side (firms move up D and hire less), while the higher wage attracts more job seekers; Ls(w̄) − Ld(w̄) is the unemployment gap—A. B confuses individual choice with the market outcome; C contradicts the nature of a statutory wage: the minimum wage is precisely the legal constraint that <strong>does not allow</strong> the market to clear at a lower wage.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Competitive market, minimum wage above equilibrium: employment falls along demand, unemployment gap = quantity supplied − quantity demanded; elasticity governs the size of the cost.</li>
+          <li>Monopsony: the firm hires where MRP = ME and pays off the supply curve—low wage plus low employment, a double distortion.</li>
+          <li>Under monopsony, a moderate minimum wage raises both wage and employment; past the competitive equilibrium it returns to the job-crowding-out range.</li>
+          <li>Card–Krueger’s New Jersey fast-food study (DID) ignited an empirical war that continues today; the consensus is that moderate minimum wages usually have small employment effects.</li>
+          <li>Modern monopsony = wage-setting power born of search frictions; it does not require “a single employer.”</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">Chapter 5</span>Unemployment: types, the natural rate, and search</h2>
+
+      <p><strong>Opening question:</strong> On any given day, an economy contains millions of unemployed workers and millions of vacancies it cannot fill—if wages can adjust, why don’t “people” and “posts” match up instantly? And is zero unemployment a good thing or a bad thing?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: job hunting is like house hunting—a search, not a “match button”</div>
+        <p>Jobs are not a homogeneous good: wages, locations, skills, and teams all differ, and information arrives bit by bit as random offers. Each period an unemployed worker draws one offer and compares it with the mental floor price—the <strong>reservation wage</strong>: accept, and unemployment ends; refuse, and the wait goes on. Set the reservation wage high and unemployment lasts longer but the match is better; set it low and the spell ends fast, perhaps by selling yourself short—the optimal reservation wage weighs the value of waiting against its cost (unemployment benefits − search costs). This explains why some unemployment (<strong>frictional</strong>) exists even in the best of times; add skill and geographic mismatch (<strong>structural</strong>) and aggregate-demand swings (<strong>cyclical</strong>), and you have unemployment’s three faces. In steady state the unemployment rate is set jointly by the inflow rate and the re-employment rate—this is the <strong>natural rate of unemployment</strong>.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Frictional unemployment <span class="term-en">摩擦性失业</span></div><div class="term-def">Short-term unemployment from search and matching: changing jobs or entering the market takes time spent “drawing offers.” Wherever mobility and search exist, it is nonzero.</div></div>
+        <div class="term"><div class="term-name">Structural unemployment <span class="term-en">结构性失业</span></div><div class="term-def">Long-term unemployment from mismatches of skills, geography, and the structure of demand, compounded by wage rigidity (workers in declining industries vs. vacancies in rising ones).</div></div>
+        <div class="term"><div class="term-name">Natural rate of unemployment <span class="term-en">自然失业率</span></div><div class="term-def">The steady-state unemployment rate corresponding to frictional + structural unemployment—the part that remains once cyclical fluctuations subside; equal to s/(s+f).</div></div>
+        <div class="term"><div class="term-name">Reservation wage <span class="term-en">保留工资</span></div><div class="term-def">The wage threshold that leaves an unemployed worker just indifferent between taking the current job and continuing to search; it equals the expected value of further search.</div></div>
+        <div class="term"><div class="term-name">Beveridge curve <span class="term-en">贝弗里奇曲线</span></div><div class="term-def">The negative relationship between the vacancy rate and the unemployment rate. An outward shift (more unemployment at the same vacancy rate) is read as declining matching efficiency—a signal of structural problems.</div></div>
+      </div>
+
+      <div class="formula">u* = s / (s + f)
+        <span class="f-note">s: the rate at which the employed flow into unemployment (separations/layoffs); f: the rate at which the unemployed find jobs each period. The lower the search efficiency (smaller f), the higher the natural rate</span>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 5-1 · A reservation-wage search simulation</div>
+        <p class="fig-sub">You are a job seeker: each period you draw a random offer from a distribution between 2,000 and 9,000 yuan per month, and accept any offer at or above your reservation wage. Click “Draw 1 offer” to search step by step, or “Auto-search” until an offer is accepted; dragging the reservation-wage slider restarts from the same sequence of offers (the random seed is fixed) for easy comparison. Try it: run once at a reservation wage of 3,500 yuan and once at 6,500 yuan, and compare the length of unemployment with the final wage.</p>
+        <figure class="fig-canvas">
+          <svg id="sr-svg" viewBox="0 0 640 260" role="img" aria-label="Search simulation: the horizontal axis counts search periods from 0 to 40 and the vertical axis monthly wages from 2,000 to 9,000 yuan; each period’s offer is drawn as a dot and joined by a thin line, the reservation wage is a horizontal line, and the first offer above it is marked as accepted with a larger green dot.">
+            <line class="gridline" x1="70" y1="185.7" x2="600" y2="185.7"/>
+            <line class="gridline" x1="70" y1="137.1" x2="600" y2="137.1"/>
+            <line class="gridline" x1="70" y1="88.6" x2="600" y2="88.6"/>
+            <text class="chart-label-en" x="62" y="190" text-anchor="end">3000</text>
+            <text class="chart-label-en" x="62" y="141" text-anchor="end">5000</text>
+            <text class="chart-label-en" x="62" y="93" text-anchor="end">7000</text>
+            <line class="axis" x1="70" y1="210" x2="600" y2="210"/>
+            <line class="axis" x1="70" y1="210" x2="70" y2="40"/>
+            <text class="chart-label" x="335" y="240" text-anchor="middle">Search periods (1 offer drawn per period)</text>
+            <text class="chart-label" x="24" y="125" text-anchor="middle" transform="rotate(-90 24 125)">Monthly wage (yuan)</text>
+            <polyline id="sr-path" class="curve" stroke="#cbd5e1" stroke-width="1.5"/>
+            <line id="sr-rwline" stroke="#4338ca" stroke-width="2.5" stroke-dasharray="8 5"/>
+            <text id="sr-rwlab" class="chart-label" x="594" y="120" text-anchor="end" style="fill:#4338ca"></text>
+            <g id="sr-dots"></g>
+            <text id="sr-t1" class="chart-title-sm" x="335" y="20" text-anchor="middle"></text>
+            <text id="sr-t2" class="chart-label" x="335" y="38" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="sr-rw">Reservation wage</label>
+            <input type="range" id="sr-rw" min="2500" max="7500" value="5000" step="100">
+            <output id="sr-orw" for="sr-rw">5000 yuan</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="sr-step" type="button">Draw 1 offer</button>
+          <button class="btn ghost" id="sr-auto" type="button">Auto-search until accepted</button>
+          <button class="btn ghost" id="sr-reset" type="button">Start over</button>
+        </div>
+        <figcaption>How to read this figure: the acceptance probability is p = (9000 − reservation wage) / 7000, and the expected spell is ≈ 1/p—about 1.3 periods at a reservation wage of 3,500 yuan and about 2.8 periods at 6,500 (with an opportunity cost of 800 yuan per period in this example). A higher reservation wage buys a higher <strong>matched wage</strong> at the cost of a longer spell and larger search costs; unemployment benefits raise the reservation wage and so lengthen the spell—not laziness, but search theory’s mechanism for “insurance → longer unemployment.”</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · “Help wanted” and “can’t find work,” side by side</div>
+        <p>In recent years China’s labor market has heard two chronic complaints at once: manufacturers and domestic-help agencies “cannot recruit,” while college graduates “cannot find jobs.” This is a textbook-grade structural + frictional combination: skill mismatch (assembly lines short of technicians while offices drown in résumés), geographic mismatch (jobs on the coast, workers in the center and west), and expectations mismatch (graduates’ reservation wages above first-year market offers). Similarly, after the urban youth (ages 16–24) survey unemployment rate hit a record 21.3% in June 2023, publication was suspended; it resumed in 2024 under a new definition that excludes students—same phenomenon, different measure, a reminder to check the definition before reading unemployment data. At the macro level, vacancies and unemployment rising together (an outward shift of the Beveridge curve) is usually read as declining matching efficiency, a signal of structural problems.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>“The lower the unemployment rate the better; zero is healthiest.”</strong>—Zero unemployment would mean no one dares quit and no one compares opportunities—dreadfully low allocative efficiency; a healthy economy retains a positive <strong>natural rate</strong> (frictional + structural). A second pitfall: <strong>“A falling unemployment rate always means the labor market is improving.”</strong>—Discouraged workers exiting the labor force “improves” the rate with nothing to cheer; assessment needs the combination of participation, vacancies, and the long-term-unemployed share. A third: <strong>“Unemployment means people are lazy.”</strong>—Search models show that even with everyone diligent, random offers plus a rational comparison against the reservation wage generate a positive spell on their own.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.1</span>Other things equal, an unemployed worker raises her reservation wage. What should we expect?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>A shorter expected spell and a lower accepted wage</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>A longer expected spell and a higher matched wage when accepted</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Neither changes—the reservation wage is just a psychological comfort</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The higher the reservation wage, the lower the probability p that a period’s offer qualifies, so the expected spell 1/p of the geometric distribution lengthens; and with a higher bar, the conditional expectation of qualifying offers rises—B. This is exactly the mechanism behind unemployment insurance: benefits raise the value of waiting → the reservation wage rises → longer unemployment but better matches; A and C both contradict the search model’s basic predictions.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.2</span>In one country the coal industry keeps shrinking and many miners stay unemployed for years, while the vacancies are concentrated in software a thousand miles away. This unemployment is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Frictional</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Structural</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Cyclical</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> A double mismatch of skills and geography, prolonged by wage rigidity—the textbook portrait of structural unemployment, so B. Frictional unemployment is short search within normal flows (quit, move cities, start within weeks); cyclical unemployment rises and falls with aggregate demand and fades when demand recovers, while miners’ skills will not appear automatically when software recovers. The policy implications differ: structural problems call for training and mobility support, cyclical problems for demand management.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Unemployment’s three faces: frictional (search and matching), structural (skill/geographic mismatch + wage rigidity), cyclical (aggregate-demand swings).</li>
+          <li>The search model: the unemployed screen random offers against a reservation wage; the reservation wage = the expected value of continued search.</li>
+          <li>Higher reservation wage → longer unemployment, better match; unemployment insurance lengthens spells by raising the reservation wage.</li>
+          <li>The natural rate u* = s/(s+f): set by the flows into unemployment and back into work, always positive in a healthy economy.</li>
+          <li>An outward shift of the Beveridge curve (vacancies and unemployment negatively related) signals declining matching efficiency and deepening structural problems.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">Chapter 6</span>Unions and labor-market institutions</h2>
+
+      <p><strong>Opening question:</strong> In the Nordic countries, collective-bargaining coverage exceeds two-thirds; in the U.S. private sector it is under 10 percent—yet both labor markets function. Are unions the workers’ savior, or a stumbling block for employment? And likewise: does stricter dismissal protection really make workers more secure?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: a union is the labor market’s seller-side cartel, and institutions are a bundle of substitutes</div>
+        <p>Replace “the government” with “the union” in the minimum-wage diagram: collective bargaining welds dispersed workers into a single wage setter; with the wage lifted above the clearing level, incumbent workers gain a <strong>wage premium</strong> at the cost of shrinking employment and a queue outside the door—<strong>insider–outsider</strong> theory captures this distributive conflict. But the union has another face, “voice”: a lone worker can complain only by quitting, while collective bargaining resolves disputes through dialogue, lowering turnover and nurturing on-the-job training. Step back, and each country’s institutions are a different mix of three instruments: <strong>employment protection</strong> (job stability), <strong>unemployment insurance</strong> (income security), and <strong>active training</strong> (employability). Denmark’s answer is “flexibility + security” (flexicurity): firms hire and shed workers easily, but the unemployed receive high-replacement benefits and are pushed firmly toward training and new jobs—security installed in the person in place of security in the post.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Collective bargaining <span class="term-en">集体谈判</span></div><div class="term-def">A union negotiates wages and working conditions with employers (or employer associations) on workers’ behalf; coverage can far exceed union density (e.g., spillovers from sectoral agreements).</div></div>
+        <div class="term"><div class="term-name">Union wage premium <span class="term-en">工会工资溢价</span></div><div class="term-def">The wage advantage of union members over comparable nonmembers; estimates across countries mostly fall in 5%–15%, with the cost often appearing in employment and promotion prospects.</div></div>
+        <div class="term"><div class="term-name">Insider–outsider theory <span class="term-en">局内人-局外人理论</span></div><div class="term-def">Lindbeck &amp; Snower: incumbent workers (insiders) hold bargaining and turnover-cost advantages; once wages are pushed up, unemployed outsiders find it even harder to get in.</div></div>
+        <div class="term"><div class="term-name">Flexicurity <span class="term-en">灵活与安全</span></div><div class="term-def">The Danish model: weak dismissal protection (flexibility) + strong unemployment support and retraining (security)—labor flows, but workers do not fall.</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 6-1 · The union wage premium and its employment cost</div>
+        <p class="fig-sub">Static diagram: through collective bargaining, the union lifts the wage from the competitive level wc to wu. The green area is the wage gain of incumbent workers (transferred from employers); the red triangle is the deadweight loss from contracting employment.</p>
+        <figure class="fig-canvas">
+          <svg id="un-svg" viewBox="0 0 640 380" role="img" aria-label="Labor-market diagram, with employment in hundreds of workers: demand slopes down from upper left and supply slopes up from lower right, with competitive equilibrium at 52 yuan and 636 hundred workers (63,600); after the union lifts the wage to 62 yuan, employment falls to 467 hundred workers (46,700); the gain to incumbent workers is the rectangle between the competitive and union wages, and the deadweight loss is the small triangle between supply and demand.">
+            <line class="axis" x1="70" y1="330" x2="580" y2="330"/>
+            <line class="axis" x1="70" y1="330" x2="70" y2="50"/>
+            <text class="chart-label" x="325" y="360" text-anchor="middle">Employment L (hundreds of workers)</text>
+            <text class="chart-label" x="26" y="190" text-anchor="middle" transform="rotate(-90 26 190)">Wage w (yuan/hour)</text>
+            <line class="curve" x1="70" y1="70" x2="580" y2="292.9" stroke="#2f6fdb" stroke-width="3"/>
+            <line class="curve" x1="70" y1="330" x2="580" y2="144.3" stroke="#0d9488" stroke-width="3"/>
+            <text class="chart-label-en" x="574" y="288" text-anchor="end" style="fill:#2f6fdb">D firms’ labor demand</text>
+            <text class="chart-label-en" x="574" y="136" text-anchor="end" style="fill:#0d9488">S labor supply</text>
+            <rect x="70" y="174" width="238" height="37.9" fill="#15803d" fill-opacity="0.15"/>
+            <polygon points="308,174 394.6,211.9 308,243.4" fill="#b91c1c" fill-opacity="0.12"/>
+            <text class="chart-label-en" x="189" y="196" text-anchor="middle" style="fill:#15803d">Gain to incumbent workers (transfer)</text>
+            <text class="chart-label-en" x="341" y="222" text-anchor="middle" style="fill:#b91c1c">Deadweight loss DWL</text>
+            <line x1="70" y1="211.9" x2="580" y2="211.9" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="4 5"/>
+            <line x1="70" y1="174" x2="580" y2="174" stroke="#4338ca" stroke-width="2" stroke-dasharray="7 5"/>
+            <text class="chart-label-en" x="574" y="168" text-anchor="end" style="fill:#4338ca">wu = 62 (union wage)</text>
+            <text class="chart-label-en" x="574" y="206" text-anchor="end" style="fill:#64748b">wc = 52 (no union)</text>
+            <line class="gridline" x1="308" y1="174" x2="308" y2="330"/>
+            <line class="gridline" x1="394.6" y1="211.9" x2="394.6" y2="330"/>
+            <circle cx="308" cy="174" r="7" class="dot" fill="#4338ca"/>
+            <circle cx="394.6" cy="211.9" r="6" class="dot" fill="#475569"/>
+            <text class="chart-label-en" x="308" y="348" text-anchor="middle">Lu=467</text>
+            <text class="chart-label-en" x="394.6" y="348" text-anchor="middle">Lc=636</text>
+          </svg>
+        </figure>
+        <figcaption>How to read this figure: once the union pushes the wage to wu = 62 yuan, employment contracts along the demand curve to 467: everyone who keeps a job earns 10 yuan more (the green rectangle, transferred from employer surplus), those crowded out lose their jobs, and the small triangle between supply and demand (red) is the pure efficiency loss. If the union simultaneously raises productivity (the union voice effect, lower turnover, organized training), the demand curve itself shifts right, offsetting part or even all of the loss—the union’s net effect is an empirical question, not a matter of stance.</figcaption>
+      </figure>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead>
+            <tr><th>System</th><th>Dismissal protection</th><th>Unemployment insurance &amp; retraining</th><th>Unions &amp; bargaining</th><th>Typical outcomes</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Denmark (flexicurity)</td><td>Weak: easy to hire, easy to fire</td><td>Strong: high replacement rates + mandatory activation</td><td>High density, centralized bargaining</td><td>High churn, fast re-employment</td></tr>
+            <tr><td>United States</td><td>Weak: employment at will predominates</td><td>Weak: private/state-level provision</td><td>Density about 10%, decentralized bargaining</td><td>Wide wage dispersion, dual labor market</td></tr>
+            <tr><td>France / Southern Europe</td><td>Strong: high procedural and severance hurdles</td><td>Moderate</td><td>Low density but high sectoral-agreement coverage</td><td>Insiders protected, high youth unemployment</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · A century of sliding union density, and two ways out</div>
+        <p>The share of U.S. wage and salary workers in unions slid from a mid-1950s peak of about 35% to roughly 10% today (under 7% in the private sector), alongside stagnant median wages and widening inequality—most labor economists read the two as related but not purely causal. Europe took another road: Nordic union density still runs 50–70%, and combined with coordinated wage setting and active labor-market policies, “high wages + low unemployment” coexist. China’s institutional path differs: the All-China Federation of Trade Unions (ACFTU) is the sole organizational form, working mainly through collective consultation (dedicated collective wage contracts) and government coordination; the 2008 Labor Contract Law strengthened written contracts, open-ended contracts, and statutory severance pay, writing a substantial dose of “job security” into statute—and the ensuing expansion of flexible, gig-style employment (labor dispatch, platform work) is precisely the insider–outsider logic in another guise.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>“Unions are always good for workers.”</strong>—Usually true for <strong>incumbent workers</strong> (insiders); not necessarily for outsiders crowded out of jobs, or for temps and new hires—the other side of the union premium is contracting employment and an insider/outsider divide. <strong>“The stricter the dismissal protection, the safer the worker.”</strong>—It protects the <strong>job</strong>, not the <strong>person</strong>: anticipating costly dismissals, firms grow cautious at the gate—fewer open-ended contracts, more dispatch work and probation—hitting the young and women first. The keyword of institutional design was never “the more the better” but the mix: job security, income security, and employability trade off against one another.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.1</span>What does insider–outsider theory mainly explain?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Unions mainly improve job prospects for nonmembers and the unemployed</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Incumbent workers leverage their bargaining power to raise wages, with part of the cost borne by outsiders who cannot get in</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Unions arise only in monopsonistic labor markets</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Insiders (incumbent workers), shielded by turnover, training, and bargaining costs, can sustain wages above the clearing level; the result is insiders collecting rents while outsiders queue or turn to informal work—B, and A says exactly the reverse. C is wrong: wherever collective bargaining rights exist, unions appear across market structures; it is just that under monopsony their positive rationale of “countering the wage squeeze” is stronger.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.2</span>What is the institutional mix of the Danish “flexibility–security” (flexicurity) model?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Strict dismissal restrictions + meager unemployment support</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Relatively easy dismissal + generous unemployment support and mandatory retraining</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Unions are banned and wages are set entirely by the market</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Flexicurity = flexibility in job flows + security in personal income and skills: firms dare adjust headcount quickly, and displaced workers receive high-replacement benefits and are swiftly steered into training and new jobs—B. A is “doubly weak,” and C contradicts the facts (Danish union density and bargaining coverage are among Europe’s highest). The lesson of the model: security can be installed in the “person,” without being locked into the “post.”</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>A union = the labor market’s seller-side cartel: the premium goes to insiders, the employment cost falls on outsiders, plus a deadweight-loss triangle.</li>
+          <li>The union’s “voice” function (lower turnover, organized training, grievance channels) can shift the demand curve right, offsetting part of the monopoly loss.</li>
+          <li>Dismissal protection protects the job, not the person: screening at the gate, expanding temp work, and youth unemployment are its common side effects.</li>
+          <li>Danish flexicurity: weak job protection + strong income security + strong retraining—security of the person replacing security of the post.</li>
+          <li>Institutional comparison has no unique optimum: union density, protection stringency, and benefit levels are substitutable ingredients; what matters is whether the mix hangs together.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">Wrap-up</span>Next steps &amp; further reading</h2>
+      <p>Labor economics is a direct application of micro theory and the best training ground for methods of causal identification. Three recommended routes onward: for <strong>methods</strong>, go to <a href="../03-econometrics/index.html">Track 03 Econometrics</a> (the difference-in-differences behind Card–Krueger and the instrumental variables behind returns to education are developed there); for <strong>applications</strong>, go to <a href="../14-health-and-education-economics/index.html">Track 14 Health &amp; Education Economics</a> (a deeper dive into human capital, education, and redistribution); for <strong>policy</strong>, see <a href="../08-public-economics/index.html">Track 08 Public Economics</a> (tax distortions of labor supply, the design of redistribution), and <a href="../02-macroeconomics/index.html">Track 02 Macroeconomics</a> (unemployment measurement and cyclical unemployment, the Phillips curve).</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">George Borjas, Labor Economics</span> · The most widely used intermediate textbook worldwide—supply-and-demand framework plus institutional analysis, covering all six chapters of this track (a Chinese translation is available).</li>
+          <li><span class="bk">David Card &amp; Alan Krueger, Myth and Measurement (1995)</span> · The book-length version of the New Jersey fast-food study and a masterpiece of causal identification.</li>
+          <li><span class="bk">Jacob Mincer, Schooling, Experience, and Earnings (1974)</span> · The original source of the Mincer equation; skim it to see how one equation defined a field for fifty years.</li>
+          <li><span class="bk">Alan Manning, Monopsony in Motion (2003)</span> · The work that made “frictional monopsony” a core framework of modern labor economics.</li>
+          <li><span class="bk">Zeng Xiangquan, Labor Economics (in Chinese)</span> · A Chinese-language introductory textbook grounded in the institutional setting of China’s labor market; a good side-by-side companion to this tutorial.</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../08-public-economics/index.html"><span class="pager-dir">Previous track</span><br><span class="pager-name">Public Economics</span></a>
+        <a href="../10-industrial-organization/index.html"><span class="pager-dir">Next track</span><br><span class="pager-name">Industrial Organization</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../../assets/econ.js"></script>
+<script>
+/* ================= Figure 1-1 Decomposing the income/substitution effects of a wage rise ================= */
+(function () {
+  if (!document.getElementById("ls-b1")) return;
+  var T = 100, V = 200, W0 = 20, CMAX = 4400;
+  var MX0 = 60, MX1 = 430, MY0 = 350, MY1 = 42;
+  function px(l) { return MX0 + l / T * (MX1 - MX0); }
+  function py(c) { return MY0 - Math.max(0, c) / CMAX * (MY0 - MY1); }
+  /* Baseline point E0: Cobb-Douglas preferences (C·L = constant) + non-labor income V */
+  var L0 = 0.5 * (T + V / W0), C0 = W0 * (T - L0) + V, K0 = C0 * L0;
+  var b0 = document.getElementById("ls-b0");
+  b0.setAttribute("x1", px(0)); b0.setAttribute("y1", py(W0 * T + V));
+  b0.setAttribute("x2", px(T)); b0.setAttribute("y2", py(0));
+  var p0 = [], l, c;
+  for (l = 18; l <= T; l += 2) {
+    c = K0 / l;
+    if (c <= CMAX * 0.98) p0.push(px(l).toFixed(1) + "," + py(c).toFixed(1));
+  }
+  document.getElementById("ls-ic0").setAttribute("points", p0.join(" "));
+  function curvePts(k) {
+    var arr = [];
+    var l0 = Math.max(14, k / (CMAX * 0.96));
+    for (var j = l0; j <= T; j += 2) arr.push(px(j).toFixed(1) + "," + py(k / j).toFixed(1));
+    return arr.join(" ");
+  }
+  /* Coordinate system of the embedded supply curve */
+  function isx(h) { return 470 + (Math.min(70, Math.max(25, h)) - 25) / 45 * 140; }
+  function isy(w) { return 350 - (w - 20) / 40 * 270; }
+  function arrow(id, x1, y1, x2, y2) {
+    var a = document.getElementById(id);
+    var dx = x2 - x1, dy = y2 - y1, len = Math.sqrt(dx * dx + dy * dy);
+    if (len < 16) { a.setAttribute("opacity", "0"); return null; }
+    a.setAttribute("opacity", "1");
+    var ux = dx / len, uy = dy / len;
+    a.setAttribute("x1", (x1 + ux * 12).toFixed(1)); a.setAttribute("y1", (y1 + uy * 12).toFixed(1));
+    a.setAttribute("x2", (x2 - ux * 15).toFixed(1)); a.setAttribute("y2", (y2 - uy * 15).toFixed(1));
+    return { mx: (x1 + x2) / 2, my: (y1 + y2) / 2 };
+  }
+  var slW = document.getElementById("ls-w"), slS = document.getElementById("ls-s");
+  function draw() {
+    var w = parseFloat(slW.value), s = parseFloat(slS.value) / 100;
+    document.getElementById("ls-ow").textContent = w + " yuan/h";
+    document.getElementById("ls-os").textContent = s.toFixed(2) + "\u00d7";
+    var b1 = document.getElementById("ls-b1");
+    var cTop = Math.min(CMAX, w * T + V);
+    var lTop = cTop < CMAX ? 0 : Math.max(0, T - (CMAX - V) / w);
+    b1.setAttribute("x1", px(lTop)); b1.setAttribute("y1", py(cTop));
+    b1.setAttribute("x2", px(T)); b1.setAttribute("y2", py(0));
+    var lb = document.getElementById("ls-lb1");
+    lb.setAttribute("x", px(lTop) + 6); lb.setAttribute("y", Math.max(56, py(cTop) - 8));
+    lb.textContent = "New budget line w=" + w;
+    /* Substitution point E' (compensated tangency along U0) and the new point E1 shifted by income strength */
+    var Lsub = Math.sqrt(K0 / w), Csub = Math.sqrt(K0 * w);
+    var Lcd = 0.5 * (T + V / w);
+    var L1 = Math.min(92, Math.max(12, Lsub + s * (Lcd - Lsub)));
+    var C1 = w * (T - L1) + V;
+    document.getElementById("ls-e0").setAttribute("cx", px(L0));
+    document.getElementById("ls-e0").setAttribute("cy", py(C0));
+    document.getElementById("ls-sub").setAttribute("cx", px(Lsub));
+    document.getElementById("ls-sub").setAttribute("cy", py(Csub));
+    document.getElementById("ls-e1").setAttribute("cx", px(L1));
+    document.getElementById("ls-e1").setAttribute("cy", py(C1));
+    document.getElementById("ls-ic1").setAttribute("points", curvePts(C1 * L1));
+    document.getElementById("ls-lu1").setAttribute("y", py(C1 * L1 / 84) - 10);
+    function put(id, x, y) {
+      var el = document.getElementById(id);
+      el.setAttribute("x", x); el.setAttribute("y", y);
+    }
+    put("ls-l0", px(L0) + 10, py(C0) + 4);
+    put("ls-ls", px(Lsub) - 30, py(Csub) - 12);
+    put("ls-l1", px(L1) + 10, py(C1) - 10);
+    var m1 = arrow("ls-se", px(L0), py(C0), px(Lsub), py(Csub));
+    var m2 = arrow("ls-ie", px(Lsub), py(Csub), px(L1), py(C1));
+    var lse = document.getElementById("ls-lse"), lie = document.getElementById("ls-lie");
+    if (m1) {
+      lse.setAttribute("opacity", "1");
+      lse.setAttribute("x", m1.mx - 9); lse.setAttribute("y", m1.my - 10);
+    } else { lse.setAttribute("opacity", "0"); }
+    if (m2) {
+      lie.setAttribute("opacity", "1");
+      lie.setAttribute("x", m2.mx + 9); lie.setAttribute("y", m2.my - 10);
+    } else { lie.setAttribute("opacity", "0"); }
+    var ie = L1 - Lsub, net = L1 - L0, dWork = -net;
+    var t1 = document.getElementById("ls-t1"), t2 = document.getElementById("ls-t2");
+    if (Math.abs(w - W0) < 0.01) {
+      t1.textContent = "Wage unchanged: raise the wage slider and watch the optimum move";
+      t2.textContent = "E0 is the leisure–consumption optimum at w0=20 yuan/h; ① the substitution effect slides along U0, ② the income effect rises to U1";
+    } else {
+      t1.textContent = "Substitution effect: leisure " + (Lsub - L0).toFixed(1) + " hours; income effect: leisure +" + ie.toFixed(1) + " hours";
+      var change = dWork > 0.05 ? "work " + dWork.toFixed(1) + " more hours" :
+        (dWork < -0.05 ? "work " + Math.abs(dWork).toFixed(1) + " fewer hours" : "hours essentially unchanged");
+      t2.textContent = "Net effect: weekly hours " + (T - L0) + " → " + (T - L1).toFixed(0) + " (" + change + ")" +
+        (net > 0.05 ? " — the income effect dominates and the supply curve bends back" : "");
+    }
+    /* Embedded labor supply curve: plotted from the w0=20 baseline at the current strength s */
+    var pts = [];
+    for (var ww = W0; ww <= 60.01; ww += 2) {
+      var ls = Math.sqrt(K0 / ww), lc = 0.5 * (T + V / ww);
+      var h = T - (ls + s * (lc - ls));
+      pts.push(isx(h).toFixed(1) + "," + isy(ww).toFixed(1));
+    }
+    document.getElementById("ls-sup").setAttribute("points", pts.join(" "));
+    var sd = document.getElementById("ls-sdot");
+    sd.setAttribute("cx", isx(T - L1)); sd.setAttribute("cy", isy(w));
+  }
+  slW.addEventListener("input", draw);
+  slS.addEventListener("input", draw);
+  draw();
+})();
+/* ================= Figure 2-1 Education–earnings scatter with a Mincer-return slider ================= */
+(function () {
+  if (!document.getElementById("mk-curve")) return;
+  var X0 = 70, X1 = 600, Y0 = 330, Y1 = 50, WMAX = 25;
+  function px(s) { return X0 + (s - 5) / 15 * (X1 - X0); }
+  function py(w) { return Math.max(Y1 - 4, Y0 - Math.max(0, w) / WMAX * (Y0 - Y1)); }
+  /* Seeded pseudo-random numbers: the same batch of “individuals” on every load */
+  var seed = 20240901;
+  function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+  var dots = [];
+  for (var i = 0; i < 48; i++) {
+    var S = 6 + Math.floor(rnd() * 13);
+    var X = Math.floor(rnd() * 36);
+    var w = Math.exp(0.9 + 0.075 * S + 0.045 * X - 0.0008 * X * X + (rnd() - 0.5) * 0.16);
+    dots.push({ S: S, w: w });
+  }
+  var NS = "http://www.w3.org/2000/svg", g = document.getElementById("mk-dots");
+  dots.forEach(function (d) {
+    var el = document.createElementNS(NS, "circle");
+    el.setAttribute("cx", px(d.S).toFixed(1));
+    el.setAttribute("cy", py(d.w).toFixed(1));
+    el.setAttribute("r", "4.5");
+    el.setAttribute("class", "dot");
+    el.setAttribute("fill", "#2f6fdb");
+    el.setAttribute("opacity", "0.45");
+    g.appendChild(el);
+  });
+  var slB = document.getElementById("mk-b"), slX = document.getElementById("mk-x");
+  function draw() {
+    var b = parseFloat(slB.value) / 100;
+    var xb = parseFloat(slX.value);
+    var a = 0.9 + 0.045 * xb - 0.0008 * xb * xb;
+    document.getElementById("mk-ob").textContent = (b * 100).toFixed(1) + "%";
+    document.getElementById("mk-ox").textContent = xb + " years";
+    var pts = [];
+    for (var s = 5; s <= 20.01; s += 0.25) {
+      var w = Math.exp(a + b * s);
+      if (w > WMAX * 0.99) break;
+      pts.push(px(s).toFixed(1) + "," + py(w).toFixed(1));
+    }
+    document.getElementById("mk-curve").setAttribute("points", pts.join(" "));
+    var w12 = Math.exp(a + b * 12), w16 = Math.exp(a + b * 16);
+    document.getElementById("mk-d12").setAttribute("cx", px(12));
+    document.getElementById("mk-d12").setAttribute("cy", py(w12));
+    document.getElementById("mk-d16").setAttribute("cx", px(16));
+    document.getElementById("mk-d16").setAttribute("cy", py(w16));
+    var prem = (Math.exp(4 * b) - 1) * 100;
+    document.getElementById("mk-t1").textContent =
+      "1 more year of schooling ≈ wage +" + (b * 100).toFixed(1) + "%; college (16 yrs) premium over high school (12 yrs) ≈ +" + prem.toFixed(0) + "%";
+    document.getElementById("mk-t2").textContent =
+      "Fitted curve w = exp(a + β·S + 0.045·X − 0.0008·X²), experience X = " + xb + " years (true β in the data = 7.5%)";
+  }
+  slB.addEventListener("input", draw);
+  slX.addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= Figure 4-1 Minimum wage: competitive vs. monopsony ================= */
+(function () {
+  if (!document.getElementById("mw-m1")) return;
+  var LW = 60, LR = 330, RX = 365, RR = 620, Y0 = 330, Y1 = 70;
+  function plx(l) { return LW + Math.min(1000, Math.max(0, l)) / 1000 * (LR - LW); }
+  function prx(l) { return RX + Math.min(1000, Math.max(0, l)) / 1000 * (RR - RX); }
+  function py(w) { return Y0 - (w - 20) / 70 * (Y0 - Y1); }
+  function pD(l) { return 90 - 0.06 * l; }
+  function pS(l) { return 20 + 0.05 * l; }
+  var Lc = 70 / 0.11, Wc = pS(Lc);   /* competitive equilibrium ≈ 636, 51.8 */
+  var Lm = 70 / 0.16, Wm = pS(Lm);   /* monopsony ≈ 438, 41.9 */
+  var sl = document.getElementById("mw-w");
+  function setLine(id, x1, y1, x2, y2) {
+    var el = document.getElementById(id);
+    el.setAttribute("x1", x1); el.setAttribute("y1", y1);
+    el.setAttribute("x2", x2); el.setAttribute("y2", y2);
+  }
+  function setDot(id, x, y, show) {
+    var el = document.getElementById(id);
+    el.setAttribute("cx", x); el.setAttribute("cy", y);
+    el.setAttribute("opacity", show ? "1" : "0");
+  }
+  function draw() {
+    var w = parseFloat(sl.value);
+    document.getElementById("mw-ow").textContent = w + " yuan/h";
+    setLine("mw-m1", LW, py(w), LR, py(w));
+    setLine("mw-m2", RX, py(w), RR, py(w));
+    var lab = document.getElementById("mw-wlab");
+    lab.setAttribute("x", LR - 6); lab.setAttribute("y", py(w) - 8);
+    lab.textContent = "Minimum wage " + w + " yuan";
+    /* A: competitive market */
+    var Ld = (90 - w) / 0.06, Ls = (w - 20) / 0.05, gap = Math.max(0, Ls - Ld);
+    var t1 = document.getElementById("mw-t1");
+    var uglab = document.getElementById("mw-uglab");
+    if (w <= Wc + 0.01) {
+      setDot("mw-e1", plx(Lc), py(Wc), true);
+      setDot("mw-u1", 0, 0, false);
+      setLine("mw-ug1", 0, 0, 0, 0);
+      uglab.setAttribute("opacity", "0");
+      t1.textContent = "At or below the " + Wc.toFixed(0) + "-yuan equilibrium: not binding, employment " + Math.round(Lc);
+    } else {
+      setDot("mw-e1", plx(Ld), py(w), true);
+      setDot("mw-u1", plx(Ls), py(w), true);
+      setLine("mw-ug1", plx(Ld) + 6, py(w), plx(Ls) - 6, py(w));
+      uglab.setAttribute("opacity", "1");
+      uglab.setAttribute("x", (plx(Ld) + plx(Ls)) / 2);
+      uglab.setAttribute("y", py(w) - 9);
+      uglab.textContent = "Unemployment " + Math.round(gap);
+      t1.textContent = "Employment " + Math.round(Ld) + " (" + Math.round(Lc - Ld) + " below the competitive level)";
+    }
+    /* B: monopsony */
+    var emp2, t2 = document.getElementById("mw-t2");
+    if (w <= Wm + 0.01) {
+      emp2 = Lm;
+      setDot("mw-e2", prx(Lm), py(Wm), false);
+      t2.textContent = "At or below the " + Wm.toFixed(0) + "-yuan monopsony wage: not binding, employment " + Math.round(Lm);
+    } else {
+      emp2 = w <= Wc ? (w - 20) / 0.05 : (90 - w) / 0.06;
+      setDot("mw-e2", prx(emp2), py(w), true);
+      t2.textContent = "Employment " + Math.round(emp2) + " (" + Math.max(0, Math.round(emp2 - Lm)) + " above the monopsony level)" +
+        (w > Wc ? ", jobs are crowded out past the competitive wage" : "");
+    }
+    var dComp = w <= Wc + 0.01 ? 0 : Lc - Ld;
+    document.getElementById("mw-sum").textContent =
+      "Same minimum wage, " + w + " yuan: competitive-market employment " + (dComp > 0 ? "−" + Math.round(dComp) : "flat") +
+      "; monopsony employment " + (emp2 > Lm ? "+" + Math.round(emp2 - Lm) : "flat") +
+      (w > Wc ? " — beyond " + Wc.toFixed(0) + " yuan, both markets lose jobs" : " — market structure decides the outcome");
+  }
+  sl.addEventListener("input", draw);
+  draw();
+})();
+/* ================= Figure 5-1 Reservation wage and job-search simulation ================= */
+(function () {
+  if (!document.getElementById("sr-dots")) return;
+  var X0 = 70, X1 = 600, Y0 = 210, Y1 = 40, WLO = 2000, WHI = 9000, CAP = 40;
+  function px(i) { return X0 + Math.min(CAP, i) / CAP * (X1 - X0); }
+  function py(v) { return Y0 - (Math.min(WHI, Math.max(WLO, v)) - WLO) / (WHI - WLO) * (Y0 - Y1); }
+  var SEED = 20240901, seed = SEED, offers = [], accepted = -1;
+  function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+  var NS = "http://www.w3.org/2000/svg";
+  var sl = document.getElementById("sr-rw");
+  function render() {
+    var rw = parseFloat(sl.value);
+    document.getElementById("sr-orw").textContent = rw + " yuan";
+    var rl = document.getElementById("sr-rwline");
+    rl.setAttribute("x1", X0); rl.setAttribute("x2", X1);
+    rl.setAttribute("y1", py(rw)); rl.setAttribute("y2", py(rw));
+    var rlab = document.getElementById("sr-rwlab");
+    rlab.setAttribute("x", X1 - 6); rlab.setAttribute("y", py(rw) - 7);
+    rlab.textContent = "Reservation wage " + rw;
+    var g = document.getElementById("sr-dots");
+    while (g.firstChild) g.removeChild(g.firstChild);
+    var path = [];
+    for (var i = 0; i < offers.length; i++) {
+      var v = offers[i];
+      path.push(px(i).toFixed(1) + "," + py(v).toFixed(1));
+      var el = document.createElementNS(NS, "circle");
+      el.setAttribute("cx", px(i)); el.setAttribute("cy", py(v));
+      el.setAttribute("r", i === accepted ? "7" : "4.5");
+      el.setAttribute("class", "dot");
+      el.setAttribute("fill", i === accepted ? "#15803d" : "#94a3b8");
+      g.appendChild(el);
+    }
+    document.getElementById("sr-path").setAttribute("points", path.join(" "));
+    var t1 = document.getElementById("sr-t1"), t2 = document.getElementById("sr-t2");
+    if (!offers.length) {
+      t1.textContent = "Click “Draw 1 offer”: each period draws a random offer from 2,000–9,000 yuan/month";
+      t2.textContent = "Offer ≥ reservation wage → accept and exit unemployment; otherwise keep searching (opportunity cost 800 yuan per period)";
+    } else {
+      var n = offers.length;
+      var mean = offers.reduce(function (a, b) { return a + b; }, 0) / n;
+      if (accepted >= 0) {
+        t1.textContent = "In period " + n + ", accepted the offer of " + offers[accepted] + " yuan (≥ reservation wage " + rw + " yuan)";
+        t2.textContent = "Unemployed " + n + " periods · search cost " + (n * 800) + " yuan · mean offer drawn " + Math.round(mean) + " yuan";
+      } else if (n >= CAP) {
+        t1.textContent = "Drew all " + CAP + " periods without clearing the bar — is the reservation wage set too high?";
+        t2.textContent = "Best offer during the spell only " + Math.max.apply(null, offers) + " yuan · cumulative search cost " + (n * 800) + " yuan";
+      } else {
+        t1.textContent = "Period " + n + " offer of " + offers[n - 1] + " yuan < reservation wage " + rw + " yuan, rejected";
+        t2.textContent = "Unemployed " + n + " periods · search cost " + (n * 800) + " yuan · mean offer " + Math.round(mean) + " yuan";
+      }
+    }
+  }
+  function step() {
+    if (accepted >= 0 || offers.length >= CAP) return;
+    var v = Math.round((2000 + rnd() * 7000) / 50) * 50;
+    offers.push(v);
+    if (v >= parseFloat(sl.value)) accepted = offers.length - 1;
+    render();
+  }
+  function restart() { seed = SEED; offers = []; accepted = -1; render(); }
+  document.getElementById("sr-step").addEventListener("click", step);
+  document.getElementById("sr-auto").addEventListener("click", function () {
+    var guard = 0;
+    while (accepted < 0 && offers.length < CAP && guard <= CAP) { step(); guard++; }
+  });
+  document.getElementById("sr-reset").addEventListener("click", restart);
+  sl.addEventListener("input", restart);
+  render();
+})();
+</script>
+</body>
+</html>

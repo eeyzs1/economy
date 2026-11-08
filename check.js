@@ -23,7 +23,6 @@ if (fs.existsSync(cssPath)) {
   });
 }
 
-const dirs = fs.readdirSync(__dirname).filter((d) => /^\d\d-/.test(d)).sort();
 const files = process.argv.slice(2);
 let anyFail = false;
 
@@ -38,7 +37,7 @@ for (const file of files) {
   stats.lines = src.split("\n").length;
 
   if (!src.trimEnd().endsWith("</html>")) problems.push("未以 </html> 结尾");
-  if (!/<html lang="zh-CN"/.test(src)) problems.push("缺少 lang=zh-CN");
+  if (!/<html lang="(?:zh-CN|en)"/.test(src)) problems.push('缺少 lang=zh-CN 或 lang=en');
   if (!/name="description"/.test(src)) problems.push("缺少 meta description");
   if (/https?:\/\//.test(src.replace(/http:\/\/www\.w3\.org/g, ""))) problems.push("含外部资源引用");
 
@@ -123,10 +122,12 @@ for (const file of files) {
     const bm = src.match(/--branch:\s*(#[0-9a-fA-F]{6})/);
     if (!bm) problems.push("未找到 --branch");
     else if (bm[1].toLowerCase() !== SPEC_BRANCH[num]) problems.push(`--branch ${bm[1]} ≠ 规范 ${SPEC_BRANCH[num]}`);
-    const prev = src.match(/<a href="([^"]+)"><span class="pager-dir">(?:←\s*)?上一分支<\/span>/);
-    const next = src.match(/<a href="([^"]+)"><span class="pager-dir">下一分支(?:\s*→)?<\/span>/);
-    const wantPrev = num === "01" ? "../index.html" : `../${dirs[+num - 2]}/index.html`;
-    const wantNext = num === "17" ? "../index.html" : `../${dirs[+num]}/index.html`;
+    // 中文版兄弟目录取自根目录, 英文版取自 en/ 目录（两套目录名不同）
+    const siblings = fs.readdirSync(path.dirname(baseDir)).filter((d) => /^\d\d-/.test(d)).sort();
+    const prev = src.match(/<a href="([^"]+)"><span class="pager-dir">(?:←\s*)?(?:上一分支|Previous track)<\/span>/);
+    const next = src.match(/<a href="([^"]+)"><span class="pager-dir">(?:下一分支|Next track)(?:\s*→)?<\/span>/);
+    const wantPrev = num === "01" ? "../index.html" : `../${siblings[+num - 2]}/index.html`;
+    const wantNext = num === "17" ? "../index.html" : `../${siblings[+num]}/index.html`;
     if (!prev || prev[1] !== wantPrev) problems.push(`pager 上一分支 ${prev && prev[1]} 应为 ${wantPrev}`);
     if (!next || next[1] !== wantNext) problems.push(`pager 下一分支 ${next && next[1]} 应为 ${wantNext}`);
   }

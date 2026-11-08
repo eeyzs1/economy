@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Game Theory &amp; Information Economics · EconLearn Self-Study Path in Economics</title>
+<meta name="description" content="An interactive English tutorial on game theory and information economics: Nash equilibrium, the Prisoner's Dilemma, repeated games, the market for lemons, signaling and screening, and mechanism design, with an interactive payoff matrix and self-tests.">
+<link rel="stylesheet" href="../../assets/econ.css">
+</head>
+<body style="--branch:#7c3aed">
+<noscript><p class="noscript-tip">The interactive figures and self-tests on this page require JavaScript; without it, every word of the main text remains readable.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← Home</a>
+  <div class="topbar-title"><span class="topbar-num">04</span>Game Theory &amp; Information Economics</div>
+  <a class="topbar-lang" href="../../04-博弈论与信息经济学/index.html" hreflang="zh-CN">中文</a>
+  <button class="toc-toggle" aria-expanded="false">Contents</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">Chapters in this track</p>
+    <nav aria-label="Chapter contents">
+      <a href="#overview">Overview &amp; learning goals</a>
+      <a href="#ch1">1 · The Language of Games</a>
+      <a href="#ch2">2 · Nash Equilibrium</a>
+      <a href="#ch3">3 · Classic Games and Applications</a>
+      <a href="#ch4">4 · Asymmetric Information</a>
+      <a href="#ch5">5 · Signaling and Screening</a>
+      <a href="#ch6">6 · Mechanism Design</a>
+      <a href="#path">Next steps &amp; further reading</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · Self-Study Path in Economics</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">Track 04 · Core theory</span>
+        <h1>Game Theory &amp; Information Economics</h1>
+        <p class="hero-en">博弈论与信息经济学</p>
+        <p class="hero-lead">When your best choice depends on what others choose, and their best choices depend on you—that is a game. Game theory gives you a language for analyzing strategic interaction; information economics studies the distortions that arise in markets when the parties hold different information.</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">By the end of this track, you will be able to</div>
+        <ul>
+          <li>Read and build <strong>payoff matrices</strong> and game trees, and identify <strong>dominant strategies</strong></li>
+          <li>Use the <strong>best-response</strong> way of thinking to find <strong>Nash equilibria</strong>, and understand that equilibrium ≠ collective optimality</li>
+          <li>Explain the difference between <strong>adverse selection</strong> and <strong>moral hazard</strong> and their real-world consequences (the market for lemons, the insurance trap)</li>
+          <li>Analyze how <strong>signaling</strong> (education, warranties) and <strong>screening</strong> (deductibles, contract terms) mitigate information problems</li>
+          <li>Describe how <strong>mechanism design</strong>, as in auctions, "makes truth-telling the best strategy"</li>
+        </ul>
+      </div>
+      <div class="prereq">Prerequisites:
+        <a class="badge" href="../01-microeconomics/index.html">01 Microeconomics (marginal thinking)</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">Chapter 1</span>The Language of Games</h2>
+
+      <p><strong>Opening question:</strong> Two suspects are interrogated separately: if both stay silent, each gets 1 year; if one confesses while the other stays silent, the confessor goes free and the silent one gets 10 years; if both confess, each gets 3 years. The detective leaves the room smiling—why is he so sure both will talk?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Put yourself in the other player's shoes, and then think one more round about their "thinking"—that is <strong>strategic reasoning</strong>. Game theory's standard assumptions: <strong>everyone is rational</strong> (maximizing their own payoff), and <strong>that fact itself is common knowledge</strong> (you know I am rational, I know you know…). In the Prisoner's Dilemma, whether the other player stays silent or confesses, confessing is better for me—this is a <strong>dominant strategy</strong>. When both players have a dominant strategy, the ending is all but sealed.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">The Three Elements of a Game <span class="term-en">博弈三要素</span></div><div class="term-def">The players, their available strategies, and the payoffs under every combination of strategies. Write these three down clearly and the game is "modeled."</div></div>
+        <div class="term"><div class="term-name">Dominant Strategy <span class="term-en">占优策略</span></div><div class="term-def">A strategy that is optimal no matter what the opponent does. With a dominant strategy in hand, a rational player need not guess about the opponent.</div></div>
+        <div class="term"><div class="term-name">Payoff Matrix <span class="term-en">收益矩阵</span></div><div class="term-def">A table for a two-player simultaneous-move game: rows are one player's strategies, columns are the other's, and each cell lists both payoffs (row player, column player).</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 1-1 · The Prisoner's Dilemma sandbox</div>
+        <p class="fig-sub">Click any cell in the matrix to see the outcome of that pair of strategies and both players' sentences.</p>
+        <figure class="fig-canvas">
+          <svg id="pd-svg" viewBox="0 0 640 400" role="group" aria-label="Prisoner's Dilemma payoff matrix: rows and columns are the two strategies, Silent and Confess; the four cells can be explored by mouse or keyboard (Tab + Enter) to see both players' sentences. If both stay silent, each gets 1 year; if both confess, each gets 3 years; if one confesses while the other stays silent, the confessor goes free and the silent player gets 10 years.">
+            <rect x="70" y="30" width="250" height="55" fill="#f5f3ff" stroke="#ddd6fe"/>
+            <rect x="320" y="85" width="250" height="55" fill="#f5f3ff" stroke="#ddd6fe"/>
+            <text class="chart-title-sm" x="445" y="63" text-anchor="middle">Partner's strategy</text>
+            <text class="chart-title-sm" x="195" y="118" text-anchor="middle">Your strategy</text>
+            <text class="chart-label" x="445" y="120" text-anchor="middle" style="font-weight:700">Confess</text>
+            <text class="chart-label" x="320" y="120" text-anchor="middle" style="font-weight:700">Silent</text>
+            <text class="chart-label" x="195" y="180" text-anchor="middle" style="font-weight:700">Silent</text>
+            <text class="chart-label" x="195" y="310" text-anchor="middle" style="font-weight:700">Confess</text>
+            <g id="pd-cells"></g>
+            <text id="pd-txt" class="chart-label" x="320" y="385" text-anchor="middle" style="font-weight:700">Click a cell above to start →</text>
+          </svg>
+        </figure>
+        <figcaption>How to read this figure: the numbers are <strong>prison sentences (shorter is better)</strong>. Confessing is a dominant strategy for each player—which is why (Silent, Silent), the outcome both prefer, is never chosen by rational players.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world</div>
+        <p><strong>The advertising arms race:</strong> Coca-Cola and Pepsi both pour money into advertising versus neither spending (higher profits, but each fears losing market share); <strong>national tariff wars:</strong> mutual tariffs leave both sides worse off, yet cutting tariffs unilaterally feels like getting played; <strong>rat-race overtime:</strong> everyone would be better off if nobody worked late, but the one employee who stays late alone gets ahead. The shadow of the Prisoner's Dilemma falls everywhere.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Game theory assumes people are cold-blooded and selfish, so it can't be realistic."</strong>—The "payoffs" in a payoff matrix can be anything you care about: a sense of fairness, reputation, other people's welfare. In experiments, many people reject an "unfair 90/10 split" in the ultimatum game, preferring mutual ruin—this does not overturn game theory; it shows that fairness sits inside their payoff functions (see Track 15, Behavioral Economics).</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.1</span>In the Prisoner's Dilemma, confessing is a dominant strategy because it…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>brings the shortest sentence in absolute terms</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>carries a shorter sentence than silence no matter what the other player chooses</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>is the best response when both players cooperate</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> A dominant strategy is one that is "at least as good against <strong>every one of the opponent's strategies</strong>." If the partner stays silent: confess (released) &gt; silent (1 year); if the partner confesses: confess (3 years) &lt; silent (a 10-year sentence). Confessing is strictly better in both cases.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.2</span>The outcome (Silent, Silent), with 1 year each, compared with (Confess, Confess), with 3 years each…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>Pareto-dominates the latter, but is not an equilibrium</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>is an equilibrium, and will therefore be chosen by rational players</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>cannot be compared with the latter</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Pareto superior: no one is worse off and at least one player is better off. (Silent, Silent) leaves both better off—but each has an incentive to deviate unilaterally, so it is not a <strong>Nash equilibrium</strong>. Individual rationality ≠ collective rationality: this is game theory's deepest lesson.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>A game = players + strategies + payoffs; rationality and common knowledge are the standard assumptions.</li>
+          <li>A dominant strategy is optimal regardless of what the opponent does; the Prisoner's Dilemma = dominant strategies on both sides producing an inferior outcome.</li>
+          <li>Payoffs can be anything players care about (fairness, reputation, long-run interests).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">Chapter 2</span>Nash Equilibrium</h2>
+
+      <p><strong>Opening question:</strong> Many games have no dominant strategy—my best choice depends on what you do. What, then, is "the solution" of a game? John Nash's answer: look for a strategy profile that <strong>no one wants to change unilaterally</strong>.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p><strong>Nash equilibrium</strong> = a set of strategies in which each player's strategy is a <strong>best response</strong> to the equilibrium strategies of the others. The role-reversal check: hold everyone else's choices fixed—can I still do better on my own? If not, the profile is "pinned down." Equilibrium guarantees neither fairness nor optimality, only <strong>stability</strong>—it is the game's "center of gravity," not a moral ideal.</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 2-1 · The equilibrium detector</div>
+        <p class="fig-sub">Switch between two classic games and click "Highlight Nash equilibria" to see which cells are stable points that neither player wants to leave alone.</p>
+        <figure class="fig-canvas">
+          <svg id="ne-svg" viewBox="0 0 640 400" role="img" aria-label="A 2×2 payoff matrix visualization; the program highlights every Nash equilibrium cell and explains the result.">
+            <text class="chart-title-sm" x="445" y="55" text-anchor="middle" id="ne-col-h">Player B</text>
+            <text class="chart-title-sm" x="195" y="110" text-anchor="middle" id="ne-row-h">Player A</text>
+            <g id="ne-cells"></g>
+            <text id="ne-txt1" class="chart-label" x="320" y="345" text-anchor="middle" style="font-weight:700"></text>
+            <text id="ne-txt2" class="chart-label" x="320" y="375" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn" id="ne-g1">Game A: Coordination (Movie / Home)</button>
+          <button class="btn ghost" id="ne-g2">Game B: Battle of the Sexes</button>
+          <button class="btn ghost" id="ne-find">Highlight Nash equilibria</button>
+        </div>
+        <figcaption>How to read this figure: in the coordination game, both "both pick the movie" and "both stay home" are equilibria—with <strong>multiple equilibria</strong>, coordination itself is the hard part (whose expectation prevails is what matters). The Battle of the Sexes likewise has two equilibria, but each player prefers a different one, so "coordinating" turns into "gaming."</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Nash Equilibrium <span class="term-en">纳什均衡</span></div><div class="term-def">A profile of mutual best responses: no one can gain by changing strategy unilaterally.</div></div>
+        <div class="term"><div class="term-name">Best Response <span class="term-en">最佳响应</span></div><div class="term-def">Your optimal choice given the opponents' strategies. The universal way to find equilibria: for each of the opponent's strategies, map out your best response and look for the combination where they "hit each other."</div></div>
+        <div class="term"><div class="term-name">Multiple Equilibria and Coordination <span class="term-en">多重均衡与协调</span></div><div class="term-def">When there is more than one equilibrium, "which one we play" depends on expectations, conventions, and communication—keyboard layouts, technology standards, and social platforms are all coordination games.</div></div>
+      </div>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"The Nash equilibrium is a game's 'best result.'"</strong>—Flat wrong, and remarkably common. Equilibrium means only <strong>stability</strong> (no one wants to deviate alone). The Prisoner's Dilemma's equilibrium is mutual betrayal; the tragedy of the commons' equilibrium is overfishing. Precisely for this reason, institutional design often works by <strong>changing the game's payoff structure</strong> so that good outcomes become equilibria (Chapter 6).</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.1</span>To check whether a strategy profile is a Nash equilibrium, the standard question is…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Does it maximize the two players' total payoff?</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>Is it fair to everyone?</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>Holding the others' strategies fixed, can anyone gain by changing alone?</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> This is the operational version of the "mutual best response" check. If anyone can improve unilaterally, it is not an equilibrium; if no one can, the profile is stable. Maximizing total payoff (A) is a Pareto/social-optimum concept, orthogonal to equilibrium.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.2</span>When a coordination game gets stuck at a "bad equilibrium" (think QWERTY keyboards or an outdated technology standard), the most plausible economic explanation is…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>With multiple equilibria, small early events "lock" expectations onto an inferior equilibrium (path dependence)</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>Consumers are irrational and do not know enough to choose the better product</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Nash equilibrium theory predicts that the best equilibrium is always selected</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> In a coordination game, "what others use" determines "what I should use." When everyone expects everyone else to stay on the old standard, staying is each person's best response—the inferior equilibrium fulfills itself. This has nothing to do with irrationality; it is an expectations-coordination problem, and it foreshadows the "network effects" of Track 10, Industrial Organization, and the "path dependence" of Track 16, Institutional Economics.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Nash equilibrium = mutual best responses = no one wants to deviate unilaterally.</li>
+          <li>Equilibrium explains "stable," not "best"; bad equilibria are everywhere.</li>
+          <li>With multiple equilibria, expectations, conventions, and communication decide which one prevails.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">Chapter 3</span>Classic Games and Applications</h2>
+
+      <p><strong>Opening question:</strong> If the Prisoner's Dilemma is played only once, betrayal is inevitable. But if the same two people will be dealing with each other for a lifetime—why do a "one-shot deal" and a "long-term relationship" give completely different answers?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: the shadow of the future</div>
+        <p>In a <strong>repeated game</strong>, today's betrayal invites tomorrow's retaliation. The famous <strong>tit-for-tat strategy</strong>: cooperate in the first round, then mirror whatever the other player did in the previous round. As long as both sides care enough about the future (a large enough discount factor), "cooperate forever" can be an equilibrium—and <strong>reputation</strong> is born. The flip side: with someone you will never meet again, the optimal strategy is often to "take the money and run"—the mediocre food at tourist-trap restaurants is a property of the game's structure, not a moral slide.</p>
+      </aside>
+
+      <h3>Three classic structures</h3>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Game</th><th>Structure</th><th>The tragedy at equilibrium</th><th>Real-world counterparts</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Prisoner's Dilemma</strong></td><td>Betrayal is a dominant strategy</td><td>Individual rationality → collective irrationality</td><td>Tariff wars, advertising wars, carbon emissions</td></tr>
+            <tr><td><strong>Tragedy of the Commons</strong></td><td>An N-player Prisoner's Dilemma</td><td>The resource is overused until it collapses</td><td>Overfishing, congestion, rat races</td></tr>
+            <tr><td><strong>Chicken</strong></td><td>Whoever swerves loses; if neither swerves, both crash</td><td>The standoff escalates</td><td>Debt-ceiling brinkmanship, price wars</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · OPEC</div>
+        <p>OPEC is a cartel: members jointly restrain output to prop up prices. But each member is tempted to quietly pump more (the others shoulder the restraint that keeps prices high, while you sell more and earn more)—a classic multi-player Prisoner's Dilemma. That is why OPEC periodically shows "production-cut agreements" coexisting with "members pumping above quota." What holds a cartel together is precisely the repeated game: betray once, and a price war awaits in the future. The oil-price collapses of 2014 and 2020 can both be read as the start of a "punishment phase."</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"As long as an agreement is signed, the Prisoner's Dilemma is solved."</strong>—The agreement itself does not change the game: if breach is costless, a signing ceremony does nothing to the temptation to betray. What actually works is a <strong>credible punishment/enforcement mechanism</strong> (repeated dealings, collateral, legal coercion, reputation records). Which yields a deep insight: <strong>institutions = the rules of the game changed by enforcement</strong> (see Track 16, Political Economy &amp; Institutional Economics).</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.1</span>Cooperation is easier to sustain in a repeated Prisoner's Dilemma when…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>both players care a lot about future payoffs (a high discount factor) and expect the relationship to last</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>the number of rounds is known and the final round is near</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>neither player has ever betrayed the other</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The condition for cooperation is roughly "value of future cooperation &gt; temptation to betray today," that is, a discount factor large enough. Conversely, a game with a known end unravels cooperation by <strong>backward induction</strong>: betrayal is certain in the last round → reputation is worthless in the second-to-last → … a chain reaction of collapse (end-of-term clearance sales, soon-to-quit employees coasting out their notice).</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.2</span>The essence of the tragedy of the commons (overgrazing a shared pasture) is…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Herders lack knowledge of sustainable grazing</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Private gains accrue to the individual while the costs of overgrazing are spread across everyone (a negative externality + no exclusion)</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>There are too many sheep</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Add one more sheep: the weight it gains is entirely mine, while the cost of pasture degradation is spread across everyone. Privatized benefits + socialized costs = individually optimal choices aggregating into a collective disaster. The directions for a fix: delineating property rights (private contracting), tradable quotas, community self-governance (Ostrom; see Track 12, Environmental &amp; Resource Economics).</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Repeated play lets "future retaliation" discipline today's betrayal—reputation is capital.</li>
+          <li>Tragedy of the commons = an N-player Prisoner's Dilemma: private benefits, shared costs.</li>
+          <li>Agreements alone are useless; credible enforcement mechanisms are what matter.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">Chapter 4</span>Asymmetric Information: The Market for Lemons and Moral Hazard</h2>
+
+      <p><strong>Opening question:</strong> In a used-car market, a good car is worth 100,000 yuan and a lemon only 40,000, yet neither buyers nor sellers can size up a car's condition. Buyers will offer only 70,000 for "average quality"—what happens next? Nobel laureate George Akerlof's 1970 answer shook economics: <strong>the market may simply vanish</strong>.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: the adverse-selection death spiral</div>
+        <p>Sellers know the car's condition; buyers do not. Buyers offer the <strong>expected value</strong> → good-car sellers feel shortchanged and withdraw → the share of lemons in the market rises → buyers offer even less → even better cars withdraw… <strong>bad money drives out good</strong>, until only lemons are left. What asymmetric information destroys is not one particular trade but the market's very existence. Insurance works the same way: one-size-fits-all premiums → healthy people drop out → the pool fills with the sick → premiums rise again → even more healthy people leave.</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 4-1 · Market-for-lemons simulator</div>
+        <p class="fig-sub">Drag the "Share of lemons" slider and watch the buyer's offer and the cars on the market change; past the critical point, good cars vanish from the market entirely.</p>
+        <figure class="fig-canvas">
+          <svg id="lm-svg" viewBox="0 0 640 400" role="img" aria-label="A number line from 0 to 120,000 yuan showing the buyer's offer falling as the share of lemons rises, compared against two threshold lines: good-car sellers' floor at 70,000 yuan and the lemon floor at 30,000 yuan. When the offer falls below 70,000 yuan, good cars exit the market.">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <text class="chart-label" x="335" y="360" text-anchor="middle">Price (yuan)</text>
+            <rect x="70" y="150" width="530" height="20" fill="#f1f5f9" rx="4"/>
+            <rect id="lm-price" x="70" y="150" width="380" height="20" fill="#7c3aed" rx="4"/>
+            <line x1="70" y1="140" x2="70" y2="330" stroke="#94a3b8" stroke-width="1"/>
+            <line id="lm-th7" x1="0" y1="120" x2="0" y2="330" stroke="#0d9488" stroke-width="2.5" stroke-dasharray="6 4"/>
+            <text class="chart-label" id="lm-th7t" x="0" y="110" text-anchor="middle" style="fill:#0d9488">Good-car floor: 70,000</text>
+            <line id="lm-th3" x1="0" y1="200" x2="0" y2="330" stroke="#ea580c" stroke-width="2.5" stroke-dasharray="6 4"/>
+            <text class="chart-label" id="lm-th3t" x="0" y="220" text-anchor="middle" style="fill:#ea580c">Lemon floor: 30,000</text>
+            <text id="lm-p" class="chart-label" x="0" y="146" text-anchor="middle" style="font-weight:700">Buyer's offer</text>
+            <text id="lm-status" class="chart-title-sm" x="335" y="60" text-anchor="middle"></text>
+            <text id="lm-sub" class="chart-label" x="335" y="86" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="lm-q">Share of lemons</label><input type="range" id="lm-q" min="0" max="100" step="5" value="30"><output id="lm-o" for="lm-q">30%</output></div>
+        </div>
+        <figcaption>How to read this figure: the buyer offers at most the "expected value" = 100,000×(1−q) + 40,000×q yuan. Once the offer falls below good-car sellers' floor (70,000 yuan), every good car exits the market—the lemon share then jumps to 100% and the offer collapses to 40,000 yuan. There is no "equilibrium trade in good cars": this is <strong>market collapse</strong> by adverse selection.</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Information Asymmetry <span class="term-en">信息不对称</span></div><div class="term-def">One party to a transaction holds key information the other does not have. Before the contract is signed it breeds adverse selection; after the contract is signed, moral hazard.</div></div>
+        <div class="term"><div class="term-name">Adverse Selection <span class="term-en">逆向选择</span></div><div class="term-def">The "bad types" on the informed side self-select into the transaction (lemons, the seriously ill buying insurance), and the price mechanism squeezes the good types out of the market.</div></div>
+        <div class="term"><div class="term-name">Moral Hazard <span class="term-en">道德风险</span></div><div class="term-def">Shirking or risk-taking that emerges because behavior after signing cannot be observed: fully insured drivers drive more recklessly, guaranteed banks dare to make risky loans.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Moral hazard in the 2008 financial crisis</div>
+        <p>One main thread of the subprime crisis: the <strong>originate-to-distribute model</strong>. Banks issued mortgages and immediately securitized and sold them off, so default risk was no longer theirs—the gains from monitoring borrowers accrued to someone else, while the commissions from lending accrued to them. Asymmetric information + misaligned incentives = collapsing loan quality. The post-crisis wave of global regulatory reform (the Dodd–Frank Act) is in large part an "anti-moral-hazard design manual": risk retention, deferred compensation, stress tests.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.1</span>The root cause of the used-car market's collapse is…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Used cars are simply of poor quality to begin with</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Buyers cannot tell cars apart, offer only the average, and the price mechanism selects good cars out</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Sellers are too greedy</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Prices are supposed to convey scarcity, but under asymmetric information the price conveys an expectation of "average quality," which in turn shapes the mix of goods that stay in the market—that is exactly what "adverse" means: the selection mechanism selects the bad types. Good cars do not cease to exist; they simply <strong>cannot fetch what they are worth</strong>, so they exit.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.2</span>Which of the following is moral hazard (rather than adverse selection)?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>People who know they are prone to illness buy critical-illness insurance more eagerly</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>After buying full coverage, the owner starts parking in a narrow alley where the car is more likely to get scraped</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Healthy people leave the insurance pool</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The mnemonic: <strong>hidden type before the contract → adverse selection; hidden action after the contract → moral hazard</strong>. A and C are both "type" problems (choices driven by hidden health status) that occur before contracting, while the pool is forming; B is a <strong>change in behavior</strong> after the contract.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Adverse selection: hidden types; the price mechanism selects against good risks (the market for lemons).</li>
+          <li>Moral hazard: hidden actions; misaligned incentives invite shirking and risk-taking.</li>
+          <li>Asymmetric information erodes the market's very existence, giving rise to warranties, mandatory disclosure, regulation, and other institutions.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">Chapter 5</span>Signaling and Screening</h2>
+
+      <p><strong>Opening question:</strong> If what universities teach is never used on the job, why do employers still favor graduates of elite schools—and why do students still fight so hard to get in? Michael Spence's <strong>signaling theory</strong> offers an unsettling yet deeply explanatory answer.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>An effective signal must be <strong>costly, with costs that vary by type</strong>: able people earn a degree more easily than less able ones (they learn fast and suffer less), so the very act of "being willing to pay the price for a degree" conveys information. Conversely, the uninformed side can proactively design a menu that makes the other side <strong>reveal itself</strong>—an insurer offering a "high-deductible, low-premium" plan alongside a "low-deductible, high-premium" plan lets the healthy self-select into the former and the sickly into the latter. This is <strong>screening</strong>. A signal is sent voluntarily by the informed side; screening is elicited by the uninformed side.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Signaling <span class="term-en">信号</span></div><div class="term-def">The informed side communicates its type through costly actions. Key point: the cost of the signal must be negatively correlated with type, or it will be mimicked and lose its force.</div></div>
+        <div class="term"><div class="term-name">Screening <span class="term-en">筛选</span></div><div class="term-def">The uninformed side designs a menu of options (contracts, prices, terms) so that people of different types self-select and reveal their type.</div></div>
+        <div class="term"><div class="term-name">Separating / Pooling Equilibrium <span class="term-en">分离均衡与混同均衡</span></div><div class="term-def">Separating: different types choose different actions, so information is revealed; pooling: everyone chooses the same action, so information stays hidden.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Signals everywhere</div>
+        <p><strong>Warranty promises:</strong> a maker bold enough to promise "free replacement for three years" is saying "my return rate is low"—a maker with a high return rate cannot afford to mimic that. <strong>Bride prices (caili, China's customary betrothal gifts) and diamond rings:</strong> costly, functionally useless commitment spending, given a cool-headed reading by signaling theory. <strong>Blind-box collaborations and luxury logos:</strong> consumption as a status signal (Veblen goods). <strong>Voluntary financial disclosure:</strong> good companies volunteer more, bad ones stay silent—the economic rationale behind mandatory-disclosure regulation.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Signaling theory says education is useless and college is a waste."</strong>—Not accurate. Education can be simultaneously <strong>human capital</strong> (genuinely raising productivity; see Track 09, Labor Economics) and a <strong>signal</strong> (displaying ability). Both effects are real; the dispute is only over the proportions. Even a pure-signaling model has social implications: when everyone stays in school one more year to "prove themselves," the signaling arms race is individually rational but socially wasteful (compare the advertising war in Chapter 1).</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.1</span>For a signal to separate types, the key is…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The signal is conspicuous and expensive enough</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The gap between what it costs different types to send the same signal is large enough</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The law forbids faking signals</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> If good and bad types face the same cost of signaling, bad types mimic effortlessly and the signal degenerates into noise. "Expensive" is not the point; the <strong>type-dependent cost gap</strong> is. This also explains why certificates "anyone can easily earn" depreciate fast.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.2</span>An insurer setting up deductible tiers for customers to choose from is an example of…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Signaling</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Screening (the uninformed side designs a menu that induces self-selection)</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Moral hazard</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Who is the uninformed side? The insurer (it does not know your health). It designs two contracts: high deductible + low premium attracts those confident in their health; low deductible + high premium attracts those who know their risk is high. The menu makes types <strong>surface automatically</strong>—the textbook posture of screening.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Signaling = initiated by the informed side, costly, with type-linked costs.</li>
+          <li>Screening = the uninformed side designs a menu so types self-select.</li>
+          <li>A separating equilibrium reveals information; a pooling equilibrium preserves ignorance; signaling arms races can be socially inefficient.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">Chapter 6</span>Mechanism Design: Game Theory in Reverse</h2>
+
+      <p><strong>Opening question:</strong> Auctioning the same object: an English ascending auction, a Dutch descending auction, a first-price sealed-bid auction, a second-price sealed-bid auction (highest bidder wins and pays the second-highest bid)—which one gets the seller the highest price? Which one gets buyers to <strong>tell the truth</strong>?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Game theory says: "given the rules, predict behavior." <strong>Mechanism design</strong> runs it in reverse: "given the behavior you want, work backward to the rules." William Vickrey's insight: in a second-price auction, <strong>bidding your true valuation is the optimal strategy</strong>—bidding higher never makes you pay more (you pay the second-highest bid), while bidding lower can needlessly lose you an auction that would have been profitable. Truth-telling becomes a dominant strategy: the Holy Grail of mechanism design, <strong>incentive compatibility</strong>.</p>
+      </aside>
+
+      <h3>Three touchstones of mechanism design</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Incentive Compatibility <span class="term-en">激励相容</span></div><div class="term-def">Under the mechanism, reporting honestly (or taking the desired action) is each participant's optimal choice. The rules and self-interest point in the same direction.</div></div>
+        <div class="term"><div class="term-name">Individual Rationality <span class="term-en">个体理性</span></div><div class="term-def">Participating beats not participating; otherwise no one shows up. A good mechanism satisfies both IR and IC.</div></div>
+        <div class="term"><div class="term-name">Revelation Principle <span class="term-en">显示原理</span></div><div class="term-def">Whatever outcome a mechanism can achieve, some "direct, truth-telling" mechanism achieves as well—so the analysis can restrict itself to truth-telling mechanisms.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Spectrum auctions and matching markets</div>
+        <p><strong>Since 1993, countries have allocated radio spectrum by auction</strong> in place of administrative licensing—work that won Stanford's Milgrom and Wilson the 2020 Nobel Prize in Economics: their "simultaneous multi-round auction" lets telecom operators coordinate package bids across thousands of licenses, selling a public resource at a fair price. <strong>Kidney paired exchange:</strong> incompatible donor–patient pairs swap with one another, and the designed chain matchings have saved tens of thousands of lives. <strong>School assignment:</strong> reforms of the school-matching mechanisms in Boston and New York (the deferred-acceptance algorithm) sharply reduced strategic rank-order gaming—mechanism design lives inside your school preference form.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Second-price auctions shortchange the seller (they collect only the second-highest price)."</strong>—A trick of intuition. Precisely because truth-telling is a dominant strategy, every buyer bids full value, and competition pushes that "second-highest price" close to the equilibrium revenue of a first-price auction—the rough meaning of the celebrated <strong>revenue equivalence theorem</strong>. Different rules can deliver the same expected revenue, but the second-price format's simplicity (no need to second-guess rivals) makes it the first choice in many settings.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.1</span>In a second-price (Vickrey) auction, your optimal bid is…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Slightly below your true valuation, to leave a profit margin</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Exactly your true valuation</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>As high as possible, since you may not pay your own bid anyway</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Bid your true value v: if you win, you pay the second-highest bid (&lt; v, a gain); if you lose, the second price was ≥ v, so winning was never profitable for you. Underbid: you might lose when the second price is &lt; v, sacrificing (v − second price) for nothing. Overbid: you might win a money-losing auction when the second price is &gt; v. Truth-telling is therefore <strong>weakly dominant</strong>—the mechanism turns honesty into self-interest.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.2</span>The relationship between "mechanism design" and "game theory" is…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>They are synonyms</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Game theory predicts forward from given rules; mechanism design searches backward for the rules that induce a target behavior</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Mechanism design is an early branch of game theory</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> "Game theory = given the rules of the game, how will players play? Mechanism design = wanting the players to play this way, what rules should be set?" Hurwicz, Maskin, and Myerson won the 2007 Nobel Prize for this "reverse engineering." It is the theoretical foundation for the design of auctions, regulation, voting, and platform rules.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Mechanism design: target behavior → work backward to the rules; check IR + IC.</li>
+          <li>The second-price auction makes truth-telling a dominant strategy.</li>
+          <li>From spectrum to kidney exchange, mechanism design is rewriting the rules of real markets.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">Wrap-up</span>Next steps &amp; further reading</h2>
+      <p>Game theory and information economics are the "second pillar" of modern economics: <strong>10 Industrial Organization</strong> (oligopoly pricing, platform strategy), <strong>16 Political Economy &amp; Institutional Economics</strong> (institutions = the rules of the game made binding by enforcement), and <strong>12 Environmental &amp; Resource Economics</strong> (international climate negotiations = a multi-stage Prisoner's Dilemma) all rest on its foundations.</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Dixit &amp; Nalebuff, Thinking Strategically</span>—the best popular entry point: case-driven intuition for games.</li>
+          <li><span class="bk">Avinash Dixit, Games of Strategy / Robert Gibbons, A Primer in Game Theory</span>—the standard textbook and the concise primer.</li>
+          <li><span class="bk">Akerlof (1970), "The Market for Lemons"</span>—the original is only 14 pages long, and it changed economics.</li>
+          <li><span class="bk">Alvin Roth, Who Gets What—and Why</span>—a popular tour of matching markets and mechanism design.</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../03-econometrics/index.html"><span class="pager-dir">← Previous track</span><br><span class="pager-name">Econometrics</span></a>
+        <a href="../05-money-and-banking/index.html"><span class="pager-dir">Next track →</span><br><span class="pager-name">Money &amp; Banking</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../../assets/econ.js"></script>
+<script>
+/* ================= Figure 1-1 Prisoner's Dilemma matrix ================= */
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  var g = document.getElementById("pd-cells");
+  var txt = document.getElementById("pd-txt");
+  if (!g || !txt) return;
+  // cells: [your sentence, partner's sentence, note]
+  var cells = [
+    { x: 320, y: 140, my: "1 year", op: "1 year", note: "Both stay silent: 1 year each. This is the best outcome for the two of you, but it is unstable—each of you has an incentive to confess." },
+    { x: 455, y: 140, my: "10 years", op: "released", note: "You stay silent, your partner confesses: you get 10 years, he walks free. You lost your bet on his loyalty." },
+    { x: 320, y: 265, my: "released", op: "10 years", note: "You confess, your partner stays silent: you walk free, he gets 10 years. His silence became your stepping-stone." },
+    { x: 455, y: 265, my: "3 years", op: "3 years", note: "Both confess: 3 years each. This is the Nash equilibrium—and the inevitable ending of this game." }
+  ];
+  var rects = [];
+  cells.forEach(function (c, i) {
+    var r = document.createElementNS(NS, "rect");
+    r.setAttribute("x", c.x); r.setAttribute("y", c.y);
+    r.setAttribute("width", 135); r.setAttribute("height", 115);
+    r.setAttribute("fill", "#ffffff"); r.setAttribute("stroke", "#ddd6fe"); r.setAttribute("stroke-width", 2);
+    r.setAttribute("rx", 8); r.style.cursor = "pointer";
+    r.setAttribute("tabindex", "0");
+    r.setAttribute("role", "button");
+    r.setAttribute("aria-label", "See the outcome: you get " + c.my + ", your partner gets " + c.op);
+    var t1 = document.createElementNS(NS, "text");
+    t1.setAttribute("x", c.x + 67); t1.setAttribute("y", c.y + 34);
+    t1.setAttribute("text-anchor", "middle"); t1.setAttribute("class", "chart-label");
+    t1.textContent = "You: " + c.my;
+    var t2 = document.createElementNS(NS, "text");
+    t2.setAttribute("x", c.x + 67); t2.setAttribute("y", c.y + 58);
+    t2.setAttribute("text-anchor", "middle"); t2.setAttribute("class", "chart-label");
+    t2.textContent = "Partner: " + c.op;
+    g.appendChild(r); g.appendChild(t1); g.appendChild(t2);
+    rects.push(r);
+    function pick() {
+      rects.forEach(function (rr) { rr.setAttribute("stroke", "#ddd6fe"); rr.setAttribute("fill", "#ffffff"); });
+      r.setAttribute("stroke", "#7c3aed"); r.setAttribute("fill", "#f5f3ff");
+      txt.textContent = c.note;
+    }
+    r.addEventListener("click", pick);
+    r.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); pick(); }
+    });
+  });
+})();
+
+/* ================= Figure 2-1 Nash equilibrium detector ================= */
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  var games = {
+    g1: {
+      name: "Coordination (Movie / Home)",
+      row: ["Movie", "Home"],
+      col: ["Movie", "Home"],
+      // pay[r][c] = [row player's payoff, column player's payoff]
+      pay: [[[3, 3], [0, 0]], [[0, 0], [2, 2]]],
+      note: "Two Nash equilibria: (Movie, Movie) and (Home, Home). (Movie, Movie) has the higher total payoff, but if the other player expects you to stay home, staying home is your best response—when coordination fails, you both settle for 0."
+    },
+    g2: {
+      name: "Battle of the Sexes",
+      row: ["Football", "Ballet"],
+      col: ["Football", "Ballet"],
+      pay: [[[3, 2], [1, 1]], [[0, 0], [2, 3]]],
+      note: "Two equilibria: (Football, Football) makes him happier; (Ballet, Ballet) makes her happier. Being together beats being apart, but 'where to go' itself becomes the game—hence the need for coordination devices (convention, first-mover advantage, communication)."
+    }
+  };
+  var cur = "g1", shown = false;
+  var g = document.getElementById("ne-cells");
+  var t1 = document.getElementById("ne-txt1");
+  var t2 = document.getElementById("ne-txt2");
+  if (!g || !t1 || !t2) return;
+  function px(c) { return 320 + c * 140; }
+  function py(r) { return 140 + r * 115; }
+  function render() {
+    var gm = games[cur];
+    while (g.firstChild) g.removeChild(g.firstChild);
+    shown = false;
+    for (var r = 0; r < 2; r++) {
+      for (var c = 0; c < 2; c++) {
+        var rect = document.createElementNS(NS, "rect");
+        rect.setAttribute("x", px(c)); rect.setAttribute("y", py(r));
+        rect.setAttribute("width", 130); rect.setAttribute("height", 100);
+        rect.setAttribute("fill", "#fff"); rect.setAttribute("stroke", "#ddd6fe");
+        rect.setAttribute("stroke-width", 2); rect.setAttribute("rx", 8);
+        rect.setAttribute("data-r", r); rect.setAttribute("data-c", c);
+        g.appendChild(rect);
+        var tx = document.createElementNS(NS, "text");
+        tx.setAttribute("x", px(c) + 65); tx.setAttribute("y", py(r) + 58);
+        tx.setAttribute("text-anchor", "middle"); tx.setAttribute("class", "chart-label");
+        tx.textContent = "(" + gm.pay[r][c][0] + ", " + gm.pay[r][c][1] + ")";
+        g.appendChild(tx);
+      }
+    }
+    // labels
+    var lbls = [
+      { x: 195, y: py(0) + 58, t: gm.row[0] }, { x: 195, y: py(1) + 58, t: gm.row[1] },
+      { x: px(0) + 65, y: 128, t: gm.col[0] }, { x: px(1) + 65, y: 128, t: gm.col[1] }
+    ];
+    lbls.forEach(function (l) {
+      var t = document.createElementNS(NS, "text");
+      t.setAttribute("x", l.x); t.setAttribute("y", l.y);
+      t.setAttribute("text-anchor", "middle"); t.setAttribute("class", "chart-label");
+      t.setAttribute("style", "font-weight:700");
+      t.textContent = l.t;
+      g.appendChild(t);
+    });
+    t1.textContent = "Current: " + gm.name;
+    t2.textContent = "Click \"Highlight Nash equilibria\" to see the result";
+  }
+  function findNE() {
+    var gm = games[cur];
+    var rects = g.querySelectorAll("rect[data-r]");
+    rects.forEach(function (rect) { rect.setAttribute("fill", "#fff"); rect.setAttribute("stroke", "#ddd6fe"); });
+    var count = 0;
+    for (var r = 0; r < 2; r++) {
+      for (var c = 0; c < 2; c++) {
+        var v = gm.pay[r][c];
+        var isNE = true;
+        for (var r2 = 0; r2 < 2; r2++) if (gm.pay[r2][c][0] > v[0]) isNE = false;
+        for (var c2 = 0; c2 < 2; c2++) if (gm.pay[r][c2][1] > v[1]) isNE = false;
+        if (isNE) {
+          var el = g.querySelector('rect[data-r="' + r + '"][data-c="' + c + '"]');
+          if (el) { el.setAttribute("fill", "#ede9fe"); el.setAttribute("stroke", "#7c3aed"); el.setAttribute("stroke-width", 4); }
+          count++;
+        }
+      }
+    }
+    t1.textContent = "Found " + count + " Nash equilibria (purple cells)";
+    t2.textContent = gm.note;
+  }
+  document.getElementById("ne-g1").addEventListener("click", function () { cur = "g1"; toggle(); render(); });
+  document.getElementById("ne-g2").addEventListener("click", function () { cur = "g2"; toggle(); render(); });
+  function toggle() {
+    document.getElementById("ne-g1").classList.toggle("ghost", cur !== "g1");
+    document.getElementById("ne-g2").classList.toggle("ghost", cur !== "g2");
+    document.getElementById("ne-g1").setAttribute("aria-pressed", cur === "g1" ? "true" : "false");
+    document.getElementById("ne-g2").setAttribute("aria-pressed", cur === "g2" ? "true" : "false");
+  }
+  document.getElementById("ne-find").addEventListener("click", findNE);
+  render();
+})();
+
+/* ================= Figure 4-1 Market for lemons ================= */
+(function () {
+  var slider = document.getElementById("lm-q");
+  var out = document.getElementById("lm-o");
+  if (!slider) return;
+  // Internal units: 10,000s of yuan (PMAX = 12 means 120,000 yuan)
+  var X0 = 70, X1 = 600, PMAX = 12;
+  function px(v) { return X0 + v / PMAX * (X1 - X0); }
+  function yuan(v) { return Math.round(v * 10000).toLocaleString("en-US"); }
+  function draw() {
+    var q = parseFloat(slider.value) / 100;
+    out.textContent = Math.round(q * 100) + "%";
+    // Stage 1: the buyer offers the expected value; good cars stay in the market only if the offer >= 7 (i.e. 70,000 yuan)
+    var price = 10 * (1 - q) + 4 * q;
+    var goodIn = price >= 7;
+    var status = document.getElementById("lm-status");
+    var sub = document.getElementById("lm-sub");
+    if (!goodIn) {
+      price = 4; // once good cars exit, only lemons remain; the offer falls to the lemons' expected value
+      status.textContent = "Market collapse: all good cars have exited; only lemons remain";
+      sub.textContent = "Offer 40,000 yuan < good-car floor 70,000 yuan → good-car sellers leave at a loss → lemon share 100% → offer falls to 40,000 yuan";
+    } else if (q > 0.3) {
+      status.textContent = "Adverse selection at work: good cars are being squeezed out";
+      sub.textContent = "Lemon share " + Math.round(q * 100) + "%, buyer's offer " + yuan(price) + " yuan, closing in on the good-car floor of 70,000 yuan";
+    } else {
+      status.textContent = "The market still functions";
+      sub.textContent = "Lemon share " + Math.round(q * 100) + "%, buyer's offer " + yuan(price) + " yuan ≥ 70,000, good cars stay in the market for now";
+    }
+    var bar = document.getElementById("lm-price");
+    bar.setAttribute("width", Math.max(2, px(price) - X0));
+    bar.setAttribute("fill", goodIn ? "#7c3aed" : "#dc2626");
+    var pT = document.getElementById("lm-p");
+    pT.setAttribute("x", Math.min(X1 - 30, Math.max(X0 + 30, px(price) / 2 + X0 / 2)));
+    var t7 = document.getElementById("lm-th7");
+    t7.setAttribute("x1", px(7)); t7.setAttribute("x2", px(7));
+    var t7t = document.getElementById("lm-th7t");
+    t7t.setAttribute("x", px(7));
+    var t3 = document.getElementById("lm-th3");
+    t3.setAttribute("x1", px(3)); t3.setAttribute("x2", px(3));
+    var t3t = document.getElementById("lm-th3t");
+    t3t.setAttribute("x", px(3));
+    pT.textContent = "Buyer's offer " + yuan(price) + " yuan";
+  }
+  slider.addEventListener("input", draw);
+  draw();
+})();
+</script>
+</body>
+</html>

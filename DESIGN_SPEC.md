@@ -2,6 +2,8 @@
 
 > 本文件是所有分支教程的**唯一编写规范**。写任何一份教程前必须完整阅读本文件与 `assets/econ.css`。
 
+> **英文版**：本库另有与中文版逐页对应的英文版（`en/` 目录，文件夹英文命名，如 `en/01-microeconomics/`），页面骨架、主题色、质检标准与中文版一致；差异：`lang="en"`、共享资源引用为 `../../assets/`、pager 文案为 Previous track / Next track、术语卡中英文互换（英文为主、中文注于 `term-en`）、顶栏以 `topbar-lang` 互链中英文。规范全文见 [en/DESIGN_SPEC.md](en/DESIGN_SPEC.md)。`check.js` 与 `assets/econ.js` 均已支持两种语言。
+
 ## 0. 总原则
 
 1. **纯静态、可离线**：单文件 HTML，不引用任何 CDN / 外部字体 / 外部图片。图表一律用内联 SVG（可由页面内 JS 动态更新），交互用原生 JS。

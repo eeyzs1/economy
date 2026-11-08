@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Urban &amp; Regional Economics · EconLearn Self-Study Path in Economics</title>
+<meta name="description" content="An interactive English tutorial on urban and regional economics: agglomeration economies, bid-rent curves, housing markets, congestion pricing, and regional growth gaps — with interactive figures and self-tests.">
+<link rel="stylesheet" href="../../assets/econ.css">
+</head>
+<body style="--branch:#ea580c">
+<noscript><p class="noscript-tip">The interactive figures and self-tests on this page require JavaScript; without it, the full main text remains perfectly readable.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← Home</a>
+  <div class="topbar-title"><span class="topbar-num">13</span>Urban &amp; Regional Economics</div>
+  <a class="topbar-lang" href="../../13-城市与区域经济学/index.html" hreflang="zh-CN">中文</a>
+  <button class="toc-toggle" aria-expanded="false">Contents</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">Chapters in this track</p>
+    <nav aria-label="Chapter contents">
+      <a href="#overview">Overview &amp; learning goals</a>
+      <a href="#ch1">1 · Why cities exist</a>
+      <a href="#ch2">2 · The internal structure of cities</a>
+      <a href="#ch3">3 · Housing markets</a>
+      <a href="#ch4">4 · Congestion and urban problems</a>
+      <a href="#ch5">5 · Regional gaps and path dependence</a>
+      <a href="#ch6">6 · Urban policy and China's urbanization</a>
+      <a href="#path">Next steps &amp; further reading</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · Self-Study Path in Economics</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">Track 13 · Applied fields</span>
+        <h1>Urban &amp; Regional Economics</h1>
+        <p class="hero-en">城市与区域经济学</p>
+        <p class="hero-lead">More than half the world's population lives in cities, and in China the share is already past two-thirds. This track pursues four questions: Why do people and firms crowd together? Why do cities grow concentric rings inside their borders? Why are big-city houses so expensive and big-city roads so jammed? And why, once some regions have grown rich, is it so hard for them to become poor again?</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">By the end of this track, you will be able to</div>
+        <ul>
+          <li>Explain <strong>agglomeration economies</strong> with Marshall's three mechanisms — sharing, matching, and learning — and show how they combine with congestion costs to pin down the optimal city size</li>
+          <li>Use the <strong>bid-rent curve</strong> to derive land-use patterns in a monocentric city, and predict how a fall in transport costs changes a city's radius and density gradient</li>
+          <li>Use housing <strong>supply and demand elasticity</strong> to explain why population inflows end as rising prices in some cities and expanding quantities in others, and evaluate rent control</li>
+          <li>Use the logic of <strong>externalities</strong> — the gap between marginal social cost and private cost — to derive the price and welfare effects of a congestion charge</li>
+          <li>Use <strong>path dependence, the shadow of agglomeration, and the flying-geese pattern</strong> to explain why regional gaps persist and how industries migrate in sequence</li>
+          <li>Outline the course of China's urbanization, the constraints imposed by its land and hukou (household registration) systems, and reform directions such as linking land quotas to population flows</li>
+        </ul>
+      </div>
+      <div class="prereq">Prerequisites:
+        <a class="badge" href="../01-microeconomics/index.html">01 Microeconomics (externalities, supply &amp; demand)</a>
+        <a class="badge" href="../07-international-economics/index.html">07 International Economics (economies of scale, factor mobility)</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">Chapter 1</span>Why cities exist: agglomeration economies</h2>
+
+      <p><strong>Opening question:</strong> Video calls, shared documents, AI customer service — the "death of distance" has been predicted for thirty years. Yet the offices of the San Francisco Bay Area, the towers of Nanshan in Shenzhen, and the cafés of Zhongguancun in Beijing remain packed. If information can be transmitted at zero cost, why is the most expensive product of all — new knowledge — still produced where people are densest?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: a city is a machine for lowering the cost of interaction</div>
+        <p>Picture a city as a <strong>stock exchange for ideas</strong>: the more valuable the thing being traded and the harder it is to put in writing, the more the "bandwidth" of face-to-face contact is worth. Marshall observed in 1890 that the secrets of a trade are "no longer mysteries, but, as it were, in the air" — when rivals cluster together, one glance at how the others work is worth more than ten reports. So remote technology substitutes for <strong>codifiable information</strong>, while what trades most actively in cities is <strong>tacit knowledge</strong>: intuition, craftsmanship, trust, the nerve to close a deal in person. Fiber optics cannot carry those.</p>
+      </aside>
+
+      <p>Economists distill what firms are willing to pay for crowding together into three mechanisms (the modern statement of Marshallian externalities):</p>
+      <ul>
+        <li><strong>Sharing</strong>: a big city can afford specialized suppliers, testing centers, airport runways, and theaters — enormous fixed costs spread over vast numbers of customers. A small city can never assemble that denominator.</li>
+        <li><strong>Matching</strong>: a deep labor market makes it more likely, and faster, for the right person to meet the right job, so unemployment and vacancies coexist for less time; firms also find complementary suppliers and customers more easily.</li>
+        <li><strong>Learning</strong>: knowledge spillovers — clustering within an industry (localization economies) and urban diversity across industries (urbanization economies) both speed up imitation, mobility, and recombination; young people who move to the city and "learn by doing" accumulate human capital faster than any other way.</li>
+      </ul>
+      <p>The empirical regularity is remarkably robust: <strong>double a city's employment density or population, and productivity rises about 3–8% on average</strong> (the survey range in Rosenthal and Strange). That is the compound interest of agglomeration. But cities have costs too — commuting, congestion, high housing prices, pollution — and it is the balance of benefits and costs that creates the question of an "optimal city size."</p>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Agglomeration Economies</div><span class="term-en">集聚经济</span><div class="term-def">The productivity gains that firms and individuals reap from locating near one another, working through three mechanisms: sharing, matching, and learning. The core variable for explaining why cities exist and how big they become.</div></div>
+        <div class="term"><div class="term-name">Labor Market Pooling</div><span class="term-en">劳动力蓄水池</span><div class="term-def">The deep labor market that forms when many firms in the same industry cluster together: workers who lose a job find the next one quickly, firms short of hands hire quickly, and both sides pay less of the cost of idling.</div></div>
+        <div class="term"><div class="term-name">Localization vs. Urbanization Economies</div><span class="term-en">地方化经济与城市化经济</span><div class="term-def">The first comes from clustering <strong>within one industry</strong> (chips in Silicon Valley, small commodities in Yiwu); the second from <strong>cross-industry</strong> urban diversity (finance, law, media, and design feeding one another in New York).</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 1-1 · Optimal city size: agglomeration benefits vs congestion costs</div>
+        <p class="fig-sub">Try it: drag the two sliders and watch the peak of the net-benefit curve — the optimal city size N* — move. Push transport infrastructure down to the minimum and N* shrinks to roughly five million: the economic portrait of a chronically gridlocked city.</p>
+        <figure class="fig-canvas">
+          <svg id="gb-svg" viewBox="0 0 640 410" role="img" aria-label="Optimal city size chart: per-capita agglomeration benefits rise with city population and flatten out, per-capita congestion costs rise ever faster, and the difference — per-capita net benefit — peaks at the optimal city population.">
+            <line class="gridline" x1="64" y1="248" x2="608" y2="248"/>
+            <line class="gridline" x1="64" y1="152" x2="608" y2="152"/>
+            <line class="gridline" x1="64" y1="56" x2="608" y2="56"/>
+            <text class="chart-label-en" x="58" y="252" text-anchor="end">50</text>
+            <text class="chart-label-en" x="58" y="156" text-anchor="end">100</text>
+            <text class="chart-label-en" x="58" y="60" text-anchor="end">150</text>
+            <line class="gridline" x1="189.5" y1="56" x2="189.5" y2="344"/>
+            <line class="gridline" x1="329" y1="56" x2="329" y2="344"/>
+            <line class="gridline" x1="468.5" y1="56" x2="468.5" y2="344"/>
+            <text class="chart-label-en" x="189.5" y="362" text-anchor="middle">5</text>
+            <text class="chart-label-en" x="329" y="362" text-anchor="middle">10</text>
+            <text class="chart-label-en" x="468.5" y="362" text-anchor="middle">15</text>
+            <text class="chart-label" x="336" y="390" text-anchor="middle">City population N (millions)</text>
+            <text class="chart-label" x="18" y="200" text-anchor="middle" transform="rotate(-90 18 200)">Benefit / cost per person (index)</text>
+            <line class="axis" x1="64" y1="344" x2="608" y2="344"/>
+            <line class="axis" x1="64" y1="344" x2="64" y2="56"/>
+            <text class="chart-label" x="70" y="18" style="fill:#0d9488">— Agglomeration benefits</text>
+            <text class="chart-label" x="180" y="18" style="fill:#2f6fdb">— Congestion costs</text>
+            <text class="chart-label" x="292" y="18" style="fill:#7c3aed">— Net benefit per person</text>
+            <text id="gb-read1" class="chart-title-sm" x="606" y="16" text-anchor="end"></text>
+            <text id="gb-read2" class="chart-label" x="606" y="38" text-anchor="end"></text>
+            <line id="gb-vline" y1="56" y2="344" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <path id="gb-ab" class="curve curve-c3"/>
+            <path id="gb-cc" class="curve curve-c1"/>
+            <path id="gb-nb" class="curve curve-c4"/>
+            <circle id="gb-dot" r="6" class="dot" fill="#ea580c"/>
+            <text id="gb-vlab" class="chart-title-sm" y="74" text-anchor="middle" fill="#ea580c"></text>
+            <text id="gb-lab-ab" class="chart-label" text-anchor="end" style="fill:#0d9488">Agglomeration benefits</text>
+            <text id="gb-lab-cc" class="chart-label" text-anchor="end" style="fill:#2f6fdb">Congestion costs</text>
+            <text id="gb-lab-nb" class="chart-label" text-anchor="end" style="fill:#7c3aed">Net benefit</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="gb-agg">Agglomeration strength (knowledge spillovers)</label><input type="range" id="gb-agg" min="60" max="140" step="5" value="100"><output id="gb-oagg" for="gb-agg">100%</output></div>
+          <div class="ctrl"><label for="gb-con">Transport infrastructure level</label><input type="range" id="gb-con" min="0" max="100" step="5" value="50"><output id="gb-ocon" for="gb-con">50</output></div>
+        </div>
+        <figcaption>How to read this figure: the agglomeration-benefit curve rises with diminishing marginal returns (crowding dilutes spillovers), while congestion costs accelerate with size (roads are a commons). At the peak of net benefit, the marginal agglomeration benefit exactly equals the marginal congestion cost — that is the optimal city size. Better infrastructure flattens the congestion curve and shifts the optimum to the right: metros and expressways let cities "grow bigger." And the stronger agglomeration is (as in knowledge-intensive industries), the more congestion is worth enduring.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The Shenzhen–Dongguan electronics corridor</div>
+        <p>In Huaqiangbei, more than two hundred suppliers of a single chip crowd within walking distance of one another; the local saying runs "blueprints on Monday, prototype by Wednesday." Northward along National Highway 107, Shenzhen's R&amp;D, Dongguan's molds and injection molding, and Huizhou's assembly line up into a single corridor. All three mechanisms run on the same road: <strong>sharing</strong> (testing centers, logistics warehouses, and component markets open to everyone), <strong>matching</strong> (engineers change jobs without leaving the street, and vacancies are filled the same day), and <strong>learning</strong> (process improvements in the supply chain spread at trade shows and over dinner). This is why a new phone travels from design to mass production faster in the Pearl River Delta than in most countries.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Information technology will dissolve the city."</strong> — After every communications revolution in history (telegraph, telephone, internet), cities came out larger: the more advanced the technology, the scarcer the uncodifiable inputs of creativity and trust become, and those depend most on face-to-face contact. A second pitfall is <strong>confusing agglomeration with congestion</strong>: agglomeration benefits are the source of productivity, while congestion is a negative externality created by excess demand for roads. Congestion is cured by pricing and management — there is no need, and no reason, to abolish agglomeration itself.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.1</span>With remote work and video calls spreading, which claim best fits the economic evidence?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Cities will gradually die out and agglomeration benefits will fall to zero</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Tacit knowledge conveyed face to face remains hard to replace, and the tech industries that depend most on it are themselves highly clustered</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Once firms disperse their offices, productivity inevitably rises</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Agglomeration economies matter only for manufacturing and can be ignored for services</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> After every prediction of the "death of distance," cities emerged stronger — the same after the telephone and the internet. Of the three mechanisms — sharing, matching, learning — the transmission of tacit knowledge and trust depends most on face-to-face contact; and software and finance, the industries that "should" be most remote-friendly, are precisely the most clustered (B is correct). A and C contradict the evidence; D has the direction wrong: services, especially knowledge-intensive ones, depend on agglomeration more than manufacturing does — factories, if anything, can move to the suburbs.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.2</span>In Figure 1-1, if a city greatly improves its commuting infrastructure (the congestion-cost curve shifts down), what happens to the optimal city size and the peak net benefit per person?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Optimal size falls and the peak benefit falls</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>Optimal size rises and the peak benefit falls</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>Optimal size rises and the peak benefit rises too</button>
+          <button class="quiz-opt"><span class="opt-key">D</button>Neither changes; infrastructure affects only the distribution of population, not city size</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Once the congestion-cost curve is flattened, the peak of the net-benefit curve (benefit minus cost) moves right and up: the city "pays" at a larger size and the average resident is better off (C). That is exactly the mechanism by which metros and expressways let cities grow. A, B, and D either miss that lower costs raise net benefit directly, or misunderstand the relation between size and governance.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The root cause of cities is <strong>agglomeration economies</strong>: sharing (spreading fixed costs), matching (finding and being found faster), and learning (knowledge spillovers).</li>
+          <li>Empirical regularity: doubling city size raises productivity by roughly 3–8% on average; but congestion, housing prices, and pollution accelerate with size.</li>
+          <li>The optimal city size sits where <strong>marginal agglomeration benefit = marginal congestion cost</strong>; better transport technology and governance push the optimum up.</li>
+          <li>What clusters is "interaction," not population as such — you cannot cure urban ills by abolishing agglomeration.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">Chapter 2</span>The internal structure of cities: bid rent and land use</h2>
+
+      <p><strong>Opening question:</strong> Shrink the satellite image of any Chinese city and look: office towers and malls huddle downtown, housing spreads outward, factories and logistics parks retreat to the fringe, and beyond them lies farmland. Nobody planned these "concentric rings" (most cities never were), and yet they are exactly what thousands of firms and households <strong>bargained into being</strong>. What is the mechanism underneath?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: the land market is an auction that never ends</div>
+        <p>For every plot, whoever can earn the most from it can bid the most for it. Business firms stack their employees, clients, and meetings at the center; the interaction costs saved are enormous, so they bid fiercest for central land. Households would also like to live close, but the "output" per square meter of an apartment is far below that of an office floor, so they lose the bidding and settle for the middle ring, trading a longer commute for cheaper land. Agriculture does not care about commuting at all — it looks only at soil and irrigation, and its bid is a nearly flat line; that line marks the city's outer edge. <strong>The gradient by which land rent falls with distance is the shadow price of commuting.</strong></p>
+      </aside>
+
+      <div class="formula">R(d) = R(0) − t · d<span class="f-note">R(d): the bid rent at distance d from the center; t: the commuting cost per unit of distance (time + money). The slope of the curve is −t: the more distance-sensitive a user is (the larger the t), the steeper the curve — and the more stubbornly it clings to the center.</span></div>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Bid Rent Function</div><span class="term-en">竞租函数</span><div class="term-def">The maximum land rent that a given class of user (commercial, residential, industrial, agricultural) is willing to pay at each location — just high enough to leave economic profit at zero there. Different uses have bid-rent curves of different slopes; the steepest takes the center.</div></div>
+        <div class="term"><div class="term-name">Monocentric City Model</div><span class="term-en">单中心城市模型</span><div class="term-def">The Alonso–Muth–Mills model: employment is assumed to concentrate in the central business district (CBD), households trade off "cheap housing" against "expensive commuting," and the equilibrium is a concentric structure in which rent and density decline with distance.</div></div>
+        <div class="term"><div class="term-name">Reservation Rent</div><span class="term-en">保留租金</span><div class="term-def">The rent offered by land's next-best use (usually agriculture). Once urban bid rent falls to the reservation rent, the city stops expanding — the intersection of the two fixes the city boundary.</div></div>
+        <div class="term"><div class="term-name">Central Place Theory</div><span class="term-en">中心地理论</span><div class="term-def">Christaller (1933): goods carry a "threshold" population and a "range" of service, so settlements form a hierarchy — the convenience store at the village entrance, the supermarket in the town, the department store and top-tier hospital in the city, the airport at the regional hub. It explains the <strong>urban system</strong> and complements the bid-rent model, which explains the structure of a single city.</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 2-1 · Bid-rent curves and urban structure: transport costs flatten the rent gradient</div>
+        <p class="fig-sub">Try it: drag "relative transport cost" (building metros and expressways, or remote-work hybrid commuting, lowers it) and watch the business-district radius and the city boundary move; then drag "housing demand pressure" (population and income flowing in) and see how an upward shift of the residential bid rent pushes the city outward.</p>
+        <figure class="fig-canvas">
+          <svg id="br-svg" viewBox="0 0 640 400" role="img" aria-label="Bid-rent chart: the rent bids of commercial and residential uses both decline with distance from the city center, and where they meet the flat agricultural rent is the city boundary; when transport costs fall, the curves flatten and the boundary moves outward.">
+            <line class="gridline" x1="64" y1="251.7" x2="608" y2="251.7"/>
+            <line class="gridline" x1="64" y1="173.3" x2="608" y2="173.3"/>
+            <line class="gridline" x1="64" y1="95" x2="608" y2="95"/>
+            <text class="chart-label-en" x="58" y="255.7" text-anchor="end">100</text>
+            <text class="chart-label-en" x="58" y="177.3" text-anchor="end">200</text>
+            <text class="chart-label-en" x="58" y="99" text-anchor="end">300</text>
+            <line class="gridline" x1="200" y1="48" x2="200" y2="330"/>
+            <line class="gridline" x1="336" y1="48" x2="336" y2="330"/>
+            <line class="gridline" x1="472" y1="48" x2="472" y2="330"/>
+            <text class="chart-label-en" x="200" y="350" text-anchor="middle">5</text>
+            <text class="chart-label-en" x="336" y="350" text-anchor="middle">10</text>
+            <text class="chart-label-en" x="472" y="350" text-anchor="middle">15</text>
+            <text class="chart-label-en" x="604" y="350" text-anchor="middle">20</text>
+            <text class="chart-label" x="336" y="378" text-anchor="middle">Distance from center d (km)</text>
+            <text class="chart-label" x="18" y="189" text-anchor="middle" transform="rotate(-90 18 189)">Land rent R (yuan/m² per month)</text>
+            <line class="axis" x1="64" y1="330" x2="608" y2="330"/>
+            <line class="axis" x1="64" y1="330" x2="64" y2="48"/>
+            <text id="br-read1" class="chart-title-sm" x="606" y="16" text-anchor="end"></text>
+            <text id="br-read2" class="chart-label" x="606" y="38" text-anchor="end"></text>
+            <rect id="br-zc" x="64" y="48" width="0" height="282" fill="#ea580c" class="area-fill"/>
+            <rect id="br-zr" x="64" y="48" width="0" height="282" fill="#0d9488" class="area-fill"/>
+            <line x1="64" y1="290.8" x2="608" y2="290.8" stroke="#94a3b8" stroke-width="2" stroke-dasharray="7 5"/>
+            <text class="chart-label" x="602" y="284" text-anchor="end" style="fill:#64748b">Agricultural rent A (reservation rent)</text>
+            <line id="br-v1" y1="48" y2="330" class="gridline"/>
+            <line id="br-v2" y1="48" y2="330" class="gridline"/>
+            <path id="br-comm" class="curve curve-c1"/>
+            <path id="br-res" class="curve curve-c3"/>
+            <text id="br-lc" class="chart-label" style="fill:#2f6fdb">Commercial bid rent</text>
+            <text id="br-lr" class="chart-label" style="fill:#0d9488">Residential bid rent</text>
+            <text id="br-z1" class="chart-label" y="320" text-anchor="middle" data-t="Business"></text>
+            <text id="br-z2" class="chart-label" y="320" text-anchor="middle" data-t="Residential"></text>
+            <text id="br-z3" class="chart-label" y="320" text-anchor="middle" data-t="Agriculture / green" style="fill:#64748b"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="br-tc">Relative transport cost</label><input type="range" id="br-tc" min="50" max="180" step="5" value="100"><output id="br-otc" for="br-tc">1.00×</output></div>
+          <div class="ctrl"><label for="br-hd">Housing demand pressure (bid-rent shift up)</label><input type="range" id="br-hd" min="0" max="120" step="5" value="0"><output id="br-ohd" for="br-hd">+0 yuan</output></div>
+        </div>
+        <figcaption>How to read this figure: the commercial bid rent is steepest — interaction value is the most distance-sensitive, so business takes the center; the residential bid rent is gentler and takes the middle ring; the agricultural reservation rent is a flat line, and its intersection with the residential bid rent is the city boundary. When transport cost t falls, all curves flatten: central rent falls in relative terms, edge rent rises, and the city spreads out — precisely the geometry of the suburbanization that America's interstate highways produced in the 20th century.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Beijing: the ring roads are contour lines of the rent gradient</div>
+        <p>Financial Street and the Guomao CBD press against the Second and Third Ring Roads; Huilongguan and Tiantongyuuan, beyond the Fifth Ring, absorb the commuting flows and are known as "bedroom towns"; farther out, Yanjiao catches spillover demand thanks to the price gap across the Chaobai River. The gradient by which rent and house prices fall with distance from Tiananmen is plainly visible: each new subway station outward lifts the rent step along the line a notch; the "rent cliffs" along the Batong Line and Line 6 are local jumps of the bid-rent curve at rail stops. The cheapest way to read a city is its housing-price map — a bid-rent curve drawn by millions of households voting with real money.</p>
+      </aside>
+
+      <aside class="callout history">
+        <div class="callout-title">A little history · From von Thünen's rings to Alonso</div>
+        <p>In 1826, von Thünen imagined an "isolated state" and explained why farms form concentric rings around a city: milk and vegetables perish and must sit in the near suburbs, grain travels well and can sit far away. In the 1960s, Alonso swapped "goods in transit" for "people commuting," and von Thünen's rings became the theory of urban land use — the monocentric model has been the skeleton of urban economics ever since. One hundred and forty years apart, the two models say the same sentence: <strong>transport costs carve spatial structure.</strong></p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Central land is expensive because land there is scarce."</strong> — Wrong. What prices land is <strong>accessibility</strong>: the number of interactions a plot of land "throughputs" per day. A central location of a given area hosts more meetings, deals, and collaborations than a suburban one by orders of magnitude, so its price is naturally higher. A second pitfall is <strong>"cities are forever monocentric"</strong>: the model concentrates employment in the CBD only to keep the analysis simple; in reality, the suburbanization of jobs, polycentricity, and the rise of subcenters are themselves the product of bid-rent forces meeting new technologies (rail, highways, remote work) — a refinement of the model, not a refutation.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.1</span>Why do commercial office activities usually win the bidding for central land?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Business people enjoy the bustling urban scenery</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Business activity is the most sensitive to face-to-face interaction and commuting, so a central location saves it the most — its bid-rent offer is the highest</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The government decrees that office towers must be built downtown</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Housing and agriculture are physically impossible downtown</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Bid rent is won by "distance sensitivity." High-value meetings and collaboration happen in an office tower every hour; compressing distance saves the most money there, so business will pay the highest rent for the center (B). A is an outcome, not a cause; C contradicts the facts (the CBD was bid into being, not planned); D is plainly wrong — there is housing downtown too (alleyway courtyards, apartments); it has simply been outbid for the best locations.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.2</span>If a rapid rail line is built between a city and its outskirts, sharply cutting the commuting cost per kilometer, the bid-rent model predicts:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Bid-rent curves steepen and the city contracts toward the center</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The rent gradient flattens, the city boundary moves outward, and population and housing spread more thinly</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Central rent rises and suburban rent falls, making the city more monocentric</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>The land-use pattern does not change at all; commuting simply gets faster</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The bid-rent slope equals the transport cost per unit distance. When t falls, the curves flatten: the opportunity cost of living far away drops, households move outward, the boundary is pushed out, and a lower-density sprawl forms (B; American suburbanization after the interstates is exactly this). A and C have the direction backwards — cheap commuting weakens rather than strengthens the center's advantage. D ignores how demand responds to relative prices: when distance gets cheaper, people consume more of it.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The land market allocates space by "who can earn the most": bid rent is the highest offer that still leaves economic profit at zero, with a slope set by commuting and interaction costs.</li>
+          <li>Equilibrium structure: the most distance-sensitive use (business) takes the center, housing the middle ring, and the agricultural reservation rent draws the city boundary.</li>
+          <li>Falling transport costs flatten the rent gradient → the city spreads, expands, and loses density; this is also the economic account of suburbanization.</li>
+          <li>Central place theory adds the hierarchy between cities: threshold populations and service ranges generate the village–town–city–regional-hub system.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">Chapter 3</span>Housing markets: where house prices come from</h2>
+
+      <p><strong>Opening question:</strong> The same 90-square-meter apartment: in Hegang it lists for 50,000 yuan and draws few takers; in Shenzhen it lists for 6 million and buyers queue. Building-material costs differ between the two cities by only a few hundred yuan per square meter — so where does the 5.95-million-yuan gap come from?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: a house = a building + a location</div>
+        <p>Split a home into two things: the <strong>building</strong> (which can be produced anywhere, at costs that converge nationwide) and the <strong>location</strong> (which cannot move and is priced where it sits). Nearly all of the price gap comes from the second part. And the price of land is set by three forces pulling against one another: <strong>demand</strong> (wages, jobs, schools and hospitals, climate), <strong>supply</strong> (developable land, geographic constraints, the severity of regulation), and <strong>finance</strong> (interest rates, credit, expectations). The decisive factor is supply elasticity: in cities that can build freely, population inflows mostly become <strong>new units</strong>; in cities that cannot, inflows become <strong>rising prices</strong>.</p>
+      </aside>
+
+      <p>The most common yardstick for judging whether prices are "out of line" is the price-to-income ratio:</p>
+      <div class="formula">Price-to-income ratio = median transaction price of a home ÷ median household disposable income<span class="f-note">International experience falls roughly between 3 and 6; China's first-tier cities have long run above 20 — differences in measurement (floor area, income, urban vs. rural) and expectations of rapid growth push the sensible level up, but readings in the tens still signal that supply constraints and overdrawn expectations coexist.</span></div>
+
+      <p>In the long run, households "vote with their feet" until real living standards equalize across cities — this is the logic of <strong>spatial equilibrium</strong> (the Rosen–Roback framework): a high-wage city must "charge" through high housing prices or lower amenity, or people keep pouring in; conversely, a city with a pleasant climate can "pay lower wages." Once you understand this, "why are wages low in Kunming" and "why are house prices high in Shenzhen" stop being separate surprises — they are three readings from the same price system.</p>
+
+      <p>Housing is also an <strong>asset</strong>: in theory its price equals the present value of future rents. When expectations of rising prices fulfill themselves and prices systematically detach from rental fundamentals, a bubble starts to grow — Japan in 1990 (low interest rates + the faith that "land never falls") and the United States in 2008 (subprime expansion) are two textbook bursts. The <strong>price-to-rent ratio</strong> is the most intuitive dashboard for monitoring valuation.</p>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Housing Supply Elasticity</div><span class="term-en">住房供给弹性</span><div class="term-def">The percentage change in the quantity of housing (new supply) for a 1% change in demand. It depends on terrain and regulation: high-elasticity cities absorb demand with quantity, low-elasticity cities absorb it with price.</div></div>
+        <div class="term"><div class="term-name">Price-to-Income Ratio</div><span class="term-en">房价收入比</span><div class="term-def">The ratio of the median home price to median household income, measuring payment burden and valuation. Cross-city comparisons must watch differences in income definition, floor-area convention, and growth expectations.</div></div>
+        <div class="term"><div class="term-name">Spatial Equilibrium</div><span class="term-en">空间均衡</span><div class="term-def">Households move between cities until "nominal wage − cost of living + amenities" equalizes. It puts wages, house prices, and amenity into a single equation — the unified pricing framework of urban economics.</div></div>
+        <div class="term"><div class="term-name">Rent Control</div><span class="term-en">租金管制</span><div class="term-def">A price control that caps rents. It protects sitting tenants in the short run, but in the long run weakens the incentive to build and maintain, causes mismatch, and breeds black markets — the theory of price ceilings applied directly to housing.</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 3-1 · Housing supply elasticity compared: one demand wave, two endings</div>
+        <p class="fig-sub">Try it: drag the "demand shift" (imagine population and income flowing in continuously) and compare the new equilibria on the two supply curves: in the easy-to-build city (flat supply) the price rises a little and the quantity a lot; in the supply-restricted city (steep supply) the quantity barely moves and the price surges.</p>
+        <figure class="fig-canvas">
+          <svg id="hs-svg" viewBox="0 0 640 400" role="img" aria-label="Housing market supply-and-demand chart: when the demand curve shifts right, a flat elastic supply line produces a small price rise and a large quantity increase, while a steep inelastic supply line produces a large price rise and almost no quantity change.">
+            <line class="gridline" x1="64" y1="249.4" x2="608" y2="249.4"/>
+            <line class="gridline" x1="64" y1="168.9" x2="608" y2="168.9"/>
+            <line class="gridline" x1="64" y1="88.3" x2="608" y2="88.3"/>
+            <text class="chart-label-en" x="58" y="253.4" text-anchor="end">40</text>
+            <text class="chart-label-en" x="58" y="172.9" text-anchor="end">80</text>
+            <text class="chart-label-en" x="58" y="92.3" text-anchor="end">120</text>
+            <line class="gridline" x1="200" y1="48" x2="200" y2="330"/>
+            <line class="gridline" x1="336" y1="48" x2="336" y2="330"/>
+            <line class="gridline" x1="472" y1="48" x2="472" y2="330"/>
+            <text class="chart-label-en" x="200" y="350" text-anchor="middle">40</text>
+            <text class="chart-label-en" x="336" y="350" text-anchor="middle">80</text>
+            <text class="chart-label-en" x="472" y="350" text-anchor="middle">120</text>
+            <text class="chart-label" x="336" y="378" text-anchor="middle">Housing quantity Q (10,000s of units)</text>
+            <text class="chart-label" x="18" y="189" text-anchor="middle" transform="rotate(-90 18 189)">Price P (10,000s of yuan per unit)</text>
+            <line class="axis" x1="64" y1="330" x2="608" y2="330"/>
+            <line class="axis" x1="64" y1="330" x2="64" y2="48"/>
+            <text id="hs-read1" class="chart-title-sm" x="606" y="16" text-anchor="end"></text>
+            <text id="hs-read2" class="chart-label" x="606" y="38" text-anchor="end"></text>
+            <path class="curve" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 5" d="M64 128.6 L608 289.7"/>
+            <path class="curve curve-c3" d="M64 249.4 L608 195.6"/>
+            <path class="curve curve-c2" stroke-dasharray="8 5" d="M64 249.4 L290.7 48"/>
+            <text class="chart-label" x="602" y="304" text-anchor="end" style="fill:#64748b">Initial demand D₀</text>
+            <text id="hs-ld" class="chart-label" style="fill:#2f6fdb">Demand D (after inflow)</text>
+            <text class="chart-label" x="470" y="200" text-anchor="middle" style="fill:#0d9488">Supply S-elastic (easy to build)</text>
+            <text class="chart-label" x="120" y="187" text-anchor="end" style="fill:#ea580c">Supply S-inelastic (regulated)</text>
+            <path id="hs-d1" class="curve curve-c1"/>
+            <line id="hs-g1" class="gridline"/>
+            <line id="hs-g2" class="gridline"/>
+            <circle id="hs-e1" r="6" class="dot" fill="#0d9488"/>
+            <circle id="hs-e2" r="6" class="dot" fill="#ea580c"/>
+            <text id="hs-p1" class="chart-label-en" x="58" text-anchor="end"></text>
+            <text id="hs-p2" class="chart-label-en" x="58" text-anchor="end"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="hs-shift">Demand shift (population and income inflow)</label><input type="range" id="hs-shift" min="-40" max="40" step="5" value="0"><output id="hs-oshift" for="hs-shift">+0</output></div>
+        </div>
+        <figcaption>How to read this figure: the two supply curves start from the same point. When demand shifts right by the same amount, under elastic supply the equilibrium "slides sideways" along the flat curve (quantity up a lot, price up a little); under inelastic supply it "jumps vertically" along the steep curve (price up a lot, quantity almost unchanged). Research by Glaeser and others shows that the divergence of American house prices by city since the 1990s (San Francisco vs. Houston) comes mainly from differences in supply restrictions, not differences in demand.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Hegang and Shenzhen: two faces of one coin</div>
+        <p>Hegang grew on coal; when the resource ran out, population kept leaving, the demand curve shifted left year after year, and in 2019 the city went viral for "50,000 yuan an apartment" — the shape of a bid-rent curve collapsing wholesale in a shrinking city. Shenzhen's population rose from just over 300,000 to more than 17 million in forty years, and its demand curve surged right; but buildable land is doubly constrained by geography and planning quotas, so its supply curve is nearly vertical — price became the only way to clear the market. Together the two cities confirm that house prices are jointly set by <strong>local labor markets and housing-supply institutions</strong>, and that a "one-price-fits-the-nation" housing debate usually asks the wrong question.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"High prices are all the fault of greedy developers and scheming speculators."</strong> — Greed is everywhere; why can't Houston be speculated up while Shenzhen can? Supply elasticity is the structural variable: without a supply constraint, speculation has nothing to grip; speculation is an <strong>amplifier</strong>, not the <strong>engine</strong>. Blaming morals prescribes the wrong medicine — suppress demand without adding supply and prices will simply rise by another route. A second pitfall is <strong>"rent control protects the poor"</strong>: it does shelter sitting tenants in the short run, but Diamond and colleagues' study of San Francisco found that in the long run control pushes landlords out of the rental market (converting to owner-occupation or selling), maintenance declines, tenants are mismatched, and citywide rents end up higher — rental vouchers and expanding the supply of subsidized rental housing are the better tools for low-income renters.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.1</span>In a city with continuous population inflow but very low housing supply elasticity, demand growth will over the long run turn mainly into:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>A large increase in new units, with prices basically stable</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>A large rise in house and land prices, with limited new quantity</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Both prices and quantity staying stable</button>
+          <button class="quiz-opt"><span class="opt-key">D</button>A steady fall in construction costs</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Low supply elasticity means a nearly vertical supply curve: when demand shifts right, quantity cannot respond and the market clears through price (B) — land rent and house prices absorb the entire demand growth, as in Shenzhen and San Francisco. A is the ending for an elastic (Houston-style) city; C requires supply to expand in step; D is irrelevant to the logic here — construction cost is in fact the part of house prices that differs least across places.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.2</span>On the long-run effects of rent control, the most accurate statement is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Only landlords lose; all tenants gain</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>Control spurs developers to build more rental housing</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>Rental supply shrinks, maintenance declines, tenants are mismatched, and rents on uncontrolled units may end up higher</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Control affects only the luxury segment and has nothing to do with ordinary renters</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> A price cap squeezes returns: landlords exit (converting, selling, leaving units idle), new construction hesitates, repairs are deferred; long-standing tenants hold on to large apartments they dare not leave (mismatch), while newcomers face a scarcer stock and higher uncontrolled rents. The empirical study of San Francisco's 1994 control (Diamond–McQuade–Qian) found the controlled rental stock fell about 15% and citywide rents rose (C). A ignores that there are winners and losers among tenants too; B has the sign backwards; D is wrong — control bites deepest precisely in the ordinary rental market.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>House price = building cost (similar everywhere) + locational land rent (priced on the spot); the gap comes from location, not from bricks.</li>
+          <li><strong>Supply elasticity is the decisive factor</strong>: elastic cities absorb demand with quantity, inelastic cities with price.</li>
+          <li>Spatial equilibrium: wages, house prices, and amenity are readings of one price system — a high-wage city necessarily "charges" through high housing costs.</li>
+          <li>Housing is an asset: watch valuation with the price-to-rent ratio; expectations of appreciation detached from rental fundamentals are the seedbed of a bubble.</li>
+          <li>Rent control protects the sitting stock in the short run and hurts supply and matching in the long run; subsidizing demanders and expanding supply are the better tools.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">Chapter 4</span>Congestion and urban problems: externalities and the congestion charge</h2>
+
+      <p><strong>Opening question:</strong> At morning peak on Beijing's East Third Ring or Chengdu's Second Ring, traffic often crawls below 15 km/h. Each additional car makes every other car a little slower — and nobody pays for it. Why is congestion a textbook "tragedy of the commons"? And why does "building more roads" so often fail to cure it?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: the driver sees only his own bill</div>
+        <p>Every driver about to set out compares <strong>private costs</strong>: his own time and fuel. The delay he imposes on everyone else is not on his bill — that part is the <strong>congestion externality</strong>. So each marginal driver feels the trip is "still worth it however jammed it gets," and traffic keeps growing until private cost swamps the value of the trip, far past the social optimum. Pigou's prescription stands: <strong>write the external cost into the bill</strong> — charge a congestion fee by segment and time of day, set exactly equal to the gap between social and private cost at the optimal flow. Once the price exists, those whose time is valuable pay and rush, those who can shift their schedule yield the road, and the commons acquires an owner.</p>
+      </aside>
+
+      <div class="formula">MSC(q) = MPC(q) + E(q), optimal toll τ* = E(q*) = MSC(q*) − MPC(q*)<span class="f-note">MPC: marginal private cost (the driver's own time and fuel); E(q): the extra delay the q-th vehicle imposes on all road users; τ*: the congestion charge at the socially optimal flow q* — a direct application of the Pigouvian tax from Track 12.</span></div>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Congestion Externality</div><span class="term-en">拥堵外部性</span><div class="term-def">The delay cost a marginal driver imposes on other road users without bearing it himself. The closer traffic is to capacity, the more each added vehicle slows everyone, so the external cost rises ever faster with q.</div></div>
+        <div class="term"><div class="term-name">Congestion Pricing</div><span class="term-en">拥堵费</span><div class="term-def">Charging dynamically by time and road segment for the use of congested roads, so that the marginal driver faces the true social cost. Singapore's ERP and London's congestion charge are the two longest-running cases.</div></div>
+        <div class="term"><div class="term-name">Induced Demand</div><span class="term-en">诱发需求</span><div class="term-def">Road expansion lowers private cost, so trips previously "priced out" by congestion return and some passengers switch to driving; flow climbs back until marginal cost again equals marginal value — the reason "building roads to cure congestion" often fails, known as Downs's law.</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 4-1 · The welfare analysis of a congestion charge: making the marginal driver face the social cost</div>
+        <p class="fig-sub">Try it: drag "externality strength" (how much traffic drags on itself) and "demand strength" (how peak-hour it is), and watch the optimal flow, the congestion charge, and the deadweight-loss triangle move together. Push the external cost to the bottom and the charge visibly shrinks — the lighter cars drag on one another, the closer the optimal toll is to zero; an uncongested road should not be priced at all.</p>
+        <figure class="fig-canvas">
+          <svg id="cg-svg" viewBox="0 0 640 400" role="img" aria-label="Congestion externality chart: the intersection of the demand curve and the marginal private cost curve is the market-equilibrium flow, above the social optimum set where demand crosses marginal social cost; the gap between social and private cost at the optimal flow is the congestion charge, and the triangle beneath the demand curve between the two flows is the deadweight loss.">
+            <line class="gridline" x1="64" y1="259.5" x2="608" y2="259.5"/>
+            <line class="gridline" x1="64" y1="189" x2="608" y2="189"/>
+            <line class="gridline" x1="64" y1="118.5" x2="608" y2="118.5"/>
+            <text class="chart-label-en" x="58" y="263.5" text-anchor="end">60</text>
+            <text class="chart-label-en" x="58" y="193" text-anchor="end">120</text>
+            <text class="chart-label-en" x="58" y="122.5" text-anchor="end">180</text>
+            <line class="gridline" x1="200" y1="48" x2="200" y2="330"/>
+            <line class="gridline" x1="336" y1="48" x2="336" y2="330"/>
+            <line class="gridline" x1="472" y1="48" x2="472" y2="330"/>
+            <text class="chart-label-en" x="200" y="350" text-anchor="middle">50</text>
+            <text class="chart-label-en" x="336" y="350" text-anchor="middle">100</text>
+            <text class="chart-label-en" x="472" y="350" text-anchor="middle">150</text>
+            <text class="chart-label" x="336" y="378" text-anchor="middle">Road traffic flow Q (10,000s of vehicles per hour)</text>
+            <text class="chart-label" x="18" y="189" text-anchor="middle" transform="rotate(-90 18 189)">Cost per trip (yuan)</text>
+            <line class="axis" x1="64" y1="330" x2="608" y2="330"/>
+            <line class="axis" x1="64" y1="330" x2="64" y2="48"/>
+            <text id="cg-read1" class="chart-title-sm" x="606" y="16" text-anchor="end"></text>
+            <text id="cg-read2" class="chart-label" x="606" y="38" text-anchor="end"></text>
+            <polygon id="cg-dwl" class="area-fill" fill="#b91c1c" points=""/>
+            <path id="cg-d" class="curve curve-c1"/>
+            <path id="cg-mpc" class="curve curve-c3"/>
+            <path id="cg-msc" class="curve curve-c2"/>
+            <line id="cg-g1" class="gridline"/>
+            <line id="cg-g2" class="gridline"/>
+            <line id="cg-toll" stroke="#ea580c" stroke-width="5" stroke-linecap="round"/>
+            <circle id="cg-e1" r="6" class="dot" fill="#0d9488"/>
+            <circle id="cg-e2" r="6" class="dot" fill="#2f6fdb"/>
+            <text id="cg-lq1" class="chart-label" style="fill:#0d9488">Market equilibrium (D = MPC)</text>
+            <text id="cg-lq2" class="chart-label" style="fill:#2f6fdb">Social optimum (D = MSC)</text>
+            <text id="cg-ltoll" class="chart-label" text-anchor="end" style="fill:#ea580c">Congestion charge τ</text>
+            <text id="cg-dwl-lab" class="chart-label" text-anchor="middle" style="fill:#b91c1c">Deadweight loss</text>
+            <text id="cg-ld" class="chart-label" style="fill:#2f6fdb">Demand D (marginal willingness to pay)</text>
+            <text class="chart-label" x="602" y="230" text-anchor="end" style="fill:#0d9488">Private cost MPC</text>
+            <text id="cg-lmsc" class="chart-label" text-anchor="end" style="fill:#ea580c">Social cost MSC</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="cg-e">Congestion externality strength</label><input type="range" id="cg-e" min="10" max="80" step="5" value="45"><output id="cg-oe" for="cg-e">0.45</output></div>
+          <div class="ctrl"><label for="cg-shift">Demand strength (peak level)</label><input type="range" id="cg-shift" min="-30" max="30" step="5" value="0"><output id="cg-oshift" for="cg-shift">+0</output></div>
+        </div>
+        <figcaption>How to read this figure: market equilibrium sits at D = MPC (too much traffic); the social optimum at D = MSC. The triangle between them is the deadweight loss — the trips whose social cost exceeds their value but which are taken because the bill is distorted. The optimal toll τ* equals the vertical gap between MSC and MPC at the optimal flow; the stronger the external cost (the farther apart the curves), the larger both the deadweight loss and the optimal toll. The revenue can fund transit expansion, easing regressivity.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Singapore's ERP and London's congestion charge</div>
+        <p>Singapore opened the era of congestion pricing in 1975 with an Area Licensing Scheme and upgraded it in 1998 to Electronic Road Pricing: gantries identify vehicles and charge by segment and time of day, <strong>with rates adjusted dynamically to measured speeds</strong> — below target speed, the price rises; above it, the price falls — effectively redrawing this chart every month. London introduced its central-zone charge in 2003 (initially £5, now £15); traffic in the zone fell markedly and the shares of transit and cycling rose. Compare two other treatments of the same externality: Beijing's license-plate rationing is <strong>free quantity control</strong> — allocating roads by plate number rather than by the value of time, and prompting households to buy a second car; Shanghai's license-plate auction is <strong>priced access control</strong> — the revenue funds transit, but it governs "owning," not "using." Against these, the dynamically time-and-place-priced congestion charge is the most efficient.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Build more roads and congestion disappears."</strong> — Induced demand: expansion lowers private cost, the trips congestion had priced out return, passengers switch to driving, and flow climbs back until marginal cost again equals marginal value; Downs called it "triple convergence." Road-building is not useless (real bottlenecks should be fixed, missing networks filled in), but as long as congestion is unpriced, the welfare gain from expansion is quickly eaten by new traffic. A second pitfall is <strong>"rationing is fairer than pricing"</strong>: free quantity control allocates scarce road space by plate number, ignores the value of time, and raises no revenue (which could have built metros) — while encouraging families to buy a second car. Under the banner of "fairness" hide dual losses in both efficiency and distribution; the better answer for low-income commuters is charging + better transit + targeted rebates.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.1</span>The root reason equilibrium traffic on a congested road exceeds the social optimum is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Drivers are irrational and overestimate the benefits of driving</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The marginal driver bears only his private cost; the delay he imposes on others is not on his bill</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Road capacity is absolutely too small, so any flow is excessive</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Transit fares are too low, drawing away too many passengers</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Each marginal driver weighs his "own time and fuel" (MPC) against the value of the trip, but the cost of slowing everyone down (MSC − MPC) never enters the decision, so traffic settles at D = MPC rather than D = MSC (B). Drivers are perfectly rational; individually rational choices aggregate into a collective failure — that is the definition of an externality. A is the lazy behavioral fallback; C and D have nothing to do with the mechanism.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.2</span>"Building roads to cure congestion" has limited effect in many cities. The most apt economic explanation is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Poor engineering: capacity never really increased</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Induced demand: added capacity lowers private cost, the trips congestion priced out return, and equilibrium settles back at D = MPC</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Population grows too fast; no project can succeed</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>The placement of toll booths cancels the benefit of expansion</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> As long as roads stay free, the equilibrium condition is always D = MPC: expansion shifts the MPC curve right, and the moment the price (time cost) drops, new demand fills the capacity (B — Downs's law). To stop traffic at the social optimum, the way time pays the bill must change — that is the role of the congestion charge. A and D are engineering details; C is extrapolated fatalism; none touches the pricing mechanism.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Congestion is a negative externality: the gap between MSC and MPC is other people's undervalued delay; a free road is rationed by "time" and is inevitably overused.</li>
+          <li>The congestion charge equals the gap between MSC and MPC at the optimal flow; dynamic, time-differentiated pricing (Singapore's ERP) is the most efficient.</li>
+          <li>Induced demand explains why "building roads to cure congestion" fails: without changing the price, the dividend of expansion is swallowed by new traffic.</li>
+          <li>Distributional concerns are real, but the answer is "charge + transit + targeted rebates," not free quantity control (rationing).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">Chapter 5</span>Regional growth and gaps: path dependence</h2>
+
+      <p><strong>Opening question:</strong> In 1978, Shenyang's machine-tool plants were the envy of China, while Shenzhen was still a market town and fishing village in Bao'an County. Forty years later: on one side, net population outflow and the sigh that "investment stops at Shanhaiguan"; on the other, a first-tier metropolis of over ten million people. Why do rich places stay rich and declining places decline? What decides "the fate of a region"?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: the snowball and the shadow</div>
+        <p>Initial endowments (a harbor, coalfields, a special policy zone) set the starting point; <strong>increasing returns</strong> set the path: firms follow workers (they want the labor pool), workers follow firms (they want jobs), schools and hospitals follow population, and public infrastructure attracts firms and population in turn — the snowball of cumulative causation rolls ever rounder. Once it rolls, the same policy works wildly differently in the two kinds of regions: this is <strong>path dependence</strong> — a small step of history amplified into a large step of geography (the QWERTY keyboard, railway gauge, and the rise and fall of cities alike). But agglomeration also casts a shadow: places too close to the center have their talent and capital siphoned off and never grow a cluster of their own. And industry does not pile into one point forever: the cost gradients of land and wages push lower-end links outward in sequence, like a flock of geese.</p>
+      </aside>
+
+      <p>In 1991, Krugman wrote this intuition into the <strong>core–periphery model</strong>: three parameters — transport costs, economies of scale, and factor mobility — determine whether economic activity "collapses" into one center or spreads across two locations; the bifurcation often hinges on a hair's breadth, so small differences in initial conditions can lock in a century-long landscape. The model also yields testable predictions: agglomeration is strongest at intermediate transport costs; and once integration runs deep enough, the periphery may win industry back with low wages.</p>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Path Dependence</div><span class="term-en">路径依赖</span><div class="term-def">Increasing returns keep amplifying initial conditions: an early accidental advantage attracts more factors, latecomers cannot reverse it, even after the starting difference has become negligible. The "lock-in" of regional landscapes mostly originates here.</div></div>
+        <div class="term"><div class="term-name">Agglomeration Shadow</div><span class="term-en">集聚阴影</span><div class="term-def">The suppressive effect a large city has on its surroundings: siphoning off labor, capital, and corporate headquarters, so the hinterland struggles to form its own cluster center. Positions "not too far, not too near" the center suffer most; places far enough away can strike out on their own.</div></div>
+        <div class="term"><div class="term-name">Flying Geese Pattern</div><span class="term-en">雁阵模式</span><div class="term-def">A development configuration in which industries transfer step by step along the cost gradient: the links the lead goose vacates as it upgrades are taken over by followers with lower wages and adequate infrastructure, forming a queue of successive takeoffs.</div></div>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead>
+            <tr><th>Lead goose (source)</th><th>Main recipients</th><th>Industry links moved out</th><th>Rough period</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Japan</td><td>Korea, Taiwan, Hong Kong, Singapore</td><td>Textiles, garments, simple electronics</td><td>1960s–1970s</td></tr>
+            <tr><td>The Four Asian Tigers</td><td>Pearl River Delta, Yangtze Delta coasts</td><td>Electronics assembly, toys, light industry</td><td>1980s–1990s</td></tr>
+            <tr><td>Coastal China</td><td>Central and western county towns, Vietnam and Southeast Asia</td><td>Contract manufacturing, assembly links</td><td>2000s–2010s</td></tr>
+            <tr><td>Eastern coastal China</td><td>Southeast Asia, South Asia, Mexico (nearshoring)</td><td>Labor-intensive and some capital-intensive links</td><td>2010s to today</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>The flying-geese pattern holds on two premises: the recipients have <strong>basic infrastructure and institutions</strong> (the flock must have somewhere to land), and the lead goose is genuinely <strong>upgrading</strong> (the cage must be emptied before new birds can move in). Whichever link breaks, industry either does not transfer at all, or transfers somewhere else.</p>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The Northeast and Shenzhen: two sides of one coin</div>
+        <p>The Northeast's starting point was not bad: coal, iron, and oil all present, plus the planned-era industrial layout and Soviet aid — in the 1950s it was the "eldest son of the Republic." But endowment turned into shackles: heavy assets could not convert, the work-unit system tied welfare to the firm, and the entangled relations between state enterprises and government turned centripetal force into centrifugal force — the Northeast lost about 11 million people over the decade covered by the Seventh Census; outflow then shrank demand and the tax base, public services and jobs dwindled further, and the snowball rolled in reverse. Shenzhen was the opposite: special-zone policy + adjacency to Hong Kong + a migrant city with no historical baggage; its centripetal force has not dispersed in forty years. The policy implication is harsh but clear: the bull's-eye of revival should be <strong>equalizing living standards per person</strong> (education, health care, and social security that travel with the person), not equalizing gross economic size — in a world of increasing returns, forcing every region to be equally big is paid for in overall efficiency.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Regional gaps will converge automatically."</strong> — Neoclassical models do predict that factor flows flatten gaps, but that requires constant returns; with increasing returns, "people moving to where the living is better" instead <strong>widens</strong> the gaps — the core insight of the core–periphery model, and consistent with the observation that "twenty years of Northeast Revitalization, and the gap remains." A second pitfall is <strong>"build parks and projects in lagging regions and they will catch up"</strong>: if the centripetal force still points elsewhere, the park is vacant the day it opens — quite a few new towns and industrial parks in the central and western regions are standing footnotes. The money should be spent on people, not places — making human capital and social security portable beats copying factory shells in the wrong locations.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.1</span>The core mechanism by which path dependence makes regional gaps persist is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Natural conditions never change, so endowment gaps can never be made up</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Increasing returns and cumulative causation: an initial advantage attracts further inflows of factors, and the landscape locks itself in</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The central government deliberately maintains gaps between regions</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Labor is completely unable to move across regions</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The crux of path dependence is "self-reinforcement": firms, workers, suppliers, and public goods attract one another; whoever rolls the snowball first holds the high ground, and small differences at the start are amplified into large differences in the landscape (B). A reduces the question to static natural conditions and cannot explain Shenzhen's rise; C and D contradict observable facts — population is in fact moving massively, and the gaps persist anyway.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.2</span>On the "shadow of agglomeration," the correct statement is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The area around a big city necessarily prospers in step with it — proximity to the metropolis is pure advantage</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>A big city siphons talent and capital from its surroundings, suppressing their ability to form cluster centers of their own</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The shadow of agglomeration refers to the air pollution over big cities</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>The shadow of agglomeration appears only in developing countries</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Agglomeration's centripetal force cuts both ways for the hinterland: within the commuting belt a place may be absorbed as a bedroom town, while slightly farther out its talent, capital, and headquarters are siphoned off, and it cannot strike out on its own (B) — the contrast between southern Germany's urban belt and the area around Berlin, and the belt around Beijing and Tianjin, are both examples. A counts only the spillover gains and omits the siphoning costs; C reads the term literally; D has no such restriction — the shadow of agglomeration is just as common in developed countries.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Initial endowments set the starting point; increasing returns and cumulative causation set the path: path dependence turns "historical accident" into "geographic destiny."</li>
+          <li>Core–periphery model: transport costs, economies of scale, and factor mobility decide whether agglomeration happens; near the bifurcation point, small differences settle the outcome.</li>
+          <li>Shadow of agglomeration: the center siphons factors from its surroundings; the "not too far, not too near" hinterland suffers most.</li>
+          <li>Flying-geese pattern: industries transfer step by step along the cost gradient, provided recipients' infrastructure and institutions qualify and the lead goose keeps upgrading.</li>
+          <li>The right target of regional policy: equalizing per-capita income and public services, not gross economic size — "money follows people."</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">Chapter 6</span>Urban policy and China's urbanization</h2>
+
+      <p><strong>Opening question:</strong> From 1978 to 2023, China's urbanization rate rose from 17.9% to over 66%, and more than 500 million people moved from countryside to city — the largest peaceful migration in human history. It built the world's factory and the world's longest high-speed rail network; it also left behind left-behind children, "ghost cities," and "bedroom towns." What did this great migration get right, and what problems did it leave?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: urbanization is spatial reallocation</div>
+        <p>Moving a worker from the low-productivity farm sector to the high-productivity urban sector improves <strong>efficiency</strong> (total output rises) and <strong>equity</strong> (the migrant earns multiples of farm income) in one move — that is the kernel of the urbanization dividend. But China's urbanization has been led along two ropes: <strong>land</strong> (construction-land quotas are allocated by administrative unit, not by where people flow) and <strong>hukou</strong> (public services are tied to household registration; people entered the city but the services did not follow, producing "semi-urbanization"). In the policy toolbox, public transit and density reinforce one another; zoning is both a firewall against negative externalities and a possible barrier to supply; urban renewal swings between "demolish and rebuild big" and "fine-grained regeneration" — every tool has been used, and every tool has left both a bright and a dark side.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Zoning</div><span class="term-en">分区管制</span><div class="term-def">Legal restrictions on the use, density, and height of land parcels. The original aim was to separate negative externalities (factories from homes) and provide public goods, but overly strict height and density caps suppress housing supply elasticity, turning protection into shortage.</div></div>
+        <div class="term"><div class="term-name">Gentrification</div><span class="term-en">士绅化</span><div class="term-def">The phenomenon in which rents and retail climb after old districts are renewed, pushing out the original low-income residents. Renewal improves the environment and the tax base while creating displacement pressure — a classic trade-off between efficiency and displacement cost.</div></div>
+        <div class="term"><div class="term-name">Linking Land Supply to Population Flow</div><span class="term-en">人地挂钩</span><div class="term-def">Allocating construction-land quotas according to where people actually move: where the people flow, residential land and public-service quotas grow. A reform direction proposed for China's mismatch of "people enter the cities, land stays in the villages, quotas stay in the central and western regions."</div></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="tl-time">1978</div>
+          <div class="tl-title">Urbanization rate 17.9%</div>
+          <p>The starting point of reform: 800 million people farming, fewer than one in five in cities.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">1984–1985</div>
+          <div class="tl-title">The gates open for farmers</div>
+          <p>Farmers are allowed to work and trade in market towns bringing their own grain rations; the start of township enterprises and the "tide of migrant workers."</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">1994</div>
+          <div class="tl-title">Tax-sharing reform</div>
+          <p>Local finance turns toward land-lease revenue — the prototype of land-based public finance ("land finance"): cheap industrial land to attract firms + pricey commercial-residential land to raise funds.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">1998</div>
+          <div class="tl-title">Housing commodification</div>
+          <p>Welfare housing allocation ends and is monetized — year one of the marketized housing market.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">2001</div>
+          <div class="tl-title">WTO entry and the work boom</div>
+          <p>Export manufacturing explodes; hundreds of millions of migrant workers shuttle along the coast–interior axis.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">2011</div>
+          <div class="tl-title">Urbanization passes half</div>
+          <p>The urban population exceeds the rural population for the first time; China enters "urban society."</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">2014</div>
+          <div class="tl-title">New-type urbanization plan</div>
+          <p>Proposes the "three 100-millions" (urbanization nearby in the central and western regions, shantytown and urban-village redevelopment, schooling for migrant children) and the residence-permit system, shifting from "urbanizing land" toward "urbanizing people."</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">2020</div>
+          <div class="tl-title">Seventh Census: 63.9%</div>
+          <p>Population keeps concentrating in city clusters and metropolitan areas; the Northeast and shrinking cities move onto the agenda.</p>
+        </div>
+        <div class="timeline-item">
+          <div class="tl-time">2035 (planned)</div>
+          <div class="tl-title">Urbanization rate expected around 75%</div>
+          <p>The emphasis shifts from "the rate" to "the quality": coordinated reform of hukou, public services, and land institutions.</p>
+        </div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Chongqing's "land coupons": putting a price on linking land to people</div>
+        <p>Linking land supply to population flow is easier said than done: how do the quotas know where to go? In 2008 Chongqing tried a market answer — <strong>land coupons</strong>: idle rural construction land is reclaimed as farmland; once verified, it generates a construction-land quota of equal area, which is auctioned openly on the rural land exchange; only after buying the quota may urban developers build within the planned urban district. Farmers receive the bulk of the coupon price as property income, total farmland does not fall, and urban land flows with real demand. Its direction (allocating quotas by demand, with price discovery) is right; its scale and supporting reforms remain limited — but as an institutional experiment in "linking land to people + balancing land reclamation and conversion," it proved that land quotas can trade like a commodity instead of being rationed like grain coupons.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Controlling big-city population will cure urban ills."</strong> — Urban ills come from governance (transport pricing, planning, service delivery), not from population itself; agglomeration economies make big cities "useful," and capping population loses productivity without stopping inflow — it just makes people stay with worse public services, longer commutes, and thinner protections. A second pitfall is <strong>"the higher and faster the urbanization rate, the better"</strong>: "urbanizing land" without jobs and public services creates ghost cities and debt; what is wanted is "urbanizing people" — hukou, schooling, health care, and housing that travel with the person. The urbanization rate is an outcome, not a target.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.1</span>The core mismatch that the "linking land supply to population flow" reform aims to solve is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Too many people in the countryside, who must be forcibly moved to cities</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Population flows to big cities, but construction-land quotas do not follow, leaving inflow cities short of housing supply and outflow regions with idle quotas</button>
+          <button class="quiz-opt"><span class="opt-key">C</button>Total urban construction land is excessive and should be tightened across the board</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>There is too much farmland, and more of it should be converted to construction land</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> China's land quotas were long allocated by administrative unit: first-tier cities with net population inflow could not obtain matching land quotas, so their housing supply elasticity was institutionally depressed (the inelastic supply curve of Chapter 3); outflow regions held quotas they could never use and built ghost cities (B). Linking land to population lets quotas move with people and relieves the mismatch at both ends; A and D are unrelated to the policy goal; C has it backwards — the problem is spatial allocation, not the total.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.2</span>On the relationship between public transit and urban density, the most accurate statement is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The two do not affect each other; each goes its own way</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>The denser the city, the less feasible transit becomes, and private cars are the only option</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>High density supports the economies of scale of transit, and transit in turn supports still higher density, forming a virtuous circle</button>
+          <button class="quiz-opt"><span class="opt-key">D</button>Building transit necessarily causes urban decline</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Transit's frequency and network density need a "density threshold" of ridership: only enough passengers can amortize high-frequency service, and high-frequency service makes living and working along the line more convenient, raising density further — Tokyo and Hong Kong are the positive samples of the circle; low-density sprawling American cities are the counter-sample of chronically loss-making transit (C). B has the direction backwards; A and D contradict basic facts.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The kernel of urbanization is spatial reallocation: one migration improves efficiency and equity at once; "the rate" is an outcome — "urbanizing people" is the goal.</li>
+          <li>Two institutional ropes: land quotas allocated by administrative unit (the land–people mismatch) and public services tied to hukou (semi-urbanization).</li>
+          <li>Every tool cuts both ways: zoning fends off externalities but can create shortage; urban renewal improves neighborhoods but can displace the poor; land-based finance funds construction but holds the budget hostage.</li>
+          <li>Reform directions: linking land quotas to population flow (Chongqing-style market-priced coupons), public services whose funding follows people, and coordination across city clusters and metropolitan areas.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">Wrap-up</span>Next steps &amp; further reading</h2>
+      <p>Urban and regional economics reaches upward into: <strong>Development &amp; Innovation Economics</strong> (11: structural transformation and the Lewis turning point — urbanization is their spatial projection), <strong>Public Economics</strong> (08: local public goods, property taxes, and local finance), <strong>Econometrics</strong> (03: urban empirics lean heavily on difference-in-differences and regression-discontinuity designs), and <strong>Environmental &amp; Resource Economics</strong> (12: the spatial distribution of pollution and inter-jurisdictional competition in environmental regulation). If you continue into 11, you will find that "the city" and "development" are two cross-sections of a single discipline.</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Arthur O'Sullivan, Urban Economics</span> — the standard textbook: bid rent, housing, congestion, and urban policy all in one place, with supply and demand running throughout (introductory → intermediate).</li>
+          <li><span class="bk">Edward Glaeser, Triumph of the City</span> — the popular classic by the Harvard urban economist: the city is humanity's greatest invention (introductory; a fine "outside reading" for this track).</li>
+          <li><span class="bk">Masahisa Fujita, Paul Krugman, Anthony Venables, The Spatial Economy</span> — the founding manifesto of new economic geography: formal models of core–periphery and the shadow of agglomeration (advanced; requires micro and trade).</li>
+          <li><span class="bk">Lu Ming, Great Nation, Big Cities</span> — the contemporary debate over China's urbanization and regional policy: agglomeration, linking land to people, and "balancing through agglomeration" (in Chinese; written for the public but rigorously argued).</li>
+          <li><span class="bk">Jane Jacobs, The Death and Life of Great American Cities</span> — the urban classic written by a non-economist: diversity, "eyes on the street," and mixed uses; it shaped a generation of planning thought (introductory; a complementary perspective).</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../12-environmental-and-resource-economics/index.html"><span class="pager-dir">Previous track</span><br><span class="pager-name">Environmental &amp; Resource Economics</span></a>
+        <a href="../14-health-and-education-economics/index.html"><span class="pager-dir">Next track</span><br><span class="pager-name">Health &amp; Education Economics</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+<script src="../../assets/econ.js"></script>
+<script>
+(function () {
+  "use strict";
+
+  /* ---------- Small helpers ---------- */
+  function $(id) { return document.getElementById(id); }
+  function val(el, dflt) {
+    var v = el ? parseFloat(el.value) : NaN;
+    return isNaN(v) ? dflt : v;
+  }
+  function setD(id, d) { var el = $(id); if (el) el.setAttribute("d", d); }
+  function setAttrs(id, o) {
+    var el = $(id), k;
+    if (!el) return;
+    for (k in o) { if (Object.prototype.hasOwnProperty.call(o, k)) el.setAttribute(k, o[k]); }
+  }
+  function place(id, x, y) { setAttrs(id, { x: x, y: y }); }
+  function dotAt(id, x, y) { setAttrs(id, { cx: x, cy: y }); }
+  function lineAt(id, x1, y1, x2, y2) { setAttrs(id, { x1: x1, y1: y1, x2: x2, y2: y2 }); }
+  function txt(id, s) { var el = $(id); if (el) el.textContent = s; }
+  function sgn(x, n) { return (x > 0 ? "+" : "") + Number(x).toFixed(n == null ? 0 : n); }
+
+  /* ---------- Figure 1-1 · Optimal city size ---------- */
+  function initGB() {
+    if (!$("gb-svg")) return;
+    var L = 64, R = 608, T = 56, B = 344, YMAX = 150, NMIN = 0.5, NMAX = 20;
+    function px(n) { return L + (n - NMIN) / (NMAX - NMIN) * (R - L); }
+    function py(v) { return B - Math.max(0, Math.min(YMAX, v)) / YMAX * (B - T); }
+    var aggS = $("gb-agg"), conS = $("gb-con");
+    function bm() { return val(aggS, 100) / 100; }
+    function cm() { return 1.6 - 1.2 * val(conS, 50) / 100; }
+    function ab(n) { return 20 + 16 * bm() * Math.sqrt(n); }
+    function cc(n) { return 8 + 0.28 * cm() * Math.pow(n, 1.9); }
+
+    function update() {
+      var dA = "", dC = "", dU = "", best = -1e9, bn = NMIN, n, a, c, u, p;
+      for (n = NMIN; n <= NMAX + 1e-9; n += 0.25) {
+        a = ab(n); c = cc(n); u = a - c;
+        p = px(n).toFixed(1);
+        dA += (dA ? "L" : "M") + p + " " + py(a).toFixed(1) + " ";
+        dC += (dC ? "L" : "M") + p + " " + py(c).toFixed(1) + " ";
+        dU += (dU ? "L" : "M") + p + " " + py(u).toFixed(1) + " ";
+        if (u > best) { best = u; bn = n; }
+      }
+      setD("gb-ab", dA); setD("gb-cc", dC); setD("gb-nb", dU);
+      var vx = px(bn), vy = py(best);
+      lineAt("gb-vline", vx, T, vx, B);
+      dotAt("gb-dot", vx, vy);
+      place("gb-vlab", Math.max(96, Math.min(552, vx)), 74);
+      txt("gb-vlab", "N* ≈ " + bn.toFixed(1) + "M");
+      place("gb-lab-ab", 600, py(ab(19)) - 12);
+      place("gb-lab-cc", 600, py(cc(19)) + 22);
+      place("gb-lab-nb", Math.max(120, Math.min(592, vx - 14)), Math.max(88, vy - 16));
+      txt("gb-read1", "Optimal city size N* ≈ " + bn.toFixed(1) + " million");
+      txt("gb-read2", "Peak net benefit per person ≈ " + best.toFixed(1) + " (index)");
+      txt("gb-oagg", val(aggS, 100) + "%");
+      txt("gb-ocon", String(val(conS, 50)));
+      $("gb-svg").setAttribute("aria-label",
+        "Optimal city size chart: the optimal city size is about " + bn.toFixed(1) +
+        " million people; the peak net benefit per person is " + best.toFixed(1) + " (index).");
+    }
+    if (aggS) aggS.addEventListener("input", update);
+    if (conS) conS.addEventListener("input", update);
+    update();
+  }
+
+  /* ---------- Figure 2-1 · Bid-rent curves ---------- */
+  function initBR() {
+    if (!$("br-comm")) return;
+    var L = 64, R = 608, T = 48, B = 330, DMAX = 20, RMAX = 360;
+    function px(d) { return L + d / DMAX * (R - L); }
+    function py(v) { return B - Math.max(0, Math.min(RMAX, v)) / RMAX * (B - T); }
+    var tcS = $("br-tc"), hdS = $("br-hd");
+    function Rc(d, t) { return 330 - 30 * t * d; }
+    function Rr(d, t, h) { return 210 + h - 12 * t * d; }
+    function seg(f, t, h) {
+      var s = "", started = false, d, v;
+      for (d = 0; d <= DMAX + 1e-9; d += 0.5) {
+        v = f(d, t, h);
+        if (v < 0) { started = false; continue; }
+        s += (started ? "L" : "M") + px(d).toFixed(1) + " " + py(v).toFixed(1) + " ";
+        started = true;
+      }
+      return s;
+    }
+    function zlab(id, x0, x1) {
+      var el = $(id);
+      if (!el) return;
+      if (x1 - x0 >= 56) {
+        el.setAttribute("x", ((x0 + x1) / 2).toFixed(1));
+        el.textContent = el.getAttribute("data-t") || "";
+      } else {
+        el.textContent = "";
+      }
+    }
+    function update() {
+      var t = val(tcS, 100) / 100, h = val(hdS, 0);
+      setD("br-comm", seg(Rc, t, h));
+      setD("br-res", seg(Rr, t, h));
+      var dcr = Math.max(0, (120 - h) / (18 * t));
+      var dEdge = (160 + h) / (12 * t);
+      var xc = px(Math.min(dcr, DMAX)), xe = px(Math.min(dEdge, DMAX));
+      setAttrs("br-zc", { x: L, width: Math.max(0, xc - L) });
+      setAttrs("br-zr", { x: xc, width: Math.max(0, xe - xc) });
+      var v1 = $("br-v1");
+      if (dcr > 0.15 && dcr < DMAX - 0.05) {
+        lineAt("br-v1", xc, T, xc, B);
+        v1.style.display = "";
+      } else { v1.style.display = "none"; }
+      var v2 = $("br-v2");
+      if (dEdge > dcr + 0.15 && dEdge <= DMAX) {
+        lineAt("br-v2", xe, T, xe, B);
+        v2.style.display = "";
+      } else { v2.style.display = "none"; }
+      place("br-lc", px(1.5), py(Rc(1.5, t)) - 12);
+      place("br-lr", px(1.5), py(Rr(1.5, t, h)) - 12);
+      zlab("br-z1", L, xc);
+      zlab("br-z2", xc, xe);
+      zlab("br-z3", xe, R);
+      txt("br-read1", "Business district radius ≈ " + dcr.toFixed(1) + " km");
+      txt("br-read2", dEdge <= DMAX ? "City edge ≈ " + dEdge.toFixed(1) + " km" : "City edge > 20 km (off the chart)");
+      txt("br-otc", t.toFixed(2) + "×");
+      txt("br-ohd", (h >= 0 ? "+" : "") + h + " yuan");
+      $("br-svg").setAttribute("aria-label",
+        "Bid-rent chart: the business district radius is about " + dcr.toFixed(1) + " km and the city edge is about " +
+        (dEdge <= DMAX ? dEdge.toFixed(1) + " km" : "beyond 20 km") + ".");
+    }
+    if (tcS) tcS.addEventListener("input", update);
+    if (hdS) hdS.addEventListener("input", update);
+    update();
+  }
+
+  /* ---------- Figure 3-1 · Housing supply elasticity compared ---------- */
+  function initHS() {
+    if (!$("hs-d1")) return;
+    var L = 64, R = 608, T = 48, B = 330, QMAX = 160, PMAX = 140;
+    function px(q) { return L + q / QMAX * (R - L); }
+    function py(p) { return B - Math.max(0, Math.min(PMAX, p)) / PMAX * (B - T); }
+    var sS = $("hs-shift");
+    function update() {
+      var s = val(sS, 0);
+      var p0 = 100 + s;
+      lineAt("hs-d1", px(0), py(p0), px(QMAX), py(p0 - 80));
+      var q1 = 1.5 * (60 + s), p1 = 55 + 0.25 * s;
+      var q2 = (60 + s) / 2, p2 = 85 + 0.75 * s;
+      lineAt("hs-g1", L, py(p1), px(q1), py(p1));
+      lineAt("hs-g2", L, py(p2), px(q2), py(p2));
+      dotAt("hs-e1", px(q1), py(p1));
+      dotAt("hs-e2", px(q2), py(p2));
+      place("hs-p1", 58, py(p1) + 4);
+      place("hs-p2", 58, py(p2) + 4);
+      txt("hs-p1", p1.toFixed(0));
+      txt("hs-p2", p2.toFixed(0));
+      place("hs-ld", px(6), py(p0 - 3) - 12);
+      txt("hs-read1", "Elastic-supply city: P 55 → " + p1.toFixed(0) + " (Δ" + sgn(p1 - 55, 0) + ")");
+      txt("hs-read2", "Supply-regulated city: P 85 → " + p2.toFixed(0) + " (Δ" + sgn(p2 - 85, 0) + ")");
+      txt("hs-oshift", sgn(s, 0));
+      $("hs-svg").setAttribute("aria-label",
+        "Housing supply-and-demand chart: after a demand shift of " + sgn(s, 0) + ", the price in the elastic-supply city goes from 55 to " +
+        p1.toFixed(0) + ", and in the supply-regulated city from 85 to " + p2.toFixed(0) + ".");
+    }
+    if (sS) sS.addEventListener("input", update);
+    update();
+  }
+
+  /* ---------- Figure 4-1 · Congestion-charge welfare analysis ---------- */
+  function initCG() {
+    if (!$("cg-d")) return;
+    var L = 64, R = 608, T = 48, B = 330, QMAX = 200, PMAX = 240;
+    function px(q) { return L + q / QMAX * (R - L); }
+    function py(p) { return B - Math.max(0, Math.min(PMAX, p)) / PMAX * (B - T); }
+    var eS = $("cg-e"), sS = $("cg-shift");
+    function dem(q, s) { return 160 + s - 0.6 * q; }
+    function mpc(q) { return 30 + 0.25 * q; }
+    function update() {
+      var e = val(eS, 45) / 100, s = val(sS, 0);
+      function msc(q) { return 30 + (0.25 + e) * q; }
+      lineAt("cg-d", px(0), py(dem(0, s)), px(QMAX), py(dem(QMAX, s)));
+      lineAt("cg-mpc", px(0), py(mpc(0)), px(QMAX), py(mpc(QMAX)));
+      lineAt("cg-msc", px(0), py(msc(0)), px(QMAX), py(msc(QMAX)));
+      var q1 = (130 + s) / 0.85, p1 = mpc(q1);
+      var q2 = (130 + s) / (0.85 + e), p2 = dem(q2, s);
+      var toll = msc(q2) - mpc(q2);
+      var dwl = 0.5 * (q1 - q2) * e * q1; // triangle height = MSC(q1) − D(q1) = e·q1, matching the drawn triangle
+      dotAt("cg-e1", px(q1), py(p1));
+      dotAt("cg-e2", px(q2), py(p2));
+      lineAt("cg-g1", px(q1), B, px(q1), py(p1));
+      lineAt("cg-g2", px(q2), B, px(q2), py(p2));
+      lineAt("cg-toll", px(q2), py(mpc(q2)), px(q2), py(p2));
+      setAttrs("cg-dwl", { points:
+        px(q2).toFixed(1) + "," + py(p2).toFixed(1) + " " +
+        px(q1).toFixed(1) + "," + py(p1).toFixed(1) + " " +
+        px(q1).toFixed(1) + "," + py(msc(q1)).toFixed(1)
+      });
+      place("cg-dwl-lab", (px(q2) + 2 * px(q1)) / 3, (py(p2) + py(p1) + py(msc(q1))) / 3 + 4);
+      var xq1 = px(q1);
+      if (xq1 > 460) {
+        setAttrs("cg-lq1", { "text-anchor": "end" });
+        place("cg-lq1", xq1 - 10, py(p1) + 4);
+      } else {
+        setAttrs("cg-lq1", { "text-anchor": "start" });
+        place("cg-lq1", xq1 + 10, py(p1) + 4);
+      }
+      setAttrs("cg-lq2", { "text-anchor": "end" });
+      place("cg-lq2", px(q2) - 10, py(p2) - 10);
+      place("cg-ltoll", px(q2) - 12, (py(mpc(q2)) + py(p2)) / 2 + 4);
+      place("cg-ld", px(6), py(dem(6, s)) - 10);
+      setAttrs("cg-lmsc", { "text-anchor": "end" });
+      place("cg-lmsc", px(172), py(msc(172)) - 10);
+      txt("cg-read1", "Social optimum Q* ≈ " + (q2 / 100).toFixed(2) + " million vehicles; congestion charge τ ≈ " + Math.round(toll) + " yuan");
+      txt("cg-read2", "Market equilibrium Q ≈ " + (q1 / 100).toFixed(2) + " million vehicles; deadweight loss ≈ " + Math.round(dwl));
+      txt("cg-oe", e.toFixed(2));
+      txt("cg-oshift", sgn(s, 0));
+      $("cg-svg").setAttribute("aria-label",
+        "Congestion-charge welfare chart: the market-equilibrium flow is about " + (q1 / 100).toFixed(2) + " million vehicles, the social optimum about " +
+        (q2 / 100).toFixed(2) + " million, and the optimal congestion charge about " + Math.round(toll) + " yuan.");
+    }
+    if (eS) eS.addEventListener("input", update);
+    if (sS) sS.addEventListener("input", update);
+    update();
+  }
+
+  initGB();
+  initBR();
+  initHS();
+  initCG();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>International Economics · EconLearn Self-Study Path in Economics</title>
+<meta name="description" content="An interactive English tutorial on international economics: comparative advantage and the gains from trade, tariff welfare analysis, exchange-rate determination, the balance of payments, and the policy trilemma — with interactive figures and self-tests.">
+<link rel="stylesheet" href="../../assets/econ.css">
+</head>
+<body style="--branch:#4d7c0f">
+<noscript><p class="noscript-tip">The interactive figures and self-tests on this page require JavaScript; without it, the full main text remains perfectly readable.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← Home</a>
+  <div class="topbar-title"><span class="topbar-num">07</span>International Economics</div>
+  <a class="topbar-lang" href="../../07-国际经济学/index.html" hreflang="zh-CN">中文</a>
+  <button class="toc-toggle" aria-expanded="false">Contents</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">Chapters in this track</p>
+    <nav aria-label="Chapter contents">
+      <a href="#overview">Overview &amp; learning goals</a>
+      <a href="#ch1">1 · Why trade</a>
+      <a href="#ch2">2 · Winners and losers from trade</a>
+      <a href="#ch3">3 · Tariffs and trade policy</a>
+      <a href="#ch4">4 · Exchange rates and the FX market</a>
+      <a href="#ch5">5 · Balance of payments</a>
+      <a href="#ch6">6 · The trilemma and currency crises</a>
+      <a href="#path">Next steps &amp; further reading</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · Self-Study Path in Economics</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">Track 07 · Sectors &amp; international</span>
+        <h1>International Economics</h1>
+        <p class="hero-en">国际经济学</p>
+        <p class="hero-lead">No country can produce everything it needs — and even if one could, it shouldn't. International economics explains why trade happens, who wins and who loses, how exchange rates are set, and why "pegging the exchange rate, opening the capital account, and raising interest rates on your own" cannot all be done at once.</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">By the end of this track, you will be able to</div>
+        <ul>
+          <li>Define <strong>comparative advantage</strong> through opportunity cost, and explain why a country that lags at everything can still gain from trade</li>
+          <li>Show how the gains from trade are distributed, and predict which groups will oppose openness</li>
+          <li>Compute the welfare cost of a <strong>tariff</strong> on a supply-and-demand diagram (producers, consumers, government, deadweight loss)</li>
+          <li>Explain exchange-rate movements with the supply and demand for foreign exchange, and distinguish nominal from real exchange rates and from purchasing power parity</li>
+          <li>Write the balance-of-payments identity and explain the mechanics of the <strong>policy trilemma</strong> and currency crises</li>
+        </ul>
+      </div>
+      <div class="prereq">Prerequisites:
+        <a class="badge" href="../01-microeconomics/index.html">01 Microeconomics (supply, demand, surplus)</a>
+        <a class="badge" href="../02-macroeconomics/index.html">02 Macroeconomics (interest rates, aggregate demand)</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">Chapter 1</span>Why trade: comparative advantage</h2>
+
+      <p><strong>Opening question:</strong> A country is less productive than its neighbor at making every single product — does it still have a reason to take part in international trade? Ricardo's 1817 answer changed the world: <strong>yes — and it profits by doing so</strong>.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: the contest is over what you give up, not who is best</div>
+        <p><strong>Absolute advantage</strong> asks "who produces more"; <strong>comparative advantage</strong> asks "who produces it at lower opportunity cost". A lawyer types faster than the secretary (a double absolute advantage), but one hour of legal work earns the lawyer 2,000 yuan while an hour of typing is worth only 100 — the lawyer's opportunity cost of typing is enormous, and the secretary holds the comparative advantage. Trade works the same way: China builds aircraft less efficiently than the United States, but every aircraft China builds means more clothing given up, so "America builds aircraft, China makes clothing" lets <strong>both countries consume beyond their own capacity to produce</strong>. Trade is not a zero-sum contest; it lets each side concentrate on what it gives up least to do.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Comparative Advantage</div><span class="term-en">比较优势</span><div class="term-def">The ability to produce something at a lower opportunity cost. Comparative advantage <strong>always exists</strong> (one country's opportunity cost is lower in one good precisely where the other's is lower in the other), and that is the root of trade's universality.</div></div>
+        <div class="term"><div class="term-name">Terms of Trade</div><span class="term-en">贸易条件</span><div class="term-def">The ratio of export prices to import prices. When it falls between the two countries' domestic opportunity costs, both sides win; the closer it sits to one side's opportunity cost, the more the gains tilt toward the other side.</div></div>
+        <div class="term"><div class="term-name">Production Possibilities Frontier (PPF)</div><span class="term-en">生产可能性边界</span><div class="term-def">The set of output combinations achievable with all resources employed. What trade adds: consumption can break through the nation's own PPF — the "expanded circle".</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 1-1 · Trade expands the frontier: consuming beyond the home PPF</div>
+        <p class="fig-sub">Drag the "specialization and trade" slider: from autarky to full specialization, watch how the (clothing, aircraft) bundles the home country (a small country) can consume cross beyond its own production possibilities frontier.</p>
+        <figure class="fig-canvas">
+          <svg id="trade-svg" viewBox="0 0 640 380" role="img" aria-label="The home country's production possibilities frontier is a straight line whose slope is the opportunity cost of aircraft in clothing; once trade at world prices is introduced, the consumption possibilities line shifts outward and steepens, and the consumption point can move beyond the production frontier.">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="362" text-anchor="middle">Clothing (million units)</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">Aircraft (planes)</text>
+            <line id="tr-ppf" class="curve curve-c7" stroke-width="2.5"/>
+            <line id="tr-cpf" class="curve curve-c1" stroke-dasharray="7 5"/>
+            <circle id="tr-point" r="8" class="dot" fill="#4d7c0f"/>
+            <text class="chart-label" x="560" y="70" style="fill:#475569">Home PPF</text>
+            <text class="chart-label" x="560" y="90" style="fill:#2f6fdb">Consumption with trade</text>
+            <text id="tr-txt" class="chart-title-sm" x="335" y="28" text-anchor="middle"></text>
+            <text id="tr-sub" class="chart-label" x="335" y="52" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="tr-w">Specialization and trade</label><input type="range" id="tr-w" min="0" max="100" step="5" value="0"><output id="tr-ow" for="tr-w">0%</output></div>
+        </div>
+        <figcaption>How to read this figure: the home country's opportunity cost of one aircraft is 400,000 units of clothing, while the world market asks only 250,000. So the home country builds one aircraft fewer, shifts those resources into clothing, and trades the clothing for aircraft at world prices — every "home-built" aircraft given up brings in 1.6 imported ones. The consumption point crosses beyond the PPF: this is the geometry of the gains from trade.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · A T-shirt's journey around the world</div>
+        <p>Cotton starts in Texas → spun into yarn in Pakistan or Vietnam → woven, dyed, and finished in Bangladesh → sewn into shirts → sold worldwide. No step "must" happen in the same country: each stop is decided by local comparative advantage (resources, labor costs, accumulated technology, industrial clusters). In The Travels of a T-Shirt in the Global Economy, Pietra Rivoli uses a single supply chain to lay bare how comparative advantage, trade policy, and political games interact.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Comparative advantage comes from technological leadership."</strong> — Technological leadership delivers absolute advantage; the key to comparative advantage is <strong>relative</strong> opportunity cost. Even a country that leads across the board has limited time and resources, so it puts them where its lead is greatest and leaves the rest to others — which is why trade benefits the strong and the weak alike. Another pitfall: "free trade benefits the nation as a whole, so everyone should support it" — no; next chapter: trade creates winners and losers at home.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.1</span>Country A can produce 6 tons of wheat or 3 tons of steel per day; country B can produce 1 ton of wheat or 1 ton of steel per day. Which statement is correct?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Country A has the comparative advantage in wheat</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Country B has the comparative advantage in steel (in country A, 1 ton of steel = 2 tons of wheat; in country B, 1 ton of steel = 1 ton of wheat)</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Country B has no comparative advantage and cannot gain from trade</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Country A holds the absolute advantage in both goods, but compare opportunity costs: in A, 1 ton of steel = 2 tons of wheat; in B, 1 ton of steel = 1 ton of wheat → B produces steel "more cheaply", and A's opportunity cost of wheat (0.5 steel) is below B's (1 steel). So A exports wheat, B exports steel, and both gain — provided the terms of trade fall between 1 steel = 1 wheat and 1 steel = 2 wheat. Country B, "behind at everything", still gains from trade through comparative advantage.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.2</span>How are the gains from trade split between the two countries?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>In proportion to the two countries' GDP</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>By where the terms of trade fall within the interval between the two countries' opportunity costs</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>By whichever country sets the higher tariff</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> In the example above, a price close to 1 steel = 2 wheat sends the bulk of the gain to country B (country A, the steel buyer, saves almost nothing); close to 1:1, the bulk goes to country A. Bargaining, market power, and the volume of trade all move the final price — "win-win" does not mean "split down the middle", and that is exactly where the politics of trade begins.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Comparative advantage = lower opportunity cost, unrelated to absolute advantage.</li>
+          <li>Terms of trade between the two opportunity costs → both sides win; where they land decides the split.</li>
+          <li>Trade lets consumption move beyond the national PPF — the "expanded circle" is the geometry of the gains.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">Chapter 2</span>Winners and losers from trade</h2>
+
+      <p><strong>Opening question:</strong> Economics proves that trade benefits "the nation" as a whole — so why do mass anti-trade movements keep erupting? Because "the nation benefits" is an illusion created by aggregation: <strong>group by group, fortunes diverge completely</strong>.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: the scarce factor pays the bill</div>
+        <p>Trade pushes down the price of import-competing goods → home producers of those goods (firms and workers) lose, consumers gain. One layer deeper (the intuition of Heckscher–Ohlin plus the Stolper–Samuelson theorem): the country's <strong>relatively scarce factor</strong> is the loser — when a capital-abundant country opens up, capital gains and labor loses; in a labor-abundant country the roles reverse. Consumers win "a little per person"; producers lose "a lot, concentrated among a few" — <strong>concentrated losses versus diffuse gains</strong>, which is why organized political energy against trade is always stronger (the logic of collective action; see track 16).</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Stolper–Samuelson Theorem</div><span class="term-en">斯托尔珀-萨缪尔森定理</span><div class="term-def">Opening to trade raises the real return of a country's abundant factor and lowers the real return of its scarce factor — the mirror image in which the winners' side must contain losers.</div></div>
+        <div class="term"><div class="term-name">Factor Endowment</div><span class="term-en">要素禀赋</span><div class="term-def">The relative abundance of capital, labor, land, and other production factors a country owns; it sets the direction of its comparative advantage (the Heckscher–Ohlin model).</div></div>
+        <div class="term"><div class="term-name">Trade Adjustment Assistance</div><span class="term-en">贸易调整援助</span><div class="term-def">Retraining and compensation for those hurt by trade. The theoretical basis: winners' gains &gt; losers' losses, so in principle the winners can compensate the losers and the nation still comes out ahead.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · China's WTO entry and the American Rust Belt</div>
+        <p>Studies of the "China Shock" that followed China's 2001 WTO entry (Autor, Dorn, Hanson) show that US manufacturing towns exposed to import competition suffered long-lasting damage to employment, wages, marriage stability, and public health — and labor did not "smoothly reallocate" as the textbooks promised. On the whole, American consumers and China both gained enormously, but <strong>the costs of adjustment were highly concentrated in particular regions and groups of people</strong>, and far more persistent than the models assumed — the economic foundation for understanding today's trade politics.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.1</span>If capital-abundant, labor-scarce America opens its markets further to labor-abundant countries, who is most likely to lose in the long run?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>All American consumers</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>American unskilled workers (the scarce factor)</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>American owners of capital</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The Stolper–Samuelson theorem: trade raises the real return of the <strong>abundant factor</strong> used intensively in export sectors (American capital and skill) and lowers the real return of the <strong>scarce factor</strong> used intensively in import-competing sectors (unskilled labor). Consumers do enjoy lower prices overall, but for low-skill groups who live on their wages, the wage loss can outweigh the consumer gains.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.2</span>What policy conclusion follows from "the aggregate gains from trade are positive"?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The losers deserve their fate — markets are ruthless</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The winners can in principle compensate the losers and still keep a surplus — compensation and redistribution belong inside trade policy</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>It proves that opponents of trade are simply irrational</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> This is the standard meaning of a "potential Pareto improvement": trade creates room for compensation. The failure of real-world politics is precisely that compensation often never arrives or falls short (retraining programs are small and thinly covered). Anti-trade sentiment is not "ignorance of economics"; it is often a rational response to <strong>missing compensation</strong> — and economics that says this plainly is mature economics.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Trade improves the aggregate, but distribution necessarily creates losers: the scarce factor plus import-competing sectors.</li>
+          <li>Diffuse gains, concentrated losses → protectionism carries inherently greater political energy.</li>
+          <li>Compensation mechanisms are part of the plumbing of free trade, not charity.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">Chapter 3</span>Tariffs and trade policy</h2>
+
+      <p><strong>Opening question:</strong> The tariff is the oldest trade policy and a politician's favorite: "make foreign sellers pay to protect domestic jobs." The questions are — who really pays a tariff, and how large is the bill?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: a tariff is a wedge</div>
+        <p>For a <strong>small country</strong> (powerless to move the world price), a tariff t lifts the domestic price from the world price Pw to Pw+t. The extra money consumers pay splits three ways: (1) government revenue (imports × t); (2) extra profit for home producers; (3) <strong>deadweight loss</strong> (DWL) — on the production side, resources are pulled out of more efficient sectors into inefficient production; on the consumption side, some buyers give up the good. Those two triangles are the true social cost of "protection". And "foreign sellers pay", in the textbook case, is almost zero: they set the price, and the post-tax increase lands on domestic consumers.</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 3-1 · The tariff cost calculator</div>
+        <p class="fig-sub">Drag the tariff-rate slider and watch government revenue, producer gains, consumer losses, and deadweight loss (DWL) move together.</p>
+        <figure class="fig-canvas">
+          <svg id="tar-svg" viewBox="0 0 640 400" role="img" aria-label="Supply-and-demand diagram: a horizontal line at the world price; the tariff raises the domestic price; the loss in consumer surplus splits into producer surplus, government revenue, and two deadweight-loss triangles.">
+            <line class="axis" x1="70" y1="330" x2="600" y2="330"/>
+            <line class="axis" x1="70" y1="330" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="375" text-anchor="middle">Quantity</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">Price</text>
+            <line class="curve curve-c3" id="tar-sup" stroke-width="3"/>
+            <line class="curve curve-c2" id="tar-dem" stroke-width="3"/>
+            <line id="tar-pw" stroke="#475569" stroke-width="2.5" stroke-dasharray="6 4"/>
+            <line id="tar-pt" stroke="#4d7c0f" stroke-width="2.5"/>
+            <text class="chart-label" x="78" y="52" id="tar-slab" style="fill:#0d9488">S (home supply)</text>
+            <text class="chart-label" x="78" y="72" id="tar-dlab" style="fill:#ea580c">D (home demand)</text>
+            <text class="chart-label" x="300" y="330" dy="18" id="tar-pwlab" style="fill:#475569">Pw (world price)</text>
+            <text class="chart-label" id="tar-ptlab" style="fill:#4d7c0f">Pw + t</text>
+            <polygon id="tar-gov" fill="#4d7c0f" opacity="0.35"/>
+            <polygon id="tar-dwl" fill="#dc2626" opacity="0.35"/>
+            <text id="tar-txt" class="chart-title-sm" x="335" y="26" text-anchor="middle"></text>
+            <text id="tar-sub" class="chart-label" x="335" y="50" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="tar-t">Tariff t (% of price)</label><input type="range" id="tar-t" min="0" max="50" step="5" value="25"><output id="tar-ot" for="tar-t">25%</output></div>
+        </div>
+        <figcaption>How to read this figure: the green rectangle = government revenue; the red triangles = deadweight loss (DWL). As t rises, government revenue first grows and then shrinks (a Laffer-style dome), while DWL balloons with t² — if a tax must be levied, a <strong>low rate on a broad base</strong> beats a <strong>high rate on a narrow base</strong>. Large countries are the exception: a tariff can push the world price down (a terms-of-trade gain), so an "optimal tariff" exists in theory — but retaliation leaves everyone worse off (the lesson of the Smoot–Hawley tariff of 1930).</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Deadweight Loss</div><span class="term-en">无谓损失</span><div class="term-def">The net loss of total social surplus after an intervention: value that the destroyed trades would have created.</div></div>
+        <div class="term"><div class="term-name">Quota</div><span class="term-en">配额</span><div class="term-def">A ceiling on import quantity. Like a tariff it raises the price, but the revenue becomes "rent" for the holders of import licenses (or is left to foreign exporters) — usually worse than a tariff.</div></div>
+        <div class="term"><div class="term-name">Nominal vs Effective Protection</div><span class="term-en">名义保护率与有效保护</span><div class="term-def">A tariff on finished goods protects "value added": if raw materials are imported too and enter duty-free, the effective rate of protection can far exceed the nominal tariff — a hidden amplifier inside industrial policy.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The bill for the 2018–19 tariff war</div>
+        <p>After the United States and China raised tariffs on each other, a series of empirical studies (Amiti, Itskhoki, and Konings, among others) found that US import prices rose by almost exactly the full amount of the tariffs — <strong>the burden fell almost entirely on American importers and consumers</strong>, not on Chinese exporters through price cuts. Protected industries did see net job gains, but rising costs in downstream industries and the damage from retaliatory tariffs matched or outweighed them. The tariff is a real political weapon — and a real economic cost.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.1</span>After a small country imposes a tariff, its domestic price rises by…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>≈ the full tariff (the world price is unaffected)</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>zero, absorbed by the exporters</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>half of the tariff</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> That is the definition of "small": a price taker on the world market — buying more or less does not change Pw. So the tariff t lands entirely in the domestic price, paid by consumers and downstream firms. Only an economy large enough can shift part of the burden by pushing Pw down (the large-country case), and it pays for that with the risk of retaliation from its trading partners.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.2</span>Compared with a tariff, an import quota is often worse because…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>A quota does not raise the price</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The quota's "revenue" becomes license rents, which can flow to rent-seekers or even foreign exporters, and is far less transparent</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Quotas violate all international law</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> A quota manufactures scarcity → the license itself becomes valuable (a rent). Whoever holds the license collects it: domestic importers (a breeding ground for rent-seeking and corruption) or — under a "voluntary export restraint" — foreign exporters (equivalent to handing tariff revenue to foreigners). A double warning from economics and public choice: opaque quantity controls are more easily captured than transparent taxes.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>A small country's tariff lands fully on the domestic price: consumers pay.</li>
+          <li>Welfare decomposition: government revenue + producer surplus − consumer loss = −DWL.</li>
+          <li>A quota's rents go to license holders — usually less transparent and more rent-prone than a tariff.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">Chapter 4</span>Exchange rates and the foreign-exchange market</h2>
+
+      <p><strong>Opening question:</strong> One dollar bought 7.2 yuan today, 6.7 last year, 7.0 the year before. Exchange rates flicker across the news every day — what forces are actually setting them?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: an exchange rate is also just a price</div>
+        <p>The foreign-exchange market is the largest market in the world (average daily turnover above $7 trillion), yet the basic analysis of an exchange rate is still <strong>supply and demand</strong>: the demand for foreign currency comes from imports, outbound travel, outward investment, and speculation; the supply comes from export receipts and foreign investment inflows, among others. The Fed hikes → yields on dollar assets rise → global funds pour into dollars → the demand curve shifts right → the dollar appreciates. Over the long run, <strong>purchasing power parity (PPP)</strong> works like gravity: the same basket of goods should cost the same once converted at the exchange rate, and the currency of a high-inflation country tends to depreciate (the principle behind the Big Mac index). Over the short run, interest differentials and capital flows dominate — an exchange rate is an "asset price", and it is naturally volatile.</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 4-1 · A supply-and-demand lab for foreign exchange</div>
+        <p class="fig-sub">Drag the "home interest rate relative to foreign" slider to shift the demand curve for foreign exchange, and watch the equilibrium exchange rate (quoted in domestic currency) move.</p>
+        <figure class="fig-canvas">
+          <svg id="fx-svg" viewBox="0 0 640 380" role="img" aria-label="Foreign-exchange supply-and-demand diagram: the vertical axis is the exchange rate (domestic currency per foreign currency), the horizontal axis the quantity of foreign currency; the supply curve slopes up and the demand curve slopes down; a wider interest differential shifts the demand for foreign exchange left, the equilibrium exchange rate falls, and the home currency appreciates.">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="362" text-anchor="middle">Quantity of foreign exchange (USD)</text>
+            <text class="chart-label" x="22" y="175" text-anchor="middle" transform="rotate(-90 22 175)">Exchange rate (domestic per USD)</text>
+            <line id="fx-s" class="curve curve-c3"/>
+            <line id="fx-d0" class="curve curve-c2" stroke-dasharray="5 5"/>
+            <line id="fx-d" class="curve curve-c2"/>
+            <circle id="fx-eq" r="7" class="dot" fill="#4d7c0f"/>
+            <text class="chart-label" x="540" y="80" style="fill:#0d9488">FX supply S</text>
+            <text class="chart-label" x="540" y="313" style="fill:#ea580c">FX demand D</text>
+            <text id="fx-txt" class="chart-title-sm" x="335" y="28" text-anchor="middle"></text>
+            <text id="fx-sub" class="chart-label" x="335" y="52" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fx-i">Home rate − foreign rate</label><input type="range" id="fx-i" min="-4" max="4" step="0.5" value="0"><output id="fx-oi" for="fx-i">0.0%</output></div>
+        </div>
+        <figcaption>How to read this figure: a relative rise in the home interest rate → capital flows into home-currency assets → the market <strong>sells dollars for domestic currency</strong> → the demand curve for foreign exchange shifts left → the equilibrium exchange rate (domestic per dollar) falls = <strong>the home currency appreciates</strong>. Conversely, a differential widening in the dollar's favor lifts the dollar (the mechanism behind the dollar's big year in 2022). Note the axis definition: "the exchange rate rises" here means the home currency depreciates — when reading exchange-rate news, first check which quotation convention is being used.</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Purchasing Power Parity</div><span class="term-en">购买力平价</span><div class="term-def">The macro version of the law of one price: in the long run the exchange rate converges to "equal purchasing power". It deviates sharply in the short run, but it is the long-run anchor of exchange rates.</div></div>
+        <div class="term"><div class="term-name">Real Exchange Rate</div><span class="term-en">实际汇率</span><div class="term-def">The nominal rate × relative price levels — the exchange rate that measures "competitiveness". A real depreciation = a gain in competitiveness; not the same thing as nominal swings.</div></div>
+        <div class="term"><div class="term-name">Interest Rate Parity</div><span class="term-en">利率平价</span><div class="term-def">The interest differential ≈ the expected change in the exchange rate (+ a risk premium): high-yield currencies are expected to depreciate enough to offset the differential, or else there is an arbitrage. It ties the pricing of the two markets together.</div></div>
+      </div>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"A weaker currency means the country is losing."</strong> — Depreciation cuts both ways: export and tourism competitiveness rise (the mirror image of Greece's pain at being unable to devalue during its crisis), while foreign-currency debt gets heavier (Argentina; the property developers' dollar bonds). Appreciation cuts both ways too. There is no simple honor or shame in an exchange rate, only the degree of fit with the economy's structure and policy goals. Also, the yuan "breaking 7" in the news has no magic — 7 is just a round number, and its psychological meaning far outweighs its economic meaning.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.1</span>The Fed raises rates while China holds steady; all else equal, the renminbi tends to… against the dollar</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>appreciate</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>depreciate (dollar assets pull in more money; demand for dollars ↑)</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>hold steady (exchange rates are set by trade)</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Interest differentials driving capital flows are the first mover of short-run exchange rates (interest rate parity). When the Fed hiked aggressively in 2022, the dollar index climbed to a twenty-year high and major currencies slid across the board — this mechanism on live display. Trade flows set the medium- and long-run fundamentals, but capital flows dwarf trade in scale.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.2</span>A country runs 20% annual inflation, its trading partners 2%. By purchasing power parity, in the long run its currency should…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>appreciate by about 18%</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>depreciate by about 18% (the purchasing-power gap erodes it)</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>hold steady</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The relative version of PPP: the inflation differential between two countries ≈ the currency's rate of depreciation. The high-inflation country's goods become expensive, and only depreciation keeps "the same basket equally priced" on both sides. Look at the exchange-rate path of any country with long-run high inflation (Turkey, Argentina) — it hugs the textbook line. Short-run deviations happen; the long run never grants an exemption.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>An exchange rate is the price of foreign exchange: in the short run it is driven by capital flows and interest differentials.</li>
+          <li>The long-run anchor is purchasing power parity: the inflation differential ≈ the depreciation rate.</li>
+          <li>No honor or shame in appreciation or depreciation — what matters is the currency of your debts and the structure of your exports.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">Chapter 5</span>The balance of payments: a nation's ledger</h2>
+
+      <p><strong>Opening question:</strong> The news reports "China's current-account surplus" and "America's record trade deficit". Is a surplus a medal for saving, or a medical record of imbalance?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: a deficit = spending more than you earn, with the gap covered by IOUs</div>
+        <p>The balance of payments (BOP) is the nation's complete cash-flow statement with the rest of the world, in two great categories: the <strong>current account</strong> (trade in goods and services + investment income + transfers) and the <strong>capital and financial account</strong> (purchases and sales of assets). The accounting identity: current account + capital and financial account ≡ 0 (errors aside). A trade deficit necessarily comes with a net capital inflow — once foreigners hold the domestic currency, they necessarily buy domestic assets (government bonds, stocks, property): that is the "IOU". A deeper identity: <strong>current account = saving − investment</strong>. America's deficit means national saving is insufficient (government and private sectors borrowing too much); China's surplus was the natural outlet for its high saving. The exchange rate and the interest rate are precisely the prices that keep these two accounts in balance.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Current Account</div><span class="term-en">经常账户</span><div class="term-def">The trade balance + net income + net transfers. A surplus = net lending to the world; a deficit = net borrowing from the world.</div></div>
+        <div class="term"><div class="term-name">Foreign Exchange Reserves</div><span class="term-en">外汇储备</span><div class="term-def">Foreign-currency assets held by the central bank. They serve a dual function — exchange-rate intervention (selling reserves when the account is in deficit) and insurance against crisis; too large a stock carries the costs of low returns and imported inflation.</div></div>
+        <div class="term"><div class="term-name">Global Imbalances</div><span class="term-en">全球失衡</span><div class="term-def">A pattern of large-scale cross-border imbalances (e.g., the 2000s: Asian and oil-exporter surpluses vs the US deficit). Bernanke's "savings glut" hypothesis: the surplus countries' reserves poured into US Treasuries, depressing interest rates and inflating the housing bubble.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The other side of the surplus</div>
+        <p>China's "twin surpluses" (current plus capital) in the 2000s brought reserve accumulation on the order of $4 trillion: on one side, the export engine and its jobs; on the other, passively issued base money (the pressure of sterilization) and low-yield exposure to US Treasuries. The mercantilist instinct "exports good, imports bad" sees only half the ledger — <strong>a surplus is equally money lent to foreigners to spend</strong>, while households at home cut back their current consumption. The optimal imbalance is not "the bigger the better", but the one that matches saving-investment fundamentals.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.1</span>An American trade deficit necessarily means…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>America is losing — its exports have been beaten by foreigners</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Foreigners are net buyers of American assets (a capital-account surplus), and national saving is smaller than investment</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The dollar is about to collapse</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The BOP identity makes a "deficit" automatically mean a "capital inflow": foreigners sell us goods, then use the dollars they earn to buy American assets. Causality can run either way (low saving pulls in the deficit; a flood of foreign saving depresses rates and feeds spending), but the books always balance. Moralizing the deficit as "losing" wrongly applies household bookkeeping to a nation.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>BOP ≡ 0: a current-account deficit ⇔ a capital inflow.</li>
+          <li>One level deeper: CA = S − I — the essence of a deficit is a saving shortfall.</li>
+          <li>Surplus and deficit carry no moral valence; healthy means matched to fundamentals.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">Chapter 6</span>The trilemma and currency crises</h2>
+
+      <p><strong>Opening question:</strong> The 1997 Asian financial crisis, the 2015 Swiss franc "de-peg" flash crash, the 2022 plunges of the pound and the yen — the crisis scripts look strikingly alike: capital flees en masse, and the central bank cannot hold the exchange rate. Why is defending a rate so hard?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: pick two of three</div>
+        <p><strong>The impossible trinity (the policy trilemma)</strong>: (1) a fixed exchange rate, (2) free capital movement, (3) an independent monetary policy — a country can <strong>have at most two</strong> of the three. The logic: with a fixed rate and free capital movement, arbitrage forces domestic and foreign interest rates to line up (otherwise funds flood without limit across the border and batter the exchange rate), and monetary policy is neutralized; to keep both a fixed rate and the freedom to raise rates on its own, a country must control the capital account. Hong Kong (gives up (3): a currency board), mainland China (partially restricts (2)), and the US and Japan (give up (1): floating rates) have each picked their side. The classic crisis script: an economy that chose "fixed + free" sees its fundamentals deteriorate → speculators bet on devaluation → the central bank hikes and sells reserves to defend the rate → the hikes crush the domestic economy and the reserves run dry → <strong>the peg is abandoned and the currency collapses overnight</strong>. Soros's 1992 raid on the pound was simply spotting this indefensible position early.</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 6-1 · The trilemma selector</div>
+        <p class="fig-sub">Each side of the triangle stands for giving one goal up. Click any two of the three policy goals to see who took that road in the real world.</p>
+        <figure class="fig-canvas">
+          <svg id="tri-svg" viewBox="0 0 640 360" role="group" aria-label="The impossible triangle: three vertices — fixed exchange rate, free capital movement, independent monetary policy; pick any two vertices with keyboard or mouse, each combination corresponding to a real-world regime choice such as Hong Kong, mainland China, or the United States.">
+            <line x1="320" y1="60" x2="130" y2="300" class="axis"/>
+            <line x1="320" y1="60" x2="510" y2="300" class="axis"/>
+            <line x1="130" y1="300" x2="510" y2="300" class="axis"/>
+            <circle id="tri-v1" cx="320" cy="60" r="12" fill="#fff" stroke="#4d7c0f" stroke-width="3" style="cursor:pointer" tabindex="0" role="button" aria-label="Select goal: fixed exchange rate" aria-pressed="false"/>
+            <circle id="tri-v2" cx="130" cy="300" r="12" fill="#fff" stroke="#4d7c0f" stroke-width="3" style="cursor:pointer" tabindex="0" role="button" aria-label="Select goal: free capital movement" aria-pressed="false"/>
+            <circle id="tri-v3" cx="510" cy="300" r="12" fill="#fff" stroke="#4d7c0f" stroke-width="3" style="cursor:pointer" tabindex="0" role="button" aria-label="Select goal: independent monetary policy" aria-pressed="false"/>
+            <text class="chart-label" x="320" y="40" text-anchor="middle" style="font-weight:700">Fixed exchange rate</text>
+            <text class="chart-label" x="118" y="330" text-anchor="middle" style="font-weight:700">Free capital movement</text>
+            <text class="chart-label" x="525" y="330" text-anchor="middle" style="font-weight:700">Independent monetary policy</text>
+            <text id="tri-txt" class="chart-title-sm" x="320" y="190" text-anchor="middle"></text>
+            <text id="tri-sub" class="chart-label" x="320" y="215" text-anchor="middle" style="fill:#475569"></text>
+            <text class="chart-label" x="320" y="352" text-anchor="middle" style="fill:#64748b">Click a vertex to pick goals (two at most)</text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn ghost" id="tri-reset">Reset selection</button>
+        </div>
+        <figcaption>How to read this figure: "fixed exchange rate + free capital movement" = Hong Kong's currency board (no independent interest rate); "independent monetary policy + free capital movement" = the floating rates of the US, Japan, and the euro area; "fixed exchange rate + independent monetary policy" = mainland China's capital-account management. All three are <strong>coherent choices</strong> — the economies that wanted all three ended up like Thailand in 1997.</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Currency Board</div><span class="term-en">货币局制度</span><div class="term-def">The strictest fixed exchange rate: base money 100% backed by foreign reserves, interest rates fully following the anchor currency. Hong Kong's Linked Exchange Rate system, 1983 to today.</div></div>
+        <div class="term"><div class="term-name">Self-fulfilling Attack</div><span class="term-en">自我实现的投机攻击</span><div class="term-def">Speculators collectively bet on devaluation → the central bank is forced to hike and hurt the economy → the devaluation "proves" justified. A crisis can be ignited by expectations alone (game theory's bad equilibrium again).</div></div>
+        <div class="term"><div class="term-name">Original Sin</div><span class="term-en">原罪问题</span><div class="term-def">Emerging markets cannot borrow long term in their own currency → depreciation instantly magnifies the foreign-debt burden → depreciation reinforces itself. The core amplifier of the Asian crisis.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The 1997 Asian crisis in brief</div>
+        <p>Thailand: a fixed exchange rate + free capital movement + heavy short-term dollar debt. Speculators borrowed baht and sold it for dollars → the Bank of Thailand hiked and sold reserves to fight back → the reserves ran dry within a month → on July 2 the peg was abandoned and the baht lost ~15% in a day, with contagion then spreading to Korea and Indonesia (currencies cut in half, GDP down by double digits). The checklist of lessons: the impossible triangle is not negotiable; short-term foreign debt is the gunpowder; reserve "adequacy" depends on the measure; and the controversy over the IMF's austerity programs continues to this day.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.1</span>Hong Kong runs a linked exchange rate (fixed + free capital). This means the HKMA…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>must follow the Fed's interest rates — no independent monetary policy</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>can raise rates on its own against a local property bubble without touching the peg</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>can have all three, because Hong Kong's reserves are ample</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The trilemma is a logical constraint, not a resource constraint — no pile of reserves buys back the third corner. When the Fed hiked in 2022, Hong Kong rates were forced up in lockstep (the HK-US rate gap approached zero), and the local property and stock markets absorbed the imported tightening. The price of a fixed exchange rate is pawning away monetary sovereignty.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.2</span>A speculative currency attack can be "self-fulfilling". The best-fitting game structure is…</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>a dominant strategy in the prisoner's dilemma</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>a coordination game: attack-all and attack-none are both equilibria, and panic flips the equilibrium</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>utterly unrelated to bank runs</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> A currency attack and a bank run (track 05, chapter 6) are isomorphic coordination failures: if nobody attacks, the rate holds; if everyone attacks, defending it (recession-inducing hikes) becomes unsustainably costly. Second-generation crisis models (Obstfeld) are built exactly on this: in the gray zone of fundamentals, expectations decide fate. The defense: never run a balance sheet that can be run on.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The trilemma: fixed rate, free capital, independent money — pick two of three.</li>
+          <li>Crisis script: fundamentals worsen → speculative attack → the cost of defending explodes → the peg breaks and the currency plunges.</li>
+          <li>Currency attacks are isomorphic to bank runs: the bad equilibrium of a coordination failure.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">Wrap-up</span>Next steps &amp; further reading</h2>
+      <p>International economics roots downward into <strong>01 Microeconomics</strong> (supply-and-demand analysis of trade) and <strong>02 Macroeconomics</strong> (open-economy models), and connects upward to <strong>11 Development and Innovation</strong> (trade and growth), <strong>13 Urban and Regional Economics</strong> (economic geography and new trade theory), and <strong>16 Political Economy</strong> (the political economy of trade).</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Krugman, International Economics: Theory and Policy</span> — the Krugman–Obstfeld edition; the standard textbook.</li>
+          <li><span class="bk">Pietra Rivoli, The Travels of a T-Shirt in the Global Economy</span> — trade theory brought to life through a single supply chain.</li>
+          <li><span class="bk">Krugman, Pop Internationalism / The Economics of Peddling Anxiety</span> — classic popular writing that debunks trade panic.</li>
+          <li><span class="bk">Crisis histories such as The Plaza and the Bridge of Helplessness: The Asian Financial Crisis</span> — reads the trilemma as a story.</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../06-financial-economics/index.html"><span class="pager-dir">← Previous track</span><br><span class="pager-name">Financial Economics</span></a>
+        <a href="../08-public-economics/index.html"><span class="pager-dir">Next track →</span><br><span class="pager-name">Public Economics</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../../assets/econ.js"></script>
+<script>
+/* ================= Figure 1-1 Trade expands the frontier ================= */
+(function () {
+  var ppf = document.getElementById("tr-ppf");
+  var cpf = document.getElementById("tr-cpf");
+  var point = document.getElementById("tr-point");
+  var t1 = document.getElementById("tr-txt");
+  var t2 = document.getElementById("tr-sub");
+  if (!ppf) return;
+  // Home: at most 100 aircraft or 4000 (10k units) of clothing (opportunity cost 1 aircraft = 40 clothing); world price 1 aircraft = 25 clothing
+  var X0 = 70, X1 = 600, Y0 = 320, Y1 = 50;
+  var maxF = 100, maxC = 4000;
+  function px(c) { return X0 + c / (maxC * 1.6) * (X1 - X0); }
+  function py(f) { return Y0 - f / (maxF * 1.75) * (Y0 - Y1); } // consumption point can reach 160 aircraft (= maxC/25); leave headroom so it stays on canvas
+  // PPF: from (0,maxF) to (maxC,0)
+  ppf.setAttribute("x1", px(0)); ppf.setAttribute("y1", py(maxF));
+  ppf.setAttribute("x2", px(maxC)); ppf.setAttribute("y2", py(0));
+  // CPF (full specialization in clothing): slope 25 from (maxC,0) → max aircraft = maxC/25 = 160
+  cpf.setAttribute("x1", px(0)); cpf.setAttribute("y1", py(maxC / 25));
+  cpf.setAttribute("x2", px(maxC)); cpf.setAttribute("y2", py(0));
+  function draw() {
+    var w = parseFloat(document.getElementById("tr-w").value) / 100;
+    document.getElementById("tr-ow").textContent = Math.round(w * 100) + "%";
+    // Consumption point: autarky takes the PPF midpoint (50 aircraft, 2000 clothing); full specialization makes only clothing and trades for aircraft
+    var f = 50 * (1 - w) + 0 * w;             // home-built aircraft fall
+    var cSelf = (100 - f) * 40;               // clothing made with the remaining resources (on the PPF)
+    var planesBought = w * (cSelf / 25);      // trade clothing for aircraft at world prices
+    var cKept = cSelf - planesBought * 25;
+    var fTotal = f + planesBought;
+    point.setAttribute("cx", px(cKept)); point.setAttribute("cy", py(fTotal));
+    if (t1) t1.textContent = "Consumption bundle: (" + (cKept / 100).toFixed(1) + " million units of clothing, " + fTotal.toFixed(0) + " aircraft)";
+    if (t2) t2.textContent = w === 0 ? "Autarky: consumption is locked onto the home PPF" :
+      "Beyond the home PPF (at most " + maxF + " aircraft) — trade expands consumption " + Math.round(w * 100) + "%";
+  }
+  document.getElementById("tr-w").addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= Figure 3-1 Tariff ================= */
+(function () {
+  var svgIds = ["tar-sup", "tar-dem", "tar-pw", "tar-pt", "tar-gov", "tar-dwl"];
+  if (!document.getElementById("tar-sup")) return;
+  var X0 = 70, X1 = 600, Y0 = 330, Y1 = 60;
+  // Linear supply and demand: P = 40 + 0.10 Q (supply), P = 100 - 0.06 Q (demand) → autarky equilibrium Q=375, P=77.5
+  // World price Pw = 55 → with no tariff: home supply Qs=(55-40)/0.1=150, demand Qd=(100-55)/0.06=750, imports 600
+  function pS(q) { return 40 + 0.10 * q; }
+  function pD(q) { return 100 - 0.06 * q; }
+  var Pmin = 30, Pmax = 105;
+  function px(q) { return X0 + q / 850 * (X1 - X0); }
+  function py(p) { return Y0 - (p - Pmin) / (Pmax - Pmin) * (Y0 - Y1); }
+  var sup = document.getElementById("tar-sup");
+  sup.setAttribute("x1", px(0)); sup.setAttribute("y1", py(pS(0)));
+  sup.setAttribute("x2", px(700)); sup.setAttribute("y2", py(pS(700)));
+  var dem = document.getElementById("tar-dem");
+  dem.setAttribute("x1", px(60)); dem.setAttribute("y1", py(pD(60)));
+  dem.setAttribute("x2", px(830)); dem.setAttribute("y2", py(pD(830)));
+  var Pw = 55;
+  var pwLine = document.getElementById("tar-pw");
+  pwLine.setAttribute("x1", X0); pwLine.setAttribute("x2", X1);
+  pwLine.setAttribute("y1", py(Pw)); pwLine.setAttribute("y2", py(Pw));
+  var t1 = document.getElementById("tar-txt");
+  var t2 = document.getElementById("tar-sub");
+  function draw() {
+    var tPct = parseFloat(document.getElementById("tar-t").value);
+    document.getElementById("tar-ot").textContent = tPct + "%";
+    var Pt = Pw * (1 + tPct / 100);
+    var ptLine = document.getElementById("tar-pt");
+    ptLine.setAttribute("x1", X0); ptLine.setAttribute("x2", X1);
+    ptLine.setAttribute("y1", py(Pt)); ptLine.setAttribute("y2", py(Pt));
+    var ptLab = document.getElementById("tar-ptlab");
+    ptLab.setAttribute("x", X1 - 10); ptLab.setAttribute("y", py(Pt) - 8);
+    ptLab.setAttribute("text-anchor", "end");
+    ptLab.textContent = "Pw + t = " + Pt.toFixed(0);
+    var pwLab = document.getElementById("tar-pwlab");
+    pwLab.setAttribute("x", X0 + 8); pwLab.setAttribute("y", py(Pw) + 16);
+    var qs = (Pt - 40) / 0.10;            // home supply after the tariff
+    var qd = (100 - Pt) / 0.06;           // home demand after the tariff
+    var qs0 = (Pw - 40) / 0.10;
+    var qd0 = (100 - Pw) / 0.06;
+    var qA = 375, PA = 77.5;              // autarky equilibrium (intersection of the two lines)
+    var gov = document.getElementById("tar-gov");
+    var dwl = document.getElementById("tar-dwl");
+    if (qd > qs) {
+      gov.setAttribute("display", "inline");
+      gov.setAttribute("points",
+        px(qs) + "," + py(Pt) + " " + px(qd) + "," + py(Pt) + " " +
+        px(qd) + "," + py(Pw) + " " + px(qs) + "," + py(Pw));
+      dwl.setAttribute("points",
+        px(qs0) + "," + py(Pw) + " " + px(qs) + "," + py(Pw) + " " + px(qs) + "," + py(Pt) + " " +
+        px(qd0) + "," + py(Pw) + " " + px(qd) + "," + py(Pw) + " " + px(qd) + "," + py(Pt));
+      if (t1) t1.textContent = "Imports fall from " + Math.round(qd0 - qs0) + " to " + Math.round(qd - qs);
+      if (t2) t2.textContent = "Government revenue (green) " + Math.round((qd - qs) * (Pt - Pw) * 10) / 10 + " units; DWL (red) ≈ " + (tPct === 0 ? 0 : (tPct / 100) + "² of the price scale × area") + " (grows with t²)";
+    } else {
+      // Prohibitive tariff: imports fall to zero, the price rises to the autarky level
+      gov.setAttribute("display", "none");
+      dwl.setAttribute("points",
+        px(qs0) + "," + py(Pw) + " " + px(qd0) + "," + py(Pw) + " " + px(qA) + "," + py(PA));
+      if (t1) t1.textContent = "Prohibitive tariff: imports are zero (Pw + t has reached the autarky price of 77.5)";
+      if (t2) t2.textContent = "The domestic price rises to the autarky level; higher rates only lift the price, not revenue";
+    }
+  }
+  document.getElementById("tar-t").addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= Figure 4-1 FX supply and demand ================= */
+(function () {
+  if (!document.getElementById("fx-s")) return;
+  var X0 = 70, X1 = 600, Y0 = 320, Y1 = 50;
+  function px(q) { return X0 + q / 100 * (X1 - X0); }
+  function py(e) { return Y0 - (e - 5.5) / 4 * (Y0 - Y1); } // exchange rate 5.5~9.5
+  var s = document.getElementById("fx-s");
+  // Supply S: a pricier dollar (higher rate) → more export receipts converted → slopes up (5,6.0)→(95,9.0)
+  s.setAttribute("x1", px(5)); s.setAttribute("y1", py(6.0));
+  s.setAttribute("x2", px(95)); s.setAttribute("y2", py(9.0));
+  var d0 = document.getElementById("fx-d0");
+  d0.setAttribute("x1", px(5)); d0.setAttribute("y1", py(9.0));
+  d0.setAttribute("x2", px(95)); d0.setAttribute("y2", py(6.0));
+  var d = document.getElementById("fx-d");
+  var eq = document.getElementById("fx-eq");
+  var t1 = document.getElementById("fx-txt");
+  var t2 = document.getElementById("fx-sub");
+  function draw() {
+    var di = parseFloat(document.getElementById("fx-i").value);
+    document.getElementById("fx-oi").textContent = (di >= 0 ? "+" : "") + di.toFixed(1) + "%";
+    // A higher differential (home − foreign) → home-currency assets more attractive → FX demand shifts left (negative)
+    var shift = -di * 4; // parallel shift in quantity (percentage points)
+    var tx1 = 5 + shift, tx2 = 95 + shift; // true endpoints of the demand line (may leave the canvas)
+    // Draw only the part inside the visible range [5,100]; endpoints taken from the corresponding points on the true line
+    var qa = Math.max(5, tx1), qb = Math.min(100, tx2);
+    d.setAttribute("x1", px(qa)); d.setAttribute("y1", py(9.0 - 3 / 90 * (qa - tx1)));
+    d.setAttribute("x2", px(qb)); d.setAttribute("y2", py(9.0 - 3 / 90 * (qb - tx1)));
+    // Equilibrium: intersection of S and D. S: e = 6.0 + 3/90*(q-5); D: e = 9.0 - 3/90*(q - tx1)
+    var qs = 5, es = 6.0;
+    for (var q = 5; q <= 100; q += 0.5) {
+      var eS = 6.0 + 3 / 90 * (q - 5);
+      var eD = 9.0 - 3 / 90 * (q - tx1);
+      if (eS >= eD) { qs = q; es = eS; break; }
+    }
+    eq.setAttribute("cx", px(qs)); eq.setAttribute("cy", py(es));
+    if (t1) t1.textContent = "Equilibrium rate ≈ " + es.toFixed(2) + " domestic per USD";
+    if (t2) t2.textContent = di === 0 ? "Zero differential: capital flows are neutral" :
+      (di > 0 ? "Home hikes " + di.toFixed(1) + "pp → capital flows into home currency → appreciation (the rate number falls)"
+              : "Home cuts " + Math.abs(di).toFixed(1) + "pp → capital flows out → depreciation (the rate number rises)");
+  }
+  document.getElementById("fx-i").addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= Figure 6-1 The trilemma ================= */
+(function () {
+  var vs = [
+    { id: "tri-v1", name: "Fixed exchange rate", combo: { pair: ["Fixed exchange rate", "Free capital movement"], who: "Hong Kong (currency board)", note: "Gives up independent monetary policy: interest rates must follow the dollar anchor" } },
+    { id: "tri-v2", name: "Free capital movement", combo: { pair: ["Free capital movement", "Independent monetary policy"], who: "United States / Japan / Euro area", note: "Gives up the fixed exchange rate: the currency floats freely" } },
+    { id: "tri-v3", name: "Independent monetary policy", combo: { pair: ["Fixed exchange rate", "Independent monetary policy"], who: "Mainland China (managed float + capital-account management)", note: "Gives up fully free capital movement: in exchange for policy room" } }
+  ];
+  var picked = { "tri-v1": false, "tri-v2": false, "tri-v3": false };
+  var txt = document.getElementById("tri-txt");
+  var sub = document.getElementById("tri-sub");
+  function chosen() { return vs.filter(function (v) { return picked[v.id]; }); }
+  function render() {
+    vs.forEach(function (v) {
+      var el = document.getElementById(v.id);
+      el.setAttribute("fill", picked[v.id] ? "#4d7c0f" : "#ffffff");
+      el.setAttribute("aria-pressed", picked[v.id] ? "true" : "false");
+    });
+    var sel = chosen();
+    if (sel.length === 0) {
+      if (txt) txt.textContent = "No goal selected";
+      if (sub) sub.textContent = "Tip: pick at most two of the triangle's three corners";
+    } else if (sel.length === 1) {
+      if (txt) txt.textContent = "Selected: " + sel[0].name;
+      if (sub) sub.textContent = "Pick one more (the third must then be given up)";
+    } else {
+      var match = null;
+      vs.forEach(function (v) {
+        if (v.combo.pair.indexOf(sel[0].name) >= 0 && v.combo.pair.indexOf(sel[1].name) >= 0) match = v.combo;
+      });
+      if (match) {
+        if (txt) txt.textContent = "Combination: " + match.pair.join(" + ");
+        if (sub) sub.textContent = "Real-world case: " + match.who + " — " + match.note;
+      } else {
+        // Impossible combo note: fixed + free + independent — in fact any pair is possible; any two map to one corner
+      }
+    }
+  }
+  vs.forEach(function (v) {
+    var el = document.getElementById(v.id);
+    function toggle() {
+      var sel = chosen();
+      if (!picked[v.id] && sel.length >= 2) return;
+      picked[v.id] = !picked[v.id];
+      render();
+    }
+    el.addEventListener("click", toggle);
+    el.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); toggle(); }
+    });
+  });
+  var rst = document.getElementById("tri-reset");
+  if (rst) rst.addEventListener("click", function () {
+    picked = { "tri-v1": false, "tri-v2": false, "tri-v3": false };
+    render();
+  });
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Development &amp; Innovation Economics · EconLearn Self-Study Path in Economics</title>
+<meta name="description" content="An interactive English tutorial on development and innovation economics: HDI and the poverty line, growth accounting, poverty traps and the Big Push, institutions and growth, technology diffusion and the demographic transition, with interactive figures and self-check quizzes.">
+<link rel="stylesheet" href="../../assets/econ.css">
+</head>
+<body style="--branch:#047857">
+<noscript><p class="noscript-tip">The interactive figures and self-check quizzes on this page require JavaScript; with scripting disabled, the full text remains readable.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← Home</a>
+  <div class="topbar-title"><span class="topbar-num">11</span>Development &amp; Innovation Economics</div>
+  <a class="topbar-lang" href="../../11-发展与创新经济学/index.html" hreflang="zh-CN">中文</a>
+  <button class="toc-toggle" aria-expanded="false">Contents</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">Chapters in this track</p>
+    <nav aria-label="Chapter contents">
+      <a href="#overview">Overview &amp; learning goals</a>
+      <a href="#ch1">1 · What is development: HDI and poverty</a>
+      <a href="#ch2">2 · Growth accounting and TFP</a>
+      <a href="#ch3">3 · Poverty traps and the Big Push</a>
+      <a href="#ch4">4 · Institutions and development</a>
+      <a href="#ch5">5 · Innovation and creative destruction</a>
+      <a href="#ch6">6 · Demographic transition and structural change</a>
+      <a href="#path">Next steps &amp; further reading</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · Self-Study Path in Economics</p>
+  </aside>
+  <main class="main" id="main">
+
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">Track 11 · Applied fields</span>
+        <h1>Development &amp; Innovation Economics</h1>
+        <p class="hero-en">发展与创新经济学</p>
+        <p class="hero-lead">Why is per-capita income in some countries fifty times that of others? Why does growth sometimes last a century and sometimes stop dead? This track studies how wealth and opportunity are distributed across countries and eras: how to measure “development,” what makes growth sustainable, how poor economies can escape traps, what roles institutions and innovation play, and how population and industrial structure are transformed.</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">By the end of this track, you will be able to</div>
+        <ul>
+          <li>Compare development levels with the HDI's three-dimensional framework (health, education, income) and explain why the geometric mean leaves lopsided performance nowhere to hide</li>
+          <li>Use growth accounting to decompose output growth into the contributions of capital, labor, and TFP, and say what sits inside the “residual”</li>
+          <li>Draw the S-curve diagram of the poverty trap and show how coordination failure, the critical threshold, and the Big Push interact</li>
+          <li>Recount natural experiments such as the Korean Peninsula and compare how well the geography, institutions, and culture hypotheses explain the gap between rich and poor</li>
+          <li>Explain creative destruction and the patent trade-off, and describe the three phases of the S-shaped technology adoption curve</li>
+          <li>Describe the four stages of the demographic transition and the Lewis turning point, and assess what the demographic dividend and population aging imply for growth and policy</li>
+        </ul>
+      </div>
+      <div class="prereq">Prerequisites:
+        <a class="badge" href="../02-macroeconomics/index.html">02 Macroeconomics · Growth and the Solow model</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">Chapter 1</span>What is development: measuring beyond GDP</h2>
+
+      <h3>Opening question</h3>
+      <p>An oil exporter has GDP per capita above US$50,000, yet half its women cannot read and life expectancy is shorter than in middle-income countries—is it a “developed country”? Conversely, a small South Asian country has modest per-capita income yet achieves universal literacy and basic health care for all—is it “backward”? Are “rich” and “developed” the same thing? To answer these questions, we must first fit development with a dashboard.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Income is a means, not an end. The economist Amartya Sen argues that the essence of development is expanding human <strong>capabilities</strong>: people being able to lead lives with real choices—living long, reading fluently, taking part. GDP is like the “weight” line on a medical report; the HDI is like a comprehensive checkup in which blood pressure, cholesterol, and weight each get their own reading. The <strong>Human Development Index</strong> (HDI) normalizes each of its three dimensions—health, education, income—to a 0-to-1 scale and then takes the <strong>geometric mean</strong>. The geometric mean is ruthless about lopsidedness: a collapse in any one dimension drags down the total, and you cannot paper over failure in one dimension by maxing out another. That is precisely the design intent: development cannot be bought with money alone.</p>
+        <p>Measuring poverty is just as exacting. The World Bank's extreme poverty line is US$2.15 per day—but this is in “international dollars” converted at <strong>purchasing power parity</strong> (PPP): it measures not dollars at market exchange rates, but whether a household can buy a survival basket of goods where it lives.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">Human Development Index (HDI)</span><span class="term-en">人类发展指数</span><div class="term-def">The UNDP's index combining health (life expectancy), education (years of schooling), and income (GNI per capita, PPP) as three normalized dimensions, aggregated with a geometric mean. Scores above 0.800 fall in the very high human development group.</div></div>
+        <div class="term"><span class="term-name">Extreme poverty line</span><span class="term-en">极端贫困线</span><div class="term-def">The World Bank's survival threshold of US$2.15 per day at 2017 PPP; separate lines of US$3.65 and US$6.85 apply to lower-middle- and upper-middle-income countries. PPP conversion reflects local purchasing power.</div></div>
+        <div class="term"><span class="term-name">Purchasing power parity (PPP)</span><span class="term-en">购买力平价</span><div class="term-def">Converts incomes using the actual local prices of the same basket of goods in each country, correcting the way market exchange rates understate differences in living costs. Cross-country comparisons of living standards should use PPP.</div></div>
+        <div class="term"><span class="term-name">Development vs. growth</span><span class="term-en">发展对增长</span><div class="term-def">Growth is the rise in output per person; development also encompasses health, education, gender equality, the structure of opportunity, and freedom. Growth is usually development's strongest engine, but the two are not synonymous.</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <p>Try it: drag the “Life expectancy” slider down to its minimum, then max out “Income per capita” alone—can the HDI compensate? The answer is no: the geometric mean punishes lopsidedness.</p>
+      <figure class="fig">
+        <div class="fig-title">Figure 1-1 · The HDI calculator: how three components combine into one index</div>
+        <p class="fig-sub">Drag the three sliders and watch the component bars and the main HDI bar change; check the classification verdict below.</p>
+        <figure class="fig-canvas">
+          <svg id="hdiSvg" viewBox="0 0 640 350" role="img" aria-label="HDI calculator: life expectancy, education, and income component bars combined by geometric mean into the main HDI bar.">
+            <text class="chart-label-en" x="100" y="26">Reference (UNDP 2023/24 report): Niger 0.374 · China 0.788 · Norway 0.966</text>
+            <line class="gridline" x1="215" y1="48" x2="215" y2="308"></line>
+            <line class="gridline" x1="330" y1="48" x2="330" y2="308"></line>
+            <line class="gridline" x1="445" y1="48" x2="445" y2="308"></line>
+            <line class="gridline" x1="560" y1="48" x2="560" y2="308"></line>
+            <text class="chart-label-en" x="100" y="326" text-anchor="middle">0</text>
+            <text class="chart-label-en" x="215" y="326" text-anchor="middle">0.25</text>
+            <text class="chart-label-en" x="330" y="326" text-anchor="middle">0.50</text>
+            <text class="chart-label-en" x="445" y="326" text-anchor="middle">0.75</text>
+            <text class="chart-label-en" x="560" y="326" text-anchor="middle">1.00</text>
+            <text class="chart-label-en" x="330" y="346" text-anchor="middle">Index scale 0 → 1 (each component normalized)</text>
+            <text class="chart-label" x="92" y="77" text-anchor="end">Life expectancy index</text>
+            <rect id="hdiBarLife" x="100" y="64" width="414" height="16" rx="3" fill="#2f6fdb"></rect>
+            <text id="hdiValLife" class="chart-label" x="522" y="77">0.90</text>
+            <text class="chart-label" x="92" y="133" text-anchor="end">Education index</text>
+            <rect id="hdiBarEdu" x="100" y="120" width="331.2" height="16" rx="3" fill="#7c3aed"></rect>
+            <text id="hdiValEdu" class="chart-label" x="439.2" y="133">0.72</text>
+            <text class="chart-label" x="92" y="189" text-anchor="end">Income index</text>
+            <rect id="hdiBarInc" x="100" y="176" width="371.4" height="16" rx="3" fill="#ea580c"></rect>
+            <text id="hdiValInc" class="chart-label" x="479.4" y="189">0.81</text>
+            <line class="gridline" x1="100" y1="216" x2="560" y2="216"></line>
+            <text class="chart-title-sm" x="92" y="266" text-anchor="end">HDI</text>
+            <line x1="272" y1="228" x2="272" y2="244" stroke="#475569" stroke-width="2"></line>
+            <text class="chart-label-en" x="272" y="224" text-anchor="middle">Niger 0.37</text>
+            <line x1="462" y1="228" x2="462" y2="244" stroke="#475569" stroke-width="2"></line>
+            <text class="chart-label-en" x="462" y="224" text-anchor="middle">China 0.79</text>
+            <line x1="544" y1="228" x2="544" y2="244" stroke="#475569" stroke-width="2"></line>
+            <text class="chart-label-en" x="544" y="224" text-anchor="middle">Norway 0.97</text>
+            <rect id="hdiBarHdi" x="100" y="244" width="370.6" height="34" rx="4" fill="#047857"></rect>
+            <text id="hdiValHdi" class="chart-title-sm" x="478.6" y="268">0.806</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="hdiLe">Life expectancy</label>
+            <input type="range" id="hdiLe" min="25" max="85" value="78.5" step="0.5">
+            <output id="hdiLeOut" for="hdiLe">78.5 years</output></div>
+          <div class="ctrl"><label for="hdiEdu">Education index</label>
+            <input type="range" id="hdiEdu" min="0" max="0.99" value="0.72" step="0.01">
+            <output id="hdiEduOut" for="hdiEdu">0.72</output></div>
+          <div class="ctrl"><label for="hdiGniLn">Income per capita (log)</label>
+            <input type="range" id="hdiGniLn" min="4.6" max="11.2" value="9.95" step="0.01">
+            <output id="hdiGniOut" for="hdiGniLn">$21,000</output></div>
+        </div>
+        <figcaption>How to read this figure: <span id="hdiRead">The three components combine by geometric mean.</span> The income dimension uses a log transform (100 to 75,000 international dollars), because the same $1,000 of income means a great deal to a poor household and little to a rich one. <span id="hdiClass">The combined result is shown in the main bar.</span></figcaption>
+      </figure>
+
+      <div class="formula">HDI = ( I<span style="font-size:.75em;vertical-align:-2px">health</span> × I<span style="font-size:.75em;vertical-align:-2px">education</span> × I<span style="font-size:.75em;vertical-align:-2px">income</span> ) <sup>1/3</sup>
+        <span class="f-note">each component is first normalized to 0–1 (life expectancy over 20–85 years, income over ln(100)–ln(75000)); since 2010 the UNDP has used the geometric mean instead of the arithmetic mean, to penalize imbalance among components</span>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world</div>
+        <p>China is among the economies whose development indicators have improved fastest over the past three decades: its HDI rose from 0.484 in 1990 to 0.788 in 2022, and the UNDP calls it the only economy in the world over that period to leap from the “low human development” group into the “high human development” group. Under the current standard, the rural absolute poor fell from 98.99 million at the end of 2012 to zero by the end of 2020—more than 70 percent of the global reduction in poverty over the period. Over the same span, the absolute number of people in extreme poverty in sub-Saharan Africa rose rather than fell: behind the global “average” of poverty reduction, the regional distribution shifted dramatically.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>(1) High GDP per capita equals developed—wrong: resource economies can have very high incomes alongside lagging education, gender, and structural indicators, which is exactly the lopsidedness the HDI is built to reveal. (2) Moving the poverty line from $1.90 to $2.15 was “raising the standard”—no: it simply re-prices the same survival basket for US inflation. (3) Comparing living standards at market exchange rates—wrong: exchange rates are dominated by capital flows and tradable goods and systematically understate the real purchasing power of poor countries. (4) A low HDI means a country has nothing going for it—the HDI is only one dashboard; the inequality-adjusted HDI, the Gender Development Index, and other multidimensional lenses exist as well. Measurement always serves the question; it does not replace judgment.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.1</span>Two countries have nearly the same gross national income per capita (PPP), but very different HDIs. The most likely explanation is?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The two countries have different population sizes</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The two countries differ markedly in life expectancy and educational attainment</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The country with higher military spending has points deducted from its HDI</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>The country with more volatile exchange rates has points deducted from its HDI</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The HDI is the geometric mean of the health, education, and income dimensions. If the income dimension is nearly identical while the HDI gap is large, the difference must come mainly from health and education—B. A: population size does not affect a per-capita measure; C and D: neither military spending nor exchange rates enter the HDI (the income dimension is computed at PPP, which already strips out exchange-rate volatility).</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.2</span>Which statement about changes in global extreme poverty since 1990 is correct?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The extreme poverty line is converted at market exchange rates</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The global extreme poverty rate has fallen sharply, but sub-Saharan Africa's share of global poverty has risen markedly</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>China's contribution to global poverty reduction is negligible</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>A falling global poverty rate means poverty is falling within every country</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> B. Since 1990 the global extreme poverty rate has fallen from about 38% to below 10%, but the decline is heavily concentrated in China and East Asia, while Africa's share has risen. A is wrong: the line is PPP-converted. C is wrong: China accounts for most of the global reduction. D is wrong: improvement in the global average can coexist with deterioration in individual countries (war, epidemic).</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Development is multidimensional: growth is the engine, but development also includes health, education, opportunity, and freedom—and the measuring tools themselves shape how we think about development.</li>
+          <li>HDI = the geometric mean of the health, education, and income components; the geometric mean punishes lopsidedness—maxing out one component cannot mask a collapse in another.</li>
+          <li>Cross-country and cross-time comparisons must use PPP; market exchange rates systematically distort comparisons of living costs.</li>
+          <li>The extreme poverty line (2.15 international dollars per day, 2017 PPP) measures a survival floor; the achievement of global poverty reduction is enormous but extremely unevenly distributed.</li>
+          <li>High GDP per capita does not mean developed: structural and distributional information hides behind the aggregates.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">Chapter 2</span>The determinants of growth: capital, labor, and TFP</h2>
+
+      <h3>Opening question</h3>
+      <p>After World War II, mainstream economists believed that poor countries lacked only capital: give them money and machines, and they would catch up. Sixty years of international aid and investment later, why did some economies (South Korea, Taiwan (China)) genuinely take off, while many more accumulated capital rapidly yet saw growth stall or even reverse? “The same machines, the same workers—why is output different?” The most important concept of this track hides inside that gap.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Sort growth into three buckets: more machines and plants (<strong>capital accumulation</strong>), more labor input (hours, human capital), and the residual “more output from the same inputs”—<strong>total factor productivity</strong> (TFP). Think of a restaurant's revenue growth: it can come from opening more tables (capital) or hiring more staff (labor), or from faster table turnover (TFP). The Solow model tells us that because of <strong>diminishing returns to capital</strong>, growth from piling up capital alone must taper away—the ultimate engine of sustainable growth is TFP.</p>
+        <p>So where does TFP come from? <strong>Endogenous growth theory</strong> answers: knowledge. Ideas are nonrivalrous—you and I can use the same theorem, the same recipe—so accumulating knowledge brings increasing returns, and the growth rate itself can be changed over the long run by policy: R&D, education, openness, and competition are no longer “level effects” but “growth-rate effects.”</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">Total factor productivity (TFP)</span><span class="term-en">全要素生产率</span><div class="term-def">The “residual” in output growth that capital and labor inputs cannot explain: the sum of technology, organization, allocative efficiency, scale economies, and measurement error. The main explanatory variable for long-run growth.</div></div>
+        <div class="term"><span class="term-name">Growth accounting</span><span class="term-en">增长核算</span><div class="term-def">The decomposition pioneered by Solow: output growth = TFP growth + capital share × capital growth + labor share × labor growth. The first report for diagnosing the sources of growth.</div></div>
+        <div class="term"><span class="term-name">Endogenous growth theory</span><span class="term-en">内生增长理论</span><div class="term-def">Romer, Lucas, and others put technological progress and human-capital accumulation inside the model: nonrival knowledge brings increasing returns, and policy (R&D, education, openness) can affect the growth rate over the long run.</div></div>
+        <div class="term"><span class="term-name">Convergence</span><span class="term-en">趋同</span><div class="term-def">The hypothesis that poorer economies grow faster than rich ones and catch up. Absolute convergence fails in world samples; conditional convergence—controlling for investment rates, population, and human capital—has strong evidence; there is also “club convergence.”</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <p>Try it: hold output growth at 6%, drag the capital share α up to 0.45 and capital growth to the 15% maximum—watch the TFP bar flip from positive to negative (6 − 0.45×15 − 0.55×0.5 ≈ −1.0%). This is the mathematical limit of “buying growth with investment.”</p>
+      <figure class="fig">
+        <div class="fig-title">Figure 2-1 · The growth accounting calculator: where growth comes from</div>
+        <p class="fig-sub">Four sliders set output growth, capital growth, labor growth, and the capital share α; the bars below show each contribution and the TFP residual.</p>
+        <figure class="fig-canvas">
+          <svg id="gaSvg" viewBox="0 0 640 360" role="img" aria-label="Growth accounting: the output growth bar compared with bars for the capital contribution, the labor contribution, and the TFP residual.">
+            <text class="chart-label-en" x="590" y="30" text-anchor="end">α is capital's income share (about 1/3)</text>
+            <line class="gridline" x1="188" y1="44" x2="188" y2="308"></line>
+            <line class="gridline" x1="424" y1="44" x2="424" y2="308"></line>
+            <line class="gridline" x1="543" y1="44" x2="543" y2="308"></line>
+            <line class="axis" x1="306" y1="40" x2="306" y2="312"></line>
+            <text class="chart-label-en" x="188" y="328" text-anchor="middle">−5%</text>
+            <text class="chart-label-en" x="306" y="328" text-anchor="middle">0</text>
+            <text class="chart-label-en" x="424" y="328" text-anchor="middle">+5%</text>
+            <text class="chart-label-en" x="543" y="328" text-anchor="middle">+10%</text>
+            <text class="chart-label-en" x="330" y="350" text-anchor="middle">Annual growth rate (%)</text>
+            <text class="chart-label" x="70" y="46">Output growth gY</text>
+            <rect id="gaBarY" x="306" y="53" width="141.6" height="26" rx="3" fill="#475569"></rect>
+            <text id="gaValY" class="chart-label" x="394" y="71">+6.00%</text>
+            <text class="chart-label" x="70" y="118">Capital contribution α·gK</text>
+            <rect id="gaBarK" x="306" y="125" width="70.1" height="26" rx="3" fill="#2f6fdb"></rect>
+            <text id="gaValK" class="chart-label" x="394" y="143">+3.00%</text>
+            <text class="chart-label" x="70" y="190">Labor contribution (1−α)·gL</text>
+            <rect id="gaBarL" x="306" y="197" width="7.9" height="26" rx="3" fill="#7c3aed"></rect>
+            <text id="gaValL" class="chart-label" x="394" y="215">+0.33%</text>
+            <text class="chart-label" x="70" y="262">TFP residual gA = gY − α·gK − (1−α)·gL</text>
+            <rect id="gaBarT" x="306" y="269" width="63.6" height="26" rx="3" fill="#0d9488"></rect>
+            <text id="gaValT" class="chart-label" x="394" y="287">+2.67%</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="gaGY">Output growth gY</label>
+            <input type="range" id="gaGY" min="0" max="10" value="6" step="0.1">
+            <output id="gaGYOut" for="gaGY">6.0%</output></div>
+          <div class="ctrl"><label for="gaGK">Capital growth gK</label>
+            <input type="range" id="gaGK" min="0" max="15" value="9" step="0.1">
+            <output id="gaGKOut" for="gaGK">9.0%</output></div>
+          <div class="ctrl"><label for="gaGL">Labor growth gL</label>
+            <input type="range" id="gaGL" min="-1" max="3" value="0.5" step="0.1">
+            <output id="gaGLOut" for="gaGL">+0.5%</output></div>
+          <div class="ctrl"><label for="gaAlpha">Capital share α</label>
+            <input type="range" id="gaAlpha" min="0.25" max="0.45" value="0.33" step="0.01">
+            <output id="gaAlphaOut" for="gaAlpha">0.33</output></div>
+        </div>
+        <figcaption>How to read this figure: <span id="gaRead">The accounting identity is shown in the bars.</span> Young (1995), in his famous accounting for the Four Asian Tigers, found that between 1966 and 1990 their TFP contribution was mostly 0.2–1.5% per year—high growth relied almost entirely on factor accumulation—sparking the “East Asia has no miracle” debate (later partly revised by Hsieh's dual method). To judge the “quality” of growth, look at the length and the sign of the TFP bar.</figcaption>
+      </figure>
+
+      <div class="formula">gY = g<sub>TFP</sub> + α·g<sub>K</sub> + (1−α)·g<sub>L</sub>
+        <span class="f-note">g is each variable's annual growth rate; α is capital's income share (equal to capital's output elasticity in competitive equilibrium), commonly set to 1/3; estimates for China mostly fall in the range 0.4–0.5</span>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world</div>
+        <p>China's post-reform growth decomposition continues this debate: most estimates find that capital accumulation contributed about half of growth over 1978–2010, with TFP contributing roughly 2–3 percentage points a year—clearly positive, but modest beside the capital deepening of the Four Tigers at their peak. It follows that as capital deepening approaches the region of diminishing returns, a downshift in growth is nearly unavoidable: after 2012 China's growth slowed while the investment rate stayed high—precisely the macro picture of a narrowing space for “buying growth with capital.” Policy debate has accordingly shifted from “how much more investment” to “how to raise TFP”: market-based allocation of factors, open competition, education, and R&D.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>(1) TFP is just technology—no: it also includes allocative efficiency (whether money and people actually flow to where productivity is highest), organization and management, scale effects, and even statistical error; it is “a measure of our ignorance.” (2) Once human capital is counted inside labor, the job is done—differences in education quality eventually show up in the residual. (3) “East Asia has no miracle” means East Asian growth was fake—wrong: that is a judgment about the <strong>source</strong> of growth, not a denial of the <strong>fact</strong> of growth. (4) Treating the “middle-income trap” as a law—it is a description of a set of stagnation cases; mechanically it is exactly this chapter's story: once accumulation-driven growth runs out, an economy must switch to TFP-driven growth.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.1</span>An economy grows 6% a year, its capital stock grows 9%, labor input grows 1.5%, and the capital share is α = 1/3. TFP growth is approximately?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>About 2.0%</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>About 3.0%</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>About 4.5%</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>About 6.0%</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> gA = gY − α·gK − (1−α)·gL = 6 − (1/3)×9 − (2/3)×1.5 = 6 − 3 − 1 = 2.0%, so A. B is the result of subtracting only the capital contribution (forgetting labor); C is what you get misremembering α as 1/2; D equates TFP with the whole of output growth. TFP is “what is left after subtracting the factor contributions.”</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.2</span>Which statement about the cross-country evidence on convergence is most accurate?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The income gap between any two countries in the world is automatically narrowing</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>After controlling for structural variables such as the investment rate, population growth, and human capital, initially poorer economies grow faster (conditional convergence)</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>There is no sign of convergence among developed countries</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Conditional convergence means poor countries can catch up with rich ones without changing any policy</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> B: this is the Solow model's core prediction and a robust fact from Barro regressions—convergence is “conditional.” A confuses this with absolute convergence: in large world samples poor countries on average do not grow faster than rich ones, and the gaps are even widening. C is wrong: convergence within the OECD is relatively visible (though the early evidence drew criticism for sample selection bias). D contradicts the word “conditional”—conditional convergence says precisely that a country must first get the investment rate, human capital, and other conditions right.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Growth accounting decomposes output growth into TFP, capital, and labor contributions: gY = gTFP + α·gK + (1−α)·gL.</li>
+          <li>TFP is a residual: technology, allocative efficiency, organization, and measurement error all live inside it—it measures the “quality” of growth, not merely “technology.”</li>
+          <li>Diminishing returns to capital mean growth from accumulation alone must eventually slow; sustainable growth depends on TFP and human capital.</li>
+          <li>Endogenous growth theory: nonrival knowledge → increasing returns → R&D, education, and openness can change the growth rate over the long run.</li>
+          <li>Convergence is conditional: economies with similar structural variables catch up fastest; “automatic convergence” does not hold.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">Chapter 3</span>Poverty traps and the Big Push</h2>
+
+      <h3>Opening question</h3>
+      <p>A Kenyan farmer works hard all year and harvests barely enough to eat: no surplus means no saving, no saving means no investment, no investment means next year is subsistence again. Why does being poor replicate itself? More subtly: why does a transfer to a poor family sometimes lift it for good, and sometimes only buy one breath before it slides back to where it was? The answer hides inside an S-shaped curve.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>A <strong>poverty trap</strong> is a self-reinforcing low-level equilibrium: low income → low saving and low investment → low income. In pictures: the horizontal axis is this generation's income y, the vertical axis the next generation's income y′ = f(y). If this mapping lies below the 45° line (y′ = y) at low incomes and rises above it only in the middle range, there are <strong>three equilibria</strong>: a low equilibrium (the trap), an unstable critical threshold, and a high equilibrium. Families starting to the left of the threshold slide back into poverty generation after generation; families that cross it climb toward prosperity—<strong>initial conditions determine destiny</strong>, and that is what “trap” means.</p>
+        <p>The trap's microeconomic mechanism is <strong>coordination failure</strong>: investments are complementary—the power plant needs factories to use its electricity, and factories need the power plant before they dare to build. Investing alone loses money, so nobody moves; moving together, everyone profits. On this basis Rosenstein-Rodan proposed <strong>the Big Push</strong>: use a one-time, coordinated, cross-sector investment to push the economy past the critical threshold. A trap is not destiny: outside aid, public health, and education act like forces that lift the entire S-curve—lift it high enough and the low equilibrium disappears.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">Poverty trap</span><span class="term-en">贫困陷阱</span><div class="term-def">A self-reinforcing low-level equilibrium: the income mapping and the 45° line form a multiple-equilibrium structure—a stable low equilibrium, a critical threshold, and a stable high equilibrium—and starting points below the threshold converge back into poverty over generations.</div></div>
+        <div class="term"><span class="term-name">Coordination failure</span><span class="term-en">协调失灵</span><div class="term-def">Multiple equilibria created by investment complementarity: only simultaneous action by everyone improves outcomes, unilateral action loses money, and so the economy stays at the bad equilibrium. Murphy, Shleifer, and Vishny (1989) formalized it.</div></div>
+        <div class="term"><span class="term-name">The Big Push</span><span class="term-en">大推进</span><div class="term-def">Rosenstein-Rodan's (1943) proposal: through a one-time, synchronized, multi-sector coordinated investment (infrastructure + industry + human capital), pass the critical scale and break the low-level equilibrium.</div></div>
+        <div class="term"><span class="term-name">Randomized controlled trial (RCT)</span><span class="term-en">随机对照实验</span><div class="term-def">Randomly assign an intervention to a treatment group and a control group, and estimate the causal effect from the difference in the two means. The 2019 Nobel Prize went to Banerjee, Duflo, and Kremer for bringing RCTs into development economics.</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <p>Try it: first keep outside investment at 0 and drag “Initial income” from $2k to $4k—watch the staircase path switch from sliding down to climbing; then push outside investment to the maximum (0.35) and let a starting point of $2k escape too. Whether the threshold exists becomes plain at a glance.</p>
+      <figure class="fig">
+        <div class="fig-title">Figure 3-1 · The poverty trap: the S-curve, the threshold, and the staircase path</div>
+        <p class="fig-sub">The pink staircase is the path of a family's income across generations (each step jumps from the 45° line to the S-curve, then returns horizontally to the 45° line). Drag the sliders to change outside investment and the starting point.</p>
+        <figure class="fig-canvas">
+          <svg id="trapSvg" viewBox="0 0 640 420" role="img" aria-label="Poverty trap diagram: the S-shaped income mapping and the 45-degree line intersect at three points, with a staircase path evolving generation by generation.">
+            <line class="gridline" x1="202" y1="350" x2="202" y2="58"></line>
+            <line class="gridline" x1="335" y1="350" x2="335" y2="58"></line>
+            <line class="gridline" x1="467" y1="350" x2="467" y2="58"></line>
+            <line class="gridline" x1="70" y1="277" x2="600" y2="277"></line>
+            <line class="gridline" x1="70" y1="204" x2="600" y2="204"></line>
+            <line class="gridline" x1="70" y1="131" x2="600" y2="131"></line>
+            <line class="axis" x1="70" y1="350" x2="610" y2="350"></line>
+            <line class="axis" x1="70" y1="350" x2="70" y2="36"></line>
+            <text class="chart-label-en" x="70" y="368" text-anchor="middle">0</text>
+            <text class="chart-label-en" x="202" y="368" text-anchor="middle">2</text>
+            <text class="chart-label-en" x="335" y="368" text-anchor="middle">4</text>
+            <text class="chart-label-en" x="467" y="368" text-anchor="middle">6</text>
+            <text class="chart-label-en" x="600" y="368" text-anchor="middle">8</text>
+            <text class="chart-label" x="340" y="392" text-anchor="middle">Current generation income per capita y (US$ thousands)</text>
+            <text class="chart-label-en" x="62" y="354" text-anchor="end">0</text>
+            <text class="chart-label-en" x="62" y="281" text-anchor="end">2</text>
+            <text class="chart-label-en" x="62" y="208" text-anchor="end">4</text>
+            <text class="chart-label-en" x="62" y="135" text-anchor="end">6</text>
+            <text class="chart-label-en" x="62" y="62" text-anchor="end">8</text>
+            <text class="chart-label-en" x="16" y="28" text-anchor="start">Next generation's income y′ (US$ thousands)</text>
+            <line x1="70" y1="350" x2="600" y2="58" stroke="#94a3af" stroke-width="2" stroke-dasharray="7 5"></line>
+            <text class="chart-label" x="95" y="70" fill="#64748b">45° line: y′ = y (income stays put)</text>
+            <path id="trapCurve" class="curve curve-c1" d=""></path>
+            <text class="chart-label" x="255" y="120" fill="#2f6fdb">S-curve: y′ = f(y)</text>
+            <polyline id="trapWeb" points="" fill="none" stroke="#db2777" stroke-width="1.5" opacity="0.65"></polyline>
+            <circle id="trapStart" r="5.5" class="dot" fill="#db2777"></circle>
+            <g id="trapP1" display="none">
+              <circle r="6" fill="#ea580c" stroke="#fff" stroke-width="1.5"></circle>
+              <text class="chart-label" x="12" y="22">Low equilibrium (trap)</text>
+            </g>
+            <g id="trapP2" display="none">
+              <circle r="6" fill="#fff" stroke="#ea580c" stroke-width="3"></circle>
+              <text class="chart-label" x="0" y="-14" text-anchor="middle">Critical threshold</text>
+            </g>
+            <g id="trapP3" display="none">
+              <circle r="6" fill="#0d9488" stroke="#fff" stroke-width="1.5"></circle>
+              <text class="chart-label" x="-14" y="40" text-anchor="end">High equilibrium</text>
+            </g>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="trapAid">Outside investment aid</label>
+            <input type="range" id="trapAid" min="0" max="0.35" value="0" step="0.01">
+            <output id="trapAidOut" for="trapAid">0.00</output></div>
+          <div class="ctrl"><label for="trapX0">Initial income (starting point)</label>
+            <input type="range" id="trapX0" min="0.5" max="7.5" value="2" step="0.1">
+            <output id="trapX0Out" for="trapX0">2.0k</output></div>
+        </div>
+        <figcaption>How to read this figure: <span id="trapRead">The meaning of the three equilibria is labeled above.</span> Outside investment (aid, vaccines, roads, education) lifts the entire S-curve: the threshold shifts left and flattens, until it disappears—that is what “filling in the trap” means. Note that the aid need not continue forever: once a family crosses the threshold, its own momentum carries it up toward the high equilibrium.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world</div>
+        <p>Two famous pieces of evidence. First: China's 2013–2020 poverty alleviation campaign used a textbook combined push—registered files to identify target households, industry support, relocation from inhospitable areas, and education and health guarantees implemented together—in essence a recognition that cash transfers alone cannot cross the threshold. Second: Banerjee and coauthors ran RCTs on the “graduation” program (a productive asset + training + short-term consumption support for ultra-poor families) across six countries and found household income and consumption still significantly higher years after the intervention ended—a one-time push of “capital + capability” really can push people out of the trap. By contrast, microcredit experiments alone (Banerjee, Karlan, and Zinman's 2015 synthesis of six-country RCTs) produced only modest increases in borrowing and self-employment, with no mass escape from poverty: credit is a lubricant, not an engine.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>(1) A trap equals destiny—wrong: a trap is the product of parameters (the saving rate, health, returns to education, coordination capacity), and policy can change parameters. (2) “Cash transfers are either a panacea or useless”—wrong: whether a transfer works depends on whether it pushes a family across the threshold; scale and complementary support decide the outcome. (3) The myth and the stigma of microcredit—the RCT verdict is exactly the middle view: real but limited effects. (4) RCT results can be transplanted directly to any country—external validity always asks: are the local markets, institutions, and populations similar?</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.1</span>The core logic of the “Big Push” policy proposal is?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The government must subsidize every industry permanently, or development is impossible</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Investments are complementary, so multiple sectors must invest in a coordinated, one-time push to break the low-level equilibrium of “nobody invests → no market demand → nobody invests”</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The only cause of poverty is insufficient saving, so foreign capital alone is enough</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Once prices are freed, coordination failure disappears automatically as markets clear</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> B: both Rosenstein-Rodan's (1943) original intuition and Murphy–Shleifer–Vishny's (1989) formalization say “complementarity + scale economies → multiple equilibria → coordinated simultaneous investment can select the better equilibrium.” A is wrong about “permanently”: the Big Push stresses a one-time push past the threshold. C reduces the problem to a savings gap and ignores the coordination structure. D is wrong because the price mechanism cannot automatically select among multiple equilibria—which is the very definition of coordination failure.</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.2</span>Which is the most accurate summary of the randomized controlled trial (RCT) evidence on microcredit?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>It proves microcredit generally doubles the incomes of poor households</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Access to credit modestly increases borrowing and self-employment, but no mass escape from poverty and no broad jumps in education, health, or women's empowerment have been found</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>It proves microcredit is generally harmful and should be banned</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Randomized experiments cannot be used to evaluate credit products</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> B: this is the robust conclusion of multi-country RCTs (Banerjee, Karlan, and Zinman's 2015 special issue of the American Economic Journal: Applied Economics)—the effect is real but marginal; microcredit is neither a silver bullet nor a scam. A and C contradict the evidence; D is plainly wrong: randomized expansion of credit access is a classic RCT application. Policy implication: credit must be combined with other interventions (assets, training, insurance) before the threshold can be crossed.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>A poverty trap = multiple equilibria: the S-shaped income mapping crosses the 45° line at a low equilibrium, a threshold, and a high equilibrium; the starting point decides the direction of convergence.</li>
+          <li>The micro mechanism is coordination failure: complementary investments require simultaneous action; unilateral action benefits no one.</li>
+          <li>The Big Push: a one-time, cross-sector coordinated investment pushes the economy past the threshold; the value of aid lies in lifting the S-curve, not in permanent transfusion.</li>
+          <li>RCTs are the gold standard for evaluating anti-poverty interventions: the evidence supports combined “asset + capability” pushes, while credit alone has limited effects.</li>
+          <li>A trap is not destiny—health, education, infrastructure, and coordination capacity are all changeable parameters.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">Chapter 4</span>Institutions and development</h2>
+
+      <h3>Opening question</h3>
+      <p>The satellite photograph of the Korean Peninsula at night is unambiguous: south of the 38th parallel the lights blaze; to the north it is nearly pitch black. One people, the same language and culture, the same mountains and rivers—two halves artificially divided after 1945—today differ in per-capita income by more than tenfold. If geography and culture are identical, can the remaining variable—institutions—still be denied?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Institutions are the rules of the game: whether <strong>property rights</strong> are protected, whether contracts are enforced, whether newcomers can compete with incumbents on fair terms. The logic of incentives is plain—if what you painstakingly accumulate can be confiscated, extorted, or defaulted on at any moment, the rational choice is not to invest and not to innovate. Acemoglu and Robinson sort institutions into two great families: <strong>inclusive institutions</strong> give most people property rights and opportunity; <strong>extractive institutions</strong> let a small elite extract the surplus of the many. Under extractive institutions, coerced mobilization can deliver high growth for a time (concentrating resources on big projects), but it strangles <strong>creative destruction</strong>—because what would be destroyed is precisely the elite's own vested interests—so prosperity is hard to sustain.</p>
+        <p>The rival hypotheses are geography (tropical disease, landlockedness, climate) and culture (religion, trust, work ethic). The way to test them is to find “natural experiments”: samples such as the Korean Peninsula and East–West Germany, where geography and culture are nearly identical while institutions diverged—the variables are held constant, and the remaining difference can only be attributed to institutions.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">Institutions</span><span class="term-en">制度</span><div class="term-def">The rules of the game in society: formal (laws, property rights, constitutions) and informal (conventions, norms). North stressed that institutions determine the structure of incentives and therefore long-run performance.</div></div>
+        <div class="term"><span class="term-name">Inclusive vs extractive institutions</span><span class="term-en">包容性与攫取性制度</span><div class="term-def">Acemoglu–Robinson's dichotomy: the former give most people property rights, opportunity, and political voice; the latter have elites design the rules to extract the surplus. The former accompany sustained growth; the latter struggle to sustain it.</div></div>
+        <div class="term"><span class="term-name">Property rights</span><span class="term-en">产权</span><div class="term-def">The bundle of rights to use property, earn income from it, and transfer it, under credible protection. When property rights are not credible, the expected returns to investment and innovation are discounted by “expropriation risk,” and incentives collapse.</div></div>
+        <div class="term"><span class="term-name">Natural experiment</span><span class="term-en">自然实验</span><div class="term-def">A “quasi-random assignment” created by historical accident—such as the division of Korea or of Germany—that lets researchers compare the outcomes of different institutions while geography and culture are held nearly constant.</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <p>Try it: click the four quadrants to compare the four social configurations formed by combining “how political power is distributed” with “whom the economic rules serve,” and note which is the most fragile and which the most durable.</p>
+      <figure class="fig">
+        <div class="fig-title">Figure 4-1 · The institutions matrix: political power × economic rules</div>
+        <p class="fig-sub">The horizontal axis is economic institutions (extractive → inclusive); the vertical axis is political power (pluralist → concentrated). Click the buttons to switch quadrants.</p>
+        <figure class="fig-canvas">
+          <svg id="instSvg" viewBox="0 0 640 400" role="img" aria-label="Institutions matrix: the four quadrant combinations of political power and economic institutions, with examples.">
+            <text class="chart-label" x="125" y="26" text-anchor="start">← Extractive economic institutions</text>
+            <text class="chart-label" x="595" y="26" text-anchor="end">Inclusive economic institutions →</text>
+            <text class="chart-label" x="60" y="180" text-anchor="middle">Political power</text>
+            <text class="chart-label-en" x="60" y="198" text-anchor="middle">pluralist above · concentrated below</text>
+            <rect id="instTL" x="120" y="40" width="240" height="150" rx="8" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1.5"></rect>
+            <rect id="instTR" x="360" y="40" width="240" height="150" rx="8" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1.5"></rect>
+            <rect id="instBL" x="120" y="190" width="240" height="150" rx="8" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1.5"></rect>
+            <rect id="instBR" x="360" y="190" width="240" height="150" rx="8" fill="#f8fafc" stroke="#e5e7eb" stroke-width="1.5"></rect>
+            <line class="axis" x1="360" y1="40" x2="360" y2="340"></line>
+            <line class="axis" x1="120" y1="190" x2="600" y2="190"></line>
+            <text class="chart-title-sm" x="240" y="80" text-anchor="middle">Populist cycle</text>
+            <text class="chart-label-en" x="240" y="104" text-anchor="middle">Elections compete, but opportunity and</text>
+            <text class="chart-label-en" x="240" y="122" text-anchor="middle">property rights are oligarch-held; conflict recurs</text>
+            <text class="chart-label-en" x="240" y="146" text-anchor="middle">Example: Argentina in the 20th century</text>
+            <text class="chart-title-sm" x="480" y="80" text-anchor="middle">Inclusive institutions</text>
+            <text class="chart-label-en" x="480" y="104" text-anchor="middle">Broad property rights · open opportunity · rule of law</text>
+            <text class="chart-label-en" x="480" y="122" text-anchor="middle">Creative destruction is allowed to happen</text>
+            <text class="chart-label-en" x="480" y="146" text-anchor="middle">Examples: Britain after the Glorious Revolution · South Korea</text>
+            <text class="chart-title-sm" x="240" y="230" text-anchor="middle">Extractive institutions</text>
+            <text class="chart-label-en" x="240" y="254" text-anchor="middle">Elites design the rules to extract surplus</text>
+            <text class="chart-label-en" x="240" y="272" text-anchor="middle">Insecure property rights; coerced growth can't last</text>
+            <text class="chart-label-en" x="240" y="296" text-anchor="middle">Examples: the colonial Congo · Potosí</text>
+            <text class="chart-title-sm" x="480" y="230" text-anchor="middle">Growth coalition</text>
+            <text class="chart-label-en" x="480" y="254" text-anchor="middle">Elites import markets, yet may at any time</text>
+            <text class="chart-label-en" x="480" y="272" text-anchor="middle">withdraw openness and crush challengers</text>
+            <text class="chart-label-en" x="480" y="296" text-anchor="middle">Example: some resource-based authoritarian economies</text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn ghost" id="instBtnBL">Extractive institutions</button>
+          <button class="btn ghost" id="instBtnBR">Growth coalition</button>
+          <button class="btn ghost" id="instBtnTL">Populist cycle</button>
+          <button class="btn" id="instBtnTR">Inclusive institutions</button>
+        </div>
+        <p class="fig-sub" id="instNote">Click a quadrant to see its interpretation.</p>
+        <figcaption>How to read this figure: the point of the matrix is not the static position but the dynamic direction—inclusive economic institutions can create their own political supporters (growing merchants, a propertied middle class), and extractive institutions likewise reproduce the coalitions that defend them. Institutions are moving points, not nailed-down squares.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world</div>
+        <p>China in 1978 provides a classic case of “change the rules, and every incentive changes”: the household contract responsibility system replaced “work a lot or a little, it's all the same” with “hand in enough to the state, keep enough for the collective, and whatever remains is yours,” and agricultural output surged within a few years in which land, fertilizer, and technology barely changed—in North's sense, institutional change can release productivity without a single new machine. At the global level, Acemoglu, Johnson, and Robinson used early European settler mortality as an instrument for early institutions, finding that colonies with high settler mortality four hundred years ago tended to establish extractive institutions, which have persisted to this day and are associated with lower incomes—work that earned the 2024 Nobel Prize in Economics.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>(1) Seeing “countries with good institutions are richer” and asserting causation—institutions and income are mutually causal; identification requires natural experiments or instruments. (2) Treating the geography hypothesis as a straw man—malaria, landlockedness, and climate do affect development; the question is <strong>through what channels</strong> they work (many effects work precisely by shaping colonial institutions). (3) The unfalsifiability trap of cultural determinism—“low-trust culture” and low income may be mutually causal, and cultural variables are often endogenous. (4) Equating “inclusive” with some particular regime label—what matters is the functions: credible property rights, open opportunity, constrained power, not the form.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.1</span>The division of the Korean Peninsula is often cited in support of the institutions hypothesis because it?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Proves that geography has no effect on income</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Compares different institutions under nearly identical ethnicity, culture, and geography—approximating a natural experiment</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Proves that culture is the only cause of the income gap</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Shows that the gap is mainly due to differences in natural resource endowments between North and South</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> B: the two sides of the peninsula shared virtually all geographic, historical, and cultural variables before 1945; after the division, the only systematic difference was institutions—a “quasi-experiment” with confounders controlled, so the gap must be attributed mainly to institutions. A overreaches: it shows only that geography is not the main cause on the peninsula, not that geography is irrelevant elsewhere. C contradicts the evidence. D fails: resource differences are far too small to explain a more-than-tenfold income gap and the contrast in night lights.</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.2</span>Acemoglu et al. (2001) used the mortality of early European settlers as an instrument. Its key assumption (the exclusion restriction) is?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Settler mortality is directly and strongly correlated with income today</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Settler mortality affects income today only through the colonial institutions it shaped back then (which persist today), and not directly</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>An instrument must be completely unrelated to the dependent variable</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>As long as the sample is large enough, the estimate is credible</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> B: an instrument needs two things—relevance (colonies with high mortality were hard to settle → extractive institutions were built) and the exclusion restriction (the disease environment of that era has been tamed by modern medicine and no longer directly affects today's productivity). A states relevance, not the key assumption; C states the opposite; D has nothing to do with identification—a large sample does not cure bias. This design peels the causal chain “institutions → income” away from reverse causality and omitted variables.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Institutions are the rules of the game: credible property rights, enforceable contracts, and open entry and competition determine the incentives to invest and innovate.</li>
+          <li>Inclusive institutions accompany sustained growth; extractive ones can buy temporary high growth through coerced mobilization, yet strangle creative destruction.</li>
+          <li>The Korean Peninsula and East–West Germany are natural experiments for the institutions hypothesis: similar geography and culture, divergent institutions, vastly different incomes.</li>
+          <li>The colonial-origins research used settler mortality as an instrument to identify the causal effect of institutions; the geography and culture hypotheses must compete through testable channels.</li>
+          <li>Institutions themselves evolve: within path dependence there are critical junctures—China's household contract system is one.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">Chapter 5</span>The economics of innovation: Schumpeter and creative destruction</h2>
+
+      <h3>Opening question</h3>
+      <p>When the iPhone launched in 2007, Nokia held forty percent of the global phone market and the strongest manufacturing and distribution; five years later the giant crashed. Why does dominant innovation almost never come from incumbent giants? Why do some technologies (smartphones, mobile payments) sweep the world in a decade, while others (hydrogen fuel-cell vehicles) never break through? Half of the story of growth is not invention but diffusion.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Joseph Schumpeter defined innovation as <strong>new combinations</strong>: new products, new processes, new markets, new organizations. The essential fact about capitalism is <strong>creative destruction</strong>: new technologies and new firms continually replace old technologies and old firms from within—growth is not adding more old shops but letting new shops eliminate old ones. Monopoly profit plays a double role here: it is both the trophy for the innovation sprint (without excess returns, who would take the risk) and the target of the next round of competition. This creates <strong>the patent trade-off</strong>: protect too weakly, and no one will invest in R&D (others copy your result); protect too strongly, and later entrants are locked out by the “patent thicket,” and cumulative innovation actually slows—the optimal patent length is a weighed balance, not “the longer the better.”</p>
+        <p>Diffusion has its own rhythm: the S-curve. In the early phase there are only innovators and early adopters; after crossing the critical mass (about 16%), word of mouth, network effects, and falling costs ignite one another and takeoff begins; once the mainstream is exhausted comes saturation. The same technology sits at different points of the S-curve in different countries, and the latecomer's opportunity lies precisely in “jumping onto the middle of the curve.”</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">Creative destruction</span><span class="term-en">创造性破坏</span><div class="term-def">Schumpeter's term: innovation destroys old structures from within through new combinations—new entrants replace incumbents. The core mechanism of growth and an important source of TFP; it also explains why incumbents have an incentive to obstruct innovation.</div></div>
+        <div class="term"><span class="term-name">R&amp;D race</span><span class="term-en">研发竞赛</span><div class="term-def">Multiple firms compete to invent first: winner-takes-all (patents) pushes effort past the social optimum for “waiting,” while knowledge spillovers can leave total effort too low—two distortions in opposite directions.</div></div>
+        <div class="term"><span class="term-name">Patent trade-off</span><span class="term-en">专利两难</span><div class="term-def">Static losses (monopoly pricing, restricted use) traded for dynamic incentives (R&D returns). In cumulative innovation, overly strong patents create an “anticommons” that blocks later improvement—strength and scope must be balanced.</div></div>
+        <div class="term"><span class="term-name">Technology diffusion</span><span class="term-en">技术扩散</span><div class="term-def">The process by which a new technology is adopted across people and firms, S-shaped: slow start (nobody can use it), middle takeoff (network effects + learning curves + price declines), late saturation. Rogers's adopter categories are the classic framework.</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <p>Try it: click “Play diffusion” and watch the curve unfold step by step; then raise the imitation intensity r and observe how steep the middle stretch becomes after the critical mass. Think about it: which technologies have an especially large r? (Hint: the stronger the network effects, the larger r.)</p>
+      <figure class="fig">
+        <div class="fig-title">Figure 5-1 · The technology diffusion S-curve: from early adopters to saturation</div>
+        <p class="fig-sub">The solid curve is the part already diffused, the dashed curve the full trajectory; the dot marks the cumulative adoption rate in the current year.</p>
+        <figure class="fig-canvas">
+          <svg id="difSvg" viewBox="0 0 640 400" role="img" aria-label="Technology diffusion S-curve: cumulative adoption rises in an S shape over time, unfolding step by step in the animation.">
+            <line class="gridline" x1="70" y1="260" x2="600" y2="260"></line>
+            <line class="gridline" x1="70" y1="190" x2="600" y2="190"></line>
+            <line class="gridline" x1="70" y1="120" x2="600" y2="120"></line>
+            <line x1="70" y1="285" x2="600" y2="285" stroke="#c4b5fd" stroke-width="1.5" stroke-dasharray="3 4"></line>
+            <text class="chart-label-en" x="596" y="281" text-anchor="end" fill="#6d28d9">16% · critical mass</text>
+            <line x1="70" y1="95" x2="600" y2="95" stroke="#c4b5fd" stroke-width="1.5" stroke-dasharray="3 4"></line>
+            <text class="chart-label-en" x="596" y="91" text-anchor="end" fill="#6d28d9">84% · end of the mainstream</text>
+            <text class="chart-label-en" x="62" y="334" text-anchor="end">0</text>
+            <text class="chart-label-en" x="62" y="264" text-anchor="end">25</text>
+            <text class="chart-label-en" x="62" y="194" text-anchor="end">50</text>
+            <text class="chart-label-en" x="62" y="124" text-anchor="end">75</text>
+            <text class="chart-label-en" x="62" y="54" text-anchor="end">100</text>
+            <line class="axis" x1="70" y1="330" x2="610" y2="330"></line>
+            <line class="axis" x1="70" y1="330" x2="70" y2="44"></line>
+            <text class="chart-label-en" x="70" y="350" text-anchor="middle">0</text>
+            <text class="chart-label-en" x="243" y="350" text-anchor="middle">10</text>
+            <text class="chart-label-en" x="417" y="350" text-anchor="middle">20</text>
+            <text class="chart-label-en" x="590" y="350" text-anchor="middle">30</text>
+            <text class="chart-label" x="340" y="374" text-anchor="middle">Time t (years)</text>
+            <text class="chart-label-en" x="70" y="28" text-anchor="start">Cumulative adoption rate A (%)</text>
+            <path id="difGhost" class="curve curve-c1" d="" opacity="0.35" stroke-dasharray="6 6" stroke-width="2.5"></path>
+            <path id="difCurve" class="curve curve-c1" d="" stroke-width="3.5"></path>
+            <text class="chart-label" x="110" y="112" fill="#2f6fdb">S-shaped diffusion path (dashed line is the full path)</text>
+            <circle id="difDot" r="7" class="dot" fill="#2f6fdb" cx="70" cy="329"></circle>
+            <text id="difDotTxt" class="chart-label" x="80" y="315">Year 0 · adoption 0%</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="difR">Imitation intensity r</label>
+            <input type="range" id="difR" min="0.2" max="1" value="0.45" step="0.05">
+            <output id="difROut" for="difR">0.45</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="difPlay">Play diffusion</button>
+          <button class="btn ghost" id="difReset">Reset</button>
+        </div>
+        <figcaption>How to read this figure: <span id="difRead">The meaning of the curve is labeled above.</span> The logistic curve is steepest in its middle stretch: once adoption crosses the critical mass of about 16%, word of mouth and network effects become self-reinforcing—this is the window where policy and marketing can really bite; in the early phase, subsidizing early adopters (like the early purchase subsidies for new energy vehicles) exists precisely to push the curve past the critical point.</figcaption>
+      </figure>
+
+      <div class="formula">A(t) = 100% ÷ ( 1 + e<sup>−r(t − t₀)</sup> )
+        <span class="f-note">the logistic diffusion curve: r is the imitation intensity (the combined force of network effects, word of mouth, and price declines), t₀ the time at which adoption reaches 50%; 16% and 84% are the two boundaries in Rogers's adopter categories</span>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world</div>
+        <p>China's high-speed rail is a diffusion showcase of “introduce—digest—absorb—re-innovate”: from 2004 it imported trainsets from several countries by trading technology for market access, rode the world's largest unified market down the learning curve, and ultimately built the world's longest high-speed rail network and began exporting it. It displays the latecomer's S-curve strategy: not inventing from zero, but standing at the middle of the curve and trading market scale for learning speed. The contrast on the patent side is pharmaceuticals: after the TRIPS agreement globalized drug patents, India built a powerful generic-drug industry on the strength of its “transition period before patent grants”; the 2001 Doha Declaration confirmed compulsory licensing in a public health crisis—the patent trade-off being re-weighed again and again in a market where life is at stake.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>(1) More patents mean stronger innovation—high patent density can also signal thickets and strategic filing; what matters is quality and diffusion. (2) Invention equals innovation—engineering, distribution channels, and business models stand between invention and commercialization; half a century separates Turing from the smartphone. (3) Large R&D spending guarantees strength—the direction of allocation and competitive pressure determine what spending yields; subsidies without exit mechanisms often nourish “professional R&D rent-seekers.” (4) Basic research should be left to firms—the spillovers from basic knowledge are too strong for firms to appropriate the returns; that is the efficiency rationale, not a romantic one, for governments everywhere to fund basic science.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.1</span>Schumpeter's “creative destruction” refers to?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Monopolists deliberately destroying inventory to sustain high prices</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>New technologies and new firms continually replacing old technologies and old firms from within—a process that is both the mechanism of growth and a reason incumbents will try to obstruct innovation</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The forced liquidation of old capital in economic crises</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Government breakups of monopolies</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> B: this is the core concept of Schumpeter's Capitalism, Socialism and Democracy—innovation replaces old structures with new combinations (the iPhone replacing Nokia), so growth is essentially dynamic competition rather than static efficiency; at the same time it explains why incumbents (such as displaced giants) have strong incentives to lobby, litigate, and lock in users to obstruct innovation. A is cartel behavior; C is a cyclical phenomenon, not Schumpeter's original meaning; D is antitrust policy, unrelated to the “creation” side of innovation.</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.2</span>Which statement best captures the trade-off over the strength of patent protection?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The stronger the protection, the stronger the incentives, so longer patent terms are always better</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Patents trade static monopoly losses for dynamic R&D incentives; in cumulative innovation, overly strong protection leaves later improvers unable to move and lowers total innovation</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Patents have no social cost and should be extended indefinitely</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>The patent system matters only to the pharmaceutical industry</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> B: the two ends of the patent trade-off—with too little protection, no one invests in R&D (results are imitated immediately); with too much, “standing on the shoulders of giants” costs too much, and patent thicket and anticommons problems follow. A and C ignore the static losses and the blocking effect in cumulative innovation; D is plainly wrong: software, machinery, and biotechnology all depend deeply on the balance between patents and trade secrets.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Innovation = new combinations; creative destruction is the core mechanism of growth: new entrants replace incumbents, and TFP comes from there.</li>
+          <li>Monopoly profit cuts both ways: the trophy for the innovation sprint and the target of the next round of competition; innovation incentives are strongest under moderate competition (inverted U).</li>
+          <li>The patent trade-off: dynamic incentives vs. static monopoly losses; overly strong patents in cumulative innovation block later improvement.</li>
+          <li>Diffusion follows an S-curve: slow start, takeoff after crossing the critical mass of about 16%, saturation at the end; the imitation intensity r sets the steepness.</li>
+          <li>The latecomer's opportunity: stand at the middle of the S-curve and trade market scale for learning speed—high-speed rail and mobile payments are both examples.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">Chapter 6</span>Demographic transition and structural change</h2>
+
+      <h3>Opening question</h3>
+      <p>Before 1800, the whole world lived in a Malthusian regime of “many births, many deaths”: income per head barely grew, and the fruits of any technical progress were ultimately shared out among ever more people. Today birth rates are falling in almost every country, and in 2022 China recorded its first negative population growth in more than sixty years. Is population an engine of growth, a burden, or both at once? The answer depends on where a country stands in the demographic transition.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>The <strong>demographic transition</strong> has four stages: high birth rate and high death rate (growth near zero) → the death rate falls first (population explosion) → the birth rate follows it down (growth slows) → both low (growth reaches zero, population ages). The key is the lag: public health and vaccines pull the death rate down first, while fertility norms take longer to change—and that half-beat gap is the baby boom. When the baby-boom generation reaches working age, the dependency ratio is at its lowest and the saving rate at its highest—the <strong>demographic dividend</strong>; when the window closes, the same cohort grows old, and the dividend turns into pension pressure.</p>
+        <p>Interwoven with it is <strong>structural transformation</strong>: employment and output migrate in turn from agriculture → industry → services, driven behind the scenes by Engel's law (the share of food in spending falls once people are fed) and by differences in productivity growth across sectors. Lewis's classic depiction: early in development the countryside holds “surplus labor” whose marginal product is very low, and industry can absorb it “without limit” at a subsistence wage; the moment the surplus is exhausted—the <strong>Lewis turning point</strong>—wages are set by labor's marginal product and begin to rise faster.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">Demographic transition</span><span class="term-en">人口转型</span><div class="term-def">The historical process in which the birth rate and the death rate fall one after the other from high levels, in four stages; the lag between the fall in death rates and the fall in birth rates produces the population explosion and later aging.</div></div>
+        <div class="term"><span class="term-name">Demographic dividend</span><span class="term-en">人口红利</span><div class="term-def">The growth boost from a rising share of working-age population and a falling dependency ratio during the transition. The dividend has a window, and it takes education and job creation to cash it.</div></div>
+        <div class="term"><span class="term-name">Lewis turning point</span><span class="term-en">刘易斯拐点</span><div class="term-def">The point at which rural surplus labor shifts from “unlimited supply” to scarcity: agriculture's marginal product rises, industrial wages accelerate upward with the marginal product, and the labor-intensive export model faces restructuring.</div></div>
+        <div class="term"><span class="term-name">Structural transformation</span><span class="term-en">结构转型</span><div class="term-def">The long-run shift of the center of gravity of output and employment along agriculture → manufacturing → services, jointly driven by the structure of demand (Engel's law) and sectoral productivity differences.</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <p>Try it: click the four stages in turn and watch the gap between the birth rate and the death rate inside the highlighted band—the stage with the widest gap is the population explosion; the stage where the two lines converge again is where the dividend window closes.</p>
+      <figure class="fig">
+        <div class="fig-title">Figure 6-1 · Four stages of the demographic transition: the race between birth rate and death rate</div>
+        <p class="fig-sub">The blue line is the birth rate, the orange line the death rate, in per thousand (‰). Click the buttons to see each stage's interpretation.</p>
+        <figure class="fig-canvas">
+          <svg id="dtSvg" viewBox="0 0 640 380" role="img" aria-label="Demographic transition four-stage diagram: the birth-rate and death-rate curves fall one after the other as development proceeds, highlighting the currently selected stage.">
+            <line class="gridline" x1="70" y1="260" x2="590" y2="260"></line>
+            <line class="gridline" x1="70" y1="200" x2="590" y2="200"></line>
+            <line class="gridline" x1="70" y1="140" x2="590" y2="140"></line>
+            <line class="gridline" x1="70" y1="80" x2="590" y2="80"></line>
+            <text class="chart-label-en" x="62" y="324" text-anchor="end">0</text>
+            <text class="chart-label-en" x="62" y="264" text-anchor="end">10</text>
+            <text class="chart-label-en" x="62" y="204" text-anchor="end">20</text>
+            <text class="chart-label-en" x="62" y="144" text-anchor="end">30</text>
+            <text class="chart-label-en" x="62" y="84" text-anchor="end">40</text>
+            <text class="chart-label-en" x="16" y="28" text-anchor="start">Rate (‰)</text>
+            <rect id="dtBand" x="70" y="50" width="130" height="270" fill="#047857" opacity="0.07" display="none"></rect>
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"></line>
+            <line class="axis" x1="70" y1="320" x2="70" y2="44"></line>
+            <path id="dtBr" class="curve curve-c1" d=""></path>
+            <path id="dtDr" class="curve curve-c2" d=""></path>
+            <text class="chart-label" x="84" y="76" fill="#2f6fdb">Birth rate BR</text>
+            <text class="chart-label" x="402" y="222" fill="#ea580c">Death rate DR</text>
+            <circle id="dtBrDot" r="6" class="dot" fill="#2f6fdb" display="none"></circle>
+            <circle id="dtDrDot" r="6" class="dot" fill="#ea580c" display="none"></circle>
+            <text class="chart-label" x="135" y="344" text-anchor="middle">Stage one</text>
+            <text class="chart-label" x="265" y="344" text-anchor="middle">Stage two</text>
+            <text class="chart-label" x="395" y="344" text-anchor="middle">Stage three</text>
+            <text class="chart-label" x="525" y="344" text-anchor="middle">Stage four</text>
+            <text class="chart-label-en" x="135" y="362" text-anchor="middle">Many births, many deaths</text>
+            <text class="chart-label-en" x="265" y="362" text-anchor="middle">Death rate falls first</text>
+            <text class="chart-label-en" x="395" y="362" text-anchor="middle">Birth rate follows</text>
+            <text class="chart-label-en" x="525" y="362" text-anchor="middle">Low-level balance</text>
+            <text class="chart-label-en" x="330" y="378" text-anchor="middle">Time and development stage →</text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn" id="dtBtn0">Overview</button>
+          <button class="btn ghost" id="dtBtn1">Stage one</button>
+          <button class="btn ghost" id="dtBtn2">Stage two</button>
+          <button class="btn ghost" id="dtBtn3">Stage three</button>
+          <button class="btn ghost" id="dtBtn4">Stage four</button>
+        </div>
+        <p class="fig-sub" id="dtNote">Click a stage to see its interpretation.</p>
+        <figcaption>How to read this figure: the natural growth rate = birth rate − death rate, that is, the vertical gap between the two lines. Stage two has the widest gap (population explosion); in stage four the gap reaches zero or even inverts (aging). China compressed Europe's roughly two-hundred-year transition into about fifty years, so both the cashing and the closing of its dividend came more abruptly than elsewhere.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world</div>
+        <p>Around 2010, persistent “labor shortages” appeared in coastal Chinese manufacturing and migrant workers' wages rose by double digits for years on end; the economist Cai Fang and others judged from this that the Lewis turning point had arrived—the “unlimited supply” of surplus labor was over, labor-intensive industry had to move inland or upgrade, and over the same period investment in robotic substitution and automation visibly accelerated. The contrast on the other side is India: in 2023 it overtook China as the world's most populous country, with a median age about ten years lower, standing inside the dividend window—but the dividend does not cash itself; it depends on whether enough jobs can be created each year for the vast flow of new workers, which is exactly the core question of structural transformation policy.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>(1) A big population means poor—scale alone does not decide wealth or poverty: the most densely populated regions contain both the richest and the poorest economies; what matters is human capital and structure. (2) The demographic dividend cashes itself—without education and job absorption, a young population is merely unemployment pressure. (3) Aging is only a rich-country problem—China is “growing old before growing rich,” its transition running faster than its income level. (4) Fertility falls with economic development alone—access to contraception, women's education, and child mortality all play causal roles. And do not forget Baumol's warning: productivity rises slowly in services, so a servicifying economy is not necessarily “degenerating,” but it does slow overall growth.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.1</span>The “population explosion” in stage two of the demographic transition is directly caused by?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>A significant rise in the birth rate</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Public health and medicine drive the death rate down fast while the birth rate remains high</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Large-scale inflows of immigrants</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Governments broadly adopting pro-natalist policies</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> B: the transition's lag is the key—vaccines, clean water, and antibiotics cut the death rate first, while fertility, driven by norms, education, and economic motives, adjusts far more slowly; the gap between the two lines widens to its maximum and the natural growth rate spikes. A need not hold: in stage two the birth rate can even be slightly higher than in stage one (better nutrition and medicine raised survival rates). C and D contradict the historical record—the explosion occurred in developing countries with no immigration and no pro-natalist policies.</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.2</span>The “Lewis turning point” refers to?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The point when the urbanization rate passes 50%</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>The point when total population reaches its peak</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>The point when rural surplus labor shifts from “unlimited supply” to scarcity, and wages accelerate upward with labor's marginal product</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>The point when the birth rate falls below the death rate and population begins to shrink</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> C: in the Lewis (1954) model, early in development agriculture holds surplus labor with marginal product near zero, and industry can hire “without limit” at a wage slightly above subsistence; once the surplus is exhausted, industry must bid above agriculture's marginal product to hire more—the wage curve bends from flat to steep. A and B are statistical thresholds, not economic mechanisms; D is a stage-four event of the demographic transition, not synonymous with this labor-market turn.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The demographic transition has four stages: high birth and high death → the death rate falls first (population explosion) → the birth rate follows down → both low, with aging.</li>
+          <li>The lag between the falls of the death rate and the birth rate creates the baby boom; when the boom reaches working age, that is the demographic dividend; when the window closes, aging.</li>
+          <li>The Lewis turning point: surplus labor is exhausted, wages switch from subsistence-level to marginal-product pricing, and the labor-intensive model faces restructuring.</li>
+          <li>Structural transformation proceeds along agriculture → industry → services, jointly driven by Engel's law and sectoral productivity differences.</li>
+          <li>Whether population is a burden or an engine depends on the stage of the transition and on policy's capacity to turn people into human capital.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">Wrap-up</span>Next steps &amp; further reading</h2>
+      <p>Development and innovation economics brings the macro question of growth down to countries, institutions, families, and technologies. To keep pressing on the sustainable boundaries of growth, go on to <a href="../12-environmental-and-resource-economics/index.html">12 Environmental &amp; Resource Economics</a>; if the institutions hypothesis has pulled you in and you want to go deeper into property rights, transaction costs, and institutional change, visit <a href="../16-political-economy-and-institutional-economics/index.html">16 Political Economy &amp; Institutional Economics</a>; to reread the baseline model of growth, return to <a href="../02-macroeconomics/index.html">02 Macroeconomics</a>; and if the methodology of anti-poverty experiments interests you, the causal-inference toolkit in <a href="../03-econometrics/index.html">03 Econometrics</a> is essential luggage.</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Development Economics</span> — Debraj Ray: the standard graduate textbook of development economics, at its deepest on poverty traps and the theory of inequality.</li>
+          <li><span class="bk">Poor Economics</span> — Abhijit Banerjee and Esther Duflo: the classic popular account of RCT-based poverty reduction—field notes from the 2019 Nobel laureates.</li>
+          <li><span class="bk">Why Nations Fail</span> — Daron Acemoglu and James Robinson: the most famous popular statement of the inclusive-versus-extractive institutions framework; connects to Track 16.</li>
+          <li><span class="bk">Economic Growth</span> — Robert Barro and Xavier Sala-i-Martín: the graduate text of growth theory and convergence empirics—the rigorous version of Chapter 2.</li>
+          <li><span class="bk">Capitalism, Socialism and Democracy</span> — Joseph Schumpeter: the source of “creative destruction” and the intellectual origin of Chapter 5.</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../10-industrial-organization/index.html"><span class="pager-dir">Previous track</span><br><span class="pager-name">Industrial Organization</span></a>
+        <a href="../12-environmental-and-resource-economics/index.html"><span class="pager-dir">Next track</span><br><span class="pager-name">Environmental &amp; Resource Economics</span></a>
+      </nav>
+    </section>
+
+  </main>
+</div>
+<script src="../../assets/econ.js"></script>
+<script>
+(function () {
+  "use strict";
+  function $(id) { return document.getElementById(id); }
+  function fmt(x, d) {
+    d = d == null ? 2 : d;
+    return Number(x).toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+  }
+  function clip(v, lo, hi) { return Math.min(hi, Math.max(lo, v)); }
+
+  /* ---------- Figure 1-1 · HDI calculator ---------- */
+  (function () {
+    var svg = $("hdiSvg"); if (!svg) return;
+    var sLe = $("hdiLe"), sEdu = $("hdiEdu"), sGni = $("hdiGniLn");
+    var oLe = $("hdiLeOut"), oEdu = $("hdiEduOut"), oGni = $("hdiGniOut");
+    var X0 = 100, W = 460;
+    var LNMIN = Math.log(100), LNMAX = Math.log(75000);
+    function setBar(rectId, txtId, v, digits) {
+      var w = Math.max(2, v * W);
+      var r = $(rectId), t = $(txtId);
+      if (r) { r.setAttribute("x", X0); r.setAttribute("width", w.toFixed(1)); }
+      if (t) {
+        t.setAttribute("x", (X0 + w + 8).toFixed(1));
+        t.textContent = fmt(v, digits == null ? 2 : digits);
+      }
+    }
+    function render() {
+      var le = parseFloat(sLe.value), edu = parseFloat(sEdu.value), lg = parseFloat(sGni.value);
+      var gni = Math.exp(lg);
+      var iLe = clip((le - 20) / 65, 0, 1);
+      var iInc = clip((lg - LNMIN) / (LNMAX - LNMIN), 0, 1);
+      var hdi = Math.pow(iLe * edu * iInc, 1 / 3);
+      oLe.textContent = fmt(le, 1) + " years";
+      oEdu.textContent = fmt(edu, 2);
+      oGni.textContent = "$" + fmt(gni, 0);
+      setBar("hdiBarLife", "hdiValLife", iLe);
+      setBar("hdiBarEdu", "hdiValEdu", edu);
+      setBar("hdiBarInc", "hdiValInc", iInc);
+      setBar("hdiBarHdi", "hdiValHdi", hdi, 3);
+      var grp = hdi >= 0.8 ? "the very high human development group (≥0.800)" :
+        hdi >= 0.7 ? "the high human development group (0.700–0.799)" :
+        hdi >= 0.55 ? "the medium human development group (0.550–0.699)" : "the low human development group (below 0.550)";
+      $("hdiClass").textContent = "Combined result: HDI = " + fmt(hdi, 3) + ", placing the country in " + grp + ".";
+      $("hdiRead").textContent = "Geometric mean: (" + fmt(iLe, 2) + " × " + fmt(edu, 2) + " × " + fmt(iInc, 2) + ") cube root ≈ " + fmt(hdi, 3) + "—a collapse in any one component is amplified; maxing out a single one cannot compensate.";
+      svg.setAttribute("aria-label", "HDI calculator: life expectancy index " + fmt(iLe, 2) + ", education index " + fmt(edu, 2) + ", income index " + fmt(iInc, 2) + ", HDI " + fmt(hdi, 3) + ".");
+    }
+    [sLe, sEdu, sGni].forEach(function (s) { s.addEventListener("input", render); });
+    render();
+  })();
+
+  /* ---------- Figure 2-1 · Growth accounting ---------- */
+  (function () {
+    var svg = $("gaSvg"); if (!svg) return;
+    var sY = $("gaGY"), sK = $("gaGK"), sL = $("gaGL"), sAl = $("gaAlpha");
+    var oY = $("gaGYOut"), oK = $("gaGKOut"), oL = $("gaGLOut"), oAl = $("gaAlphaOut");
+    var VMIN = -10, VMAX = 12, PX0 = 70, PX1 = 590;
+    function xv(v) { return PX0 + (v - VMIN) / (VMAX - VMIN) * (PX1 - PX0); }
+    function setBar(rectId, txtId, v) {
+      var r = $(rectId), t = $(txtId);
+      if (!r || !t) return;
+      var a = xv(Math.min(0, v)), b = xv(Math.max(0, v));
+      if (b - a < 2) { if (v >= 0) { b = a + 2; } else { a = b - 2; } }
+      r.setAttribute("x", a.toFixed(1));
+      r.setAttribute("width", (b - a).toFixed(1));
+      if (v >= 0) { t.setAttribute("x", (b + 8).toFixed(1)); t.setAttribute("text-anchor", "start"); }
+      else { t.setAttribute("x", (a - 8).toFixed(1)); t.setAttribute("text-anchor", "end"); }
+      t.textContent = (v > 0 ? "+" : "") + fmt(v, 2) + "%";
+    }
+    function render() {
+      var gY = parseFloat(sY.value), gK = parseFloat(sK.value), gL = parseFloat(sL.value), al = parseFloat(sAl.value);
+      var cK = al * gK, cL = (1 - al) * gL, tfp = gY - cK - cL;
+      oY.textContent = fmt(gY, 1) + "%";
+      oK.textContent = fmt(gK, 1) + "%";
+      oL.textContent = (gL > 0 ? "+" : "") + fmt(gL, 1) + "%";
+      oAl.textContent = fmt(al, 2);
+      setBar("gaBarY", "gaValY", gY);
+      setBar("gaBarK", "gaValK", cK);
+      setBar("gaBarL", "gaValL", cL);
+      setBar("gaBarT", "gaValT", tfp);
+      var msg = "Identity: " + fmt(gY, 1) + "% ≈ TFP " + (tfp > 0 ? "+" : "") + fmt(tfp, 2) + "% + capital " + fmt(cK, 2) + "% + labor " + fmt(cL, 2) + "% (α = " + fmt(al, 2) + ").";
+      if (gY > 0 && tfp > 0) msg += "TFP accounts for about " + fmt(tfp / gY * 100, 0) + "% of all growth—the rest rides on factor accumulation, which must eventually hit diminishing returns.";
+      else if (tfp < 0) msg += "TFP is negative: factor inputs explain more growth than actually occurred, so efficiency is regressing—leaning purely on more inputs is unsustainable.";
+      else msg += "TFP is exactly zero: growth is fully explained by factor accumulation.";
+      $("gaRead").textContent = msg;
+      svg.setAttribute("aria-label", "Growth accounting: output growth " + fmt(gY, 1) + "%, capital contribution " + fmt(cK, 2) + "%, labor contribution " + fmt(cL, 2) + "%, TFP residual " + fmt(tfp, 2) + "%.");
+    }
+    [sY, sK, sL, sAl].forEach(function (s) { s.addEventListener("input", render); });
+    render();
+  })();
+  /* ---------- Figure 3-1 · Poverty trap ---------- */
+  (function () {
+    var svg = $("trapSvg"); if (!svg) return;
+    var sA = $("trapAid"), sX = $("trapX0"), oA = $("trapAidOut"), oX = $("trapX0Out");
+    var X0 = 70, X1 = 600, YB = 350, YT = 40, XM = 8, YM = 8.5;
+    function px(v) { return X0 + (v / XM) * (X1 - X0); }
+    function py(v) { return YB - (v / YM) * (YB - YT); }
+    function f(x, aid) { return 0.45 * x + 0.24 * x * x - 0.022 * x * x * x + aid; }
+    function roots(aid) {
+      function g(x) { return f(x, aid) - x; }
+      var rs = [], step = 0.004, gp = g(0), x;
+      if (Math.abs(gp) < 1e-9) rs.push(0);
+      for (x = step; x <= XM + 0.0001; x += step) {
+        var gc = g(x);
+        if (gc === 0) { rs.push(x); }
+        else if (gp * gc < 0) {
+          var lo = x - step, hi = x, mi, i;
+          for (i = 0; i < 14; i++) {
+            mi = (lo + hi) / 2;
+            if (g(lo) * g(mi) <= 0) { hi = mi; } else { lo = mi; }
+          }
+          rs.push((lo + hi) / 2);
+        }
+        gp = gc;
+      }
+      var out = [];
+      rs.forEach(function (r) { if (!out.length || r - out[out.length - 1] > 0.05) out.push(r); });
+      return out;
+    }
+    function place(id, r, aid) {
+      var e = $(id);
+      if (!e) return;
+      e.setAttribute("transform", "translate(" + px(r).toFixed(1) + "," + py(clip(f(r, aid), 0, YM)).toFixed(1) + ")");
+      e.setAttribute("display", "inline");
+    }
+    function hideEl(id) { var e = $(id); if (e) e.setAttribute("display", "none"); }
+    function render() {
+      var aid = parseFloat(sA.value), x0 = parseFloat(sX.value);
+      oA.textContent = fmt(aid, 2);
+      oX.textContent = fmt(x0, 1) + "k";
+      var d = "", x;
+      for (x = 0; x <= XM + 0.0001; x += 0.1) {
+        d += (d ? " L " : "M ") + px(x).toFixed(1) + " " + py(clip(f(x, aid), 0, YM)).toFixed(1);
+      }
+      $("trapCurve").setAttribute("d", d);
+      var pts = px(x0).toFixed(1) + " " + py(x0).toFixed(1), xi = x0, i;
+      for (i = 0; i < 18; i++) {
+        var yi = clip(f(xi, aid), 0, XM);
+        pts += " L " + px(xi).toFixed(1) + " " + py(yi).toFixed(1);
+        var xn = clip(yi, 0, XM);
+        pts += " L " + px(xn).toFixed(1) + " " + py(xn).toFixed(1);
+        if (Math.abs(xn - xi) < 0.005) break;
+        xi = xn;
+      }
+      $("trapWeb").setAttribute("points", pts);
+      $("trapStart").setAttribute("cx", px(x0).toFixed(1));
+      $("trapStart").setAttribute("cy", py(x0).toFixed(1));
+      var rs = roots(aid), msg;
+      if (rs.length >= 3) {
+        place("trapP1", rs[0], aid); place("trapP2", rs[1], aid); place("trapP3", rs[2], aid);
+        msg = "Three equilibria: low equilibrium (the trap) ≈ $" + fmt(rs[0], 1) + "k, critical threshold ≈ $" + fmt(rs[1], 1) + "k, high equilibrium ≈ $" + fmt(rs[2], 1) + "k.";
+        msg += x0 > rs[1] ? "The starting point is right of the threshold: the family climbs toward the high equilibrium—out of the trap." : "The starting point is left of the threshold: the family slides back to the low equilibrium—the trap holds.";
+      } else if (rs.length === 2) {
+        place("trapP1", rs[0], aid); place("trapP2", rs[1], aid); hideEl("trapP3");
+        msg = "Outside investment lowers the threshold to about $" + fmt(rs[1], 1) + "k; cross it and income grows all the way off the chart.";
+        msg += x0 > rs[1] ? "The current starting point is already right of the threshold—the trap is broken." : "The current starting point is still left of the threshold—one more push is needed.";
+      } else if (rs.length === 1) {
+        place("trapP2", rs[0], aid); hideEl("trapP1"); hideEl("trapP3");
+        msg = "The curve is nearly tangent to the 45° line: the threshold is about to disappear, and every starting point above $" + fmt(rs[0], 1) + "k grows steadily.";
+      } else {
+        hideEl("trapP1"); hideEl("trapP2"); hideEl("trapP3");
+        msg = "The curve lies entirely above the 45° line: income rises generation after generation—the trap no longer exists.";
+      }
+      $("trapRead").textContent = msg + " (outside investment aid = $" + fmt(aid, 2) + "k)";
+      svg.setAttribute("aria-label", "Poverty trap S-curve: " + msg);
+    }
+    [sA, sX].forEach(function (s) { s.addEventListener("input", render); });
+    render();
+  })();
+
+  /* ---------- Figure 4-1 · Institutions matrix ---------- */
+  (function () {
+    var svg = $("instSvg"); if (!svg) return;
+    var KEYS = ["BL", "BR", "TL", "TR"];
+    var RECTS = { BL: "instBL", BR: "instBR", TL: "instTL", TR: "instTR" };
+    var BTNS = { BL: "instBtnBL", BR: "instBtnBR", TL: "instBtnTL", TR: "instBtnTR" };
+    var NOTES = {
+      BL: "Extractive institutions (concentrated power × extractive economy): elites design the rules to extract the surplus; property rights are insecure and incentives distorted. Coerced mobilization may buy high growth for a while, but it suppresses creative destruction, so prosperity is hard to sustain. Examples: the colonial Congo, the Potosí silver mines.",
+      BR: "Growth coalition (concentrated power × inclusive economy): elites import markets and technology for their own benefit, while remaining free at any time to withdraw openness and crush challengers. It can sustain decades of high growth, yet it is fragile by design. Examples: some resource-based authoritarian economies.",
+      TL: "Populist cycle (pluralist power × extractive economy): electoral competition exists, but property rights and opportunity are held by oligarchs; distributional conflict swings back and forth between populism and austerity, and growth is repeatedly interrupted. Example: Argentina in the 20th century.",
+      TR: "Inclusive institutions (pluralist power × inclusive economy): broad property rights, open opportunity, and the rule of law constrain power; new entrants can topple incumbents with better products—creative destruction can happen, and growth can last. Examples: Britain after the Glorious Revolution, South Korea after its transition."
+    };
+    function show(key) {
+      KEYS.forEach(function (k) {
+        var r = $(RECTS[k]), b = $(BTNS[k]);
+        if (r) {
+          r.setAttribute("fill", k === key ? "#e7f4ef" : "#f8fafc");
+          r.setAttribute("stroke", k === key ? "#047857" : "#e5e7eb");
+          r.setAttribute("stroke-width", k === key ? "3" : "1.5");
+        }
+        if (b) b.className = "btn" + (k === key ? "" : " ghost");
+      });
+      $("instNote").textContent = NOTES[key];
+      svg.setAttribute("aria-label", "Institutions matrix: " + NOTES[key]);
+    }
+    KEYS.forEach(function (k) {
+      var b = $(BTNS[k]);
+      if (b) b.addEventListener("click", function () { show(k); });
+    });
+    show("TR");
+  })();
+
+  /* ---------- Figure 5-1 · Technology diffusion ---------- */
+  (function () {
+    var svg = $("difSvg"); if (!svg) return;
+    var sR = $("difR"), oR = $("difROut"), btnP = $("difPlay"), btnRst = $("difReset");
+    var PX0 = 70, PX1 = 600, YB = 330, YT = 50, TMAX = 30;
+    function px(t) { return PX0 + (t / TMAX) * (PX1 - PX0); }
+    function py(a) { return YB - (a / 100) * (YB - YT); }
+    function A(t, r) { return 100 / (1 + Math.exp(-r * (t - 15))); }
+    function pathTo(r, tEnd) {
+      var d = "", t;
+      for (t = 0; t <= tEnd + 1e-9; t += 0.5) {
+        d += (d ? " L " : "M ") + px(t).toFixed(1) + " " + py(A(t, r)).toFixed(1);
+      }
+      return d;
+    }
+    var curT = 0, timer = null;
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function render(skipGhost) {
+      var r = parseFloat(sR.value);
+      oR.textContent = fmt(r, 2);
+      // ghost depends only on r; no need to rebuild between animation frames
+      if (skipGhost !== true) $("difGhost").setAttribute("d", pathTo(r, TMAX));
+      $("difCurve").setAttribute("d", pathTo(r, Math.max(0, curT)));
+      var a = A(curT, r);
+      $("difDot").setAttribute("cx", px(curT).toFixed(1));
+      $("difDot").setAttribute("cy", py(a).toFixed(1));
+      var tx = $("difDotTxt");
+      tx.setAttribute("x", Math.min(px(curT) + 10, 480).toFixed(1));
+      tx.setAttribute("y", Math.max(py(a) - 14, 22).toFixed(1));
+      tx.textContent = "Year " + fmt(curT, 0) + " · adoption " + fmt(a, 0) + "%";
+      var phase = a < 16 ? "Early phase: only innovators and early adopters; growth is slow and the future uncertain" :
+        a < 50 ? "Takeoff phase: adoption crosses the critical mass of about 16%, and word of mouth and network effects begin to amplify demand" :
+        a < 84 ? "Explosive phase: the mainstream follows and growth is at its steepest—the golden stretch of diffusion" :
+        "Saturation phase: fewer non-adopters remain, growth slows, and competition shifts to the installed base";
+      $("difRead").textContent = phase + " (current r = " + fmt(r, 2) + "; the larger r, the steeper the curve and the faster the diffusion).";
+      svg.setAttribute("aria-label", "Technology diffusion S-curve: year " + fmt(curT, 0) + ", cumulative adoption about " + fmt(a, 0) + "%.");
+    }
+    function play() {
+      stop(); curT = 0; render();
+      timer = setInterval(function () {
+        curT += 0.25;
+        if (curT >= TMAX) { curT = TMAX; render(true); stop(); return; }
+        render(true);
+      }, 40);
+    }
+    if (btnP) btnP.addEventListener("click", play);
+    if (btnRst) btnRst.addEventListener("click", function () { stop(); curT = 0; render(); });
+    if (sR) sR.addEventListener("input", render);
+    render();
+  })();
+
+  /* ---------- Figure 6-1 · Demographic transition, four stages ---------- */
+  (function () {
+    var svg = $("dtSvg"); if (!svg) return;
+    var PX0 = 70, PX1 = 590, YB = 320, YT = 50, SMAX = 4, RMAX = 45;
+    function px(s) { return PX0 + (s / SMAX) * (PX1 - PX0); }
+    function py(r) { return YB - (r / RMAX) * (YB - YT); }
+    var KS = [0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4];
+    var BRR = [37, 37.5, 38, 38, 36, 26, 16, 13, 10.5];
+    var DRR = [34, 33.5, 30, 20, 14, 12.5, 11, 10.5, 10];
+    function line(arr) {
+      var d = "", i;
+      for (i = 0; i < KS.length; i++) d += (d ? " L " : "M ") + px(KS[i]).toFixed(1) + " " + py(arr[i]).toFixed(1);
+      return d;
+    }
+    function interp(s, arr) {
+      var i = 0;
+      while (i < KS.length - 1 && KS[i + 1] < s) i++;
+      var t = (s - KS[i]) / (KS[i + 1] - KS[i]);
+      return arr[i] + t * (arr[i + 1] - arr[i]);
+    }
+    var NOTES = {
+      0: "Overview: the birth rate (blue) and the death rate (orange) fall one after the other from high levels. The lag—the death rate falling first and the birth rate following—creates the population explosion in the middle; when the two lines converge again, the transition is complete. Europe took about two hundred years; China compressed it into about fifty.",
+      1: "Stage one · many births, many deaths: birth rate about 37‰, death rate about 34‰, natural growth only around 3‰ and periodically wiped out by famine and plague—the Malthusian world, where income per head barely grows.",
+      2: "Stage two · the death rate falls first: public health, vaccines, and clean water push the death rate down to about 20‰ while the birth rate still runs at 38‰—the natural growth rate jumps to around 18‰: the population explosion. Developing countries in the 1950s, and Niger today, sit in this stage.",
+      3: "Stage three · the birth rate follows: urbanization, the rising cost of children's education, women's schooling, and the spread of contraception bring the birth rate quickly down toward 25‰; growth is still high but keeps narrowing. South Asia and North Africa since the 1980s are typical.",
+      4: "Stage four · a new low-level balance: birth rate about 13‰, death rate about 10‰, natural growth near zero or even negative, and the age structure inverts—aging. Japan, Germany, and China (negative population growth since 2022) are all in this stage."
+    };
+    var band = $("dtBand"), bDot = $("dtBrDot"), dDot = $("dtDrDot");
+    var btns = [$("dtBtn0"), $("dtBtn1"), $("dtBtn2"), $("dtBtn3"), $("dtBtn4")];
+    function show(stage) {
+      var i;
+      if (stage === 0) {
+        band.setAttribute("display", "none");
+        bDot.setAttribute("display", "none");
+        dDot.setAttribute("display", "none");
+      } else {
+        var s0 = stage - 1, mid = stage - 0.5;
+        band.setAttribute("x", px(s0).toFixed(1));
+        band.setAttribute("width", (px(stage) - px(s0)).toFixed(1));
+        band.setAttribute("display", "inline");
+        bDot.setAttribute("cx", px(mid).toFixed(1));
+        bDot.setAttribute("cy", py(interp(mid, BRR)).toFixed(1));
+        bDot.setAttribute("display", "inline");
+        dDot.setAttribute("cx", px(mid).toFixed(1));
+        dDot.setAttribute("cy", py(interp(mid, DRR)).toFixed(1));
+        dDot.setAttribute("display", "inline");
+      }
+      $("dtNote").textContent = NOTES[stage];
+      for (i = 0; i < btns.length; i++) if (btns[i]) btns[i].className = "btn" + (i === stage ? "" : " ghost");
+      svg.setAttribute("aria-label", "Four stages of the demographic transition: " + NOTES[stage]);
+    }
+    var brEl = $("dtBr"), drEl = $("dtDr");
+    if (brEl) brEl.setAttribute("d", line(BRR));
+    if (drEl) drEl.setAttribute("d", line(DRR));
+    btns.forEach(function (b, i) { if (b) b.addEventListener("click", function () { show(i); }); });
+    show(0);
+  })();
+})();
+</script>
+</body>
+</html>

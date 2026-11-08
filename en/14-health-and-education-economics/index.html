@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Health &amp; Education Economics · EconLearn Self-Study Path in Economics</title>
+<meta name="description" content="An interactive health and education economics tutorial in English: health as human capital, asymmetric information and supplier-induced demand in medical markets, insurance moral hazard and the RAND experiment, human capital versus signaling and the returns to education, plus redistribution and the welfare state, with interactive figures and self-test quizzes.">
+<link rel="stylesheet" href="../../assets/econ.css">
+</head>
+<body style="--branch:#db2777">
+<noscript><p class="noscript-tip">The interactive figures and quizzes on this page need JavaScript; with it disabled you can still read the full text.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← Home</a>
+  <div class="topbar-title"><span class="topbar-num">14</span>Health &amp; Education Economics</div>
+  <a class="topbar-lang" href="../../14-健康与教育经济学/index.html" hreflang="zh-CN">中文</a>
+  <button class="toc-toggle" aria-expanded="false">Contents</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">Chapters in this track</p>
+    <nav aria-label="Chapter contents">
+      <a href="#overview">Overview &amp; learning goals</a>
+      <a href="#ch1">1 · Health as human capital</a>
+      <a href="#ch2">2 · What makes medical markets different</a>
+      <a href="#ch3">3 · Health insurance &amp; moral hazard</a>
+      <a href="#ch4">4 · Health systems &amp; China's reform</a>
+      <a href="#ch5">5 · Returns to education: capital or signaling</a>
+      <a href="#ch6">6 · The welfare state &amp; redistribution</a>
+      <a href="#path">Next steps &amp; further reading</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · Self-Study Path in Economics</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">Track 14 · Applied fields</span>
+        <h1>Health &amp; Education Economics</h1>
+        <p class="hero-en">健康与教育经济学</p>
+        <p class="hero-lead">What are the two most important investments of a person's life? Not stocks and not houses, but one's own health and education. This track looks at hospitals, schools, and the welfare state through the economist's lens: why the price mechanism breaks down in medical markets, how insurance can be a lifeline and a source of waste at the same time, whether college makes you "stronger" or merely "gets you picked," and how much water leaks out along the way when the government ladles it out of the rich's bucket and into the poor's.</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">By the end of this track, you will be able to</div>
+        <ul>
+          <li>use <strong>health as human capital</strong> (the Grossman model) to explain the health–income–education gradient, and show that medical care is only one input into health</li>
+          <li>explain how the three special features of medical markets (asymmetric information, third-party payment, supplier-induced demand) make the standard competitive model break down</li>
+          <li>draw the efficiency loss of <strong>moral hazard</strong> on a "coinsurance–visits" diagram, and recount the core findings of the RAND Health Insurance Experiment</li>
+          <li>compare the Beveridge, Bismarck, and market-type health systems, and outline the logic of China's health reform — secure coverage, push drug prices down, change how providers are paid</li>
+          <li>distinguish the <strong>human capital</strong> and <strong>signaling</strong> views of education, and explain ability bias and three causal identification strategies</li>
+          <li>read the Lorenz curve and the Gini coefficient, and use Okun's "leaky bucket" framework to discuss the trade-offs of redistribution and UBI</li>
+        </ul>
+      </div>
+      <div class="prereq">Prerequisites:
+        <a class="badge" href="../01-microeconomics/index.html">01 Microeconomics (supply and demand, asymmetric information)</a>
+        <a class="badge" href="../03-econometrics/index.html">03 Econometrics (correlation ≠ causation)</a>
+        <a class="badge" href="../09-labor-economics/index.html">09 Labor economics (human capital)</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">Chapter 1</span>The economic view of health: health as capital</h2>
+
+      <p><strong>Opening question:</strong> At the same 60th birthday, people in the highest income and education groups can expect, on average, more than ten extra years of life than those in the lowest. Why does the health gap follow income and education so closely? Seeing a doctor when sick looks like a "medical problem" — on what grounds do economists insist it is first of all an "investment problem"?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: health is a machine that never stops depreciating</div>
+        <p>Picture health as a machine: it leaves the factory with different specifications (genes), wears down with use (age, stress, pollution), and you can pay for maintenance (medical care, exercise, checkups, a better diet). In 1972 Grossman proposed <strong>health as human capital</strong> (health capital): health is a <strong>stock</strong> — each period's health equals last period's health minus depreciation, plus this period's investment. Three key corollaries follow. (1) Health is both a <strong>consumption good</strong> (not being sick feels good in itself) and an <strong>investment good</strong> (healthier people make it to work more days and earn higher wages). (2) Medical care is only one input into the production of health — sleep, diet, environment, and knowledge matter just as much. (3) The returns to medical input are <strong>diminishing at the margin</strong> — piling more tests onto people who are already healthy and already well supplied with care buys almost no additional health. Why is education related to health? Grossman's "efficiency hypothesis": the more educated are better at sifting information, more likely to follow medical advice, and more effective at using the same medical resources — education raises the <strong>efficiency</strong> of the health production function.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Health capital (Grossman model)</div><span class="term-en">健康人力资本</span><div class="term-def">Treating health as a capital stock that depreciates over time and can be replenished through investment. The demand for health is determined jointly by its consumption value (not being sick) and its investment value (earning more).</div></div>
+        <div class="term"><div class="term-name">Health production function</div><span class="term-en">健康生产函数</span><div class="term-def">A function mapping inputs such as medical care, time, behaviors, and environment into health output. The marginal product of medical input diminishes, and the efficiency of the function differs across groups (for example, by education level).</div></div>
+        <div class="term"><div class="term-name">Income gradient of health</div><span class="term-en">健康的收入梯度</span><div class="term-def">The robust empirical regularity that higher income and more education come with better readings on nearly every health indicator; the gradient exists in every country and typically widens with age.</div></div>
+      </div>
+
+      <div class="formula">H<sub>t+1</sub> = (1 − δ)·H<sub>t</sub> + I<sub>t</sub><span class="f-note">Grossman's health-capital accumulation equation: next period's health stock = this period's health minus depreciation δ, plus this period's investment in health I (medical spending, time, health behaviors). The depreciation rate δ rises with age — which is why middle age is when spending on health has to climb.</span></div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 1-1 · The health production function: how much health does money buy?</div>
+        <p class="fig-sub">Try it: drag the "Medical input" slider and watch both groups' health stocks change — and notice how the marginal health gained from each extra unit of input keeps shrinking.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="Health production function chart: the horizontal axis is medical input and the vertical axis a health stock index. The high-education curve sits above the low-education curve; both rise with input but flatten out, illustrating diminishing marginal returns. As the slider moves, two dots travel along the curves and a live readout appears.">
+            <line class="axis" x1="70" y1="330" x2="600" y2="330"/>
+            <line class="axis" x1="70" y1="330" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="372" text-anchor="middle">Medical input (standardized units/year)</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">Health stock (index)</text>
+            <path id="hp-lo" class="curve curve-c2"/>
+            <path id="hp-hi" class="curve curve-c1"/>
+            <text class="chart-label" x="590" y="190" text-anchor="end" style="fill:#ea580c">Low-education group</text>
+            <text class="chart-label" x="590" y="95" text-anchor="end" style="fill:#2f6fdb">High-education group</text>
+            <circle id="hp-d1" r="7" class="dot" fill="#ea580c"/>
+            <circle id="hp-d2" r="7" class="dot" fill="#2f6fdb"/>
+            <text id="hp-t1" class="chart-title-sm" x="335" y="24" text-anchor="middle"></text>
+            <text id="hp-t2" class="chart-label" x="335" y="48" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="hp-s">Medical input</label>
+            <input type="range" id="hp-s" min="0" max="100" step="2" value="20">
+            <output id="hp-os" for="hp-s">20</output></div>
+        </div>
+        <figcaption>How to read this figure: the high-education curve sits higher — the same medical input buys more health (an efficiency advantage, one piece of the health–education gradient). But both curves keep getting flatter: the health gained going from 0 to 20 far exceeds what an increase from 80 to 100 delivers. This explains a counterintuitive fact: pouring extra spending onto groups whose medical care is already saturated buys very little health, while channeling the money to underserved populations earns a much higher marginal return.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · China and the United States on the Preston curve</div>
+        <p>The Preston curve plots life expectancy against income per capita, and the two are positively correlated. China in 1980 was an outlier on that curve: income near the bottom of the world's ranking, yet life expectancy already approaching 68, far above countries of similar income — barefoot doctors, the Patriotic Health Campaign, and basic immunization were "low-cost, high-coverage" public health investments that improved the production of health directly, bypassing expensive medical care. Now look at the United States: the world's highest per-person medical spending (about 17% of GDP) and life expectancy at the bottom of the high-income countries. Together the two cases make the point: <strong>medical spending ≠ health output</strong>, and the most important input in the health production function is not necessarily the most expensive one.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"A nation's health is determined by how much it spends on medical care — the more spending, the better the health."</strong> — wrong on two counts. First, medical care is only one input in the health production function, and income, education, behavior, and environment often explain much more. Second, diminishing marginal returns mean that adding inputs onto groups already awash in care buys almost no health. Policy implication: the same budget spent on vaccines, clean water, and primary care usually yields higher health returns than spending it on high-end treatment at the end of the line. <strong>The opposite mistake</strong> is to conclude that "medicine is useless" — among underserved populations (the steep segment of the curve), the marginal product of medical care is extremely high, which is precisely the theoretical case for universal access to care.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.1</span>In the Grossman model, health's role as an "investment good" shows up as:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Being sick feels bad; not being sick delivers utility in itself</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Healthier workers make it to work more days and with more energy, so their productivity and earnings are higher</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Seeing a doctor costs money, and medical spending is the investment good</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> A describes health as a <strong>consumption good</strong> (it enters the utility function directly); B is the investment-good property — health raises the quantity and quality of "sellable time," the second source of demand for health in the Grossman model; C confuses "medical care is an input" with "health is capital": paying for treatment is an act of investment, but the capital being invested in is health itself.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.2</span>With the same budget of 1 million yuan, which use yields the greatest health return according to the logic of the health production function?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Adding premium checkup packages for a high-income group already saturated with medical care</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Funding primary care and vaccination in areas short of doctors and medicine</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Concentrating the money on one state-of-the-art diagnostic device placed in a big city</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Diminishing marginal returns: the high-income group sits on the flat segment of the production function, where extra inputs buy almost no health; underserved areas sit on the steep segment, where the same money has a far higher marginal product — the economic case for "breadth before sophistication." The error in C is looking only at supply capacity and not at users' marginal product: if the advanced device still serves people on the flat segment, the health return is just as limited.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Health is a capital stock: depreciation rises with age, and the stock can be replenished through investment in medical care, time, and behavior (the Grossman model).</li>
+          <li>Health is both a consumption good and an investment good; education helps explain the health gradient by raising the "efficiency" of health production.</li>
+          <li>Medical care is only one input, with diminishing marginal returns: shifting budget from the flat segment to the steep segment raises total health output.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">Chapter 2</span>What makes medical markets special: who is deciding for you</h2>
+
+      <p><strong>Opening question:</strong> Before a haircut you can walk into three shops and compare prices; but when the doctor says "you must have this test and take this drug," what basis do you have for judging true from false? If the seller is at the same time your purchasing adviser, how is the market supposed to work?</p>
+
+      <aside class="callout history">
+        <div class="callout-title">Origins of the idea · Arrow 1963</div>
+        <p>Kenneth Arrow's 1963 paper "Uncertainty and the Welfare Economics of Medical Care" founded health economics. Every feature by which the medical market departs from perfect competition — uncertainty, asymmetric information, barriers to entry, the prevalence of non-profits — is not an "imperfection" but an <strong>institutional response</strong> to market failure. Medical professional ethics and industry self-regulation are, in essence, substitutes for reputation and price mechanisms that cannot function.</p>
+      </aside>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: three failures, stacked</div>
+        <p>Ordinary markets run on "buyers know their own needs, sellers compete, prices guide." In the medical market all three fail at once. (1) <strong>Asymmetric information</strong> — the doctor knows what treatment you need and you do not, which turns the doctor–patient relationship into a <strong>principal–agent problem</strong>: you hire the doctor to make your consumption decisions, but the doctor is at the same time the seller. (2) <strong>Third-party payment</strong> — the party that really pays the big share is the insurer or the public scheme, the patient is almost price-insensitive, and the price mechanism loses its rationing function. (3) <strong>Supplier-induced demand</strong> (SID) — since patients follow doctors' advice, doctors can to some extent "shift" the patient's demand curve. Roemer's observation is quoted endlessly: "a built bed is a filled bed." Stacked together, the three failures mean that both the quantity and the price of care can deviate from efficient levels — and the direction of the deviation is set by the <strong>payment and remuneration system</strong>, not by the personal virtue of doctors.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Asymmetric information</div><span class="term-en">信息不对称</span><div class="term-def">One party to a transaction holds more information than the other. In medicine, patients cannot evaluate whether a diagnosis or treatment is necessary, so the mechanisms of competition and reputation fail (see the lemons market in Track 04).</div></div>
+        <div class="term"><div class="term-name">Principal–agent problem</div><span class="term-en">委托—代理问题</span><div class="term-def">The agent (doctor) makes decisions for the principal (patient) while the two sides' interests are not fully aligned. When doctors' income is tied to the volume they order, the incentive conflict is amplified.</div></div>
+        <div class="term"><div class="term-name">Third-party payment</div><span class="term-en">第三方支付</span><div class="term-def">Medical bills are paid mostly by insurers or public schemes rather than by the patient. The marginal price the patient faces is far below true cost — the institutional breeding ground of moral hazard and cost inflation.</div></div>
+        <div class="term"><div class="term-name">Supplier-induced demand</div><span class="term-en">供给诱导需求</span><div class="term-def">Providers exploiting their informational advantage to shape patient demand. Evidence shows it exists, but the demand curve is not infinitely shiftable — the capacity to induce is constrained by trust and conscience.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · "Hospitals funded by drug markups" and overprescription</div>
+        <p>Since the 1950s, China allowed public hospitals to sell drugs at a markup of roughly 15% over the purchase price, while consultation and service fees were held deliberately low — for a hospital that had to keep itself alive, the handiest source of revenue was selling drugs (the "hospitals funded by drug markups" model). The result was institutionalized <strong>overprescription</strong> and <strong>over-use of IV drips</strong>: even a common cold came with a "bottle," and the drip stands in primary clinics at one point formed a "forest of IV bottles." Note what this is not: it is not "doctors turning bad," it is incentive structures at work — the same doctors write different prescriptions under different payment systems. In 2017 all public hospitals abolished the drug markup, and the reforms that followed — centralized procurement of drugs and consumables, case-based payment (DRG) — have gradually unhooked "ordering" from "earning." It is a lesson in mechanism design: <strong>to change behavior, change the incentives first</strong>.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Supplier-induced demand shows that doctors as a class are morally rotten."</strong> — that misreads an institutional problem as a character problem. In a system where "income = volume ordered," most people will order a little more; on a salary, the same doctors tend toward restraint. Economics cares about the <strong>marginal effect of incentives</strong>, not about pinning moral labels on a profession. The reverse error is just as common: <strong>"as long as doctors have a conscience, institutions don't matter"</strong> — conscience can restrain the extent of inducement but cannot suddenly hand patients medical knowledge; asymmetric information does not vanish with good intentions, it can only be compensated for by institutions (decoupled pay, clinical pathways, second opinions).</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.1</span>The principal–agent problem in the doctor–patient relationship has its root in:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Doctors are paid too little and lack professional standing</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Patients lack the information to judge whether a treatment is necessary, while the doctor deciding for them is also the seller of the service</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>There are too few hospitals, so patients queue too long</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The defining feature of a principal–agent problem is that "the principal (patient) cannot monitor whether the agent (doctor) is acting in the principal's interest." B states exactly this: asymmetric information, plus an agent who is at once the seller. A and C may worsen trust or strain supply and demand, but even with well-paid doctors and abundant hospitals, as long as patients cannot evaluate whether "this test is necessary," the agency problem survives.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.2</span>Why did the "15% drug markup" policy produce overprescription?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Drugs are necessities, so patients buy them no matter what</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The more drugs a hospital sold, and the pricier they were, the more markup it earned — selling drugs turned from a means of treating illness into a source of revenue</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Patients actively asked doctors for more and more expensive drugs</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> With a fixed markup rate, higher drug bills mean higher hospital income — a textbook incentive distortion that welds "writing the prescription" (a medical decision) to "the proceeds from selling drugs" (a financial interest). A only says demand is inelastic (which makes inducement easier to get away with); it does not explain why the supply side over-prescribes. C gets the facts backwards — under an informational disadvantage, patients are precisely the side being steered. Abolishing the markup in 2017 and shifting to centralized procurement and DRG was exactly cutting this welded link.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Three failures of the medical market: asymmetric information (the agency problem), third-party payment (price insensitivity), and supplier-induced demand.</li>
+          <li>Induced demand is the product of incentive structures, not a failure of professional ethics; to change behavior, change incentives first.</li>
+          <li>Professional ethics, non-profit organizations, and regulation can all be read as institutional responses to market failure (Arrow 1963).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">Chapter 3</span>Health insurance: risk pooling and moral hazard</h2>
+
+      <p><strong>Opening question:</strong> Choose one of two lives: A, a certain loss of 3,000 yuan; B, a 5% chance of losing 600,000 yuan. How much would you pay to swap B for A? — that question determines what insurance is worth; and its side effects determine why every health-insurance system in the world designs in "deductibles" and "coinsurance."</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: insurance is a balance scale with risk on one pan and waste on the other</div>
+        <p>Most people are <strong>risk-averse</strong>: they will pay a premium to swap a large uncertain loss for a small certain expense — and that "certainty" is itself the value insurance creates (risk pooling). But once insurance exists, the price you face at the clinic drops from "full price" to "your small share," so you visit more and use costlier drugs — <strong>ex-post moral hazard</strong>: consuming services whose cost exceeds their value. There is also <strong>ex-ante moral hazard</strong>: with insurance as the backstop, the drive to exercise, get checkups, and quit smoking weakens. On one pan of the scale sits the gain from pooling risk, on the other the waste from overconsumption, and <strong>the optimal insurance contract balances between the two</strong>: the deductible (small amounts self-borne, deterring trivial visits), coinsurance (paying a share, keeping some price sensitivity), and the out-of-pocket cap (catastrophic spending must be fully covered).</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 3-1 · Coinsurance → visits: a moral hazard calculator</div>
+        <p class="fig-sub">Try it: drag the coinsurance rate from 100% (no insurance) all the way down to 0% (full coverage) and watch the out-of-pocket price, the number of visits, and the shaded triangle of efficiency loss change.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="Supply and demand diagram: the horizontal axis is visits and the vertical axis price. A downward-sloping demand curve for visits, a horizontal line at the true unit cost of 100 yuan per visit, and another horizontal line at the out-of-pocket price, which moves with the coinsurance rate. Visits are set where demand meets the out-of-pocket price line; whenever the out-of-pocket price sits below true cost, a shaded triangle marks the efficiency loss.">
+            <line class="axis" x1="70" y1="330" x2="600" y2="330"/>
+            <line class="axis" x1="70" y1="330" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="372" text-anchor="middle">Visits Q (person-visits/year)</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">Price P (yuan)</text>
+            <polygon id="mh-dwl" class="area-fill" fill="#b91c1c"/>
+            <line id="mh-mc" stroke="#475569" stroke-width="2.5"/>
+            <text class="chart-label" x="594" y="118" text-anchor="end" style="fill:#475569">MC = 100 (true cost)</text>
+            <line id="mh-pe" stroke="#db2777" stroke-width="2.5"/>
+            <text id="mh-pelab" class="chart-label" x="76" y="150" style="fill:#db2777">Out-of-pocket price</text>
+            <line id="mh-d" class="curve curve-c1"/>
+            <text class="chart-label" x="150" y="52" style="fill:#2f6fdb">D (demand for visits)</text>
+            <circle id="mh-dot" r="7" class="dot" fill="#db2777"/>
+            <text id="mh-t1" class="chart-title-sm" x="335" y="22" text-anchor="middle"></text>
+            <text id="mh-t2" class="chart-label" x="335" y="44" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="mh-c">Coinsurance rate (share of the bill paid out of pocket)</label>
+            <input type="range" id="mh-c" min="0" max="100" step="5" value="100">
+            <output id="mh-oc" for="mh-c">100%</output></div>
+        </div>
+        <figcaption>How to read this figure: the true cost of each visit is 100 yuan, and where demand meets 100 yuan (Q = 40) is the efficient level of visits. Each step down in the coinsurance rate lowers the out-of-pocket price, and the patient moves up the demand curve past 40 — the added visits are worth less (the height of the demand curve) than their 100-yuan cost, and their sum is the red shaded triangle of <strong>efficiency loss</strong>. Note that the reverse holds just as truly: at 100% coinsurance (no insurance) the loss is zero, but no risk is pooled either — that is exactly what "the optimal coinsurance rate lies somewhere in between" means in this picture.</figcaption>
+      </figure>
+
+      <aside class="callout keypoint">
+        <div class="callout-title">Design essentials · The three-part kit of optimal insurance</div>
+        <p><strong>Deductible</strong>: small expenses are self-borne, filtering out visits "not worth an appointment." <strong>Coinsurance</strong>: the patient pays a percentage, keeping some sensitivity to price. <strong>Out-of-pocket maximum</strong>: above a catastrophic threshold, coverage is full — because it is precisely at enormous losses that risk aversion is strongest and insurance most valuable. The shared logic of the kit: <strong>keep incentives on small, frequent, price-sensitive spending; keep risk-sharing on large, catastrophic, unaffordable spending</strong>. By the same token, high-value services such as medications for chronic disease should carry low or even zero coinsurance — the target of cost control is low-value care, not all care.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Moral hazard</div><span class="term-en">道德风险</span><div class="term-def">Insurance changes the behavior of the insured, along two margins: ex post (consuming more care) and ex ante (less preventive effort). It is a rational response to a change in price, and has nothing to do with fraud.</div></div>
+        <div class="term"><div class="term-name">Coinsurance &amp; deductible</div><span class="term-en">共付保险与起付线</span><div class="term-def">Instruments that make patients share part of the cost. Percentage sharing preserves price sensitivity, the deductible filters out small claims, and the out-of-pocket cap backstops catastrophic risk.</div></div>
+        <div class="term"><div class="term-name">RAND Health Insurance Experiment</div><span class="term-en">兰德健康保险实验</span><div class="term-def">A large experiment (1971–1986) that randomly assigned thousands of Americans to different coinsurance plans — the first causal quantification of moral hazard, and the foundation of modern health-insurance design.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The RAND experiment: what is moral hazard worth?</div>
+        <p>From 1971 to 1986 the RAND Corporation <strong>randomly</strong> assigned several thousand Americans under 65 to insurance plans ranging from entirely free care to 95% coinsurance (with an out-of-pocket cap). Results: the free-care group's medical spending ran about 30% higher than the high-coinsurance group's — moral hazard is real and sizable. Yet the free-care group's <strong>average</strong> health measures barely improved — most of the extra money bought low-value services. The crucial exception: low-income participants with hypertension, vision problems, or dental disease — conditions <strong>that outpatient care can manage effectively</strong> — saw significant health gains under free care. One-line summary: <strong>"no average effect, real effects at the margin"</strong> — cost sharing can control spending, but only by drawing fine distinctions over who faces it and for which services (this is the experimental origin of today's "value-based insurance design"). The Oregon health-insurance expansion of the 2010s reproduced similar conclusions with modern methods.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Moral hazard means defrauding the insurer."</strong> — No. Moral hazard requires no fraud at all: one more clinic visit after the price falls, one more box of medicine stockpiled "just in case" — all rational responses, which is exactly why it is so hard to eradicate. The reverse error: <strong>"since insurance causes waste, better to have no insurance."</strong> — this forgets insurance's founding value: pooling the risk of catastrophic spending prevents household bankruptcy and protects consumption smoothing, a gain that far outweighs the small-scale waste. Economics' answer has never been "insurance or no insurance," but "<strong>on which stretch of the price to insure, and on which stretch not to</strong>."</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.1</span>The coinsurance rate falls from 50% to 0, and outpatient visits climb sharply. This phenomenon is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Adverse selection</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Ex-post moral hazard</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Supplier-induced demand</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Ex-post moral hazard is the expansion of <strong>consumption behavior</strong> once insurance lowers the price (more visits, more drugs); ex-ante moral hazard — reduced preventive effort — does not appear among the options. A, adverse selection, happens <strong>before enrollment</strong> (the high-risk are more willing to buy coverage — a screening problem, not a consumption problem); C, supplier-induced demand, is the <strong>doctor</strong> exploiting an informational advantage to shape demand — a different actor. The two often push spending up together, but the mechanisms are two different things.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.2</span>The core finding of the RAND Health Insurance Experiment was:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Free medical care dramatically improved everyone's health measures</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The free-care group spent more but its average health was nearly unchanged; low-income people with chronic disease were the exception, gaining significantly</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The higher the coinsurance, the healthier the enrollees</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> B is the classic "no average effect, real effects at the margin" result: most of the extra spending bought low-value services, but free care genuinely improved the health of low-income patients with hypertension, vision, and dental problems — meaning cost-sharing design must draw distinctions over "who" and "which services." A overstates the average effect; C reads moral hazard backwards as "spending is harmful," forgetting that heavy cost sharing also blocked low-income people's high-value visits (exactly the policy content of B's exception).</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Insurance's value lies in risk pooling, its cost in moral hazard; the optimal contract weighs between the two.</li>
+          <li>Deductible, coinsurance, and out-of-pocket cap handle small, mid-sized, and catastrophic spending — each does its own job.</li>
+          <li>The RAND experiment: the free-care group spent about 30% more with no average health difference, while low-income chronically ill patients gained — finely targeted cost sharing is the direction.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">Chapter 4</span>Comparing health systems and China's health reform</h2>
+
+      <p><strong>Opening question:</strong> The United States spends about 17% of GDP on health care, the United Kingdom only about 10% — yet Britain has longer life expectancy and broader coverage. Does health-system design really have an "optimal solution"? And if so, why do different countries answer it so differently?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: three archetypes, one hard problem</div>
+        <p>The world's health systems are mixtures of three archetypes. The <strong>Beveridge model</strong> (tax-financed, delivery organized by government, as in the UK's NHS and the Nordics): universal coverage and cheap administration, but queues and rationing are out in the open. The <strong>Bismarck model</strong> (financed by social insurance, payment by multiple sickness funds, as in Germany, France, and Japan): employers and employees contribute jointly and provision is plural — broad coverage, complex administration. The <strong>market model</strong> (plural private financing and provision, as in the United States, topped up by public Medicare/Medicaid safety nets): fast innovation and responsiveness, but fragmentation, high costs, and holes in coverage. Comparing systems means checking four gears: <strong>financing</strong> (where the money comes from), <strong>coverage</strong> (who is insured), <strong>payment</strong> (fee-for-service, per head, or per case), and the <strong>gatekeeper</strong> (whether a referral from a general practitioner is required). And every system shares one hard problem — <strong>cost control</strong>: aging, technological progress, and Baumol's cost disease (health care is a labor-intensive sector; its productivity grows slowly while its wages must track the whole economy's) give the cost curve a natural upward tilt.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Beveridge model</div><span class="term-en">贝弗里奇模式</span><div class="term-def">A universal health system financed by taxes, with services provided or purchased by government, named after Britain's 1942 Beveridge Report. Universal coverage at low cost, at the price of queues and budget rationing.</div></div>
+        <div class="term"><div class="term-name">Bismarck model</div><span class="term-en">俾斯麦模式</span><div class="term-def">A system financed by mandatory social insurance, paid for by non-profit insurance funds, with mixed public–private provision, originating in 1880s Germany. Coverage is tied to employment and jointly governed by many parties.</div></div>
+        <div class="term"><div class="term-name">Gatekeeping</div><span class="term-en">守门人制度</span><div class="term-def">Patients must be referred by a general practitioner before seeing a specialist. A single round of triage curbs abuse of specialist resources — a standard tool of cost control and tiered care.</div></div>
+        <div class="term"><div class="term-name">Baumol's cost disease</div><span class="term-en">鲍莫尔成本病</span><div class="term-def">The structural phenomenon whereby labor-intensive sectors with slow productivity growth (medicine, education) must keep up with economy-wide wages, so their relative cost keeps rising.</div></div>
+      </div>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead>
+            <tr><th>Dimension</th><th>Beveridge (UK/Nordics)</th><th>Bismarck (Germany/France/Japan)</th><th>Market model (US)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Financing source</td><td>General taxation</td><td>Social insurance contributions (employer + employee)</td><td>Employer insurance + private insurance + public safety net</td></tr>
+            <tr><td>Coverage</td><td>Automatic, universal</td><td>Mandatory enrollment tied to employment</td><td>Fragmented, with a historically uninsured population</td></tr>
+            <tr><td>Provision</td><td>Mostly public</td><td>Mixed public–private</td><td>Mostly private</td></tr>
+            <tr><td>Cost-control tools</td><td>Global budgets + rationing by queue</td><td>Fund negotiation + payment rules</td><td>Scattered bargaining power, high administrative costs</td></tr>
+            <tr><td>Main price paid</td><td>Long waiting times</td><td>Contribution burden, administrative complexity</td><td>High cost, poor equity</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · China's health reform: from "care too dear to afford" to the "soul-stirring bargains" of procurement</div>
+        <p>After reform and opening up, public hospitals turned market-based and the government's share of their funding fell; "keeping hospitals alive on drug markups" made care expensive. The 2009 round of reform set the direction. <strong>Secure financing for coverage</strong>: employee insurance and the urban–rural resident scheme together wove a universal insurance net covering more than 1.3 billion people, with enrollment rates stable above 95%. <strong>Centralized procurement to push prices down</strong>: once the National Healthcare Security Administration was set up in 2018, "volume-based procurement" of drugs and consumables traded access to the national market for low prices (the "soul-stirring" price negotiations), cutting prices of procured drugs by more than half on average. <strong>Payment reform to cap the total</strong>: the drug markup was abolished across all public hospitals in 2017, and case-based bundled payment under DRG/DIP followed, pushing hospitals from "the more you order, the more you earn" toward "keep the surplus" — plus tiered care and medical alliances, applying gatekeeper logic to keep minor illnesses from crowding the big top-tier hospitals. Restated in this track's language: first take <strong>risk pooling</strong> as far as it goes (broad coverage), then tackle <strong>supplier-induced demand</strong> (separating drugs from treatment, procurement), and finally move <strong>payment incentives</strong> (DRG) — a running history of balancing cost control against coverage.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Free medical care has no cost — it is just government generosity."</strong> — In an NHS-type system care is just as scarce; the cost only changes form: from rationing by price (those who cannot pay drop out) to rationing by time (months in a queue) and by budget (formularies, surgical quotas). The right comparative question is not "is there rationing" but "<strong>who does the rationing, and on whom does it bite hardest</strong>." Another pitfall: <strong>"American health care is expensive because it is too market-based, so markets necessarily produce sky-high prices."</strong> — US public spending as a share of GDP is actually not low; the expense also reflects fragmented payers with weak bargaining power, high administrative costs, and prices that lack transparency and restraint — symptoms of an <strong>incomplete</strong> market mechanism, not of too much market.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.1</span>A health system financed by taxes, with services provided directly by government and automatic coverage of everyone is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The Bismarck model</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The Beveridge model</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The market-led model</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The three defining elements of the Beveridge model are exactly the stem: tax financing + government provision + automatic coverage of residents (no enrollment paperwork) — the UK's NHS is the classic case. The Bismarck model relies on social-insurance contributions, tied to employment, paid through insurance funds; the market model rests on private insurance and private provision. The core of the differences is not "whether government is involved" but the <strong>mode of financing and the form rationing takes</strong>.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.2</span>Baumol's cost disease explains the long-run rise of medical spending. The mechanism is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Doctors are greedy and keep bidding up their service prices</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Medical productivity grows more slowly than manufacturing's, but wages must track the whole economy, so relative cost is pushed up</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Inflation makes all goods dearer in step</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Baumol's original example was the string quartet: performing Beethoven today still takes four players for the same length of time — productivity unchanged for centuries — yet musicians' wages must keep up with their classmates who went into manufacturing, or the talent walks. Medicine and education work the same way: a shift of nursing still takes as many nurse-hours, productivity barely rises, and yet wages must follow the whole economy's, so <strong>relative</strong> cost keeps climbing. This is structural: blaming it on morals (A) or on general inflation (C) cannot explain why medicine's share of GDP keeps rising.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Three archetypes: Beveridge (taxes + government), Bismarck (social insurance + plurality), market model (private + safety net) — each with its own price.</li>
+          <li>Compare systems on four gears: financing, coverage, payment, gatekeeping; every system rations, and they differ in the form rationing takes.</li>
+          <li>Cost pressure is structural: aging + technological progress + Baumol's cost disease give the cost curve its natural upward tilt.</li>
+          <li>The through-line of China's health reform: universal insurance for coverage → procurement to push drug prices down → DRG to change payment incentives.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">Chapter 5</span>The economics of education: human capital or signaling</h2>
+
+      <p><strong>Opening question:</strong> University graduates out-earn high-school graduates by a wide margin. Is the extra pay productivity that education "produced" — or does the diploma merely <strong>pick out</strong> people who were already smart and hardworking? The two answers have wildly different implications for whether education should be subsidized.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: two worldviews, one identification problem</div>
+        <p>The <strong>human capital view</strong> (Becker): school is a factory; education installs productivity directly — reading and writing, coding, collaboration, persistence. Schooling raises wages because you really can do more, so subsidizing education subsidizes production. The <strong>signaling view</strong> (Spence): school is a sieve; schooling is costly and painful, and precisely because it is, only the high-ability can afford it — the value of the diploma lies not in what it taught but in what it <strong>proves</strong> to employers. In the extreme signaling model, expanding education is an arms race: everyone reads two more years, no ranking changes, and society pays the tuition for nothing (privately rational, socially wasteful); but in milder versions signaling improves <strong>matching</strong> and carries real value. Who is right? That is a question of causal identification: high-ability people would have stayed in school longer and earned more anyway (<strong>ability bias</strong>), so a naive regression credits education with ability's work. The economist's toolbox: randomized experiments (RCT), difference-in-differences (DID, using compulsory-schooling laws), instrumental variables (IV, quarter of birth, distance to school), regression discontinuity (RD, admission cutoffs). The consensus: the return to education is real and significant (each additional year of schooling raises wages by about 8%–10%), but it is <strong>below</strong> the naive-regression estimate — human capital first, signaling second.</p>
+      </aside>
+
+      <div class="formula">ln W = α + β·S + γ₁·X + γ₂·X² + ε<span class="f-note">The Mincer equation: log wages regressed on years of schooling S and work experience X; β reads as "the percentage wage gain from one more year of schooling, other things equal." Note: β is a causal return only if S is uncorrelated with ability (as under random assignment) or ability is controlled for.</span></div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 5-1 · A laboratory for the causal identification of the return to education</div>
+        <p class="fig-sub">Try it: one pool of "people" (colored gray/pink by ability), and three strategies for estimating what one more year of school is worth. Click the buttons to switch: how far does raw correlation overshoot the slope? What happens after controlling for ability, or after random assignment?</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 420" role="img" aria-label="Scatter plot: the horizontal axis is years of schooling and the vertical axis monthly wage. A gray dashed line shows the true causal effect of 0.8 thousand yuan per extra year, and a fitted regression line changes with the buttons. In raw-correlation mode the slope is clearly too big; under ability control and random assignment the slope falls back near the true value.">
+            <line class="axis" x1="70" y1="340" x2="600" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="382" text-anchor="middle">Years of schooling S (years)</text>
+            <text class="chart-label" x="24" y="190" text-anchor="middle" transform="rotate(-90 24 190)">Monthly wage W (thousand yuan)</text>
+            <path id="er-true" fill="none" stroke="#475569" stroke-width="2" stroke-dasharray="6 4"/>
+            <text class="chart-label" x="76" y="300" style="fill:#475569">True causal line (+0.8/year)</text>
+            <g id="er-pts"></g>
+            <path id="er-line" class="curve curve-c1"/>
+            <text id="er-leg" class="chart-label" x="76" y="60" style="fill:#475569"></text>
+            <text id="er-t1" class="chart-title-sm" x="335" y="22" text-anchor="middle"></text>
+            <text id="er-t2" class="chart-label" x="335" y="44" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn" id="er-b1">Raw correlation (naive regression)</button>
+          <button class="btn ghost" id="er-b2">Control for "ability," then regress</button>
+          <button class="btn ghost" id="er-b3">Randomize schooling (RCT)</button>
+        </div>
+        <figcaption>How to read this figure: in the simulated world each person's wage = 3 + 0.8 × years of schooling + 7 × ability + noise, and the more able stay in school longer. (1) Raw correlation credits ability's work to schooling, so the slope sits well above 0.8. (2) Controlling for ability compares within ability levels, and the slope falls back near the true value. (3) Random assignment decouples ability from years of schooling, and the simple regression is now causal — precisely the value of experimental methods. Recall Track 03: correlation ≠ causation; the missing ingredient is not data but an identification strategy.</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Human capital theory</div><span class="term-en">人力资本理论</span><div class="term-def">The Becker–Schultz tradition: education is investment that installs productivity directly. It predicts that the social return to subsidizing education exceeds the private return.</div></div>
+        <div class="term"><div class="term-name">Signaling model (Spence)</div><span class="term-en">信号模型</span><div class="term-def">Education as a costly signal by which high-ability people reveal themselves to employers. Private returns are positive; the social return equals the informational value the signal reveals minus the cost of sending it.</div></div>
+        <div class="term"><div class="term-name">Ability bias</div><span class="term-en">能力偏差</span><div class="term-def">Unobserved ability raises both years of schooling and wages, biasing the simple regression coefficient on education upward.</div></div>
+        <div class="term"><div class="term-name">Externalities of education</div><span class="term-en">教育的外部性</span><div class="term-def">Benefits that spill over to others: coworker productivity, civic engagement, lower crime, higher intergenerational mobility — private returns therefore understate social returns.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Compulsory schooling laws and quarter of birth: DID in China, IV in the United States</div>
+        <p>China's 1986 Compulsory Education Law was phased in across provinces — a natural experiment tailor-made for difference-in-differences: cohorts more affected by the law (born later, in earlier-implementing provinces) stayed in school longer, and their wages rose — yet the causal return estimated this way is <strong>below</strong> the raw correlation, confirming ability bias. Over time, the Mincer return in urban China climbed from about 4% in 1988 to 8%–10% in the 2000s: market reform priced education correctly for the first time. In the United States, Angrist and Krueger used quarter of birth as an instrument (compulsory schooling age limits forced children born later in the year to stay in school a little longer) and again estimated a return of about 8% — the IV return is below the naive regression but clearly positive: <strong>education really does "produce" something</strong>, just not as much as the raw data suggest.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>Pitfall one: "college graduates earn more, so college makes you earn more."</strong> — classic ability bias plus selection bias: the people who go to college were already different (smarter, more persistent, from better-resourced families), and a naive comparison charges those predetermined differences to college. Causal identification needs exogenous shocks (laws, distance, admission cutoffs). <strong>Pitfall two, the reverse: "if the signaling model holds, education is useless and school is a waste."</strong> — also wrong. The empirical consensus is that the human-capital component dominates: on-the-job training, apprenticeships, health education all raise productivity; and even the signaling part improves job matching. Education's externalities (lower crime, more civic participation, intergenerational mobility) push the social return above the private one — the economic case for public funding of education everywhere.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.1</span>If education's effect on wages were purely signaling, the main social gain from expanding higher education would come from:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>A general rise in labor productivity</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>More accurate matching and screening of people to jobs, not a rise in individual productivity produced by education</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>No social gain at all — a pure waste of resources</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> In a pure signaling model education installs no productivity, so A is the human-capital prediction. But signaling is not worthless: putting the right people in the right jobs (matching) is itself a social gain — B is correct. C goes too far — only when everyone gets more schooling at once with no improvement in signal quality (the pure "arms race" version) does the social gain approach zero; even then the matching value survives. The point of the thought experiment: the social case for subsidizing education is stronger in a human-capital world, weaker in a signaling world.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.2</span>Unobservable "ability" makes people both stay in school longer and earn more. The simple-regression coefficient on the return to education will:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Understate the true causal return</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Overstate the true causal return</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Be unaffected — regression handles omitted variables automatically</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Ability correlates positively with years of schooling and with wages; omitting it lets the education coefficient absorb ability's effect, biasing it upward — exactly why the "raw correlation" slope in Figure 5-1 is too steep. C is the most common misconception about regression: "holding other things constant" holds only for variables <strong>included</strong>; omitted correlated variables necessarily create bias. The whole point of identification strategies (RCT/DID/IV/RD) is to cut that correlation.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The human-capital view (school = factory) and the signaling view (school = sieve) both explain the wage premium, with different policy implications.</li>
+          <li>Ability bias makes simple regressions overstate the return to education; RCT, DID, IV, and RD are the four main identification strategies.</li>
+          <li>Empirical consensus: the return is real and significant (about 8%–10% per year) but below naive estimates — human capital first, signaling second.</li>
+          <li>Education's externalities make the social return exceed the private return — the economic case for public subsidies to education.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">Chapter 6</span>The welfare state and redistribution: Okun's leaky bucket</h2>
+
+      <p><strong>Opening question:</strong> Arthur Okun's 1975 thought experiment: scoop a bucket of water from the richest person's home, carry it across half the square, and pour it into the poorest person's — water is bound to leak on the way. If 30 cents of every yuan leaks out, is the trip still worth making? And how much leakage is too much?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: redistribution — the third option on the scales</div>
+        <p>Measure first: which poverty line (absolute or relative), which indicator (poverty rate, poverty gap); for inequality, the <strong>Lorenz curve</strong> and the <strong>Gini coefficient</strong>. Then act: the toolbox holds progressive taxation, universal transfers (such as child allowances), and <strong>means-testing</strong> (only the poor receive — cheap, but it creates "welfare cliffs," where earning one extra yuan can cost two yuan of benefits, an implicit marginal tax rate that ends up the highest of all). Okun's warning: two leaks lie along the road from rich to poor — administrative cost, and the <strong>incentive wedge</strong> (high marginal tax rates depress labor supply) — hence a trade-off between equality and efficiency. Later research added the other side: transfers to low-income families that relax children's credit constraints raise the next generation's investment in human capital (health, education) and may improve equality and efficiency <strong>at the same time</strong> — the trade-off is not everywhere, and the "win-win zone" concentrates in early investment in children. As for UBI (universal basic income): no means test, no cliff, no stigma, minimal administration, and it covers gig workers; the price is either a low benefit level or high tax rates. Friedman's <strong>negative income tax</strong> (NIT) is best read as "a UBI that rewards work": below an income threshold you receive a subsidy instead of paying tax, phased out smoothly as income rises — UBI and NIT are two ends of one spectrum.</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 6-1 · Before and after redistribution: the Lorenz curve and the Gini coefficient</div>
+        <p class="fig-sub">Try it: drag the "Redistribution strength" slider to see how taxes and transfers push the Lorenz curve from the gray dashed line toward the teal solid one, lower the Gini coefficient, and change the income shares of the poorest 40% and the richest 10%.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 440" role="img" aria-label="Lorenz curve chart: the horizontal axis is cumulative population share and the vertical axis cumulative income share. The gray dashed line is the pre-redistribution Lorenz curve of market income; the teal solid line is the post-redistribution curve, which moves with the slider; the shaded area between the curves and the diagonal line of equality shows how much redistribution compresses inequality. Text displays the Gini coefficient before and after.">
+            <line class="axis" x1="70" y1="400" x2="470" y2="400"/>
+            <line class="axis" x1="70" y1="400" x2="70" y2="40"/>
+            <text class="chart-label" x="270" y="432" text-anchor="middle">Cumulative population (poorest to richest, %)</text>
+            <text class="chart-label" x="24" y="220" text-anchor="middle" transform="rotate(-90 24 220)">Cumulative income share (%)</text>
+            <line x1="70" y1="400" x2="470" y2="40" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <text class="chart-label" x="330" y="240" style="fill:#94a3b8">Line of equality (Gini = 0)</text>
+            <path id="gz-diff" class="area-fill" fill="#db2777"/>
+            <path id="gz-pre" class="curve" stroke="#475569" stroke-dasharray="7 5"/>
+            <path id="gz-post" class="curve curve-c3"/>
+            <text class="chart-label" x="466" y="392" text-anchor="end" style="fill:#475569">Before redistribution (market income)</text>
+            <text class="chart-label" x="466" y="374" text-anchor="end" style="fill:#0d9488">After redistribution (disposable income)</text>
+            <text id="gz-t1" class="chart-title-sm" x="560" y="200" text-anchor="middle"></text>
+            <text id="gz-t2" class="chart-label" x="560" y="224" text-anchor="middle" style="fill:#475569"></text>
+            <text id="gz-t3" class="chart-label" x="560" y="248" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="gz-t">Redistribution strength (degree of equalization by transfers)</label>
+            <input type="range" id="gz-t" min="0" max="100" step="5" value="40">
+            <output id="gz-ot" for="gz-t">40%</output></div>
+        </div>
+        <figcaption>How to read this figure: the closer the curve hugs the diagonal, the more equal the distribution; the Gini coefficient is twice the area between the diagonal and the curve, as a share of the triangle under the diagonal. Set the slider to 0 and the two lines coincide — across developed countries, taxes and transfers compress inequality by roughly three to four tenths (in the Nordics, for example, the market-income Gini runs just over 0.4 while the disposable-income Gini is about 0.25). Note that this figure is a simplified demo: transfers shrink the gaps between decile shares proportionally, and it depicts neither behavioral responses nor administrative cost — which is exactly what the "leaky bucket" adds.</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Lorenz curve &amp; Gini coefficient</div><span class="term-en">洛伦兹曲线与基尼系数</span><div class="term-def">The curve tracing cumulative income share against cumulative population share from the poorest up; the Gini is the ratio of twice the area between the diagonal and the curve to the triangle under the diagonal — 0 for complete equality, 1 for extreme inequality.</div></div>
+        <div class="term"><div class="term-name">Means-testing</div><span class="term-en">家计调查</span><div class="term-def">Benefits paid only to those whose income or assets fall below a threshold. Cheap and targeted, but application barriers miss eligible people, and benefits lost as income rises create the high-marginal-tax "welfare cliff."</div></div>
+        <div class="term"><div class="term-name">Okun's leaky bucket</div><span class="term-en">奥肯漏桶</span><div class="term-def">The efficiency losses from incentive distortions and administrative cost incurred along the way in redistribution. It defines the equality–efficiency trade-off — and the engineering problem of welfare-state design: patch the bucket as tightly as possible.</div></div>
+        <div class="term"><div class="term-name">UBI &amp; negative income tax</div><span class="term-en">全民基本收入与负所得税</span><div class="term-def">UBI pays every citizen an unconditional, fixed cash benefit; the NIT turns low earners from taxpayers into benefit recipients, phased out smoothly as income rises. Both try to eliminate cliffs and stigma; the controversy centers on financing costs and work incentives.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Targeted poverty alleviation: means-tested redistribution, Chinese style</div>
+        <p>After "targeted poverty alleviation" launched in 2013, China identified poor households one by one through the registered-card system (a textbook means test), paired with the "two assurances and three guarantees" (food and clothing assured; compulsory schooling, basic medical care, and housing safety guaranteed), dilapidated-housing renovation, relocation from inhospitable areas, and east–west pairing assistance. In 2020 it was declared that all 98.99 million rural residents below the prevailing poverty line had been lifted out of poverty and all 832 poor counties delisted, while the urban and rural dibao (minimum-living-security) programs continue to provide a floor. Over the same years, Finland ran a basic-income experiment on the unemployed in 2017–2018: little effect on employment, clear gains in subjective well-being and trust — the UBI debate still tugs between "cost, incentives, and dignity," and experimental evidence beats slogans.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Redistribution just moves money from A's pocket to B's — a zero-sum game."</strong> — wrong at both ends. The carrying leaks (the incentive wedge + administrative cost), so it is not lossless; but it need not be zero-sum either: relaxing children's credit constraints, improving the health of the poor, and smoothing consumption in recessions can all raise long-run output ("lifting the bucket up," not just pouring water back and forth). <strong>The reverse error</strong>: "the Nordics prove a generous welfare state costs nothing." — The Nordics patch the leaky bucket with high tax rates plus a strong (and flexible) labor market plus universal programs — the fruit of continuous institutional reform, not a free lunch; "flexicurity" (easy hiring and firing, strong retraining and income support) is what holds the big bucket up.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.1</span>A country's market-income Gini is 0.45; after taxes and transfers, its disposable-income Gini is 0.28. These numbers show:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The country's primary (market) distribution is already quite equal</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The country's taxes and transfers significantly compress inequality in disposable income</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The country's transfers mostly flowed to the rich</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> A fall in the Gini from 0.45 to 0.28 means the Lorenz curve shifts markedly outward after fiscal redistribution — a compression of roughly four tenths, the standard measure of "fiscal redistribution capacity" (OECD countries cluster in the 25%–40% range). C gets it backwards: a market Gini of 0.45 shows precisely that primary distribution is far from equal and calls for redistribution to correct it.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.2</span>In Okun's "leaky bucket" metaphor, the "leak" refers to:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The share of welfare funds embezzled or misappropriated</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The net efficiency loss from the behavioral distortions redistribution induces (lower labor supply) plus administrative costs</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The poor have a higher marginal propensity to consume, so the money "leaks away" once spent</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Okun's leak is the economic sense of <strong>deadweight loss</strong>: higher marginal tax rates change decisions about work and saving, and targeting and delivery add administrative costs, so less than one yuan arrives for every yuan sent. A (corruption) is a real governance problem, but it is not what the metaphor means; C states it exactly backwards — a high marginal propensity to consume makes the short-run multiplier of transfers larger, an argument for pouring the water, not a leak. The policy art: the less leakage, the more redistribution can be tolerated.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.3</span>Compared with a means-tested minimum-living-security (dibao) program, one main institutional advantage of universal basic income (UBI) is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Lower fiscal cost, because everyone receives it</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>With the income threshold gone there is no "welfare cliff" and no application stigma — coverage is more complete and administration simpler</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>It eliminates poverty automatically, with no financing arrangement needed</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The pain points of means-testing: benefits vanish in a block the moment income ticks up — an extremely high implicit marginal tax rate (the "cliff") — plus cumbersome applications, missed eligible households, and stigma. UBI goes to everyone: smooth marginal rates, no investigation, the shortest administrative chain — B is correct. A is exactly backwards: universality means higher cost (precisely the main controversy); C is utopian — the level of a UBI depends entirely on how it is financed, and even in a generous welfare society a UBI set below the poverty line does not mean "UBI = no poverty."</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Measurement first: the Lorenz curve and Gini coefficient describe inequality; comparing pre- and post-fiscal figures measures redistributive capacity.</li>
+          <li>Every instrument has its price: universal programs have no cliff but are costly; means-tests save money but create cliffs and missed coverage.</li>
+          <li>Okun's leaky bucket: administrative cost + the incentive wedge; but in areas such as investment in children there is a win-win zone for equality and efficiency.</li>
+          <li>The core of the UBI/NIT debate is financing and incentives, not the values question of "whether the poor should be helped."</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">Wrap-up</span>Next steps &amp; further reading</h2>
+      <p>The economics of health and education stands at the crossroads of micro theory (information, insurance, human capital), econometric method (causal identification), and public policy (the welfare state). To go deeper, three routes: for <strong>fiscal policy and redistribution</strong>, see <a href="../08-public-economics/index.html">08 Public Economics</a> (taxation, transfers, and optimal tax design); for <strong>human capital and the labor market</strong>, return to <a href="../09-labor-economics/index.html">09 Labor Economics</a> (wage differences, discrimination, and training); for <strong>causal identification tools</strong>, review <a href="../03-econometrics/index.html">03 Econometrics</a> (the technical details of DID/IV/RD); and the "non-rationality" in health behavior (putting off checkups, nicotine addiction) leads on to <a href="../15-behavioral-economics/index.html">15 Behavioral Economics</a> and the design of nudges.</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Folland, Goodman &amp; Stano, The Economics of Health and Health Care</span> — the standard health economics textbook, covering every topic of Chapters 1–4 in this track, at the intermediate level.</li>
+          <li><span class="bk">Bhattacharya, Hyde &amp; Tu, Health Economics (open textbook)</span> — free online, intuition first and math restrained; good for a full read-through once you have the basics.</li>
+          <li><span class="bk">Gary S. Becker, Human Capital</span> — the founding text of human capital theory and the micro foundations of education as investment.</li>
+          <li><span class="bk">Nicholas Barr, The Economics of the Welfare State</span> — the design principles of the welfare state: why the market failures in education and medicine differ from those in ordinary goods.</li>
+          <li><span class="bk">Angrist &amp; Pischke, Mastering 'Metrics</span> — RCT/DID/IV/RD taught hands-on through classic applications such as the return to education; further reading for Chapter 5.</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../13-urban-and-regional-economics/index.html"><span class="pager-dir">Previous track</span><br><span class="pager-name">Urban &amp; Regional Economics</span></a>
+        <a href="../15-behavioral-economics/index.html"><span class="pager-dir">Next track</span><br><span class="pager-name">Behavioral Economics</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../../assets/econ.js"></script>
+<script>
+/* ================= Figure 1-1 Health production function ================= */
+(function () {
+  if (!document.getElementById("hp-s")) return;
+  var X0 = 70, X1 = 600, Y0 = 330, Y1 = 40;
+  function px(u) { return X0 + u / 100 * (X1 - X0); }
+  function py(h) { return Y0 - h / 100 * (Y0 - Y1); }
+  function hLow(u) { return 20 + 55 * (1 - Math.exp(-1.2 * u / 100)); }
+  function hHigh(u) { return 30 + 60 * (1 - Math.exp(-1.5 * u / 100)); }
+  function path(f) {
+    var pts = [];
+    for (var u = 0; u <= 100; u += 2) pts.push(px(u).toFixed(1) + "," + py(f(u)).toFixed(1));
+    return "M" + pts.join(" L");
+  }
+  document.getElementById("hp-lo").setAttribute("d", path(hLow));
+  document.getElementById("hp-hi").setAttribute("d", path(hHigh));
+  var d1 = document.getElementById("hp-d1"), d2 = document.getElementById("hp-d2");
+  var t1 = document.getElementById("hp-t1"), t2 = document.getElementById("hp-t2");
+  function mp(f, u) { return (f(Math.min(100, u + 2)) - f(u)) / 2; }
+  function draw() {
+    var u = parseFloat(document.getElementById("hp-s").value);
+    document.getElementById("hp-os").textContent = u;
+    var a = hLow(u), b = hHigh(u);
+    d1.setAttribute("cx", px(u)); d1.setAttribute("cy", py(a));
+    d2.setAttribute("cx", px(u)); d2.setAttribute("cy", py(b));
+    if (t1) t1.textContent = "Medical input " + u + ": low-education health stock " + a.toFixed(1) + ", high-education " + b.toFixed(1);
+    if (t2) t2.textContent = "Marginal health product of +1 input unit: low-education " + mp(hLow, u).toFixed(3) + ", high-education " + mp(hHigh, u).toFixed(3) + " (more input, smaller marginal product)";
+  }
+  document.getElementById("hp-s").addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= Figure 3-1 Coinsurance and moral hazard ================= */
+(function () {
+  if (!document.getElementById("mh-c")) return;
+  var X0 = 70, X1 = 600, Y0 = 330, Y1 = 40;
+  var PMAX = 120, QMAX = 150, P0 = 100;
+  function px(q) { return X0 + q / QMAX * (X1 - X0); }
+  function py(p) { return Y0 - p / PMAX * (Y0 - Y1); }
+  var d = document.getElementById("mh-d");
+  d.setAttribute("x1", px(20)); d.setAttribute("y1", py(140 - 20));
+  d.setAttribute("x2", px(140)); d.setAttribute("y2", py(0));
+  var mc = document.getElementById("mh-mc");
+  mc.setAttribute("x1", X0); mc.setAttribute("y1", py(P0));
+  mc.setAttribute("x2", X1); mc.setAttribute("y2", py(P0));
+  var pe = document.getElementById("mh-pe");
+  var dot = document.getElementById("mh-dot");
+  var dwl = document.getElementById("mh-dwl");
+  var pelab = document.getElementById("mh-pelab");
+  var t1 = document.getElementById("mh-t1"), t2 = document.getElementById("mh-t2");
+  function draw() {
+    var c = parseFloat(document.getElementById("mh-c").value) / 100;
+    document.getElementById("mh-oc").textContent = Math.round(c * 100) + "%";
+    var p = P0 * c;          /* out-of-pocket price */
+    var qc = 140 - p;        /* demand: P = 140 - Q */
+    pe.setAttribute("x1", X0); pe.setAttribute("y1", py(p));
+    pe.setAttribute("x2", X1); pe.setAttribute("y2", py(p));
+    pelab.setAttribute("y", Math.max(Y1 + 10, py(p) - 8));
+    pelab.textContent = "Out-of-pocket price = " + Math.round(p);
+    dot.setAttribute("cx", px(qc)); dot.setAttribute("cy", py(p));
+    dwl.setAttribute("points",
+      px(40).toFixed(1) + "," + py(P0).toFixed(1) + " " +
+      px(qc).toFixed(1) + "," + py(P0).toFixed(1) + " " +
+      px(qc).toFixed(1) + "," + py(p).toFixed(1));
+    var loss = (qc - 40) * (qc - 40) / 2;
+    if (t1) t1.textContent = "Coinsurance " + Math.round(c * 100) + "%: out-of-pocket price " + Math.round(p) + " yuan, visits " + Math.round(qc) + " (efficient level 40)";
+    if (t2) t2.textContent = "Efficiency loss (shaded triangle) ≈ " + Math.round(loss) + " units; patient pays " + Math.round(p * qc) + " yuan, insurer pays " + Math.round((P0 - p) * qc) + " yuan";
+  }
+  document.getElementById("mh-c").addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= Figure 5-1 Causal identification of the return to education ================= */
+(function () {
+  if (!document.getElementById("er-b1")) return;
+  var X0 = 70, X1 = 600, Y0 = 340, Y1 = 40;
+  function px(s) { return X0 + (s - 3) / 14 * (X1 - X0); }
+  function py(w) { return Y0 - w / 24 * (Y0 - Y1); }
+  var seed = 42;
+  function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+  function noise(k) { return (rnd() - 0.5) * 2 * k; }
+  function gen(randomize) {
+    seed = 42;
+    var pts = [];
+    for (var i = 0; i < 42; i++) {
+      var a = rnd();
+      var s = randomize ? 9.5 + noise(5) : 6 + 6 * a + noise(1.6);
+      s = Math.max(4, Math.min(16, s));
+      var w = 3 + 0.8 * s + 7 * a + noise(2);
+      w = Math.max(1, Math.min(22, w));
+      pts.push({ s: s, w: w, a: a });
+    }
+    return pts;
+  }
+  function meanOf(pts, f) {
+    var m = 0;
+    for (var i = 0; i < pts.length; i++) m += f(pts[i]);
+    return m / pts.length;
+  }
+  function slopeOf(pts, fs, fw) {
+    var ms = meanOf(pts, fs), mw = meanOf(pts, fw);
+    var num = 0, den = 0;
+    pts.forEach(function (p) {
+      num += (fs(p) - ms) * (fw(p) - mw);
+      den += (fs(p) - ms) * (fs(p) - ms);
+    });
+    return den === 0 ? 0 : num / den;
+  }
+  function slopeCtrl(pts) {
+    var ma = meanOf(pts, function (p) { return p.a; });
+    var bsa = slopeOf(pts, function (p) { return p.a; }, function (p) { return p.s; });
+    var bwa = slopeOf(pts, function (p) { return p.a; }, function (p) { return p.w; });
+    var ms = meanOf(pts, function (p) { return p.s; });
+    var mw = meanOf(pts, function (p) { return p.w; });
+    var num = 0, den = 0;
+    pts.forEach(function (p) {
+      var rs = (p.s - ms) - bsa * (p.a - ma);
+      var rw = (p.w - mw) - bwa * (p.a - ma);
+      num += rs * rw; den += rs * rs;
+    });
+    return den === 0 ? 0 : num / den;
+  }
+  var obs = gen(false), rndPts = gen(true);
+  var g = document.getElementById("er-pts");
+  var line = document.getElementById("er-line");
+  var leg = document.getElementById("er-leg");
+  var t1 = document.getElementById("er-t1"), t2 = document.getElementById("er-t2");
+  document.getElementById("er-true").setAttribute("d",
+    "M" + px(4).toFixed(1) + "," + py(3 + 0.8 * 4).toFixed(1) +
+    " L" + px(16).toFixed(1) + "," + py(3 + 0.8 * 16).toFixed(1));
+  var NS = "http://www.w3.org/2000/svg";
+  function render(mode) {
+    while (g.firstChild) g.removeChild(g.firstChild);
+    var pts, b, fill;
+    if (mode === "ctrl") {
+      pts = obs;
+      b = slopeCtrl(pts);
+    } else if (mode === "rct") {
+      pts = rndPts;
+      b = slopeOf(pts, function (p) { return p.s; }, function (p) { return p.w; });
+    } else {
+      pts = obs;
+      b = slopeOf(pts, function (p) { return p.s; }, function (p) { return p.w; });
+    }
+    var ms = meanOf(pts, function (p) { return p.s; });
+    var mw = meanOf(pts, function (p) { return p.w; });
+    var inter = mw - b * ms;
+    line.setAttribute("d",
+      "M" + px(4).toFixed(1) + "," + py(inter + b * 4).toFixed(1) +
+      " L" + px(16).toFixed(1) + "," + py(Math.max(0.5, Math.min(23, inter + b * 16))).toFixed(1));
+    pts.forEach(function (p) {
+      var c = document.createElementNS(NS, "circle");
+      c.setAttribute("cx", px(p.s).toFixed(1));
+      c.setAttribute("cy", py(p.w).toFixed(1));
+      c.setAttribute("r", 5);
+      c.setAttribute("class", "dot");
+      if (mode === "ctrl") fill = p.a < 0.5 ? "#94a3b8" : "#db2777";
+      else if (mode === "rct") fill = "#0d9488";
+      else fill = "#db2777";
+      c.setAttribute("fill", fill);
+      g.appendChild(c);
+    });
+    var bTxt = "+ " + b.toFixed(2) + " thousand yuan/year";
+    if (mode === "naive") {
+      if (leg) leg.textContent = "One dot per person: monthly wage vs. years of schooling";
+      if (t1) t1.textContent = "Raw correlation: regression slope " + bTxt;
+      if (t2) t2.textContent = "High-ability people both study longer and earn more, so the slope credits education with ability's work — above the true causal effect";
+    } else if (mode === "ctrl") {
+      if (leg) leg.textContent = "Gray dots = lower-ability half, pink dots = higher-ability half (compared within groups)";
+      if (t1) t1.textContent = "Controlling for ability: regression slope " + bTxt;
+      if (t2) t2.textContent = "Stripped of ability's influence, the wage–schooling relation falls back near the gray dashed line (true value 0.8) — ability bias removed";
+    } else {
+      if (leg) leg.textContent = "Same people, years of schooling reshuffled at random (uncorrelated with ability)";
+      if (t1) t1.textContent = "After random assignment: simple regression slope " + bTxt;
+      if (t2) t2.textContent = "Randomization severs the correlation between ability and schooling, so correlation now equals causation — the full power of an RCT lies in this line";
+    }
+  }
+  var btns = { naive: "er-b1", ctrl: "er-b2", rct: "er-b3" };
+  Object.keys(btns).forEach(function (k) {
+    document.getElementById(btns[k]).addEventListener("click", function () {
+      Object.keys(btns).forEach(function (j) {
+        document.getElementById(btns[j]).className = j === k ? "btn" : "btn ghost";
+      });
+      render(k);
+    });
+  });
+  render("naive");
+})();
+
+/* ================= Figure 6-1 Lorenz curve and Gini coefficient ================= */
+(function () {
+  if (!document.getElementById("gz-t")) return;
+  var X0 = 70, X1 = 470, Y0 = 400, Y1 = 40;
+  var shares = [2.5, 3.5, 4.5, 5.5, 6.5, 7.5, 9, 11, 14, 36];
+  function px(p) { return X0 + p / 100 * (X1 - X0); }
+  function py(l) { return Y0 - l / 100 * (Y0 - Y1); }
+  function cum(arr) {
+    var out = [], c = 0;
+    for (var i = 0; i < arr.length; i++) { c += arr[i]; out.push(c); }
+    return out;
+  }
+  function gini(cu) {
+    var area = 0, prev = 0;
+    for (var i = 0; i < cu.length; i++) {
+      area += 0.5 * (prev + cu[i]) * 10;
+      prev = cu[i];
+    }
+    return 1 - area / 5000;
+  }
+  var pre = cum(shares);
+  var prePath = "M" + px(0).toFixed(1) + "," + py(0).toFixed(1);
+  for (var i = 0; i < 10; i++) {
+    prePath += " L" + px((i + 1) * 10).toFixed(1) + "," + py(pre[i]).toFixed(1);
+  }
+  document.getElementById("gz-pre").setAttribute("d", prePath);
+  var post = document.getElementById("gz-post");
+  var diff = document.getElementById("gz-diff");
+  var t1 = document.getElementById("gz-t1"), t2 = document.getElementById("gz-t2");
+  var t3 = document.getElementById("gz-t3");
+  function draw() {
+    var t = parseFloat(document.getElementById("gz-t").value) / 100;
+    document.getElementById("gz-ot").textContent = Math.round(t * 100) + "%";
+    var now = [];
+    for (var i = 0; i < shares.length; i++) now.push(shares[i] + t * (10 - shares[i]));
+    var cu = cum(now);
+    var pts = "M" + px(0).toFixed(1) + "," + py(0).toFixed(1);
+    for (var j = 0; j < 10; j++) {
+      pts += " L" + px((j + 1) * 10).toFixed(1) + "," + py(cu[j]).toFixed(1);
+    }
+    post.setAttribute("d", pts);
+    var df = pts;
+    for (var k = 9; k >= 0; k--) {
+      df += " L" + px((k + 1) * 10).toFixed(1) + "," + py(pre[k]).toFixed(1);
+    }
+    df += " L" + px(0).toFixed(1) + "," + py(0).toFixed(1) + " Z";
+    diff.setAttribute("d", df);
+    var g0 = gini(pre), g1 = gini(cu);
+    if (t1) t1.textContent = "Gini coefficient";
+    if (t2) t2.textContent = "Before redistribution " + g0.toFixed(3);
+    if (t3) t3.textContent = "After redistribution " + g1.toFixed(3);
+  }
+  document.getElementById("gz-t").addEventListener("input", draw);
+  draw();
+})();
+</script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EconLearn · Self-Study Path in Economics</title>
+<meta name="description" content="EconLearn, a self-study path in economics: 17 interactive English tutorials covering every major branch of economics, with key-term cards, draggable figures, real-world cases, and instant-feedback quizzes. Fully offline.">
+<link rel="stylesheet" href="../assets/econ.css">
+<style>
+  /* —— Portal-only styles —— */
+  .portal {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: var(--s6) var(--s5) var(--s8);
+  }
+  .portal-hero {
+    padding: var(--s7) var(--s6);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(135deg, #eef4ff 0%, #f7f9fc 55%, #fdf6ec 100%);
+    border: 1px solid #dbe5f5;
+    margin-bottom: var(--s7);
+  }
+  .portal-hero .kicker {
+    display: inline-block;
+    font-size: var(--t-xs);
+    font-weight: 700;
+    letter-spacing: .16em;
+    color: #2f6fdb;
+    background: #e2ecfd;
+    border-radius: 999px;
+    padding: 4px 14px;
+    margin-bottom: var(--s4);
+  }
+  .portal-hero h1 {
+    margin: 0 0 var(--s3);
+    font-size: clamp(1.9rem, 5vw, 2.6rem);
+    line-height: 1.25;
+    color: var(--ink-strong);
+  }
+  .portal-hero p { max-width: 42em; color: var(--ink); }
+  .portal-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--s5);
+    margin-top: var(--s5);
+    font-size: var(--t-sm);
+    color: var(--ink-soft);
+  }
+  .portal-stats b {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--ink-strong);
+    font-variant-numeric: tabular-nums;
+  }
+  .path-box {
+    margin: var(--s7) 0;
+    padding: var(--s5) var(--s6);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-lg);
+    overflow-x: auto;
+  }
+  .path-box h2 { margin: 0 0 var(--s3); font-size: var(--t-xl); color: var(--ink-strong); }
+  .path-box pre {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: var(--t-sm);
+    line-height: 1.9;
+    color: var(--ink);
+  }
+  .group { margin: var(--s7) 0; }
+  .group > h2 {
+    display: flex;
+    align-items: baseline;
+    gap: var(--s3);
+    font-size: var(--t-xl);
+    color: var(--ink-strong);
+    margin: 0 0 var(--s2);
+  }
+  .group > h2 .g-sub { font-size: var(--t-sm); font-weight: 400; color: var(--ink-soft); }
+  .group > .g-line { height: 3px; border-radius: 2px; background: linear-gradient(90deg, var(--g-color, #2f6fdb), transparent 70%); margin-bottom: var(--s5); }
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--s4);
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s2);
+    padding: var(--s5);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--g-color, #2f6fdb);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-1);
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-2);
+    border-color: color-mix(in srgb, var(--g-color, #2f6fdb) 45%, var(--line));
+  }
+  .card:focus-visible { outline: 3px solid var(--g-color, #2f6fdb); outline-offset: 2px; }
+  .card .c-num {
+    font-size: var(--t-xs);
+    font-weight: 800;
+    letter-spacing: .12em;
+    color: var(--g-color, #2f6fdb);
+  }
+  .card .c-name { font-size: var(--t-lg); font-weight: 700; color: var(--ink-strong); }
+  .card .c-en { font-size: var(--t-xs); color: var(--ink-soft); margin-top: -6px; }
+  .card .c-q { font-size: var(--t-sm); line-height: 1.65; color: var(--ink); }
+  .card .c-go { margin-top: auto; font-size: var(--t-sm); font-weight: 700; color: var(--g-color, #2f6fdb); }
+  .portal-foot {
+    margin-top: var(--s8);
+    padding-top: var(--s5);
+    border-top: 1px solid var(--line);
+    font-size: var(--t-sm);
+    color: var(--ink-soft);
+  }
+  .portal-foot a { color: var(--ink); }
+</style>
+</head>
+<body style="--branch:#2f6fdb">
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="portal" id="main">
+  <header class="portal-hero">
+    <span class="kicker">ECONLEARN · 17 TRACKS · INTERACTIVE TUTORIALS</span>
+    <h1>A Self-Study Path Through Economics</h1>
+    <p>An offline-friendly interactive economics course in English: one complete tutorial for each major branch of the field, with key-term cards, draggable chart animations, real-world cases, common pitfalls, and instant-feedback quizzes. All 17 major branches, organized along the JEL classification used by the American Economic Association.</p>
+    <div class="portal-stats">
+      <div><b>17</b>major tracks</div>
+      <div><b>100+</b>interactive demos &amp; quizzes</div>
+      <div><b>0</b>things to install (just double-click)</div>
+    </div>
+  </header>
+
+  <section class="path-box">
+    <h2>Recommended study path</h2>
+<pre>Stage 1 · Foundations    Stage 2 · Money &amp; the world   Stage 3 · Applications (pick any)   Stage 4 · Horizons
+─────────────        ─────────────            ─────────────                 ─────────────
+01 Micro ─┬─ 02 Macro   05 Money    07 International   09 Labor      12 Env &amp; Resources   15 Behavioral
+          ├─ 03 Econometrics   06 Finance   08 Public       10 Industry   13 Urban &amp; Regional  16 Political Econ &amp; Institutions
+          └─ 04 Game Theory                                  11 Development   14 Health &amp; Education   17 History of Thought (read anytime)
+
+Zero background → start at 01 | Just want to follow the news → 01→02→05→07 | Want to do empirical work → learn 03 early</pre>
+  </section>
+
+  <!-- Group 1 -->
+  <section class="group" style="--g-color:#2f6fdb">
+    <h2>Group 1 · Core theory <span class="g-sub">The map and the language every branch builds on — start here</span></h2>
+    <div class="g-line"></div>
+    <div class="cards">
+      <a class="card" href="01-microeconomics/index.html"><span class="c-num">01 · MICROECONOMICS</span><span class="c-name">Microeconomics</span><span class="c-en">微观经济学</span><span class="c-q">How individuals and single markets decide: scarcity, opportunity cost, supply and demand, market structure, and market failure.</span><span class="c-go">Open tutorial →</span></a>
+      <a class="card" href="02-macroeconomics/index.html"><span class="c-num">02 · MACROECONOMICS</span><span class="c-name">Macroeconomics</span><span class="c-en">宏观经济学</span><span class="c-q">The economy as a whole: GDP, growth, fluctuations, inflation and unemployment — and how policy moves them.</span><span class="c-go">Open tutorial →</span></a>
+      <a class="card" href="03-econometrics/index.html"><span class="c-num">03 · ECONOMETRICS</span><span class="c-name">Econometrics</span><span class="c-en">计量经济学</span><span class="c-q">Making data speak: regression, causal identification, RCTs and difference-in-differences — telling correlation from causation.</span><span class="c-go">Open tutorial →</span></a>
+      <a class="card" href="04-game-theory-and-information-economics/index.html"><span class="c-num">04 · GAME THEORY &amp; INFORMATION</span><span class="c-name">Game Theory &amp; Information Economics</span><span class="c-en">博弈论与信息经济学</span><span class="c-q">Strategic interaction and asymmetric information: Nash equilibrium, the Prisoner's Dilemma, the market for lemons, and mechanism design.</span><span class="c-go">Open tutorial →</span></a>
+    </div>
+  </section>
+
+  <!-- Group 2 -->
+  <section class="group" style="--g-color:#b45309">
+    <h2>Group 2 · Money &amp; finance <span class="g-sub">The two tracks about "money"</span></h2>
+    <div class="g-line"></div>
+    <div class="cards">
+      <a class="card" href="05-money-and-banking/index.html"><span class="c-num">05 · MONEY &amp; BANKING</span><span class="c-name">Money &amp; Banking</span><span class="c-en">货币经济学</span><span class="c-q">What money is and how banks create it, how central banks steer the economy, inflation, and financial crises.</span><span class="c-go">Open tutorial →</span></a>
+      <a class="card" href="06-financial-economics/index.html"><span class="c-num">06 · FINANCIAL ECONOMICS</span><span class="c-name">Financial Economics</span><span class="c-en">金融经济学</span><span class="c-q">Allocating resources across time: compound interest, risk and return, asset pricing, and market efficiency.</span><span class="c-go">Open tutorial →</span></a>
+    </div>
+  </section>
+
+  <!-- Group 3 -->
+  <section class="group" style="--g-color:#4d7c0f">
+    <h2>Group 3 · Sectors &amp; international <span class="g-sub">Economics across borders and inside government</span></h2>
+    <div class="g-line"></div>
+    <div class="cards">
+      <a class="card" href="07-international-economics/index.html"><span class="c-num">07 · INTERNATIONAL ECONOMICS</span><span class="c-name">International Economics</span><span class="c-en">国际经济学</span><span class="c-q">Why trade happens, who wins and who loses, how exchange rates are set, the policy trilemma, and currency crises.</span><span class="c-go">Open tutorial →</span></a>
+      <a class="card" href="08-public-economics/index.html"><span class="c-num">08 · PUBLIC ECONOMICS</span><span class="c-name">Public Economics</span><span class="c-en">公共经济学（财政学）</span><span class="c-q">The economics of government: the cost of taxation, public goods, redistribution, and public choice.</span><span class="c-go">Open tutorial →</span></a>
+    </div>
+  </section>
+
+  <!-- Group 4 -->
+  <section class="group" style="--g-color:#047857">
+    <h2>Group 4 · Applied fields <span class="g-sub">Theory put to work in specific markets and issues</span></h2>
+    <div class="g-line"></div>
+    <div class="cards">
+      <a class="card" href="09-labor-economics/index.html"><span class="c-num">09 · LABOR ECONOMICS</span><span class="c-name">Labor Economics</span><span class="c-en">劳动经济学</span><span class="c-q">Where wages come from: human capital, wage differences, the minimum-wage debate, and unemployment.</span><span class="c-go">Open tutorial →</span></a>
+      <a class="card" href="10-industrial-organization/index.html"><span class="c-num">10 · INDUSTRIAL ORGANIZATION</span><span class="c-name">Industrial Organization</span><span class="c-en">产业组织</span><span class="c-q">Market power, oligopoly rivalry, price discrimination, antitrust, and platform economics.</span><span class="c-go">Open tutorial →</span></a>
+      <a class="card" href="11-development-and-innovation-economics/index.html"><span class="c-num">11 · DEVELOPMENT &amp; INNOVATION</span><span class="c-name">Development &amp; Innovation Economics</span><span class="c-en">发展与创新经济学</span><span class="c-q">Poverty traps, growth miracles, and the economics of institutions and technological progress.</span><span class="c-go">Open tutorial →</span></a>
+      <a class="card" href="12-environmental-and-resource-economics/index.html"><span class="c-num">12 · ENVIRONMENTAL &amp; RESOURCE ECONOMICS</span><span class="c-name">Environmental &amp; Resource Economics</span><span class="c-en">环境与资源经济学</span><span class="c-q">Externalities, Pigouvian taxes, the tragedy of the commons, fishery collapse, and the economics of climate change.</span><span class="c-go">Open tutorial →</span></a>
+      <a class="card" href="13-urban-and-regional-economics/index.html"><span class="c-num">13 · URBAN &amp; REGIONAL ECONOMICS</span><span class="c-name">Urban &amp; Regional Economics</span><span class="c-en">城市与区域经济学</span><span class="c-q">Why cities exist: agglomeration, land rents, housing markets, and regional gaps.</span><span class="c-go">Open tutorial →</span></a>
+      <a class="card" href="14-health-and-education-economics/index.html"><span class="c-num">14 · HEALTH &amp; EDUCATION ECONOMICS</span><span class="c-name">Health &amp; Education Economics</span><span class="c-en">健康与教育经济学</span><span class="c-q">What makes health-care markets special, insurance and moral hazard, the returns to education, and the welfare state.</span><span class="c-go">Open tutorial →</span></a>
+    </div>
+  </section>
+
+  <!-- Group 5 -->
+  <section class="group" style="--g-color:#7c3aed">
+    <h2>Group 5 · Cross-disciplinary &amp; thought <span class="g-sub">Relaxing assumptions, stretching time</span></h2>
+    <div class="g-line"></div>
+    <div class="cards">
+      <a class="card" href="15-behavioral-economics/index.html"><span class="c-num">15 · BEHAVIORAL ECONOMICS</span><span class="c-name">Behavioral Economics</span><span class="c-en">行为经济学</span><span class="c-q">How real people decide: loss aversion, present bias, nudges — and their limits.</span><span class="c-go">Open tutorial →</span></a>
+      <a class="card" href="16-political-economy-and-institutional-economics/index.html"><span class="c-num">16 · POLITICAL ECONOMY &amp; INSTITUTIONS</span><span class="c-name">Political Economy &amp; Institutional Economics</span><span class="c-en">政治经济学与制度经济学</span><span class="c-q">Property rights, transaction costs, collective action, rent-seeking, and state capacity.</span><span class="c-go">Open tutorial →</span></a>
+      <a class="card" href="17-history-of-economic-thought-and-economic-history/index.html"><span class="c-num">17 · HISTORY OF ECONOMIC THOUGHT</span><span class="c-name">History of Economic Thought &amp; Economic History</span><span class="c-en">经济思想史与经济史</span><span class="c-q">From Smith to Keynes to today's schools; the Great Divergence and the long story of industrialization.</span><span class="c-go">Open tutorial →</span></a>
+    </div>
+  </section>
+
+  <footer class="portal-foot">
+    <p><b>How to use</b>: every page is plain static HTML and works offline; a good starting point is <a href="01-microeconomics/index.html">01 Microeconomics</a>. For the branch overview and study paths see <a href="README.md">README.md</a>; for the tutorial structure and authoring spec see <a href="DESIGN_SPEC.md">DESIGN_SPEC.md</a>.</p>
+    <p><b>中文版</b>：This library also exists in Chinese — open <a href="../index.html" hreflang="zh-CN">../index.html</a>. Every tutorial has an EN / 中文 toggle in its top bar.</p>
+  </footer>
+</div>
+</body>
+</html>

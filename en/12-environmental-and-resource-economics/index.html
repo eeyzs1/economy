@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Environmental &amp; Resource Economics · EconLearn Self-Study Path in Economics</title>
+<meta name="description" content="An interactive English tutorial on environmental and resource economics: externalities and Pigouvian taxes, the Coase theorem, the tragedy of the commons, fisheries dynamics and the Hotelling rule, and the discount-rate debate over climate change — with interactive figures and self-check quizzes.">
+<link rel="stylesheet" href="../../assets/econ.css">
+</head>
+<body style="--branch:#65a30d">
+<noscript><p class="noscript-tip">The interactive figures and self-check quizzes on this page require JavaScript; without it, you can still read the full text.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← Home</a>
+  <div class="topbar-title"><span class="topbar-num">12</span>Environmental &amp; Resource Economics</div>
+  <a class="topbar-lang" href="../../12-环境与资源经济学/index.html" hreflang="zh-CN">中文</a>
+  <button class="toc-toggle" aria-expanded="false">Contents</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">Chapters in this track</p>
+    <nav aria-label="Chapter contents">
+      <a href="#overview">Overview &amp; learning goals</a>
+      <a href="#ch1">1 · Externalities &amp; social cost</a>
+      <a href="#ch2">2 · Pigouvian taxes &amp; subsidies</a>
+      <a href="#ch3">3 · Property rights &amp; the Coase theorem</a>
+      <a href="#ch4">4 · Tragedy of the commons &amp; public goods</a>
+      <a href="#ch5">5 · Fisheries model &amp; the Hotelling rule</a>
+      <a href="#ch6">6 · Economics of climate change</a>
+      <a href="#path">Next steps &amp; further reading</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · Self-Study Path in Economics</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">Track 12 · Applied fields</span>
+        <h1>Environmental &amp; Resource Economics</h1>
+        <p class="hero-en">环境与资源经济学</p>
+        <p class="hero-lead">Why do environments get polluted and resources run down? The answer usually is not that "people have turned bad," but that prices fail to count the damage and the scarcity. This track studies how market failure takes shape in the environment and in natural resources — externalities, the tragedy of the commons, intergenerational problems — and the three families of corrective tools: putting a price on pollution, assigning property rights, and setting caps.</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">By the end of this track, you will be able to</div>
+        <ul>
+          <li>Draw <strong>private and social marginal cost</strong> on a supply-and-demand diagram, explain why polluting goods are "over-produced," and mark the deadweight loss</li>
+          <li>Explain why the optimal <strong>Pigouvian tax</strong> rate equals marginal external cost, and discuss uniform emission standards and the tax-neutral "double dividend" debate</li>
+          <li>State the conditions and the conclusion of the <strong>Coase theorem</strong>, and explain why transaction costs make "bargaining it out" fail for climate change</li>
+          <li>Use the <strong>logistic growth model</strong> to explain how fisheries collapse, and distinguish maximum sustainable yield from the open-access equilibrium</li>
+          <li>Reproduce the <strong>Hotelling rule</strong> and explain how price signals automatically pace the extraction of nonrenewable resources</li>
+          <li>Explain how the <strong>discount rate</strong> determines the social cost of carbon, distinguish mitigation from adaptation, and describe the free-rider problem in global cooperation</li>
+        </ul>
+      </div>
+      <div class="prereq">Prerequisites:
+        <a class="badge" href="../01-microeconomics/index.html">01 Microeconomics (supply &amp; demand, surplus, market failure)</a>
+        <a class="badge" href="../08-public-economics/index.html">08 Public economics (taxation, public goods)</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">Chapter 1</span>The Economic Nature of Environmental Problems: Externalities and Social Costs</h2>
+
+      <p><strong>Opening question:</strong> In December 1952, London was locked in dense smog for five days. Sulfur compounds from coal burning had nowhere to disperse, and later studies attributed more than ten thousand deaths to respiratory disease. Yet the factories and households burning the coal never paid a cent for those deaths — should they have? What did market prices leave out here?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: Nobody grieves over a cost that never shows up on the bill</div>
+        <p>Imagine a restaurant allowed to dump its garbage free into the neighbor's yard: it will certainly "produce" too much garbage — not because the owner is wicked, but because dumping is free to it. <strong>Prices are society's information system</strong>: when part of the true cost (the neighbor's health, the fishery's stock, the climate of future generations) never appears on the decision maker's bill, rational people overuse the "free" part. That is an <strong>externality</strong> — not a moral failure, but a structural problem of missing prices.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Externality <span class="term-en">外部性</span></div><div class="term-def">The effect of one economic agent's actions on a bystander's well-being that is <strong>not settled through market prices</strong>. Negative externalities impose harm (pollution); positive ones confer benefits (vaccination).</div></div>
+        <div class="term"><div class="term-name">Marginal External Cost <span class="term-en">边际外部成本</span></div><div class="term-def">The marginal damage imposed on outsiders by each extra unit of output. Social marginal cost = private marginal cost + marginal external cost.</div></div>
+        <div class="term"><div class="term-name">Social Cost vs Private Cost <span class="term-en">社会成本与私人成本</span></div><div class="term-def">Private cost is what the decision maker bears; social cost is what society bears in total. The gap between the two is exactly the part the market leaves unpriced — which is why the market equilibrium for polluting goods systematically deviates from the social optimum.</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 1-1 · A negative externality: why the market quantity is too high</div>
+        <p class="fig-sub">Start with the static picture. The supply curve is only the private marginal cost PMC; stack the marginal external cost MEC = 30 on top of it and you get the social marginal cost SMC — the true "full-cost" curve.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="Supply-and-demand diagram: the demand curve meets private marginal cost at quantity 40 (market equilibrium) and social marginal cost at quantity 25 (social optimum). The triangle between 25 and 40 is the social deadweight loss; the vertical gap between private and social marginal cost is a constant 30.">
+            <line class="axis" x1="70" y1="320" x2="610" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <line class="gridline" x1="70" y1="138.8" x2="238.8" y2="138.8"/>
+            <line class="gridline" x1="70" y1="175" x2="340" y2="175"/>
+            <line class="gridline" x1="238.8" y1="138.8" x2="238.8" y2="320"/>
+            <line class="gridline" x1="340" y1="175" x2="340" y2="320"/>
+            <line class="curve curve-c1" x1="70" y1="78.3" x2="610" y2="271.7"/>
+            <line class="curve" x1="70" y1="271.7" x2="610" y2="78.3" stroke="#475569"/>
+            <line class="curve" x1="70" y1="199.2" x2="542.5" y2="30" stroke="#b91c1c"/>
+            <polygon points="238.8,138.8 340,175 340,102.5" fill="#b91c1c" fill-opacity="0.12"/>
+            <text class="chart-label" x="600" y="288" text-anchor="end" fill="#2f6fdb">D demand</text>
+            <text class="chart-label" x="604" y="66" text-anchor="end" fill="#475569">PMC private marginal cost (supply)</text>
+            <text class="chart-label" x="536" y="46" text-anchor="end" fill="#b91c1c">SMC social marginal cost</text>
+            <line x1="398" y1="154.7" x2="398" y2="82.2" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="3 3"/>
+            <text class="chart-label-en" x="404" y="122" fill="#b91c1c">MEC=30</text>
+            <text class="chart-label" x="300" y="150" fill="#b91c1c">DWL deadweight loss</text>
+            <circle class="dot" cx="340" cy="175" r="6" fill="#475569"/>
+            <circle class="dot" cx="238.8" cy="138.8" r="6" fill="#0d9488"/>
+            <text class="chart-label" x="352" y="192" fill="#475569">Market equilibrium (40, 60)</text>
+            <text class="chart-label" x="230" y="122" text-anchor="end" fill="#0d9488">Social optimum (25, 75)</text>
+            <text class="chart-label-en" x="238.8" y="338" text-anchor="middle">25</text>
+            <text class="chart-label-en" x="340" y="338" text-anchor="middle">40</text>
+            <text class="chart-label" x="340" y="362" text-anchor="middle">Quantity Q (tons)</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">Price / cost P (yuan)</text>
+          </svg>
+        </figure>
+        <figcaption>How to read this figure: Between quantities 25 and 40, consumers' valuation of each ton (the demand curve, 75→60 yuan) is below its social cost (SMC, 75→90 yuan) — those tons lose money on "society's ledger" while making money on the private one, so they get produced. The extra 15 tons generate a cumulative deadweight loss of 225 yuan. Note: the optimal level of pollution is not zero — it is the emissions level corresponding to 25 tons.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · From the London smog to blue skies over Beijing</div>
+        <p>The 1952 London smog led directly to Britain's Clean Air Act of 1956: households were barred from burning high-sulfur soft coal and power plants were moved out of the cities — <strong>administrative measures</strong> filling in for an absent price. Compare China: after the dense sequencing of the 2013 Air Pollution Prevention and Control Action Plan (the "Ten-Point Air Plan") and the 2018 Blue Sky Protection Campaign, Beijing's annual average PM2.5 fell from 89.5 μg/m³ in 2013 to 30 μg/m³ in 2022, a drop of roughly two-thirds. The cleanup cost enormous sums, but the health gains (fewer respiratory diseases and premature deaths) were just as large — the essence of environmental policy is to put the MEC once advanced by lungs and hospitals back on the bills of the energy and industrial sectors.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Zero pollution is the optimum."</strong> — Abatement consumes real scarce resources (engineers, catalysts, wind farms). The optimal pollution level sits where <strong>marginal damage = marginal abatement cost</strong>: squeezing pollution from 25 tons down to 0 means giving up output that consumers value above its social cost. Environmental capacity is itself an "asset" that has to be budgeted carefully. <strong>Another misconception: "Externalities show that firms are wicked."</strong> — Inside a structure of missing prices, law-abiding profit-maximizing firms will inevitably pollute too much; anyone else running them would do the same. The fix is to change the incentives, not merely to change the people.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.1</span>In Figure 1-1, the unregulated market equilibrium quantity is 40 tons and the social optimum is 25 tons. Which statement is correct?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The market equilibrium is efficient, because buyers and sellers trade voluntarily</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Quantity is too high: each ton between the 25th and the 40th is worth less to society than it costs society, yet it is produced because it is privately profitable</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Quantity is too low: when an externality is present, firms should be subsidized to expand output</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Voluntary exchange guarantees maximal surplus only for the <strong>two parties to the trade</strong>; the victims (third parties) are never at the table. Between 25 and 40 tons, the demand price (100−Q) is below social marginal cost (50+Q), so those tons carry negative net social benefit. A confuses "voluntary" with "efficient"; C has the direction reversed — subsidies to expand output fit positive externalities (see Quiz 1.2).</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.2</span>In which of the following cases will the market quantity be "below" the social optimum?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The restaurant downstairs emits fumes that keep residents from opening their windows all summer</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>People who get flu shots lower others' infection risk, but each of them counts only their own account</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>A perfectly competitive market with no externalities and perfect information</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> A positive externality = benefits spilling over to others. Decision makers weigh only <strong>private benefit</strong>, so "do-good" behavior is too rare — vaccination, education, R&D, and beekeeping are the classic examples. The corrective tool is a subsidy (a "negative Pigouvian tax"). A is a negative externality, with quantity too high; C is the efficiency benchmark, where the market quantity exactly equals the social optimum.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Externality = a spillover not settled through the market; a negative externality makes the market quantity too high, a positive one too low.</li>
+          <li>SMC = PMC + MEC; the efficient quantity sits where demand meets SMC, not PMC.</li>
+          <li>The optimal level of pollution is not zero: the condition is marginal damage = marginal abatement cost.</li>
+          <li>Externalities are a structural problem of missing prices; the cure is to make decision makers face the true cost.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">Chapter 2</span>Pigouvian Taxes and Subsidies: Writing External Costs into Prices</h2>
+
+      <p><strong>Opening question:</strong> If a piece of the price is missing, the most direct fix is to restore it — issue a "bill" for every ton of pollution. In 1920 the British economist Pigou proposed taxing each unit of pollution by exactly the marginal damage it causes. Government need not know how each plant should abate; it only has to set the price right. Does this really work?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: The tax is not a punishment; it is the bill mailed back</div>
+        <p>The essence of the Pigouvian tax is to <strong>internalize</strong> the costs that others have advanced on your behalf: for every ton you emit, you repay society at the marginal damage per ton. When the tax rate exactly equals the MEC at the optimal output, the firm's private cost curve is lifted bodily onto the SMC, and the market finds its own way to 25 tons — <strong>without anyone commanding a single firm</strong>. Firms with cheap abatement abate more (the tax saved is profit); firms with costly abatement abate less and pay more tax; at the margin, the cost of the last ton abated is equalized across all firms — that is the magic of "minimum total cost for a given total abatement." The government sets one number correctly, and knowledge dispersed across millions of firms is mobilized automatically by the price.</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 2-1 · Pigouvian tax-rate slider: bringing quantity back to the social optimum</div>
+        <p class="fig-sub">Try it: drag the tax rate slowly from 0 up to 30 yuan/ton and watch the green "tax-inclusive supply line" rise, the market quantity approach 25 tons, and the red deadweight-loss triangle shrink. Then drag past it — over-shooting backfires.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="Supply-and-demand diagram with fixed demand, private marginal cost, and social marginal cost lines, plus a tax-inclusive supply line that shifts up with the tax rate. As the slider changes the tax rate, the intersection of the tax-inclusive line with demand (the after-tax equilibrium) moves; the deadweight-loss triangle vanishes when the tax rate equals 30 and reappears if the rate rises further.">
+            <line class="axis" x1="70" y1="320" x2="610" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <line class="curve curve-c1" x1="70" y1="78.3" x2="610" y2="271.7"/>
+            <line class="curve" x1="70" y1="271.7" x2="610" y2="78.3" stroke="#475569"/>
+            <line class="curve" x1="70" y1="199.2" x2="542.5" y2="30" stroke="#b91c1c" stroke-dasharray="8 5"/>
+            <line class="gridline" x1="238.8" y1="138.8" x2="238.8" y2="320"/>
+            <polygon id="pig-dwl" points="" fill="#b91c1c" fill-opacity="0.12"/>
+            <line id="pig-eff" class="curve" x1="70" y1="271.7" x2="610" y2="78.3" stroke="#65a30d"/>
+            <line id="pig-vline" x1="340" y1="175" x2="340" y2="320" stroke="#65a30d" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <circle id="pig-dot" class="dot" cx="340" cy="175" r="7" fill="#65a30d"/>
+            <circle class="dot" cx="238.8" cy="138.8" r="6" fill="#0d9488"/>
+            <text class="chart-label" x="600" y="288" text-anchor="end" fill="#2f6fdb">D demand</text>
+            <text class="chart-label" x="604" y="66" text-anchor="end" fill="#475569">PMC</text>
+            <text class="chart-label" x="536" y="46" text-anchor="end" fill="#b91c1c">SMC = PMC + 30</text>
+            <text class="chart-label" x="230" y="122" text-anchor="end" fill="#0d9488">Social optimum Q* = 25</text>
+            <text id="pig-status" class="chart-title-sm" x="340" y="52" text-anchor="middle"></text>
+            <text class="chart-label-en" x="238.8" y="338" text-anchor="middle">25</text>
+            <text class="chart-label" x="340" y="362" text-anchor="middle">Quantity Q (tons)</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">Price / cost P (yuan)</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="pig-t">Pigouvian tax rate (yuan/ton)</label><input type="range" id="pig-t" min="0" max="40" step="1" value="0"><output id="pig-ot" for="pig-t">0</output></div>
+          <div class="ctrl"><label for="pig-oq">Market quantity</label><output id="pig-oq" for="pig-t">40 tons</output></div>
+          <div class="ctrl"><label for="pig-or">Tax revenue</label><output id="pig-or" for="pig-t">0 yuan</output></div>
+          <div class="ctrl"><label for="pig-od">Deadweight loss</label><output id="pig-od" for="pig-t">225 yuan</output></div>
+        </div>
+        <figcaption>How to read this figure: At a rate of 30 = the marginal external cost, the tax-inclusive line exactly covers SMC, quantity settles on 25 tons, and the deadweight loss falls to zero — firms "voluntarily" abate, with nobody issuing orders. Below 30, pollution is still excessive; above 30, the tax kills output whose net social benefit is positive and creates a <strong>new</strong> deadweight loss. Tax revenue (rate × after-tax quantity) is only a by-product: the goal is to correct prices, not to raise funds.</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Pigouvian Tax <span class="term-en">庇古税</span></div><div class="term-def">A tax levied on each unit of external damage at a rate equal to the marginal external cost at the optimal output. It "mails" the external cost back to the decision maker, who now faces the true social cost.</div></div>
+        <div class="term"><div class="term-name">Internalizing the Externality <span class="term-en">内部化</span></div><div class="term-def">Using taxes, subsidies, or property-rights arrangements to turn costs and benefits formerly borne externally into the decision maker's private costs and benefits. The common goal of every environmental policy instrument.</div></div>
+        <div class="term"><div class="term-name">Double Dividend <span class="term-en">双重红利</span></div><div class="term-def">An environmental tax improves the environment (the first dividend); if the revenue is used to cut distortionary taxes such as the income tax, it also trims the tax system's efficiency losses (the second). The real-world debate: environmental taxes tend to be regressive and need compensating rebates.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Sweden's carbon tax and China's carbon market</div>
+        <p><strong>Sweden</strong> introduced a carbon tax in 1991, starting around SEK 250/ton and ratcheting up to roughly SEK 1,200/ton (about USD 115, among the highest in the world). Over the following three decades, Sweden's real GDP grew a cumulative 80% or so while net greenhouse-gas emissions fell by about one-third, with visible decarbonization of district heating and transport — <strong>growth and abatement can run together</strong> — and the tax reform simultaneously lowered taxes on labor income: a real-world footnote to the "double dividend." <strong>China</strong> launched its national carbon emissions trading market in 2021 (covering, first, the power sector's 2,000-odd key emitters — about 4.5 billion tons of emissions a year, the largest coverage in the world), starting from free allowances and intensity-based control; the opening price was about 48 yuan/ton, and in 2024 it briefly broke 100 yuan/ton — a price signal strengthening by degrees, squarely Pigouvian in direction.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"The Pigouvian tax exists to raise revenue for the government, so the higher the rate the better."</strong> — Look at Figure 2-1: past 30 yuan the deadweight loss widens again. The Pigouvian objective is <strong>efficiency</strong>, not fiscal revenue; in theory the revenue of the optimal Pigouvian tax should be neutralized through tax cuts or lump-sum rebates, or it becomes an ordinary distortionary tax. Another common misunderstanding: <strong>"Just set the same emission cap for every plant — same effect, and simpler."</strong> — Uniform standards ignore the huge differences in abatement costs: letting low-cost firms abate more and high-cost firms less hits the same total for far less social cost (see Quiz 2.2), and only the tax keeps a standing profit incentive to "abate one more ton beyond the standard."</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.1</span>The optimal Pigouvian tax rate should equal?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>The marginal external cost at the social optimum (= 30 yuan/ton in this example)</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>The rate that pushes pollution to zero</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The rate that maximizes tax revenue</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> At a rate equal to MEC, the private cost facing firms coincides with social cost, and the equilibrium quantity automatically equals the social optimum. B forgets that abatement itself is costly — pushing quantity to zero sacrifices all output with positive net social benefit (drag to 40 in Figure 2-1 to see the new loss). C is Laffer-curve logic (see Track 08), unrelated to correcting the externality: the revenue-maximizing rate is usually far above the MEC.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.2</span>Compared with "the same emission standard for every plant," the core efficiency advantage of the Pigouvian tax (or tradable quotas) is?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>It always achieves a lower total of emissions</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Firms with cheap abatement abate more and costly ones less, minimizing total social cost for a given total, and leaving a standing profit motive for innovation</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Emissions need no monitoring, so enforcement costs nothing</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> With one tax rate, every firm abates until "marginal abatement cost = tax rate" — the last ton abated costs the same at every firm: the equimarginal principle of cost-effective abatement. A uniform standard forces high-cost and low-cost firms to abate equally much, wasting resources. The total is set only indirectly by the rate (A has it backwards: a standard fixes the total directly, a tax fixes the marginal incentive); both instruments require emissions monitoring (C is wrong). The tax's extra bonus: abating more than required keeps saving tax money, so the innovation incentive has no ceiling.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The Pigouvian rate = marginal external cost at the optimal output; the aim is to correct prices, not to raise revenue.</li>
+          <li>With the rate set right, firms "voluntarily" reach the social optimum; overshooting creates a new deadweight loss.</li>
+          <li>A uniform price allocates abatement across firms cost-effectively and keeps innovation incentives alive.</li>
+          <li>Double dividend: environmental tax revenue used to cut other distortionary taxes does double duty (mind the regressive offset).</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">Chapter 3</span>Property Rights and the Coase Theorem: Can Bargaining Replace the Tax?</h2>
+
+      <p><strong>Opening question:</strong> Pigou said "let the government set the price." In 1960, in "The Problem of Social Cost," Coase asked back: harm is reciprocal — shutting the factory down also "harms" the factory, doesn't it? If the law assigns the rights clearly, can the parties bargain the price out themselves, with no government-set tax rate at all?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: Before punishing anyone, let the parties talk</div>
+        <p>The rancher's cattle wander into the farmer's wheat and graze. If the law says "cattle may graze at will," the farmer can pay the rancher to build a fence; if it says "the wheat field is inviolable," the rancher can pay for the "right to graze." As long as bargaining is costless, <strong>no matter who is assigned the right</strong>, the two sides converge on the same spot: the number of acres grazed is exactly where "the rancher's gain from one more head = the farmer's extra loss of wheat." That is the <strong>Coase theorem</strong>: property rights clearly assigned + zero transaction costs → efficient resource allocation; the initial assignment determines only <strong>who pays whom</strong> (distribution), not <strong>how the resource is used</strong> (efficiency). The value of this mirror is that it reflects reality: real-world bargaining involves thousands of parties, asymmetric information, and costly enforcement — transaction costs are the main battlefield of environmental problems.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Coase Theorem <span class="term-en">科斯定理</span></div><div class="term-def">When property rights are clearly assigned and transaction costs are zero, bargaining among the parties achieves an efficient allocation of resources regardless of how the rights are initially distributed; the initial distribution affects only the distribution of income. Coase won the Nobel Prize in Economics in 1991.</div></div>
+        <div class="term"><div class="term-name">Transaction Costs <span class="term-en">交易成本</span></div><div class="term-def">All the costs of bargaining, contracting, monitoring, and enforcement: finding parties, negotiating, gathering information, going to court. The larger the transaction costs, the less feasible "settling externalities by private bargain," and the more valuable institutions (taxes, regulation, courts).</div></div>
+        <div class="term"><div class="term-name">Cap-and-Trade <span class="term-en">总量管制与交易</span></div><div class="term-def">Government sets a total cap on emissions, allocates or auctions the allowances to firms, and lets them trade — a "Coaseanized" Pigouvian tax: the cap is set by government, the price is bargained out by the market.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The U.S. Acid Rain Program: the most successful "Coasean" experiment</div>
+        <p>The 1990 Clean Air Act Amendments created <strong>tradable emission allowances</strong> for sulfur dioxide, the culprit behind acid rain: a hard cap declining year by year, allowances freely tradable among power plants, prices publicly quoted. The result: U.S. SO₂ emissions were halved over the 1990s and targets were met early, while actual abatement costs came to only about a third of ex-ante expert forecasts — because low-cost plants abated hard and sold their surplus allowances to high-cost plants, running exactly on the "equimarginal" logic of Figure 2-1. It became the global template (the EU carbon market, the Regional Greenhouse Gas Initiative RGGI, and the California–Quebec market all descend from it). The reverse lesson is just as valuable: in its first phase the EU ETS <strong>over-allocated allowances</strong>, and the price at one point fell to nearly zero — the quality of a property-rights instrument depends on cap setting and on the political economy of allocation.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"The Coase theorem proves government should step aside — privatize everything and be done."</strong> — That reads the theorem exactly backwards. Its assumptions (zero transaction costs, clearly identified parties, enforceability) are expensive and scarce in reality: courts, registries, monitoring, and enforcement are themselves <strong>public institutions</strong>. Climate change is a bargain of "all humanity (unborn generations included) against all humanity," with astronomical transaction costs; only taxes or caps can serve as the "industrial-scale stand-in for the Coasean bargain." Another misconception: <strong>"You can't privatize air, so the property-rights approach is useless."</strong> — You cannot privatize the "atmosphere," but you can define "emission rights" and let them circulate among firms; the carbon market is precisely such a property-rights arrangement.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.1</span>With zero transaction costs and clearly defined property rights, the Coase theorem predicts: whether the law grants the farmer or the rancher the "right to be spared from cattle grazing the wheat," the number of acres of wheat grazed will?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Differ completely: whoever is assigned the right dictates the outcome</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Be the same: under both assignments bargaining converges to the same efficient number of acres; only the direction of payment differs</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Be inefficient either way: only a government tax will do</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> With zero transaction costs the parties bargain until no mutual gains remain — where "the rancher's marginal gain from the last head = the farmer's marginal wheat loss" — independent of the initial assignment. Assign the right to the farmer, and the rancher pays for the grazing; assign it to the rancher, and the farmer pays for a fence: <strong>same efficiency, different distribution</strong>. A confuses distribution with allocation; C denies the bargaining mechanism itself, yet bargaining is the theorem's core (it fails in reality because transaction costs are nonzero, not because the logic is wrong).</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.2</span>Why is Coasean private bargaining a poor fit for climate change?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Because carbon dioxide does no real harm to the climate</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Victims and emitters are legion and span borders and generations; the costs of bargaining and enforcement are vast, and everyone wants to free-ride</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Because emission rights are legally impossible to define</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The Coasean framework fits settings with few parties, clear causation, and enforceable deals. Climate pulls 8 billion people, nearly two hundred countries, and generations not yet born into one "negotiation" — organization costs and free-riding incentives both tend toward infinity; that is the micro-foundation of the global-coordination problem in Chapter 6. A contradicts the scientific consensus; C is wrong: emission rights are perfectly definable (a carbon allowance is exactly such a defined right); the difficulty lies not in "definability" but in "the politics and enforcement after definition."</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Coase theorem: clear property rights + zero transaction costs → bargaining reaches efficiency; the initial rights govern only distribution.</li>
+          <li>The theorem's value is as a "benchmark mirror": it shows how large real transaction costs are, and how much public institutions matter.</li>
+          <li>Tradable quotas = government sets the quantity, the market finds the price — the confluence of Coasean ideas and Pigouvian tools.</li>
+          <li>The quota instrument's Achilles' heel: cap setting and allocation (over-allocation → price collapse, the EU ETS lesson).</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">Chapter 4</span>The Tragedy of the Commons and Public Goods: Individual Rationality, Collective Ruin</h2>
+
+      <p><strong>Opening question:</strong> Every fisher knows overfishing ruins the fishery — so why does every boat keep adding nets? Hardin's 1968 "The Tragedy of the Commons" gave the cold answer: the tragedy needs no villains — a group of rational individuals is enough to destroy the resource they all live on.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: The gain is mine, the cost is everyone's</div>
+        <p>If I send out one more boat, the extra catch is <strong>all mine</strong>; the drain on the stock is shared by <strong>every boat</strong> — I bear only a fraction of the loss. As long as "private gain > privately borne cost," every boat expands, until profit is fully diluted away. This is an N-player prisoner's dilemma: each choice on its own is rational; summed, it is collective ruin. It runs on the same logic as Chapter 1: <strong>under open access, the commons are simply everyone imposing an externality on everyone</strong> — except that this time nobody is a clean bystander.</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 4-1 · Tragedy-of-the-commons simulator: boats crowd in one by one</div>
+        <p class="fig-sub">Try it: start from 2 boats and add them one at a time. Watch the blue line (total profit) and the purple line (per-boat profit): each new boat enters on the grounds that "a single boat still profits," while the collective fate starts downhill already at 3 boats.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="Boats versus profit chart: total profit is a parabola peaking at 3 boats with a maximum of 90,000 yuan, then falling to zero at 6 boats and turning negative; per-boat profit is a straight line falling linearly from 50,000 yuan at 1 boat to zero at 6 boats, negative beyond. As the slider changes the number of boats, two dots move along the two curves.">
+            <line class="axis" x1="70" y1="320" x2="610" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <line x1="70" y1="133.6" x2="610" y2="133.6" stroke="#94a3b8" stroke-width="1"/>
+            <text class="chart-label-en" x="60" y="138" text-anchor="end">0</text>
+            <text class="chart-label-en" x="60" y="86" text-anchor="end">5</text>
+            <text class="chart-label-en" x="60" y="190" text-anchor="end">−5</text>
+            <text class="chart-label-en" x="60" y="242" text-anchor="end">−10</text>
+            <path class="curve curve-c1" d="M70 133.6 L100 105.1 130 81.8 160 63.7 190 50.7 220 43 250 40.4 280 43 310 50.7 340 63.7 370 81.8 400 105.1 430 133.6 460 169.8 490 206.1 520 250.1 550 299.3"/>
+            <line class="curve curve-c4" x1="70" y1="71.4" x2="550" y2="154.3"/>
+            <line class="gridline" x1="250" y1="60" x2="250" y2="133.6"/>
+            <line class="gridline" x1="430" y1="95" x2="430" y2="320"/>
+            <circle id="gc-dt" class="dot" cx="190" cy="50.7" r="7" fill="#2f6fdb"/>
+            <circle id="gc-dp" class="dot" cx="190" cy="102.5" r="7" fill="#7c3aed"/>
+            <text class="chart-label" x="160" y="32" fill="#2f6fdb">Total profit Π(N) = 6N − N²</text>
+            <text class="chart-label" x="80" y="60" fill="#7c3aed">Per-boat profit π(N) = 6 − N</text>
+            <text class="chart-label" x="250" y="54" text-anchor="middle" fill="#475569">Social optimum N* = 3</text>
+            <text class="chart-label" x="430" y="88" text-anchor="middle" fill="#475569">Open access N = 6</text>
+            <text id="gc-status" class="chart-title-sm" x="340" y="375" text-anchor="middle"></text>
+            <text class="chart-label-en" x="250" y="338" text-anchor="middle">3</text>
+            <text class="chart-label-en" x="430" y="338" text-anchor="middle">6</text>
+            <text class="chart-label" x="310" y="362" text-anchor="middle">Number of boats N</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">Profit (10,000 yuan/yr)</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="gc-n">Number of boats</label><input type="range" id="gc-n" min="1" max="8" step="1" value="2"><output id="gc-on" for="gc-n">2 boats</output></div>
+          <div class="ctrl"><label for="gc-ot">Total profit</label><output id="gc-ot" for="gc-n">80,000 yuan</output></div>
+          <div class="ctrl"><label for="gc-op">Per-boat profit</label><output id="gc-op" for="gc-n">40,000 yuan</output></div>
+        </div>
+        <figcaption>How to read this figure: total profit peaks at 3 boats (90,000 yuan), but per-boat profit does not fall to zero until 6 boats — as long as a single boat earns one cent, outside boats have an incentive to squeeze in, until profit is fully dissipated. That is "rent dissipation": under open access, the resource rent is eaten up by the capital and labor costs of excessive entry, and society works for nothing; keep adding boats and even the principal is lost. The role of property rights (quotas, fishing rights) is to pin "entry" at the social optimum of 3 boats.</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Tragedy of the Commons <span class="term-en">公地悲剧</span></div><div class="term-def">The structural problem of open-access resources being overused to the point of degradation: benefits are private, costs are shared, and individually rational choices add up to collective ruin. Hardin, 1968.</div></div>
+        <div class="term"><div class="term-name">Open Access <span class="term-en">开放获取</span></div><div class="term-def">A resource regime in which anyone may freely enter and use — the true root of the tragedy. <strong>Common-pool resources</strong> (fisheries, pastures, groundwater) can themselves be governed; the problem is the "absence of rules of exclusion."</div></div>
+        <div class="term"><div class="term-name">Public Goods <span class="term-en">公共品</span></div><div class="term-def">Goods that are both non-excludable (you cannot keep others from using them) and non-rival (one person's use does not leave less for others): national defense, lighthouses, greenhouse-gas mitigation. Voluntary market provision is necessarily insufficient.</div></div>
+        <div class="term"><div class="term-name">Free-Riding <span class="term-en">搭便车</span></div><div class="term-def">Enjoying the benefits of a public good without sharing its cost. The more people involved and the harder the monitoring, the more free-riding — the shared micro-mechanism behind undersupplied public goods and deadlocked climate talks.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Newfoundland cod: how a five-hundred-year fishery collapsed in five years</div>
+        <p>Newfoundland's Grand Banks cod had fed European fishers for five hundred years. Trawlers and sonar turned the hunt into industry in the 1950s and 60s; in the 1970s Canada's 200-mile zone pushed out the foreign fleets — only for domestic capacity to explode into the gap, with the government subsidizing shipbuilding to boot. In 1992 the stock collapsed, Canada declared a total moratorium, and some 30,000 fishers and processing workers were jobless overnight; the government has since paid out billions of Canadian dollars in compensation. <strong>Thirty years on, the cod have still not recovered commercially</strong> — a renewable resource, once past an ecological threshold, is for a time a "nonrenewable" one. Open access plus subsidy-boosted effort: a textbook tragedy-of-the-commons script.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"The tragedy is rooted in human greed, and there is no cure."</strong> — The attribution is wrong. The very same fishers fish sustainably for generations under quotas or community self-governance. Ostrom, the 2009 Nobel laureate in economics, studied <strong>common-pool resources</strong> — Swiss alpine pastures, Spanish irrigation communities, Japanese village forests — and found locals keeping commons clear of the tragedy for centuries with design principles such as "clear boundaries + locally made rules + graduated sanctions + low-cost conflict resolution." <strong>"Public ownership dooms a resource to tragedy; privatization is the only way out"</strong> — equally wrong: the tragedy comes from "open access," not from "public ownership"; state, private, and community regimes can all succeed and all fail. What matters is institutional detail.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.1</span>The root of "individually rational, collectively irrational" in the tragedy of the commons is?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Human nature is greedy and fishers are not moral enough</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Benefits accrue to the self while costs are shared by all: the private gain from one more catch exceeds the privately borne share of the stock loss</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>There are too many boats and too few fish</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> This is a structural problem: under open-access incentives, <strong>anyone</strong> placed in that position expands — not expanding means ceding the resource to others to drain. C is the symptom ("many boats, few fish"), not the cause; even with many fish and few boats, the incentive structure unchanged, the tragedy replays. Ostrom's fieldwork showed: what changes is institutions, not human nature.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.2</span>If public goods such as lighthouses and national defense relied entirely on voluntary market provision, supply would fall short, because?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Their production costs are too high for firms to afford</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Non-excludability makes charging difficult, so everyone waits for others to pay and free-rides</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Nobody needs lighthouses or national defense in the first place</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Non-excludable → you cannot keep non-payers outside the benefits → everyone's best strategy is to hide their true willingness to pay and wait for others to foot the bill (an N-player prisoner's dilemma) → voluntary provision falls below the efficient level. This has nothing to do with how high costs are (A) or whether demand exists (C) — the more public and the more vital the need, the less anyone wants to be the first to pay. The fixes: government provision funded by compulsory taxation, or technology and institutions that change excludability (e.g., encrypted satellite navigation signals).</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Tragedy of the commons = mutual externalities under open access: private benefits, shared costs; entry continues until profits dissipate.</li>
+          <li>The socially optimal number of boats is smaller than the open-access equilibrium number; the gap is the wasted resource rent.</li>
+          <li>Public goods are undersupplied by markets because of free-riding; taxation or institutional innovation is needed.</li>
+          <li>Ostrom: between state and private ownership lies successful community self-governance — institutional design decides outcomes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">Chapter 5</span>Renewable and Nonrenewable Resources: The Fisheries Model and the Hotelling Rule</h2>
+
+      <p><strong>Opening question:</strong> Fish bear young; coal does not — that one sentence holds the two halves of resource economics. A fishery is principal that bears interest: harvest too much and you wound the principal, harvest too little and you waste the interest. A mine is a deposit that bears no interest: the only question is "sell this year, or hold until next." What are the two logics called?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: Manage the resource stock as a portfolio asset</div>
+        <p><strong>Renewable resources (fisheries, forests, groundwater)</strong>: the larger the stock, the more nature adds, but growth rises and then falls (too small a stock lacks a breeding base; near carrying capacity, the fish crowd one another out), tracing a bell-shaped curve. Harvest is a straight line pulled up from the origin; where it crosses the bell curve sits the "sustainable equilibrium." More effort steepens the line and shrinks the equilibrium stock; past the bell's peak, <strong>more boats, fewer fish, and lower yield too</strong>; past the critical slope, the line pins the whole growth curve beneath it — the only equilibrium left is zero: collapse. <strong>Nonrenewable resources (oil, coal, minerals)</strong>: the stock by nature neither grows nor shrinks; "keeping a barrel underground" is an investment that must match the return on bonds — in equilibrium the resource's net price (rent) rises at the interest rate: the Hotelling rule. It explains why doomsday forecasts keep missing: a rising price lights three lamps at once — exploration, substitution, and conservation.</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 5-1 · Fishery stock dynamics: watch the collapse on the effort slider</div>
+        <p class="fig-sub">Try it: pull fishing effort up slowly from 0. Watch the orange harvest line tilt up, the equilibrium point (the green dot) slide right-to-left along the teal growth curve, and the yield fall instead of rise once past the peak; past 10, the resource heads for extinction.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="Fishery equilibrium chart: the teal bell curve is natural stock growth, rising and then falling with the stock, peaking at 12.5 thousand tons per year at a stock of 50 thousand tons; the orange straight line is harvest, its slope increasing with effort. The equilibrium is the intersection of the two lines; at an effort of 10 the intersection retreats to the origin and the resource collapses.">
+            <line class="axis" x1="70" y1="320" x2="610" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <line class="gridline" x1="70" y1="78.3" x2="340" y2="78.3"/>
+            <line class="gridline" x1="340" y1="78.3" x2="340" y2="320"/>
+            <path class="curve curve-c3" d="M70 320 L97 274.1 124 233 151 196.8 178 165.3 205 138.8 232 117 259 100.1 286 88 313 80.8 340 78.3 367 80.8 394 88 421 100.1 448 117 475 138.8 502 165.3 529 196.8 556 233 583 274.1 610 320"/>
+            <line id="fs-harv" class="curve" x1="70" y1="320" x2="610" y2="78.3" stroke="#ea580c"/>
+            <line id="fs-xline" x1="475" y1="138.8" x2="475" y2="320" stroke="#65a30d" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <circle id="fs-dot" class="dot" cx="475" cy="138.8" r="7" fill="#65a30d"/>
+            <text class="chart-label" x="470" y="120" fill="#0d9488">Stock growth g(x) (bell-shaped)</text>
+            <text class="chart-label" x="425" y="66" fill="#ea580c">Harvest line H = qE·x</text>
+            <text class="chart-label" x="352" y="74" fill="#475569">MSY = 12.5</text>
+            <text id="fs-status" class="chart-title-sm" x="340" y="52" text-anchor="middle"></text>
+            <text class="chart-label-en" x="340" y="338" text-anchor="middle">50</text>
+            <text class="chart-label-en" x="610" y="338" text-anchor="middle">100</text>
+            <text class="chart-label" x="596" y="310" text-anchor="end" fill="#475569">Carrying capacity K = 100</text>
+            <text class="chart-label" x="340" y="362" text-anchor="middle">Resource stock x (thousand tons)</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">Growth / harvest per year (thousand tons/yr)</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fs-e">Fishing effort E</label><input type="range" id="fs-e" min="0" max="12" step="0.5" value="2.5"><output id="fs-oe" for="fs-e">2.5</output></div>
+          <div class="ctrl"><label for="fs-ox">Equilibrium stock x*</label><output id="fs-ox" for="fs-e">75 thousand tons</output></div>
+          <div class="ctrl"><label for="fs-oy">Sustainable yield Y</label><output id="fs-oy" for="fs-e">9.38 thousand tons/yr</output></div>
+        </div>
+        <figcaption>How to read this figure: the equilibrium stock x* = 100 − 10E falls linearly with effort. At E = 5 the yield peaks (MSY = 12.5 thousand tons/yr); between E = 5 and E = 10, more boats, a thinner stock, and a lower yield — biological overfishing; at E ≥ 10 (= r/q), the harvest line lies entirely above the growth curve and the stock tends to zero. Note that open access does not stop automatically at MSY: as long as any profit remains, entry continues (Chapter 4), so in the real world the danger zone arrives earlier than in the figure.</figcaption>
+      </figure>
+
+      <div class="formula">
+        g(x) = r·x·(1 − x/K)&nbsp;&nbsp;→&nbsp;&nbsp;MSY = rK/4 = 12.5;&nbsp;x*(E) = K·(1 − qE/r);&nbsp;E<sub>collapse</sub> = r/q
+        <span class="f-note">Math box: the Schaefer model — with carrying capacity K = 100 thousand tons, intrinsic growth rate r = 0.5, and catchability q = 0.05, the critical effort is 10. The open-access equilibrium subtracts costs as well: entry continues until profit reaches zero, at a stock and a yield both below MSY.</span>
+      </div>
+
+      <div class="formula">
+        (P<sub>t+1</sub> − c) = (1 + i)·(P<sub>t</sub> − c)
+        <span class="f-note">Math box: the Hotelling rule (1931) — the "rent" above extraction cost c must grow at the interest rate i, or no one would be willing to hold the resource for tomorrow. The long-run price path is capped jointly by the interest rate, the scarcity rent, and the cost of the backstop technology.</span>
+      </div>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Maximum Sustainable Yield <span class="term-en">最大可持续产量</span></div><div class="term-def">The sustainable harvest at the top of the growth curve. Note: MSY is the <strong>biological</strong> optimum, not the economic one — once harvesting costs are counted, the economic optimum (MEY) sits at an effort below MSY.</div></div>
+        <div class="term"><div class="term-name">Individual Transferable Quota <span class="term-en">个体可转让配额</span></div><div class="term-def">Divide the total allowable catch into quotas held by fishers and tradable: science sets the total, trading delivers the efficiency — fitting the fishery with the dual governance of "property rights + markets."</div></div>
+        <div class="term"><div class="term-name">Hotelling Rule <span class="term-en">霍特林规则</span></div><div class="term-def">In competitive equilibrium the net price (rent) of a nonrenewable resource rises at the interest rate: holding the resource underground is an investment whose equilibrium return must equal the interest rate. Hotelling laid the foundation of resource economics in 1931.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The Yangtze's ten-year fishing ban and New Zealand's ITQs</div>
+        <p>The <strong>Yangtze</strong> was once "the cradle of freshwater fisheries"; relentless fishing and ecological decline slashed the four major Chinese carps and drove the baiji dolphin functionally extinct. From 2021, the river's key waters came under a <strong>ten-year fishing ban</strong>: more than 230,000 fishers left the harvest for new livelihoods. The 2022 survey counted the Yangtze finless porpoise back up to 1,249 (from 1,012 in 2017), a historic turnaround — only by banking the "stock principal" back in full does the growth curve regain the capital to climb. <strong>New Zealand</strong> was first to roll out ITQs nationwide, in 1986: the total allowable catch is set annually by scientific assessment and quotas trade freely; fishers turned from "chasing the fish" to "managing an appreciating fishing right," and the fishery went from chronic losses to sustainable profit — the global template for ITQs (Iceland, Australia, and others followed).</div>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"MSY is the economic optimum for the fishery."</strong> — MSY looks only at biological growth and ignores harvest costs and fish prices. Draw the costs in, and the economic optimum (MEY) arrives at an effort <strong>below</strong> MSY: the fuel and depreciation spent chasing the last ton of "free growth" may not be worth it. <strong>The other extreme: "resource doomsaying versus tech-optimism — one side must be right."</strong> — The Limits to Growth (1972) forecast rapid mineral depletion; it missed because "reserves" are an economic concept: prices rise → more exploration, leaner extraction, cheaper substitutes (the Hotelling mechanism plus induced innovation). But <strong>renewable resources</strong> have thresholds and irreversibilities — Newfoundland cod proves the pessimists can be right for fisheries. Nonrenewables run on prices and substitutes; renewables fear open access — each side is half right.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.1</span>In the Schaefer model, as effort rises beyond the MSY level, the equilibrium stock and the sustainable yield will?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>Both fall — more boats, fewer fish, lower yield</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>The yield keeps rising: fish harder, land more</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The stock falls but the yield stays constant</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Sustainable yield = natural growth = g(x*), and x* = 100 − 10E declines linearly with effort. Past E = 5, the equilibrium slides down the left slope of the bell: smaller stock → less growth → less sustainable harvest. B confuses "this season's catch" with "sustainable yield" (mining the stock can pay wildly for a while, until there are no fish left); C would hold only if the growth curve turned flat, which it never does.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.2</span>By the Hotelling rule, in competitive equilibrium the "net price (rent)" of a nonrenewable resource will in the long run?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Stay constant, moving steady along with output</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Grow at the interest rate: holding the resource underground is an investment, and its return must keep pace with bonds</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Tend to zero in the long run, leaving the resource worthless</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> If the rent does not rise at the interest rate, the mine owner's best move is to sell everything today and buy bonds — the collective sell-off depresses today's price and tightens future scarcity, until "holding one more year" appreciates by exactly the interest rate. The same logic explains the long-run ceiling on resource prices: when the rent path pushes the price up to the cost of the backstop technology (solar-made hydrogen displacing oil, say), demand migrates and the path is capped. A ignores the opportunity cost of holding; C points opposite to scarcity.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Renewable resources: a bell-shaped growth curve × a straight-line harvest; excessive effort → stock and yield fall together, to collapse (critical E = r/q).</li>
+          <li>MSY is the biological ceiling; the economic optimum MEY lies below it (harvest costs count); the open-access equilibrium is worse still.</li>
+          <li>ITQs solve the quantity problem and the efficiency problem at once with "a cap + tradable property rights."</li>
+          <li>Hotelling rule: the rent on a nonrenewable resource rises at the interest rate; the price signal steers exploration, conservation, and substitution.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">Chapter 6</span>The Economics of Climate Change: The Social Cost of Carbon and the Discount-Rate Dispute</h2>
+
+      <p><strong>Opening question:</strong> Every extra ton of coal burned today spreads its damage across the globe and the next few centuries: sea levels, crops, heat waves, migration. Setting the "right price" for that ton — the social cost of carbon — may be the most consequential calculation in the history of economics. And the answer hangs almost entirely on a parameter a few decimal places wide: the discount rate.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: The discount rate is the exchange rate that converts the future into today</div>
+        <p>The social cost of carbon (SCC) is the sum of the <strong>present values</strong> of all the marginal damage this ton of CO₂ will cause over the coming centuries. The discount rate ρ is that exchange rate: at ρ = 3%, a 100-yuan disaster 100 years from now is worth only 5 yuan today; and the damages happen to concentrate in the far future — so the SCC is hyper-sensitive to ρ (roughly proportional to 1/ρ²). <strong>Stern</strong> (The Stern Review, 2006) argued from intergenerational ethics: near-zero pure time preference, ρ ≈ 1.4%, a high SCC → strong immediate mitigation; <strong>Nordhaus</strong> (the 2018 Nobel laureate) argued for discounting at the market return on capital, ρ ≈ 4–5%, a far lower SCC → gradual mitigation. The two are fighting not over a technical parameter but over the ethical question "<strong>how much do we owe the future</strong>" — economics compressed it into one Greek letter.</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 6-1 · The discount-rate slider: one parameter sets the order of magnitude of the carbon price</div>
+        <p class="fig-sub">Try it: drag the discount rate from 3% to 2%, then to 4%, and watch the SCC jump. The gray dots are the official EPA estimates — the curve is a stylized fit (SCC ≈ 720/ρ²) meant to make the magnitudes visible.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="Chart of the social cost of carbon falling steeply as the discount rate rises: about $367/ton at 1.4%, $180 at 2%, $80 at 3%, and $29 at 5%. The chart marks the official U.S. EPA estimate dots of $190, $120, and $80 at discount rates of 2%, 2.5%, and 3%. As the slider changes the discount rate, the dot moves along the curve.">
+            <line class="axis" x1="70" y1="320" x2="610" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <line class="gridline" x1="70" y1="247.5" x2="610" y2="247.5"/>
+            <line class="gridline" x1="70" y1="175" x2="610" y2="175"/>
+            <line class="gridline" x1="70" y1="102.5" x2="610" y2="102.5"/>
+            <text class="chart-label-en" x="62" y="251" text-anchor="end">100</text>
+            <text class="chart-label-en" x="62" y="179" text-anchor="end">200</text>
+            <text class="chart-label-en" x="62" y="106" text-anchor="end">300</text>
+            <path class="curve" d="M70 53.7 L85 88 100 116.1 115 139.4 130 158.9 145 175.4 160 189.5 190 212.1 220 229.4 250 242.8 280 253.4 310 262 340 269 370 274.8 400 279.7 430 283.8 460 287.4 490 290.4 520 293 550 295.4 580 297.3 610 299.1" stroke="#65a30d"/>
+            <circle class="dot" cx="160" cy="182.3" r="5" fill="#475569"/>
+            <circle class="dot" cx="235" cy="233" r="5" fill="#475569"/>
+            <circle class="dot" cx="310" cy="262" r="5" fill="#475569"/>
+            <text class="chart-label-en" x="168" y="180" fill="#475569">EPA 2%: $190</text>
+            <text class="chart-label-en" x="243" y="229" fill="#475569">EPA 2.5%: 120</text>
+            <text class="chart-label-en" x="318" y="266" fill="#475569">EPA 3%: 80</text>
+            <line id="dr-vline" x1="310" y1="262" x2="310" y2="320" stroke="#65a30d" stroke-width="1.5" stroke-dasharray="4 4"/>
+            <circle id="dr-dot" class="dot" cx="310" cy="262" r="7" fill="#65a30d"/>
+            <text class="chart-label" x="470" y="235" fill="#65a30d">SCC(ρ) ≈ 720/ρ² (stylized)</text>
+            <text id="dr-status" class="chart-title-sm" x="340" y="52" text-anchor="middle"></text>
+            <text class="chart-label-en" x="160" y="338" text-anchor="middle">2%</text>
+            <text class="chart-label-en" x="310" y="338" text-anchor="middle">3%</text>
+            <text class="chart-label-en" x="460" y="338" text-anchor="middle">4%</text>
+            <text class="chart-label" x="340" y="362" text-anchor="middle">Discount rate ρ (%/yr)</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">SCC ($/ton CO₂)</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="dr-r">Discount rate ρ (%/yr)</label><input type="range" id="dr-r" min="1.4" max="5" step="0.1" value="3"><output id="dr-or" for="dr-r">3.0 %</output></div>
+          <div class="ctrl"><label for="dr-os">Social cost of carbon</label><output id="dr-os" for="dr-r">$80/ton</output></div>
+          <div class="ctrl"><label for="dr-of">Present value of $1 in 100 years</label><output id="dr-of" for="dr-r">$0.050</output></div>
+        </div>
+        <figcaption>How to read this figure: raising the discount rate from 2% to 4% (doubling it) shrinks the SCC to about a quarter — far-future damages are expunged exponentially. In 2023 the U.S. EPA raised its official SCC from $51 (at 3% discounting) to $190/ton (at 2%), tilting the whole cost-benefit balance toward strong mitigation. The entire firepower of the Stern–Nordhaus dispute sits in the steepness of this curve.</figcaption>
+      </figure>
+
+      <div class="formula">
+        PV = D·e<sup>−ρt</sup>;&nbsp;at ρ = 2%, $1 in 100 years ≈ $0.135; at ρ = 5%, ≈ $0.007
+        <span class="f-note">Math box: damages accumulate roughly with time while discounting decays exponentially, so the present-value integral ∫t·e<sup>−ρt</sup>dt ∝ 1/ρ² — the source of "double the discount rate, quarter the SCC."</span>
+      </div>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Social Cost of Carbon <span class="term-en">碳社会成本</span></div><div class="term-def">The present value of all the future marginal damages caused by emitting one more ton of CO₂ — the theoretical benchmark for the optimal carbon tax (or the reserve price in carbon-allowance auctions).</div></div>
+        <div class="term"><div class="term-name">Social Discount Rate <span class="term-en">社会贴现率</span></div><div class="term-def">The rate at which future benefits and damages are converted into present value, built from pure time preference, consumption growth, and risk aversion (the Ramsey formula). Partly a market parameter, but even more an intergenerational ethical choice.</div></div>
+        <div class="term"><div class="term-name">Mitigation vs Adaptation <span class="term-en">减缓与适应</span></div><div class="term-def">Mitigation cuts emissions or adds carbon sinks, reducing the <strong>generation</strong> of damage; adaptation builds levees and breeds drought-tolerant varieties, reducing the <strong>bearing</strong> of damage. The two are complements; for irreversible thresholds, adaptation cannot substitute for mitigation.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · From the Paris Agreement to China's "dual carbon" goals</div>
+        <p>The 2015 Paris Agreement wrote "holding warming below 2 °C above pre-industrial levels, pursuing efforts toward 1.5 °C" into global goals, pushed along by the ratchet of "nationally determined contributions + stocktakes every five years that tighten them" — acknowledging free-riding and binding it instead with reciprocity and transparency. In 2020 China announced carbon peaking before 2030 and carbon neutrality before 2060; in 2023 China added about 290 GW of wind and solar capacity combined, more than 40% of the world's new builds, and its renewable capacity historically overtook coal-fired capacity. In the same period, the EU launched its Carbon Border Adjustment Mechanism (CBAM), pinning the carbon price onto imports — the embryo of a climate club: those who mitigate together trade tariff-free, and free-riders pay.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"The discount rate is a technical detail — leave it to the models."</strong> — Look at Figure 6-1: it is not a detail; it is the switch that flips the conclusion. How much weight the future gets is an ethical judgment: the unborn hold no franchise in the market, and the "market interest rate" cannot vote for them. <strong>"Adaptation can replace mitigation."</strong> — A sea wall holds back 30 centimeters of sea-level rise, but not the destabilization of the West Antarctic ice sheet, an <strong>irreversible threshold</strong>: damage past a tipping point does not obey the logic of "pay and bear it," and the marginal cost of adaptation tends to infinity. <strong>"Let the others cut while I ride along — best for me."</strong> — In a one-country game that is indeed true, which is exactly what it means for climate to be a "global public good"; but if more than 190 countries all reason that way, it is Chapter 4's tragedy of the commons replayed at planetary scale — hence carbon clubs, CBAM, and the ratchet.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.1</span>Other assumptions unchanged, the discount rate falls from 3% to 2%. The social cost of carbon (SCC) will?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Rise slightly, with the order of magnitude unchanged</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Rise sharply — the SCC is roughly proportional to 1/ρ², so 2% versus 3% means about 2.25 times</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Fall: a lower discount rate means society is more "patient" and the damages smaller</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Climate damages land mostly decades to centuries out. A smaller ρ → the weight of far-future damages in today's terms is amplified exponentially. When the EPA switched from 3% to 2% in 2023, the official SCC jumped from about $51 to about $190/ton — same damage model, opposite policy conclusions. C inverts the causality: patience (a low ρ) is precisely what brings <strong>far-future damages</strong> into view, raising the SCC, not lowering it.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.2</span>"Build levees and plant drought-tolerant crops to adapt, and we can skip paying for mitigation" — where does this go wrong?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Wrong because adaptation always costs more than mitigation</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Wrong because large warming involves irreversible thresholds (ice sheets, permafrost, ecosystems) that cannot be "adapted past"; adaptation is a necessary complement, not a substitute</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Wrong because mitigation technology is not yet mature enough to stand in</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Adaptation lowers the <strong>bearing</strong> of damage; mitigation lowers its <strong>generation</strong>. For continuous, quantifiable damage (30 cm of sea-level rise) adaptation works; for irreversible thresholds (West Antarctic ice-sheet collapse, permafrost carbon release, species extinction) its marginal cost tends to infinity — money cannot buy back a tipping point. A is too absolute: many adaptive measures (early-warning systems) are highly cost-effective; C misses the logic: mature or not, "adaptation ≠ a substitute."</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>SCC = the present value of all future damages from a marginal emission; the theoretical benchmark for the optimal carbon price.</li>
+          <li>The SCC is hyper-sensitive to the discount rate (≈ 1/ρ²): the Stern–Nordhaus dispute is an ethical fight in mathematical dress.</li>
+          <li>Mitigation reduces the generation of damage; adaptation reduces the bearing of it; for irreversible thresholds, adaptation cannot replace mitigation.</li>
+          <li>Climate is a global public good: free-riding → the tragedy of the commons at planetary scale; clubs, CBAM, and the ratchet are today's antidotes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">Wrap-up</span>Next Steps &amp; Further Reading</h2>
+      <p>This track applied the micro tools (externalities, public goods, taxes, property rights) to the environment and to resources. The natural next steps: <a href="../13-urban-and-regional-economics/index.html">13 Urban &amp; Regional Economics</a> (congestion externalities and congestion pricing), <a href="../15-behavioral-economics/index.html">15 Behavioral Economics</a> (present bias — why climate promises are always "starting tomorrow"), <a href="../16-political-economy-and-institutional-economics/index.html">16 Political Economy &amp; Institutional Economics</a> (Ostrom and institutional design), and <a href="../03-econometrics/index.html">03 Econometrics</a> (evaluating environmental policy for real with difference-in-differences).</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Tietenberg &amp; Lewis, Environmental and Natural Resource Economics</span> — the standard intermediate textbook, developing every topic in this track systematically; available in Chinese translation, and the first choice for exam preparation and going deeper.</li>
+          <li><span class="bk">William Nordhaus, The Climate Casino</span> — the 2018 Nobel laureate's panoramic tour of climate economics for the general reader: the DICE model, discounting, and the carbon price, end to end.</li>
+          <li><span class="bk">Elinor Ostrom, Governing the Commons</span> — the tragedy of the commons is not destiny: eight design principles for the self-governance of common-pool resources; a monument of institutional analysis.</li>
+          <li><span class="bk">Nicholas Stern, A Blueprint for a Safer Planet</span> — the flagship statement of the low-discount-rate camp; read it for the other pole of the Stern–Nordhaus dispute.</li>
+          <li><span class="bk">Partha Dasgupta, The Economics of Biodiversity: The Dasgupta Review (2021)</span> — the newest framework for bringing natural capital into national wealth accounting; the contemporary frontier of environmental economics.</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../11-development-and-innovation-economics/index.html"><span class="pager-dir">Previous track</span><br><span class="pager-name">Development &amp; Innovation Economics</span></a>
+        <a href="../13-urban-and-regional-economics/index.html"><span class="pager-dir">Next track</span><br><span class="pager-name">Urban &amp; Regional Economics</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+<script src="../../assets/econ.js"></script>
+<script>
+(function () {
+  "use strict";
+  function $(id) { return document.getElementById(id); }
+
+  /* ============ Figure 2-1 · Pigouvian tax ============
+     Demand P = 100 − Q; PMC = 20 + Q; MEC = 30 (constant); SMC = 50 + Q
+     Social optimum Q* = 25; untaxed market equilibrium Q0 = 40; with tax Q(t) = (80 − t)/2
+     Deadweight loss DWL = (30 − t)²/4; revenue = t·Q(t) */
+  var pigT = $("pig-t");
+  if (pigT) {
+    function pigX(q) { return 70 + (q / 80) * 540; }
+    function pigY(p) { return 320 - (p / 120) * 290; }
+    function pigUpdate() {
+      var t = Number(pigT.value);
+      var q = (80 - t) / 2;
+      var pd = 100 - q;
+      var qEnd = (100 + t <= 120) ? 80 : 100 - t;
+      $("pig-eff").setAttribute("x1", pigX(0));
+      $("pig-eff").setAttribute("y1", pigY(20 + t));
+      $("pig-eff").setAttribute("x2", pigX(qEnd));
+      $("pig-eff").setAttribute("y2", pigY(20 + qEnd + t));
+      $("pig-dot").setAttribute("cx", pigX(q));
+      $("pig-dot").setAttribute("cy", pigY(pd));
+      $("pig-vline").setAttribute("x1", pigX(q));
+      $("pig-vline").setAttribute("x2", pigX(q));
+      $("pig-vline").setAttribute("y1", pigY(pd));
+      $("pig-vline").setAttribute("y2", 320);
+      $("pig-dwl").setAttribute("points",
+        pigX(q) + "," + pigY(100 - q) + " " +
+        pigX(q) + "," + pigY(50 + q) + " " +
+        pigX(25) + "," + pigY(75));
+      var dwl = (30 - t) * (30 - t) / 4;
+      var rev = t * q;
+      $("pig-ot").textContent = t + " yuan/ton";
+      $("pig-oq").textContent = q + " tons";
+      $("pig-or").textContent = Econ.fmt(rev, 0) + " yuan";
+      $("pig-od").textContent = Econ.fmt(dwl, 0) + " yuan";
+      var st;
+      if (t < 30) st = "Tax rate " + t + " < 30: still too much pollution";
+      else if (t === 30) st = "Tax rate = 30: exactly the social optimum, DWL = 0 ✓";
+      else st = "Tax rate " + t + " > 30: overcorrection, new DWL = " + Econ.fmt(dwl, 0) + " yuan";
+      $("pig-status").textContent = st;
+    }
+    pigT.addEventListener("input", pigUpdate);
+    pigUpdate();
+  }
+
+  /* ============ Figure 4-1 · Tragedy of the commons ============
+     Total profit Π(N) = 6N − N²; per-boat profit π(N) = 6 − N; N = 1..8
+     Social optimum N* = 3; open access (profit dissipation) N = 6 (units of 10,000 yuan) */
+  var gcN = $("gc-n");
+  if (gcN) {
+    function gcX(n) { return 70 + (n / 9) * 540; }
+    function gcY(v) { return 320 - ((v + 18) / 28) * 290; }
+    function gcUpdate() {
+      var n = Number(gcN.value);
+      var tot = 6 * n - n * n;
+      var per = 6 - n;
+      $("gc-dt").setAttribute("cx", gcX(n));
+      $("gc-dt").setAttribute("cy", gcY(tot));
+      $("gc-dp").setAttribute("cx", gcX(n));
+      $("gc-dp").setAttribute("cy", gcY(per));
+      $("gc-on").textContent = n + " boats";
+      $("gc-ot").textContent = Econ.fmt(tot * 10000, 0) + " yuan";
+      $("gc-op").textContent = Econ.fmt(per * 10000, 0) + " yuan";
+      var st;
+      if (per > 0) st = "Per-boat profit > 0: outside boats still want in";
+      else if (per === 0) st = "Open-access equilibrium: profits fully dissipated";
+      else st = "Over-entry: every boat loses money";
+      $("gc-status").textContent = st;
+    }
+    gcN.addEventListener("input", gcUpdate);
+    gcUpdate();
+  }
+
+  /* ============ Figure 5-1 · Fishery stock dynamics ============
+     Growth g(x) = 0.5·x·(1 − x/100), K = 100, r = 0.5, q = 0.05
+     Harvest H = 0.05·E·x; equilibrium stock x* = 100 − 10E; MSY = 12.5 (E = 5); E ≥ r/q = 10 → collapse */
+  var fsE = $("fs-e");
+  if (fsE) {
+    function fsX(x) { return 70 + (x / 100) * 540; }
+    function fsY(g) { return 320 - (g / 15) * 290; }
+    function fsUpdate() {
+      var e = Number(fsE.value);
+      var slope = 0.05 * e;
+      var x2, y2;
+      if (e <= 0) { x2 = 100; y2 = 0; }
+      else {
+        x2 = (slope * 100 <= 15) ? 100 : 15 / slope;
+        y2 = Math.min(15, slope * 100);
+      }
+      $("fs-harv").setAttribute("x1", fsX(0));
+      $("fs-harv").setAttribute("y1", fsY(0));
+      $("fs-harv").setAttribute("x2", fsX(x2));
+      $("fs-harv").setAttribute("y2", fsY(y2));
+      var xs = Math.max(0, 100 - 10 * e);
+      var yld = (e < 10) ? (0.05 * e * xs) : 0;
+      if (e < 10) {
+        $("fs-dot").setAttribute("cx", fsX(xs));
+        $("fs-dot").setAttribute("cy", fsY(yld));
+        $("fs-dot").style.display = "";
+        $("fs-xline").setAttribute("x1", fsX(xs));
+        $("fs-xline").setAttribute("x2", fsX(xs));
+        $("fs-xline").setAttribute("y1", fsY(yld));
+        $("fs-xline").setAttribute("y2", 320);
+        $("fs-xline").style.display = "";
+      } else {
+        $("fs-dot").style.display = "none";
+        $("fs-xline").style.display = "none";
+      }
+      $("fs-oe").textContent = Econ.fmt(e, 1);
+      $("fs-ox").textContent = Econ.fmt(xs, 0) + " thousand tons";
+      $("fs-oy").textContent = Econ.fmt(yld, 2) + " thousand tons/yr";
+      var st;
+      if (e <= 0) st = "No fishing: the stock tends to carrying capacity K = 100";
+      else if (e < 5) st = "Sustainable: stock above the optimum, yield < MSY";
+      else if (e === 5) st = "MSY: maximum yield 12.5 thousand tons/yr";
+      else if (e < 10) st = "Biological overfishing: more boats, fewer fish";
+      else st = "Collapse: effort ≥ the critical value r/q = 10";
+      $("fs-status").textContent = st;
+    }
+    fsE.addEventListener("input", fsUpdate);
+    fsUpdate();
+  }
+
+  /* ============ Figure 6-1 · Discount rate and the social cost of carbon ============
+     Stylized SCC(ρ) = 720/ρ² (ρ in percent), magnitudes aligned with EPA (2023) and Stern (2006)
+     100-year present-value factor = e^(−ρ·100/100) = e^(−ρ) */
+  var drR = $("dr-r");
+  if (drR) {
+    function drX(r) { return 70 + ((r - 1.4) / 3.6) * 540; }
+    function drY(s) { return 320 - (s / 400) * 290; }
+    function scc(r) { return 720 / (r * r); }
+    function drUpdate() {
+      var r = Number(drR.value);
+      var s = scc(r);
+      $("dr-dot").setAttribute("cx", drX(r));
+      $("dr-dot").setAttribute("cy", drY(s));
+      $("dr-vline").setAttribute("x1", drX(r));
+      $("dr-vline").setAttribute("x2", drX(r));
+      $("dr-vline").setAttribute("y1", drY(s));
+      $("dr-vline").setAttribute("y2", 320);
+      $("dr-or").textContent = Econ.fmt(r, 1) + " %";
+      $("dr-os").textContent = "$" + Econ.fmt(s, 0) + "/ton";
+      $("dr-of").textContent = "$" + Econ.fmt(Math.exp(-r / 100 * 100), 3);
+      $("dr-status").textContent =
+        "SCC ≈ $" + Econ.fmt(s, 0) + "/ton · 2% → $" + Econ.fmt(scc(2), 0) +
+        " · 4% → $" + Econ.fmt(scc(4), 0);
+    }
+    drR.addEventListener("input", drUpdate);
+    drUpdate();
+  }
+})();
+</script>
+</body>
+</html>

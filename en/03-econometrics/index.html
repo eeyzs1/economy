@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Econometrics · EconLearn Self-Study Path in Economics</title>
+<meta name="description" content="An interactive English econometrics tutorial: correlation versus causation, OLS regression, standard errors and confidence intervals, endogeneity and RCTs, and causal-identification tools such as difference-in-differences, with interactive demos and self-check quizzes.">
+<link rel="stylesheet" href="../../assets/econ.css">
+</head>
+<body style="--branch:#0d9488">
+<noscript><p class="noscript-tip">The interactive figures and self-check quizzes on this page require JavaScript; without it, all of the main text remains perfectly readable.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← Home</a>
+  <div class="topbar-title"><span class="topbar-num">03</span>Econometrics</div>
+  <a class="topbar-lang" href="../../03-计量经济学/index.html" hreflang="zh-CN">中文</a>
+  <button class="toc-toggle" aria-expanded="false">Contents</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">Chapters in this track</p>
+    <nav aria-label="Chapter contents">
+      <a href="#overview">Overview &amp; learning goals</a>
+      <a href="#ch1">1 · Correlation Is Not Causation</a>
+      <a href="#ch2">2 · Regression: Drawing the Line</a>
+      <a href="#ch3">3 · Control Variables</a>
+      <a href="#ch4">4 · Uncertainty &amp; Significance</a>
+      <a href="#ch5">5 · Endogeneity: The Enemy of Identification</a>
+      <a href="#ch6">6 · The Causal-Inference Toolbox</a>
+      <a href="#path">Next steps &amp; further reading</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · Self-Study Path in Economics</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">Track 03 · Core theory</span>
+        <h1>Econometrics</h1>
+        <p class="hero-en">计量经济学</p>
+        <p class="hero-lead">Economic theory tells us “what should happen”; econometrics tells us “what actually happened in the data” — and how far we can go in saying “this is because…”. It is economics’ sharpest tool, and also its easiest to misuse.</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">By the end of this track, you will be able to</div>
+        <ul>
+          <li>Distinguish <strong>correlation</strong> from <strong>causation</strong>, and spot confounding variables, reverse causality, and selection bias</li>
+          <li>Explain what OLS regression is actually doing, and read the coefficients, standard errors, and R² in a regression table</li>
+          <li>Explain what control variables accomplish — and the danger of “bad controls”</li>
+          <li>Interpret p-values and confidence intervals correctly, and dodge the common statistical traps</li>
+          <li>Describe the logic of four causal-identification strategies: randomized experiments, difference-in-differences, regression discontinuity, and instrumental variables</li>
+        </ul>
+      </div>
+      <div class="prereq">Prerequisites:
+        <a class="badge" href="../01-microeconomics/index.html">01 Microeconomics (comfort with scatter plots and functions is enough)</a>
+        <span>No prior statistics needed — every concept required is introduced along the way</span>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">Chapter 1</span>Correlation Is Not Causation</h2>
+
+      <p><strong>Opening question:</strong> A study published in a leading medical journal found that a country’s per-capita chocolate consumption is <strong>strongly positively correlated</strong> (r ≈ 0.79) with its number of Nobel laureates per ten million people. The Swiss eat the most chocolate and collect the most Nobel Prizes. Question: does eating more chocolate raise your odds of winning one?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>When two variables move together (<strong>correlation</strong>), three stories are possible: A causes B; B causes A; or <strong>a third factor C causes both A and B</strong>. Chocolate and Nobel Prizes are the third kind: national wealth C — rich countries can afford chocolate, and they can afford scientific research. This “C hiding in the background” is what econometrics calls a <strong>confounding variable</strong>. The entire problem of causal inference boils down to one sentence: <strong>the data we observe are missing the comparison “what would Y have been if X had not happened?”</strong></p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Correlation coefficient <span class="term-en">相关系数</span></div><div class="term-def">Measures how much two variables move together, on a scale from −1 to +1. It describes co-movement only — it promises nothing about which variable causes which.</div></div>
+        <div class="term"><div class="term-name">Confounder <span class="term-en">混杂变量</span></div><div class="term-def">A third variable that influences both the suspected cause and the outcome (national wealth in the example above) — obstacle number one standing between correlation and causation.</div></div>
+        <div class="term"><div class="term-name">Counterfactual <span class="term-en">反事实</span></div><div class="term-def">“If you had not gone to college, what would you be earning today?” That state, the one that never happened, is the counterfactual. Causal effect = actual outcome − counterfactual outcome. The trouble: the counterfactual can never be observed directly.</div></div>
+        <div class="term"><div class="term-name">Simpson’s paradox <span class="term-en">辛普森悖论</span></div><div class="term-def">The phenomenon in which the direction of an association reverses between the pooled view and the within-group view — a confounder flipping the conclusion.</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 1-1 · Simpson’s paradox: study time and grades</div>
+        <p class="fig-sub">One dataset, two views: switch between the “pooled / grouped” perspective and the <strong>direction</strong> of the slope flips. Try the buttons.</p>
+        <figure class="fig-canvas">
+          <svg id="simpson-svg" viewBox="0 0 640 380" role="img" aria-label="Scatter plot: blue points are selective schools, teal points are ordinary schools. When all points are pooled, the regression line slopes up to the right; viewed within groups, each group’s regression line slopes down to the right.">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="360" text-anchor="middle">Weekly self-study hours</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">Exam score</text>
+            <line class="gridline" x1="70" y1="230" x2="600" y2="230"/>
+            <line class="gridline" x1="70" y1="140" x2="600" y2="140"/>
+            <line class="gridline" x1="70" y1="50" x2="600" y2="50"/>
+            <g id="sim-pts"></g>
+            <line id="sim-ovr" class="curve" stroke="#475569" stroke-dasharray="8 5" stroke-width="2.5"/>
+            <line id="sim-g1" class="curve curve-c1" style="display:none"/>
+            <line id="sim-g2" class="curve curve-c3" style="display:none"/>
+            <text id="sim-note" class="chart-label" x="335" y="26" text-anchor="middle" style="font-weight:700"></text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn ghost" id="sim-btn-all">Overall view (all schools pooled)</button>
+          <button class="btn" id="sim-btn-grp">Group by school type</button>
+        </div>
+        <figcaption>How to read this figure: the data are hypothetical. Selective schools (blue) have stronger students but heavier homework loads — within them, the students racking up the most self-study hours are often the weaker ones cramming to catch up; ordinary schools (teal) score lower overall. The pooled pattern “more self-study, higher scores” is an illusion manufactured by the confounder school type.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world</div>
+        <p>A genuine study: Messerli (2012, <em>New England Journal of Medicine</em>) reported the chocolate–Nobel correlation, and the author himself stressed that it was correlation, not causation. Classic cousins: “ice-cream sales rise in step with drownings” (confounder: summer) and “more firefighters, more fire damage” (reverse causality: more fires, so more firefighters sent).</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>“The correlation is so high (0.79!) that causality is nearly certain.”</strong> — Wrong. The strength of a correlation is <strong>irrelevant</strong> to whether it is causal: a confounder can push the correlation very high, while a true causal relationship can look faint because of measurement error. Causality is settled by <strong>research design</strong> (Chapter 6), not by the size of a coefficient.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.1</span>Which of the following most plausibly explains the strong positive correlation between per-capita chocolate consumption and the number of Nobel laureates?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The flavanols in chocolate genuinely enhance long-term cognition</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>National wealth raises both at once</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The more Nobel laureates a country has, the more its people celebrate with chocolate</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Wealth C causes both A (chocolate is affordable) and B (research spending is ample), which explains why the two move together. A is the causal reading the author explicitly rejected; C is reverse causality and strains logic. Choosing B is confounder thinking.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.2</span>“People who drink coffee every day have lower mortality.” To push this from correlation toward causation, the most urgent question to ask is?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Is the sample large enough?</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>Is the correlation statistically significant?</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>Were coffee drinkers and non-drinkers different to begin with — in health habits, income, and the like?</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Sample size and significance settle only whether the correlation is real, not whether it is causal. Coffee drinkers may be younger, richer, and more likely to see a doctor — these <strong>systematic differences</strong> are the true threat to a causal conclusion. Spotting and interrogating confounders is habit number one of econometrics.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>A correlation has three explanations: A→B, B→A, or C→A together with C→B (confounding).</li>
+          <li>Causal effect = actual − counterfactual; the counterfactual cannot be observed, and that is the root of every difficulty.</li>
+          <li>Simpson’s paradox is the reminder that pooled data can fully mask — or even reverse — the true relationship.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">Chapter 2</span>Regression: Drawing the Line</h2>
+
+      <p><strong>Opening question:</strong> We have starting salaries and GPAs for 8 graduates, with the points scattered messily across a plot. “For each extra GPA point, how much higher is the starting salary?” We need a straight line through the scatter — and infinitely many lines pass through it. <strong>Which one is best?</strong></p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Score every candidate line: for each point, measure its vertical distance to the line (the <strong>residual</strong>), square it, and add the squares up (squaring counts overshoots and undershoots as errors alike, and punishes large misses hard). The line with the lowest score is the one <strong>ordinary least squares</strong> (OLS) selects. Try it with your own hands below: before pressing the “optimal solution” button, can you get the sum of squared residuals close to its minimum?</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Dependent and independent variables <span class="term-en">因变量与自变量</span></div><div class="term-def">The outcome being explained (starting salary Y) and the variable doing the explaining (GPA X). Notation: Y = β₀ + β₁X.</div></div>
+        <div class="term"><div class="term-name">Regression coefficient <span class="term-en">回归系数</span></div><div class="term-def">β₁ is the slope: when X rises by 1 unit, Y changes by β₁ units on average. β₀ is the intercept: the baseline level when X = 0.</div></div>
+        <div class="term"><div class="term-name">Residual <span class="term-en">残差</span></div><div class="term-def">The gap between an actual value and the line’s prediction. OLS has exactly one goal: make the sum of squared residuals as small as possible.</div></div>
+        <div class="term"><div class="term-name">R² (goodness of fit) <span class="term-en">R²（拟合优度）</span></div><div class="term-def">The fraction of the variation in Y that the line accounts for, running from 0 to 1. A value of 0.49 means “about half is explained.” Caution: a high R² implies neither causality nor a correct model.</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 2-1 · Run OLS by hand</div>
+        <p class="fig-sub">Drag the intercept and slope sliders to make the orange residual segments as short as possible; the panel shows the sum of squared residuals (SSE). Then click “Show the OLS solution” to compare.</p>
+        <figure class="fig-canvas">
+          <svg id="ols-svg" viewBox="0 0 640 400" role="img" aria-label="Scatter plot of GPA and starting salary, with a regression line adjustable by sliders; the vertical residuals from each point to the line appear as orange segments.">
+            <line class="axis" x1="70" y1="330" x2="600" y2="330"/>
+            <line class="axis" x1="70" y1="330" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="370" text-anchor="middle">College GPA (4.0 scale)</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">Starting salary (1,000s of yuan/month)</text>
+            <line class="gridline" x1="70" y1="240" x2="600" y2="240"/>
+            <line class="gridline" x1="70" y1="150" x2="600" y2="150"/>
+            <line class="gridline" x1="70" y1="60" x2="600" y2="60"/>
+            <g id="ols-resid"></g>
+            <g id="ols-pts"></g>
+            <line id="ols-line" class="curve curve-c1"/>
+            <text id="ols-txt" class="chart-label" x="335" y="22" text-anchor="middle" style="font-weight:700"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="ols-b0">Intercept β₀</label><input type="range" id="ols-b0" min="0" max="4" step="0.05" value="3"><output id="ols-o0" for="ols-b0">3.00</output></div>
+          <div class="ctrl"><label for="ols-b1">Slope β₁</label><input type="range" id="ols-b1" min="0" max="2" step="0.01" value="0.5"><output id="ols-o1" for="ols-b1">0.50</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="ols-best">Show the OLS solution</button>
+        </div>
+        <figcaption>How to read this figure: the OLS line is not the one that “passes through the most points”; it is the one that minimizes the sum of <strong>vertical</strong> squared deviations. Intuitively, it is pulled toward wherever points are dense and deviations large — like a stretched rubber band.</figcaption>
+      </figure>
+
+      <div class="formula">
+        Salary&#770;<sub>i</sub> = β&#770;<sub>0</sub> + β&#770;<sub>1</sub> · GPA<sub>i</sub>
+        <span class="f-note">Read as: the fitted value of starting salary = intercept + slope × GPA. A hat over β marks a value “estimated from the sample.”</span>
+      </div>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>“The higher the R², the better the model.”</strong> — Not necessarily. Adding a pure noise variable barely lowers R²; among time series, two variables that each trend upward (GDP and local rainfall, say) will comfortably produce R² &gt; 0.9. R² measures how well the line fits — not whether it is right, and certainly not causality.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.1</span>By which criterion does OLS choose the line?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>It passes through the largest number of data points</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>It minimizes the sum of squared vertical residuals</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>It leaves equally many points above and below</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> OLS = Ordinary <em>Least Squares</em>: the estimate that minimizes the <strong>sum of squared</strong> residuals (SSE). Squaring stops positive and negative deviations from canceling out, and it punishes large outliers heavily.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.2</span>A regression returns β&#770;<sub>1</sub> = 0.8 (thousand yuan per GPA point). Which reading is correct?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Raising GPA by 1 point <strong>causes</strong> starting salary to rise by 0.8 thousand yuan</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>In this sample, students with 1 more GPA point earn 0.8 thousand yuan more on average</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Any person with 1 more GPA point earns 0.8 thousand yuan more</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> A regression coefficient describes only the <strong>average association</strong> in the sample. Whether “causes” is defensible depends on research design (Chapters 5 and 6); and even then it holds only “on average.” Cultivating the habit of saying “average association” is the first line of defense against being fooled by regression tables.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>OLS minimizes the sum of squared residuals; the slope reads as “when X rises 1 unit, Y changes by β₁ on average.”</li>
+          <li>R² measures fit — not correctness, and not causality.</li>
+          <li>A coefficient licenses only “average association”; causal language requires extra conditions.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">Chapter 3</span>Control Variables: The Idea of Multiple Regression</h2>
+
+      <p><strong>Opening question:</strong> Ice-cream sales and drownings are strongly correlated, and the confounder is “season.” What happens to the coefficient on ice-cream sales if we <strong>add a season variable</strong> to the regression (summer = 1, winter = 0)? It collapses — it may vanish altogether. That is the power of <strong>control variables</strong>: comparing under “other things equal.”</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>In the multiple regression y = β₀ + β₁x + β₂z, β₁ answers this question: <strong>between two people whose z is exactly the same</strong>, how much does y differ on average for each extra unit of x? Put vividly, regression “first slices the data by z, compares the effect of x within each slice, then pools the slice-by-slice conclusions with weights.” Chapter 1’s Simpson’s paradox is repaired precisely by “controlling for school type.”</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Multiple regression <span class="term-en">多元回归</span></div><div class="term-def">A regression that includes several explanatory variables at once. Each coefficient reports that variable’s partial effect “holding the other variables constant.”</div></div>
+        <div class="term"><div class="term-name">Omitted-variable bias (OVB) <span class="term-en">遗漏变量偏差</span></div><div class="term-def">Leave out a variable that both affects y and is correlated with x, and the coefficient on x gets “contaminated.” The direction of the contamination is the product of the signs of those two correlations.</div></div>
+        <div class="term"><div class="term-name">Bad control <span class="term-en">坏控制</span></div><div class="term-def">Controlling for a variable that sits in the middle of the causal chain absorbs the very effect you want to estimate. Example: controlling for “income” when estimating the return to education — income is the outcome itself.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world</div>
+        <p>To estimate whether attending college raises income, you must control for family background (parents’ income, hukou — household-registration status) — otherwise the confounding of ability and background will overstate the return to education. But control for “the industry of the first job after graduation” and you may have controlled too much: industry is a <strong>channel</strong> through which education affects income, and pinning it down cuts one link out of the causal chain. Choosing controls is design work — “the more the better” is not a principle.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>“More controls mean more rigor.”</strong> — Wrong. Two risks: (1) a <strong>bad control</strong> absorbs the true effect; (2) the control is itself a “post-treatment” variable (affected by x), importing fresh bias. The principle: control for background variables that were determined <strong>before</strong> x, and regard with suspicion anything that might be “a consequence of x.”</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.1</span>Estimating a test-prep course’s effect on scores: strong students are more likely to enroll. Simply comparing enrollees with non-enrollees will?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>Overstate the course’s effect (a strong baseline is positively correlated with enrolling and directly lifts scores)</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>Understate the course’s effect</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Be unbiased, because the sample is large</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The omitted variable “student baseline” is positively correlated with enrolling and positively correlated with scores, so the OVB direction = (+)×(+) = overstatement. No sample size rescues systematic bias — a huge sample merely estimates the wrong answer more precisely.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.2</span>Which variable is the most suitable control when estimating the effect of education on income?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The respondent’s current job rank</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The respondent’s parents’ education</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The respondent’s choice of college major</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Parental education predates the respondent’s own schooling, making it a clean background control. Job rank and choice of major both sit on the causal path from education to income (education shapes major and job rank, which then shape income); controlling for them “controls away” part of education’s true effect — the classic bad control.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>A multiple-regression coefficient is a partial effect “holding other variables constant.”</li>
+          <li>Omitting a correlated confounder → bias; its direction is the product of the two correlations’ signs.</li>
+          <li>Good controls precede x in causal time; variables on the causal chain are bad controls.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">Chapter 4</span>Uncertainty and Significance</h2>
+
+      <p><strong>Opening question:</strong> In a class of 30 students you estimate that “each hour of tutoring raises scores by 1.2 points.” Re-estimate in another class and you get 0.3. Which estimate deserves belief? Or neither? We are missing a language for answering: <strong>how unstable is this estimate?</strong></p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>A sample is a single “draw” from the population. Draw again and the coefficient moves. Imagine repeating the sampling process many times: the amount the coefficient bounces around is the <strong>standard error</strong>. Small standard error → the coefficient is stable from sample to sample → we place more confidence in it. A 95% confidence interval means: <strong>of intervals built the same way, 95% will cover the true value in the long run</strong> — not “there is a 95% probability that the true value falls inside this particular interval.”</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Standard error (SE) <span class="term-en">标准误</span></div><div class="term-def">The sampling variability of an estimator. Quadruple the sample and the standard error roughly halves (SE ∝ 1/√n).</div></div>
+        <div class="term"><div class="term-name">Confidence interval (CI) <span class="term-en">置信区间</span></div><div class="term-def">Estimate ± 1.96×SE (large-sample approximation). When the interval excludes 0, the result is usually called “statistically significant at the 5% level.”</div></div>
+        <div class="term"><div class="term-name">p-value <span class="term-en">p 值</span></div><div class="term-def">The probability, <strong>assuming the effect is actually zero</strong>, of observing data as extreme as what we got, or more so. A small p says “the data would be unusual under a zero effect” — and nothing more.</div></div>
+        <div class="term"><div class="term-name">Statistical power <span class="term-en">统计功效</span></div><div class="term-def">The probability of detecting an effect that truly exists. In low-power studies, even a “significant” estimate tends to exaggerate the effect size.</div></div>
+      </div>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls (the three classic p-value mistakes)</div>
+        <p>(1) “p = 0.03 means a 3% probability that the null hypothesis is true” — wrong: the p-value <strong>takes the null as true</strong> as its starting point. (2) “p &gt; 0.05 = no effect” — wrong: it means only that a zero effect cannot be ruled out, especially when small samples leave power low. (3) “Significant = important” — wrong: with a big enough sample, every trivial difference turns significant. Statistical significance ≠ economic significance (whether the effect is large enough to be worth acting on is a separate question).</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.1</span>A study reports p = 0.20. The correct statement is?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>It proves the effect does not exist</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The data are not inconsistent with a zero effect — there is not enough to reject the null hypothesis</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>There is an 80% probability the effect is real</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> “Not significant” ≠ “does not exist.” With small samples and low power, genuinely real effects often miss significance. Nor is the p-value “the probability the null is true.” The moment you see the argument “not significant → no effect,” check sample size and power.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.2</span>In a huge-sample regression (n = 2 million) of “hours online on test scores,” the coefficient is −0.002 points per hour, p &lt; 0.001. The reasonable reading?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Highly significant — the internet is badly damaging scores</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Statistically significant but of negligible economic (practical) importance: at 3 hours online a day, a whole year costs only two or three points</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>With a sample this large, a causal conclusion can be announced with confidence</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Two million observations make even a sesame-seed-sized effect “significant.” 3 hours a day × 365 days × 0.002 ≈ 2 points a year — practically nothing. The lesson: <strong>effect size first, significance second</strong>; and a large sample does nothing whatsoever about confounding and causality.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The standard error measures sampling variability; CI = estimate ± 1.96·SE.</li>
+          <li>A p-value measures “how unusual the data are under the null,” not “the probability the null is true.”</li>
+          <li>Statistical significance ≠ economic significance; not significant ≠ no effect.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">Chapter 5</span>Endogeneity: The Enemy of Identification</h2>
+
+      <p><strong>Opening question:</strong> The numbers say: cities that pour more resources into policing have more homicides. Do police manufacture crime? Or do high-crime cities simply hire more police? When x and y influence each other — or are pulled along by common factors — x is <strong>endogenous</strong>, and its regression coefficient cannot be read as causal.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>“Endogeneity” is an umbrella term for every ailment that leaves “x correlated with the error term”: (1) <strong>omitted variables</strong> (aptitude shapes both education and income); (2) <strong>reverse causality</strong> (crime → police); (3) <strong>measurement error</strong> (income under-reported — and the poorer the household, the wilder the misreporting); (4) <strong>self-selection</strong> (the people who attend college are the ones who would have earned more anyway). For a causal answer there is exactly one core move: <strong>find a source of variation in x that behaves as if it were randomly assigned.</strong></p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Endogeneity <span class="term-en">内生性</span></div><div class="term-def">The explanatory variable is correlated with other, unobserved determinants of y. With endogeneity present, the OLS coefficient systematically departs from the causal effect.</div></div>
+        <div class="term"><div class="term-name">Self-selection bias <span class="term-en">自选择偏差</span></div><div class="term-def">People choose their own way into the treatment group (going to college, migrating, starting a business) — and hidden ability and motivation lurk behind those choices.</div></div>
+        <div class="term"><div class="term-name">Identification <span class="term-en">识别</span></div><div class="term-def">The research-design problem of “recognizing” a causal effect inside observational data. Identification strategy is the soul of modern empirical economics.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Three classic scenes</div>
+        <p><strong>The hospital paradox:</strong> surveyed in an emergency room, seat-belt wearers show a higher injury rate — because only the badly injured are taken to hospital (selection bias). <strong>Survivorship bias:</strong> in World War II, returning bombers’ bullet-hole patterns were tallied to decide where to add armor — the statistician Wald pointed out that the planes worth examining are the ones that never came back (a selected sample). <strong>Healthy-user bias:</strong> people who take vitamins are healthier to begin with, so a naive comparison blows the estimated benefit of supplements out of proportion.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.1</span>“Smaller classes score better.” But suppose class size is assigned by the principal according to student ability (weaker students placed into small classes). Then?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The true effect is understated</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The estimate may understate or overstate the true effect — it depends on the assignment rule and the direction of the confounding</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>No bias, because the sample is random</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> If weaker students fill the small classes, their “disadvantaged intake” drags the estimate down (understatement); if children of high-expectation parents get packed into small classes, the estimate is inflated. The direction depends on “who is placed into the small classes” and on how that placement moves scores. The OVB formula delivers exactly this product direction. The lesson: first ask “<strong>who decides class size?</strong>”</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.2</span>“People who buy insurance are hospitalized more often — so insurance makes people sicker.” The sharpest critique is?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The sample is too small</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Self-selection: people in worse health are more inclined to buy insurance (adverse selection)</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The p-value surely is not significant</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Who buys insurance is not random — people in poor health need it more (this is the health-care edition of the “adverse selection” you will meet in Track 05, Money &amp; Banking, and Track 06, Financial Economics). It is a selection problem, not a statistical-power problem.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Four sources of endogeneity: omitted variables, reverse causality, measurement error, self-selection.</li>
+          <li>Endogeneity is a disease no sample size can cure; the way out lies in research design.</li>
+          <li>Faced with any association, first ask: “Is the way people enter the treatment group related to the outcome?”</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">Chapter 6</span>The Causal-Inference Toolbox</h2>
+
+      <p><strong>Opening question:</strong> If observational data are a minefield at every step, how do economists dare say things as specific as “a 10% rise in the minimum wage reduces teen employment by only 0–1%”? With four “identification weapons.”</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: randomization is the gold standard</div>
+        <p>Split the subjects <strong>randomly</strong> into a treatment group and a control group, and before treatment the two groups are <strong>identical in the statistical sense</strong> (identical even in unobserved ability, character, and luck). Any post-treatment difference between the groups can then only be the effect of the treatment — random assignment “reproduces” the counterfactual for us. When true randomization is impossible in the real world, economists hunt for institutional variation that is <strong>approximately random</strong>: bright-line policy cutoffs, the sequencing of timing, the luck of a lottery draw.</p>
+      </aside>
+
+      <h3>The four weapons</h3>
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Method</th><th>Core idea</th><th>Classic application</th><th>Key assumption</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Randomized experiment</strong> (RCT)</td><td>Assign the treatment at random; the group difference = the causal effect</td><td>The 2008 Oregon Medicaid lottery: Medicaid granted at random</td><td>Randomization carried through as designed; no spillovers</td></tr>
+            <tr><td><strong>Difference-in-differences</strong> (DID)</td><td>Before/after × treatment/control, netting out the groups’ fixed difference and their common trend</td><td>Card &amp; Krueger (1994): New Jersey vs. Pennsylvania minimum wage</td><td>Parallel trends (absent the policy, the two groups would track each other)</td></tr>
+            <tr><td><strong>Regression discontinuity</strong> (RD)</td><td>Exploit a threshold where the policy kicks in only above the line, comparing the two sides</td><td>Long-run incomes of students on either side of a scholarship cutoff</td><td>Individuals cannot precisely manipulate the score (crossing the line is as good as random)</td></tr>
+            <tr><td><strong>Instrumental variable</strong> (IV)</td><td>Find an exogenous variable that affects y only through x</td><td>Use “distance to college” to predict years of schooling, then estimate the income return</td><td>Relevance + exclusion (the instrument operates only through x)</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 6-1 · Difference-in-differences: the minimum-wage study</div>
+        <p class="fig-sub">New Jersey (treatment) raises its minimum wage; neighboring Pennsylvania (control) does not. Drag the “policy effect” slider and watch DID strip out both groups’ fixed gap and their common time trend.</p>
+        <figure class="fig-canvas">
+          <svg id="did-svg" viewBox="0 0 640 380" role="img" aria-label="Line chart: the horizontal axis runs from before the policy to after it; the Pennsylvania control group moves from 50 to 54, and the New Jersey treatment group from 48 to a higher value that varies with the policy effect; the dashed line shows the treatment group’s counterfactual trend without the policy.">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="360" text-anchor="middle">Time →</text>
+            <text class="chart-label" x="200" y="345" text-anchor="middle">Before policy</text>
+            <text class="chart-label" x="500" y="345" text-anchor="middle">After policy</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">Employment index</text>
+            <line id="did-cf" class="curve" stroke="#94a3b8" stroke-dasharray="7 5" stroke-width="2.5"/>
+            <line id="did-ctl" class="curve curve-c3"/>
+            <line id="did-trt" class="curve curve-c1"/>
+            <circle id="did-c1" class="dot" r="6" fill="#0d9488"/>
+            <circle id="did-c2" class="dot" r="6" fill="#0d9488"/>
+            <circle id="did-t1" class="dot" r="6" fill="#2f6fdb"/>
+            <circle id="did-t2" class="dot" r="6" fill="#2f6fdb"/>
+            <text class="chart-label" x="540" y="70" text-anchor="end" style="fill:#0d9488">Control (Pennsylvania)</text>
+            <text class="chart-label" x="540" y="90" text-anchor="end" style="fill:#2f6fdb">Treatment (New Jersey)</text>
+            <text class="chart-label" x="540" y="110" text-anchor="end" style="fill:#64748b">Counterfactual (dashed)</text>
+            <text id="did-txt" class="chart-label" x="335" y="22" text-anchor="middle" style="font-weight:700"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="did-eff">Policy effect</label><input type="range" id="did-eff" min="0" max="14" step="0.5" value="6"><output id="did-oe" for="did-eff">6.0</output></div>
+        </div>
+        <figcaption>How to read this figure: DID = (New Jersey after − New Jersey before) − (Pennsylvania after − Pennsylvania before). Even if the two groups sit at different levels to begin with (New Jersey starts lower here), as long as “their paths would have run parallel without the policy,” the differenced-out part is the policy effect. Card and Krueger found an effect of roughly zero, challenging the traditional prediction that a minimum wage necessarily reduces employment.</figcaption>
+      </figure>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>“DID/RD/IV was used, so the result is causal.”</strong> — Every one of these methods has a make-or-break assumption: DID fails when <strong>parallel trends do not hold</strong> (the treatment group was already on an upswing); RD fails under <strong>precise manipulation of the threshold</strong> (the people a point below the line were different all along); IV fails when <strong>exclusion is violated</strong> (living near a college affects income directly, not only through schooling). When reading an empirical paper, first ask “is the identification assumption credible?” — then look at the coefficients.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.1</span>DID’s most crucial assumption is?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The two groups had exactly the same pre-policy levels</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Absent the policy, the two groups’ <strong>trends</strong> would be parallel</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The sample is larger than 1,000</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Parallel trends are about <strong>trajectories (changes)</strong>, not levels — the before/after differencing in DID exists precisely to cancel out fixed level differences. So “the treatment group starts lower” is not fatal; “the treatment group was already growing fast” is. In practice, several pre-policy periods are used to test whether the trends run in parallel.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.2</span>In a regression-discontinuity (RD) study, the plot most worth checking is?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>A histogram of the sample size</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>A density plot checking whether individuals “pile up” precisely at the cutoff (the McCrary test)</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>A time series of the dependent variable</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> If people can manipulate the assignment variable (nudging a score across the line), the two sides of the cutoff are no longer “quasi-random,” and RD’s foundation collapses. An abnormal heap in the density plot at the cutoff (far too many people just clearing it) is the fingerprint of manipulation. This check is standard equipment in RD papers.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.3</span>When a randomized experiment is out of reach, the closest substitute for “random assignment” is?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Enlarge the sample and rerun the regression</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>Add as many control variables as possible</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>Find treatment variation determined by institutions, lotteries, or geography — unrelated to individual motives (a natural experiment)</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The gold standard of identification is “treatment assignment unrelated to potential outcomes.” Neither A nor B cuts that link. Natural experiments (bright-line policies, lotteries, birth dates that fix when a child starts school) are precious precisely because they are “randomized experiments run by nature.”</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Randomization reproduces the counterfactual; the RCT is the gold standard.</li>
+          <li>DID rests on parallel trends, RD on quasi-random crossing of the cutoff, IV on relevance plus exclusion.</li>
+          <li>When reading empirical work: audit the identification assumption first, trust the coefficients second.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">Wrap-up</span>Next steps &amp; further reading</h2>
+      <p>Econometrics is the engine behind every applied branch: <strong>09 Labor</strong> (returns to education, minimum wages), <strong>11 Development</strong> (home turf of the RCT poverty experiments), and <strong>14 Health &amp; Education</strong> (insurance experiments) all lean on this chapter’s tools again and again. To push on into time series (forecasting, volatility) and panel-data methods, climb the reading list below.</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Wooldridge, <em>Introductory Econometrics: A Modern Approach</em></span> — the standard undergraduate textbook, giving equal weight to intuition and hands-on practice.</li>
+          <li><span class="bk">Joshua Angrist &amp; Jörn-Steffen Pischke, <em>Mostly Harmless Econometrics</em></span> — the secret manual of the causal-inference route; companion to Chapters 5–6 here.</li>
+          <li><span class="bk">Angrist &amp; Pischke, <em>Mastering ’Metrics: The Path from Cause to Effect</em></span> — the popular edition, five weapons explained to the end.</li>
+          <li><span class="bk">The <em>Causal Inference: The Mixtape</em> open lecture notes (Scott Cunningham)</span> — free online and code-friendly.</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../02-macroeconomics/index.html"><span class="pager-dir">← Previous track</span><br><span class="pager-name">Macroeconomics</span></a>
+        <a href="../04-game-theory-and-information-economics/index.html"><span class="pager-dir">Next track →</span><br><span class="pager-name">Game Theory &amp; Information Economics</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../../assets/econ.js"></script>
+<script>
+/* ================= Figure 1-1 Simpson's paradox ================= */
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  // Data: [x (self-study hours), y (score 0-100), group (0=selective/blue, 1=ordinary/teal)]
+  // Selective schools (blue): strong intake, heavy homework → more self-study, higher scores; within the group, more self-study → lower scores (the ones cramming have weak foundations)
+  // Ordinary schools (teal): less self-study, lower scores. The two groups are offset → the pooled slope is positive (Simpson's paradox)
+  var data = [
+    [1, 52, 1], [1.5, 50, 1], [2, 49, 1], [2.5, 47, 1], [3, 45, 1], [3.5, 43, 1], [4, 41, 1],
+    [5, 72, 0], [5.5, 70, 0], [6, 68, 0], [6.5, 66, 0], [7, 63, 0], [7.5, 61, 0], [8, 59, 0]
+  ];
+  var X0 = 70, X1 = 600, Y0 = 320, Y1 = 40;
+  var xMin = 0.5, xMax = 8.5, yMin = 35, yMax = 80;
+  function px(x) { return X0 + (x - xMin) / (xMax - xMin) * (X1 - X0); }
+  function py(y) { return Y0 - (y - yMin) / (yMax - yMin) * (Y0 - Y1); }
+  function ols(pts) {
+    var n = pts.length, sx = 0, sy = 0, sxy = 0, sxx = 0, i, x, y;
+    for (i = 0; i < n; i++) { x = pts[i][0]; y = pts[i][1]; sx += x; sy += y; sxy += x * y; sxx += x * x; }
+    var b1 = (n * sxy - sx * sy) / (n * sxx - sx * sx);
+    var b0 = (sy - b1 * sx) / n;
+    return [b0, b1];
+  }
+  var g = document.getElementById("sim-pts");
+  if (g) {
+    data.forEach(function (p) {
+      var c = document.createElementNS(NS, "circle");
+      c.setAttribute("cx", px(p[0])); c.setAttribute("cy", py(p[1]));
+      c.setAttribute("r", 6); c.setAttribute("class", "dot");
+      c.setAttribute("fill", p[2] === 0 ? "#2f6fdb" : "#0d9488");
+      g.appendChild(c);
+    });
+    var all = ols(data);
+    var g0 = ols(data.filter(function (p) { return p[2] === 0; }));
+    var g1 = ols(data.filter(function (p) { return p[2] === 1; }));
+    function setLine(id, b, color) {
+      var el = document.getElementById(id);
+      var xa = xMin, xb = xMax;
+      el.setAttribute("x1", px(xa)); el.setAttribute("y1", py(b[0] + b[1] * xa));
+      el.setAttribute("x2", px(xb)); el.setAttribute("y2", py(b[0] + b[1] * xb));
+    }
+    setLine("sim-ovr", all);
+    setLine("sim-g1", g0);
+    setLine("sim-g2", g1);
+    var note = document.getElementById("sim-note");
+    var bAll = document.getElementById("sim-btn-all");
+    var bGrp = document.getElementById("sim-btn-grp");
+    function show(mode) {
+      var grp = mode === "grp";
+      document.getElementById("sim-ovr").style.display = grp ? "none" : "";
+      document.getElementById("sim-g1").style.display = grp ? "" : "none";
+      document.getElementById("sim-g2").style.display = grp ? "" : "none";
+      if (note) {
+        note.textContent = grp
+          ? "Grouped view: within-group slopes are " + g0[1].toFixed(1) + " and " + g1[1].toFixed(1) + " (both negative!)"
+          : "Pooled view: combined slope +" + all[1].toFixed(1) + " (positive association)";
+      }
+      bGrp.classList.toggle("ghost", grp);
+      bAll.classList.toggle("ghost", !grp);
+    }
+    bAll.addEventListener("click", function () { show("all"); });
+    bGrp.addEventListener("click", function () { show("grp"); });
+    show("all");
+  }
+})();
+
+/* ================= Figure 2-1 run OLS by hand ================= */
+(function () {
+  var NS = "http://www.w3.org/2000/svg";
+  var data = [[2.0, 3.1], [2.3, 3.6], [2.6, 3.4], [2.9, 4.2], [3.2, 4.6], [3.5, 4.3], [3.8, 5.2], [3.3, 4.8]];
+  var X0 = 70, X1 = 600, Y0 = 330, Y1 = 40;
+  var xMin = 1.5, xMax = 4.2, yMin = 0, yMax = 8;
+  function px(x) { return X0 + (x - xMin) / (xMax - xMin) * (X1 - X0); }
+  function py(y) { return Y0 - (y - yMin) / (yMax - yMin) * (Y0 - Y1); }
+  var n = data.length, sx = 0, sy = 0, sxy = 0, sxx = 0, i, x, y;
+  for (i = 0; i < n; i++) { x = data[i][0]; y = data[i][1]; sx += x; sy += y; sxy += x * y; sxx += x * x; }
+  var b1h = (n * sxy - sx * sy) / (n * sxx - sx * sx);
+  var b0h = (sy - b1h * sx) / n;
+  var sseBest = 0;
+  for (i = 0; i < n; i++) { var d = data[i][1] - b0h - b1h * data[i][0]; sseBest += d * d; }
+  var line = document.getElementById("ols-line");
+  var resid = document.getElementById("ols-resid");
+  var ptsG = document.getElementById("ols-pts");
+  var txt = document.getElementById("ols-txt");
+  if (!line || !resid || !ptsG) return;
+  data.forEach(function (p) {
+    var c = document.createElementNS(NS, "circle");
+    c.setAttribute("cx", px(p[0])); c.setAttribute("cy", py(p[1]));
+    c.setAttribute("r", 6); c.setAttribute("class", "dot"); c.setAttribute("fill", "#334155");
+    ptsG.appendChild(c);
+  });
+  // Residual segments are created once, then reused with updated coordinates
+  var segs = data.map(function () {
+    var seg = document.createElementNS(NS, "line");
+    seg.setAttribute("stroke", "#ea580c"); seg.setAttribute("stroke-width", 2);
+    resid.appendChild(seg);
+    return seg;
+  });
+  function draw() {
+    var b0 = parseFloat(document.getElementById("ols-b0").value);
+    var b1 = parseFloat(document.getElementById("ols-b1").value);
+    document.getElementById("ols-o0").textContent = b0.toFixed(2);
+    document.getElementById("ols-o1").textContent = b1.toFixed(2);
+    var xa = xMin, xb = xMax;
+    line.setAttribute("x1", px(xa)); line.setAttribute("y1", py(b0 + b1 * xa));
+    line.setAttribute("x2", px(xb)); line.setAttribute("y2", py(b0 + b1 * xb));
+    var sse = 0, i, p, yh;
+    for (i = 0; i < n; i++) {
+      p = data[i]; yh = b0 + b1 * p[0]; sse += (p[1] - yh) * (p[1] - yh);
+      segs[i].setAttribute("x1", px(p[0])); segs[i].setAttribute("y1", py(p[1]));
+      segs[i].setAttribute("x2", px(p[0])); segs[i].setAttribute("y2", py(yh));
+    }
+    if (txt) txt.textContent = "Sum of squared residuals SSE = " + sse.toFixed(2) + " (OLS optimum: " + sseBest.toFixed(2) + ")";
+  }
+  document.getElementById("ols-b0").addEventListener("input", draw);
+  document.getElementById("ols-b1").addEventListener("input", draw);
+  document.getElementById("ols-best").addEventListener("click", function () {
+    document.getElementById("ols-b0").value = b0h.toFixed(2);
+    document.getElementById("ols-b1").value = b1h.toFixed(2);
+    draw();
+  });
+  draw();
+})();
+
+/* ================= Figure 6-1 difference-in-differences ================= */
+(function () {
+  var X_B = 200, X_A = 500;
+  var Y0 = 320, Y1 = 40, vMin = 40, vMax = 78;
+  function py(v) { return Y0 - (v - vMin) / (vMax - vMin) * (Y0 - Y1); }
+  var ctl = [50, 54];          // Control group: before 50 → after 54
+  var trtPre = 48, trend = 4;  // Treatment group: before 48; no-policy trend +4
+  var slider = document.getElementById("did-eff");
+  var out = document.getElementById("did-oe");
+  var txt = document.getElementById("did-txt");
+  if (!slider) return;
+  function draw() {
+    var eff = parseFloat(slider.value);
+    out.textContent = eff.toFixed(1);
+    var trtPost = trtPre + trend + eff;
+    var cfPost = trtPre + trend;
+    function ln(id, v1, v2) {
+      var el = document.getElementById(id);
+      el.setAttribute("x1", X_B); el.setAttribute("y1", py(v1));
+      el.setAttribute("x2", X_A); el.setAttribute("y2", py(v2));
+    }
+    ln("did-ctl", ctl[0], ctl[1]);
+    ln("did-trt", trtPre, trtPost);
+    ln("did-cf", trtPre, cfPost);
+    function dot(id, x, v) {
+      var el = document.getElementById(id);
+      el.setAttribute("cx", x); el.setAttribute("cy", py(v));
+    }
+    dot("did-c1", X_B, ctl[0]); dot("did-c2", X_A, ctl[1]);
+    dot("did-t1", X_B, trtPre); dot("did-t2", X_A, trtPost);
+    var did = (trtPost - trtPre) - (ctl[1] - ctl[0]);
+    if (txt) txt.textContent = "DID estimate = (" + (trtPost - trtPre).toFixed(1) + ") − (" + (ctl[1] - ctl[0]).toFixed(1) + ") = " + did.toFixed(1) + " (the policy effect)";
+  }
+  slider.addEventListener("input", draw);
+  draw();
+})();
+</script>
+</body>
+</html>

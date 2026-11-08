@@ -82,6 +82,7 @@
 ## 本地使用
 
 - 所有页面为**纯静态 HTML**，无需服务器、可完全离线：双击 `index.html` 即可开始。
+- **英文版**：本库另有与中文版逐页对应的完整英文版，入口为 **[en/index.html](en/index.html)**（目录结构与中文版镜像，文件夹为英文命名）；每个页面顶栏都有 EN / 中文 互切链接。英文版说明见 [en/README.md](en/README.md)。
 - 共享设计系统在 `assets/econ.css` 与 `assets/econ.js`，删除会导致样式与交互失效。
 - 教材编写规范见 [DESIGN_SPEC.md](DESIGN_SPEC.md)（也用于继续扩展新分支）。
 - **浏览器要求**：主题色等使用了 `color-mix()`（Chrome/Edge 111+、Safari 16.2+、Firefox 113+）。更旧的浏览器仍可阅读，但卡片底色、边框主题色与顶栏毛玻璃会降级为浅色/透明。

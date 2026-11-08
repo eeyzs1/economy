@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Behavioral Economics · EconLearn Self-Study Path in Economics</title>
+<meta name="description" content="An interactive English behavioral economics tutorial: bounded rationality and heuristics, the prospect-theory value function, hyperbolic discounting, social preferences, and nudges, with interactive demos and self-check quizzes.">
+<link rel="stylesheet" href="../../assets/econ.css">
+</head>
+<body style="--branch:#9333ea">
+<noscript><p class="noscript-tip">The interactive figures and self-tests on this page require JavaScript; without it, the full main text remains readable.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← Home</a>
+  <div class="topbar-title"><span class="topbar-num">15</span>Behavioral Economics</div>
+  <a class="topbar-lang" href="../../15-行为经济学/index.html" hreflang="zh-CN">中文</a>
+  <button class="toc-toggle" aria-expanded="false">Contents</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">Chapters in this track</p>
+    <nav aria-label="Chapter contents">
+      <a href="#overview">Overview &amp; learning goals</a>
+      <a href="#ch1">1 · Bounded Rationality and Heuristics</a>
+      <a href="#ch2">2 · Prospect Theory and Loss Aversion</a>
+      <a href="#ch3">3 · Intertemporal Choice and Self-Control</a>
+      <a href="#ch4">4 · Social Preferences and Fairness</a>
+      <a href="#ch5">5 · Nudges and Choice Architecture</a>
+      <a href="#ch6">6 · Limits and Ethics</a>
+      <a href="#path">Next steps &amp; further reading</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · Self-Study Path in Economics</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">Track 15 · Cross-disciplinary &amp; thought</span>
+        <h1>Behavioral Economics</h1>
+        <p class="hero-en">行为经济学</p>
+        <p class="hero-lead">Standard economics says people are cool-headed calculators; psychology experiments keep discovering instead that people are predictably "irrational" — they fear losses more than they love gains, today's self bullies tomorrow's self, and they tear up free money to make a point. Behavioral economics welcomes these systematic quirks of human nature back into the model, and uses them to explain market anomalies and design better policy.</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">By the end of this track, you will be able to</div>
+        <ul>
+          <li>Use the <strong>System 1 / System 2</strong> framework to judge when a class of decisions is effortless and when it is error-prone</li>
+          <li>Identify the three heuristics — <strong>anchoring, availability, and representativeness</strong> — and the systematic biases they produce</li>
+          <li>Use <strong>prospect theory</strong> (reference points, loss aversion, probability weighting) to explain the disposition effect and the person who buys both insurance and lottery tickets</li>
+          <li>Explain <strong>inconsistent discounting</strong> and preference reversals, and design commitment devices accordingly</li>
+          <li>Evaluate models of <strong>social preferences</strong> against ultimatum-game and dictator-game evidence, and discuss the design and ethical limits of <strong>nudges</strong></li>
+        </ul>
+      </div>
+      <div class="prereq">Prerequisites:
+        <a class="badge" href="../01-microeconomics/index.html">01 Microeconomics (utility &amp; expected utility)</a>
+        <a class="badge" href="../04-game-theory-and-information-economics/index.html">04 Game Theory (ultimatum game, optional)</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">Chapter 1</span>Bounded Rationality and Heuristics</h2>
+
+      <p><strong>Opening question:</strong> A bat and a ball together cost 1.10 yuan; the bat costs 1 yuan more than the ball. How much does the ball cost? More than half of students at top universities blurt out "0.10 yuan" — wrong; it is 0.05 yuan. Why do smart people stumble on grade-school arithmetic?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>The brain runs in two modes. <strong>System 1</strong> is fast, automatic, and effortless — recognizing faces, reading tone of voice, completing "2+2". <strong>System 2</strong> is slow, deliberate, and effortful — multiplying 17×24 in your head, checking contract clauses. System 2 is a lazy gatekeeper that waves through System 1's first answer most of the time. The trouble is that System 1's answer <em>looks</em> right, so we stop checking. Nobel laureate Herbert Simon proposed <strong>bounded rationality</strong>: cognitive resources and time are scarce, so people aim not for "the best" but for "good enough" (to satisfice). The brain therefore takes shortcuts — <strong>heuristics</strong>. Shortcuts are usually efficient, but in particular environments they produce <strong>systematic, predictable</strong> biases — and that is exactly where behavioral economics begins.</p>
+      </aside>
+
+      <aside class="callout history">
+        <div class="callout-title">A short history of the field</div>
+        <p>Simon won the Nobel Prize in 1978 for bounded rationality; Kahneman (with the late Tversky) won in 2002 for bringing psychological experiments into judgment and decision-making under uncertainty; Thaler won in 2017 for pushing behavioral ideas into saving, markets, and policy. It took roughly forty years for behavioral economics to go from heresy to a standard tool in the mainstream toolbox.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Bounded Rationality</div><span class="term-en">有限理性</span><div class="term-def">With limited cognitive capacity, time, and information, people stop searching once an option is "good enough" rather than exhausting the optimum. The master assumption of behavioral economics.</div></div>
+        <div class="term"><div class="term-name">System 1 / System 2</div><span class="term-en">系统 1 / 系统 2</span><div class="term-def">Kahneman's dual-process metaphor: System 1 is intuitive, fast, and automatic; System 2 is reflective, slow, and effortful. They are modes of processing, not two literal regions of the brain.</div></div>
+        <div class="term"><div class="term-name">Anchoring</div><span class="term-en">锚定效应</span><div class="term-def">An irrelevant initial number pulls subsequent numerical estimates toward itself. Even when the number comes from a roulette wheel, estimates of the share of African countries in the UN are dragged along by it.</div></div>
+        <div class="term"><div class="term-name">Availability Heuristic</div><span class="term-en">可得性启发式</span><div class="term-def">The more easily an example comes to mind, the more common it is judged to be. After a plane crash makes headlines, people overestimate the risk of flying — even though driving is statistically more dangerous.</div></div>
+        <div class="term"><div class="term-name">Representativeness Heuristic</div><span class="term-en">代表性启发式</span><div class="term-def">Judging probability by how much something resembles a typical case, ignoring base rates and sample size. The "Linda problem" and the gambler's fallacy (betting on black after five reds) both spring from it.</div></div>
+      </div>
+
+      <p>Each of the three classic heuristics has a signature crash scene:</p>
+      <ul>
+        <li><strong>Anchoring</strong>: first ask "Did Gandhi die before or after age 114?" then ask "How old do you think he was when he died?" — estimates come out more than a decade higher than without the leading question. The commercial "strikethrough original price" is someone handing you an anchor.</li>
+        <li><strong>Availability</strong>: after a crash makes the news, flight bookings fall and sales of air-travel accident insurance rise; kitchen falls, which are genuinely frequent, never make headlines, and so get underestimated.</li>
+        <li><strong>Representativeness</strong>: describe "Linda: 31, philosophy graduate, concerned with discrimination and social justice," then ask which is more likely — (A) Linda is a bank teller, or (B) Linda is a bank teller and active in the feminist movement. Most people pick B, but "teller and feminist" is a subset of "teller" and cannot be more probable. This <strong>conjunction fallacy</strong> is representativeness overriding logic.</li>
+      </ul>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Strikethrough prices and purchase-limit anchors</div>
+        <p>In an e-commerce mega-sale's "was 999 yuan, now 399 yuan," the 999 usually works not as information but as an <strong>anchor</strong>: it lifts your estimate of the product's worth and makes 399 look like a bargain — which is why regulators require that the "original price" have actually changed hands. Another classic field study: a supermarket posted "Limit 12 cans per person" on soup, and average purchases per customer rose significantly versus no limit — the anchor "12" quietly answered "how many cans should I buy," a question you had never thought to ask.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Heuristics are fallacies and should be eliminated."</strong> Quite the opposite: most of the time heuristics are efficient and robust. Gigerenzer's work on <strong>ecological rationality</strong> shows that simple rules matched to their environment (such as the equal-weighted 1/N portfolio) can rival complex models. The point of behavioral economics is not to sneer at shortcuts but to identify <strong>the environments in which they systematically fail</strong> — and then improve those environments. A second pitfall: treating System 1 and System 2 as two organs in the brain — they are only a convenient metaphor.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.1</span>Which of the following tasks relies mainly on System 2 (slow thinking)?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Recognizing an old friend in a photo at a glance</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Multiplying 17 × 24 in your head</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Sensing from someone's tone that they are unfriendly</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Face recognition, reading emotion, and answering "2+2" are System 1's automatic operations — fast and effortless. Multi-digit multiplication has no automatic answer; it must occupy working memory step by step, and that is precisely System 2's signature: slow, effortful, interruptible. Rule of thumb: anything that makes you "pause and think" is probably System 2 at work.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.2</span>After a local plane crash is covered in the news for a month straight, passenger numbers fall noticeably, even though driving is statistically more dangerous. Which heuristic most likely drives the overestimation of crash risk?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Representativeness heuristic</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Availability heuristic</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Anchoring effect</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The more easily a scene can be "retrieved" from memory (the higher its availability), the more common the event is estimated to be — and replaying crash footage on the news artificially inflates availability. Representativeness judges by resemblance to a typical case (the Linda problem); anchoring needs an initial number pulling an estimate. Here there is neither a typicality comparison nor an anchor — only the vividness of memory.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Bounded rationality: cognitive resources are scarce, so people aim for "good enough," not the optimum.</li>
+          <li>System 1 is fast and automatic; System 2 is slow and effortful — and a lazy System 2 often waves through System 1's first response.</li>
+          <li>The three shortcuts — anchoring, availability, representativeness — are usually efficient but produce systematic, predictable biases in particular environments.</li>
+          <li>The goal of behavioral economics is to identify the failing environments and improve them, not to mock the shortcuts.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">Chapter 2</span>Prospect Theory: Reference Points and Loss Aversion</h2>
+
+      <p><strong>Opening question:</strong> Why do investors rush to sell their winning stocks while clinging to their losers forever? Taking the loss — "cutting the flesh," as Chinese traders put it — is only a click away.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Standard theory says utility depends on <strong>final wealth</strong>; Kahneman and Tversky's 1979 <strong>prospect theory</strong> says people feel <strong>gains and losses relative to a reference point</strong>. The reference point is usually the status quo (the purchase price, last year's bonus, the neighbor's salary), and three things follow. <strong>First</strong>, <strong>loss aversion</strong> — the pain of losing 100 yuan is roughly equal to the pleasure of gaining more than 200 yuan. <strong>Second</strong>, <strong>diminishing sensitivity</strong> — the jump from 0 to 100 yuan feels better than the jump from 1,000 to 1,100 yuan, though the difference is identical. <strong>Third</strong>, <strong>probability weighting</strong> — tiny probabilities are overweighted (a one-in-ten-thousand chance is felt as at least one in a thousand), and near-certain options get an extra boost (the certainty effect). Together, these three are the behavioral map of <strong>how people decide under risk</strong>.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Prospect Theory</div><span class="term-en">前景理论</span><div class="term-def">Kahneman &amp; Tversky (1979): utility is defined over gains and losses relative to a reference point; the loss side is steeper (loss aversion), sensitivity diminishes on both sides, and probabilities are weighted nonlinearly.</div></div>
+        <div class="term"><div class="term-name">Reference Point</div><span class="term-en">参照点</span><div class="term-def">The dividing line between gains and losses, usually the status quo or an expectation (the purchase price, last year's bonus). Move the reference point and the same money flips from "gain" to "loss" — preferences flip with it.</div></div>
+        <div class="term"><div class="term-name">Loss Aversion</div><span class="term-en">损失厌恶</span><div class="term-def">Losses hurt more than equal-sized gains please; the ratio λ is usually estimated around 2 (a typical value is 2.25).</div></div>
+        <div class="term"><div class="term-name">Probability Weighting Function</div><span class="term-en">概率权重函数</span><div class="term-def">Subjective probability π(p) ≠ p: small probabilities are overweighted, moderate-to-large ones underweighted. Explains the certainty effect and the "fourfold pattern."</div></div>
+        <div class="term"><div class="term-name">Disposition Effect</div><span class="term-en">处置效应</span><div class="term-def">Investors tend to sell winning positions too early and hold losing ones too long — "sell winners, hold losers," the standard fingerprint of loss aversion in capital markets.</div></div>
+      </div>
+
+      <div class="formula">v(x) = x<sup>α</sup> (x ≥ 0);  v(x) = −λ·(−x)<sup>β</sup> (x &lt; 0)
+        <span class="f-note">Math box: the value function. Empirical estimates α, β ≈ 0.88 (diminishing sensitivity); loss-aversion coefficient λ ≈ 2.25 (Kahneman &amp; Tversky, 1992)</span>
+      </div>
+
+      <p>The fourfold pattern (gains/losses × high/low probability) delivers a beautiful set of predictions. Facing a <strong>high-probability gain</strong> (900 for sure vs. a 91% chance of 1,000), people are risk-averse — take the money and run. Facing a <strong>high-probability loss</strong> (lose 900 for sure vs. a 90% chance of losing 1,000), people are risk-seeking — "one more bet might win it back." Facing a <strong>low-probability jackpot</strong> they buy lottery tickets (risk-seeking); facing a <strong>low-probability catastrophe</strong> they buy insurance (risk-averse). The same person buying both insurance and lottery tickets is a contradiction in expected-utility theory — and two sides of the same coin in prospect theory.</p>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 2-1 · Value function plotter</div>
+        <p class="fig-sub">Try it: drag the loss-aversion coefficient λ and the sensitivity parameter α and watch the shape of the value function change; the bottom readout tells you how much losing 100 yuan hurts.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="Prospect-theory value function chart: the horizontal axis is gains and losses relative to the reference point, the vertical axis subjective value. The loss-side curve is steeper than the gain side, and both flatten toward the edges. Sliders control the loss-aversion coefficient λ and the sensitivity parameter α.">
+            <line class="gridline" x1="330" y1="70" x2="590" y2="70"/>
+            <line class="gridline" x1="70" y1="350" x2="330" y2="350"/>
+            <line class="gridline" x1="590" y1="70" x2="590" y2="210"/>
+            <line class="gridline" x1="70" y1="210" x2="70" y2="350"/>
+            <line id="pt-gref" x1="330" y1="210" x2="590" y2="147.8" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <line id="pt-lref" x1="330" y1="210" x2="70" y2="272.2" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <text id="pt-reflab" class="chart-label-en" x="196" y="233" fill="#64748b">Linear reference (λ=1, no diminishment)</text>
+            <line class="axis" x1="60" y1="210" x2="612" y2="210"/>
+            <line class="axis" x1="330" y1="352" x2="330" y2="48"/>
+            <text class="chart-label" x="456" y="198" text-anchor="middle">Gains/losses x relative to reference point (yuan)</text>
+            <text class="chart-label" x="330" y="40" text-anchor="middle">Subjective value v(x)</text>
+            <text class="chart-label-en" x="590" y="228" text-anchor="middle">+100</text>
+            <text class="chart-label-en" x="70" y="228" text-anchor="middle">−100</text>
+            <text class="chart-label-en" x="330" y="228" text-anchor="middle">0</text>
+            <text class="chart-label-en" id="pt-onelab" x="322" y="142" text-anchor="end">+1</text>
+            <text class="chart-label-en" id="pt-lamlab" x="322" y="345" text-anchor="end">−λ = −2.25</text>
+            <path id="pt-gain" class="curve" stroke="#9333ea" d=""/>
+            <path id="pt-loss" class="curve" stroke="#9333ea" d=""/>
+            <text class="chart-label" x="480" y="180" text-anchor="middle" style="fill:#9333ea">Gain side v = x^α</text>
+            <text class="chart-label" x="140" y="372" text-anchor="middle" style="fill:#9333ea">Loss side v = −λ(−x)^α (steeper)</text>
+            <text id="pt-note" class="chart-label-en" x="320" y="392" text-anchor="middle" style="font-weight:700"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="pt-l">Loss aversion λ</label><input type="range" id="pt-l" min="1" max="3" step="0.05" value="2.25"><output id="o-ptl" for="pt-l">2.25</output></div>
+          <div class="ctrl"><label for="pt-a">Sensitivity α</label><input type="range" id="pt-a" min="0.5" max="1" step="0.01" value="0.88"><output id="o-pta" for="pt-a">0.88</output></div>
+        </div>
+        <figcaption>How to read this figure: the loss-side curve is clearly steeper near the origin (the larger λ, the steeper), while both gain and loss sides flatten out toward the edges (the diminishing sensitivity of α&lt;1). The gray dashed line is the linear reference with neither loss aversion nor diminishment. Try λ=1 (the curve is symmetric) and λ=3 (losses hurt badly), then watch how the subjective value of the 50-50 gamble at the bottom moves from "don't care" to "firmly reject."</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The disposition effect hurts — and it costs</div>
+        <p>Using 10,000 brokerage accounts, Odean (1998) found that retail investors are significantly more prone to sell <strong>winning</strong> stocks than <strong>losing</strong> ones — "sell winners, hold losers" follows directly from a reference point (the purchase price) plus loss aversion. The stinger: the winners that were sold went on, on average, to <strong>outperform</strong> the losers that were kept. Studies of Chinese A-share accounts find the same pattern: high-turnover retail investors are especially slow to cut their losses, and some even buy more to average down as the losses deepen. A behavioral bias is not just psychological discomfort — it has a price in real money.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Loss aversion is just risk aversion."</strong> No. Risk aversion in standard theory is concavity of the utility function, a statement about <strong>final wealth</strong>; loss aversion is asymmetry of gains and losses around a <strong>reference point</strong>, and it predicts exactly what a concave utility function cannot: locking gains in quickly (risk aversion) while holding losers and even doubling down (risk-seeking) — an <strong>asymmetry</strong> the concave form cannot deliver. Another mistake: assuming the reference point is fixed. Last year's three-month bonus makes this year's two-month bonus feel like a loss; money won at the casino is booked into a different <strong>mental account</strong>, so losing it back barely hurts (the house-money effect). Reference points are moved by experience and by wording.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.1</span>Mr. Wang refuses to sell a stock that has fallen 20%, yet quickly sells one that has risen 10%. Which two elements of prospect theory are the key to explaining this "disposition effect"?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>Reference dependence and loss aversion</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>Risk aversion and liquidity constraints</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Sunk costs and money illusion</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Utility is defined over gains and losses relative to the <strong>purchase price</strong> (the reference point). Selling a loser cashes in the psychological loss, instantly amplifying the pain (λ≈2), so he delays; selling a winner locks in "happiness he can see." Standard risk aversion (B) cannot explain the <strong>asymmetry</strong> of the same person selling winners in a hurry while holding losers forever — a concave utility function would only say he dislikes volatility on both sides.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.2</span>The same person buys insurance and lottery tickets. The most fitting explanation is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>His attitude toward risk fluctuates randomly</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Probability weighting overweights tiny probabilities: risk-aversion on the loss side buys insurance, risk-seeking on the gain side buys lottery tickets</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The insurance was sold to him and has nothing to do with preferences</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Prospect theory's probability weighting function gives tiny probabilities more than proportional weight (π(p)&gt;p): a small-probability, large loss like a crash is magnified → willing to buy insurance even at a high price (risk-averse on the loss side); a small-probability, large gain like a jackpot is magnified just the same → also willing to buy lottery tickets (risk-seeking on the gain side). This is the diagonal combination of the "fourfold pattern," a pattern that a single unified risk-aversion parameter in expected-utility theory cannot produce.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Utility depends on gains and losses relative to a reference point, not on final wealth; the reference point can be moved by the status quo, expectations, and wording.</li>
+          <li>Loss aversion λ≈2.25: losses hurt more than equal-sized gains; risk-seeking in the loss domain, risk aversion in the gain domain.</li>
+          <li>Diminishing sensitivity (α&lt;1) flattens the curve on both sides.</li>
+          <li>Probability weighting overweights small probabilities and adds a premium to certainty → buying insurance and lottery tickets at once, the fourfold pattern.</li>
+          <li>The disposition effect (sell winners, hold losers) is one of prospect theory's most robust fingerprints in capital markets.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">Chapter 3</span>Intertemporal Choice and Self-Control</h2>
+
+      <p><strong>Opening question:</strong> You have been promising yourself "early night tonight" for three weeks; the annual gym membership is a year old and you have been four times. Why do the you who plans and the you who execute seem to be two different people?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>The standard model uses <strong>exponential discounting</strong>: each period, the future shrinks by the same proportion δ. It has an elegant property — <strong>time consistency</strong>: a plan made today for next month is still executed next month. Real people look more like <strong>hyperbolic discounters</strong>: extremely sensitive to the gap between "now and soon," yet numb to the gap between "far and farther" — colloquially, <strong>the temptation right in front of you gets an extra boost</strong>. Economists usually capture this with <strong>quasi-hyperbolic discounting (the β-δ model)</strong>: everything outside "now" first takes a β discount (β&lt;1) — and that is <strong>present bias</strong>. <strong>Preference reversal</strong> (time inconsistency) then appears: asked today, you choose "salad next month"; when next month actually arrives at your lips, you choose "fried chicken today." The planning self and the executing self have conflicting interests, and the executing self always wins.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Exponential Discounting</div><span class="term-en">指数贴现</span><div class="term-def">The future shrinks by a fixed proportion δ each period; the curve declines at a constant rate, implying time consistency: plans and execution never conflict.</div></div>
+        <div class="term"><div class="term-name">Quasi-hyperbolic Discounting (β-δ)</div><span class="term-en">准双曲贴现</span><div class="term-def">All future periods first take a β discount and then decline by δ. The smaller β is, the greater the privilege of "now" over the future.</div></div>
+        <div class="term"><div class="term-name">Present Bias</div><span class="term-en">现时偏好</span><div class="term-def">Overweighting immediate rewards and costs: pleasant little tasks get done today, hard ones are pushed onto tomorrow's self.</div></div>
+        <div class="term"><div class="term-name">Commitment Device</div><span class="term-en">承诺机制</span><div class="term-def">Voluntarily restricting your future choice set — deciding on behalf of "your future self" in advance: automatic transfers, deadlines, refundable-but-unusable deposits.</div></div>
+      </div>
+
+      <div class="formula">U = u(c₀) + β · Σ<sub>t≥1</sub> δ<sup>t</sup> u(c<sub>t</sub>), β &lt; 1
+        <span class="f-note">Math box: quasi-hyperbolic discounting. β penalizes all of "the future's" consumption at once (creating the now-versus-later asymmetry); δ is the per-period discount factor; at β=1 the model reverts to exponential discounting</span>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 3-1 · Exponential vs. quasi-hyperbolic: a delayed-reward choice simulation</div>
+        <p class="fig-sub">Option A: 100 yuan in t months; option B: 130 yuan in t+3 months. Drag the decision point t, switch between the two models, and see how the same reward structure yields different choices — even a reversal.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 432" role="img" aria-label="Present-value chart: the horizontal axis is months of waiting, the vertical axis yuan. The blue solid line is the present value of 100 yuan under exponential discounting, declining smoothly; the orange solid line is the present value under quasi-hyperbolic discounting, with one sharp drop in the first month. Vertical lines mark the current decision point t and t plus 3 months; the points A and B are the two options' present values.">
+            <line class="gridline" x1="70" y1="240" x2="590" y2="240"/>
+            <line class="gridline" x1="70" y1="140" x2="590" y2="140"/>
+            <text class="chart-label-en" x="62" y="244" text-anchor="end">50</text>
+            <text class="chart-label-en" x="62" y="144" text-anchor="end">100</text>
+            <text class="chart-label-en" x="62" y="344" text-anchor="end">0</text>
+            <line class="axis" x1="70" y1="340" x2="600" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="55"/>
+            <text class="chart-label" x="200" y="358" text-anchor="middle">3</text>
+            <text class="chart-label-en" x="70" y="358" text-anchor="middle">0</text>
+            <text class="chart-label-en" x="330" y="358" text-anchor="middle">6</text>
+            <text class="chart-label-en" x="460" y="358" text-anchor="middle">9</text>
+            <text class="chart-label-en" x="590" y="358" text-anchor="middle">12</text>
+            <text class="chart-label" x="330" y="380" text-anchor="middle">Decision point: months until reward A arrives (t, months)</text>
+            <text class="chart-label" transform="rotate(-90 24 210)" x="24" y="210" text-anchor="middle">Present value (yuan)</text>
+            <path id="dc-exp" class="curve curve-c1" d=""/>
+            <path id="dc-hyp" class="curve curve-c2" d=""/>
+            <text id="dc-elab" class="chart-label-en" x="588" y="212" text-anchor="end" style="fill:#2f6fdb;font-weight:700">Exponential δ^t</text>
+            <text id="dc-hlab" class="chart-label-en" x="588" y="240" text-anchor="end" style="fill:#ea580c;font-weight:700">Quasi-hyperbolic β·δ^t</text>
+            <text id="dc-btag" class="chart-label-en" x="120" y="200" style="fill:#ea580c">Present discount β</text>
+            <line id="dc-vt" x1="70" y1="55" x2="70" y2="340" stroke="#475569" stroke-width="1.5"/>
+            <line id="dc-vt3" x1="200" y1="55" x2="200" y2="340" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <circle id="dc-a" class="dot" r="6" cx="70" cy="140" fill="#2f6fdb"/>
+            <circle id="dc-b" class="dot" r="6" cx="70" cy="90" fill="#ea580c"/>
+            <text id="dc-alab" class="chart-label-en" x="48" y="144" text-anchor="end" style="font-weight:700">A</text>
+            <text id="dc-blab" class="chart-label-en" x="82" y="94" style="font-weight:700">B</text>
+            <text id="dc-ve" class="chart-label-en" x="70" y="404" style="font-weight:700"></text>
+            <text id="dc-vh" class="chart-label-en" x="70" y="424" style="font-weight:700"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="dc-t">Decision point t</label><input type="range" id="dc-t" min="0" max="9" step="1" value="0"><output id="dc-ot" for="dc-t">Today</output></div>
+          <div class="ctrl"><label for="dc-d">Monthly δ</label><input type="range" id="dc-d" min="90" max="99" step="1" value="96"><output id="dc-od" for="dc-d">0.96</output></div>
+          <div class="ctrl"><label for="dc-bta">Present bias β</label><input type="range" id="dc-bta" min="50" max="100" step="5" value="70"><output id="dc-ob" for="dc-bta">0.70</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="dc-m1">Show exponential model</button>
+          <button class="btn ghost" id="dc-m2">Show quasi-hyperbolic model</button>
+        </div>
+        <figcaption>How to read this figure: the exponential curve declines at a constant rate — the ratio between one yuan three months later and one yuan three months earlier is fixed, so whenever you decide, the ranking of A and B never changes (time consistency). The quasi-hyperbolic curve takes one sharp drop — the "present discount β" — in the first month: when A lands exactly on "now" (t=0) it escapes the β discount, and the choice <strong>reverses</strong> with the decision point. Drag β to 1.00 and the reversal disappears; drag δ to 0.90 and even the exponential model switches to A — but still independently of t.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Gym memberships and outsourced self-control</div>
+        <p>Studying bills from a US gym chain, DellaVigna and Malmendier found that members on monthly or annual plans averaged fewer than 5 visits a month, making their cost per visit far higher than pay-per-visit — "I'll come every day from now on," promised at the moment of signing up, is textbook over-optimism plus present bias (pay the cost now, push the workouts onto the future). The antidote is a <strong>commitment device</strong>: retirement contributions auto-transferred the day after payday, Christmas savings clubs where you pay first and consume later, deposit apps that keep you offline while you write (StickK: miss the goal and your deposit goes to the organization you hate most). Behavioral policy uses the same principle: scheduling the annual checkup by default in birthday week works far better than any "remember to get checked" slogan.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Hyperbolic discounting just means impatience."</strong> No. A very low δ is <strong>consistent</strong> impatience: today's plan is carried out tomorrow exactly as made. The behavioral signature is the <strong>inconsistency</strong>: the ranking of small and large rewards flips as the moment approaches. The policy implications are completely different — for consistent impatience, raise the rate of return or lower the cost of waiting; for present bias, use commitment devices to rearrange the timing structure of choice. A second mistake is treating present bias as a character flaw of weak will: it is a measurable, modelable preference parameter — firms use it to design "buy now, pay later," and smart people should use it to design their own environments.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.1</span>"I'll definitely sleep early tonight" — said for three weeks running. In terms of quasi-hyperbolic (β-δ) discounting, the most accurate diagnosis is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>Preference reversal: the benefit of sleeping lies in the future while the temptation of the phone is right in front of you — the moment "tonight" arrives, the choice flips</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>He never wanted to sleep early and has been lying the whole time</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>δ is too low under exponential discounting</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> When planning, both "scrolling tonight" and "sleeping early tonight" lie in the future, both take the β discount, and health's comparative advantage wins; when "tonight" actually arrives, scrolling becomes "now," escapes the β discount, and the immediate temptation is instantly magnified — the choice flips. This is precisely the preference reversal of Figure 3-1: "the small reward today, the large reward a month from today." C is wrong: a low δ is only consistent impatience, and it never changes its mind as the moment approaches.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.2</span>Scheduling the automatic investment deduction for the day after payday works far better than counting on "manually saving" at month's end, mainly because it:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Pays a higher interest rate on automatically deducted products</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Removes the in-the-moment choice before temptation ever appears, deciding on behalf of "your future self"</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>People have a natural trust in the word "automatic"</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The present-biased person's predicament is that the "self of the moment" always wins. Automatic transfer hands the decision back to the self that set up the commitment: the money is gone before it ever reaches the spendable account, so the self of the moment never gets a vote — this is the standard posture of a commitment device: constrain tomorrow's choice set rather than persuade tomorrow's self. Interest rates (A) are usually no different, and trust (C) is hardly the point.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Exponential discounting implies time consistency: plans and execution never conflict; a low δ is only consistent impatience.</li>
+          <li>Quasi-hyperbolic discounting (β-δ) captures present bias: the whole future takes the β discount, and "now" holds a privilege.</li>
+          <li>Present bias produces preference reversal: the large reward is chosen today, the small temptation when the moment arrives.</li>
+          <li>The antidote is a commitment device: automatic transfers, deposits, deadlines — deciding in advance for your future self.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">Chapter 4</span>Social Preferences and Fairness Games</h2>
+
+      <p><strong>Opening question:</strong> Splitting 100 yuan with a stranger, one shot only: you offer 1 yuan and keep 99 for yourself, and the stranger will most likely refuse — walking away with nothing just to leave you empty-handed too. In standard theory this is an "irrational" rejection; yet it happens reliably in every laboratory in the world. Who exactly is being irrational?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Perhaps <em>people</em> are not wrong — the <em>model</em> is too narrow. Write <strong>fairness, reciprocity, and altruism</strong> into the utility function and the rejection makes immediate sense: punishing a greedy proposer delivers a psychological payoff in itself. <strong>Ultimatum game</strong>: a proposer splits 100 yuan, and the responder can accept or reject (rejection leaves both with 0). The subgame-perfect equilibrium is "offer the smallest unit; the responder accepts." In experiments the average offer is 30–40%, and offers below 20% are rejected about half the time. The <strong>dictator game</strong> deletes the rejection stage, yet allocators still give away two to three tenths on average — so it is not only fear of punishment; there is also pure altruism and fairness preference. The <strong>trust game</strong> and the <strong>public-goods game</strong> go further: people will pay out of their own pockets to punish free riders (<strong>altruistic punishment</strong>), and precisely this punishment sustains cooperation. The sense of fairness is not noise; it is the lubricant that keeps society running.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Social Preferences</div><span class="term-en">社会偏好</span><div class="term-def">Utility depends not only on one's own payoff but also on others' payoffs and intentions: fairness, reciprocity, altruism, inequality aversion.</div></div>
+        <div class="term"><div class="term-name">Ultimatum Game</div><span class="term-en">最后通牒博弈</span><div class="term-def">A proposer offers a split; the responder accepts and the split is implemented, or rejects and both get zero. Standard prediction s≈0; in experiments the average offer is 30–40%, and low offers are often rejected.</div></div>
+        <div class="term"><div class="term-name">Dictator Game</div><span class="term-en">独裁者博弈</span><div class="term-def">The rejection stage is removed and one side simply allocates. Nonzero giving points to altruism or fairness; giving falls under double-blind conditions, showing that "being watched" also matters.</div></div>
+        <div class="term"><div class="term-name">Negative Reciprocity</div><span class="term-en">负互惠</span><div class="term-def">Retaliating against those who treat you badly, even at a cost to yourself. Rejecting a low offer is the classic case; altruistic punishment is its public-goods version.</div></div>
+        <div class="term"><div class="term-name">Inequality Aversion</div><span class="term-en">不平等厌恶</span><div class="term-def">The Fehr–Schmidt model: utility falls whether you are behind or ahead of others — a way to parameterize "fairness enters the utility function."</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 4-1 · Ultimatum game simulator</div>
+        <p class="fig-sub">You are the proposer, and the pot is 100 yuan. Drag the slider to choose the share s you offer the responder and see the expected acceptance rate and your expected payoff; click the button to play a real round against 100 simulated responders.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 424" role="img" aria-label="Ultimatum game chart: the horizontal axis is the offered share; the teal curve is the responder's acceptance rate and the orange curve the proposer's expected payoff. The acceptance rate rises with the share; expected payoff rises then falls, peaking between one quarter and one third. A vertical line and dots mark the current offered share.">
+            <line class="gridline" x1="70" y1="267.5" x2="570" y2="267.5"/>
+            <line class="gridline" x1="70" y1="205" x2="570" y2="205"/>
+            <line class="gridline" x1="70" y1="142.5" x2="570" y2="142.5"/>
+            <text class="chart-label-en" x="62" y="271" text-anchor="end">25</text>
+            <text class="chart-label-en" x="62" y="209" text-anchor="end">50</text>
+            <text class="chart-label-en" x="62" y="146" text-anchor="end">75</text>
+            <text class="chart-label-en" x="62" y="84" text-anchor="end">100</text>
+            <text class="chart-label-en" x="62" y="334" text-anchor="end">0</text>
+            <line class="axis" x1="70" y1="330" x2="580" y2="330"/>
+            <line class="axis" x1="70" y1="330" x2="70" y2="65"/>
+            <text class="chart-label-en" x="170" y="352" text-anchor="middle">10</text>
+            <text class="chart-label-en" x="270" y="352" text-anchor="middle">20</text>
+            <text class="chart-label-en" x="370" y="352" text-anchor="middle">30</text>
+            <text class="chart-label-en" x="470" y="352" text-anchor="middle">40</text>
+            <text class="chart-label-en" x="570" y="352" text-anchor="middle">50</text>
+            <text class="chart-label" x="320" y="382" text-anchor="middle">Offered share s (%, of a 100-yuan pot)</text>
+            <text class="chart-label" transform="rotate(-90 24 200)" x="24" y="200" text-anchor="middle">Acceptance rate (%) / Expected payoff (yuan)</text>
+            <line x1="80" y1="70" x2="80" y2="330" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <text class="chart-label-en" x="88" y="72">Standard theory predicts s≈0</text>
+            <line x1="470" y1="70" x2="470" y2="330" stroke="#d8b4fe" stroke-width="1.5" stroke-dasharray="5 5"/>
+            <text class="chart-label-en" x="470" y="62" text-anchor="middle">Most common lab offer: around 40%</text>
+            <path id="ug-acc" class="curve curve-c3" d=""/>
+            <path id="ug-ev" class="curve curve-c2" d=""/>
+            <text class="chart-label-en" x="558" y="70" text-anchor="end" style="fill:#0d9488;font-weight:700">Acceptance rate p(s)</text>
+            <text class="chart-label-en" x="558" y="226" text-anchor="end" style="fill:#ea580c;font-weight:700">Expected payoff (yuan)</text>
+            <line id="ug-v" x1="370" y1="70" x2="370" y2="330" stroke="#475569" stroke-width="1.5"/>
+            <circle id="ug-adot" class="dot" r="5.5" cx="370" cy="93" fill="#0d9488"/>
+            <circle id="ug-dot" class="dot" r="6.5" cx="370" cy="164" fill="#ea580c"/>
+            <text id="ug-note" class="chart-label-en" x="320" y="402" text-anchor="middle" style="font-weight:700"></text>
+            <text id="ug-sim" class="chart-label-en" x="320" y="420" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="ug-s">Share offered to the responder s</label><input type="range" id="ug-s" min="0" max="50" step="1" value="30"><output id="ug-o" for="ug-s">30%</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="ug-run">Simulate 100 responders</button>
+        </div>
+        <figcaption>How to read this figure: the acceptance curve represents a "fairness-minded responder" (with a motive to punish), and expected payoff = acceptance rate × (100 − s). Standard theory's "offer only 1%" yields an expected payoff of nearly zero against real responders; the payoff peak sits at 25–35% — strikingly close to what proposers actually do in experiments worldwide. In this game's equilibrium, greed is punished away by the responder's negative reciprocity.</figcaption>
+      </figure>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead>
+            <tr><th>Game</th><th>Average proposer gives</th><th>Standard self-interest prediction</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Dictator game</td><td class="num">20–30%</td><td class="num">0 (or the smallest unit)</td></tr>
+            <tr><td>Ultimatum game</td><td class="num">30–40%</td><td class="num">≈1%</td></tr>
+            <tr><td>Public-goods game (with punishment)</td><td class="num">Contributions rise sharply</td><td class="num">Zero contribution</td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:.8125rem;color:#4b5563;">Approximate ranges across laboratories; exact values vary with design and culture. The direction is highly consistent: real offers sit far above the self-interested prediction.</p>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Fairness grows with the mode of production</div>
+        <p>Henrich and colleagues repeated the ultimatum game in 15 small-scale societies (hunters, herders, whalers, slash-and-burn farmers): the deeper a society's market integration and the more important cooperative production, the more generous the offers (the Indonesian whaling village of Lamalera averaged about 58% — collective whaling cannot function without fair sharing), while the nearly self-sufficient Machiguenga farmers of Peru offered only about 26%, with low rejection rates as well. Fairness norms are not a universal constant but an <strong>adaptation</strong> to the local way of making a living — echoing Chapter 1's ecological-rationality theme of heuristics matching their environment. In high-stakes experiments (pots of several hundred dollars) low offers are still rejected, so this is not "the money is too small to matter."</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"People who reject low offers are irrational."</strong> That holds only under the narrow definition "maximize monetary payoff in this round." In repeated, reputation-bearing social settings, rejecting a greedy offer is an optimal investment in future cooperation: tolerate today's 1-yuan humiliation and you will face more 1-yuan offers tomorrow. Experimental economics adds a second caution: dictator giving drops markedly under <strong>double-blind</strong> conditions (where not even the experimenter knows who gave what) — part of that "altruism" is really social-image management. Before concluding, separate "preference" from "being observed."</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.1</span>In an ultimatum game, the responder rejects a 15% split. Which economic explanation best holds up?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The responder is irrational and failed to maximize monetary payoff</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The responder's utility function includes fairness and negative reciprocity: the utility of punishing a greedy offer exceeds 15 yuan</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The absolute amount at 15% is too small to be worth clicking "accept"</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> With fairness written into the utility function, rejection is rational utility maximization — spending 15 yuan to buy the psychological payoff of "punishing the greedy" plus a reputational signal. In high-stakes games (pots of several hundred dollars) low shares are still rejected, ruling out C; A promotes the <strong>model assumption</strong> "maximize monetary payoff" into the <strong>definition</strong> of rationality — when the model fails, fix the model rather than declare the human being wrong.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.2</span>In a dictator game, allocators still give away about 20% on average, although the other side has no power whatsoever to punish. This shows that:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Participants misunderstood the rules</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Even without the risk of punishment, altruism and fairness preferences exist; the pure self-interest model is too narrow</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The pure self-interest model still holds perfectly when "nobody is watching"</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The dictator game removes the rejection stage, so every cent given away is real money out of the giver's pocket (whether from altruism, fairness, or image concerns). The bare fact that giving is nonzero is already enough to reject the narrow "everyone maximizes only their own money" model; at the same time, giving falls in double-blind experiments, so "being observed" contributes part of the story — the model should accommodate both forces rather than choose between them.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Ultimatum: average offers 30–40%, low offers rejected about half the time; dictators still give 20–30%.</li>
+          <li>Fairness, reciprocity, altruism, and inequality aversion can enter the utility function — the rejection is therefore rational behavior.</li>
+          <li>Altruistic punishment can sustain cooperation in public goods — social preferences are the lubricant that keeps society running.</li>
+          <li>The strength of fairness norms varies with livelihood and culture (cross-cultural experiments); when interpreting, distinguish preference from image management.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">Chapter 5</span>Nudges and Choice Architecture</h2>
+
+      <p><strong>Opening question:</strong> Change nothing but a form's default checkbox and organ-donation consent can jump from 12% to over 99% — not a cent of subsidy added, not a single option removed. Since when does a printing detail carry that much power?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Since people are swayed by inertia, procrastination, and defaults, <strong>how the options are arranged</strong> is itself an influence on outcomes — Thaler and Sunstein call this <strong>choice architecture</strong>. A <strong>nudge</strong>, by definition, bans no option and does not meaningfully change economic incentives; it only rearranges the choice environment, gently pushing people's <strong>behavior</strong> in the direction they themselves <strong>say they want</strong>, and they can always change their mind ("libertarian paternalism"). The most powerful weapon is the <strong>default option</strong>: most people "want to join the pension plan" and "want to donate organs" but are forever one form short; set the default to "enrolled," and the people who do nothing move from outside to inside. The <strong>framing effect</strong> is the other face: the same fact stated as a "90% survival rate" versus a "10% mortality rate" leads patients to different choices. Wording, like defaults, is choice architecture.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Nudge</div><span class="term-en">助推</span><div class="term-def">An intervention that bans no option and does not meaningfully change incentives, only rearranging the choice environment to improve behavioral outcomes; full freedom of choice is preserved.</div></div>
+        <div class="term"><div class="term-name">Choice Architecture</div><span class="term-en">选择架构</span><div class="term-def">How options are presented: defaults, ordering, grouping, wording, feedback. Every "interface" nudges; the only question is in which direction.</div></div>
+        <div class="term"><div class="term-name">Default Option / Status Quo Bias</div><span class="term-en">默认选项 / 现状偏差</span><div class="term-def">People tend to stick with the status quo and avoid the cost of acting; the default thus becomes "the choice of those who do not choose" — the highest-leverage detail in policy.</div></div>
+        <div class="term"><div class="term-name">Framing Effect</div><span class="term-en">框架效应</span><div class="term-def">Different wording of the same information (survival rate vs. mortality rate, gains vs. losses) systematically changes choices — a direct extension of how the reference point is set.</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 5-1 · The leverage of the default: a participation-rate comparison</div>
+        <p class="fig-sub">The same people, the same true preferences (the w who truly want to join) — only which side the inert land on changes. Drag the two sliders and watch the default rule split the participation rate.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 300" role="img" aria-label="Default-option comparison chart: two horizontal bars show the participation rate under opt-in (must sign up) and opt-out (enrolled by default) rules. Sliders adjust the share who truly want to join and the share who follow the default; the bars' lengths change accordingly.">
+            <text id="nj-diff" class="chart-title-sm" x="340" y="34" text-anchor="middle"></text>
+            <text class="chart-label" x="90" y="72">Opt-in: not enrolled by default — you must fill in a form to join</text>
+            <rect x="90" y="82" width="500" height="38" fill="#f1f5f9" stroke="#e2e8f0" rx="6"/>
+            <rect id="nj-r1" x="90" y="82" width="2" height="38" fill="#ea580c" rx="6"/>
+            <text id="nj-v1" class="chart-label" x="598" y="107" style="font-weight:700">14%</text>
+            <text class="chart-label" x="90" y="152">Opt-out: enrolled by default — you must fill in a form to leave</text>
+            <rect x="90" y="162" width="500" height="38" fill="#f1f5f9" stroke="#e2e8f0" rx="6"/>
+            <rect id="nj-r2" x="90" y="162" width="2" height="38" fill="#0d9488" rx="6"/>
+            <text id="nj-v2" class="chart-label" x="598" y="187" style="font-weight:700">94%</text>
+            <line class="axis" x1="90" y1="230" x2="590" y2="230"/>
+            <line class="axis" x1="90" y1="230" x2="90" y2="236"/>
+            <line class="axis" x1="215" y1="230" x2="215" y2="236"/>
+            <line class="axis" x1="340" y1="230" x2="340" y2="236"/>
+            <line class="axis" x1="465" y1="230" x2="465" y2="236"/>
+            <line class="axis" x1="590" y1="230" x2="590" y2="236"/>
+            <text class="chart-label-en" x="90" y="252" text-anchor="middle">0%</text>
+            <text class="chart-label-en" x="215" y="252" text-anchor="middle">25%</text>
+            <text class="chart-label-en" x="340" y="252" text-anchor="middle">50%</text>
+            <text class="chart-label-en" x="465" y="252" text-anchor="middle">75%</text>
+            <text class="chart-label-en" x="590" y="252" text-anchor="middle">100%</text>
+            <text class="chart-label" x="340" y="284" text-anchor="middle">Participation rate (%)</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="nj-w">Share who truly want to join w</label><input type="range" id="nj-w" min="30" max="90" step="5" value="70"><output id="nj-ow" for="nj-w">70%</output></div>
+          <div class="ctrl"><label for="nj-d">Share who follow the default d</label><input type="range" id="nj-d" min="0" max="100" step="5" value="80"><output id="nj-od" for="nj-d">80%</output></div>
+        </div>
+        <figcaption>How to read this figure: opt-in participation = w×(1−d) (wanting to join still requires actually filling in the form); opt-out participation = w + (1−w)×d (those who do not want to join but cannot be bothered to act are swept in as well). The gap between the bars is manufactured entirely by the share d who are "too inert to act" — the default educates no one and subsidizes nothing; it only decides where the do-nothings land. Note that the orange bar may also contain a trapped minority: precisely the ethical question of the next chapter.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Two defaults that changed a nation's course</div>
+        <p><strong>Organ donation</strong>: Johnson and Goldstein's (2003) classic comparison — Austria, with consent as the default, has a 99.98% consent rate; next-door Germany, with non-consent as the default, only 12%, though the two publics express nearly identical attitudes in surveys. <strong>UK pension "automatic enrollment"</strong> (from 2012): no added subsidy, only a changed default, and private-sector employees' saving participation rose from about 55% to 88%. Alongside it sits Thaler and Benartzi's <strong>Save More Tomorrow</strong>: employees commit to saving a little more at their next raise, postponing the sacrifice into the future and tying it to rising income — participation and retention both climb sharply. Present bias from Chapter 3, turned directly into a policy component.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"With nudges, who needs price incentives?"</strong> A default changes the <strong>cost of action</strong>, not true preferences or budget constraints. A smoker facing "cigarettes no longer at the checkout" will simply go find the shelf — the tobacco tax is still the most powerful tool. Conversely, if a subsidy points the wrong way, the smoothest default merely helps people do the wrong thing faster. The nudge is a new wrench in the toolbox, not a replacement for the hammer. A second mistake is "defaults equal deception" — a good nudge is transparent, reversible, and pushes toward the chooser's own stated goals; whether a line has been crossed is exactly the subject of the next chapter.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.1</span>The UK pension "automatic enrollment" reform added not a cent of subsidy, yet participation rose from about 55% to 88%. The most fitting mechanism is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Default enrollment changed people's true preferences</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Under inertia and procrastination, "doing nothing" becomes the default action, and the new default channels that inaction into enrollment</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>People who did not join were fined</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Most people "wanted to join but never got around to it"; the cost of acting (finding the form, making a decision) is indefinitely postponed by present bias. Once enrollment is the default, the path of least effort lands exactly in the direction they themselves say they want — that is a nudge: no options changed, no incentives added, only a rearranged choice architecture. A overstates: anyone who wants out can opt out at any time, and a few did; C contradicts the facts — automatic enrollment is precisely a "no subsidy, no penalty" intervention.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.2</span>The same operation described as "90% survival rate at one month" or "10% mortality rate at one month" leads patients to different choices. This is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Anchoring effect</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Framing effect</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Endowment effect</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The two messages are perfectly equivalent; the only difference is whether the reference is set to "survival" (gain frame) or "death" (loss frame). Under the loss frame patients are markedly more willing to refuse the surgery and gamble — the framing effect, a direct descendant of Chapter 2's reference point. Anchoring requires an initial number pulling an estimate; the endowment effect requires valuation to rise once you own something. Here there is neither anchor nor ownership.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Choice architecture: defaults, ordering, wording, and feedback all influence choice; "not designing" is itself a design.</li>
+          <li>A nudge bans no option, barely changes incentives, and can be undone — libertarian paternalism.</li>
+          <li>The default has the greatest leverage: organ donation 12% vs. 99.98%, UK pensions 55% → 88%.</li>
+          <li>Framing effect: gain-versus-loss wording of the same information changes choices; Save More Tomorrow turns present bias into a policy component.</li>
+          <li>Nudges do not replace price incentives or information; they only lower the cost of acting on the right choice.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">Chapter 6</span>The Limits and Ethics of Behavioral Economics</h2>
+
+      <p><strong>Opening question:</strong> If governments and firms knew for certain that a single default checkbox can steer your pension, your organs, and your data consent — then who should hold the power to set the default?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Behavioral economics has three boundaries. <strong>The ethical boundary</strong>: the line between a nudge and manipulation lies in transparency, reversibility, and "in whose interest" — pushing toward the chooser's own stated goals is a nudge; harvesting people by exploiting their weaknesses is manipulation ("sludge": burying entitlements under red tape so people give them up — a nudge in reverse). Who nudges the nudgers is a question public policy cannot dodge. <strong>The empirical boundary</strong>: around 2011 psychology erupted into the <strong>replication crisis</strong> — in the 2015 large-scale replication project, only about a third of one hundred studies replicated successfully, and several famous effects (including some social-priming effects) shrank dramatically. Behavioral economics must stand on preregistration, large samples, and direct replication. <strong>The boundary of applicability</strong>: markets with experienced actors, immediate feedback, large stakes, and arbitrage "train" behavior toward the standard model — List's studies of sports-card markets found the endowment effect weakening sharply with trading experience. So the right question is not "which model is true" but "<strong>which model is the better first approximation in this environment</strong>".</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Libertarian Paternalism</div><span class="term-en">自由家长主义</span><div class="term-def">Thaler and Sunstein's rule for nudges: preserve complete freedom of choice (libertarian) while steering defaults toward the chooser's long-run interest (paternalism). Critics ask: who gets to define "your interest"?</div></div>
+        <div class="term"><div class="term-name">Replication Crisis</div><span class="term-en">复制性危机</span><div class="term-def">Many published psychology and behavioral findings fail to replicate: small samples, publication bias, flexible analysis (p-hacking). The fix: preregistration, large samples, direct replication, reporting effect sizes.</div></div>
+        <div class="term"><div class="term-name">Ecological Rationality</div><span class="term-en">生态理性</span><div class="term-def">Gigerenzer: a rule's quality depends on its match with the environment. Simple heuristics are robust and effective in matching environments — market experience can "correct" many biases.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The Behavioural Insights Team: nudging and experimenting</div>
+        <p>In 2010 the UK created the "Behavioural Insights Team" (BIT, nicknamed the "Nudge Unit"). Its famous experiment: adding one line to overdue-tax reminder letters — "9 out of 10 taxpayers in your area pay on time" (a social norm) — raised on-time payment by about 5 percentage points according to its reports, outperforming threatening language at almost zero cost. Equally important is the methodology: BIT made randomized controlled trials and preregistration its standard workflow, so nudge policies are themselves tested first. The World Bank's World Development Report 2015: Mind, Society, and Behavior carried the approach worldwide; China's recent default and process design for "personal pension" accounts and organ-donation registration belongs to the same lineage of debate.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Behavioral economics has replaced neoclassical economics."</strong> The mainstream is <strong>fusion</strong>, not replacement: loss aversion, present bias, and social preferences are embedded as parameters in standard models (behavioral IO, behavioral labor, behavioral public finance) to answer "when, and by how much, do people deviate?" Individual-level biases are often weakened by competition and arbitrage as markets aggregate — the mispricing a bias creates is somebody else's profit. Nor can a few failed replications bankrupt an entire field: loss aversion, default effects, and present bias have oceans of replicated evidence. <strong>Sort by environment, look at effect sizes</strong> — that is the grown-up attitude.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.1</span>Regarding the "replication crisis" in behavioral science, which statement is most apt?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>Large-scale replication projects show that a considerable share of studies fail to replicate — prize effect sizes, preregistration, and repeated validation over any single significant result</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>The crisis proves that all behavioral-economics conclusions are false</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The crisis exists only in psychology and has nothing to do with behavioral economics</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The Open Science Collaboration (2015) replicated 100 psychology studies; only about a third yielded statistically significant successful replications, and several famous effects shrank or vanished. The right lesson is methodological: preregistration, large samples, direct replication, reporting effect sizes. But "all false" (B) and "not our problem" (C) are both wrong — core findings such as loss aversion and default effects have extensive evidence across labs and settings, and they have indeed been directly replicated again and again.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.2</span>In which of these settings is the standard "rational agent" model likely still the better predictive tool?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>A tourist entering a duty-free shop for the first time, buying the only watch of a lifetime</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>An FX market maker with twenty years in the business, quoting and settling continuously every day</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>A consumer impulse-buying in bulk during a late-night flash sale</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Experience + immediate feedback + large stakes + competitive arbitrage "trains" behavior toward the optimum: List's sports-card market studies show the endowment effect weakening sharply with trading experience, and professional market makers' quoting biases are far smaller than novices'. Conversely, one-shot, emotional, unfamiliar, feedback-free choices (A, C) are the home turf of behavioral models. The mnemonic: <strong>the novice's first time is behavioral; the veteran's routine is rational</strong>.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The ethical boundary: transparent, reversible, in the chooser's interest; "sludge" that weaponizes friction in reverse is manipulation.</li>
+          <li>The empirical boundary: the replication crisis → preregistration, large samples, direct replication, effect sizes.</li>
+          <li>The boundary of applicability: in environments with experience + feedback + stakes + arbitrage, the standard model is often more accurate.</li>
+          <li>The mainstream is fusion: behavioral ingredients are parameterized into standard models, and the first approximation is chosen by environment.</li>
+        </ul>
+      </div>
+    </section>
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">Wrap-up</span>Next steps &amp; further reading</h2>
+      <p>Behavioral economics is a pair of corrective lenses: put them on and many other tracks come into sharper focus — <strong>10 Industrial Organization</strong> (big-data personalized pricing — firms using behavioral information to "nudge" you into paying), <strong>08 Public Economics</strong> (behavioral taxation, default enrollment, and the evaluation of nudge policies), <strong>14 Health &amp; Education Economics</strong> (health behavior, adherence, and nudge-style interventions), <strong>16 Political Economy &amp; Institutional Economics</strong> (the institutional constraints on paternalism and state capacity). Looking back, expected utility from <strong>01 Microeconomics</strong> and the ultimatum game from <strong>04 Game Theory</strong> are this track's two foundation stones.</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Daniel Kahneman, "Thinking, Fast and Slow" (2011)</span>—the encyclopedia of System 1/2 and biases; zero math, the best place to start.</li>
+          <li><span class="bk">Richard Thaler, "Misbehaving" (2015)</span>—an insider's account of behavioral economics' forty-year history, spanning academia and policy.</li>
+          <li><span class="bk">Thaler &amp; Sunstein, "Nudge" (2008; final edition 2021)</span>—the founding text on choice architecture and libertarian paternalism; read it with the critical lens of Chapter 6.</li>
+          <li><span class="bk">Dan Ariely, "Predictably Irrational" (2008)</span>—a light introduction through experimental cases; enjoyable, but beware the replication record of some effects.</li>
+          <li><span class="bk">Kahneman &amp; Tversky (1979), "Prospect Theory", Econometrica</span>—the 29-page original paper, the founding document of behavioral economics, cited hundreds of thousands of times.</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../14-health-and-education-economics/index.html"><span class="pager-dir">← Previous track</span><br><span class="pager-name">Health &amp; Education Economics</span></a>
+        <a href="../16-political-economy-and-institutional-economics/index.html"><span class="pager-dir">Next track →</span><br><span class="pager-name">Political Economy &amp; Institutional Economics</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../../assets/econ.js"></script>
+<script>
+/* ================= Figure 2-1 Prospect-theory value function ================= */
+(function () {
+  var l = document.getElementById("pt-l");
+  var a = document.getElementById("pt-a");
+  var gain = document.getElementById("pt-gain");
+  var loss = document.getElementById("pt-loss");
+  if (!l || !a || !gain || !loss) return;
+  var CX = 330, OY = 210, PX = 2.6;
+  var gRef = document.getElementById("pt-gref");
+  var lRef = document.getElementById("pt-lref");
+  var refLab = document.getElementById("pt-reflab");
+  var oneLab = document.getElementById("pt-onelab");
+  function px(x) { return CX + x * PX; }
+  function draw() {
+    var lam = parseFloat(l.value), al = parseFloat(a.value);
+    document.getElementById("o-ptl").textContent = "λ=" + lam.toFixed(2);
+    document.getElementById("o-pta").textContent = "α=" + al.toFixed(2);
+    // Same scale on both sides (value per unit = 140/λ pixels): the loss side always fills
+    // the lower 140px, the gain side rises 140/λ, so the loss side's visual slope is exactly
+    // λ times the gain side's — consistent with the text description
+    var unit = 140 / lam;
+    var dg = [], dl = [];
+    for (var x = 0; x <= 100; x += 5) {
+      var vg = Math.pow(x / 100, al);
+      dg.push((x === 0 ? "M" : "L") + px(x).toFixed(1) + "," + (OY - vg * unit).toFixed(1));
+    }
+    for (var y = -100; y <= 0; y += 5) {
+      var vl = lam * Math.pow(-y / 100, al);
+      dl.push((y === -100 ? "M" : "L") + px(y).toFixed(1) + "," + (OY + vl * unit).toFixed(1));
+    }
+    gain.setAttribute("d", dg.join(" "));
+    loss.setAttribute("d", dl.join(" "));
+    if (gRef) gRef.setAttribute("y2", (OY - unit).toFixed(1));
+    if (lRef) lRef.setAttribute("y2", (OY + unit).toFixed(1));
+    if (refLab) refLab.setAttribute("y", (OY + 0.5 * unit - 8).toFixed(1));
+    if (oneLab) oneLab.setAttribute("y", (OY - unit - 6).toFixed(1));
+    document.getElementById("pt-lamlab").textContent = "−λ = −" + lam.toFixed(2);
+    var sv = (1 - lam) / 2;
+    document.getElementById("pt-note").textContent =
+      "λ=" + lam.toFixed(2) + ": the pain of losing 100 yuan ≈ the pleasure of gaining 100 yuan ×" + lam.toFixed(2) +
+      "; subjective value of a 50-50 ±100 yuan bet " + sv.toFixed(2) + " → " + (sv < 0 ? "reject" : (sv > 0 ? "accept" : "neutral"));
+  }
+  l.addEventListener("input", draw);
+  a.addEventListener("input", draw);
+  draw();
+})();
+
+/* ================= Figure 3-1 Exponential vs. quasi-hyperbolic discounting ================= */
+(function () {
+  var tS = document.getElementById("dc-t");
+  var dS = document.getElementById("dc-d");
+  var bS = document.getElementById("dc-bta");
+  var pe = document.getElementById("dc-exp");
+  var ph = document.getElementById("dc-hyp");
+  if (!tS || !dS || !bS || !pe || !ph) return;
+  var X0 = 70, X1 = 590, TMAX = 12, Y0 = 340, VMAX = 140;
+  function px(t) { return X0 + t / TMAX * (X1 - X0); }
+  function py(v) { return Y0 - v / VMAX * 280; }
+  var mode = "e";
+  function delta() { return parseFloat(dS.value) / 100; }
+  function beta() { return parseFloat(bS.value) / 100; }
+  function dE(t) { return Math.pow(delta(), t); }
+  function dH(t) { return t <= 0 ? 1 : beta() * Math.pow(delta(), t); }
+  function buildPaths() {
+    var de = [], dh = [];
+    for (var t = 0; t <= TMAX + 0.001; t += 0.5) {
+      de.push((t === 0 ? "M" : "L") + px(t).toFixed(1) + "," + py(100 * dE(t)).toFixed(1));
+    }
+    dh.push("M" + px(0).toFixed(1) + "," + py(100).toFixed(1));
+    for (var u = 1; u <= TMAX + 0.001; u += 0.5) {
+      dh.push("L" + px(u).toFixed(1) + "," + py(100 * dH(u)).toFixed(1));
+    }
+    pe.setAttribute("d", de.join(" "));
+    ph.setAttribute("d", dh.join(" "));
+    document.getElementById("dc-elab").setAttribute("y", Math.max(60, py(100 * dE(TMAX)) - 12).toFixed(1));
+    document.getElementById("dc-hlab").setAttribute("y", Math.min(336, py(100 * dH(TMAX)) + 22).toFixed(1));
+    document.getElementById("dc-btag").setAttribute("y", Math.min(300, py(100 * dH(1)) + 20).toFixed(1));
+  }
+  function upd() {
+    var t = parseFloat(tS.value);
+    document.getElementById("dc-ot").textContent = t === 0 ? "Today" : "t=" + t + " mo";
+    document.getElementById("dc-od").textContent = delta().toFixed(2);
+    document.getElementById("dc-ob").textContent = beta().toFixed(2);
+    buildPaths();
+    var eA = 100 * dE(t), eB = 130 * dE(t + 3);
+    var hA = 100 * dH(t), hB = 130 * dH(t + 3);
+    var pePick = eB >= eA ? "B" : "A";
+    var phPick = hB >= hA ? "B" : "A";
+    var rev = t === 0 && hB < hA && eB >= eA;
+    document.getElementById("dc-ve").textContent =
+      "Exponential: A=" + Math.round(eA) + " vs B=" + Math.round(eB) + " → pick " + pePick +
+      " (the choice is the same at t=0 or 9: time-consistent)";
+    document.getElementById("dc-vh").textContent =
+      "Quasi-hyperbolic: A=" + Math.round(hA) + " vs B=" + Math.round(hB) + " → pick " + phPick +
+      (rev ? " — the small one today, the large one from t≥1: preference reversal!"
+           : (t === 0 ? (eB < eA ? " (δ too low: even the exponential model picks A today, so no reversal to speak of — raise δ first)"
+                                 : " (β high enough, no reversal)") : ""));
+    document.getElementById("dc-ve").setAttribute("fill", mode === "e" ? "#2f6fdb" : "#94a3b8");
+    document.getElementById("dc-vh").setAttribute("fill", mode === "h" ? "#ea580c" : "#94a3b8");
+    var vA = mode === "e" ? eA : hA, vB = mode === "e" ? eB : hB;
+    var ax = px(t);
+    document.getElementById("dc-vt").setAttribute("x1", ax.toFixed(1));
+    document.getElementById("dc-vt").setAttribute("x2", ax.toFixed(1));
+    document.getElementById("dc-vt3").setAttribute("x1", px(t + 3).toFixed(1));
+    document.getElementById("dc-vt3").setAttribute("x2", px(t + 3).toFixed(1));
+    var ca = Math.max(58, Math.min(336, py(vA)));
+    var cb = Math.max(58, Math.min(336, py(vB)));
+    document.getElementById("dc-a").setAttribute("cx", ax.toFixed(1));
+    document.getElementById("dc-a").setAttribute("cy", ca.toFixed(1));
+    document.getElementById("dc-b").setAttribute("cx", ax.toFixed(1));
+    document.getElementById("dc-b").setAttribute("cy", cb.toFixed(1));
+    document.getElementById("dc-alab").setAttribute("x", (ax - 14).toFixed(1));
+    document.getElementById("dc-alab").setAttribute("y", (ca + 4).toFixed(1));
+    document.getElementById("dc-blab").setAttribute("x", (ax + 12).toFixed(1));
+    document.getElementById("dc-blab").setAttribute("y", (cb + 4).toFixed(1));
+  }
+  var m1 = document.getElementById("dc-m1"), m2 = document.getElementById("dc-m2");
+  if (m1) m1.addEventListener("click", function () {
+    mode = "e"; m1.classList.remove("ghost"); m2.classList.add("ghost"); upd();
+  });
+  if (m2) m2.addEventListener("click", function () {
+    mode = "h"; m2.classList.remove("ghost"); m1.classList.add("ghost"); upd();
+  });
+  tS.addEventListener("input", upd);
+  dS.addEventListener("input", upd);
+  bS.addEventListener("input", upd);
+  upd();
+})();
+
+/* ================= Figure 4-1 Ultimatum game ================= */
+(function () {
+  var s = document.getElementById("ug-s");
+  var acc = document.getElementById("ug-acc");
+  var ev = document.getElementById("ug-ev");
+  if (!s || !acc || !ev) return;
+  function p(x) { return 1 / (1 + Math.exp(-(x - 15) / 5)); }
+  var X0 = 70, W = 500, Y0 = 330, H = 250;
+  function px(x) { return X0 + x / 50 * W; }
+  function py(v) { return Y0 - v / 100 * H; }
+  var da = [], dv = [];
+  for (var x = 0; x <= 50; x += 1) {
+    da.push((x === 0 ? "M" : "L") + px(x).toFixed(1) + "," + py(p(x) * 100).toFixed(1));
+    var e = p(x) * (100 - x);
+    dv.push((x === 0 ? "M" : "L") + px(x).toFixed(1) + "," + py(e).toFixed(1));
+  }
+  acc.setAttribute("d", da.join(" "));
+  ev.setAttribute("d", dv.join(" "));
+  function upd() {
+    var ss = parseFloat(s.value);
+    document.getElementById("ug-o").textContent = ss + "%";
+    var pp = p(ss), ee = pp * (100 - ss);
+    var v = px(ss);
+    document.getElementById("ug-v").setAttribute("x1", v.toFixed(1));
+    document.getElementById("ug-v").setAttribute("x2", v.toFixed(1));
+    document.getElementById("ug-adot").setAttribute("cx", v.toFixed(1));
+    document.getElementById("ug-adot").setAttribute("cy", Math.max(70, Math.min(328, py(pp * 100))).toFixed(1));
+    document.getElementById("ug-dot").setAttribute("cx", v.toFixed(1));
+    document.getElementById("ug-dot").setAttribute("cy", Math.max(70, Math.min(328, py(ee))).toFixed(1));
+    document.getElementById("ug-note").textContent =
+      "Offer s=" + ss + "%: expected acceptance ≈" + Math.round(pp * 100) + "%, expected payoff = " +
+      Math.round(pp * 100) + "% × " + (100 - ss) + " yuan ≈ " + ee.toFixed(1) + " yuan";
+  }
+  s.addEventListener("input", upd);
+  var run = document.getElementById("ug-run");
+  if (run) run.addEventListener("click", function () {
+    var ss = parseFloat(s.value), k = 0;
+    for (var i = 0; i < 100; i++) { if (Math.random() < p(ss)) k++; }
+    document.getElementById("ug-sim").textContent =
+      "100 simulated rounds: " + k + " accepted, " + (100 - k) + " rejected; the proposer's average take per round: " +
+      (k * (100 - ss) / 100).toFixed(1) + " yuan";
+  });
+  upd();
+})();
+
+/* ================= Figure 5-1 Default-option participation ================= */
+(function () {
+  var w = document.getElementById("nj-w");
+  var d = document.getElementById("nj-d");
+  var r1 = document.getElementById("nj-r1");
+  var r2 = document.getElementById("nj-r2");
+  if (!w || !d || !r1 || !r2) return;
+  var W = 500;
+  function upd() {
+    var ww = parseFloat(w.value), dd = parseFloat(d.value) / 100;
+    var a = ww * (1 - dd);
+    var b = ww + (100 - ww) * dd;
+    r1.setAttribute("width", Math.max(2, a / 100 * W).toFixed(1));
+    r2.setAttribute("width", Math.max(2, b / 100 * W).toFixed(1));
+    document.getElementById("nj-v1").textContent = Math.round(a) + "%";
+    document.getElementById("nj-v2").textContent = Math.round(b) + "%";
+    document.getElementById("nj-ow").textContent = ww + "%";
+    document.getElementById("nj-od").textContent = Math.round(dd * 100) + "%";
+    document.getElementById("nj-diff").textContent =
+      "Same true preferences (" + ww + "% want to join), different defaults: participation " + Math.round(a) + "% vs " +
+      Math.round(b) + "% (a gap of " + Math.round(b - a) + " percentage points)";
+  }
+  w.addEventListener("input", upd);
+  d.addEventListener("input", upd);
+  upd();
+})();
+</script>
+</body>
+</html>

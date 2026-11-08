@@ -120,6 +120,24 @@ body {
 }
 .topbar-home:hover { background: var(--branch-soft); color: var(--branch); }
 
+/* 顶栏语言切换链接(中英文版本互链) */
+.topbar-lang {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 6px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink-soft);
+  text-decoration: none;
+  font-size: var(--t-sm);
+  font-weight: 700;
+  letter-spacing: .04em;
+  white-space: nowrap;
+  transition: background .2s ease, color .2s ease, border-color .2s ease;
+}
+.topbar-lang:hover { background: var(--branch-soft); color: var(--branch); border-color: color-mix(in srgb, var(--branch) 35%, var(--line)); }
+
 /* SVG 内可聚焦图形(键盘可达的交互元素) */
 svg [tabindex]:focus-visible {
   outline: 3px solid var(--branch);

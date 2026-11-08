@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Microeconomics · EconLearn Self-Study Path in Economics</title>
+<meta name="description" content="An interactive English microeconomics tutorial: scarcity and opportunity cost, supply, demand, and elasticity, consumer and producer theory, market structure, market failure and welfare economics, with draggable charts and self-check quizzes.">
+<link rel="stylesheet" href="../../assets/econ.css">
+</head>
+<body style="--branch:#2f6fdb">
+<noscript><p class="noscript-tip">The interactive figures and self-tests on this page require JavaScript; without it, the full main text remains readable.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← Home</a>
+  <div class="topbar-title"><span class="topbar-num">01</span>Microeconomics</div>
+  <a class="topbar-lang" href="../../01-微观经济学/index.html" hreflang="zh-CN">中文</a>
+  <button class="toc-toggle" aria-expanded="false">Contents</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">Chapters in this track</p>
+    <nav aria-label="Chapter contents">
+      <a href="#overview">Overview &amp; learning goals</a>
+      <a href="#ch1">1 · Scarcity, Choice, and Opportunity Cost</a>
+      <a href="#ch2">2 · Supply, Demand, and Market Equilibrium</a>
+      <a href="#ch3">3 · Consumer Theory</a>
+      <a href="#ch4">4 · Producer Theory and Costs</a>
+      <a href="#ch5">5 · Market Structure: Competition to Monopoly</a>
+      <a href="#ch6">6 · Market Failure and Government Intervention</a>
+      <a href="#ch7">7 · General Equilibrium and Welfare Economics</a>
+      <a href="#path">Next steps &amp; further reading</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · Self-Study Path in Economics</p>
+  </aside>
+  <main class="main" id="main">
+
+    <!-- ==================== Overview ==================== -->
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">Track 01 · Core theory</span>
+        <h1>Microeconomics</h1>
+        <p class="hero-en">微观经济学</p>
+        <p class="hero-lead">The study of how households and firms make choices under scarce resources, and how millions of those choices are coordinated through prices. It is the shared language of nearly every branch of economics—the macroeconomics, finance, labor, and industrial organization that follow all build on the tools laid down here.</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">By the end of this track, you will be able to</div>
+        <ul>
+          <li>Analyze real decisions using opportunity cost, and draw the production possibilities frontier to explain increasing marginal opportunity cost</li>
+          <li>Use the supply-and-demand model to predict the direction of price and quantity changes, and distinguish a "shift of the curve" from a "movement along the curve"</li>
+          <li>Draw budget lines and indifference curves, and state the consumer's optimality condition MRS = the price ratio</li>
+          <li>Explain the relationship between marginal cost and average cost, and why sunk costs never enter a decision</li>
+          <li>Compare output, price, and welfare loss (DWL) under perfect competition versus monopoly, and compute a simple deadweight-loss triangle</li>
+          <li>Identify the four market failures—externalities, public goods, and asymmetric information among them—and explain the corrective logic of Pigouvian taxes and property rights</li>
+          <li>Evaluate a resource allocation or a policy with the Pareto efficiency criterion, and explain clearly why efficiency and equity can be handled separately</li>
+        </ul>
+      </div>
+      <div class="prereq">Prerequisites:
+        <a class="badge" href="../index.html">None (entry-level track)</a>
+      </div>
+      <div class="prereq">Recommended next:
+        <a class="badge" href="../02-macroeconomics/index.html">02 Macroeconomics</a>
+        <a class="badge" href="../03-econometrics/index.html">03 Econometrics</a>
+        <a class="badge" href="../04-game-theory-and-information-economics/index.html">04 Game Theory &amp; Information Economics</a>
+      </div>
+    </section>
+
+    <!-- ==================== Chapter 1 ==================== -->
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">Chapter 1</span>Scarcity, Choice, and Opportunity Cost</h2>
+
+      <h3>Opening question</h3>
+      <p>In 2023, about 4.74 million people in China sat the national postgraduate entrance exam (kaoyan). Suppose you are holding a job offer with an annual salary of 150,000 yuan, and a three-year master's program would cost about 100,000 yuan in tuition and housing. Is graduate school really that expensive? And why would economists say the 100,000 yuan on the bill is far from the main cost of this decision?</p>
+
+      <h3>The core intuition</h3>
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Economics studies <strong>choice under scarcity</strong>: time, money, and attention are never sufficient, so every choice means giving up others. The true cost of a decision is the value of <strong>the best option you forgo</strong>—that is its opportunity cost. It often appears on no bill at all: forgone wages, missed work experience, and lost room for trial and error are all implicit costs.</p>
+        <p>The second intuition is to <strong>think at the margin, not in totals</strong>: whether to do one more thing depends on the extra benefit and the extra cost of that step (marginal analysis), not on how much has already been sunk into it. Put these two intuitions together and you have economics' most fundamental way of thinking.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Scarcity</div><span class="term-en">稀缺性</span><div class="term-def">Resources are always limited relative to human wants. Scarcity is not a "shortage"—it is a permanent constraint, and it forces people to choose.</div></div>
+        <div class="term"><div class="term-name">Opportunity Cost</div><span class="term-en">机会成本</span><div class="term-def">The value of the highest-valued option given up to obtain something. Note: count only the best forgone option, not the sum of all forgone options.</div></div>
+        <div class="term"><div class="term-name">Production Possibilities Frontier (PPF)</div><span class="term-en">生产可能性边界</span><div class="term-def">The set of all maximum output combinations of two goods, given resources and technology. Points beyond the frontier are unattainable; points inside it leave resources unused.</div></div>
+        <div class="term"><div class="term-name">Marginal Analysis</div><span class="term-en">边际分析</span><div class="term-def">Comparing the extra benefit of "one more unit" with its extra cost. The rule of rational choice: keep going as long as marginal benefit exceeds marginal cost.</div></div>
+        <div class="term"><div class="term-name">Positive vs. Normative Analysis</div><span class="term-en">实证分析与规范分析</span><div class="term-def">Positive statements answer "what is and what will happen" and can be tested against evidence; normative statements answer "what should be" and involve value judgments. Both matter, but never conflate the two.</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <figure class="fig">
+        <div class="fig-title">Figure 1-1 · The production possibilities frontier and increasing opportunity cost</div>
+        <p class="fig-sub">Drag the slider to move the production bundle along the frontier from "mostly grain" toward "mostly cars," and watch how the marginal opportunity cost changes.</p>
+        <figure class="fig-canvas">
+          <svg id="fig1-svg" viewBox="0 0 640 400" role="img" aria-label="Interactive PPF chart: a slider moves the production bundle along the frontier and shows increasing marginal opportunity cost">
+            <line class="gridline" x1="335" y1="44" x2="335" y2="340"/>
+            <line class="gridline" x1="70" y1="192" x2="600" y2="192"/>
+            <line class="axis" x1="70" y1="340" x2="612" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="30"/>
+            <text class="chart-label" x="470" y="366">Car output (10,000s) →</text>
+            <text class="chart-label" x="14" y="42">Grain output (10,000 t)</text>
+            <path id="fig1-curve" class="curve curve-c1" d=""/>
+            <text class="chart-label" x="528" y="176">PPF</text>
+            <line id="fig1-gv" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line id="fig1-gh" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <circle id="fig1-dot" class="dot" r="6" fill="#2f6fdb" cx="0" cy="0"/>
+            <text id="fig1-labq" class="chart-label" x="0" y="0">Cars 2.3 ×10k</text>
+            <text id="fig1-labv" class="chart-label" x="6" y="0">Grain 7.8 ×10k t</text>
+          </svg>
+        </figure>
+        <p class="fig-sub" id="fig1-read">Loading readout…</p>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fig1-x">Move along the frontier (grain → cars)</label>
+            <input type="range" id="fig1-x" min="0" max="100" step="1" value="20">
+            <output id="fig1-o" for="fig1-x">0.19</output></div>
+        </div>
+        <figcaption>How to read this figure: the PPF is concave to the origin (bowed outward) because resources are not perfectly adaptable—land that grows grain well is poor at building cars. Try it: drag the slider from the far left to the far right and read off how many 10,000-ton units of grain each additional 10,000 cars cost; you will find the number climbing from 0.2 to well over 2.4. That is <strong>increasing opportunity cost</strong>—and the reason the PPF is curved.</figcaption>
+      </figure>
+
+      <h3>The real world</h3>
+      <aside class="callout case">
+        <div class="callout-title">The real world · The opportunity cost of the graduate-exam boom</div>
+        <p>For a graduate who gives up a job paying 150,000 yuan a year to attend a three-year master's program, the explicit costs (tuition and housing) come to about 100,000 yuan, while the forgone wages and promotion prospects exceed 450,000 yuan—the opportunity cost is several times the bill. This explains two patterns. First, in years when the job market is strong and wages rise quickly, growth in graduate-exam applications tends to slow (the opportunity cost has gone up). Second, many working professionals prefer part-time programs with weekend classes—cutting the "forgone income" to cut the opportunity cost. Whenever you evaluate a "should I or shouldn't I" decision, first ask: what is the best alternative you are giving up worth?</p>
+      </aside>
+
+      <h3>Common pitfalls</h3>
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>✗ Treating opportunity cost as "the sum of the values of all forgone options." The right approach: count only the <strong>single most valuable one</strong>—you cannot work at two companies at once.<br>
+        ✗ Counting only explicit costs while ignoring implicit ones: your own shop pays you "no wage," but your time still has a market price.<br>
+        ✗ Passing positive claims off as normative ones or vice versa: "a minimum wage reduces low-skill employment" is a testable positive proposition; "the government should raise the minimum wage" is a normative claim that requires a separate value argument.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.1</span>Mr. Zhang earns 12,000 yuan a month and quits to attend a two-year master's program with total tuition of 40,000 yuan. The most complete measure of the economic cost of those two years (from the opportunity-cost perspective) is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>Count only tuition and living expenses, about 40,000 yuan in total</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">B</span>Tuition of 40,000 yuan, plus about 288,000 yuan of wages forgone over two years, roughly 328,000 yuan in total</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>Graduate study is a human-capital investment, so it has no costs—only returns</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Economic cost = explicit cost + implicit cost. Tuition is the explicit cost; the wages forgone while studying (along with promotion prospects) are the implicit cost—and precisely the largest part. A badly understates the cost; C confuses "cost" with "net benefit"—it is precisely because there are costs that a decision requires weighing costs against benefits. Living expenses usually do not count as an incremental cost, since you would eat whether or not you attended.</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.2</span>The production possibilities frontier is concave to the origin (bowed outward). This reflects:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>Resources are perfectly generic and can switch between the two uses without loss</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>Technology is regressing</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">C</span>Increasing opportunity cost: the more the economy leans toward one product, the more of the other must be given up to produce one more unit</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Resources are specialized—the first resources drawn into car production are those best at building cars; to keep expanding output, the economy must pull in resources that are ever better at growing grain, so ever more grain is forgone and the frontier bows outward. If A held, the frontier would be a straight line (constant opportunity cost); B is unrelated to the PPF's shape (technological regress would shift the entire frontier inward).</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Scarcity is where every economics question begins: wants are unlimited, resources are limited, so choices must be made.</li>
+          <li>Opportunity cost = the value of the best option forgone; beyond explicit costs, do not forget implicit ones.</li>
+          <li>The PPF shows the maximum output combinations under resource constraints; its outward bow captures increasing opportunity cost.</li>
+          <li>Rational decisions look at the margin: compare additional benefit with additional cost, not totals already spent.</li>
+          <li>Distinguishing positive statements (what is) from normative ones (what should be) is the first discipline of discussing economic questions.</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ==================== Chapter 2 ==================== -->
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">Chapter 2</span>Supply, Demand, and Market Equilibrium</h2>
+
+      <h3>Opening question</h3>
+      <p>In 2019, African swine fever sharply cut China's hog capacity and pork prices briefly doubled in 2020; the high prices drove farmers to restock frantically, and in 2021 hog prices fell back below cost. No one commands the millions of hog farmers and over a billion consumers—so who "sets" the price? Why does it rise and fall with such precision, yet so violently?</p>
+
+      <h3>The core intuition</h3>
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>No one sets the price: it is <strong>where the demand and supply curves "collide."</strong> The law of demand: the lower the price, the more people buy. The law of supply: the higher the price, the more firms sell. Above the equilibrium price there is a surplus and sellers undercut one another; below it there is a shortage and buyers outbid one another—bargaining pushes the price back to the intersection of the two curves: the market equilibrium.</p>
+        <p>The price's real job is to <strong>transmit information and coordinate action</strong>: a rise in pork prices simultaneously tells consumers "eat less," farmers "raise more," and capital "enter this industry"—with no central planning at all. To analyze any market event, answer just two questions: which curve did it shift? After the shift, where does the new intersection sit?</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Law of Demand</div><span class="term-en">需求定律</span><div class="term-def">Holding everything else constant, a higher price means a lower quantity demanded, and a lower price a higher quantity demanded. Note the difference between a change in quantity demanded (a movement along the curve) and a change in demand (a shift of the entire curve).</div></div>
+        <div class="term"><div class="term-name">Market Equilibrium</div><span class="term-en">市场均衡</span><div class="term-def">The price and quantity at which quantity supplied exactly equals quantity demanded. There is neither surplus nor shortage, and the price faces no further pressure to move.</div></div>
+        <div class="term"><div class="term-name">Price Elasticity of Demand</div><span class="term-en">需求价格弹性</span><div class="term-def">The percentage change in quantity demanded divided by the percentage change in price; it measures how sensitive buyers are to price. More substitutes, a longer time horizon, and a larger share of the budget all mean greater elasticity.</div></div>
+        <div class="term"><div class="term-name">Price Control</div><span class="term-en">价格管制</span><div class="term-def">A government-set maximum price (price ceiling) or minimum price (price floor). Controls change how prices ration goods; they do not abolish scarcity itself.</div></div>
+      </div>
+
+      <div class="formula">
+        Price elasticity of demand E<sub>d</sub> = % change in quantity demanded ÷ % change in price
+        <span class="f-note">|E<sub>d</sub>| greater than 1 means elastic (a price increase lowers total revenue); less than 1 means inelastic (a price increase raises total revenue)</span>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <figure class="fig">
+        <div class="fig-title">Figure 2-1 · Supply-demand equilibrium: shift the curves, then add a price control</div>
+        <p class="fig-sub">Use the two sliders to shift the demand or supply curve and watch the equilibrium price and quantity change; then overlay a price ceiling and watch the shortage appear.</p>
+        <figure class="fig-canvas">
+          <svg id="fig2-svg" viewBox="0 0 640 400" role="img" aria-label="Interactive supply-and-demand chart: sliders shift the demand or supply curve, equilibrium price and quantity update, and a price control can be overlaid">
+            <line class="gridline" x1="335" y1="36" x2="335" y2="340"/>
+            <line class="gridline" x1="70" y1="205" x2="600" y2="205"/>
+            <line class="axis" x1="70" y1="340" x2="612" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="30"/>
+            <text class="chart-label" x="480" y="366">Quantity Q (10,000s) →</text>
+            <text class="chart-label" x="14" y="42">Price P (yuan)</text>
+            <path id="fig2-dline" class="curve curve-c1" d=""/>
+            <path id="fig2-sline" class="curve curve-c3" d=""/>
+            <text id="fig2-labd" class="chart-label" x="76" y="80">D (demand)</text>
+            <text id="fig2-labs" class="chart-label" x="566" y="130">S (supply)</text>
+            <line id="fig2-ev" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line id="fig2-eh" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <circle id="fig2-e" class="dot" r="6" fill="#2f6fdb" cx="0" cy="0"/>
+            <text id="fig2-labe" class="chart-label" x="0" y="0">E</text>
+            <g id="fig2-grp" display="none">
+              <line id="fig2-pl" x1="0" y1="0" x2="0" y2="0" stroke="#475569" stroke-width="2" stroke-dasharray="7 5"/>
+              <circle id="fig2-dqd" class="dot" r="5" fill="#2f6fdb" cx="0" cy="0"/>
+              <circle id="fig2-dqs" class="dot" r="5" fill="#0d9488" cx="0" cy="0"/>
+              <path id="fig2-brk" d="" stroke="#ea580c" stroke-width="2" fill="none"/>
+              <text id="fig2-brkt" class="chart-label" x="0" y="0" fill="#ea580c">Shortage</text>
+            </g>
+          </svg>
+        </figure>
+        <p class="fig-sub" id="fig2-read">Loading readout…</p>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fig2-d">Shift demand</label>
+            <input type="range" id="fig2-d" min="-60" max="60" step="1" value="0">
+            <output id="fig2-od" for="fig2-d">0</output></div>
+          <div class="ctrl"><label for="fig2-s">Shift supply</label>
+            <input type="range" id="fig2-s" min="-60" max="60" step="1" value="0">
+            <output id="fig2-os" for="fig2-s">0</output></div>
+          <div class="ctrl"><label for="fig2-pc">Controlled price</label>
+            <input type="range" id="fig2-pc" min="2" max="7" step="0.1" value="3">
+            <output id="fig2-oc" for="fig2-pc">3.0 yuan</output></div>
+        </div>
+        <div class="fig-actions"><button class="btn ghost" id="fig2-btn" type="button">Overlay price control demo</button></div>
+        <figcaption>How to read this figure: demand shifts right → equilibrium price and quantity both rise; supply shifts right → price falls while quantity rises (the two shifts produce different direction combinations—keep them firmly apart). Try it: drag the controlled price below the equilibrium and the orange segment shows a <strong>shortage</strong> (buyers want to buy more than sellers want to sell); drag it above the equilibrium and a surplus appears. The x-axis tops out at 10; under extreme shifts, trust the text readout.</figcaption>
+      </figure>
+
+      <h3>The real world</h3>
+      <aside class="callout case">
+        <div class="callout-title">The real world · The hog cycle: a roller coaster built on lagged supply</div>
+        <p>From restocking breeding sows to finished hogs leaving the farm takes roughly 10–12 months, so supply inevitably reacts to price with a lag: the swine-fever shock shifted the supply curve left and prices soared; farmers restocked on the strength of <strong>today's</strong> high prices, but by the time those hogs reached market, supply had surged, prices turned down, and the herd was culled again—and so the hog cycle of "dear meat hurts eaters, cheap meat hurts farmers" repeats. The great boom and bust around 2020 showed it once more: understanding which curve is moving, and when, is more useful than forecasting exact price numbers. Pork carries a sizable weight in China's CPI basket, which makes this chapter the first stepping-stone to the next track, macroeconomics.</p>
+      </aside>
+
+      <h3>Common pitfalls</h3>
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>✗ "Rising prices mean demand has increased." Not necessarily—a supply contraction (swine fever, output cuts) also pushes prices up, but quantity moves in the opposite direction: higher demand raises both price and quantity, while lower supply raises price and cuts quantity. Check quantity to tell them apart.<br>
+        ✗ Confusing a "change in quantity demanded" with a "change in demand": the good's own price only moves the point along the curve; changes in income, tastes, or the prices of substitutes shift the entire curve.<br>
+        ✗ Believing a price cap makes the good affordable for everyone. A cap does not increase supply; it merely rations by queues, scalpers, lotteries, or quality cuts instead—scarcity has not disappeared, only the allocation rule has changed.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.1</span>African swine fever kills large numbers of hogs and cuts capacity. In the short run, the pork market will see:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>The demand curve shifts left, and price and quantity both fall</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">B</span>The supply curve shifts left, price rises, and quantity falls</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>Nothing changes in equilibrium: consumers merely slide along the demand curve and the market returns to the old price</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Swine fever hits the selling side (capacity), so the supply curve shifts left and the new intersection sits up and to the left of the original equilibrium—higher price, smaller quantity. A misplaces the shock on demand (that would drop both price and quantity). C's error: consumers moving along the curve is the result, not the cause; until supply recovers, the price will not fall back on its own.</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.2</span>Demand for cigarettes is highly inelastic (addiction), while supply is relatively elastic. If the government raises the tobacco tax, who bears most of the burden?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>Mostly the cigarette companies, because they have deeper pockets</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>Necessarily half and half—that would only be fair</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">C</span>Mostly the smokers: demand is inelastic, so they cut back very little after the price rise</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Tax incidence depends on elasticities, not on "who writes the check" or "who has more money": the side with less escape bears more. Smokers lack substitutes and find quitting hard (inelastic demand), so the great majority of the tax is passed through to consumers in higher prices; if sellers tried to hold prices down, the cigarette companies could simply cut output or switch products (elastic supply), so they bear less. This is also why tobacco taxes make reliable revenue yet are criticized as regressive (low-income smokers carry a relatively heavier burden).</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The equilibrium price forms at the intersection of demand and supply: quantities match exactly, and the price has no pressure to move.</li>
+          <li>The two-step method for analyzing shocks: decide which curve shifts → find the new intersection and read off the directions of price and quantity.</li>
+          <li>Higher demand: price and quantity both rise; higher supply: price falls, quantity rises—the two combinations point differently; don't mix them up.</li>
+          <li>Elasticity measures sensitivity and governs both how a price change affects total revenue and who bears a tax: the less elastic side bears more.</li>
+          <li>Price controls change the allocation rule without removing scarcity: a ceiling creates shortage, a floor creates surplus.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== Chapter 3 ==================== -->
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">Chapter 3</span>Consumer Theory: How to Make the Optimal Choice</h2>
+
+      <h3>Opening question</h3>
+      <p>Reviewing your bills at month's end: 22 takeout meals, 4 movies, 8 workouts—why exactly that combination, and not "15 takeout meals and 8 movies"? If your employer suddenly added a 500-yuan monthly allowance, how would your bundle change? And why is "spend it all on one thing" almost nobody's answer?</p>
+
+      <h3>The core intuition</h3>
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>A consumer's choice is pinched between two things: <strong>preferences</strong> (which bundles you want) and the <strong>budget</strong> (which bundles you can afford). Preferences are described by indifference curves: every bundle on the same curve is equally satisfying. The budget is described by the budget line: the bundles that spend all your money. The optimal choice is the highest indifference curve the budget line can touch—the <strong>tangency point</strong>.</p>
+        <p>The tangency has an elegant meaning: the rate at which you are privately willing to "trade takeout meals for a movie" (the marginal rate of substitution, MRS) exactly equals the rate the market asks you to pay (the ratio of the two prices). If what you'd willingly give exceeds what you must pay, trade a bit more; otherwise trade back—adjust until the two are equal and no room for improvement remains.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Utility</div><span class="term-en">效用</span><div class="term-def">An ordinal measure of satisfaction, used only to rank bundles; it cannot be compared in size from one person to another.</div></div>
+        <div class="term"><div class="term-name">Indifference Curve</div><span class="term-en">无差异曲线</span><div class="term-def">The curve through all bundles that give the consumer the same utility. Usually convex to the origin: the less of a good you have, the more reluctantly you trade it away.</div></div>
+        <div class="term"><div class="term-name">Budget Line</div><span class="term-en">预算约束线</span><div class="term-def">All the bundles that spend the entire budget. Its slope is set by the ratio of the two prices, its position by income.</div></div>
+        <div class="term"><div class="term-name">Marginal Rate of Substitution (MRS)</div><span class="term-en">边际替代率</span><div class="term-def">The absolute value of the indifference curve's slope: the amount of Y you are willing to give up for one more unit of X. The consumer's optimality condition: MRS = P<sub>x</sub>/P<sub>y</sub>.</div></div>
+      </div>
+
+      <aside class="callout keypoint">
+        <div class="callout-title">Math box (optional)</div>
+        <p>Let utility be U = xy (taking logs of both goods gives the same result), with budget P<sub>x</sub>x + P<sub>y</sub>y = m. On the indifference curve xy = U, MRS = y/x. At the optimum y/x = P<sub>x</sub>/P<sub>y</sub>, and solving together with the budget equation gives x* = m/2P<sub>x</sub> and y* = m/2P<sub>y</sub>: double income and both consumptions double in the same proportion (the classic property of Cobb-Douglas preferences—verify it with the income slider in Figure 3-1 below). A price change works in two steps: the substitution effect swaps the bundle along the original indifference curve, while the income effect shifts it as real purchasing power changes—the two can point in opposite directions (as with inferior goods).</p>
+      </aside>
+
+      <h3>Interactive demo</h3>
+      <figure class="fig">
+        <div class="fig-title">Figure 3-1 · The tangency of the budget line and an indifference curve</div>
+        <p class="fig-sub">Adjust the monthly budget and the movie ticket price, and watch the budget line shift or pivot as the optimal bundle (tangency point T) moves.</p>
+        <figure class="fig-canvas">
+          <svg id="fig3-svg" viewBox="0 0 640 400" role="img" aria-label="Interactive budget-line and indifference-curve chart: income and ticket-price sliders move the budget line; the tangency point is the consumer's optimum">
+            <line class="gridline" x1="335" y1="36" x2="335" y2="340"/>
+            <line class="gridline" x1="70" y1="188" x2="600" y2="188"/>
+            <line class="axis" x1="70" y1="340" x2="612" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="30"/>
+            <text class="chart-label" x="490" y="366">Movies (per month) →</text>
+            <text class="chart-label" x="14" y="42">Takeout meals (per month)</text>
+            <line id="fig3-bl" x1="0" y1="0" x2="0" y2="0" stroke="#0d9488" stroke-width="3" stroke-linecap="round"/>
+            <path id="fig3-ic" class="curve curve-c1" d=""/>
+            <text id="fig3-labbl" class="chart-label" x="0" y="0" fill="#0d9488">Budget line</text>
+            <text id="fig3-labic" class="chart-label" x="0" y="0">Indifference curve U=xy</text>
+            <line id="fig3-v" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line id="fig3-h" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <circle id="fig3-t" class="dot" r="6" fill="#2f6fdb" cx="0" cy="0"/>
+            <text class="chart-label" x="0" y="0">T (tangency)</text>
+          </svg>
+        </figure>
+        <p class="fig-sub" id="fig3-read">Loading readout…</p>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fig3-m">Monthly budget</label>
+            <input type="range" id="fig3-m" min="600" max="1200" step="20" value="800">
+            <output id="fig3-om" for="fig3-m">800 yuan</output></div>
+          <div class="ctrl"><label for="fig3-px">Movie ticket price</label>
+            <input type="range" id="fig3-px" min="40" max="120" step="2" value="60">
+            <output id="fig3-opx" for="fig3-px">60 yuan</output></div>
+        </div>
+        <figcaption>How to read this figure: the budget line's vertical intercept is the number of meals if you spend everything on takeout, and its horizontal intercept is the number of movies if you spend everything on tickets. Try it: raise only the budget → the budget line shifts out in parallel and the tangency moves in proportion along a straight line (the income expansion path); cut only the price → the line pivots outward around its vertical intercept and movie consumption grows proportionally more than takeout. However you adjust, the readout shows MRS equal to the price ratio—the tangency condition always holds.</figcaption>
+      </figure>
+
+      <h3>The real world</h3>
+      <aside class="callout case">
+        <div class="callout-title">The real world · Consumer theory inside threshold discounts</div>
+        <p>Open any food-delivery or e-commerce app and "15 yuan off 60" or "4 yuan off 25" deals are everywhere. A threshold discount simply turns your budget line into a kinked one: below 60 yuan, each yuan buys one yuan's worth; cross the threshold and the last few yuan suddenly "buy more." The optimum that sat on the old budget line is abruptly pushed to a new bundle on the far side of the threshold—by reshaping your budget set, the platform nudges you to "add one more item to qualify." Once you see this, you can tell the two apart: what genuinely makes you better off is the discount itself, while the snacks bought just to clear the threshold mostly move your optimum without adding any utility.</p>
+      </aside>
+
+      <h3>Common pitfalls</h3>
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>✗ Drawing indifference curves that cross. Two crossing indifference curves would give one bundle two different utility levels—a contradiction in preferences.<br>
+        ✗ Comparing utility across people: "he is 30% happier than you" is not a scientific statement; utility is a tool for ranking bundles within one person.<br>
+        ✗ Assuming the optimum must be at a tangency and must spend every yuan. With extreme preferences (say, eating almost exclusively at the canteen), the optimum can sit at an endpoint of the budget line (a corner solution); saving is a legitimate "third use" for the money.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.1</span>A consumer's optimal choice between two goods (an interior solution) satisfies:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">A</span>The marginal rate of substitution equals the ratio of the two prices, MRS = P<sub>x</sub>/P<sub>y</sub></button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>Equal quantities of the two goods are purchased</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>The indifference curve's slope is zero and the budget line's slope is at its maximum</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The optimum lies at the tangency of the budget line and an indifference curve: your private exchange rate (MRS) exactly equals the market's exchange rate (the price ratio). If MRS exceeds the price ratio, you value X more than the market does and buying more X still yields a net gain—and vice versa—only when they are equal is there no room for improvement. B has no reason whatsoever to hold; C has both slopes nonzero.</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.2</span>Income falls while the prices of both goods stay the same. The budget line will:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>Pivot inward around its horizontal intercept</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>Shift outward in parallel</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">C</span>Shift inward in parallel, slope unchanged</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The budget line's slope is −P<sub>x</sub>/P<sub>y</sub> and depends only on prices; with prices fixed, the slope is fixed. Income only sets the size of the budget set: when income falls, both intercepts (m/P<sub>y</sub> and m/P<sub>x</sub>) shrink in the same proportion and the line shifts inward in parallel. A is the case of one good's price changing; B has the direction reversed.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Preferences (indifference curves) plus constraints (the budget line) jointly determine choice; the optimum sits at the tangency.</li>
+          <li>Optimality condition: MRS = the price ratio—your private exchange rate equals the market's.</li>
+          <li>An income change shifts the budget line; a price change pivots it.</li>
+          <li>A price change decomposes into a substitution effect (a different bundle) and an income effect (different purchasing power).</li>
+          <li>Utility can only rank, never compare across people; the optimum can also be a corner solution.</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ==================== Chapter 4 ==================== -->
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">Chapter 4</span>Producer Theory and Costs</h2>
+
+      <h3>Opening question</h3>
+      <p>Every year before "Double Eleven," China's giant shopping festival, parcel carriers would rather hire temporary workers at double wages and rent trucks on the open market at premium rates than "simply build a few more automated sorting hubs" while volume is enormous. If the peak season is that profitable, why not make a once-and-for-all investment? And conversely, once a sorting hub is built, why does it keep running even at a loss in the slow season?</p>
+
+      <h3>The core intuition</h3>
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>The answer lies in <strong>the distinction between the short run and the long run</strong>. In the short run at least one input is fixed (plant, equipment): as you keep piling variable inputs (people, trucks) onto fixed inputs, each addition yields less and less extra output—diminishing marginal returns. That is why adding people and trucks in peak season gets ever more expensive, but with no time to build, firms swallow it. In the long run all inputs are variable and the firm can replicate its entire scale: if output doubles while cost less than doubles, that is economies of scale—precisely the reason automated sorting hubs exist, and precisely why they must wait for the long run.</p>
+        <p>The discipline of decision-making has only three rules: <strong>marginal cost</strong> decides how much to produce, <strong>average cost</strong> decides whether to stay in the business, and <strong>sunk costs</strong> never enter any decision.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Production Function</div><span class="term-en">生产函数</span><div class="term-def">The technical relationship between input combinations and maximum output: Q = f(L, K). Getting less output from the same inputs means a regression in technology or efficiency.</div></div>
+        <div class="term"><div class="term-name">Diminishing Marginal Returns</div><span class="term-en">边际报酬递减</span><div class="term-def">When one variable input is increased while other inputs are held fixed, its marginal product eventually falls. A short-run concept whose premise is "other inputs unchanged."</div></div>
+        <div class="term"><div class="term-name">Fixed vs. Variable Cost</div><span class="term-en">固定成本与可变成本</span><div class="term-def">Fixed costs do not vary with output (rent, depreciation) and must be paid in the short run whether or not you produce; variable costs rise and fall with output (materials, piece-rate wages).</div></div>
+        <div class="term"><div class="term-name">Economies of Scale</div><span class="term-en">规模经济</span><div class="term-def">In the long run, output expands proportionally more than cost, so average cost falls with scale. Sources: spreading fixed inputs, specialization, bulk purchasing. Past some size, rising coordination costs produce diseconomies of scale.</div></div>
+        <div class="term"><div class="term-name">Sunk Cost</div><span class="term-en">沉没成本</span><div class="term-def">A cost already paid and unrecoverable. It affects no marginal comparison, and rational decision-making should ignore it.</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <figure class="fig">
+        <div class="fig-title">Figure 4-1 · Marginal cost and average cost: which pulls which</div>
+        <p class="fig-sub">Drag the output slider and watch the MC and ATC readouts and the verdict text—and note the special meaning of the two curves' intersection.</p>
+        <figure class="fig-canvas">
+          <svg id="fig4-svg" viewBox="0 0 640 400" role="img" aria-label="Interactive cost-curve chart: an output slider compares marginal cost with average total cost">
+            <line class="gridline" x1="335" y1="36" x2="335" y2="340"/>
+            <line class="gridline" x1="70" y1="166" x2="600" y2="166"/>
+            <line class="axis" x1="70" y1="340" x2="612" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="30"/>
+            <text class="chart-label" x="500" y="366">Output q (units) →</text>
+            <text class="chart-label" x="18" y="42">Cost (yuan)</text>
+            <line id="fig4-mcl" x1="0" y1="0" x2="0" y2="0" stroke="#2f6fdb" stroke-width="3" stroke-linecap="round"/>
+            <path id="fig4-atc" class="curve curve-c2" d=""/>
+            <text class="chart-label" x="330" y="114" fill="#2f6fdb">MC (marginal cost)</text>
+            <text class="chart-label" x="452" y="208" fill="#ea580c">ATC (average total cost)</text>
+            <circle id="fig4-min" class="dot" r="5" fill="#fff" stroke="#ea580c" stroke-width="2" cx="0" cy="0"/>
+            <line id="fig4-v" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line id="fig4-h" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <circle id="fig4-dm" class="dot" r="5" fill="#2f6fdb" cx="0" cy="0"/>
+            <circle id="fig4-da" class="dot" r="5" fill="#ea580c" cx="0" cy="0"/>
+            <text id="fig4-labm" class="chart-label" x="0" y="0" fill="#2f6fdb">MC</text>
+            <text id="fig4-laba" class="chart-label" x="0" y="0" fill="#ea580c">ATC</text>
+          </svg>
+        </figure>
+        <p class="fig-sub" id="fig4-read">Loading readout…</p>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fig4-q">Output q</label>
+            <input type="range" id="fig4-q" min="1" max="12" step="0.25" value="6">
+            <output id="fig4-o" for="fig4-q">6.0</output></div>
+        </div>
+        <figcaption>How to read this figure: ATC is U-shaped—at small output, fixed costs are spread thin and ATC falls; at large output, diminishing marginal returns push up variable costs and ATC rises again. The MC curve crosses ATC from below at its minimum point (marked by the hollow dot): as long as one more unit costs less than the average, it keeps pulling the average down. Try it: move the slider near the intersection (q ≈ 4.5) and verify that the verdict text switches to "ATC is at its minimum."</figcaption>
+      </figure>
+
+      <h3>The real world</h3>
+      <aside class="callout case">
+        <div class="callout-title">The real world · Short run vs. long run in parcel delivery</div>
+        <p>When warehouses overflow in peak season, a parcel carrier's plants and automated sorting lines are fixed inputs; in the short run the peak can only be absorbed by adding people, overtime, and rented vehicles—variable inputs piled onto fixed sorting capacity, with marginal returns diminishing fast. Hence the news stories about "double wages for temporary sorters." In the long run, the leading firms keep building large transfer hubs and automated sorting centers: handling cost per parcel falls with scale (economies of scale)—the micro foundation for a decade of falling parcel prices alongside continued profitability. The same chapter's logic explains the slow season too: once a sorting center is built, depreciation is a sunk/fixed cost, and as long as shipping rates cover the <strong>variable</strong> costs, running is more profitable than shutting down.</p>
+      </aside>
+
+      <h3>Common pitfalls</h3>
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>✗ The sunk cost fallacy: "I paid 60 yuan for this ticket, so however bad the movie is, I'm staying." The ticket price cannot be recovered; the only relevant comparison is whether the next 90 minutes have a better use.<br>
+        ✗ Making production decisions with average cost. Whether to produce one more unit depends only on marginal cost versus marginal benefit; average cost is for judging long-run staying power and profit.<br>
+        ✗ Confusing "diminishing marginal returns" with "diseconomies of scale." The first is a short-run story about a single variable input; the second is a long-run story about all inputs expanding in proportion—they can occur together or separately.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.1</span>"Diminishing marginal returns" refers to:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>Total output falls as the variable input increases</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">B</span>With other inputs fixed, the marginal product of the variable input eventually falls—even while total output is still rising</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>Average cost rises as the firm grows larger</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Diminishing marginal returns means the extra output from each added unit of input (the marginal product) falls—total output is still growing, just ever more slowly. Picture a restaurant kitchen that keeps adding cooks: output keeps rising, but each extra cook adds fewer extra dishes. A describes the extreme case after marginal product turns negative; C describes diseconomies of scale, a long-run concept.</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.2</span>You paid 60 yuan for a movie ticket and confirm within half an hour that it is a dud. The economic advice is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">A</span>The price already paid should not influence your decision; compare only which use of the coming time is worth most</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>The ticket was expensive, so you must stay to the end to get your money's worth</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>Never buy a movie ticket again</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The ticket price is a sunk cost: whether you stay or leave, it cannot be recovered, so it is irrelevant to "should I walk out now?" The rational move is to compare marginal quantities: the disutility of 90 more minutes of a bad movie versus the value of leaving and doing something else. B is the classic sunk cost fallacy; C overcorrects—one bad call does not change the expected value of movies; the right lesson is to read more reviews before buying the next ticket.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Short run: at least one input fixed → diminishing marginal returns; long run: everything variable → economies or diseconomies of scale.</li>
+          <li>Marginal cost sets output, average cost sets whether to stay, sunk costs stay out of decisions.</li>
+          <li>MC crosses ATC at its minimum from below: the marginal value pulls the average toward itself.</li>
+          <li>Fixed costs are unavoidable in the short run but all costs are variable in the long run; shutting down requires only comparing price with average variable cost.</li>
+          <li>Economies of scale come from spreading and specialization and are a key determinant of industry structure (next chapter).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== Chapter 5 ==================== -->
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">Chapter 5</span>Market Structure: From Competition to Monopoly</h2>
+
+      <h3>Opening question</h3>
+      <p>On the same flight, the passenger next to you may have paid three times your fare; for the same movie, students pay half price; for the same software, the enterprise edition costs ten times the personal one. Sellers clearly hold pricing power—so why not simply charge everyone the highest price? What is a firm that can price discriminate really playing at?</p>
+
+      <h3>The core intuition</h3>
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Picture the market as a spectrum. At one end is <strong>perfect competition</strong>—many firms, homogeneous products: any firm that raises its price loses all its customers, so price equals marginal cost and no one earns excess profit. At the other end is <strong>monopoly</strong>—a single seller facing the entire downward-sloping demand curve: it chooses output where marginal revenue equals marginal cost, then pushes the price up onto the demand curve. Between the two poles, monopolistic competition (differentiated products, free entry) and oligopoly (a few firms watching one another) each have their own fascination; oligopoly's strategic interaction is developed in Track 04.</p>
+        <p>Monopoly's key cost: output is squeezed below the competitive level, and the transactions for which buyers are willing to pay more than the cost simply vanish—deadweight loss (DWL). Price discrimination, in essence, is the monopolist abandoning uniform pricing to charge according to willingness to pay, pocketing part of the DWL and the consumer surplus. To pull this off, it must be able to identify customers and to prevent low-price buyers from reselling.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Perfect Competition</div><span class="term-en">完全竞争</span><div class="term-def">A market structure with many buyers and sellers, homogeneous products, and free entry and exit. Each firm is a price taker facing a horizontal demand curve, and long-run economic profit is zero.</div></div>
+        <div class="term"><div class="term-name">Monopoly &amp; Natural Monopoly</div><span class="term-en">垄断与自然垄断</span><div class="term-def">A single seller with no close substitutes. When one firm can supply the whole market at lower cost than several sharing it (cost subadditivity), the monopoly is natural—think power grids or rail networks.</div></div>
+        <div class="term"><div class="term-name">Price Discrimination</div><span class="term-en">价格歧视</span><div class="term-def">Charging different buyers different prices for the same good. Three degrees: by person (first-degree/perfect), by quantity (second-degree), and by group identity (third-degree, e.g. student tickets). Preconditions: identifiable, separable, no resale.</div></div>
+        <div class="term"><div class="term-name">Oligopoly</div><span class="term-en">寡头垄断</span><div class="term-def">A few large firms dominate the market, and each must price with an eye on rivals' reactions—game theory's natural habitat; see Track 04.</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <figure class="fig">
+        <div class="fig-title">Figure 5-1 · Monopoly vs. perfect competition: the deadweight-loss triangle</div>
+        <p class="fig-sub">Drag the marginal-cost slider to see how the monopoly price, output, and DWL triangle change, and how elasticity (the Lerner index) relates to the markup.</p>
+        <figure class="fig-canvas">
+          <svg id="fig5-svg" viewBox="0 0 640 400" role="img" aria-label="Interactive monopoly vs. perfect competition chart: a marginal-cost slider changes monopoly pricing and the deadweight-loss triangle">
+            <line class="gridline" x1="335" y1="36" x2="335" y2="340"/>
+            <line class="gridline" x1="70" y1="195" x2="600" y2="195"/>
+            <line class="axis" x1="70" y1="340" x2="612" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="30"/>
+            <text class="chart-label" x="480" y="366">Quantity Q (10,000s) →</text>
+            <text class="chart-label" x="14" y="42">Price P (yuan)</text>
+            <line id="fig5-dl" x1="0" y1="0" x2="0" y2="0" stroke="#2f6fdb" stroke-width="3" stroke-linecap="round"/>
+            <line id="fig5-mr" x1="0" y1="0" x2="0" y2="0" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="8 5" stroke-linecap="round"/>
+            <text class="chart-label" x="482" y="322" fill="#2f6fdb">D (demand)</text>
+            <text class="chart-label" x="282" y="322" fill="#7c3aed">MR (marginal revenue)</text>
+            <line id="fig5-mcl" x1="0" y1="0" x2="0" y2="0" stroke="#475569" stroke-width="2.5" stroke-linecap="round"/>
+            <text id="fig5-labmc" class="chart-label" x="0" y="0" fill="#475569">MC</text>
+            <path id="fig5-prof" d="" fill="#ea580c" class="area-fill"/>
+            <path id="fig5-dwl" d="" fill="#db2777" opacity="0.2"/>
+            <line id="fig5-vm" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line id="fig5-hm" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <line id="fig5-vc" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3 4"/>
+            <circle id="fig5-dm" class="dot" r="6" fill="#2f6fdb" cx="0" cy="0"/>
+            <circle id="fig5-dc" class="dot" r="5" fill="#0d9488" cx="0" cy="0"/>
+            <text id="fig5-labp" class="chart-label" x="0" y="0" fill="#ea580c">Monopoly profit</text>
+            <text id="fig5-labw" class="chart-label" x="0" y="0" fill="#db2777">DWL</text>
+          </svg>
+        </figure>
+        <p class="fig-sub" id="fig5-read">Loading readout…</p>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fig5-mcs">Marginal cost MC</label>
+            <input type="range" id="fig5-mcs" min="1" max="7" step="0.1" value="3">
+            <output id="fig5-o" for="fig5-mcs">3.0 yuan</output></div>
+        </div>
+        <figcaption>How to read this figure: monopoly output is set where MR = MC (Qm is exactly half the competitive Qc), and the price is then lifted along the demand curve to Pm; the competitive equilibrium sits where D crosses MC (P = MC). The pink triangle is the net loss of social welfare, and the orange rectangle is monopoly profit. Try it: lower MC and you will see the monopoly markup (Pm − MC) and the DWL grow while point elasticity shrinks—the markup equals exactly 1/|ε| (the Lerner index): the quantitative version of "elasticity constrains the monopolist."</figcaption>
+      </figure>
+
+      <h3>The real world</h3>
+      <aside class="callout case">
+        <div class="callout-title">The real world · Natural monopoly and third-degree price discrimination</div>
+        <p>Power grids, railways, and urban water supply are textbook natural monopolies: one network serving everyone costs far less than everyone building their own, and duplicating the network would be pure waste. Governments everywhere, China included, respond not by splitting them into competitors but with <strong>entry regulation plus price (rate-of-return) regulation</strong>—accepting the monopoly structure while restraining monopoly conduct. Meanwhile, airlines, cinemas, and software vendors are masters of third-degree price discrimination: student fares, early-bird tickets, senior discounts, "new-user deals"—all use observable identity tags to sort willingness to pay, pulling in customers who could not or would not buy at the list price (output moves closer to the competitive level) while preserving profits from the high-price groups. The recent controversy over "big-data price discrimination" against loyal customers is the backlash, on fairness and privacy grounds, once price discrimination reaches fully personalized pricing—China's E-Commerce Law and Personal Information Protection Law both respond to it.</p>
+      </aside>
+
+      <h3>Common pitfalls</h3>
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>✗ "A monopolist can charge whatever it wants." Pricing is constrained by the demand curve: the higher the price, the lower the sales, and the monopolist must stop where marginal revenue equals marginal cost. In the inelastic range, raising price even increases revenue—so it would never stop there (see Quiz 5.2).<br>
+        ✗ "Monopoly = huge profits." Monopoly guarantees a higher profit ceiling, not positive profit—with high costs or weak demand a monopolist loses money too.<br>
+        ✗ "Price discrimination is always bad." Perfect price discrimination eliminates DWL and reaches competitive output—total social surplus is actually maximized (it just all goes to the seller). Judge discrimination on both efficiency and distribution, not on gut feeling.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.1</span>In a perfectly competitive market, the demand curve facing a single firm is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>A downward-sloping curve</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">B</span>A horizontal line: it can sell any quantity at the market price, but nothing at all above it</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>A vertical line: output is unrelated to price</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Under perfect competition there are many firms with homogeneous products, and any single firm is negligible relative to the market: at the market price it sells as much as it wants (a price taker), and one cent higher sends every customer to identical substitutes. So the firm faces a horizontal demand curve, and P = MR. A is the demand curve facing the whole market or a monopolist; C has no economic meaning.</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.2</span>A monopolist finds itself at an output where demand is inelastic (|ε| &lt; 1), so marginal revenue MR &lt; 0. Its rational choice is to:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">A</span>Cut output and raise the price—with inelastic demand, a higher price raises total revenue and lowers cost at the same time</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>Expand output and cut the price—small margins, big volume</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>Stay put; its monopoly position is unchanged anyway</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Inelastic demand means a 1% price rise cuts quantity by less than 1%, so total revenue rises rather than falls; cutting output also saves marginal cost. Cutting back thus improves revenue and cost simultaneously, until MR again equals MC—which also proves a monopolist always prices on the elastic range of demand (with linear demand, above the midpoint). B points in exactly the wrong direction; C forgets that "monopoly" merely grants the power to choose—the pricing itself must still obey the logic of optimization.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The market-structure spectrum: perfect competition → monopolistic competition → oligopoly → monopoly; the dividing lines are substitutes and barriers to entry.</li>
+          <li>Competitive firm: P = MC, zero long-run profit; monopolist: MR = MC sets output, price rides up the demand curve.</li>
+          <li>Monopoly output is lower and price higher than the competitive level; the difference forms the DWL triangle.</li>
+          <li>Lerner index (P − MC)/P = 1/|ε|: the less elastic demand, the more markup a monopolist can charge.</li>
+          <li>Price discrimination converts consumer surplus into producer surplus; under perfect discrimination output matches competition.</li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ==================== Chapter 6 ==================== -->
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">Chapter 6</span>Market Failure and Government Intervention</h2>
+
+      <h3>Opening question</h3>
+      <p>An old residential compound wants streetlights, and the property manager says "those who benefit should pay." The outcome is predictable: everyone hopes the lights come on, everyone waits for someone else to pay—in the end no streetlights are installed, and everyone keeps stumbling around in the dark. Why can't the market deliver something that benefits everyone? And by the same token, why can't it stop factories from polluting when that harms everyone?</p>
+
+      <h3>The core intuition</h3>
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>The price system is efficient because it forces <strong>decision-makers to bear their own costs and enjoy their own benefits</strong>. Market failure is precisely where that chain breaks: an <strong>externality</strong> lets your actions affect others without ever entering your bill—the damage from pollution is borne by society, the benefit of streetlights enjoyed by the neighbors; <strong>public goods</strong> are non-excludable and non-rival, so there is no way to charge users, and free riding follows; <strong>asymmetric information</strong> lets bad products drive out good ones (the market for lemons); and <strong>market power</strong> (last chapter's monopoly) directly distorts prices.</p>
+        <p>The basic corrective idea is not to abolish the market but to <strong>fill in the missing price</strong>: tax external damage (a Pigouvian tax) or subsidize positive externalities, define property rights and let the parties bargain (the Coasean approach), or cap quantity and let tradable quotas find the price. But keep this in mind too: government also has limits of information and incentive—government failure and market failure must be weighed on the same scale.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Externality</div><span class="term-en">外部性</span><div class="term-def">The effect of an action on third parties that is never settled through a price. Harming others is a negative externality (pollution); benefiting them is a positive one (vaccination, streetlights).</div></div>
+        <div class="term"><div class="term-name">Public Goods</div><span class="term-en">公共品</span><div class="term-def">Goods that are simultaneously non-excludable (non-payers cannot be kept from using them) and non-rival (one person's use does not reduce what is left for others), such as national defense, streetlights, and basic research.</div></div>
+        <div class="term"><div class="term-name">Free Riding</div><span class="term-en">搭便车</span><div class="term-def">Enjoying the fruits of a collective effort without paying for it. Free riding is why public goods are underprovided by private actors—the main justification for government provision.</div></div>
+        <div class="term"><div class="term-name">Asymmetric Information</div><span class="term-en">信息不对称</span><div class="term-def">One party to a transaction knows something the other does not. Hidden information before the deal leads to adverse selection (the market for lemons); hidden action after it leads to moral hazard. See Track 04.</div></div>
+        <div class="term"><div class="term-name">Pigouvian Tax</div><span class="term-en">庇古税</span><div class="term-def">A tax on a negative externality set equal to the marginal external damage, raising private marginal cost to the social level and returning output to the social optimum.</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <figure class="fig">
+        <div class="fig-title">Figure 6-1 · The Pigouvian tax: putting a price on external damage</div>
+        <p class="fig-sub">Each unit of this product causes 4 yuan of marginal damage (MSC = private cost + 4). Drag the tax-rate slider to see output approach the social optimum and the DWL shrink to zero.</p>
+        <figure class="fig-canvas">
+          <svg id="fig6-svg" viewBox="0 0 640 400" role="img" aria-label="Interactive Pigouvian-tax chart: a tax-rate slider moves output toward the social optimum and shrinks the deadweight loss">
+            <line class="gridline" x1="335" y1="36" x2="335" y2="340"/>
+            <line class="gridline" x1="70" y1="174" x2="600" y2="174"/>
+            <line class="axis" x1="70" y1="340" x2="612" y2="340"/>
+            <line class="axis" x1="70" y1="340" x2="70" y2="30"/>
+            <text class="chart-label" x="480" y="366">Quantity Q (10,000s) →</text>
+            <text class="chart-label" x="14" y="42">Price P (yuan/unit)</text>
+            <line id="fig6-dl" x1="0" y1="0" x2="0" y2="0" stroke="#2f6fdb" stroke-width="3" stroke-linecap="round"/>
+            <line id="fig6-mpc" x1="0" y1="0" x2="0" y2="0" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round"/>
+            <line id="fig6-msc" x1="0" y1="0" x2="0" y2="0" stroke="#ea580c" stroke-width="2.5" stroke-linecap="round"/>
+            <text class="chart-label" x="592" y="326" fill="#2f6fdb" text-anchor="end">D (marginal social benefit)</text>
+            <text class="chart-label" x="76" y="276" fill="#0d9488">Private cost S (P=2)</text>
+            <text class="chart-label" x="76" y="165" fill="#ea580c">Social cost MSC = private cost + damage 4 (P=6)</text>
+            <path id="fig6-dwl" d="" fill="#db2777" opacity="0.2"/>
+            <line id="fig6-tax" x1="0" y1="0" x2="0" y2="0" stroke="#7c3aed" stroke-width="2" stroke-dasharray="8 5"/>
+            <text id="fig6-labtax" class="chart-label" x="0" y="0" fill="#7c3aed">S + tax</text>
+            <line id="fig6-vq" x1="0" y1="0" x2="0" y2="0" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <circle id="fig6-dm" class="dot" r="5" fill="#fff" stroke="#475569" stroke-width="2" cx="494" cy="285"/>
+            <text class="chart-label" x="430" y="312">Unregulated market M (Q=8, P=2)</text>
+            <circle id="fig6-ds" class="dot" r="5" fill="#0d9488" cx="282" cy="174"/>
+            <text class="chart-label" x="290" y="160">Social optimum S (Q=4, P=6)</text>
+            <circle id="fig6-de" class="dot" r="6" fill="#7c3aed" cx="0" cy="0"/>
+          </svg>
+        </figure>
+        <p class="fig-sub" id="fig6-read">Loading readout…</p>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fig6-t">Pigouvian tax rate t</label>
+            <input type="range" id="fig6-t" min="0" max="8" step="0.25" value="0">
+            <output id="fig6-o" for="fig6-t">0.00 yuan</output></div>
+        </div>
+        <figcaption>How to read this figure: without intervention, firms produce along the private-cost line (Q=8), beyond the social optimum (Q=4); the pink triangle is the DWL from overproduction. Try it: set the tax to 4 yuan (exactly the marginal damage) and the firm's cost line rises to MSC—output lands exactly on the social optimum and the DWL goes to zero; pushing the tax beyond 4 overshoots and creates a new DWL from underproduction. The optimal tax equals the marginal damage exactly—more is not better.</figcaption>
+      </figure>
+
+      <h3>The real world</h3>
+      <aside class="callout case">
+        <div class="callout-title">The real world · Carbon markets and the market for lemons</div>
+        <p>In July 2021, China's national carbon emissions trading market officially launched, with the power-generation sector in the first batch: the government caps total emissions and firms buy and sell emission allowances—essentially the "tradable quota" version of the Pigouvian tax, letting the market rather than officials decide who can abate cheapest. As a contrast, the used-car market is the classic site of asymmetric information: buyers afraid of getting a "lemon" (a car with hidden defects) will pay only an average price; owners of good cars, offended by the low offers, exit, and the market's average quality slides further—adverse selection shrinks the market ever smaller. The platforms' countermeasures (official inspection reports, warranties, no-questions-asked returns) are precisely <strong>manufacturing information</strong> to repair the market, in the same lineage as signaling and screening, developed further in Track 04.</p>
+      </aside>
+
+      <h3>Common pitfalls</h3>
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>✗ "The market failed, so the government should take over." Government faces its own incomplete information and distorted incentives (rent-seeking, bureaucratic inefficiency, regulatory capture). The right question is: market, government, or community and property-rights arrangements—which side governs at the lowest total cost?<br>
+        ✗ Treating the Pigouvian tax as a revenue tool. The optimal tax equals the marginal external damage; taxing further just to collect more pushes output below the social optimum and manufactures a new DWL.<br>
+        ✗ "Public goods = goods produced by government." The test is the good's attributes (non-excludable, non-rival), not the producer's identity—governments also produce private goods (state-owned firms' products), and markets and NGOs can supply public goods (open-source software, Wikipedia).</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.1</span>The streetlights in a compound never get installed. The economic root cause is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>The technical barrier to producing streetlights is too high</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">B</span>Streetlights are non-excludable and non-rival: there is no way to charge beneficiaries, everyone wants to free ride, and private provision falls short</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>Residents' demand for streetlights is inelastic</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Once a streetlight is on, residents who did not pay cannot be excluded from the light (non-excludable), and one person's enjoyment does not dim anyone else's (non-rival). So each person's best strategy is "wait for someone else to pay"—free riding leaves voluntary provision far below what society needs, which is exactly the reason public goods are provided collectively out of tax revenue. A and C are beside the point: the technology is mature and the demand real; what jams is the payment mechanism.</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.2</span>A product's production causes marginal external damage of 4 yuan per unit. Setting the Pigouvian tax at 4 yuan per unit will:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>Make the firms unprofitable and drive them all out of the market</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>Maximize government revenue, markedly swelling fiscal income</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">C</span>Raise the private marginal cost firms face up to the social marginal cost, returning output to the socially optimal level</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The Pigouvian tax's job is to "write" the external damage into firms' cost schedules: when the tax exactly equals the marginal damage, each firm's private optimization (finding the demand intersection on its own cost line) replicates society's optimization (finding it on MSC), and output reaches the social optimum. A wildly overstates it—output shrinks, it does not vanish; B has the goal backwards: the Pigouvian tax corrects an externality, and revenue is a by-product; a revenue-maximizing rate would push output far too low.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The four roots of market failure: externalities, public goods, asymmetric information, market power.</li>
+          <li>Externalities drive private cost ≠ social cost: negative externalities mean overproduction, positive ones underprovision.</li>
+          <li>Public goods invite free riding through non-excludability plus non-rivalry, leaving private provision short.</li>
+          <li>The corrective idea is to fill in the missing price: Pigouvian taxes/subsidies, property rights and Coasean bargaining, tradable quotas.</li>
+          <li>Policy evaluation weighs market failure against government failure and picks the governance with the lowest total cost.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== Chapter 7 ==================== -->
+    <section class="chapter" id="ch7">
+      <h2><span class="ch-num">Chapter 7</span>General Equilibrium and Welfare Economics</h2>
+
+      <h3>Opening question</h3>
+      <p>World oil prices rise: first queues at the gas station, then electric-vehicle sales climb and lithium prices soar, then electricity-rate hearings convene—even the charging station downstairs starts charging more. The first six chapters looked at one market at a time, but in the real world all markets move together. Is there a toolkit that can see "all markets clearing at once"—and answer a bigger question: is such an economy a "good" one?</p>
+
+      <h3>The core intuition</h3>
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Partial equilibrium looks at one market at a time; general equilibrium makes all markets clear simultaneously, with prices and quantities determined jointly by the entire network of markets—an oil-price change travels along chains of substitutes, complements, and factor demand in every direction. To analyze pure exchange between two people and two goods, use the <strong>Edgeworth box</strong>: rotate B's indifference map 180 degrees and superimpose it on A's; every point in the box is an allocation.</p>
+        <p>The criterion for judging allocations is <strong>Pareto efficiency</strong>: no change can make at least one person better off without making anyone worse off. Efficiency in exchange requires everyone's MRS to be equal—the allocations satisfying this form the contract curve. The two Welfare Theorems then divide the labor: the <strong>First Theorem</strong> says a perfectly competitive equilibrium is necessarily Pareto efficient (markets are good at efficiency); the <strong>Second Theorem</strong> says any efficient allocation can in principle be reached by suitably redistributing initial endowments and then letting markets trade (for equity, redistribute first, then let the market do the work).</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">General Equilibrium</div><span class="term-en">一般均衡</span><div class="term-def">The state in which all markets clear at the same time. The "other things equal" of partial-equilibrium analysis becomes jointly determined in general equilibrium—a shock in one market propagates throughout.</div></div>
+        <div class="term"><div class="term-name">Pareto Efficiency / Improvement</div><span class="term-en">帕累托效率与帕累托改进</span><div class="term-def">If at least one person can be made better off with no one worse off, that is a Pareto improvement; when no room for one remains, the allocation is Pareto efficient. The criterion avoids interpersonal comparisons—and is therefore silent about distribution.</div></div>
+        <div class="term"><div class="term-name">Contract Curve</div><span class="term-en">契约曲线</span><div class="term-def">The locus of all allocations in the Edgeworth box where the two parties' MRS are equal—the Pareto-efficient set for exchange; the final landing point of bargaining (the competitive equilibrium) is one of its points.</div></div>
+        <div class="term"><div class="term-name">Two Fundamental Theorems of Welfare Economics</div><span class="term-en">福利经济学两大定理</span><div class="term-def">First Theorem: a competitive equilibrium is Pareto efficient. Second Theorem: any efficient allocation can be achieved by lump-sum redistribution of endowments followed by competitive exchange. Together: leave efficiency to the market, equity to redistribution.</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <figure class="fig">
+        <div class="fig-title">Figure 7-1 · The Edgeworth box: finding the contract curve</div>
+        <p class="fig-sub">Two people, A and B, share 10 portions of tea and 10 cups of coffee; A always holds 4 cups of coffee. Drag the slider to change A's tea and see when the two indifference curves become tangent (Pareto optimal).</p>
+        <figure class="fig-canvas">
+          <svg id="fig7-svg" viewBox="0 0 640 440" role="img" aria-label="Interactive Edgeworth-box chart: a tea-allocation slider demonstrates Pareto optimality and the contract curve">
+            <rect x="150" y="26" width="360" height="360" fill="#f8fafc" stroke="#e5e7eb"/>
+            <line class="axis" x1="150" y1="386" x2="510" y2="386"/>
+            <line class="axis" x1="150" y1="386" x2="150" y2="26"/>
+            <line class="axis" x1="510" y1="386" x2="510" y2="26"/>
+            <line class="axis" x1="150" y1="26" x2="510" y2="26"/>
+            <text class="chart-label" x="290" y="416">A's tea x → (B gets 10 − x)</text>
+            <text class="chart-label" x="150" y="18">← B's tea</text>
+            <text class="chart-label" x="20" y="210" transform="rotate(-90 26 206)">A's coffee (fixed 4) →</text>
+            <text class="chart-label" x="596" y="180" transform="rotate(90 596 186)">B's coffee (fixed 6) →</text>
+            <text class="chart-label" x="166" y="376">A's origin</text>
+            <text class="chart-label" x="438" y="44">B's origin</text>
+            <line id="fig7-cc" x1="0" y1="0" x2="0" y2="0" stroke="#65a30d" stroke-width="2" stroke-dasharray="8 6"/>
+            <text class="chart-label" x="352" y="196" fill="#65a30d">Contract curve (MRS A = MRS B)</text>
+            <circle id="fig7-po" class="dot" r="5" fill="#fff" stroke="#65a30d" stroke-width="2" cx="294" cy="242"/>
+            <path id="fig7-ica" class="curve curve-c1" d=""/>
+            <path id="fig7-icb" class="curve curve-c2" d=""/>
+            <text id="fig7-laba" class="chart-label" x="0" y="0" fill="#2f6fdb">A's indifference curve</text>
+            <text id="fig7-labb" class="chart-label" x="0" y="0" fill="#ea580c">B's indifference curve</text>
+            <circle id="fig7-dot" class="dot" r="6" fill="#2f6fdb" cx="0" cy="0"/>
+          </svg>
+        </figure>
+        <p class="fig-sub" id="fig7-read">Loading readout…</p>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="fig7-x">A's tea x</label>
+            <input type="range" id="fig7-x" min="0.5" max="9.5" step="0.1" value="6.5">
+            <output id="fig7-o" for="fig7-x">6.5</output></div>
+        </div>
+        <figcaption>How to read this figure: anywhere inside the "lens" enclosed by the two indifference curves can make both people better off at once—so as long as the curves cross (MRS unequal), the allocation is not Pareto optimal. Try it: move the slider to x = 4, where the two curves are exactly tangent (a contract-curve point, marked by the green hollow dot); the lens vanishes and the opportunities for mutually beneficial trade are exhausted. With A's coffee fixed at 4 and B's at 6, the tangency sits right on the contract curve (the diagonal), where the two parties' tea-for-coffee exchange rates coincide exactly.</figcaption>
+      </figure>
+
+      <h3>The real world</h3>
+      <aside class="callout case">
+        <div class="callout-title">The real world · Incremental reform: a Pareto improvement in practice</div>
+        <p>The household contract responsibility system of around 1978 is a textbook near-Pareto improvement: land remained collectively owned while farmers contracted to farm it—deliver enough to the state, set aside enough for the collective, keep the rest—and almost no one lost, while grain output surged within a few years. The <strong>dual-track pricing system</strong> that followed carried the same welfare-economics wisdom: prices and quotas on the planned track stayed put (the stock untouched, creating no losers), while the market track outside the plan was liberalized (the increment moved first, letting the improvers gain). The sequencing won broad support for reform—echoing the spirit of the Second Theorem: efficiency and distribution (who is harmed, who is compensated) are two things that can be designed separately; "growing the pie" and "dividing the pie well" call for different tools.</p>
+      </aside>
+
+      <h3>Common pitfalls</h3>
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>✗ "Pareto efficient = fair." The contract curve contains both the equal-split point and corners where one person holds everything—they are all equally efficient. Efficiency asks only "is the pie as big as possible," never "how the pie is divided."<br>
+        ✗ Treating the Welfare Theorems as unconditional truths. Both rest on strong premises—perfect competition, complete markets, no externalities—and Chapters 5 and 6's monopoly and externalities are exactly where the premises fail, and competitive equilibrium no longer guarantees efficiency.<br>
+        ✗ "If markets are efficient, no redistribution is needed." The First Theorem only guarantees landing somewhere on the contract curve; where you land depends on initial endowments. The legitimate tool for moving that point is lump-sum redistribution, not price distortion.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 7.1</span>A policy change is called a "Pareto improvement" if and only if:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">A</span>At least one person is made better off, and no one is made worse off</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">B</span>Total social income (GDP) increases</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>Income distribution becomes more equal</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> A Pareto improvement is by definition a change that makes someone better off and no one worse off; it deliberately avoids interpersonal utility comparisons, which makes it the weakest and least contentious standard. B and C can both accompany losses for some—GDP rises while workers in one industry lose their jobs, or distribution becomes more equal while the rich are made worse off—so neither is sufficient nor necessary; judging such changes requires additional value judgments (normative analysis).</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 7.2</span>The most important policy implication of the Second Welfare Theorem is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" type="button"><span class="opt-key">A</span>Efficiency and equity cannot both be had; government must choose one</button>
+          <button class="quiz-opt" type="button" data-correct="true"><span class="opt-key">B</span>To be both fair and efficient, first redistribute endowments in a lump sum, then let free markets deliver the efficiency</button>
+          <button class="quiz-opt" type="button"><span class="opt-key">C</span>The outcome of market exchange is necessarily fair, so no redistribution is ever needed</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The Second Theorem splits "efficiency" and "distribution" into two separate tasks: the market is the machine that produces efficiency, and any efficient allocation you want (including fairer ones) can be reached by adjusting the starting point (lump-sum redistribution) and then handing over to the market. A is wrong that they "cannot both be had"; C mistakes efficiency for fairness—where the competitive equilibrium lands is determined by initial endowments and can be deeply unequal. Of course, in practice lump-sum redistribution (like taxing endowments) runs into incentive and enforcement problems—the province of optimal tax theory (see Track 08).</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>General equilibrium has all markets clearing at once; shocks propagate throughout via substitution and factor chains.</li>
+          <li>The Edgeworth box analyzes exchange: crossing indifference curves mean mutually beneficial trades remain; tangency means Pareto efficiency.</li>
+          <li>The contract curve = all allocations where MRS are equal; the competitive equilibrium lies on it.</li>
+          <li>First Theorem: competitive equilibrium is efficient; Second Theorem: efficient plus equitable can be reached via redistribution of endowments.</li>
+          <li>Efficiency is not equity; the theorems' premises (perfect competition, no externalities) are exactly the focus of policy debate.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== Next steps ==================== -->
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">Wrap-up</span>Next Steps &amp; Further Reading</h2>
+      <p>Microeconomics is the foundation of the whole map. Moving on from this track, the three most natural directions are:</p>
+      <ul>
+        <li><a href="../02-macroeconomics/index.html">02 Macroeconomics</a>: aggregates the household and firm behavior built here into GDP, inflation, and business cycles—the hog cycle's next stop is the CPI and monetary policy.</li>
+        <li><a href="../03-econometrics/index.html">03 Econometrics</a>: microeconomics delivers testable predictions (minimum wages, elasticities, tax incidence); econometrics teaches you how to make the data speak honestly.</li>
+        <li><a href="../04-game-theory-and-information-economics/index.html">04 Game Theory &amp; Information Economics</a>: takes Chapter 5's oligopoly and Chapter 6's asymmetric information deeper—the complete toolbox of strategic interaction.</li>
+      </ul>
+      <p>The applied tracks (labor, industrial organization, public, environmental, behavioral…) draw on this track's supply and demand, elasticity, marginal analysis, and welfare tools in almost every chapter—well worth revisiting again and again.</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Mankiw, Principles of Economics, Microeconomics volume</span>—the best first book from zero: case-rich; read it first for the full panorama.</li>
+          <li><span class="bk">Pindyck &amp; Rubinfeld, Microeconomics</span>—the standard intermediate text, balancing curves and computation; suited to systematic progress.</li>
+          <li><span class="bk">Varian, Intermediate Microeconomics: A Modern Approach</span>—intermediate with a mathematical bent; especially clear on exchange and the Welfare Theorems.</li>
+          <li><span class="bk">Nicholson, Microeconomic Theory: Basic Principles and Extensions</span>—an advanced text that paves the way to graduate study; read selectively.</li>
+          <li><span class="bk">Frank, The Economic Naturalist</span>—light reading that explains everyday puzzles with opportunity cost and marginal analysis; commute-friendly.</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../index.html"><span class="pager-dir">Previous track</span><br><span class="pager-name">Overview · study map</span></a>
+        <a href="../02-macroeconomics/index.html"><span class="pager-dir">Next track</span><br><span class="pager-name">Macroeconomics</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+<script src="../../assets/econ.js"></script>
+<script>
+/* ====== Figure interactions on this page (vanilla JS, no external dependencies) ====== */
+(function () {
+  "use strict";
+  function $(id) { return document.getElementById(id); }
+  function f1(x) { return x.toFixed(1); }
+  function f2(x) { return x.toFixed(2); }
+  function clamp(v, lo, hi) { return Math.min(hi, Math.max(lo, v)); }
+  function attr(id, k, v) { var e = $(id); if (e) e.setAttribute(k, v); }
+  function txt(id, s) { var e = $(id); if (e) e.textContent = s; }
+  function path(id, d) { attr(id, "d", d); }
+  function dot(id, x, y) { attr(id, "cx", f1(x)); attr(id, "cy", f1(y)); }
+  function pos(id, x, y) { attr(id, "x", f1(x)); attr(id, "y", f1(y)); }
+  function seg(id, a, b, c, d) {
+    var e = $(id);
+    if (!e) return;
+    e.setAttribute("x1", f1(a)); e.setAttribute("y1", f1(b));
+    e.setAttribute("x2", f1(c)); e.setAttribute("y2", f1(d));
+  }
+
+  /* ---------- Figure 1-1 PPF opportunity cost ---------- */
+  (function () {
+    var L = 70, R = 600, T = 44, B = 340, XM = 10, YM = 8;
+    function X(q) { return L + q * (R - L) / XM; }
+    function Y(v) { return B - v * (B - T) / YM; }
+    function ppf(q) { return YM * Math.sqrt(Math.max(0, 1 - (q / XM) * (q / XM))); }
+    var d = "", i, q;
+    for (i = 0; i <= 100; i++) {
+      q = XM * i / 100;
+      d += (i ? "L" : "M") + f1(X(q)) + " " + f1(Y(ppf(q)));
+    }
+    path("fig1-curve", d);
+    var sl = $("fig1-x"), out = $("fig1-o"), svg = $("fig1-svg");
+    function update() {
+      var t = Number(sl.value);
+      var xq = 0.5 + (t / 100) * 9;
+      var yv = ppf(xq);
+      var mc = (YM * xq) / (XM * XM * Math.sqrt(Math.max(1e-6, 1 - (xq / XM) * (xq / XM))));
+      dot("fig1-dot", X(xq), Y(yv));
+      seg("fig1-gv", X(xq), Y(yv), X(xq), B);
+      seg("fig1-gh", L, Y(yv), X(xq), Y(yv));
+      txt("fig1-labq", "Cars " + f1(xq) + " ×10k");
+      pos("fig1-labq", clamp(X(xq) - 40, L, R - 96), B + 20);
+      txt("fig1-labv", "Grain " + f1(yv) + " ×10k t");
+      pos("fig1-labv", 6, clamp(Y(yv) + 4, T, B));
+      txt("fig1-read", "Current bundle: " + f1(xq) + " ×10k cars and " + f1(yv) +
+        " ×10k tons of grain. Marginal opportunity cost ≈ " + f2(mc) +
+        " ×10k tons of grain per extra 10,000 cars (rising as car output grows)");
+      out.value = f2(mc);
+      svg.setAttribute("aria-label", "PPF chart: currently producing " + f1(xq) +
+        " ×10k cars and " + f1(yv) + " ×10k tons of grain; marginal opportunity cost " +
+        f2(mc) + " ×10k tons of grain per 10,000 cars");
+    }
+    sl.addEventListener("input", update);
+    update();
+  })();
+
+  /* ---------- Figure 2-1 Supply-demand equilibrium + price control ---------- */
+  (function () {
+    var L = 70, R = 600, T = 36, B = 340, QM = 10, PM = 9;
+    function X(q) { return L + q * (R - L) / QM; }
+    function Y(p) { return B - p * (B - T) / PM; }
+    var slD = $("fig2-d"), slS = $("fig2-s"), slP = $("fig2-pc"), btn = $("fig2-btn");
+    var on = false;
+    function update() {
+      var A = 7 + Number(slD.value) * 0.02;
+      var C = 1.5 + Number(slS.value) * 0.02;
+      var b = 0.5, s = 0.5;
+      var qe = (A - C) / (b + s), pe = A - b * qe;
+      var qd1 = clamp((A - 8.8) / b, 0, QM), qd2 = clamp((A - 0.2) / b, 0, QM);
+      path("fig2-dline", "M" + f1(X(qd1)) + " " + f1(Y(A - b * qd1)) +
+        "L" + f1(X(qd2)) + " " + f1(Y(A - b * qd2)));
+      var qs1 = clamp((0.2 - C) / s, 0, QM), qs2 = clamp((8.8 - C) / s, 0, QM);
+      path("fig2-sline", "M" + f1(X(qs1)) + " " + f1(Y(C + s * qs1)) +
+        "L" + f1(X(qs2)) + " " + f1(Y(C + s * qs2)));
+      pos("fig2-labd", clamp(X(qd1) + 6, L, R - 60), clamp(Y(A) + 16, 14, B));
+      pos("fig2-labs", clamp(X(qs2) - 40, L, R - 44), clamp(Y(C + s * qs2) - 10, 14, B));
+      dot("fig2-e", X(qe), Y(pe));
+      seg("fig2-ev", X(qe), B, X(qe), Y(pe));
+      seg("fig2-eh", L, Y(pe), X(qe), Y(pe));
+      pos("fig2-labe", clamp(X(qe) + 8, L, R - 24), clamp(Y(pe) - 10, 14, B));
+      var msg = "Equilibrium: P* = " + f1(pe) + " yuan, Q* = " + f1(qe) + " ×10k units";
+      $("fig2-grp").setAttribute("display", on ? "inline" : "none");
+      if (on) {
+        var pc = Number(slP.value);
+        var qdq = (A - pc) / b, qsq = (pc - C) / s;
+        seg("fig2-pl", L, Y(pc), R, Y(pc));
+        var xa = X(clamp(qsq, 0, QM)), xb = X(clamp(qdq, 0, QM));
+        dot("fig2-dqd", X(clamp(qdq, 0, QM)), Y(pc));
+        dot("fig2-dqs", xa, Y(pc));
+        var yb = Y(pc) - 16;
+        path("fig2-brk", "M" + f1(Math.min(xa, xb)) + " " + f1(yb) + "H" + f1(Math.max(xa, xb)) +
+          "M" + f1(xa) + " " + f1(yb - 6) + "V" + f1(yb + 6) +
+          "M" + f1(xb) + " " + f1(yb - 6) + "V" + f1(yb + 6));
+        var brk;
+        if (pc < pe - 0.05) brk = "Shortage " + f1(qdq - qsq) + " ×10k";
+        else if (pc > pe + 0.05) brk = "Surplus " + f1(qsq - qdq) + " ×10k";
+        else brk = "≈ equilibrium price";
+        txt("fig2-brkt", brk);
+        pos("fig2-brkt", (xa + xb) / 2 - 30, yb - 10);
+        msg += " | Price cap " + f1(pc) + " yuan: quantity demanded " + f1(qdq) +
+          ", quantity supplied " + f1(qsq) + " (x-axis cap 10)";
+        $("fig2-oc").value = f1(pc) + " yuan";
+      }
+      txt("fig2-read", msg);
+      $("fig2-od").value = (Number(slD.value) > 0 ? "+" : "") + slD.value;
+      $("fig2-os").value = (Number(slS.value) > 0 ? "+" : "") + slS.value;
+    }
+    slD.addEventListener("input", update);
+    slS.addEventListener("input", update);
+    slP.addEventListener("input", update);
+    btn.addEventListener("click", function () {
+      on = !on;
+      btn.textContent = on ? "Hide price control" : "Overlay price control demo";
+      update();
+    });
+    update();
+  })();
+
+  /* ---------- Figure 3-1 Tangency of budget line and indifference curve ---------- */
+  (function () {
+    var L = 70, R = 600, T = 36, B = 340, XM = 16, YM = 40, PY = 30;
+    function X(x) { return L + x * (R - L) / XM; }
+    function Y(y) { return B - y * (B - T) / YM; }
+    var slM = $("fig3-m"), slP = $("fig3-px");
+    function update() {
+      var m = Number(slM.value), px = Number(slP.value);
+      var x = m / (2 * px), y = m / (2 * PY), u = x * y;
+      var xend = Math.min(XM, m / px);
+      var yend = (m - px * xend) / PY;
+      seg("fig3-bl", L, Y(m / PY), X(xend), Y(yend));
+      var lo = Math.max(0.8, u / 39, x / 2.2), hi = Math.min(15.6, x * 2.2);
+      if (hi - lo < 0.6) hi = Math.min(15.9, lo + 0.6);
+      var d = "", i, xx;
+      for (i = 0; i <= 40; i++) {
+        xx = lo + (hi - lo) * i / 40;
+        d += (i ? "L" : "M") + f1(X(xx)) + " " + f1(Y(clamp(u / xx, 0.5, YM)));
+      }
+      path("fig3-ic", d);
+      dot("fig3-t", X(x), Y(y));
+      seg("fig3-v", X(x), Y(y), X(x), B);
+      seg("fig3-h", L, Y(y), X(x), Y(y));
+      pos("fig3-labbl", clamp(X(xend) - 64, L, R - 74), Y(yend) - 12);
+      pos("fig3-labic", clamp(X(lo) - 6, L, R - 170), clamp(Y(u / lo) - 12, 14, B));
+      txt("fig3-read", "Optimal bundle T: " + f1(x) + " movies + " + f1(y) +
+        " takeout meals (budget " + m + " yuan, ticket " + px + " yuan, meal " + PY +
+        " yuan each). MRS = " + f2(y / x) + " = ticket price/meal price = " + f2(px / PY) +
+        ": the tangency condition always holds");
+      $("fig3-om").value = m + " yuan";
+      $("fig3-opx").value = px + " yuan";
+    }
+    slM.addEventListener("input", update);
+    slP.addEventListener("input", update);
+    update();
+  })();
+
+  /* ---------- Figure 4-1 Marginal cost and average total cost ---------- */
+  (function () {
+    var L = 70, R = 600, T = 36, B = 340, QM = 12, CM = 14;
+    function X(q) { return L + q * (R - L) / QM; }
+    function Y(c) { return B - c * (B - T) / CM; }
+    function mc(q) { return 2 + q; }
+    function atc(q) { return 10 / q + 2 + 0.5 * q; }
+    seg("fig4-mcl", X(0.5), Y(mc(0.5)), X(QM), Y(mc(QM)));
+    var q0 = 0.95, d = "", i, q;
+    for (i = 0; i <= 80; i++) {
+      q = q0 + (QM - q0) * i / 80;
+      d += (i ? "L" : "M") + f1(X(q)) + " " + f1(Y(clamp(atc(q), 0, CM)));
+    }
+    path("fig4-atc", d);
+    var qmin = Math.sqrt(20);
+    dot("fig4-min", X(qmin), Y(atc(qmin)));
+    var sl = $("fig4-q");
+    function update() {
+      var q = Number(sl.value);
+      var m = mc(q), a = atc(q);
+      dot("fig4-dm", X(q), Y(m));
+      dot("fig4-da", X(q), Y(a));
+      seg("fig4-v", X(q), T, X(q), B);
+      seg("fig4-h", L, Y(a), X(q), Y(a));
+      txt("fig4-labm", "MC " + f1(m));
+      pos("fig4-labm", clamp(X(q) + 8, L, R - 70), clamp(Y(m) - 8, 14, B));
+      txt("fig4-laba", "ATC " + f1(a));
+      pos("fig4-laba", clamp(X(q) + 8, L, R - 80), clamp(Y(a) + 18, 14, B));
+      var st = Math.abs(m - a) < 0.15 ? "MC = ATC — ATC is at its minimum (efficient scale)"
+        : (m < a ? "MC < ATC: one more unit pulls average cost down" : "MC > ATC: one more unit pushes average cost up");
+      txt("fig4-read", "Output q = " + f1(q) + ": marginal cost MC = " + f1(m) +
+        " yuan, average total cost ATC = " + f1(a) + " yuan. Verdict: " + st);
+      $("fig4-o").value = f1(q);
+    }
+    sl.addEventListener("input", update);
+    update();
+  })();
+
+  /* ---------- Figure 5-1 Monopoly and deadweight loss ---------- */
+  (function () {
+    var L = 70, R = 600, T = 36, B = 340, QM = 13, PM = 10.5;
+    function X(q) { return L + q * (R - L) / QM; }
+    function Y(p) { return B - p * (B - T) / PM; }
+    seg("fig5-dl", L, Y(10), X(10), Y(0));
+    seg("fig5-mr", L, Y(10), X(5), Y(0));
+    var sl = $("fig5-mcs");
+    function update() {
+      var c = Number(sl.value);
+      var qc = 10 - c, qm = qc / 2, pm = (10 + c) / 2;
+      seg("fig5-mcl", L, Y(c), X(QM), Y(c));
+      txt("fig5-labmc", "MC = " + f1(c));
+      pos("fig5-labmc", X(QM) - 84, Y(c) - 8);
+      path("fig5-prof", "M" + f1(L) + " " + f1(Y(c)) + "H" + f1(X(qm)) +
+        "V" + f1(Y(pm)) + "H" + f1(L) + "Z");
+      path("fig5-dwl", "M" + f1(X(qm)) + " " + f1(Y(pm)) + "L" + f1(X(qm)) + " " +
+        f1(Y(c)) + "L" + f1(X(qc)) + " " + f1(Y(c)) + "Z");
+      dot("fig5-dm", X(qm), Y(pm));
+      dot("fig5-dc", X(qc), Y(c));
+      seg("fig5-vm", X(qm), Y(c), X(qm), Y(pm));
+      seg("fig5-hm", L, Y(pm), X(qm), Y(pm));
+      seg("fig5-vc", X(qc), T, X(qc), Y(c));
+      pos("fig5-labp", L + 14, (Y(c) + Y(pm)) / 2 + 4);
+      pos("fig5-labw", clamp((X(qm) + X(qc)) / 2 - 14, L, R - 60), Y(c) - 10);
+      var e = (10 + c) / (10 - c), dwl = (10 - c) * (10 - c) / 8;
+      txt("fig5-read", "Monopoly: Pm = " + f1(pm) + " yuan, Qm = " + f1(qm) +
+        " (MR = MC); perfect competition: P = MC = " + f1(c) + " yuan, Qc = " + f1(qc) +
+        ". Point elasticity at the monopoly point |ε| = " + f2(e) +
+        ", Lerner index (Pm−MC)/Pm = " + f2(1 / e) + " = 1/|ε|, deadweight loss DWL ≈ " +
+        f2(dwl) + " ×10k yuan");
+      $("fig5-o").value = f1(c) + " yuan";
+    }
+    sl.addEventListener("input", update);
+    update();
+  })();
+
+  /* ---------- Figure 6-1 Pigouvian tax ---------- */
+  (function () {
+    var L = 70, R = 600, T = 36, B = 340, QM = 10, PM = 11;
+    function X(q) { return L + q * (R - L) / QM; }
+    function Y(p) { return B - p * (B - T) / PM; }
+    seg("fig6-dl", L, Y(10), X(QM), Y(0));
+    seg("fig6-mpc", L, Y(2), R, Y(2));
+    seg("fig6-msc", L, Y(6), R, Y(6));
+    var sl = $("fig6-t");
+    function update() {
+      var t = Number(sl.value);
+      var qc = clamp(8 - t, 0, QM), p = 2 + t;
+      seg("fig6-tax", L, Y(p), R, Y(p));
+      dot("fig6-de", X(qc), Y(p));
+      path("fig6-dwl", "M" + f1(X(4)) + " " + f1(Y(6)) + "L" + f1(X(qc)) + " " +
+        f1(Y(6)) + "L" + f1(X(qc)) + " " + f1(Y(p)) + "Z");
+      seg("fig6-vq", X(qc), T, X(qc), B);
+      txt("fig6-labtax", "S + tax (P = " + f1(p) + ")");
+      pos("fig6-labtax", X(2.1), Y(p) - 8);
+      var dwl = 0.5 * Math.abs(qc - 4) * Math.abs(4 - t);
+      var st = Math.abs(t - 4) < 0.01
+        ? "✓ Tax = marginal damage (4 yuan): output is exactly the social optimum, DWL = 0"
+        : "Current DWL ≈ " + f2(dwl) + " (an under-tax overproduces, an over-tax underproduces)";
+      txt("fig6-read", "Pigouvian tax t = " + f2(t) + " yuan/unit: firm cost 2 + t = " + f1(p) +
+        " yuan, market output Q = 8 − t = " + f1(8 - t) + " (social optimum 4). " + st);
+      $("fig6-o").value = f2(t) + " yuan";
+    }
+    sl.addEventListener("input", update);
+    update();
+  })();
+
+  /* ---------- Figure 7-1 Edgeworth box ---------- */
+  (function () {
+    var LF = 150, RT = 510, TP = 26, BM = 386, U = 36;
+    function X(x) { return LF + x * U; }
+    function Y(y) { return BM - y * U; }
+    seg("fig7-cc", X(0), Y(0), X(10), Y(10));
+    var sl = $("fig7-x");
+    function update() {
+      var x = Number(sl.value), ya = 4;
+      var ua = x * ya, ub = (10 - x) * (10 - ya);
+      var mrsa = ya / x, mrsb = (10 - ya) / (10 - x);
+      var lo = Math.max(0.5, ua / 9.7, x - 2.6), hi = Math.min(9.5, x + 2.6);
+      if (hi - lo < 0.6) hi = Math.min(9.5, lo + 0.6);
+      var d = "", i, xx;
+      for (i = 0; i <= 40; i++) {
+        xx = lo + (hi - lo) * i / 40;
+        d += (i ? "L" : "M") + f1(X(xx)) + " " + f1(Y(clamp(ua / xx, 0.3, 9.7)));
+      }
+      path("fig7-ica", d);
+      var xb0 = 10 - x;
+      var lob = Math.max(0.5, ub / 9.7, xb0 - 2.6), hib = Math.min(9.5, xb0 + 2.6);
+      if (hib - lob < 0.6) hib = Math.min(9.5, lob + 0.6);
+      d = "";
+      var xb, yb;
+      for (i = 0; i <= 40; i++) {
+        xb = lob + (hib - lob) * i / 40;
+        yb = clamp(ub / xb, 0.3, 9.7);
+        d += (i ? "L" : "M") + f1(X(10 - xb)) + " " + f1(Y(10 - yb));
+      }
+      path("fig7-icb", d);
+      dot("fig7-dot", X(x), Y(ya));
+      pos("fig7-laba", clamp(X(hi) - 96, LF, RT - 104), clamp(Y(clamp(ua / hi, 0.3, 9.7)) + 14, TP + 10, BM));
+      pos("fig7-labb", clamp(X(10 - hib) - 6, LF, RT - 104), clamp(Y(10 - clamp(ub / hib, 0.3, 9.7)) - 12, TP + 8, BM - 10));
+      var po = Math.abs(x - 4) < 0.06;
+      txt("fig7-read", "A: tea " + f1(x) + ", coffee 4, U_A = " + f1(ua) +
+        ", MRS_A = " + f2(mrsa) + " | B: tea " + f1(10 - x) + ", coffee 6, U_B = " +
+        f1(ub) + ", MRS_B = " + f2(mrsb) + " | " +
+        (po ? "✓ MRS equal, on the contract curve: Pareto optimal, no room left for mutually beneficial trade"
+          : "✗ MRS unequal: the curves cross in a lens, so trades that make both better off remain (" +
+            (mrsa > mrsb ? "A values tea more; B should trade some tea to A" : "B values tea more; A should trade some tea to B") + ")"));
+      $("fig7-o").value = f1(x);
+    }
+    sl.addEventListener("input", update);
+    update();
+  })();
+})();
+</script>
+</body>
+</html>

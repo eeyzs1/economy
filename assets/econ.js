@@ -11,6 +11,9 @@
 (function () {
   "use strict";
 
+  /* ---------- 0. 语言检测: 英文页 (lang="en") 使用英文界面文案 ---------- */
+  var EN = (document.documentElement.lang || "").replace("-", "").indexOf("en") === 0;
+
   /* ---------- 1. 阅读进度条 ---------- */
   function initProgress() {
     var bar = document.querySelector(".reading-progress");
@@ -128,13 +131,13 @@
             o.classList.add("correct");
             o.insertAdjacentHTML(
               "beforeend",
-              ' <span class="v-mark" aria-hidden="true">&#10003; 正确</span>'
+              ' <span class="v-mark" aria-hidden="true">&#10003; ' + (EN ? "Correct" : "正确") + '</span>'
             );
           } else if (o === opt) {
             o.classList.add("wrong");
             o.insertAdjacentHTML(
               "beforeend",
-              ' <span class="v-mark" aria-hidden="true">&#10007; 你的选择</span>'
+              ' <span class="v-mark" aria-hidden="true">&#10007; ' + (EN ? "Your answer" : "你的选择") + '</span>'
             );
           } else {
             o.classList.add("dimmed");
@@ -142,8 +145,8 @@
         });
         if (verdict) {
           verdict.textContent = isRight
-            ? "\u2713 回答正确！"
-            : "\u2717 不对哦，看看下面的解析。";
+            ? (EN ? "\u2713 Correct!" : "\u2713 回答正确！")
+            : (EN ? "\u2717 Not quite \u2014 read the explanation below." : "\u2717 不对哦，看看下面的解析。");
           verdict.classList.add("show");
           verdict.classList.toggle("v-ok", isRight);
           verdict.classList.toggle("v-err", !isRight);
@@ -152,7 +155,7 @@
         retry = document.createElement("button");
         retry.type = "button";
         retry.className = "quiz-retry";
-        retry.textContent = "重做一遍";
+        retry.textContent = EN ? "Try again" : "重做一遍";
         retry.addEventListener("click", reset);
         quiz.appendChild(retry);
       }
@@ -208,7 +211,7 @@
       return Array.prototype.slice.call((root || document).querySelectorAll(sel));
     },
     fmt: function (x, d) {
-      return Number(x).toLocaleString("zh-CN", {
+      return Number(x).toLocaleString(EN ? "en-US" : "zh-CN", {
         minimumFractionDigits: d == null ? 2 : d,
         maximumFractionDigits: d == null ? 2 : d,
       });

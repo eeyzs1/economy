@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Public Economics · EconLearn Self-Study Path in Economics</title>
+<meta name="description" content="An interactive public economics tutorial in English: the deadweight loss and incidence of taxation, tax system design, Okun's leaky bucket of redistribution, public choice, and cost–benefit analysis, with interactive figures and self-test quizzes.">
+<link rel="stylesheet" href="../../assets/econ.css">
+</head>
+<body style="--branch:#be185d">
+<noscript><p class="noscript-tip">The interactive figures and quizzes on this page need JavaScript; with it disabled you can still read the full text.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← Home</a>
+  <div class="topbar-title"><span class="topbar-num">08</span>Public Economics (Public Finance)</div>
+  <a class="topbar-lang" href="../../08-公共经济学/index.html" hreflang="zh-CN">中文</a>
+  <button class="toc-toggle" aria-expanded="false">Contents</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">Chapters in this track</p>
+    <nav aria-label="Chapter contents">
+      <a href="#overview">Overview &amp; learning goals</a>
+      <a href="#ch1">1 · Why we need government</a>
+      <a href="#ch2">2 · The economics of taxation</a>
+      <a href="#ch3">3 · Designing a tax system</a>
+      <a href="#ch4">4 · Public spending &amp; redistribution</a>
+      <a href="#ch5">5 · Public choice</a>
+      <a href="#ch6">6 · Cost–benefit analysis</a>
+      <a href="#path">Next steps &amp; further reading</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · Self-Study Path in Economics</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">Track 08 · Sectors &amp; international</span>
+        <h1>Public Economics (Public Finance)</h1>
+        <p class="hero-en">公共经济学</p>
+        <p class="hero-lead">Who takes care of the things markets cannot? Every cent the government collects in taxes — whose pocket does it come out of, and how many transactions does it erase? This track studies how far the government's "visible hand" should reach: taxation, spending, redistribution, and public decision-making itself.</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">By the end of this track, you will be able to</div>
+        <ul>
+          <li>catalog the five types of <strong>market failure</strong> and explain why "market failure" does not automatically mean "government should take over" (government failure)</li>
+          <li>draw the <strong>deadweight loss</strong> of a per-unit tax on a supply–demand diagram and describe how DWL scales with the square of the tax rate and with elasticities</li>
+          <li>use elasticities to predict <strong>tax incidence</strong> (who really bears the burden) and explain what the Laffer curve does and does not imply for policy</li>
+          <li>distinguish progressive / proportional / regressive taxes and compare the efficiency–equity trade-offs of the major tax instruments (including the Ramsey rule)</li>
+          <li>explain the <strong>leaky bucket</strong> of redistribution and the design of the negative income tax, and analyze voting paradoxes, the median voter, and rent-seeking</li>
+          <li>deliver a cost–benefit verdict on a public project using the <strong>social discount rate</strong> and shadow prices</li>
+        </ul>
+      </div>
+      <div class="prereq">Prerequisites:
+        <a class="badge" href="../01-microeconomics/index.html">01 Microeconomics (supply &amp; demand, surplus, and market failure)</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">Chapter 1</span>Why we need government: taking stock of market failures</h2>
+
+      <p><strong>Opening question:</strong> Supermarket shelves hold bread and smartphones, so why can't they hold "national defense," "streetlights," or "flood control"? The sharper question runs the other way: since governments make mistakes too, what evidence would ever let us say "this one belongs with the government"?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: the price system is an automatic bookkeeper — with blind spots</div>
+        <p>Market prices work like a marvelous bookkeeping machine: who wants what, who can pay, who should produce — the ledger balances itself. But the machine runs on only two assumptions: <strong>property rights that are clear and tradable</strong>, and <strong>symmetric information between the two sides of a trade</strong>. Smoke from a chimney has no "shareholders"; a streetlight cannot bill each passerby one by one (<strong>free riding</strong>); a used-car seller knows more than the buyer — the price mechanism fails in all these places. So government is called in to "balance the books" with taxes and public spending. But remember: government is itself an institution staffed by people with limited information and interests of their own. <strong>Repairing one invisible hand with another hand that trembles</strong> is a trade-off in its own right.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Market failure</div><span class="term-en">市场失灵</span><div class="term-def">The price mechanism fails to allocate resources to the social optimum. The five big categories: monopoly power, externalities, public goods, asymmetric information, and macro instability together with the distribution of income.</div></div>
+        <div class="term"><div class="term-name">Public goods</div><span class="term-en">公共品</span><div class="term-def">Goods that are both <strong>non-excludable</strong> (no one can be stopped from using them) and <strong>non-rival</strong> (one person's use does not diminish anyone else's), such as national defense or a lighthouse. Markets under-supply them because of free riding.</div></div>
+        <div class="term"><div class="term-name">Externality</div><span class="term-en">外部性</span><div class="term-def">Unpriced effects of an action on bystanders: pollution is a negative externality; the positive externality of vaccination leaves private supply too low. Policy tools: Pigouvian taxes, subsidies, and defining property rights.</div></div>
+        <div class="term"><div class="term-name">Information asymmetry</div><span class="term-en">信息不对称</span><div class="term-def">One side of a transaction knows more than the other, producing adverse selection and moral hazard (insurance, credit, and health-care markets) — see Track 04.</div></div>
+        <div class="term"><div class="term-name">Government failure</div><span class="term-en">政府失灵</span><div class="term-def">Government intervention makes outcomes worse than the market's: missing information, distorted incentives, capture by interest groups, or flaws in the decision mechanism itself (see Chapter 5, public choice).</div></div>
+      </div>
+
+      <p>Here is "where does government belong" as an inventory — the type of market failure, the matching policy tool, and the new risks each tool brings:</p>
+      <ul>
+        <li><strong>Monopoly and market power</strong> → antitrust, price regulation → risks: regulator capture and mis-set regulated prices;</li>
+        <li><strong>Externalities</strong> → Pigouvian taxes / subsidies, tradable quotas → risks: marginal damages are measured poorly and one rate is applied to all;</li>
+        <li><strong>Public goods</strong> → tax finance, public provision → risks: stated demand does not reveal true preferences, so over- or under-provision;</li>
+        <li><strong>Information asymmetry</strong> → mandatory disclosure, social insurance, licensing → risks: moral hazard gets amplified instead;</li>
+        <li><strong>Distribution and macro stability</strong> → progressive taxes, transfers, fiscal policy → risks: distorted incentives and policy lags.</li>
+      </ul>
+      <p>The test is not "is the market perfect?" but <strong>which imperfect institution is cheaper — the imperfect market or the imperfect government</strong>. That comparison is the recurring benchmark of public economics.</p>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Lighthouses and the 22 percent ledger</div>
+        <p>For decades the lighthouse was the textbook exhibit that pure public goods must be provided by government — until Ronald Coase dug through British shipping history: most English lighthouses of the 17th–19th centuries were privately built, bundling their fees into port charges collected from shipowners, and the system ran for two hundred years. Public goods <strong>can be privately produced</strong>; what is hard is designing the collection mechanism. Facts point the other way too: in 2023 China's general public budget spending was about 27.5 trillion yuan, roughly 22% of GDP; counting government funds and the rest of the "four budgets," the full-scope figure approaches one-third of GDP, and the OECD average is higher still. In a modern economy the "visible hand" stopped being a garnish long ago — it is a resource allocator standing shoulder to shoulder with the market, which is why what it gets right and wrong is worth an entire track.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"Public goods are whatever the government produces; whatever the government provides is a public good."</strong> Both directions are wrong. Compulsory education is financed by the public budget, but textbooks and school buildings are <strong>private goods</strong> (excludable and rival); the lighthouse is a public good, yet it was privately built and operated. In economics, "public provision" (who pays) and "public production" (who makes it) are two independent decisions — a city can outsource the making of its streetlights to a private firm, and a state-owned enterprise can produce a perfectly competitive private good. The other trap is <strong>"a market failure exists, so government should take over"</strong> — that holds only when the net gain from intervention (after subtracting the cost of government failure) is positive.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.1</span>Which of the following comes closest to a "pure public good" (both non-excludable and non-rival)?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>A subway car at rush hour</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>A toll highway</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>National defense</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Free textbooks printed with public funds</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> National defense cannot exclude any resident from protection (non-excludable), and protecting one more person takes nothing away from the others (non-rival) — the canonical pure public good. A rush-hour subway car loses space the moment one more person boards (rival); a toll road can put up a gate (excludable); and the textbook itself is a private good — "financed by the budget" changes how it is provided, not what it is.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.2</span>"This market fails, so a government takeover is sure to improve welfare." Where is the error?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The error is that the market failure does not really exist</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The error is ignoring government failure: intervention carries its own information, incentive, and capture costs, which must be weighed against the market failure</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The error is that governments never make mistakes</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>There is no error — the statement is entirely correct</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The right decision rule compares second-best against second-best: an imperfect market versus an imperfect government. Regulators may lack information, be captured, or face distorted electoral incentives (Chapter 5); bureaucracies face no profit constraint (Chapter 16). A market failure shows only that <strong>improvement is possible</strong>, not that intervention is better — every policy still has to pass the cost–benefit test of Chapter 6.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Five market failures: monopoly, externalities, public goods, information asymmetry, and distribution/stability problems.</li>
+          <li>A public good is defined by two properties (non-excludable, non-rival) — not by who funds it or who produces it.</li>
+          <li>Government failure mirrors market failure: the benchmark is "which imperfection is smaller?"</li>
+          <li>Size of the public sector: China's full-scope spending is around 30% of GDP; the OECD average is higher.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">Chapter 2</span>The economics of taxation: deadweight loss, incidence, and the Laffer curve</h2>
+
+      <p><strong>Opening question:</strong> Charge the same one extra yuan per item, and yet: on cigarettes, the tax barely dents smoking and smokers bear most of the cost; on jewelry, transactions collapse and dealers howl. When the tax blade comes down, whose cake is it cutting — and how much lands on the table?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: a tax is a wedge, and the trades it erases are pure loss</div>
+        <p>A per-unit tax drives a <strong>tax wedge</strong> between the price buyers pay and the price sellers keep: buyers pay more, sellers receive less, and trades that both sides were willing to make get squeezed out. The surplus those vanished trades would have created (buyer surplus + seller surplus) disappears into thin air — that is <strong>deadweight loss (DWL)</strong>: welfare that no one collects, pure leakage. And who really bears a tax has nothing to do with who the law says pays it — only <strong>elasticities</strong> matter: the side that is less able to walk away (the less elastic side) bears more. Think of a packed subway car: whoever is in more of a hurry gets squeezed flatter.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Deadweight loss</div><span class="term-en">无谓损失</span><div class="term-def">The net social surplus lost when a tax (or another intervention) pushes quantity away from the equilibrium; geometrically the triangle between the supply and demand curves, roughly proportional to the square of the tax rate.</div></div>
+        <div class="term"><div class="term-name">Tax incidence</div><span class="term-en">税收归宿</span><div class="term-def">Where the burden of a tax actually lands in the economy. Determined by the <strong>relative elasticities</strong> of supply and demand, not by who is legally liable; the less elastic side bears the larger share.</div></div>
+        <div class="term"><div class="term-name">Tax wedge</div><span class="term-en">税楔子</span><div class="term-def">The gap between the buyer's price and the seller's price. The thicker the wedge, the more trades shrink — and the larger the deadweight loss.</div></div>
+        <div class="term"><div class="term-name">Laffer curve</div><span class="term-en">拉弗曲线</span><div class="term-def">The inverted-U relationship between the tax rate and total revenue: revenue is zero at both 0% and 100%. It implies that a revenue-maximizing rate exists, but <strong>not</strong> that cutting taxes always raises revenue.</div></div>
+      </div>
+
+      <div class="formula">DWL ≈ ½ × t × ΔQ<span class="f-note">t is the tax per unit and ΔQ the shrinkage in quantity traded; since ΔQ itself is proportional to t, DWL grows roughly with the square of t — double the rate, roughly quadruple the loss</span></div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 2-1 · The deadweight loss of a tax: elasticity and tax-rate sliders</div>
+        <p class="fig-sub">Try it: hold the tax at 1.5 and drag demand elasticity from 0.5 to 4.0, watching the DWL triangle (red) and the buyer's share change; then push the tax up to 3.0 and feel the "square law."</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 400" role="img" aria-label="A per-unit tax on a supply–demand diagram: supply slopes upward, demand pivots around the equilibrium as elasticity changes, the green rectangle is government revenue, the red triangle is deadweight loss, and dashed lines mark the after-tax buyer and seller prices.">
+            <defs><clipPath id="dwl-clip"><rect x="70" y="40" width="530" height="280"/></clipPath></defs>
+            <g clip-path="url(#dwl-clip)">
+              <polygon id="dwl-rev" fill="#15803d" fill-opacity="0.16" points=""/>
+              <polygon id="dwl-tri" fill="#b91c1c" fill-opacity="0.18" points=""/>
+              <line id="dwl-pb" class="gridline" x1="70" y1="0" x2="0" y2="0"/>
+              <line id="dwl-ps" class="gridline" x1="70" y1="0" x2="0" y2="0"/>
+              <line id="dwl-qv" class="gridline" x1="0" y1="0" x2="0" y2="320"/>
+              <line id="dwl-s" class="curve curve-c3" x1="70" y1="292" x2="600" y2="124"/>
+              <line id="dwl-d" class="curve curve-c1" x1="0" y1="0" x2="0" y2="0"/>
+            </g>
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="40"/>
+            <text class="chart-label" x="335" y="376" text-anchor="middle">Quantity Q (×10,000 units)</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">Price P (yuan)</text>
+            <circle id="dwl-e0" class="dot" cx="388" cy="191.2" r="5" fill="#475569"/>
+            <circle id="dwl-dotb" class="dot" r="6" fill="#2f6fdb"/>
+            <circle id="dwl-dots" class="dot" r="6" fill="#0d9488"/>
+            <text class="chart-label" x="548" y="112" style="fill:#0d9488">S (supply)</text>
+            <text id="dwl-labd" class="chart-label" style="fill:#2f6fdb">D (demand)</text>
+            <text id="dwl-txt" class="chart-title-sm" x="335" y="24" text-anchor="middle"></text>
+            <text id="dwl-sub" class="chart-label" x="335" y="46" text-anchor="middle" style="fill:#4b5563"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="dwl-ed">Demand elasticity Ed</label><input type="range" id="dwl-ed" min="0.5" max="4" step="0.1" value="1"><output id="dwl-oed" for="dwl-ed">1.0</output></div>
+          <div class="ctrl"><label for="dwl-t">Per-unit tax t (yuan/unit)</label><input type="range" id="dwl-t" min="0" max="3" step="0.1" value="1.5"><output id="dwl-ot" for="dwl-t">1.5</output></div>
+        </div>
+        <figcaption>How to read this figure: supply is fixed, and demand always passes through the no-tax equilibrium E0 (P = 4.60, Q = 60). The less elastic demand is (Ed toward 0.5), the more the buyer's price rises and the larger the buyer's share — but the less quantity contracts and the smaller the DWL. <strong>A tax that is easy to collect is efficient but hard on fairness</strong> — the two faces of the same coin (figures are on an illustrative scale).</figcaption>
+      </figure>
+
+      <p><strong>Tax incidence:</strong> statutory incidence (who remits the tax on the invoice) and economic incidence (who actually ends up poorer) are two different things. Tax the seller, and sellers pass the burden forward to buyers or backward to factor owners, as elasticities allow. The extreme cases are worth memorizing: with perfectly inelastic demand (a life-saving drug), buyers bear everything and DWL is zero; with perfectly inelastic supply (land in the city center), sellers bear everything and DWL is again zero — <strong>the more "dead" the tax base, the smaller the efficiency loss, and the more brutal the distribution</strong>. That is the efficiency case economists make for property taxes and land-based finance.</p>
+
+      <p><strong>The Laffer curve:</strong> a higher rate pulls revenue in two opposite directions — the rate itself lifts revenue, but the base (the income people report, the transactions that take place) shrinks as the rate climbs. Avoidance, the underground economy, reduced labor supply, and capital flight are all "base responses." When responses are strong enough, there is a revenue-maximizing rate t*: beyond it, raising the rate lowers revenue.</p>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 2-2 · The Laffer curve: tax rate and revenue</div>
+        <p class="fig-sub">Try it: drag the responsiveness of the economy to the tax rate, e, from 0.2 to 2.0 and watch the peak rate t* slide left as the forbidden zone (light red) widens; then drag the rate slider into the zone and read the warning.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 380" role="img" aria-label="The Laffer curve: revenue first rises and then falls with the tax rate, peaking at t*; the light-red region to its right is the forbidden zone where raising the rate lowers revenue. The responsiveness parameter reshapes the curve and moves the peak.">
+            <rect id="laf-zone" x="335" y="40" width="265" height="280" fill="#b91c1c" opacity="0.06"/>
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="40"/>
+            <text class="chart-label" x="335" y="366" text-anchor="middle">Tax rate t (%)</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">Revenue R (index)</text>
+            <text class="chart-label" x="70" y="338" text-anchor="middle">0</text>
+            <text class="chart-label" x="202" y="338" text-anchor="middle">25</text>
+            <text class="chart-label" x="335" y="338" text-anchor="middle">50</text>
+            <text class="chart-label" x="467" y="338" text-anchor="middle">75</text>
+            <text class="chart-label" x="596" y="338" text-anchor="middle">100</text>
+            <polyline id="laf-curve" class="curve curve-c1" points=""/>
+            <line id="laf-peakline" class="gridline" x1="0" y1="40" x2="0" y2="320"/>
+            <circle id="laf-peak" class="dot" r="5" fill="#475569"/>
+            <circle id="laf-dot" class="dot" r="7" fill="#be185d"/>
+            <text id="laf-tstar" class="chart-label" style="fill:#b91c1c"></text>
+            <text class="chart-label" x="86" y="60" style="fill:#2f6fdb">R = 30 · t · (1−t)^e</text>
+            <text id="laf-txt" class="chart-title-sm" x="335" y="24" text-anchor="middle"></text>
+            <text id="laf-sub" class="chart-label" x="335" y="46" text-anchor="middle" style="fill:#4b5563"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="laf-t">Tax rate t</label><input type="range" id="laf-t" min="0" max="100" step="1" value="30"><output id="laf-ot" for="laf-t">30%</output></div>
+          <div class="ctrl"><label for="laf-e">Base responsiveness e</label><input type="range" id="laf-e" min="2" max="20" step="1" value="10"><output id="laf-oe" for="laf-e">1.0</output></div>
+        </div>
+        <figcaption>How to read this figure: the demo models base shrinkage with R = 30·t·(1−t)<sup>e</sup> (illustrative). The stronger the response e (the more sensitive avoidance, the underground economy, labor supply, and capital flows are), the lower the peak rate t* = 1/(1+e) and the wider the forbidden zone. Empirically, overall tax rates in most advanced economies are believed to sit left of the zone — so "an across-the-board tax cut pays for itself" generally fails, though for specific taxes (Sweden's marginal rates in the 1980s, certain excises) the evidence of a forbidden zone is real.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The window tax and the tobacco tax</div>
+        <p>In 1696 England introduced a <strong>window tax</strong>: levied per window, meant to tax "whoever has the big house." The nation responded with a wave of bricked-up windows, and the rental rooms of Dickens's London went pitch dark — the tax squeezed a good ("daylight") straight out of consumption: a textbook deadweight loss, forcibly abolished only in 1851. Today's contrast is the <strong>tobacco excise</strong>: addiction makes demand extremely inelastic, so a tax passes almost fully through to smokers and barely shrinks the base — fiscally "efficient," with the positive externality of less smoking thrown in for free. But low-income households smoke at higher rates, so the burden is regressive. One instrument, with efficiency, equity, and health goals all entangled — exactly the opening problem of tax design in Chapter 3.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"The law makes the store remit the tax, so the store bears it."</strong> Wrong. Taxing sellers and taxing buyers produce identical incidence — prices adjust on their own, and elasticities rule (in Figure 2-1 the gap between the two price lines has nothing to do with who writes the check). The second frequent error: <strong>"the Laffer curve proves that cutting taxes always raises revenue."</strong> That holds only when the current rate is already past the peak (inside the forbidden zone); on the left side of the curve, a cut is just a revenue loss. The curve itself carries a deeper point: <strong>the revenue-maximizing rate is not the welfare-maximizing rate</strong> — welfare must net out DWL and weigh equity too.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.1</span>The law says the convenience store (the seller) remits a 1-yuan tax per drink. If consumers are quite price-insensitive (inelastic demand), who mainly bears the tax?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The convenience store, because it is the one paying</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Consumers — the inelastic side cannot walk away, so it bears more</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Both sides split it half and half, regardless of elasticity</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>The government bears it, because the tax lands in the treasury</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Incidence is set by relative elasticities, not by legal liability. With inelastic demand, the store can raise prices without losing customers, so it shifts the burden forward: the buyer's price jumps while the seller's net barely moves (set Ed to 0.5 in Figure 2-1 and watch the buyer's share pass half). In reverse, when supply is inelastic (say, land in the city center), the burden lands mostly on the seller.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.2</span>Other things equal, a per-unit tax rises from 1 yuan to 2 yuan per item. Roughly how many times larger does the deadweight loss become?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>2 times</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>3 times</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>About 4 times (DWL grows roughly with the square of the tax rate)</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Unchanged — the loss depends only on elasticity</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> DWL ≈ ½·t·ΔQ, and ΔQ is itself proportional to t, so DWL ∝ t²: double the rate, roughly four times the loss; triple it, roughly nine times. This grounds two policy instincts: broad base with low rates beats narrow base with high rates, and a one-off need to raise a large sum is far cheaper to spread across many tax bases than to pile onto a single one.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.3</span>Which statement about the Laffer curve's policy implications is correct?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Cutting taxes always increases revenue</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Only when the current rate is above the revenue-maximizing rate (inside the forbidden zone) can a cut both lighten the burden and raise revenue</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The higher the tax rate, the higher revenue must be</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>The curve proves the optimal tax rate is exactly 50%</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Revenue is zero at both ends (0% and 100%), so a peak t* exists — but its location depends on the strength of avoidance and labor-supply responses (it moves with e in Figure 2-2), and there is no reason it should be exactly 50%. A and C err on opposite sides: a cut raises revenue only inside the zone, a hike raises it only on the left side. For overall tax burdens in most advanced economies, the empirical literature mostly places them left of the peak — though for high marginal rates on particular groups, the forbidden-zone evidence is real.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>A tax is a wedge driven between the buyer's price and the seller's: quantity contracts, and the erased surplus is DWL, growing with t² and with elasticity.</li>
+          <li>Incidence is set by relative elasticities, not by who legally pays: the less elastic side bears more.</li>
+          <li>The more inelastic the base (land, necessities), the smaller the efficiency loss — and the more concentrated the distributional hit.</li>
+          <li>The Laffer curve has a peak at t*, located by how the base responds; a cut raises revenue only to the right of it, and maximum revenue ≠ maximum welfare.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">Chapter 3</span>Designing a tax system: balancing efficiency and equity</h2>
+
+      <p><strong>Opening question:</strong> Raise the same 100 million yuan from wages, from consumption, from property, or from profits, and the outcomes differ wildly. A nation's tax system is not a single rate schedule but a thousand of these trade-offs stacked on top of one another — so what is the standard for a good tax system?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: a good tax system in four words — broad base, low rate</div>
+        <p>Two axes judge a tax system. <strong>Efficiency</strong>: distort decisions as little as possible — Chapter 2 showed DWL growing with the square of the rate, so "a little from many bases" is far cheaper than "a lot from one base": that is broad base, low rate. <strong>Equity</strong> has two layers: horizontal equity (people in the same position pay the same tax) and vertical equity (more from those who can afford more, i.e., progressivity). The two axes fight constantly: progressivity calls for high marginal rates, and high marginal rates do their fiercest distorting at the top of the income distribution. Optimal tax theory (Mirrlees) studies exactly this constrained problem: hold the redistribution goal fixed and minimize the efficiency loss. The winning designs are often surprisingly plain: close the loopholes, widen the base, and be gentler on labor income than on the stock of capital.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Progressive / proportional / regressive</div><span class="term-en">累进 / 比例 / 累退</span><div class="term-def">Classified by whether the tax as a share of income rises, stays flat, or falls as income rises. Judge it by the <strong>average tax rate</strong>, not by the schedule of marginal rates.</div></div>
+        <div class="term"><div class="term-name">Horizontal &amp; vertical equity</div><span class="term-en">横向公平与纵向公平</span><div class="term-def">Horizontal: equal ability to pay pays equal tax; vertical: greater ability pays more. The first demands a clean base (few loopholes); the second defines progressivity.</div></div>
+        <div class="term"><div class="term-name">Tax base &amp; tax rate</div><span class="term-en">税基与税率</span><div class="term-def">What is taxed (income, consumption, property, profits) and how much. Revenue = base × rate: loopholes erode the base, force rates higher, and amplify distortions — a vicious circle.</div></div>
+        <div class="term"><div class="term-name">Ramsey rule</div><span class="term-en">拉姆齐规则</span><div class="term-def">The optimal commodity-tax structure: tax each good in inverse proportion to its demand elasticity — more on the inelastic, less on the elastic — to minimize the total distortion. But it collides with vertical equity (necessities are precisely where the poor spend).</div></div>
+      </div>
+
+      <div class="formula">Tax rate ∝ 1 / demand elasticity<span class="f-note">The Ramsey inverse-elasticity rule (Ramsey, 1927): the efficiency-optimal commodity tax contracts every good's traded quantity by the same proportion; but "picking on the inelastic" systematically pushes the burden onto necessities — efficiency and equity collide head-on</span></div>
+
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <thead><tr><th>Tax</th><th>Main base</th><th>Progressivity</th><th>Main distortion / difficulty</th><th>China example</th></tr></thead>
+          <tbody>
+            <tr><td>Individual income tax</td><td>Comprehensive income (wages, personal services, etc.)</td><td class="num">Fairly progressive</td><td>High marginal rates hurt labor supply; hidden income is hard to police</td><td>Mixed comprehensive–scheduler system; top marginal rate 45%</td></tr>
+            <tr><td>Value-added tax (VAT)</td><td>Consumption (value added at each stage)</td><td class="num">Somewhat regressive</td><td>Taxes consumption, which is a larger share of income for the poor</td><td>Standard rate 13%; invoice-based credit chain</td></tr>
+            <tr><td>Excise tax</td><td>Specific goods (tobacco, alcohol, fuel, cars)</td><td class="num">Mixed</td><td>Taxation as deterrence; on low-elasticity categories the burden sits on consumers</td><td>Compound ad valorem plus per-unit levy on refined fuel and cigarettes at the wholesale stage</td></tr>
+            <tr><td>Property tax</td><td>Assessed value of existing real estate</td><td class="num">Progressive</td><td>Valuation is hard and liquidity poor; "house-rich, cash-poor" retirees strain ability to pay</td><td>Shanghai–Chongqing property-tax pilots, alongside land conveyance fees</td></tr>
+            <tr><td>Corporate income tax</td><td>Corporate profits</td><td class="num">Disputed</td><td>Multinational transfer-pricing avoidance; part of the burden shifts to workers and consumers</td><td>Statutory rate 25%; preferential rates for small low-profit firms</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>The truth shows only when the table is read as a whole: the direct taxes (income tax) are progressive, the indirect ones (VAT) regressive, and the two partly offset. To gauge a whole system's progressivity you must compute the net redistribution of taxes and transfers together (Chapter 4) — any single rate schedule read alone will mislead.</p>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The global minimum corporate tax and special additional deductions</div>
+        <p>In 2021, 136 jurisdictions agreed under the OECD framework on a <strong>15% global minimum corporate tax rate</strong> (taking effect in the EU and elsewhere from 2024). The motive was exactly the prisoner's dilemma of tax competition: countries kept undercutting each other's rates to attract booked profits, the base was hollowed out by "profit shifting," and no one dared raise rates unilaterally. After coordination, the battlefield shifts from "who is cheaper" to "whose infrastructure is better," and taxpayers collectively save the rent dissipation of the race to the bottom. The Chinese practice runs in the other direction: since 2019, the individual income tax has included <strong>special additional deductions</strong> (children's education, elder care, mortgage interest, infant childcare, and more) — in essence adjusting "nominal income" toward a base closer to "true ability to pay": horizontal equity, taken to fine grain.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"The rate schedule is progressive, so the tax system is progressive."</strong> Wrong twice. First, indirect taxes such as VAT and excises are regressive, so overall progressivity depends on the weighting across taxes and on the loopholes in the base (capital gains and hidden income at the top are the hardest to reach). Second, progressivity must be judged by the <strong>net</strong> effect — the Nordic countries' direct taxes are not extremely progressive, but they fund the state with heavy consumption taxes and then channel the proceeds back to low and middle incomes through universal public services and transfers, ending up among the world's strongest net redistributors. Judge a tax system by the complete loop: from whom it is collected, and into whose hands it returns.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.1</span>A VAT taxes consumption at a uniform proportional rate. Why is it usually considered regressive?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Because the rate falls as income rises</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>Because high earners do not buy anything</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>Because low-income families consume a larger share of their income, so the tax claims a larger share of it</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Because firms can deduct all their input tax</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Regressive means tax / income falls as income rises. A VAT's nominal rate is uniform, but low-income families have a high Engel coefficient (most of their income must be spent, much of it on heavily taxed necessities) and little saving, while high-income families consume a far smaller share of theirs. The same 13% therefore claims a bigger slice of a poor family's income — "a proportional tax on consumption is regressive on income." A is wrong because the nominal rate really is uniform; and D's credit mechanism merely avoids double taxation — it does nothing to change who finally pays.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.2</span>By the Ramsey rule, taxing low-elasticity goods more heavily is more efficient. Why should we still be wary of doing this in practice?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Because efficiency should not be a policy goal</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Because low-elasticity goods are mostly necessities: the burden would fall systematically on those least able to escape — often also the poorest — so efficiency collides with vertical equity</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Because elasticities cannot be measured at all</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Because low-elasticity goods raise little revenue</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The Ramsey rule is a pure efficiency proposition: contract every good's traded quantity by the same proportion and total DWL is minimized. But "picking on necessities" means food, water, and basic medicines carry the high rates — and Chapter 2's incidence analysis tells us the less elastic side bears more, exactly where low-income households are concentrated as demanders. Optimal tax theory (Diamond–Mirrlees and successors) corrects the rule with distributional weights. C is wrong because elasticities can be estimated; D has it backwards — an inelastic base is the easiest to tax. The classic compromise: zero or reduced rates on food (a common VAT practice across countries).</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Two axes judge a tax system: efficiency (fewer distortions) and equity (horizontal: equal treatment; vertical: more from greater capacity).</li>
+          <li>DWL grows with the square of the rate → broad base, low rate beats narrow base, high rate.</li>
+          <li>Ramsey rule: rates inversely proportional to elasticity are most efficient, but they conflict with the vertical equity of protecting the poor.</li>
+          <li>Overall progressivity is the net of taxes + transfers, not any single rate schedule.</li>
+          <li>Tax competition is a global prisoner's dilemma: the global minimum corporate tax is one attempt at coordination.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">Chapter 4</span>Public spending and redistribution: the leaky bucket</h2>
+
+      <p><strong>Opening question:</strong> Carry a bucket of water from the rich to the poor, and some slops out along the way. How much gets spilled decides how much water we should carry at all. With this "leaky bucket," Arthur Okun posed the question every welfare state must answer: where is the limit of redistribution?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: a transfer is not a move between buckets — it is a change of buckets</div>
+        <p>Intuitively, redistribution looks like moving house: scoop from bucket A, pour into bucket B, total unchanged. But real transfers <strong>leak</strong>: <strong>administrative costs</strong> (eligibility checks, collection, fraud prevention), <strong>distorted incentives</strong> (high marginal tax rates make people work less; benefit phase-outs make them afraid to earn more), and <strong>avoidance and migration</strong> (capital and the highly skilled vote with their feet). What leaks is not somebody's income — it is the whole pie shrinking. So optimal redistribution is not "more is fairer"; it stops at the margin where <strong>the social gain of one more yuan transferred equals the extra efficiency cost leaked</strong>. The design art is building a sturdier bucket — for example, subsidizing only people who work (preserving the incentive to work) is one plank patched into place.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">The leaky bucket</div><span class="term-en">漏桶效应</span><div class="term-def">Okun's metaphor: efficiency losses are unavoidable in the course of redistribution, and the optimal scale of redistribution sits where marginal social benefit equals marginal leakage. The leaks come from administrative costs and distorted incentives.</div></div>
+        <div class="term"><div class="term-name">Negative income tax</div><span class="term-en">负所得税</span><div class="term-def">A design championed by Milton Friedman: below a threshold, people pay no tax and instead receive a subsidy, phased out gradually as income rises (a phase-out rate below 100% preserves work incentives) — one unified program replacing categorical welfare schemes.</div></div>
+        <div class="term"><div class="term-name">Automatic stabilizers</div><span class="term-en">自动稳定器</span><div class="term-def">Taxes and transfers move countercyclically without new legislation (taxes fall and unemployment benefits rise in a recession), propping up aggregate demand; they complement discretionary policy.</div></div>
+        <div class="term"><div class="term-name">Pay-as-you-go (PAYG)</div><span class="term-en">现收现付制</span><div class="term-def">Current workers' contributions directly pay current retirees' pensions rather than being saved for the future. Strengths: risk-sharing across generations and no investment risk; weakness: population aging pushes contribution rates up (see Track 14).</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 4-1 · Redistribution's leaky bucket: the transfer rate and its double effect</div>
+        <p class="fig-sub">Try it: fix the leakage coefficient at c = 1.0 and drag the transfer rate τ from 0 to 100%, watching the peak of the "bottom-quintile income" curve and the steady slide of "average income"; then raise c to 1.6 and watch the peak jump far to the left.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 380" role="img" aria-label="A redistribution diagram: the horizontal axis is the transfer rate; the orange curve is average income, falling as the transfer rate rises; the pink curve is the income of the bottom quintile, which rises then falls, peaking at the optimal transfer rate.">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="40"/>
+            <text class="chart-label" x="335" y="366" text-anchor="middle">Transfer &amp; redistribution rate τ (%)</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">Income index (average = 100 with no redistribution)</text>
+            <text class="chart-label" x="70" y="338" text-anchor="middle">0</text>
+            <text class="chart-label" x="335" y="338" text-anchor="middle">50</text>
+            <text class="chart-label" x="596" y="338" text-anchor="middle">100</text>
+            <line id="lb-vline" class="gridline" x1="282" y1="40" x2="282" y2="320"/>
+            <line id="lb-peakv" class="gridline" x1="335" y1="40" x2="335" y2="320"/>
+            <polyline id="lb-a" class="curve curve-c1" points=""/>
+            <polyline id="lb-b" class="curve curve-c2" points=""/>
+            <circle id="lb-dota" class="dot" r="6" fill="#2f6fdb"/>
+            <circle id="lb-dotb" class="dot" r="6" fill="#be185d"/>
+            <text id="lb-laba" class="chart-label" text-anchor="end" style="fill:#2f6fdb"></text>
+            <text id="lb-labb" class="chart-label" text-anchor="end" style="fill:#be185d"></text>
+            <text id="lb-tstar" class="chart-label" style="fill:#92400e"></text>
+            <text id="lb-txt" class="chart-title-sm" x="335" y="24" text-anchor="middle"></text>
+            <text id="lb-sub" class="chart-label" x="335" y="46" text-anchor="middle" style="fill:#4b5563"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="lb-tau">Transfer rate τ</label><input type="range" id="lb-tau" min="0" max="100" step="1" value="40"><output id="lb-otau" for="lb-tau">40%</output></div>
+          <div class="ctrl"><label for="lb-c">Leakage coefficient c</label><input type="range" id="lb-c" min="4" max="16" step="1" value="10"><output id="lb-oc" for="lb-c">1.0</output></div>
+        </div>
+        <figcaption>How to read this figure: the model is illustrative — the pie A(τ) = 100(1 − 0.35cτ²), bottom-quintile income B(τ) = 20 + 60τ(1 − cτ) (floored at 0 in the chart). At small τ, transfers help the bottom far faster than the pie shrinks; past τ* = 1/(2c), the shrinking pie starts devouring the transfers, and <strong>the bottom's own income falls instead of rising</strong>. The bigger the leakage coefficient (the worse the administration and the touchier the incentives), the lower the optimal transfer rate — "how sturdy the bucket is" decides how much water it can carry.</figcaption>
+      </figure>
+
+      <p>Two extensions. <strong>First, social security is more than redistribution</strong>: pensions (PAYG), health insurance, and unemployment insurance all carry an insurance function — pooling longevity, illness, and unemployment risks that no individual can bear alone — which makes the "should we" debate more complicated than "how much leaks" (Track 14 develops this). <strong>Second, automatic stabilizers</strong>: progressive taxes and unemployment benefits make the budget automatically collect less and spend more in recessions — the first line of macro defense (fiscal policy in Track 02), with the virtues of zero lag and immunity to the political cycle.</p>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The EITC and targeted poverty alleviation: planking the bucket</div>
+        <p>The US <strong>Earned Income Tax Credit (EITC)</strong> is the negative income tax idea made real: it subsidizes only low earners <strong>who work</strong>, with the subsidy first rising and then phasing out slowly as income grows. Around 2023 it reached some 30 million households a year, making it one of the largest cash-transfer programs in the United States. It welds "top up income" to "preserve incentives" — recipients must be employed, which dodges the welfare trap — and both parties have supported it in turn. China's counterpart is the <strong>dibao safety net and the targeted poverty-alleviation campaign</strong>: by 2020, all rural residents below the current poverty line had been lifted out, by way of the combined program of income, education, medical care, and housing support (the "two assurances and three guarantees"), plus the administrative machinery of cadres stationed in villages to identify households — spending heavy administrative capacity to suppress "mistargeting leakage," at a considerable cost of verification and enforcement. Neither design dominates; they are planks fitted at different points, for different leakage structures and different administrative capacities.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>Two symmetric extremes, both wrong. <strong>"Redistribution is just moving water — costless."</strong> That ignores administrative costs and distorted incentives: a 100% marginal phase-out rate makes recipients refuse overtime or give up work altogether (the welfare trap) — the most visible leak in the bucket. <strong>"If it leaks at all, not a cent should be redistributed."</strong> Equally wrong: leakage measures a cost, not a veto. As long as society values equity highly enough (or the marginal social benefit of transfers is positive), leaky redistribution still beats none. The real argument is not "whether" but "which plank to patch, and how far down the road to carry the bucket."</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.1</span>What is the core meaning of Okun's "leaky bucket" metaphor?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Redistribution violates property rights and is therefore illegitimate</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Transfers from rich to poor leak along the way (administrative costs + distorted incentives), and the optimal scale of redistribution sits where marginal benefit = marginal leakage</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The leaky bucket proves that redistribution always costs more than it gains</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>With good enough institutional design, leakage can be brought to zero</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The leaky bucket states a <strong>trade-off</strong>, not a verdict: transfers carry unavoidable efficiency costs that grow with scale, so an interior optimum exists (τ* in Figure 4-1). C and D each occupy an extreme — the first denies that society's valuation of fairness can outweigh the leak, the second denies that administrative and incentive costs have a positive minimum. A swaps an economics proposition for a legal one: the bucket says nothing about legitimacy.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.2</span>Compared with a welfare benefit that is cut by 1 yuan for every extra yuan earned, what is the negative income tax's (NIT) key advantage?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The subsidy is larger and reaches more people</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>It needs no administrative review at all</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>Its phase-out rate is below 100%, so recipients who work more still raise their total income — work incentives survive</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>It amounts to taxing recipients at a 100% marginal rate</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> A "lose one yuan of benefit per yuan earned" scheme imposes a 100% effective marginal tax rate — extra work brings no extra income, so the rational choice is to stay under the threshold (the welfare trap). An NIT's phase-out rate (say 30%–50%) means each extra yuan earned reduces the benefit by only 0.3–0.5 yuan, so working always pays — the classic plank in the bucket, and the mechanical heart of the EITC. D describes exactly the old problem the NIT corrects; B is wrong because an NIT still needs income reporting and verification.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Redistribution leaks: administrative costs, labor-supply distortions, avoidance and migration — and the pie shrinks with them.</li>
+          <li>Optimal redistribution sits where marginal benefit = marginal leakage — not "the more the better," and not "none at all."</li>
+          <li>Negative income tax / EITC: topping up income while preserving work incentives — the model design for "planking the bucket."</li>
+          <li>Social security doubles as insurance; progressive taxes + unemployment benefits are macro automatic stabilizers.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">Chapter 5</span>Public choice: voting, agendas, and rent-seeking</h2>
+
+      <p><strong>Opening question:</strong> With 3 people and 3 options, will majority rule always deliver the outcome "the majority wants"? Condorcet answered no in 1785 — and the problem is stranger than intuition suggests: sometimes <strong>the person who decides the order of the votes wields more power than the people who vote</strong>.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: preferences cannot always be "added up"</div>
+        <p>Everyone carries an ordered preference list in their head, but when many lists are aggregated into one "social list," strange things happen: with three people holding A&gt;B&gt;C, B&gt;C&gt;A, and C&gt;A&gt;B, pairwise voting yields A beats B, B beats C, and C beats A — a <strong>cycle</strong>, with no stable winner. Whoever then controls the agenda (which pair votes first) controls the result. When preferences are "single-peaked" (each person has one ideal point, declining on both sides), the cycle disappears and the equilibrium lands on the <strong>median voter</strong>'s ideal point — which is why two-party contests drift toward the center (the Downs model). And Kenneth Arrow proved a bleaker, general theorem: no aggregation mechanism can simultaneously satisfy a modest set of reasonable conditions. <strong>Politics is not a perfect adding machine; it is a market with its own supply and demand</strong> — votes, power, and rents are traded in it, and rent-seekers spend real money shaping the rules for dividing the pie rather than growing it.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Condorcet cycle / cyclical majorities</div><span class="term-en">孔多塞循环 / 循环多数</span><div class="term-def">Majority voting cycles among options — A beats B, B beats C, C beats A — a failure of transitivity. Multi-peaked preferences leave no stable ranking of "society's majority preference."</div></div>
+        <div class="term"><div class="term-name">Median voter theorem</div><span class="term-en">中位选民定理</span><div class="term-def">With single-peaked preferences, a one-dimensional issue, and simple majority rule, the outcome converges to the option the median voter most prefers; two-candidate platforms move toward the center (Downs, 1957).</div></div>
+        <div class="term"><div class="term-name">Arrow's impossibility theorem</div><span class="term-en">阿罗不可能定理</span><div class="term-def">No mechanism for aggregating social preferences (with three or more alternatives) can simultaneously satisfy unrestricted domain, Pareto, independence of irrelevant alternatives, and non-dictatorship — a "perfect voting rule" is mathematically impossible.</div></div>
+        <div class="term"><div class="term-name">Rent-seeking</div><span class="term-en">寻租</span><div class="term-def">Spending resources to capture or defend artificial rents created by government (licenses, tariffs, monopoly rights) (Tullock, 1967; Krueger, 1974). Lobbying costs are a net social loss — resources spent dividing the pie, not baking it.</div></div>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 5-1 · Cyclical majorities: the agenda decides everything</div>
+        <p class="fig-sub">Try it: the three committee members' preferences form a cycle (shown above). Click the three different voting agendas in turn and compare the final winners — same voters, same preferences, three different winners.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 360" role="img" aria-label="A cyclical-majorities demo: the three voters' preference rankings form a cycle — A beats B, B beats C, C beats A. Clicking the different agenda buttons switches the final winner among A, B, and C.">
+            <text class="chart-title-sm" x="335" y="24" text-anchor="middle">Preferences of the three-member committee (&gt; means "prefers")</text>
+            <text class="chart-label" x="90" y="56">Voter 1: A &gt; B &gt; C</text>
+            <text class="chart-label" x="90" y="80">Voter 2: B &gt; C &gt; A</text>
+            <text class="chart-label" x="90" y="104">Voter 3: C &gt; A &gt; B</text>
+            <line class="gridline" x1="70" y1="124" x2="600" y2="124"/>
+            <text id="vt-r1" class="chart-label" x="70" y="152"></text>
+            <text id="vt-r2" class="chart-label" x="70" y="178"></text>
+            <text id="vt-fin" class="chart-title-sm" x="70" y="214" style="fill:#be185d"></text>
+            <text class="chart-label" x="70" y="244" style="fill:#4b5563">Voting result (highlighted box = the winner)</text>
+            <rect id="vt-ba" x="145" y="254" width="90" height="54" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+            <rect id="vt-bb" x="275" y="254" width="90" height="54" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+            <rect id="vt-bc" x="405" y="254" width="90" height="54" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5"/>
+            <text id="vt-ta" x="190" y="290" text-anchor="middle" style="font-size:24px;font-weight:700" fill="#1f2937">A</text>
+            <text id="vt-tb" x="320" y="290" text-anchor="middle" style="font-size:24px;font-weight:700" fill="#1f2937">B</text>
+            <text id="vt-tc" x="450" y="290" text-anchor="middle" style="font-size:24px;font-weight:700" fill="#1f2937">C</text>
+            <text id="vt-note" class="chart-label" x="70" y="340" style="fill:#4b5563"></text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn ghost" id="vt-ag1">Agenda ①: vote A vs. B first</button>
+          <button class="btn ghost" id="vt-ag2">Agenda ②: vote B vs. C first</button>
+          <button class="btn ghost" id="vt-ag3">Agenda ③: vote C vs. A first</button>
+          <button class="btn" id="vt-reset">Reset</button>
+        </div>
+        <figcaption>How to read this figure: each agenda runs two rounds of simple majority voting, with the round-one winner facing the remaining option. The three agendas produce three different winners — C, A, and B. <strong>Agenda-setting power is outcome-deciding power.</strong> That is why parliamentary procedure (committee chairs, the order of amendments, "dividing the question") is contested terrain in its own right — Arrow's theorem performed live, at its most intuitive.</figcaption>
+      </figure>
+
+      <p>From voting failures to a broader insight: <strong>the political market has supply and demand too</strong>. Voters are rationally ignorant (one vote barely moves anything, so digging into policy does not pay), politicians maximize votes, bureaucrats maximize budgets and headcount, and interest groups — concentrated beneficiaries, firmly organized — routinely defeat a large and dispersed public. Small, concentrated interests (industries shielded by tariffs, licensed practitioners) often beat the diffuse general public. Rent-seeking theory draws a chilling corollary: the welfare loss from monopoly or regulation is not just the Harberger triangle — <strong>it also includes the entire lobbying cost dissipated in the fight for the license</strong>, resources that could have been producing something.</p>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The New York taxicab medallion: the rise and fall of a rent</div>
+        <p>New York has capped taxi licenses (medallions) since 1937; for decades the count sat frozen at just over 13,000. The artificial scarcity turned the medallion into an asset: around 2013 a single medallion traded for <strong>more than a million dollars</strong> — money that bought no cab and served no passenger, but purchased the "exclusive right to operate" itself: the holder's discounted stream of future rents. Countless drivers borrowed to buy medallions, staking their working lives on the debt; when ride-hailing struck, prices collapsed and left a landscape of debt behind. The rent-seeking ledger: the lobbying to keep the cap, the loan interest, the medallion premium — all of it real social cost paid for the "right to divide the pie," and not a cent of it baked anything. For contrast: Anne Krueger (1974), studying Indian licenses and shipping quotas, formally named rent-seeking and estimated the associated dissipation at a sizable fraction of GDP.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"The outcome of the vote is the will of the people."</strong> Under cyclical majorities, that aggregate simply does not exist — change the agenda and you change the "will" (Figure 5-1). Even with single-peaked preferences and an outcome stable at the median voter, what you have is the will of the <strong>median</strong>: majority voting is deaf to intensity (a lukewarm 51% flattens an intense 49%). The second trap: <strong>"lobbying is just expressing an opinion."</strong> When policy creates artificial rents, the spending around them (lawyers, lobbyists, connections, queuing) is a net social loss — exactly what Tullock pointed out and traditional analysis missed.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.1</span>Single-peaked preferences, a one-dimensional issue, simple majority rule, a two-candidate race — where does the equilibrium platform land?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The preference of the average (arithmetic mean) voter</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The preference of the median voter: stray from the median and the opponent takes the majority</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The preference of the most radical voter</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>A random position — there is no stable equilibrium</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Median voter theorem (Black, 1948; Downs, 1957): with single-peaked preferences on a one-dimensional issue, any platform off the median is beaten by an opponent who moves to the other side of the median and hugs it — hence the two-party convergence toward the center. A's mean fails: when the preference distribution is skewed right, the mean is pulled up by the rich while the median stands still — the classic point that "the median voter governs, while the mean only reflects income" (see also the wage-distribution discussion in Track 09).</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.2</span>With three people, three options, and a majority cycle (A beats B, B beats C, C beats A), who in fact decides the outcome?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The option the majority truly prefers — the voters just haven't noticed it yet</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Whoever controls the voting agenda — different orders of voting produce different winners</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Whichever option collects the most total votes wins automatically</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>A random draw, since the outcome is random anyway</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Inside a cycle, no option is stably preferred by a majority (A's premise does not exist). Controlling the agenda — which pair votes first, which option "sits out" into round two — delivers any result you like: the three buttons in Figure 5-1 each produce a different winner. That is the institutional meaning of agenda-setting power: fights over parliamentary rules, committee assignments, and amendment order are no procedural footnote. C confuses majority rule with Borda counting and other scoring rules; D misses that the outcome is anything but random — to the agenda-setter it is highly controllable.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Majority voting over multi-peaked preferences produces Condorcet cycles: no stable winner, and the agenda decides.</li>
+          <li>Single-peaked preferences + a one-dimensional issue → median voter theorem: campaigns converge toward the center.</li>
+          <li>Arrow's impossibility theorem: a perfect mechanism for aggregating social preferences is mathematically impossible.</li>
+          <li>Rent-seeking: resources dissipated over the right to divide the pie are a net social loss (licenses, tariff lobbying).</li>
+          <li>Policies whose benefits are diffuse but whose losses are concentrated are the easiest for organized minorities to defeat.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">Chapter 6</span>Cost–benefit analysis: pricing the priceless</h2>
+
+      <p><strong>Opening question:</strong> A high-speed rail line, a dam, a climate policy — worth it or not? The costs and benefits mix steel and concrete with time, human lives, clean air, and the well-being of generations not yet born. Government investment has no income statement; <strong>cost–benefit analysis (CBA)</strong> builds one for it.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: convert everything to one yardstick, then mind two dials</div>
+        <p>The idea of CBA is plain: list every year's costs and benefits, discount them to <strong>present value</strong>, add them up, and proceed only if the NPV is positive. The difficulty lies in two dials. <strong>Dial one: the discount rate r</strong> — future benefits are divided by (1+r) to the t-th power. It looks like a technical parameter but is really an ethics question: discounting means <strong>our descendants' welfare weighs less on today's scales</strong>, and choosing r at 1% or at 5% is enough to flip climate policy from "act now" to "take it slow." <strong>Dial two: shadow prices</strong> — where market prices are distorted (unemployment, regulation, tax wedges), value resources at their <strong>social opportunity cost</strong>: the true cost of hiring an unemployed worker is not the wage but the leisure and the output elsewhere that he gives up. One notch on either dial can swing the verdict — so the honest way to do CBA is to put parameter sensitivity on the table, not to report a single number.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Social discount rate</div><span class="term-en">社会贴现率</span><div class="term-def">The rate at which a public project's future benefits are converted to present value. Choosing it has a positive dimension (the return to capital) and a normative one (intergenerational equity), and it sways the verdict on long-horizon projects enormously.</div></div>
+        <div class="term"><div class="term-name">Shadow price</div><span class="term-en">影子价格</span><div class="term-def">The social opportunity cost of a resource, entered in place of distorted market prices: the shadow wage of unemployed labor is below the market wage; foreign exchange, land, and environmental capacity each carry their own shadow prices.</div></div>
+        <div class="term"><div class="term-name">Value of a statistical life (VSL)</div><span class="term-en">统计生命价值</span><div class="term-def">A population-level value for life estimated from wage–risk trade-offs (what people will pay to reduce the probability of death), used to value benefits in traffic-safety, environmental, and health regulation. It estimates not "the price of a life" but the aggregation of willingness to pay for tiny changes in risk.</div></div>
+        <div class="term"><div class="term-name">Contingent valuation</div><span class="term-en">条件价值评估</span><div class="term-def">Surveys that ask people directly what they would pay for non-market goods (scenery, the existence of a species). The disputed part is hypothetical bias, so the design must be careful (realistic payment scenarios, probes for uncertainty).</div></div>
+      </div>
+
+      <div class="formula">NPV = Σ (B_t − C_t) / (1 + r)^t<span class="f-note">B and C are the benefits and costs in year t; projects with NPV greater than 0 pass the test. Each extra percentage point of r in the denominator cuts a year-50 benefit by nearly forty percent — long-horizon projects are brutally sensitive to r</span></div>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 6-1 · How the discount rate rewrites project rankings</div>
+        <p class="fig-sub">Try it: drag the social discount rate r from 0% to 10% and watch the two NPV curves (A: near-term-benefit infrastructure; B: long-horizon-benefit climate mitigation) split apart violently, with the ranking flipping at the crossing point.</p>
+        <figure class="fig-canvas">
+          <svg viewBox="0 0 640 380" role="img" aria-label="Two net-present-value curves falling as the discount rate rises: curve B starts higher but falls faster and crosses curve A; to the right of the crossing, project A has the higher NPV, and the two curves in turn drop below the zero line.">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="40"/>
+            <text class="chart-label" x="335" y="366" text-anchor="middle">Social discount rate r (%/yr)</text>
+            <text class="chart-label" x="24" y="180" text-anchor="middle" transform="rotate(-90 24 180)">NPV (×100 million yuan, illustrative)</text>
+            <text class="chart-label" x="70" y="338" text-anchor="middle">0</text>
+            <text class="chart-label" x="176" y="338" text-anchor="middle">2</text>
+            <text class="chart-label" x="282" y="338" text-anchor="middle">4</text>
+            <text class="chart-label" x="388" y="338" text-anchor="middle">6</text>
+            <text class="chart-label" x="494" y="338" text-anchor="middle">8</text>
+            <text class="chart-label" x="596" y="338" text-anchor="middle">10</text>
+            <line class="gridline" x1="70" y1="258.8" x2="600" y2="258.8"/>
+            <text class="chart-label" x="74" y="254" style="fill:#4b5563">NPV = 0</text>
+            <line id="npv-vline" class="gridline" x1="229" y1="40" x2="229" y2="320"/>
+            <polyline id="npv-a" class="curve curve-c1" points=""/>
+            <polyline id="npv-b" class="curve curve-c2" points=""/>
+            <circle id="npv-cross" class="dot" r="4.5" fill="#475569" opacity="0.85"/>
+            <circle id="npv-dot-a" class="dot" r="6" fill="#2f6fdb"/>
+            <circle id="npv-dot-b" class="dot" r="6" fill="#be185d"/>
+            <text class="chart-label" x="86" y="66" style="fill:#be185d">B · long-horizon benefits</text>
+            <text class="chart-label" x="86" y="212" style="fill:#2f6fdb">A · near-term benefits</text>
+            <text id="npv-txt" class="chart-title-sm" x="335" y="24" text-anchor="middle"></text>
+            <text id="npv-sub" class="chart-label" x="335" y="46" text-anchor="middle" style="fill:#4b5563"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="npv-r">Social discount rate r</label><input type="range" id="npv-r" min="0" max="10" step="0.1" value="3"><output id="npv-or" for="npv-r">3.0%</output></div>
+        </div>
+        <figcaption>How to read this figure: project A invests 100 today and yields 8 a year for 30 years; project B invests 130 today and yields 13 a year for 45 years starting in year 16 (illustrative data). At r = 0, B's NPV is far higher; past the crossing, A overtakes; higher still, both turn negative in turn. The lesson: the discount rate is not a detail — <strong>it is the core battleground between those who champion long-horizon projects and those who oppose them</strong>. The famous Stern–Nordhaus clash over climate policy is fought exactly here.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · The Clean Air Act's 30 : 1 and the 8% parameter manual</div>
+        <p>The United States has institutionalized CBA: executive regulations must clear review by the White House's budget office (OIRA). The EPA's retrospective assessment of the 1990 Clean Air Act Amendments estimated that in 2020 alone benefits came to about $2 trillion against costs of about $65 billion — <strong>a benefit–cost ratio of roughly 30 : 1</strong> — with most of the benefits from premature deaths averted by lower particulate pollution, converting "health" into currency precisely via the value of a statistical life (VSL). China's counterpart is the national economic evaluation inside feasibility studies: the official manual "Methods and Parameters for the Economic Evaluation of Construction Projects" (third edition, 2006) long prescribed a social discount rate of 8% and required parameter adjustments for shadow prices and shadow wages — the same discipline, in a different language.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"The discount rate is a technical detail — any value will do."</strong> A year-50 benefit keeps about sixty percent of its value at r = 1% but under ten percent at 5%. For intergenerational projects — climate, infrastructure — the choice of r is a stand on intergenerational ethics: the Stern Review used about 1.4% (a near-zero rate of pure time preference) and called for immediate, forceful abatement; Nordhaus argues for roughly 3% or more, reflecting market returns, and reaches far gentler conclusions. The second trap: <strong>"a negative NPV means the project is worthless."</strong> NPV measures aggregate efficiency and carries no distributional weights — a project with a slightly negative NPV that still brings electricity to the poorest region may pass once distributionally weighted. An honest CBA reports sensitivity analyses instead of hiding value judgments inside parameters.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.1</span>In appraising a public project that employs many unemployed workers, how should the labor costs be entered?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>At the full market wage</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>At a shadow wage below the wage — the social opportunity cost is the leisure and other output forgone</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>As zero, since they were unemployed anyway</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>At the local minimum wage</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> Shadow price = the resource's social opportunity cost. If the workers were previously unemployed and the hiring does not crowd out labor for other projects, the social cost of employing them is not the wage (that is just a transfer) but the forgone leisure and alternative employment — usually below the wage. Pricing at market rates overstates cost and wrongly kills labor-intensive public projects. But C goes too far: leisure has value, training has costs, and in the long run labor supply is not perfectly inelastic; estimating the shadow wage must also allow for "crowding-out" (in a tight labor market, the shadow wage approaches the market wage).</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.2</span>Which statement about the social discount rate r is most accurate?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>A purely technical parameter, with nothing to do with value judgments</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>A higher r means more weight on the welfare of future generations</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>Choosing r is at heart an intergenerational ethical judgment, and it swings projects dominated by long-run benefits (the Stern vs. Nordhaus dispute)</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Market interest rates should always be used — there is no alternative</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong> The higher r is, the harder distant benefits get discounted — that is <strong>less</strong> weight on future generations (B has the direction reversed). It entangles the return to capital (the positive side) with pure time preference and intergenerational equity (the normative side) — exactly the root of the Stern (about 1.4%) versus Nordhaus (3% or more) divide in climate economics: near-identical model structures, one different r, and opposite policy conclusions. D's problem is that market rates embed taxes, risk premia, and market incompleteness, and need not represent how society ought to weigh the welfare of its descendants.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>CBA discounts and sums all costs and benefits: NPV greater than 0 passes the test.</li>
+          <li>The social discount rate is the intergenerational-ethics dial: the level of r can flip the ranking — and the survival — of long-horizon projects.</li>
+          <li>Shadow prices replace distorted market prices with social opportunity costs (unemployed labor, foreign exchange, environmental capacity).</li>
+          <li>Non-market values are estimated with VSL, contingent valuation, and related methods — watch for hypothetical bias.</li>
+          <li>An honest study reports sensitivity analyses and distributional weights instead of hiding its value judgments.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">Wrap-up</span>Next steps &amp; further reading</h2>
+      <p>This track builds on <a href="../01-microeconomics/index.html">01 Microeconomics</a> (surplus analysis and market failure) and leads on to: <a href="../12-environmental-and-resource-economics/index.html">12 Environmental &amp; Resource Economics</a> (Pigouvian taxes and carbon pricing in action), <a href="../14-health-and-education-economics/index.html">14 Health &amp; Education</a> (the micro-mechanics of the welfare state and social insurance), <a href="../16-political-economy-and-institutional-economics/index.html">16 Political Economy</a> (collective action and state capacity), and <a href="../09-labor-economics/index.html">09 Labor Economics</a> (income taxes and labor supply). The recommended books climb by difficulty:</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Rosen &amp; Gayer, Public Finance</span> (Harvey Rosen &amp; Ted Gayer) — the most widely used intermediate textbook worldwide, giving taxes and spending equal weight; this track's framework descends from it.</li>
+          <li><span class="bk">Stiglitz, Economics of the Public Sector</span> (Joseph Stiglitz) — public economics through the lens of information economics; intermediate to advanced.</li>
+          <li><span class="bk">Okun, Equality and Efficiency: The Big Tradeoff</span> (Arthur Okun) — the original home of the "leaky bucket"; short and deep, rewarding for every reader.</li>
+          <li><span class="bk">Buchanan &amp; Tullock, The Calculus of Consent</span> — the founding work of the public-choice school, and the deep extension of Chapter 5.</li>
+          <li><span class="bk">Atkinson &amp; Stiglitz, Lectures on Public Economics</span> — the classic advanced text on optimal taxation; mathematically dense.</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../07-international-economics/index.html"><span class="pager-dir">Previous track</span><br><span class="pager-name">International Economics</span></a>
+        <a href="../09-labor-economics/index.html"><span class="pager-dir">Next track</span><br><span class="pager-name">Labor Economics</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+<script src="../../assets/econ.js"></script>
+<script>
+/* ================= Fig 2-1 Tax deadweight loss: elasticity and tax rate ================= */
+(function () {
+  if (!document.getElementById("dwl-d")) return;
+  var X0 = 70, X1 = 600, Y0 = 320, TOP = 40;
+  function px(q) { return X0 + q / 100 * (X1 - X0); }
+  function py(p) { return Y0 - p / 10 * (Y0 - TOP); }
+  var P0 = 4.6, Q0 = 60;                 // no-tax equilibrium
+  var dLine = document.getElementById("dwl-d");
+  var labD = document.getElementById("dwl-labd");
+  function draw() {
+    var ed = parseFloat(document.getElementById("dwl-ed").value);
+    var t = parseFloat(document.getElementById("dwl-t").value);
+    document.getElementById("dwl-oed").textContent = ed.toFixed(1);
+    document.getElementById("dwl-ot").textContent = t.toFixed(1);
+    var s = (P0 / Q0) / ed;              // demand slope (absolute), through the equilibrium
+    function pd(q) { return P0 + s * (Q0 - q); }
+    dLine.setAttribute("x1", px(-40)); dLine.setAttribute("y1", py(pd(-40)));
+    dLine.setAttribute("x2", px(170)); dLine.setAttribute("y2", py(pd(170)));
+    labD.setAttribute("x", px(12) + 8);
+    labD.setAttribute("y", Math.max(TOP + 12, py(pd(12)) - 12));
+    var qt = (3.6 + 60 * s - t) / (s + 0.06);   // after-tax quantity
+    var pb = 1 + t + 0.06 * qt;                 // buyer price
+    var ps = pb - t;                            // seller net price
+    document.getElementById("dwl-rev").setAttribute("points",
+      X0 + "," + py(ps) + " " + px(qt) + "," + py(ps) + " " +
+      px(qt) + "," + py(pb) + " " + X0 + "," + py(pb));
+    document.getElementById("dwl-tri").setAttribute("points",
+      px(qt) + "," + py(ps) + " " + px(qt) + "," + py(pb) + " " +
+      px(Q0) + "," + py(P0));
+    var g = document.getElementById("dwl-pb");
+    g.setAttribute("x1", X0); g.setAttribute("x2", px(qt));
+    g.setAttribute("y1", py(pb)); g.setAttribute("y2", py(pb));
+    g = document.getElementById("dwl-ps");
+    g.setAttribute("x1", X0); g.setAttribute("x2", px(qt));
+    g.setAttribute("y1", py(ps)); g.setAttribute("y2", py(ps));
+    g = document.getElementById("dwl-qv");
+    g.setAttribute("x1", px(qt)); g.setAttribute("x2", px(qt));
+    g.setAttribute("y1", py(ps)); g.setAttribute("y2", Y0);
+    var db = document.getElementById("dwl-dotb");
+    db.setAttribute("cx", px(qt)); db.setAttribute("cy", py(pb));
+    var ds = document.getElementById("dwl-dots");
+    ds.setAttribute("cx", px(qt)); ds.setAttribute("cy", py(ps));
+    var rev = t * qt, dwl = 0.5 * t * (Q0 - qt);
+    Econ.setTxt("dwl-txt", "Government revenue T = " + rev.toFixed(1) +
+      " | Deadweight loss DWL = " + dwl.toFixed(2) +
+      (rev > 0 ? " (about " + Math.round(dwl / rev * 100) + "% of revenue)" : ""));
+    if (t <= 0.001) {
+      Econ.setTxt("dwl-sub", "Tax rate t = 0: back to the no-tax equilibrium (P = 4.60, Q = 60), no loss at all.");
+    } else {
+      Econ.setTxt("dwl-sub", "Buyers pay " + pb.toFixed(2) + ", sellers keep " + ps.toFixed(2) +
+        " (original price 4.60) → buyers bear " + Math.round((pb - P0) / t * 100) +
+        "%, sellers bear " + Math.round((P0 - ps) / t * 100) + "%. The less elastic side bears more.");
+    }
+  }
+  ["dwl-ed", "dwl-t"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", draw);
+  });
+  draw();
+})();
+
+/* ================= Fig 2-2 Laffer curve ================= */
+(function () {
+  if (!document.getElementById("laf-curve")) return;
+  var X0 = 70, X1 = 600, Y0 = 320, TOP = 40;
+  function px(t) { return X0 + t * (X1 - X0); }
+  function py(r) { return Y0 - r / 20 * (Y0 - TOP); }
+  function R(t, e) { return 30 * t * Math.pow(1 - t, e); }
+  function draw() {
+    var tPct = parseFloat(document.getElementById("laf-t").value);
+    var e = parseFloat(document.getElementById("laf-e").value) / 10;
+    document.getElementById("laf-ot").textContent = tPct + "%";
+    document.getElementById("laf-oe").textContent = e.toFixed(1);
+    var pts = [], t;
+    for (t = 0; t <= 1.0001; t += 0.02) {
+      pts.push(px(t).toFixed(1) + "," + py(R(t, e)).toFixed(1));
+    }
+    document.getElementById("laf-curve").setAttribute("points", pts.join(" "));
+    var ts = 1 / (1 + e), rs = R(ts, e);
+    var zone = document.getElementById("laf-zone");
+    zone.setAttribute("x", px(ts).toFixed(1));
+    zone.setAttribute("width", (X1 - px(ts)).toFixed(1));
+    var pk = document.getElementById("laf-peak");
+    pk.setAttribute("cx", px(ts)); pk.setAttribute("cy", py(rs));
+    var pl = document.getElementById("laf-peakline");
+    pl.setAttribute("x1", px(ts)); pl.setAttribute("x2", px(ts));
+    pl.setAttribute("y1", TOP); pl.setAttribute("y2", Y0);
+    var lb = document.getElementById("laf-tstar");
+    if (ts > 0.6) { // when the peak is far right, put the label on its left to stay inside the canvas
+      lb.setAttribute("x", px(ts) - 6); lb.setAttribute("y", 56);
+      lb.setAttribute("text-anchor", "end");
+    } else {
+      lb.setAttribute("x", px(ts) + 6); lb.setAttribute("y", 56);
+      lb.setAttribute("text-anchor", "start");
+    }
+    lb.textContent = "t* = " + Math.round(ts * 100) + "% (forbidden zone to its right)";
+    var u = tPct / 100, ru = R(u, e);
+    var dot = document.getElementById("laf-dot");
+    dot.setAttribute("cx", px(u)); dot.setAttribute("cy", py(ru));
+    Econ.setTxt("laf-txt", "Tax rate t = " + tPct + "% → revenue index R = " + ru.toFixed(2) +
+      " (peak " + rs.toFixed(2) + " @ t* = " + Math.round(ts * 100) + "%)");
+    var msg;
+    if (u < ts - 0.005) msg = "t is below t*: raising the rate still raises revenue — but revenue is not the only goal; DWL and fairness still have to be weighed.";
+    else if (u > ts + 0.005) msg = "t is above t* (the Laffer forbidden zone): another hike cuts revenue — avoidance, the underground economy, and shrinking labor supply have eaten the base.";
+    else msg = "t sits exactly at t*: revenue is maximized — note, however, that maximum revenue is not maximum social welfare.";
+    Econ.setTxt("laf-sub", msg);
+  }
+  ["laf-t", "laf-e"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", draw);
+  });
+  draw();
+})();
+
+/* ================= Fig 4-1 The leaky bucket of redistribution ================= */
+(function () {
+  if (!document.getElementById("lb-b")) return;
+  var X0 = 70, X1 = 600, Y0 = 320, TOP = 40;
+  function px(u) { return X0 + u * (X1 - X0); }
+  function py(v) { return Y0 - v / 120 * (Y0 - TOP); }
+  function fA(u, c) { return 100 * (1 - 0.35 * c * u * u); }
+  function fB(u, c) { return 20 + 60 * u * (1 - c * u); }
+  function draw() {
+    var u = parseFloat(document.getElementById("lb-tau").value) / 100;
+    var c = parseFloat(document.getElementById("lb-c").value) / 10;
+    document.getElementById("lb-otau").textContent = Math.round(u * 100) + "%";
+    document.getElementById("lb-oc").textContent = c.toFixed(1);
+    var pa = [], pb2 = [], v;
+    for (v = 0; v <= 1.0001; v += 0.02) {
+      pa.push(px(v).toFixed(1) + "," + py(fA(v, c)).toFixed(1));
+      pb2.push(px(v).toFixed(1) + "," + py(Math.max(0, fB(v, c))).toFixed(1));
+    }
+    document.getElementById("lb-a").setAttribute("points", pa.join(" "));
+    document.getElementById("lb-b").setAttribute("points", pb2.join(" "));
+    var raw = 1 / (2 * c), tsc = Math.min(1, raw);
+    var pk = document.getElementById("lb-peakv");
+    pk.setAttribute("x1", px(tsc)); pk.setAttribute("x2", px(tsc));
+    pk.setAttribute("y1", TOP); pk.setAttribute("y2", Y0);
+    var lb = document.getElementById("lb-tstar");
+    if (raw < 1) {
+      lb.setAttribute("x", px(tsc) + 6); lb.setAttribute("y", 56);
+      lb.setAttribute("text-anchor", "start");
+      lb.textContent = "τ* = " + Math.round(tsc * 100) + "% (peak bottom-quintile income)";
+    } else {
+      lb.setAttribute("x", X1 - 6); lb.setAttribute("y", 56);
+      lb.setAttribute("text-anchor", "end");
+      lb.textContent = "τ* ≥ 100%: at this parameter B rises all the way across the chart (but the pie is still shrinking)";
+    }
+    var A = fA(u, c), B = Math.max(0, fB(u, c));
+    var da = document.getElementById("lb-dota");
+    da.setAttribute("cx", px(u)); da.setAttribute("cy", py(fA(u, c)));
+    var db = document.getElementById("lb-dotb");
+    db.setAttribute("cx", px(u)); db.setAttribute("cy", py(B));
+    var vl = document.getElementById("lb-vline");
+    vl.setAttribute("x1", px(u)); vl.setAttribute("x2", px(u));
+    vl.setAttribute("y1", TOP); vl.setAttribute("y2", Y0);
+    Econ.setTxt("lb-txt", "τ = " + Math.round(u * 100) + "% | Bottom-quintile income index B = " +
+      B.toFixed(1) + " (" + (B >= 20 ? "+" : "") +
+      Math.round((B - 20) / 20 * 100) + "% vs. no redistribution) | Average income A = " + A.toFixed(1) +
+      " (pie −" + Math.round(100 - A) + "%)");
+    var msg;
+    if (u < tsc - 0.005) msg = "τ is below τ*: there is still room to redistribute more while making the bottom richer.";
+    else if (u > tsc + 0.005) msg = "τ is past τ*: the leakage now exceeds the gain — the bottom's real income falls instead of rising.";
+    else msg = "τ sits exactly at τ*: bottom-quintile income is maximized — but maximum social welfare still depends on how society weights equity against efficiency.";
+    Econ.setTxt("lb-sub", msg);
+    var la = document.getElementById("lb-laba");
+    la.setAttribute("x", X1 - 6); la.setAttribute("y", py(fA(1, c)) - 12);
+    la.textContent = "Average income A";
+    var lbb = document.getElementById("lb-labb");
+    lbb.setAttribute("x", X1 - 6); lbb.setAttribute("y", py(20) - 12);
+    lbb.textContent = "Bottom-quintile income B";
+  }
+  ["lb-tau", "lb-c"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", draw);
+  });
+  draw();
+})();
+
+/* ================= Fig 5-1 Cyclical-majority voting ================= */
+(function () {
+  if (!document.getElementById("vt-r1")) return;
+  var prefs = [["A", "B", "C"], ["B", "C", "A"], ["C", "A", "B"]];
+  function beats(x, y) {
+    var n = 0;
+    prefs.forEach(function (p) { if (p.indexOf(x) < p.indexOf(y)) n++; });
+    return n;
+  }
+  function winner(x, y) { return beats(x, y) >= 2 ? x : y; }
+  var box = { A: ["vt-ba", "vt-ta"], B: ["vt-bb", "vt-tb"], C: ["vt-bc", "vt-tc"] };
+  function reset() {
+    Econ.setTxt("vt-r1", "Choose a voting agenda (click a button below)");
+    Econ.setTxt("vt-r2", "Rule: two rounds of simple majority voting; the round-one winner faces the remaining option.");
+    Econ.setTxt("vt-fin", "Final winner: ?");
+    Econ.setTxt("vt-note", "Preference cycle: A beats B, B beats C, C beats A — no stable majority winner; the agenda decides.");
+    ["A", "B", "C"].forEach(function (k) {
+      document.getElementById(box[k][0]).setAttribute("fill", "#ffffff");
+      document.getElementById(box[k][1]).setAttribute("fill", "#1f2937");
+    });
+  }
+  function runAgenda(a, b, rest) {
+    var w1 = winner(a, b), wf = winner(w1, rest);
+    Econ.setTxt("vt-r1", "Round 1: " + a + " vs. " + b + " → " + w1 + " wins " +
+      Math.max(beats(a, b), beats(b, a)) + ":" + Math.min(beats(a, b), beats(b, a)));
+    var w2 = wf === w1 ? rest : w1;
+    Econ.setTxt("vt-r2", "Round 2: " + w1 + " vs. " + rest + " → " + wf + " wins " +
+      Math.max(beats(wf, w2), beats(w2, wf)) + ":" + Math.min(beats(wf, w2), beats(w2, wf)));
+    Econ.setTxt("vt-fin", "Final winner: " + wf);
+    Econ.setTxt("vt-note", "Same voters, same preferences — only the order of voting changed, and so did the winner. Click all three agendas: ① → C, ② → A, ③ → B.");
+    ["A", "B", "C"].forEach(function (k) {
+      var win = k === wf;
+      document.getElementById(box[k][0]).setAttribute("fill", win ? "#be185d" : "#ffffff");
+      document.getElementById(box[k][1]).setAttribute("fill", win ? "#ffffff" : "#1f2937");
+    });
+  }
+  document.getElementById("vt-ag1").addEventListener("click", function () { runAgenda("A", "B", "C"); });
+  document.getElementById("vt-ag2").addEventListener("click", function () { runAgenda("B", "C", "A"); });
+  document.getElementById("vt-ag3").addEventListener("click", function () { runAgenda("C", "A", "B"); });
+  document.getElementById("vt-reset").addEventListener("click", reset);
+  reset();
+})();
+
+/* ================= Fig 6-1 Social discount rate and NPV ================= */
+(function () {
+  if (!document.getElementById("npv-a")) return;
+  var X0 = 70, X1 = 600, Y0 = 320, TOP = 40;
+  function px(r) { return X0 + r / 0.10 * (X1 - X0); }
+  function py(v) { return Y0 - (v + 140) / 640 * (Y0 - TOP); }
+  function ann(n, r) {
+    var s = 0;
+    for (var i = 1; i <= n; i++) s += 1 / Math.pow(1 + r, i);
+    return s;
+  }
+  function npvA(r) { return -100 + 8 * ann(30, r); }
+  function npvB(r) { return -130 + 13 * (ann(60, r) - ann(15, r)); }
+  var pa = [], pb2 = [], r;
+  for (r = 0; r <= 0.100001; r += 0.001) {
+    pa.push(px(r).toFixed(1) + "," + py(npvA(r)).toFixed(1));
+    pb2.push(px(r).toFixed(1) + "," + py(npvB(r)).toFixed(1));
+  }
+  document.getElementById("npv-a").setAttribute("points", pa.join(" "));
+  document.getElementById("npv-b").setAttribute("points", pb2.join(" "));
+  var rc = 0.1;
+  for (r = 0.0005; r <= 0.1; r += 0.0005) {
+    if (npvA(r) > npvB(r)) { rc = r; break; }
+  }
+  var cross = document.getElementById("npv-cross");
+  cross.setAttribute("cx", px(rc)); cross.setAttribute("cy", py(npvA(rc)));
+  Econ.setTxt("npv-sub", "The curves cross at r* ≈ " + (rc * 100).toFixed(1) +
+    "%: below it B is preferred, above it A; past B's IRR (~4.5%) and A's IRR (~7%) the two turn negative in turn.");
+  function draw() {
+    var pct = parseFloat(document.getElementById("npv-r").value);
+    var rr = pct / 100;
+    document.getElementById("npv-or").textContent = pct.toFixed(1) + "%";
+    var vA = npvA(rr), vB = npvB(rr);
+    var da = document.getElementById("npv-dot-a");
+    da.setAttribute("cx", px(rr)); da.setAttribute("cy", py(vA));
+    var db = document.getElementById("npv-dot-b");
+    db.setAttribute("cx", px(rr)); db.setAttribute("cy", py(vB));
+    var vl = document.getElementById("npv-vline");
+    vl.setAttribute("x1", px(rr)); vl.setAttribute("x2", px(rr));
+    vl.setAttribute("y1", TOP); vl.setAttribute("y2", Y0);
+    var judge = (vA <= 0 && vB <= 0) ? "neither passes (both NPVs negative)"
+      : (vA > vB ? "both pass, or A is higher: A preferred" : (vB > vA ? "B preferred" : "a tie"));
+    Econ.setTxt("npv-txt", "r = " + pct.toFixed(1) + "% | NPV of A = " +
+      (vA >= 0 ? "+" : "") + vA.toFixed(1) + " | NPV of B = " +
+      (vB >= 0 ? "+" : "") + vB.toFixed(1) + " → " + judge);
+  }
+  document.getElementById("npv-r").addEventListener("input", draw);
+  draw();
+})();
+</script>
+</body>
+</html>

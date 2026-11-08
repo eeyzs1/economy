@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Macroeconomics · EconLearn Self-Study Path in Economics</title>
+<meta name="description" content="Interactive macroeconomics tutorial: GDP and the circular flow, the Solow growth model, AD-AS fluctuations, the Phillips curve, and macroeconomic policy — with interactive figures and self-check quizzes.">
+<link rel="stylesheet" href="../../assets/econ.css">
+</head>
+<body style="--branch:#b91c1c">
+<noscript><p class="noscript-tip">The interactive figures and self-check quizzes on this page require JavaScript; without it, the full text remains readable.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← Home</a>
+  <div class="topbar-title"><span class="topbar-num">02</span>Macroeconomics</div>
+  <a class="topbar-lang" href="../../02-宏观经济学/index.html" hreflang="zh-CN">中文</a>
+  <button class="toc-toggle" aria-expanded="false">Contents</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">Chapters in this track</p>
+    <nav aria-label="Chapter contents">
+      <a href="#overview">Overview &amp; learning goals</a>
+      <a href="#ch1">1 · The macroeconomy and GDP</a>
+      <a href="#ch2">2 · Economic growth and the Solow model</a>
+      <a href="#ch3">3 · Aggregate demand, aggregate supply, and the multiplier</a>
+      <a href="#ch4">4 · Money, inflation, and unemployment</a>
+      <a href="#ch5">5 · Open-economy macroeconomics</a>
+      <a href="#ch6">6 · Macroeconomic policy</a>
+      <a href="#path">Next steps &amp; further reading</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · Self-Study Path in Economics</p>
+  </aside>
+  <main class="main" id="main">
+
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">Track 02 · Core theory</span>
+        <h1>Macroeconomics</h1>
+        <p class="hero-en">宏观经济学</p>
+        <p class="hero-lead">Zoom out: stop asking how a single market clears, and start asking why the economy as a whole grows and fluctuates — and what fiscal policy and the central bank can, and cannot, do about it.</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">By the end of this track, you will be able to</div>
+        <ul>
+          <li>Explain why GDP's three approaches — production, income, and expenditure — must agree, and compute nominal and real growth rates</li>
+          <li>Draw the Solow model diagram and show how the saving rate, depreciation, and population growth determine steady-state capital and consumption per worker</li>
+          <li>Use the AD-AS model to analyze the short-run effects of demand and supply shocks, and quantify the total effect of a spending injection with the multiplier formula</li>
+          <li>Distinguish the short-run from the long-run Phillips curve, and explain the roles of the natural rate of unemployment and expectation adjustment</li>
+          <li>Use the impossible trinity and Mundell–Fleming intuition to judge how effective fiscal and monetary policy are in an open economy</li>
+          <li>Compare the lag structures of fiscal and monetary policy, and restate the core arguments of the rules-versus-discretion debate</li>
+        </ul>
+      </div>
+      <div class="prereq">Prerequisites:
+        <a class="badge" href="../01-microeconomics/index.html">01 Microeconomics · Supply, demand, and marginal analysis</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">Chapter 1</span>The macroeconomy and GDP</h2>
+
+      <h3>Opening question</h3>
+      <p>The news reports that "China's gross domestic product in 2023 was 126.1 trillion yuan." How is this astronomical number calculated? Why does the used iPhone you sell not count toward GDP, while the commission an agent charges for selling your home does? And why might a nation of thrifty households "save" its way into a recession? Macroeconomics begins by answering one question: how much did the economy as a whole produce?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Microeconomics walks into the marketplace and studies one stall at a time; macroeconomics rides a helicopter over the whole city. From that height, the decisive sight is the <strong>circular flow</strong>: your spending is someone else's income, and their spending is someone else's income in turn, as money circulates without end among households, firms, the government, and the rest of the world. That is why <strong>gross domestic product (GDP)</strong> is at once the value of total production, total income earned, and total expenditure — the three approaches are like counting the same parade through three different city gates; the headcount must be identical.</p>
+        <p>What holds for a single household need not hold for the whole economy (the <strong>fallacy of composition</strong>): thrift is a virtue for one family, but when every family cuts spending at once, the circular flow of income stalls — and that is exactly how a recession is born.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">Gross Domestic Product (GDP)</span><span class="term-en">国内生产总值</span><div class="term-def">The market value of all final goods and services newly produced within an economy over a period (usually a year). It is a geographic measure: whatever is produced within China's borders counts, whatever the producer's nationality.</div></div>
+        <div class="term"><span class="term-name">Circular Flow</span><span class="term-en">循环流</span><div class="term-def">The circuit of spending and income among sectors: one person's spending is another person's income. The agreement of GDP's three approaches follows from it.</div></div>
+        <div class="term"><span class="term-name">Nominal vs. Real GDP</span><span class="term-en">名义与实际 GDP</span><div class="term-def">GDP at current prices versus GDP at constant prices. Only real GDP, with price changes stripped out, can be compared across years as a measure of true output.</div></div>
+        <div class="term"><span class="term-name">GDP Deflator</span><span class="term-en">GDP 平减指数</span><div class="term-def">Nominal GDP ÷ real GDP × 100 — a price index covering all domestic output, broader in scope than the CPI.</div></div>
+        <div class="term"><span class="term-name">Consumer Price Index (CPI)</span><span class="term-en">消费者物价指数</span><div class="term-def">The change in the price of a fixed basket of consumer goods and services (a Laspeyres index); it measures the household cost of living and is the most-watched gauge of inflation.</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <p>The easiest trap in national accounting is mistaking nominal growth for real growth. Try the calculator below yourself: nominal growth together with prices (the deflator) determines real growth.</p>
+      <figure class="fig">
+        <div class="fig-title">Figure 1-1 · Nominal vs. real: stripping the price rises out of growth</div>
+        <p class="fig-sub">Drag the two sliders separately and watch how the third bar (real growth) responds.</p>
+        <figure class="fig-canvas">
+          <svg id="figGdpSvg" viewBox="0 0 640 400" role="img" aria-label="Three bars compare nominal growth, the deflator, and real growth; real growth responds to both sliders">
+            <line class="gridline" x1="70" y1="116" x2="610" y2="116"></line>
+            <text class="chart-label-en" x="62" y="120" text-anchor="end">+6%</text>
+            <line class="gridline" x1="70" y1="284" x2="610" y2="284"></line>
+            <text class="chart-label-en" x="62" y="288" text-anchor="end">−6%</text>
+            <line class="axis" x1="60" y1="200" x2="615" y2="200"></line>
+            <text class="chart-label-en" x="62" y="196" text-anchor="end">0</text>
+            <rect id="gdpBarN" x="110" y="180" width="80" height="20" rx="3" fill="#2f6fdb"></rect>
+            <rect id="gdpBarP" x="300" y="180" width="80" height="20" rx="3" fill="#ea580c"></rect>
+            <rect id="gdpBarR" x="490" y="180" width="80" height="20" rx="3" fill="#0d9488"></rect>
+            <text id="gdpValN" class="chart-label" x="150" y="172" text-anchor="middle">8.0%</text>
+            <text id="gdpValP" class="chart-label" x="340" y="172" text-anchor="middle">3.0%</text>
+            <text id="gdpValR" class="chart-label" x="530" y="172" text-anchor="middle">4.9%</text>
+            <line class="axis" x1="60" y1="360" x2="615" y2="360"></line>
+            <text class="chart-label" x="150" y="384" text-anchor="middle">Nominal growth g</text>
+            <text class="chart-label" x="340" y="384" text-anchor="middle">Deflator π</text>
+            <text class="chart-label" x="530" y="384" text-anchor="middle">Real growth r</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="gdpGRange">Nominal growth g</label>
+            <input type="range" id="gdpGRange" min="0" max="12" value="8" step="0.5">
+            <output id="gdpGOut" for="gdpGRange">8.0%</output></div>
+          <div class="ctrl"><label for="gdpPiRange">Deflator π</label>
+            <input type="range" id="gdpPiRange" min="0" max="8" value="3" step="0.5">
+            <output id="gdpPiOut" for="gdpPiRange">3.0%</output></div>
+        </div>
+        <figcaption>How to read this figure: <span id="gdpRead">Real growth = (1+g)/(1+π) − 1.</span>With nominal growth of 8% and prices up 3%, "real" growth is only about 4.9%; if prices rise 8%, real growth is close to zero — a nominal boom may be little more than rising prices.</figcaption>
+      </figure>
+
+      <div class="formula">Real GDP growth r = (1 + g) ÷ (1 + π) − 1
+        <span class="f-note">g is nominal growth and π is the rise in the deflator; for a rough estimate use r ≈ g − π</span>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world</div>
+        <p>China's National Bureau of Statistics computes GDP by the production, income, and expenditure approaches at the same time; in principle they agree, and in practice the production-side figure is authoritative, with the discrepancy held within a small range. From the expenditure side, of the 126.1 trillion yuan of GDP in 2023, final consumption, capital formation, and net exports — the "troika" — each take their share. Another classic reminder: housework and volunteer work are not counted in GDP — the same hour of cleaning counts when outsourced to a cleaning company, but not when you do it yourself. GDP thus measures market production, not total welfare.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>① Counting secondhand goods and stock trades in GDP — wrong: they are transfers of existing assets, and only newly produced services such as brokerage fees count. ② Counting pensions and unemployment benefits — wrong: transfer payments correspond to no current output. ③ High GDP means a good life — the level says nothing about distribution, and it leaves out health, the environment, and leisure. ④ Comparing nominal GDP directly across countries or years, and being fooled by exchange rates and prices.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.1</span>Which of the following should be counted in this year's GDP?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Li buys a secondhand apartment built in 2015 (brokerage fee excluded)</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The government pays for a new cross-river bridge built this year</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The government pays pensions to retirees</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>Li spends three hours cleaning his own home</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>GDP counts final goods and services newly produced in the current year. In A, the old apartment is a stock produced in the past, so the transaction itself is excluded (had a brokerage fee been paid, that service would count); in C the pension is a transfer payment matched by no output; in D the cleaning is non-market housework and is excluded. B is a final good newly produced this year — whether paid for publicly or privately, it counts. Hence B.</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.2</span>A country's nominal GDP grows 6% and its GDP deflator rises 4%. What is the approximate real growth rate?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>10%</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>About 2%</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>6%</button>
+          <button class="quiz-opt"><span class="opt-key">D</span>24%</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Real = (1.06 ÷ 1.04) − 1 ≈ 1.9%, approximately 6% − 4% = 2%, so B. A adds nominal growth to prices and gets the operation backwards; C ignores rising prices and treats nominal as real; D multiplies wrongly. The "price rise" component must be stripped out of nominal growth — what remains is genuine output growth.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>GDP is the market value of final goods and services newly produced in a period; the three approaches (production, income, expenditure) must agree, because in the circular flow spending is income.</li>
+          <li>Secondhand transactions, transfer payments, intermediate goods, and housework are not counted in GDP.</li>
+          <li>The nominal/real distinction is the first lesson of macroeconomics: real growth = (1+g)/(1+π) − 1.</li>
+          <li>The GDP deflator covers all domestic output; the CPI covers only the consumer basket.</li>
+          <li>GDP measures market production, not distribution, the environment, or leisure — a high GDP is not the same as high welfare.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">Chapter 2</span>Economic growth and the Solow model</h2>
+
+      <h3>Opening question</h3>
+      <p>Why can an ordinary working family today save up in a few years for things your grandparents could not afford in a lifetime of toil? Why was China's GDP per capita only about $156 in 1978 yet above $12,700 in 2023? More fundamentally: what are the engines of growth — and can growth go on forever just by building more factories?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Growth has three engines: <strong>capital accumulation</strong> (machines and factories), <strong>labor and human capital</strong> (more people, and people with more skills), and <strong>technological progress</strong> (better ideas, showing up in the statistics as total factor productivity). The key insight of the <strong>Solow model</strong> is <strong>diminishing marginal returns to capital</strong>: the first tractor can transform a village; the thousandth only replaces an old one. With capital accumulation alone, output per worker eventually comes to rest at a <strong>steady state</strong>, where saving per worker is just enough to cover depreciation and to equip newly added workers with capital; long-run growth per worker can come only from technological progress, the engine that never cuts out. Compound interest is the magic of growth: the <strong>rule of 70</strong> says an economy growing 2% a year doubles in about 35 years, while at 1% it takes 70 years — half a percentage point becomes a gulf within a generation or two.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">Solow Growth Model</span><span class="term-en">索洛模型</span><div class="term-def">A growth model built on capital accumulation: saving s·f(k) becomes investment, and where it crosses the break-even investment line (depreciation plus population growth) stands the steady state.</div></div>
+        <div class="term"><span class="term-name">Steady State</span><span class="term-en">稳态</span><div class="term-def">The situation in which capital per worker stops changing: saving per worker exactly equals the investment needed for depreciation and population growth, s·f(k*) = (δ+n)·k*.</div></div>
+        <div class="term"><span class="term-name">Total Factor Productivity (TFP)</span><span class="term-en">全要素生产率</span><div class="term-def">The part of output that capital and labor inputs cannot explain — the "residual" of technology, organization, and efficiency, and the ultimate source of long-run growth per worker.</div></div>
+        <div class="term"><span class="term-name">Convergence</span><span class="term-en">趋同</span><div class="term-def">The tendency of initially poorer economies to grow faster. World evidence supports conditional convergence: once saving, population, human capital, and institutions are controlled for, poorer countries do catch up faster.</div></div>
+        <div class="term"><span class="term-name">Golden Rule</span><span class="term-en">黄金律</span><div class="term-def">The saving rate that maximizes steady-state consumption per worker; save beyond it and output is higher, but consumption per worker falls.</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <p>The diagram below is the heart of the Solow model: capital per worker k on the horizontal axis, investment and output per worker on the vertical. The curve s·f(k) is saving (investment) per worker; the straight line γk is the break-even investment needed for depreciation plus population growth; their intersection is the steady state. Drag the saving-rate slider and watch steady-state capital, output, and consumption respond.</p>
+      <figure class="fig">
+        <div class="fig-title">Figure 2-1 · The Solow model: the saving rate and the steady state</div>
+        <p class="fig-sub">Drag the saving rate s and watch the intersection, output per worker y*, and consumption per worker c* change; try pushing s above 0.5.</p>
+        <figure class="fig-canvas">
+          <svg id="figSolowSvg" viewBox="0 0 640 400" role="img" aria-label="Solow model diagram: the intersection of the saving-per-worker curve and the break-even investment line determines the steady state; the saving-rate slider moves the intersection">
+            <line class="gridline" x1="70" y1="242.5" x2="600" y2="242.5"></line>
+            <text class="chart-label-en" x="62" y="246.5" text-anchor="end">1</text>
+            <line class="gridline" x1="70" y1="155" x2="600" y2="155"></line>
+            <text class="chart-label-en" x="62" y="159" text-anchor="end">2</text>
+            <line class="gridline" x1="70" y1="67.5" x2="600" y2="67.5"></line>
+            <text class="chart-label-en" x="62" y="71.5" text-anchor="end">3</text>
+            <path id="solowF" class="curve" stroke="#94a3b8" stroke-width="2" stroke-dasharray="6 5" d=""></path>
+            <path id="solowBe" class="curve curve-c2" d=""></path>
+            <path id="solowSf" class="curve curve-c1" d=""></path>
+            <line id="solowGk" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <line id="solowGy" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <line id="solowGi" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <line id="solowCBr" x1="0" y1="0" x2="0" y2="0" stroke="#b91c1c" stroke-width="1.5" stroke-dasharray="3 3"></line>
+            <circle id="solowDotI" class="dot" r="6" fill="#b91c1c"></circle>
+            <circle id="solowDotY" class="dot" r="6" fill="#ffffff" stroke="#b91c1c" stroke-width="2.5"></circle>
+            <text id="solowValY" class="chart-label" x="62" y="200" text-anchor="end"></text>
+            <text id="solowValI" class="chart-label-en" x="62" y="230" text-anchor="end"></text>
+            <text id="solowValK" class="chart-label" x="0" y="350" text-anchor="middle"></text>
+            <text id="solowCLbl" class="chart-label" x="0" y="0" style="fill:#b91c1c"></text>
+            <text id="solowLblF" class="chart-label-en" x="494" y="74" text-anchor="end">f(k) output per worker</text>
+            <text id="solowLblBe" class="chart-label" x="284" y="272" text-anchor="end" style="fill:#ea580c">γk depreciation + population growth</text>
+            <text id="solowLblSf" class="chart-label" x="0" y="0" text-anchor="end" style="fill:#2f6fdb">s·f(k) saving per worker</text>
+            <text id="solowRead" class="chart-title-sm" x="335" y="30" text-anchor="middle"></text>
+            <line class="axis" x1="60" y1="330" x2="615" y2="330"></line>
+            <line class="axis" x1="70" y1="340" x2="70" y2="44"></line>
+            <text class="chart-label" x="605" y="356" text-anchor="end">Capital per worker k</text>
+            <text class="chart-label" transform="translate(24,190) rotate(-90)" text-anchor="middle">Investment / output per worker</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="solowRange">Saving rate s</label>
+            <input type="range" id="solowRange" min="0.05" max="0.6" value="0.3" step="0.01">
+            <output id="solowOut" for="solowRange">0.30</output></div>
+        </div>
+        <figcaption>How to read this figure: the figure sets f(k)=√k and γ=0.20 (depreciation plus population growth). An intersection that moves up and to the right means higher k* and y*; the hollow dot is steady-state output per worker y*, the solid dot is steady-state investment i*, and the vertical gap between them is exactly consumption per worker c*. <span id="solowNote"></span></figcaption>
+      </figure>
+
+      <div class="formula">Steady-state condition: s · f(k*) = (δ + n) · k*
+        <span class="f-note">the intersection of the saving curve with the break-even investment line; the saving rate has only a "level effect," no long-run "growth effect"</span>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world</div>
+        <p>The most spectacular postwar convergence sample is East Asia: in 1960 South Korea's GDP per capita was on a par with Ghana's; by 2023 it exceeded $33,000. Japan leapt from the ruins into the high-income ranks. China's GDP per capita was about $156 in 1978 and above $12,700 in 2023 — roughly an 80-fold nominal increase over 45 years. Growth accounting shows that capital deepening contributed enormously to the East Asian miracle, but TFP and human capital were equally indispensable — echoing the Solow model's verdict: capital accumulation can explain catch-up, but not sustained growth at the frontier.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>① "The higher the investment rate, the better" — beyond the Golden Rule saving rate, consumption per worker falls rather than rises; the Soviet-style mix of high accumulation and low consumption is the cautionary tale. ② "Extrapolating high growth for decades" — growth regressing toward the mean is one of the most robust findings in empirical research. ③ "Poor countries are bound to catch up with rich ones" (absolute convergence) — the whole-world sample does not support it; only conditional convergence, after controlling for institutions, human capital, and similar conditions, holds up.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.1</span>In the Solow model, what happens in the long-run steady state after a one-time permanent rise in the saving rate?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>Capital and output per worker are both higher, but the long-run growth rate of output per worker is unchanged</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>The long-run growth rate of output per worker rises permanently</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Consumption per worker necessarily rises</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>A higher saving rate lifts the saving curve, which now meets the break-even line at higher k* and y*; but in steady state the growth rate per worker is set by the pace of technological progress — the saving rate has a level effect, not a growth effect, so A. B is the most common misreading; C is not guaranteed: if the saving rate is already past the Golden Rule, c* falls.</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.2</span>Which of the following statements about convergence between countries is most accurate?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Given enough time, per capita incomes in all countries become identical</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>After controlling for saving rates, population, human capital, and institutions, initially poorer economies tend to grow faster (conditional convergence)</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Poor countries always grow faster than rich ones because they start from a lower base</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Cross-country evidence supports conditional convergence: within groups with similar saving, population, human capital, and institutions (inside the OECD, or among East Asian economies), the poorer catch up faster. Absolute convergence in the whole-world sample does not hold — sub-Saharan Africa's long lag is the counterexample. So B is correct; A and C misread conditional convergence as unconditional.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The three engines of growth: capital accumulation, labor and human capital, and technological progress (TFP).</li>
+          <li>Diminishing marginal returns to capital → with investment alone, the economy converges to the steady state s·f(k*)=(δ+n)k*.</li>
+          <li>The saving rate determines the steady-state level (k*, y*) but not the long-run growth rate per worker; only technological progress delivers that.</li>
+          <li>The Golden Rule saving rate maximizes steady-state consumption per worker; saving too much lowers it.</li>
+          <li>Cross-country evidence supports conditional rather than absolute convergence; the rule of 70 shows the power of compounding.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">Chapter 3</span>Aggregate demand, aggregate supply, and the multiplier</h2>
+
+      <h3>Opening question</h3>
+      <p>Why does the economy not cruise at a steady speed but instead alternate between fever and chills — in 2007 order books stretched half a year ahead, yet by late 2008 export factories were shutting down in rows? If one factory lays off workers, will the losses amplify through the whole economy like dominoes? And what force can reignite aggregate demand in a recession?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Picture the economy as a body, with potential output as its normal temperature. <strong>Aggregate demand (AD)</strong> adds up four spending components — consumption C, investment I, government purchases G, and net exports NX; the higher the price level, the lower aggregate demand, so the curve slopes downward. <strong>Short-run aggregate supply (SRAS)</strong> slopes upward because wages and prices are sticky: prices have risen while wages have not caught up, production looks profitable, and firms produce more. The <strong>multiplier effect</strong> is the circular flow's amplifier: the government spends 10 billion on a bridge, the workers receive 10 billion in income and spend 8 billion of it; the baker's income then rises by 8 billion, and she spends 6.4 billion … like a run of dominoes that shrink as they fall — each round shorter than the last (because the marginal propensity to consume is below 1) — yet the total effect far exceeds the first push.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">Aggregate Demand (AD)</span><span class="term-en">总需求</span><div class="term-def">The economy's total intended spending at each price level, C+I+G+NX; it slopes downward through the wealth effect, the interest-rate effect, and the exchange-rate effect.</div></div>
+        <div class="term"><span class="term-name">Short-Run Aggregate Supply (SRAS)</span><span class="term-en">短期总供给</span><div class="term-def">With sticky prices and wages, firms supply more as the price level rises, so the curve slopes upward; in the long run it is vertical at potential output.</div></div>
+        <div class="term"><span class="term-name">Multiplier Effect</span><span class="term-en">乘数效应</span><div class="term-def">The factor by which an initial expenditure is amplified through the spending → income → respending chain, k = 1/(1−MPC); taxes, imports, and saving are leakages.</div></div>
+        <div class="term"><span class="term-name">Output Gap</span><span class="term-en">产出缺口</span><div class="term-def">The difference between actual and potential output: positive means overheating (inflation pressure), negative means recession (unemployment pressure).</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <p>First watch the multiplier chain unfold link by link, then use the AD-AS diagram to see how demand and supply shocks change the equilibrium.</p>
+      <figure class="fig">
+        <div class="fig-title">Figure 3-1 · The expenditure multiplier: one injection, a domino run</div>
+        <p class="fig-sub">Set the marginal propensity to consume c, then press "Play round by round" to watch an initial injection of 10 billion yuan become income and spending round after round.</p>
+        <figure class="fig-canvas">
+          <svg id="figMultSvg" viewBox="0 0 640 400" role="img" aria-label="Expenditure multiplier demo: ten bars show new spending in each of the first ten rounds, shrinking with the marginal propensity to consume; the caption gives the multiplier and the total">
+            <line class="gridline" x1="70" y1="90" x2="610" y2="90"></line>
+            <text class="chart-label-en" x="62" y="94" text-anchor="end">100</text>
+            <line class="gridline" x1="70" y1="210" x2="610" y2="210"></line>
+            <text class="chart-label-en" x="62" y="214" text-anchor="end">50</text>
+            <g id="multBars"></g>
+            <line class="axis" x1="70" y1="330" x2="70" y2="40"></line>
+            <line class="axis" x1="60" y1="330" x2="615" y2="330"></line>
+            <text id="multPart" class="chart-label" x="70" y="28"></text>
+            <text id="multTotal" class="chart-label" x="70" y="50"></text>
+            <text id="multK" class="chart-title-sm" x="610" y="28" text-anchor="end"></text>
+            <text class="chart-label" x="605" y="384" text-anchor="end">Round of spending</text>
+            <text class="chart-label" transform="translate(22,190) rotate(-90)" text-anchor="middle">New spending each round (initial injection 100)</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="mpcRange">Marginal propensity to consume c</label>
+            <input type="range" id="mpcRange" min="0" max="0.9" value="0.8" step="0.05">
+            <output id="mpcOut" for="mpcRange">0.80</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="multPlay" type="button">Play round by round</button>
+          <button class="btn ghost" id="multReset" type="button">Show all ten rounds</button>
+        </div>
+        <figcaption>How to read this figure: each round's new spending = the previous round × c. Beyond the first ten rounds stretches an ever-shrinking tail, and all rounds sum to exactly 100 × 1/(1−c). The closer c is to 1, the slower the chain decays and the larger the multiplier — though tax and import leakages keep real-world multipliers well below the formula's value.</figcaption>
+      </figure>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 3-2 · AD-AS: demand shocks and supply shocks</div>
+        <p class="fig-sub">Drag the two sliders separately and watch the equilibrium P*, Y*, and the output gap change; try the combination of "AD shifts right + SRAS shifts left."</p>
+        <figure class="fig-canvas">
+          <svg id="figAdasSvg" viewBox="0 0 640 400" role="img" aria-label="AD-AS model: aggregate demand and short-run aggregate supply intersect to determine the equilibrium price level and output; the sliders shift the curves">
+            <defs>
+              <clipPath id="adasClip"><rect x="70" y="50" width="530" height="280"></rect></clipPath>
+            </defs>
+            <line class="gridline" x1="70" y1="274" x2="610" y2="274"></line>
+            <text class="chart-label-en" x="62" y="278" text-anchor="end">P=2</text>
+            <line class="gridline" x1="70" y1="218" x2="610" y2="218"></line>
+            <text class="chart-label-en" x="62" y="222" text-anchor="end">4</text>
+            <line class="gridline" x1="70" y1="162" x2="610" y2="162"></line>
+            <text class="chart-label-en" x="62" y="166" text-anchor="end">6</text>
+            <line class="gridline" x1="70" y1="106" x2="610" y2="106"></line>
+            <text class="chart-label-en" x="62" y="110" text-anchor="end">8</text>
+            <line x1="361.5" y1="50" x2="361.5" y2="330" stroke="#7c3aed" stroke-width="2" stroke-dasharray="7 5"></line>
+            <text class="chart-label-en" x="369" y="66" style="fill:#7c3aed">Potential output (long-run aggregate supply)</text>
+            <g clip-path="url(#adasClip)">
+              <path id="adasAd" class="curve curve-c1" d=""></path>
+              <path id="adasSras" class="curve curve-c2" d=""></path>
+            </g>
+            <line id="adasGx" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <line id="adasGy" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <circle id="adasDot" class="dot" r="6" fill="#b91c1c"></circle>
+            <text id="adasPLabel" class="chart-label" x="76" y="0"></text>
+            <text id="adasYLabel" class="chart-label" x="0" y="350" text-anchor="middle"></text>
+            <text id="adasAdLbl" class="chart-label" x="0" y="0" style="fill:#2f6fdb">AD</text>
+            <text id="adasSrasLbl" class="chart-label" x="0" y="0" text-anchor="end" style="fill:#ea580c">SRAS</text>
+            <text id="adasGap" class="chart-title-sm" x="335" y="28" text-anchor="middle"></text>
+            <line class="axis" x1="60" y1="330" x2="615" y2="330"></line>
+            <line class="axis" x1="70" y1="340" x2="70" y2="40"></line>
+            <text class="chart-label" x="605" y="384" text-anchor="end">Aggregate output Y</text>
+            <text class="chart-label" transform="translate(22,190) rotate(-90)" text-anchor="middle">Price level P</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="adasAdRange">Aggregate demand AD shift</label>
+            <input type="range" id="adasAdRange" min="-2" max="2" value="0" step="0.5">
+            <output id="adasAdOut" for="adasAdRange">+0.0</output></div>
+          <div class="ctrl"><label for="adasSrasRange">Aggregate supply SRAS shift</label>
+            <input type="range" id="adasSrasRange" min="-2" max="2" value="0" step="0.5">
+            <output id="adasSrasOut" for="adasSrasRange">+0.0</output></div>
+        </div>
+        <figcaption>How to read this figure: AD shifts right → output and the price level rise together (recovery or overheating); AD shifts left → both fall (recession); SRAS shifts left → prices up, output down (stagflation, as in the 1970s oil crises); SRAS shifts right → prices down, output up (as with the cost dividend of information technology in the late 1990s). The horizontal distance from the equilibrium point to the "potential output" vertical line is the output gap.</figcaption>
+      </figure>
+
+      <div class="formula">Expenditure multiplier k = 1 ÷ (1 − MPC)
+        <span class="f-note">MPC is the marginal propensity to consume; ΔY = k × ΔG. The more leakages (taxes, imports, saving), the smaller the real-world multiplier</span>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world</div>
+        <p>In November 2008, confronting the global financial crisis, China launched a two-year stimulus of 4 trillion yuan: high-speed rail, expressways, and subsidized housing pulled up steel, cement, and construction machinery; employment and income along the supply chains recovered, GDP grew 9.4% in 2009, and the economy staged a rare V-shaped rebound. The controversy is equally famous: how much private investment the stimulus crowded out, and how much it pushed up local debt and housing prices — the multiplier is no free lunch, and its size depends on how much slack the economy has, how the spending is financed, and expectations. The lesson: the same AD-AS diagram does not mean the same thing drawn in a boom as in a deep recession.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>① Confusing movement along a curve with a shift of the whole curve: a fall in the price level changes the quantity demanded along the AD curve; only interest-rate cuts, tax cuts, or an export recovery — which raise demand at every price level — shift the entire AD curve to the right. ② Treating the micro demand curve as AD: the macro downward slope rests on the wealth, interest-rate, and exchange-rate effects, not on consumers' substitution effect. ③ Assuming the multiplier is unbounded or constant: the higher c is, the larger the multiplier, but tax and import leakages — and possible offsetting moves by the central bank — keep real-world multipliers far below the textbook formula.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.1</span>A central bank cuts interest rates. What is this most likely to cause in the AD-AS diagram?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>AD shifts right; short-run equilibrium output and the price level both rise</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>SRAS shifts right; output rises and prices fall</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>A movement down along a given AD curve</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Lower rates cut financing costs and stimulate business investment and consumer spending on durables, so aggregate demand rises at every price level: the whole AD curve shifts right, and the short-run equilibrium moves up the SRAS to higher Y* and P*, so A. B confuses a demand-side policy with the supply curve (a rate cut does not directly lower production costs); C confuses a shift of the curve with a movement along it — the policy changes demand itself, not the quantity adjustment caused by prices.</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.2</span>A spike in world oil prices typically has which short-run effect?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>AD shifts left: output and prices both fall</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>SRAS shifts left: prices rise and output falls (stagflation)</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>AD shifts right: output and prices both rise</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Crude oil is an input threaded through every production chain; costlier oil means firms demand higher prices at every level of output, so SRAS shifts left — prices up, output down, i.e. stagflation — so B. This is precisely the central bank's most uncomfortable position: damping inflation hurts output further, while protecting output indulges inflation — America's two oil crises in the 1970s are the classic cases.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>AD = C + I + G + NX, sloping downward; SRAS slopes upward because wages and prices are sticky.</li>
+          <li>Demand shocks move AD (output and prices move in the same direction); supply shocks move SRAS (output and prices move in opposite directions — stagflation).</li>
+          <li>The multiplier k = 1/(1−MPC): spending is amplified layer by layer through the circular flow; more leakages, smaller multiplier.</li>
+          <li>The output gap measures how far actual output deviates from potential: positive is overheating, negative is recession.</li>
+          <li>Distinguishing movements along a curve from shifts of the whole curve is the first discipline of this model.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">Chapter 4</span>Money, inflation, and unemployment</h2>
+
+      <h3>Opening question</h3>
+      <p>In the United States in 1979, prices rose more than 13% in a year while unemployment climbed steadily — yet the textbook Phillips curve says inflation and unemployment should move in opposite directions; how could both worsen at once? Looking back, policymakers in the 1960s believed they held a "menu" on which ordering higher inflation would buy lower unemployment. Did that menu ever exist?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Inflation is at bottom too much money chasing too few goods — persistently high inflation almost always travels with excessive money creation. The inflation–unemployment trade-off of the short-run Phillips curve is the product of <strong>unexpected inflation</strong>: only when prices rise beyond expectations while wage contracts have yet to adjust are real wages quietly pushed down and firms willing to hire more. Once everyone expects 5% inflation, wage bargaining adds the 5% automatically and the trade-off vanishes — which is why the <strong>long-run Phillips curve is vertical at the natural rate of unemployment</strong>: you can fool all of the people for a while, but you cannot fool all of the people forever. Another empirical regularity linking the real economy to prices is <strong>Okun's law</strong>: for each percentage point that unemployment exceeds its natural rate, the output gap is about 2%.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">Inflation</span><span class="term-en">通货膨胀</span><div class="term-def">A sustained rise in the general price level; a single good becoming dearer is a relative price change, not inflation. Hyperinflation usually accompanies fiscally driven money creation.</div></div>
+        <div class="term"><span class="term-name">Phillips Curve</span><span class="term-en">菲利普斯曲线</span><div class="term-def">The short-run negative relationship between inflation and unemployment; once expectations adjust in the long run, it is vertical at the natural rate and the trade-off disappears.</div></div>
+        <div class="term"><span class="term-name">Natural Rate of Unemployment</span><span class="term-en">自然失业率</span><div class="term-def">The sum of frictional and structural unemployment — the level around which unemployment hovers in the long run, whatever the inflation rate.</div></div>
+        <div class="term"><span class="term-name">Okun's Law</span><span class="term-en">奥肯定律</span><div class="term-def">An empirical regularity: for each percentage point that unemployment is above its natural rate, real GDP runs about 2% below potential (U.S. data).</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <p>Test the illusion of the "menu" yourself with the figure below: in the short run you can indeed push unemployment below the natural rate, at the price of higher inflation; but switch to the long-run view — once expectations adjust, unemployment must return to 5%, and all that remains is higher inflation.</p>
+      <figure class="fig">
+        <div class="fig-title">Figure 4-1 · The Phillips curve: short-run trade-off, long-run vertical</div>
+        <p class="fig-sub">Drag the "expected inflation" slider to slide the SRPC up and down, then press the buttons to compare the short-run and long-run equilibrium positions.</p>
+        <figure class="fig-canvas">
+          <svg id="figPhSvg" viewBox="0 0 640 400" role="img" aria-label="Phillips curve: the downward-sloping short-run curve shifts up and down with expected inflation; in the long run it is a vertical line at 5% unemployment">
+            <defs>
+              <clipPath id="phClip"><rect x="70" y="50" width="530" height="280"></rect></clipPath>
+              <marker id="phArrowM" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="#475569"></path>
+              </marker>
+            </defs>
+            <line class="gridline" x1="70" y1="274" x2="610" y2="274"></line>
+            <text class="chart-label-en" x="62" y="278" text-anchor="end">π=2</text>
+            <line class="gridline" x1="70" y1="218" x2="610" y2="218"></line>
+            <text class="chart-label-en" x="62" y="222" text-anchor="end">4</text>
+            <line class="gridline" x1="70" y1="162" x2="610" y2="162"></line>
+            <text class="chart-label-en" x="62" y="166" text-anchor="end">6</text>
+            <line class="gridline" x1="70" y1="106" x2="610" y2="106"></line>
+            <text class="chart-label-en" x="62" y="110" text-anchor="end">8</text>
+            <line x1="335" y1="50" x2="335" y2="330" stroke="#7c3aed" stroke-width="2" stroke-dasharray="7 5"></line>
+            <text class="chart-label-en" x="343" y="66" style="fill:#7c3aed">LRPC (u = 5%)</text>
+            <g clip-path="url(#phClip)">
+              <path id="phSrpc" class="curve curve-c1" d=""></path>
+            </g>
+            <line id="phGSx" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <line id="phGSy" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <line id="phGLx" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <line id="phGLy" class="gridline" x1="0" y1="0" x2="0" y2="0"></line>
+            <circle id="phDotS" class="dot" r="6" fill="#ea580c"></circle>
+            <circle id="phDotL" class="dot" r="6" fill="#b91c1c"></circle>
+            <text id="phValS" class="chart-label" x="76" y="0" style="fill:#ea580c"></text>
+            <text id="phValL" class="chart-label" x="76" y="0" style="fill:#b91c1c"></text>
+            <text id="phULblS" class="chart-label" x="255" y="366" text-anchor="middle" style="fill:#ea580c">u=3.5%</text>
+            <text id="phULblL" class="chart-label" x="335" y="366" text-anchor="middle" style="fill:#7c3aed">u=5%</text>
+            <path id="phArrow" d="" stroke="#475569" stroke-width="2" fill="none" marker-end="url(#phArrowM)" display="none"></path>
+            <text id="phLblSrpc" class="chart-label" x="0" y="0" style="fill:#2f6fdb">SRPC</text>
+            <text id="phState" class="chart-title-sm" x="335" y="28" text-anchor="middle"></text>
+            <text id="phNote" class="chart-label" x="320" y="386" text-anchor="middle"></text>
+            <line class="axis" x1="60" y1="330" x2="615" y2="330"></line>
+            <line class="axis" x1="70" y1="340" x2="70" y2="40"></line>
+            <text class="chart-label-en" x="176" y="350" text-anchor="middle">u=2</text>
+            <text class="chart-label-en" x="282" y="350" text-anchor="middle">4</text>
+            <text class="chart-label-en" x="388" y="350" text-anchor="middle">6</text>
+            <text class="chart-label-en" x="494" y="350" text-anchor="middle">8</text>
+            <text class="chart-label" x="605" y="384" text-anchor="end">Unemployment rate u (%)</text>
+            <text class="chart-label" transform="translate(22,190) rotate(-90)" text-anchor="middle">Inflation rate π (%)</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="phRange">Expected inflation πᵉ</label>
+            <input type="range" id="phRange" min="0" max="6" value="2" step="0.5">
+            <output id="phOut" for="phRange">2.0%</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="phBtnS" type="button">Short run: expansion lowers unemployment</button>
+          <button class="btn ghost" id="phBtnL" type="button">Long run: after expectations adjust</button>
+        </div>
+        <figcaption>How to read this figure: expected inflation fixes the position of the SRPC (π = πᵉ − 0.8×(u−5)). In the short run the economy can slide along the curve, trading higher inflation for lower unemployment; in the long run higher expectations shift the whole SRPC up, pushing the economy back to 5% on the LRPC while inflation settles at a higher level — the trade-off is one-shot, and paid for with acceleration.</figcaption>
+      </figure>
+
+      <div class="formula">Okun's law: (Y − Y*) ÷ Y* = −2 × (u − u*)
+        <span class="f-note">u is the unemployment rate and u* the natural rate; high unemployment corresponds to a negative output gap</span>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world</div>
+        <p>When Paul Volcker took over the Federal Reserve in 1979, inflation was already above 11%. He pushed the federal funds rate to 20%; unemployment surged to 10.8% in 1981–82, and inflation (which had peaked at 13.5% in 1980) was squeezed back to 3.2% by 1983 — a cold-turkey tightening paid for with a deep recession, confirming both the vertical long-run curve and the "sacrifice ratio" of disinflation. The contrast case is 2021–2023: the Fed first called supply-chain-driven inflation "transitory" and delayed rate hikes, then had to raise rates by a cumulative 5.25 percentage points over roughly a year and a half from March 2022 before dragging inflation back on track — misjudging the slope and persistence of the Phillips curve carries a price counted in real money.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>① Treating the Phillips curve as a permanent "policy menu" — the optimism of the 1960s went bankrupt in the stagflation of the 1970s. ② Equating dearer individual goods with inflation — relative price changes are not a rise in the general price level; inflation is, at bottom, a monetary phenomenon. ③ Ignoring measurement bias in the CPI — a fixed basket cannot capture consumers switching to cheaper substitutes, so the cost of living is often overstated. ④ Assuming the natural rate of unemployment is a constant — it moves with demographics and labor-market institutions.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.1</span>The long-run Phillips curve is vertical. What does that mean?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>In the long run there is a stable trade-off between inflation and unemployment, and the menu can be used forever</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>In the long run unemployment returns to the natural rate; permanently higher inflation cannot buy lower unemployment</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Money is neutral in the long run, so inflation has no effect on the economy at all</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Once expectations fully adjust, any inflation rate is consistent with u = u*, and any attempt to hold unemployment below the natural rate brings only ever-accelerating inflation (the accelerationist hypothesis), so B. A is exactly the "menu" illusion falsified in the 1970s; C goes too far — monetary neutrality means no effect on real variables, but inflation itself carries welfare costs such as shoe-leather costs and tax distortions; and expected inflation is not the same thing as volatile inflation.</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.2</span>By Okun's law (U.S. experience), if unemployment is 7% and the natural rate is 5%, the output gap is approximately:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>−2%</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>−4%</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>+4%</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Unemployment is 2 points above the natural rate, and each point corresponds to about 2% of output, so the gap is about −4% — B. A counts only 1 point; C gets the sign backwards — high unemployment means output below potential, a recessionary gap rather than overheating.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Inflation is a sustained rise in the general price level and, at bottom, a monetary phenomenon; relative price changes are not inflation.</li>
+          <li>The short-run Phillips curve trade-off comes from unexpected inflation depressing real wages; once expectations adjust, it stops working.</li>
+          <li>The long-run Phillips curve is vertical at the natural rate of unemployment: permanent inflation cannot buy permanently low unemployment.</li>
+          <li>Okun's law ties unemployment to the output gap: each extra point of unemployment means roughly 2% less output.</li>
+          <li>Disinflation has a real output cost (the sacrifice ratio); the Volcker tightening and the 2021–23 misjudgment offer mirrored lessons.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">Chapter 5</span>Open-economy macroeconomics</h2>
+
+      <h3>Opening question</h3>
+      <p>On July 2, 1997, Thailand, having exhausted its foreign reserves under speculative attack, was forced to abandon its dollar peg; the baht lost nearly half its value soon after, and the crisis swept across Southeast Asia. In the same year, Hong Kong SAR withstood wave after wave of attacks by international speculators and held its linked exchange rate at 7.8 Hong Kong dollars to one US dollar. Both were small open economies — why such different fates?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>The <strong>exchange rate</strong> is simply the relative price of two currencies; the <strong>balance of payments</strong> is a nation's ledger with the whole world, and its core identity says the current account balance equals national saving minus investment (CA = S − I). The binding constraint of an open economy is the <strong>impossible trinity</strong>: of exchange rate stability, free capital mobility, and independent monetary policy, at most two can be had at once — a triangular toy where you pick two of three. The Mundell–Fleming model spells the idea out: a small economy with perfectly mobile capital that pegs its exchange rate must devote all of its monetary operations to defending the anchor, so its interest rate can only follow the anchor country's — monetary policy is impotent while fiscal policy is strong; let the exchange rate float instead, and interest-rate autonomy returns, while fiscal policy is partly offset by currency appreciation. The divide between Hong Kong and Thailand — and the choices made for the dollar and the euro — all play out on the edges and corners of this triangle.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">Exchange Rate</span><span class="term-en">汇率</span><div class="term-def">The price of one currency in terms of another. Under direct quotation, a higher number means the home currency depreciates and the foreign currency appreciates.</div></div>
+        <div class="term"><span class="term-name">Balance of Payments (BOP)</span><span class="term-en">国际收支</span><div class="term-def">The double-entry ledger of all transactions between a country's residents and the rest of the world: the current account, the capital and financial account, and changes in reserve assets — it balances as a whole.</div></div>
+        <div class="term"><span class="term-name">Impossible Trinity</span><span class="term-en">三元悖论</span><div class="term-def">Exchange rate stability, free capital mobility, and monetary policy independence cannot all be had at once; at most two can be chosen.</div></div>
+        <div class="term"><span class="term-name">Mundell–Fleming Model</span><span class="term-en">蒙代尔-弗莱明模型</span><div class="term-def">The IS-LM of a small open economy: under fixed rates monetary policy is impotent and fiscal policy strong; under floating rates the conclusions reverse.</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <p>Make a "pick two of three" choice on the triangle yourself: choose any pair of goals, see which one you must give up, and which real-world economy stands at that corner.</p>
+      <figure class="fig">
+        <div class="fig-title">Figure 5-1 · The impossible trinity: a pick-two selector</div>
+        <p class="fig-sub">Press any regime button: the highlighted edge is the pair of goals chosen; the gray corner is the goal given up.</p>
+        <figure class="fig-canvas">
+          <svg id="figTriSvg" viewBox="0 0 640 400" role="img" aria-label="Impossible trinity triangle: the three vertices are free capital mobility, exchange rate stability, and independent monetary policy; choosing any edge means giving up the opposite vertex">
+            <line id="triAB" x1="320" y1="70" x2="140" y2="310" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round"></line>
+            <line id="triBC" x1="140" y1="310" x2="500" y2="310" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round"></line>
+            <line id="triCA" x1="500" y1="310" x2="320" y2="70" stroke="#cbd5e1" stroke-width="3.5" stroke-linecap="round"></line>
+            <circle id="triVA" class="dot" cx="320" cy="70" r="10" fill="#b91c1c"></circle>
+            <circle id="triVB" class="dot" cx="140" cy="310" r="10" fill="#b91c1c"></circle>
+            <circle id="triVC" class="dot" cx="500" cy="310" r="10" fill="#b91c1c"></circle>
+            <text class="chart-label" x="320" y="48" text-anchor="middle">Free capital mobility</text>
+            <text class="chart-label" x="140" y="340" text-anchor="middle">Exchange rate stability</text>
+            <text class="chart-label" x="500" y="340" text-anchor="middle">Independent monetary policy</text>
+            <text id="triSacA" class="chart-label" x="320" y="96" text-anchor="middle" style="fill:#b91c1c" display="none">↓ given up</text>
+            <text id="triSacB" class="chart-label" x="140" y="288" text-anchor="middle" style="fill:#b91c1c" display="none">↑ given up</text>
+            <text id="triSacC" class="chart-label" x="500" y="288" text-anchor="middle" style="fill:#b91c1c" display="none">↑ given up</text>
+            <text id="triNote" class="chart-label" x="320" y="384" text-anchor="middle"></text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn ghost" id="triBtnAB" type="button">Hong Kong / gold standard: capital mobility + exchange rate stability</button>
+          <button class="btn" id="triBtnBC" type="button">Mainland China: exchange rate stability + independent monetary policy</button>
+          <button class="btn ghost" id="triBtnCA" type="button">United States: capital mobility + independent monetary policy</button>
+        </div>
+        <figcaption>How to read this figure: the highlighted edge is the pair of goals kept; the gray corner opposite must be given up — no exceptions. The historical gold standard, today's linked exchange rates, managed floats, and free floats are all choices of sides on this same triangle.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world</div>
+        <p>Before 1997, Thailand pegged to the dollar while letting short-term capital flow in freely: hot money flooded into stocks and property, and the current account ran large deficits. Speculators smelled the mismatch and dumped the baht; once the central bank's reserves were exhausted the peg was abandoned, the baht halved, the burden of foreign-currency debt suddenly doubled, and the crisis spread to Indonesia and Korea. Hong Kong's linked rate held because of ample reserves, strict currency-board discipline, and mainland backing — at the price of the overnight interest rate spiking to 280% in October 1997, freezing demand with high rates to keep the exchange-rate anchor. Same triangle, two positions, two fates.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>① "Depreciation is a national humiliation; appreciation is national strength" — no exchange rate is abstractly good or bad; what matters is whether the shock comes from demand or supply, and in which currency foreign debt is denominated; depreciation burdens countries with dollar debt yet favors the export sector. ② Watching only the bilateral rate against the dollar, and ignoring the trade-weighted effective exchange rate. ③ The mercantilist instinct that "surplus = winning, deficit = losing" — the United States has run current account deficits for nearly 40 years while the dollar keeps its reserve-currency status; the identity CA = S − I tells us a surplus means only that saving exceeds investment.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.1</span>A small open economy with perfectly mobile capital chooses a fixed exchange rate. By Mundell–Fleming logic, the result is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>Fiscal policy is effective; monetary policy is impotent</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>Monetary policy is effective; fiscal policy is impotent</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Both are fully effective</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Under a fixed rate, every monetary operation must serve the exchange-rate anchor: suppose the central bank raises rates to cool an overheating economy — the interest differential draws capital inflows and appreciation pressure, forcing it to buy foreign exchange and re-inject liquidity until the rate falls back to the anchor country's level — monetary policy is impotent. Fiscal expansion, by contrast, is amplified through rising income and the endogenous expansion of money. So A. Under floating rates the conclusion reverses exactly (B describes the floating-rate case).</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.2</span>Holding everything else constant, the renminbi depreciates against the dollar from 6.5 to 7.2. In the short run, the most likely outcome is:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Exports become dearer and imports cheaper; net exports fall immediately</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Exports become cheaper and imports dearer; net exports tend to rise, but may first pass through a brief J-curve deterioration</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>It affects only outbound tourism, not trade</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Under direct quotation, a larger number is a depreciation: the foreign-currency price of Chinese goods falls while the home-currency price of imports rises, so the equilibrium response of net exports is upward. But quantity adjustment is slowed by contract stickiness — in the short run trade volumes barely move, the price effect bites first, and net exports may fall before they rise: the J curve. Hence B. A reverses the direction; C plainly underestimates exchange-rate pass-through.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>The exchange rate is the relative price of currencies; the balance of payments is the master ledger, with CA = S − I as the core identity.</li>
+          <li>The impossible trinity: at most two of exchange rate stability, free capital mobility, and independent monetary policy.</li>
+          <li>Mundell–Fleming: under fixed rates monetary policy is impotent and fiscal policy strong; under floating rates this reverses.</li>
+          <li>Depreciation's short-run and long-run effects can point in opposite directions (the J curve); the currency structure of foreign debt determines its cost.</li>
+          <li>The 1997 Asian financial crisis is the textbook case of standing on a mismatched corner of the trinity.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">Chapter 6</span>Macroeconomic policy</h2>
+
+      <h3>Opening question</h3>
+      <p>Given the two great instruments of fiscal and monetary policy, why did the 1929 downturn still turn into a four-year Great Depression, why did the 1970s still sink into stagflation, and why did 2008 still bring a global crisis? Why can the hand of policy not steer the economy precisely back to potential output — are the tools inadequate, or are our observation of and influence over the economy simply too slow?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition</div>
+        <p>Imagine driving a car with a fogged windshield and a lag in the steering: the data appear a quarter late (<strong>recognition lag</strong>), tax cuts and spending increases must clear the legislature (<strong>decision lag</strong>), and interest-rate changes work through investment, consumption, and credit link by link (<strong>transmission lag</strong>). By the time you turn the wheel hard, the bend may already be behind you — policy often strikes at the wrong moment and amplifies the swings instead. Hence a long-running debate between two camps: the <strong>rules camp</strong> (Friedman's constant money-growth rate, the Taylor rule, inflation targeting) would set the speed in advance and spare us human misjudgment; the <strong>discretion camp</strong> stresses that every bend is different and demands a flexible response. The deeper cut comes from the <strong>Lucas critique</strong>: change the policy rule and people's expectations and behavior change with it, so relationships estimated on historical data are unreliable for predicting the effects of a new policy. The modern central bank's answer is a hybrid — inflation targeting with limited room for discretion, that is, constrained discretion.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><span class="term-name">Fiscal Policy</span><span class="term-en">财政政策</span><div class="term-def">The government's use of taxes and spending to manage aggregate demand, including automatic stabilizers and discretionary stimulus or consolidation packages.</div></div>
+        <div class="term"><span class="term-name">Monetary Policy</span><span class="term-en">货币政策</span><div class="term-def">The central bank's use of the policy rate, reserves, and its balance sheet (quantitative easing) to steer credit conditions and aggregate demand.</div></div>
+        <div class="term"><span class="term-name">Automatic Stabilizers</span><span class="term-en">自动稳定器</span><div class="term-def">Taxes and transfers that move countercyclically on their own: in a recession taxes shrink and unemployment benefits rise, supporting aggregate demand without new legislation.</div></div>
+        <div class="term"><span class="term-name">Policy Lags</span><span class="term-en">政策时滞</span><div class="term-def">The recognition, decision, and transmission lags; fiscal policy loses on slow decisions, monetary policy on slow transmission.</div></div>
+        <div class="term"><span class="term-name">Lucas Critique</span><span class="term-en">卢卡斯批判</span><div class="term-def">A policy change alters the private sector's expectations and behavioral parameters, so new policies cannot be evaluated by mechanically applying historical econometric relationships.</div></div>
+      </div>
+
+      <h3>Interactive demo</h3>
+      <p>The same recessionary shock arrives — how long does each policy channel take to bite? Press the button and watch the lags unfold.</p>
+      <figure class="fig">
+        <div class="fig-title">Figure 6-1 · Policy lags: where each one is slow</div>
+        <p class="fig-sub">Press "Replay lag animation" to compare the time structure of fiscal and monetary policy from shock to effect.</p>
+        <figure class="fig-canvas">
+          <svg id="figLagSvg" viewBox="0 0 640 400" role="img" aria-label="Policy lag comparison: fiscal policy takes six months to recognize and ten months to decide, then takes effect; monetary policy takes six months to recognize and two to decide, but its effects arrive slowly and spread over time">
+            <line class="gridline" x1="225" y1="80" x2="225" y2="330"></line>
+            <line class="gridline" x1="350" y1="80" x2="350" y2="330"></line>
+            <line class="gridline" x1="475" y1="80" x2="475" y2="330"></line>
+            <text class="chart-label-en" x="100" y="372" text-anchor="middle">0 mo</text>
+            <text class="chart-label-en" x="225" y="372" text-anchor="middle">6</text>
+            <text class="chart-label-en" x="350" y="372" text-anchor="middle">12</text>
+            <text class="chart-label-en" x="475" y="372" text-anchor="middle">18</text>
+            <text class="chart-label-en" x="600" y="372" text-anchor="middle">24</text>
+            <text class="chart-label" x="92" y="132" text-anchor="end">Fiscal policy</text>
+            <text class="chart-label" x="92" y="262" text-anchor="end">Monetary policy</text>
+            <g id="lagF1g"><rect x="100" y="110" width="125" height="34" rx="4" fill="#475569"></rect><text class="chart-label-en" x="162" y="162" text-anchor="middle" style="fill:#475569">recognition 6 mo</text></g>
+            <g id="lagF2g"><rect x="225" y="110" width="208" height="34" rx="4" fill="#ea580c"></rect><text class="chart-label-en" x="329" y="162" text-anchor="middle" style="fill:#ea580c">decision (legislative approval) 10 mo</text></g>
+            <g id="lagF3g"><rect x="433" y="110" width="167" height="34" rx="4" fill="#2f6fdb"></rect><polygon points="602,120 616,127 602,134" fill="#2f6fdb"></polygon><text class="chart-label-en" x="516" y="162" text-anchor="middle" style="fill:#2f6fdb">straight into aggregate demand</text></g>
+            <g id="lagM1g"><rect x="100" y="240" width="125" height="34" rx="4" fill="#475569"></rect><text class="chart-label-en" x="162" y="292" text-anchor="middle" style="fill:#475569">recognition 6 mo</text></g>
+            <g id="lagM2g"><rect x="225" y="240" width="42" height="34" rx="4" fill="#ea580c"></rect><text class="chart-label-en" x="246" y="292" text-anchor="middle" style="fill:#ea580c">decision 2 mo</text></g>
+            <g id="lagM3g"><rect x="267" y="240" width="333" height="34" rx="4" fill="#2f6fdb"></rect><polygon points="602,250 616,257 602,264" fill="#2f6fdb"></polygon><text class="chart-label-en" x="433" y="292" text-anchor="middle" style="fill:#2f6fdb">via investment, consumption, credit (6–18 mo)</text></g>
+            <line class="axis" x1="90" y1="330" x2="615" y2="330"></line>
+            <text class="chart-label" x="605" y="390" text-anchor="end">Time (months after the shock)</text>
+          </svg>
+        </figure>
+        <div class="fig-actions">
+          <button class="btn" id="lagReplay" type="button">Replay lag animation</button>
+        </div>
+        <figcaption>How to read this figure: at any moment, fiscal policy loses on slow decisions (legislative approval) but, once executed, flows straight into aggregate demand; monetary policy wins on fast decisions (a central bank committee meeting is enough to move rates) yet must wait for the transmission chain to finish before it bites. Mismatched lags are exactly why countercyclical policy so often turns procyclical — and they are the strongest argument for policy by rule.</figcaption>
+      </figure>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world</div>
+        <p>From 1929 to 1933 the Federal Reserve stood by as more than nine thousand banks failed and the money stock shrank by about a third; deflation pushed up real interest rates and real debt, turning a recession into the Great Depression — the famous verdict of Friedman and Schwartz's A Monetary History of the United States. In 2002, at Friedman's 90th birthday celebration, Federal Reserve governor Ben Bernanke, a scholar of the Depression, said: "Regarding the Great Depression, you're right, we did it, we're very sorry, but thanks to you, we won't do it again." When the 2008 crisis struck, Bernanke, by then Fed chair, slashed rates to zero and launched quantitative easing and bank stress tests, and the recession proved far shallower than 1929 — the same classroom, two generations' answer sheets: a portrait of how the macroeconomic policy toolkit has evolved.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p>① "The central bank cuts rates and the economy springs back at once" — transmission takes 6–18 months; money is a slow-acting medicine. ② "Budget deficits necessarily crowd out private investment" — crowding out depends on slack: in a deep recession, with rates already at the floor, it is small. ③ "The Lucas critique proves policy is useless" — it says only that historical relationships cannot be mechanically extrapolated; if anything, it demands that expectations and behavioral responses be built into policy evaluation. ④ Reading "rules" as rigid dogma — rules such as inflation targeting set boundaries for discretion rather than abolishing judgment.</p>
+      </aside>
+
+      <h3>Check yourself</h3>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.1</span>Which statement about the lag structures of the two policy types is correct?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Fiscal policy has a short decision lag, and monetary policy a short transmission lag</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Fiscal policy has a long decision (legislative) lag, and monetary policy a long transmission lag</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>All the lags of the two policy types are about the same</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Tax cuts and spending increases must pass through budgeting and legislation, so the decision lag is measured in quarters or even years — but once executed they flow straight into aggregate demand. A central bank can move rates at a committee meeting, deciding quickly, yet must wait for investment, consumption, and credit to respond, typically 6–18 months for the full effect — so B. A assigns each instrument's strength to precisely the wrong place; C ignores how different the institutional structures and transmission chains of the two tools are.</div>
+      </div>
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.2</span>By the Friedman–Schwartz verdict, the Federal Reserve's key mistake in 1929–1933 was:</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Cutting rates too fast and triggering hyperinflation</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Letting the money stock contract by about a third instead of acting as lender of last resort during the bank panics</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Launching large-scale fiscal stimulus too early and crowding out private investment</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>The core claim of A Monetary History of the United States is that the Fed stood aside amid waves of bank runs; the money stock in 1933 was about a third smaller than in 1929, deflation pushed up real interest rates and real debt, and demand collapsed in a spiral — so B. A contradicts the facts: the problem then was deflation, not inflation; C is also contrary to history — the Hoover years were committed to balanced budgets, and large-scale fiscal stimulus only arrived with Roosevelt's New Deal in 1933.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Fiscal and monetary policy are the two great aggregate-demand instruments, each paired with automatic stabilizers and unconventional tools (quantitative easing).</li>
+          <li>The three lags: recognition, decision, transmission; fiscal policy loses on decisions, monetary policy on transmission.</li>
+          <li>The modern answer to rules versus discretion is constrained discretion: inflation targeting and Taylor-rule-style reaction functions.</li>
+          <li>The Lucas critique: policy changes expectations and behavior, so historical relationships cannot be mechanically extrapolated.</li>
+          <li>The contrast between the Great Depression and 2008 is the most expensive — and most valuable — lesson in policy learning.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">Wrap-up</span>Next steps &amp; further reading</h2>
+      <p>Macro is the foundation for the applied fields: to go deeper into money creation, the banking system, and crises, continue to <a href="../05-money-and-banking/index.html">05 Money and Banking</a>; for trade, exchange rates, and global imbalances, head to <a href="../07-international-economics/index.html">07 International Economics</a>; if growth questions attract you, read <a href="../11-development-and-innovation-economics/index.html">11 Development and Innovation Economics</a>; and to test macro propositions against data, <a href="../03-econometrics/index.html">03 Econometrics</a> is the essential toolkit.</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Macroeconomics (11th ed.)</span> — N. Gregory Mankiw: the standard intermediate textbook, balancing intuition and models — the best route for systematic advancement.</li>
+          <li><span class="bk">Macroeconomics (8th ed.)</span> — Olivier Blanchard: built around interest rates and expectations, with a strong policy focus and rich global cases.</li>
+          <li><span class="bk">A Monetary History of the United States, 1867–1960</span> — Milton Friedman &amp; Anna Schwartz: the foundational empirical masterpiece on monetarism and the Great Depression.</li>
+          <li><span class="bk">Advanced Macroeconomics (5th ed.)</span> — David Romer: the graduate gateway — rigorous treatments of growth, fluctuations, and investment models.</li>
+          <li><span class="bk">Why Nations Fail</span> — Daron Acemoglu &amp; James Robinson: the classic popular account of institutions and long-run prosperity; bridges tracks 11 and 16.</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../01-microeconomics/index.html"><span class="pager-dir">Previous track</span><br><span class="pager-name">Microeconomics</span></a>
+        <a href="../03-econometrics/index.html"><span class="pager-dir">Next track</span><br><span class="pager-name">Econometrics</span></a>
+      </nav>
+    </section>
+
+  </main>
+</div>
+<script src="../../assets/econ.js"></script>
+<script>
+(function () {
+  "use strict";
+  function $(id) { return document.getElementById(id); }
+  function fmt(x, d) {
+    if (d == null) d = 2;
+    return Number(x).toLocaleString("zh-CN", {
+      minimumFractionDigits: d,
+      maximumFractionDigits: d
+    });
+  }
+  function sign(x, d) { return (x > 0 ? "+" : "") + fmt(x, d); }
+
+  /* ---------- Figure 1-1 · Nominal vs. real ---------- */
+  (function () {
+    var svg = $("figGdpSvg");
+    if (!svg) return;
+    var ZERO = 200, PX = 14;
+    var sG = $("gdpGRange"), sP = $("gdpPiRange"), oG = $("gdpGOut"), oP = $("gdpPiOut");
+    function setBar(rect, txt, v, cx) {
+      var h = Math.abs(v) * PX, top, ty;
+      if (h < 1) h = 1;
+      if (v >= 0) { top = ZERO - h; ty = top - 8; }
+      else { top = ZERO; ty = ZERO + h + 20; }
+      rect.setAttribute("y", top.toFixed(1));
+      rect.setAttribute("height", h.toFixed(1));
+      txt.setAttribute("x", cx);
+      txt.setAttribute("y", ty.toFixed(1));
+      txt.textContent = sign(v, 1) + "%";
+    }
+    function render() {
+      var g = parseFloat(sG.value), pi = parseFloat(sP.value);
+      oG.textContent = fmt(g, 1) + "%";
+      oP.textContent = fmt(pi, 1) + "%";
+      var r = ((1 + g / 100) / (1 + pi / 100) - 1) * 100;
+      setBar($("gdpBarN"), $("gdpValN"), g, 150);
+      setBar($("gdpBarP"), $("gdpValP"), pi, 340);
+      setBar($("gdpBarR"), $("gdpValR"), r, 530);
+      $("gdpRead").textContent = "Real growth = (1+" + fmt(g, 1) + "%) ÷ (1+" + fmt(pi, 1) + "%) − 1 ≈ " + sign(r, 1) + "%: strip the price rises out of nominal growth, and what remains is 'real' growth.";
+      svg.setAttribute("aria-label", "Nominal growth " + fmt(g, 1) + "%, deflator " + fmt(pi, 1) + "%, corresponding real growth about " + sign(r, 1) + "%.");
+    }
+    sG.addEventListener("input", render);
+    sP.addEventListener("input", render);
+    render();
+  })();
+
+  /* ---------- Figure 2-1 · Solow steady state ---------- */
+  (function () {
+    var svg = $("figSolowSvg");
+    if (!svg) return;
+    var X0 = 70, X1 = 600, Y0 = 330, Y1 = 50, KMAX = 10, VMAX = 3.2, GAMMA = 0.2;
+    function x(k) { return X0 + (k / KMAX) * (X1 - X0); }
+    function y(v) { return Y0 - (v / VMAX) * (Y0 - Y1); }
+    function pathOf(fn) {
+      var d = "", k;
+      for (k = 0; k <= KMAX + 0.0001; k += 0.25) {
+        d += (d === "" ? "M " : " L ") + x(k).toFixed(1) + " " + y(fn(k)).toFixed(1);
+      }
+      return d;
+    }
+    $("solowF").setAttribute("d", pathOf(function (k) { return Math.sqrt(k); }));
+    $("solowBe").setAttribute("d", "M " + x(0).toFixed(1) + " " + y(0).toFixed(1) + " L " + x(KMAX).toFixed(1) + " " + y(GAMMA * KMAX).toFixed(1));
+    var slider = $("solowRange"), out = $("solowOut");
+    function render() {
+      var s = parseFloat(slider.value);
+      out.textContent = fmt(s, 2);
+      $("solowSf").setAttribute("d", pathOf(function (k) { return s * Math.sqrt(k); }));
+      var kst = Math.pow(5 * s, 2), yst = 5 * s, ist = 5 * s * s, cst = (1 - s) * yst;
+      var cx = x(Math.min(kst, KMAX)), cyI = y(ist), cyY = y(yst);
+      $("solowDotI").setAttribute("cx", cx.toFixed(1));
+      $("solowDotI").setAttribute("cy", cyI.toFixed(1));
+      $("solowDotY").setAttribute("cx", cx.toFixed(1));
+      $("solowDotY").setAttribute("cy", cyY.toFixed(1));
+      $("solowGk").setAttribute("x1", cx.toFixed(1));
+      $("solowGk").setAttribute("x2", cx.toFixed(1));
+      $("solowGk").setAttribute("y1", Y0);
+      $("solowGk").setAttribute("y2", cyY.toFixed(1));
+      $("solowGy").setAttribute("x1", X0);
+      $("solowGy").setAttribute("x2", cx.toFixed(1));
+      $("solowGy").setAttribute("y1", cyY.toFixed(1));
+      $("solowGy").setAttribute("y2", cyY.toFixed(1));
+      $("solowGi").setAttribute("x1", X0);
+      $("solowGi").setAttribute("x2", cx.toFixed(1));
+      $("solowGi").setAttribute("y1", cyI.toFixed(1));
+      $("solowGi").setAttribute("y2", cyI.toFixed(1));
+      $("solowValK").setAttribute("x", cx.toFixed(1));
+      $("solowValK").textContent = "k*=" + fmt(kst, 2);
+      $("solowValY").setAttribute("y", (cyY + 4).toFixed(1));
+      $("solowValY").textContent = "y*=" + fmt(yst, 2);
+      $("solowValI").setAttribute("y", (cyI + 4).toFixed(1));
+      $("solowValI").textContent = "i*=" + fmt(ist, 2);
+      var gap = cyI - cyY, br = $("solowCBr"), bl = $("solowCLbl");
+      if (gap >= 34) {
+        var bx = cx + 20;
+        br.setAttribute("x1", bx.toFixed(1));
+        br.setAttribute("x2", bx.toFixed(1));
+        br.setAttribute("y1", (cyI - 5).toFixed(1));
+        br.setAttribute("y2", (cyY + 5).toFixed(1));
+        br.setAttribute("display", "inline");
+        bl.setAttribute("x", (bx + 8).toFixed(1));
+        bl.setAttribute("y", ((cyI + cyY) / 2 + 4).toFixed(1));
+        bl.textContent = "c*=" + fmt(cst, 2);
+        bl.setAttribute("display", "inline");
+      } else {
+        br.setAttribute("display", "none");
+        bl.setAttribute("display", "none");
+      }
+      $("solowLblSf").setAttribute("x", x(8.6).toFixed(1));
+      $("solowLblSf").setAttribute("y", (y(s * Math.sqrt(8.6)) - 12).toFixed(1));
+      $("solowRead").textContent = "Steady state: k*=" + fmt(kst, 2) + ", y*=" + fmt(yst, 2) + ", i*=" + fmt(ist, 2) + ", consumption per worker c*=(1−s)·y*=" + fmt(cst, 2);
+      var note = $("solowNote");
+      if (s > 0.505) {
+        note.textContent = "Note: s is now beyond the Golden Rule level of 0.50 — output is higher, yet consumption per worker is lower than at s=0.50.";
+      } else if (s < 0.495) {
+        note.textContent = "Hint: with this figure's parameters, the Golden Rule saving rate is s=0.50, where steady-state consumption per worker is at its maximum.";
+      } else {
+        note.textContent = "You are exactly at the Golden Rule saving rate: steady-state consumption per worker reaches its maximum of " + fmt(cst, 2) + ".";
+      }
+      svg.setAttribute("aria-label", "Solow model: saving rate " + fmt(s, 2) + ", steady-state capital per worker " + fmt(kst, 2) + ", output per worker " + fmt(yst, 2) + ", consumption per worker " + fmt(cst, 2) + ".");
+    }
+    slider.addEventListener("input", render);
+    render();
+  })();
+
+  /* ---------- Figure 3-1 · The expenditure multiplier ---------- */
+  (function () {
+    var svg = $("figMultSvg");
+    if (!svg) return;
+    var NS = "http://www.w3.org/2000/svg";
+    var BASE_Y = 330, MAX_H = 240, BAR_W = 34, STEP = 54, X0 = 70, ROUNDS = 10;
+    var g = $("multBars"), bars = [], i;
+    for (i = 0; i < ROUNDS; i++) {
+      var r = document.createElementNS(NS, "rect");
+      r.setAttribute("x", String(X0 + i * STEP));
+      r.setAttribute("width", String(BAR_W));
+      r.setAttribute("rx", "3");
+      r.setAttribute("fill", i === 0 ? "#ea580c" : "#2f6fdb");
+      g.appendChild(r);
+      bars.push(r);
+      var t = document.createElementNS(NS, "text");
+      t.setAttribute("x", String(X0 + i * STEP + BAR_W / 2));
+      t.setAttribute("y", "352");
+      t.setAttribute("text-anchor", "middle");
+      t.setAttribute("class", "chart-label-en");
+      t.textContent = String(i + 1);
+      g.appendChild(t);
+    }
+    var slider = $("mpcRange"), out = $("mpcOut");
+    var timer = null, shown = ROUNDS;
+    function cumul(c, n) { return c <= 0 ? 100 : 100 * (1 - Math.pow(c, n)) / (1 - c); }
+    function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
+    function render() {
+      var c = parseFloat(slider.value);
+      out.textContent = fmt(c, 2);
+      for (var j = 0; j < ROUNDS; j++) {
+        var v = 100 * Math.pow(c, j);
+        var h = Math.max(2, (v / 100) * MAX_H);
+        bars[j].setAttribute("y", (BASE_Y - h).toFixed(1));
+        bars[j].setAttribute("height", h.toFixed(1));
+        bars[j].setAttribute("opacity", j < shown ? "1" : "0.15");
+      }
+      var n = Math.max(1, shown);
+      $("multPart").textContent = "First " + n + " rounds, total ΔY ≈ " + fmt(cumul(c, n), 0);
+      $("multTotal").textContent = "All rounds, total ΔY = 100 ÷ (1−c) ≈ " + fmt(100 / (1 - c), 0);
+      $("multK").textContent = "Multiplier k = 1/(1−" + fmt(c, 2) + ") ≈ " + fmt(1 / (1 - c), 1);
+      svg.setAttribute("aria-label", "Expenditure multiplier: marginal propensity to consume " + fmt(c, 2) + ", multiplier about " + fmt(1 / (1 - c), 1) + ", new spending shrinks with each round.");
+    }
+    $("multPlay").addEventListener("click", function () {
+      stopTimer();
+      shown = 1;
+      render();
+      timer = setInterval(function () {
+        if (shown >= ROUNDS) { stopTimer(); return; }
+        shown += 1;
+        render();
+      }, 260);
+    });
+    $("multReset").addEventListener("click", function () {
+      stopTimer();
+      shown = ROUNDS;
+      render();
+    });
+    slider.addEventListener("input", function () {
+      stopTimer();
+      shown = ROUNDS;
+      render();
+    });
+    render();
+  })();
+
+  /* ---------- Figure 3-2 · AD-AS ---------- */
+  (function () {
+    var svg = $("figAdasSvg");
+    if (!svg) return;
+    var X0 = 70, X1 = 600, Y0 = 330, Y1 = 50;
+    function x(v) { return X0 + (v / 10) * (X1 - X0); }
+    function y(p) { return Y0 - (p / 10) * (Y0 - Y1); }
+    var sAd = $("adasAdRange"), sSr = $("adasSrasRange");
+    function render() {
+      var d = parseFloat(sAd.value), s = parseFloat(sSr.value);
+      $("adasAdOut").textContent = sign(d, 1);
+      $("adasSrasOut").textContent = sign(s, 1);
+      $("adasAd").setAttribute("d", "M " + x(1).toFixed(1) + " " + y(11 + d - 1).toFixed(1) + " L " + x(10).toFixed(1) + " " + y(11 + d - 10).toFixed(1));
+      $("adasSras").setAttribute("d", "M " + x(0).toFixed(1) + " " + y(0.4 + s).toFixed(1) + " L " + x(10).toFixed(1) + " " + y(9.4 + s).toFixed(1));
+      var ys = (10.6 + d - s) / 1.9;
+      var ps = 11 + d - ys;
+      var cx = x(ys), cy = y(ps);
+      $("adasDot").setAttribute("cx", cx.toFixed(1));
+      $("adasDot").setAttribute("cy", cy.toFixed(1));
+      $("adasGx").setAttribute("x1", cx.toFixed(1));
+      $("adasGx").setAttribute("x2", cx.toFixed(1));
+      $("adasGx").setAttribute("y1", cy.toFixed(1));
+      $("adasGx").setAttribute("y2", Y0);
+      $("adasGy").setAttribute("x1", cx.toFixed(1));
+      $("adasGy").setAttribute("x2", X0);
+      $("adasGy").setAttribute("y1", cy.toFixed(1));
+      $("adasGy").setAttribute("y2", cy.toFixed(1));
+      $("adasPLabel").setAttribute("y", (cy - 8).toFixed(1));
+      $("adasPLabel").textContent = "P*=" + fmt(ps, 1);
+      $("adasYLabel").setAttribute("x", cx.toFixed(1));
+      $("adasYLabel").textContent = "Y*=" + fmt(ys, 1);
+      $("adasAdLbl").setAttribute("x", (x(8.4) + 6).toFixed(1));
+      $("adasAdLbl").setAttribute("y", (y(2.6 + d) + 20).toFixed(1));
+      $("adasSrasLbl").setAttribute("x", (x(7.6) - 12).toFixed(1));
+      $("adasSrasLbl").setAttribute("y", (y(7.24 + s) - 10).toFixed(1));
+      var gap = ys - 5.5, gtxt;
+      if (gap > 0.05) gtxt = " (overheating)";
+      else if (gap < -0.05) gtxt = " (recession)";
+      else gtxt = " (near potential)";
+      $("adasGap").textContent = "Equilibrium Y*=" + fmt(ys, 1) + " · P*=" + fmt(ps, 1) + " · output gap " + sign(gap, 1) + gtxt;
+      svg.setAttribute("aria-label", "AD-AS model: aggregate demand shifted " + sign(d, 1) + ", aggregate supply shifted " + sign(s, 1) + ", equilibrium output " + fmt(ys, 1) + ", price level " + fmt(ps, 1) + ".");
+    }
+    sAd.addEventListener("input", render);
+    sSr.addEventListener("input", render);
+    render();
+  })();
+
+  /* ---------- Figure 4-1 · Phillips curve ---------- */
+  (function () {
+    var svg = $("figPhSvg");
+    if (!svg) return;
+    var X0 = 70, X1 = 600, Y0 = 330, Y1 = 50, UN = 5, BETA = 0.8;
+    function x(u) { return X0 + (u / 10) * (X1 - X0); }
+    function y(p) { return Y0 - (p / 10) * (Y0 - Y1); }
+    var slider = $("phRange"), out = $("phOut");
+    var btnS = $("phBtnS"), btnL = $("phBtnL");
+    var mode = "short";
+    function show(id, on) { var e = $(id); if (e) e.setAttribute("display", on ? "inline" : "none"); }
+    function render() {
+      var pe = parseFloat(slider.value);
+      out.textContent = fmt(pe, 1) + "%";
+      var su = 3.5, sp = pe + BETA * (UN - su);   // short-run inflation; also the new πᵉ after expectations adjust
+      var peBase = mode === "short" ? pe : sp;    // short run draws the current SRPC, long run the shifted-up SRPC
+      $("phSrpc").setAttribute("d", "M " + x(0).toFixed(1) + " " + y(peBase + 4).toFixed(1) + " L " + x(10).toFixed(1) + " " + y(peBase - 4).toFixed(1));
+      $("phDotS").setAttribute("cx", x(su).toFixed(1));
+      $("phDotS").setAttribute("cy", y(sp).toFixed(1));
+      $("phDotL").setAttribute("cx", x(UN).toFixed(1));
+      $("phDotL").setAttribute("cy", y(sp).toFixed(1));
+      $("phGSx").setAttribute("x1", x(su).toFixed(1));
+      $("phGSx").setAttribute("x2", x(su).toFixed(1));
+      $("phGSx").setAttribute("y1", y(sp).toFixed(1));
+      $("phGSx").setAttribute("y2", Y0);
+      $("phGSy").setAttribute("x1", x(su).toFixed(1));
+      $("phGSy").setAttribute("x2", X0);
+      $("phGSy").setAttribute("y1", y(sp).toFixed(1));
+      $("phGSy").setAttribute("y2", y(sp).toFixed(1));
+      $("phValS").setAttribute("y", (y(sp) - 8).toFixed(1));
+      $("phValS").textContent = "π=" + fmt(sp, 1) + "%";
+      $("phGLx").setAttribute("x1", x(UN).toFixed(1));
+      $("phGLx").setAttribute("x2", x(UN).toFixed(1));
+      $("phGLx").setAttribute("y1", y(sp).toFixed(1));
+      $("phGLx").setAttribute("y2", Y0);
+      $("phGLy").setAttribute("x1", x(UN).toFixed(1));
+      $("phGLy").setAttribute("x2", X0);
+      $("phGLy").setAttribute("y1", y(sp).toFixed(1));
+      $("phGLy").setAttribute("y2", y(sp).toFixed(1));
+      $("phValL").setAttribute("y", (y(sp) - 8).toFixed(1));
+      $("phValL").textContent = "π=" + fmt(sp, 1) + "%";
+      $("phLblSrpc").setAttribute("x", (x(1.5) + 12).toFixed(1));
+      $("phLblSrpc").setAttribute("y", (y(peBase + 2.8) + 4).toFixed(1));
+      // Long-run arrow: from the short-run point (3.5, sp) horizontally back to the natural rate (5, sp) — unemployment returns, inflation unchanged
+      $("phArrow").setAttribute("d", "M " + x(su + 0.3).toFixed(1) + " " + y(sp).toFixed(1) + " L " + x(UN - 0.3).toFixed(1) + " " + y(sp).toFixed(1));
+      var shortOn = mode === "short";
+      show("phGSx", shortOn); show("phGSy", shortOn); show("phValS", shortOn);
+      show("phDotS", shortOn); show("phULblS", shortOn);
+      show("phGLx", !shortOn); show("phGLy", !shortOn); show("phValL", !shortOn);
+      show("phArrow", !shortOn); show("phULblL", !shortOn);
+      if (shortOn) {
+        $("phState").textContent = "Short run: with expected inflation at " + fmt(pe, 1) + "%, pushing unemployment down to 3.5% costs inflation rising to " + fmt(sp, 1) + "%";
+        $("phNote").textContent = "Moving along the SRPC: each percentage point of unemployment below the natural rate costs 0.8 point of extra inflation";
+      } else {
+        $("phState").textContent = "Long run: after expectations move up, unemployment returns to 5% and inflation settles at " + fmt(pe + 1.2, 1) + "% — the SRPC has shifted up";
+        $("phNote").textContent = "Expectations adjust → SRPC shifts up → unemployment returns to the natural rate; the trade-off is gone, leaving only higher inflation";
+      }
+      svg.setAttribute("aria-label", "Phillips curve: expected inflation " + fmt(pe, 1) + "%, " + (shortOn ? "in the short run unemployment can be pushed down to 3.5% with inflation rising to " + fmt(sp, 1) + "%" : "in the long run unemployment returns to the natural rate of 5%") + ".");
+    }
+    function setMode(m) {
+      mode = m;
+      btnS.className = "btn" + (m === "short" ? "" : " ghost");
+      btnL.className = "btn" + (m === "long" ? "" : " ghost");
+      render();
+    }
+    btnS.addEventListener("click", function () { setMode("short"); });
+    btnL.addEventListener("click", function () { setMode("long"); });
+    slider.addEventListener("input", render);
+    setMode("short");
+  })();
+
+  /* ---------- Figure 5-1 · The impossible trinity ---------- */
+  (function () {
+    var svg = $("figTriSvg");
+    if (!svg) return;
+    var ACTIVE = "#b91c1c", MUTED = "#cbd5e1";
+    var edges = { AB: $("triAB"), BC: $("triBC"), CA: $("triCA") };
+    var NOTES = {
+      AB: "You chose “free capital mobility + exchange rate stability”: the interest rate must follow the anchor country, and independent monetary policy is given up — Hong Kong SAR's linked exchange rate and the gold-standard era sit on this corner.",
+      BC: "You chose “exchange rate stability + independent monetary policy”: interest-rate autonomy is kept, at the price of capital not flowing freely — mainland China operates a managed float with capital-account management.",
+      CA: "You chose “free capital mobility + independent monetary policy”: the exchange rate floats freely and exchange rate stability is given up — the United States, Japan, and the euro area sit on this corner."
+    };
+    function setCombo(edge, dropV) {
+      var k;
+      for (k in edges) {
+        if (edges.hasOwnProperty(k) && edges[k]) {
+          edges[k].setAttribute("stroke", k === edge ? ACTIVE : MUTED);
+          edges[k].setAttribute("stroke-width", k === edge ? "6" : "3.5");
+          edges[k].setAttribute("opacity", k === edge ? "1" : "0.45");
+        }
+      }
+      var names = ["A", "B", "C"], i, c, sac, kept;
+      for (i = 0; i < names.length; i++) {
+        c = $("triV" + names[i]);
+        sac = $("triSac" + names[i]);
+        kept = names[i] !== dropV;
+        if (c) c.setAttribute("fill", kept ? ACTIVE : MUTED);
+        if (sac) sac.setAttribute("display", kept ? "none" : "inline");
+      }
+      $("triNote").textContent = NOTES[edge];
+      svg.setAttribute("aria-label", "Impossible trinity selector: " + NOTES[edge]);
+    }
+    var btns = [$("triBtnAB"), $("triBtnBC"), $("triBtnCA")];
+    var combos = [
+      { edge: "AB", drop: "C" },
+      { edge: "BC", drop: "A" },
+      { edge: "CA", drop: "B" }
+    ];
+    function choose(i) {
+      setCombo(combos[i].edge, combos[i].drop);
+      btns.forEach(function (b, j) {
+        if (b) b.className = "btn" + (i === j ? "" : " ghost");
+      });
+    }
+    btns.forEach(function (b, i) {
+      if (b) b.addEventListener("click", function () { choose(i); });
+    });
+    choose(1);
+  })();
+
+  /* ---------- Figure 6-1 · Policy lags ---------- */
+  (function () {
+    var svg = $("figLagSvg");
+    if (!svg) return;
+    var ids = ["lagF1g", "lagM1g", "lagM2g", "lagF2g", "lagM3g", "lagF3g"];
+    var els = ids.map(function (id) { return $(id); });
+    var timer = null;
+    function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
+    function play() {
+      stopTimer();
+      els.forEach(function (e) { if (e) e.setAttribute("opacity", "0"); });
+      var i = 0;
+      timer = setInterval(function () {
+        if (i >= els.length) { stopTimer(); return; }
+        if (els[i]) els[i].setAttribute("opacity", "1");
+        i += 1;
+      }, 480);
+    }
+    $("lagReplay").addEventListener("click", play);
+    play();
+  })();
+})();
+</script>
+</body>
+</html>

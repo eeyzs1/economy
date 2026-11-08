@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Financial Economics · EconLearn Self-Study Path in Economics</title>
+<meta name="description" content="Interactive tutorial on financial economics: present value and compound interest, risk and return, diversification and the CAPM, market efficiency, and a first look at options, with interactive figures and self-check quizzes.">
+<link rel="stylesheet" href="../../assets/econ.css">
+</head>
+<body style="--branch:#0e7490">
+<noscript><p class="noscript-tip">The interactive figures and self-check quizzes on this page require JavaScript; even without it, the full main text remains readable.</p></noscript>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="topbar">
+  <a class="topbar-home" href="../index.html">← Home</a>
+  <div class="topbar-title"><span class="topbar-num">06</span>Financial Economics</div>
+  <a class="topbar-lang" href="../../06-金融经济学/index.html" hreflang="zh-CN">中文</a>
+  <button class="toc-toggle" aria-expanded="false">Contents</button>
+  <div class="reading-progress" aria-hidden="true"></div>
+</header>
+
+<div class="shell">
+  <aside class="sidebar">
+    <p class="sidebar-heading">Chapters in this track</p>
+    <nav aria-label="Chapter contents">
+      <a href="#overview">Overview &amp; learning goals</a>
+      <a href="#ch1">1 · The time value of money</a>
+      <a href="#ch2">2 · Risk and return</a>
+      <a href="#ch3">3 · Diversification: the only free lunch</a>
+      <a href="#ch4">4 · β and asset pricing</a>
+      <a href="#ch5">5 · Are markets efficient?</a>
+      <a href="#ch6">6 · Corporate finance and a first look at derivatives</a>
+      <a href="#path">Next steps &amp; further reading</a>
+    </nav>
+    <p class="sidebar-foot">EconLearn · Self-Study Path in Economics</p>
+  </aside>
+
+  <main class="main" id="main">
+    <section class="chapter" id="overview">
+      <div class="branch-hero">
+        <span class="hero-kicker">Track 06 · Money &amp; finance</span>
+        <h1>Financial Economics</h1>
+        <p class="hero-en">金融经济学</p>
+        <p class="hero-lead">All of finance comes down to one question: exchanging value across time. How do you compare money today with money tomorrow? How do you price an uncertain payoff? Can risk be "allocated" to whoever is most willing to bear it? Understand these three things and you understand everything from mortgage rates to option pricing.</p>
+      </div>
+      <div class="objectives">
+        <div class="obj-title">By the end of this track, you will be able to</div>
+        <ul>
+          <li>Use <strong>present value and compound interest</strong> to put money paid at different dates on a single scale, and make investment decisions with NPV</li>
+          <li>Explain <strong>risk aversion</strong> and the risk premium, and compute expected returns and volatility</li>
+          <li>Show how <strong>correlation</strong> determines how much diversification achieves, and understand the "efficient frontier"</li>
+          <li>Use <strong>β</strong> and the security market line to explain why "only systematic risk earns a return"</li>
+          <li>Weigh the evidence for and the limits of the efficient market hypothesis, and read an option payoff diagram</li>
+        </ul>
+      </div>
+      <div class="prereq">Prerequisites:
+        <a class="badge" href="../01-microeconomics/index.html">01 Microeconomics (marginal utility)</a>
+        <a class="badge" href="../05-money-and-banking/index.html">05 Money &amp; Banking (interest rates)</a>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch1">
+      <h2><span class="ch-num">Chapter 1</span> The time value of money</h2>
+
+      <p><strong>Opening question:</strong> You are offered two choices: 10,000 yuan today, or 10,500 yuan one year from now. Most people instinctively take the money today — why is "less money" actually better? And what is that 10,500 yuan a year from now really worth?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: Money today is "bigger"</div>
+        <p>10,000 yuan today can be invested at once (even if only in a deposit) and becomes 10000×(1+r) a year later. To compare choices across time, you must <strong>discount every amount to the same point in time</strong>. At a 5% interest rate, the present value of 10,500 yuan one year out is 10500/1.05 = 10000 — an exact tie; if rates are above 5%, you should take the 10,000 today. The power of compound interest lies in the exponent: the Rule of 72 says that at an interest rate of r%, doubling takes roughly 72/r years (8% → 9 years).</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 1-1 · Compound-growth simulator</div>
+        <p class="fig-sub">Drag the annual-return and horizon sliders to watch a 10,000-yuan principal grow exponentially; compare against "simple interest" to feel the size of the gap compounding opens.</p>
+        <figure class="fig-canvas">
+          <svg id="ci-svg" viewBox="0 0 640 380" role="img" aria-label="Compound versus simple interest: x-axis years from 0 to 40, y-axis amount; the compound curve rises exponentially while simple interest is a straight line; the text shows future values and multiples.">
+            <line class="axis" x1="70" y1="320" x2="600" y2="320"/>
+            <line class="axis" x1="70" y1="320" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="362" text-anchor="middle">Years</text>
+            <text class="chart-label" x="24" y="175" text-anchor="middle" transform="rotate(-90 24 175)">Future value (10,000s of yuan)</text>
+            <line class="gridline" x1="70" y1="230" x2="600" y2="230"/>
+            <line class="gridline" x1="70" y1="140" x2="600" y2="140"/>
+            <line class="gridline" x1="70" y1="50" x2="600" y2="50"/>
+            <path id="ci-simple" class="curve curve-c3" fill="none"/>
+            <path id="ci-comp" class="curve curve-c1" fill="none"/>
+            <text class="chart-label" x="455" y="60" style="fill:#2f6fdb">Compound (1+r)ⁿ</text>
+            <text class="chart-label" x="455" y="80" style="fill:#0d9488">Simple 1+rn</text>
+            <text id="ci-txt1" class="chart-title-sm" x="335" y="26" text-anchor="middle"></text>
+            <text id="ci-txt2" class="chart-label" x="335" y="46" text-anchor="middle" style="fill:#475569"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="ci-r">Annual return</label><input type="range" id="ci-r" min="1" max="15" step="0.5" value="7"><output id="ci-or" for="ci-r">7%</output></div>
+          <div class="ctrl"><label for="ci-n">Years</label><input type="range" id="ci-n" min="5" max="40" step="1" value="30"><output id="ci-on" for="ci-n">30</output></div>
+        </div>
+        <figcaption>How to read this figure: at 7% compounded for 30 years, 1 yuan becomes 7.6 yuan; simple interest yields only 3.1. The gap is "interest on interest." Run discounting in reverse: 7.6 yuan thirty years out has a present value of exactly 1 yuan — <strong>the value of long-dated assets is extremely sensitive to interest rates</strong>, which is why growth stocks and long bonds fall hardest when rates rise.</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Present Value, PV <span class="term-en">现值</span></div><div class="term-def">A future cash flow ÷ (1+r)ⁿ. The rate r is the discount rate that "marks down" the future — the higher the risk and the longer the wait, the steeper the markdown.</div></div>
+        <div class="term"><div class="term-name">Net Present Value, NPV <span class="term-en">净现值</span></div><div class="term-def">The sum of the present values of all cash flows minus the initial outlay. Projects with NPV &gt; 0 create value; the NPV rule is the first law of corporate finance.</div></div>
+        <div class="term"><div class="term-name">Annuity <span class="term-en">年金</span></div><div class="term-def">A stream of equal payments at regular intervals (a mortgage's monthly payment is an annuity). The whole stream collapses into one present-value formula — housing bubbles are, at heart, "low rates pricing an annuity very dear."</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · When a lottery jackpot "shrinks"</div>
+        <p>An American lottery jackpot of "1 billion dollars" is almost always paid in installments: roughly 25 million in the first year, stepping up annually (about 33 million a year on average) × 30 years, which nominally adds up to about 1 billion. Take it all at once and you get only about half — because once the installments are discounted at market interest rates, that lump sum is their present value. <strong>The "1 billion" is a nominal sum; the "500 million" is what it is worth today.</strong> By the same logic, a 30-year mortgage with "2,000,000 yuan in total repayments" sounds frightening, yet its present value may barely top 1,000,000 yuan. Adding numbers from different dates without discounting is the most common illusion in finance.</p>
+      </aside>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"NPV is positive, so do it now."</strong> NPV answers only "does this create value?", not "is this the best use for it?". The right comparison is against the <strong>next-best alternative</strong> (opportunity cost): how much would this capital and management attention earn in another project? The choice of discount rate (see Chapter 2: the risk premium) can also flip the conclusion — for projects whose cash flows stretch far into the future, always run a sensitivity analysis.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.1</span>Market interest rates rise from 4% to 8%. What happens to the price of a long bond that pays a coupon every year and matures 30 years from now?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>It falls sharply (distant cash flows get discounted much harder)</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>Nothing changes, because the coupons are fixed</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>It rises, because yields are higher</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>A bond's price is the sum of the present values of all its future cash flows. The longer the maturity, the more interest-rate-sensitive it is (the longer its duration). In the Fed's 2022 hiking cycle, 30-year Treasuries at one point fell roughly 40% — the deep plunge of the "safest asset" was the machinery of the time value of money on full display.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 1.2</span>A project: invest 1,000,000 yuan today, collect 1,080,000 yuan one year later. The market return on investments of comparable risk is 10%. You should?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Accept: 1,080,000 &gt; 1,000,000, so it makes money</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Reject: NPV = 1,080,000/1.10 − 1,000,000 ≈ −18,000 &lt; 0</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>It depends on the boss's mood</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Accounting-wise you did "earn 80,000 yuan," but economically you lost: the same 1,000,000 yuan invested elsewhere would grow to 1,100,000. The essence of NPV is to bake the <strong>opportunity cost</strong> into the discount rate — at any required return above 8%, this project destroys value.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Money today &gt; money tomorrow: all financial pricing begins with discounting.</li>
+          <li>Only NPV &gt; 0 creates value; the discount rate = the opportunity cost of capital + a risk premium.</li>
+          <li>Long-horizon cash flows are the most rate-sensitive; the Rule of 72 gives a quick estimate of compounding.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch2">
+      <h2><span class="ch-num">Chapter 2</span> Risk and return</h2>
+
+      <p><strong>Opening question:</strong> Two investments: A pays a sure 5%; B gains 25% with probability one-half and loses 15% with probability one-half (its expectation is also 5%). If you can pick only one, nearly everyone picks A — but why should "steadier outcomes" be worth something in themselves?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: Diminishing marginal utility → risk aversion</div>
+        <p>The more money you have, the less utility each additional yuan brings (see Track 01, Microeconomics). B's "gain 25%" arrives when you are relatively rich (the utility gain is discounted), while its "lose 15%" arrives when you are relatively poor (the utility loss is magnified) — expected utility works out below A's. <strong>Risk aversion is not timidity; it is arithmetic.</strong> So pricing in equilibrium must satisfy: <strong>bearing risk must be compensated</strong> (the risk premium) — risk-free rate + premium = expected return. The most common yardstick of risk is <strong>volatility</strong> (the standard deviation of returns). Lotteries and insurance are two faces of the same coin: a lottery ticket pays money to "buy variance" (a small chance of a huge win), insurance pays money to "sell variance" (eliminating a catastrophic loss) — both have negative expected value, yet either can raise utility.</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Expected Return <span class="term-en">期望收益</span></div><div class="term-def">The probability-weighted average of returns across states. It captures only the "average," not "how uncertain."</div></div>
+        <div class="term"><div class="term-name">Standard Deviation / Volatility <span class="term-en">标准差/波动率</span></div><div class="term-def">The typical size of deviations of returns from their expectation — the most widely used proxy for risk in finance.</div></div>
+        <div class="term"><div class="term-name">Risk Premium <span class="term-en">风险溢价</span></div><div class="term-def">The excess of a risky asset's expected return over the risk-free rate — the wage the market pays to "those willing to bear risk."</div></div>
+        <div class="term"><div class="term-name">Risk Aversion <span class="term-en">风险厌恶</span></div><div class="term-def">Concavity of the utility function: a certain 5% beats a gamble with an expectation of 5%. It is the shared foundation of insurance, option pricing, and asset pricing.</div></div>
+      </div>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"High-risk assets are guaranteed high returns — just buy, close your eyes, and hold."</strong> That has it backwards. It is <strong>equilibrium pricing</strong> that requires high-risk assets to offer high <strong>expected</strong> returns; otherwise nobody would hold them. But "expected" does not guarantee "realized": over long stretches the realized return of a high-volatility asset can fall below that of a low-risk asset (risk really does materialize). A higher expected return is <strong>compensation</strong> for bearing risk, not a free reward.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.1</span>Two assets with the same expected return but different volatility: which one does a risk-averse investor choose?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>The lower-volatility one: expected utility is higher (diminishing marginal utility)</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>The higher-volatility one: more exciting</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Indifferent: the expectations are identical</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Same expected return with smaller variance → strictly higher expected utility (a concave function + Jensen's inequality). This is the individual-level foundation of "diversification raises welfare": cutting volatility without sacrificing expected return is exactly what earns the name "free lunch" (next chapter).</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 2.2</span>Lotteries and insurance both have negative expected value. A rational person would?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Buy neither: a negative expected value means a certain loss</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>Possibly buy both: utility is not a linear function of money, and reshaping the distribution itself can create utility</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Buy lottery tickets only</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Insurance swaps "a small chance of a huge loss" for "a certain small premium," raising utility for the risk-averse; a lottery swaps "a certain small amount" for "a tiny chance of great wealth," and if the utility function is relatively steep at low wealth (or you simply enjoy the dream), utility can rise there too. The expected-value frame is an approximation; the utility frame is the real thing — but note that Track 15, Behavioral Economics, will tell you: the proportions in which people buy lottery tickets and insurance often depart from any reasonable utility function.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>Risk aversion follows from diminishing marginal utility, not psychological weakness.</li>
+          <li>In equilibrium, risk must carry a premium: expected return = risk-free rate + premium.</li>
+          <li>Volatility is the first proxy for risk; lotteries and insurance are two sides of one principle.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch3">
+      <h2><span class="ch-num">Chapter 3</span> Diversification: the only free lunch</h2>
+
+      <p><strong>Opening question:</strong>Combine 100 mutually independent stocks into a portfolio. What happens to the portfolio's risk (volatility)? The answer surprises: it falls until nearly nothing is left but the "average level" — the risk of the individual stocks almost cancels out entirely. Why is this possible? And why is it free?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: Offsetting swings</div>
+        <p>Different assets do not rise and fall in lockstep (<strong>correlation ρ &lt; 1</strong>). When one falls, the other need not: they smooth out each other's fluctuations. In math: portfolio variance = w²σ₁² + (1−w)²σ₂² + 2w(1−w)ρσ₁σ₂ — <strong>the lower ρ, the smaller the drag from the cross term, and the lower the portfolio's risk</strong>. At ρ=1 diversification accomplishes nothing; at ρ=0 most of the individual risk disappears; at ρ&lt;0 you can even hedge. Once you hold enough weakly correlated assets, all that remains is the <strong>systematic risk</strong> that every asset shares, while <strong>idiosyncratic risk</strong> is diluted away — reducing the latter costs no expected return at all, which is why Markowitz called diversification "the only free lunch."</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 3-1 · The correlation workbench</div>
+        <p class="fig-sub">Two stocks with identical expected return and volatility (10% and 20% each); drag the correlation slider and watch how the risk of the "half-and-half portfolio" changes.</p>
+        <figure class="fig-canvas">
+          <svg id="dp-svg" viewBox="0 0 640 360" role="img" aria-label="Portfolio risk against asset allocation: at different correlations the 50/50 portfolio's volatility drops from nearly 20% to about 14% when correlation is low; the exact value at the current correlation is displayed.">
+            <line class="axis" x1="70" y1="300" x2="600" y2="300"/>
+            <line class="axis" x1="70" y1="300" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="342" text-anchor="middle">Weight on asset 1, w (asset 2 gets 1−w)</text>
+            <text class="chart-label" x="24" y="165" text-anchor="middle" transform="rotate(-90 24 165)">Portfolio volatility σ</text>
+            <path id="dp-curve" class="curve curve-c1" fill="none"/>
+            <line class="gridline" x1="70" y1="147" x2="600" y2="147"/>
+            <line class="gridline" x1="70" y1="83" x2="600" y2="83"/>
+            <text class="chart-label" x="590" y="141" text-anchor="end">σ ≈ 14.1% (50/50 at ρ=0)</text>
+            <text class="chart-label" x="590" y="77" text-anchor="end">σ ≈ 20% (a single stock)</text>
+            <circle id="dp-dot" r="7" class="dot" fill="#0e7490"/>
+            <text id="dp-txt" class="chart-title-sm" x="335" y="30" text-anchor="middle"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="dp-w">Weight w</label><input type="range" id="dp-w" min="0" max="100" step="5" value="50"><output id="dp-ow" for="dp-w">0.5</output></div>
+          <div class="ctrl"><label for="dp-rho">Correlation ρ</label><input type="range" id="dp-rho" min="-100" max="100" step="10" value="0"><output id="dp-orho" for="dp-rho">0.0</output></div>
+        </div>
+        <figcaption>How to read this figure: at ρ=+1 portfolio risk is the weighted average of the two assets (diversification does nothing); at ρ=0 the 50/50 portfolio's volatility is only 14.1% (not 20%!); at ρ=−1 risk can be driven to zero. <strong>Key insight: expected return is a linear average of the weights, but risk is not</strong> — the nonlinearity is where the free lunch comes from. It is also why "buying ten stocks in the same lane" is pseudo-diversification: their correlations are too high.</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Systematic Risk <span class="term-en">系统风险</span></div><div class="term-def">The volatility the whole market shares (interest rates, recessions, wars) — it cannot be diversified away, so it earns a premium.</div></div>
+        <div class="term"><div class="term-name">Idiosyncratic Risk <span class="term-en">特质风险</span></div><div class="term-def">The volatility particular to a single asset (a CEO scandal, a failed product) — diversification eliminates it, and the market pays not a cent to compensate it.</div></div>
+        <div class="term"><div class="term-name">Efficient Frontier <span class="term-en">有效前沿</span></div><div class="term-def">The set of portfolios with the least risk at each level of expected return. Rational investing chooses only along this boundary; adding a risk-free asset turns it into the "capital market line."</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · Why index funds won</div>
+        <p>If idiosyncratic risk earns no compensation, then an index fund holding hundreds of companies eliminates single-stock risk at nearly zero cost. The logical corollary: most people should hold "the market portfolio plus a risk-free asset, mixed to taste for risk" (two-fund separation). 401(k) target-date funds and the great expansion of index funds in China's mutual-fund industry are this theorem turned into engineering. Buffett's ten-year bet in 2008 (an S&amp;P 500 index fund vs. a basket of five hedge funds) ended in a landslide for the index — not luck, but the structural advantage of cost and diversification.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.1</span>The market pays no compensation for idiosyncratic risk, because?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Idiosyncratic risk is small</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>It can be eliminated easily by diversification, and in equilibrium nobody needs to pay for what can be eliminated</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Regulators forbid it</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>The central question of pricing is always "who bears this risk, and can it be laid off?" Idiosyncratic risk vanishes once you hold enough weakly correlated assets — if it still carried a premium, investors would pour in and arbitrage it away. The flip side: <strong>only unavoidable systematic risk deserves a risk premium</strong> — the soul of the CAPM (next chapter).</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 3.2</span>Which of the following portfolios is best diversified?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>10 baijiu (Chinese spirits) stocks</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>10 CSI 300 constituents</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">C</span>Stocks + government bonds + gold + overseas equities</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Diversification is about the <strong>correlation structure</strong>, not the headcount. Same-industry stocks are highly correlated (A ≈ pseudo-diversification); constituents of a single market still share the same macro factors (B is middling); across assets, markets, and currencies (C) correlations are lowest and the smoothing is strongest. The lesson of 2008: in a crisis, all correlations spike toward 1 — true diversification keeps assets that stay negatively correlated "even in a crisis" (government bonds, cash).</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>ρ &lt; 1 ⇒ portfolio risk below the weighted average: the nonlinearity is the free lunch.</li>
+          <li>Idiosyncratic risk is diversifiable and uncompensated; systematic risk is undiversifiable and carries a premium.</li>
+          <li>Diversification is about the correlation structure, not the number of assets.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch4">
+      <h2><span class="ch-num">Chapter 4</span> β and asset pricing</h2>
+
+      <p><strong>Opening question:</strong>With 500 stocks, Markowitz's "covariance matrix" means estimating more than 120,000 parameters — utterly hopeless to compute. Is there a simpler yardstick, one number that sums up "how dangerous is this stock"?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: Only "the swings that track the market" deserve compensation</div>
+        <p>The CAPM (Capital Asset Pricing Model) answers: compress each stock's risk into a single number, <strong>β = the sensitivity of the stock's return to the market return</strong>. A stock with β=1.5 gains 1.5% on average when the market gains 1%, and its falls are amplified too — it bears more <strong>systematic</strong> risk; its own idiosyncratic swings (the CEO in the headlines yet again) are worthless because they can be diversified away. The pricing formula is then astonishingly simple: <strong>expected return = risk-free rate + β × market risk premium</strong>. This is the <strong>security market line</strong> (SML): every asset is priced by its place in the β queue; falling below the line = expensive (overpriced), floating above = cheap (underpriced). The meaning of α becomes clear at once: <strong>what you earn beyond what β deserves</strong> — the strict definition of "beating the market."</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 4-1 · The security market line: how much return your stock deserves</div>
+        <p class="fig-sub">Drag the β slider to see the expected return under fair pricing; then flip the "mispricing" switch and see where α comes from.</p>
+        <figure class="fig-canvas">
+          <svg id="sml-svg" viewBox="0 0 640 360" role="img" aria-label="Security market line: x-axis β from 0 to 2, y-axis expected return from 2% to 12%; points on the line are fairly priced; mispriced points sit off the line, creating positive or negative α.">
+            <line class="axis" x1="70" y1="300" x2="600" y2="300"/>
+            <line class="axis" x1="70" y1="300" x2="70" y2="30"/>
+            <text class="chart-label" x="335" y="342" text-anchor="middle">β (sensitivity to market swings)</text>
+            <text class="chart-label" x="24" y="165" text-anchor="middle" transform="rotate(-90 24 165)">Expected return</text>
+            <line id="sml-line" class="curve curve-c7" fill="none" stroke-width="2.5"/>
+            <circle id="sml-fair" r="7" class="dot" fill="#0e7490"/>
+            <circle id="sml-cheap" r="7" class="dot" fill="#15803d" style="display:none"/>
+            <text class="chart-label" x="85" y="292">rf 2%</text>
+            <text class="chart-label" x="560" y="60">Market portfolio β=1 → 7%</text>
+            <text id="sml-txt" class="chart-title-sm" x="335" y="30" text-anchor="middle"></text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="sml-b">β</label><input type="range" id="sml-b" min="0" max="20" step="1" value="12"><output id="sml-ob" for="sml-b">1.2</output></div>
+        </div>
+        <div class="fig-actions">
+          <button class="btn" id="sml-cheap-btn">Show the "undervalued" stock</button>
+          <button class="btn ghost" id="sml-reset">Back to fair pricing</button>
+        </div>
+        <figcaption>How to read this figure: at β=1.2 the fair expected return = 2% + 1.2×5% = 8%. If the market offers it only 6.5% (the point falls below the SML), the stock is "overpriced"; at 9.5% (the point sits above the line) it is "underpriced" — α is the distance of the price from equilibrium, and <strong>competition makes α vanish fast</strong> (next chapter).</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Beta <span class="term-en">β（贝塔）</span></div><div class="term-def">The slope from regressing a stock's return on the market return. β&gt;1 amplifies market swings (growth stocks, highly leveraged firms); β&lt;1 dampens them (utilities, consumer staples).</div></div>
+        <div class="term"><div class="term-name">Alpha <span class="term-en">α（阿尔法）</span></div><div class="term-def">The part of the realized return above the "return β deserves." The search for α is the holy grail of active investing — and the very thing efficient-market theory declares "largely nonexistent."</div></div>
+        <div class="term"><div class="term-name">CAPM (Capital Asset Pricing Model) <span class="term-en">资本资产定价模型</span></div><div class="term-def">E[R] = rf + β(E[Rm] − rf). It compresses the pricing of risk into a single line — crude, testable, and far-reaching.</div></div>
+      </div>
+
+      <aside class="callout pitfall">
+        <div class="callout-title">Common pitfalls</div>
+        <p><strong>"High β = bad stock."</strong> A high β merely means <strong>more exposure to systematic risk</strong>, and in equilibrium it equally means <strong>a higher expected return</strong> — the stock is neither better nor worse, just a different flavor of risk. The real warnings are against reading "high volatility" as "high quality" or "low β" as "safe": low-β stocks can still blow up on idiosyncratic risk (β measures only co-movement with the market). Note too that the CAPM is an <strong>ex ante pricing</strong> model; realized ex-post returns ≠ expected returns.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.1</span>The risk-free rate is 3%, the market portfolio's expected return is 8%. The fair expected return on a stock with β=1.4 is?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>8%</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>3% + 1.4×(8%−3%) = 10%</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>3% + 1.4×8% = 14.2%</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>What gets multiplied by β in the formula is the <strong>risk premium</strong> (market return − risk-free rate), not the market return itself — C is the most common student error. Intuition: the premium is "the price of bearing each unit of systematic risk," and β is how many units you are buying.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 4.2</span>A stock with β=1 has beaten the index by 2% annualized over the long run. In the strictest sense, this shows?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Markets are inefficient — buy it now</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>A positive α was realized; to tell luck from skill you need statistical significance and a logical source</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>The CAPM has been overturned</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Realized α ≠ predictable α. Even under pure randomness, out of thousands of stocks some will "emerge" as persistent winners (analogy: among thousands of coin-flippers, someone must land ten in a row). Judging true α means asking: is the sample long enough? Is it statistically significant? Is there a plausible economic source (information, behavior, structure)? And is it sustainable? — precisely the core of the century-old active-versus-passive debate (next chapter).</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>β = exposure to systematic risk; only it earns a premium.</li>
+          <li>SML: E[R] = rf + β×market premium; points off the line are mispriced, α is the deviation.</li>
+          <li>Realized α must be sorted into luck versus skill; the CAPM is the first approximation to pricing.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch5">
+      <h2><span class="ch-num">Chapter 5</span> Are markets efficient?</h2>
+
+      <p><strong>Opening question:</strong>In 2013 the Nobel Prize went simultaneously to Fama, famed for "markets cannot be beaten," and Shiller, who made his name profiting from bubble theory. Had the committee lost its mind? No — it pinned economics' most fascinating dispute onto the honor roll at the same moment.</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: efficient does not mean "prices are correct"; it means "there are no free bargains lying around"</div>
+        <p>The <strong>Efficient Market Hypothesis (EMH)</strong> in three layers: weak form (no free information in historical prices), semi-strong form (all public information is already in the price), strong form (even inside information is in the price). Its logical foundation is arbitrage competition: bargains are picked off the instant they appear, so prices "fully reflect information." <strong>It does not promise that prices equal fundamentals' true value</strong> — Shiller's excess volatility, bubbles, and irrationality can coexist perfectly well with "you can hardly beat the market systematically": because arbitrage has costs and limits (shares cannot be borrowed, liquidation risk, timing risk), mispricing can persist a long time and can even bankrupt "the very people correcting it" first ("markets can stay irrational longer than you can stay solvent" — attributed to Keynes).</p>
+      </aside>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Efficient Market Hypothesis <span class="term-en">有效市场假说</span></div><div class="term-def">Prices already reflect available information, so systematically beating the market is out of reach. Three forms, each stronger than the last.</div></div>
+        <div class="term"><div class="term-name">Noise Traders &amp; Limits of Arbitrage <span class="term-en">噪声交易者与套利限制</span></div><div class="term-def">Irrational traders exist, yet rational arbitrageurs cannot correct them without limit — because arbitrage itself has risks and costs. Behavioral finance's point of entry.</div></div>
+        <div class="term"><div class="term-name">Passive Investing <span class="term-en">被动投资</span></div><div class="term-def">Give up stock picking; hold the index. The logic: if markets are broadly efficient, this is optimal in expectation after fees.</div></div>
+      </div>
+
+      <aside class="callout case">
+        <div class="callout-title">The real world · GameStop and the Buffett bet</div>
+        <p><strong>The 2021 GameStop episode</strong>: retail-investor forums jointly drove a heavily shorted stock up dozens of times over, inflicting huge losses on the short-selling hedge funds. It supports both sides of the dispute at once: prices can clearly detach violently from fundamentals (against the EMH); but the fund that tried to "rationally short the bubble" was beaten into insolvency first (limits of arbitrage — the EMH's lifeline). <strong>Buffett's ten-year bet</strong>: the S&amp;P 500 index fund compounded at 7.1% a year versus 2.2% for a hand-picked fund of five hedge funds. Read the two cases together and the pragmatic conclusion follows: markets are not always "right," but "exploiting their wrongness" remains extremely hard, costly, and dangerous — for ordinary people, passive plus low cost is the strategy that is best in expectation.</p>
+      </aside>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.1</span>"Stock prices follow a random walk" supports which claim?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">A</span>Weak-form efficiency: patterns in historical prices contain no predictable free information</button>
+          <button class="quiz-opt"><span class="opt-key">B</span>Strong-form efficiency: even inside information yields no profit</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Market inefficiency: prices just fluctuate senselessly</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>The random walk rules out only "making money from <strong>historical prices</strong>" (the foundation of technical analysis). It does not deny the possibility of profit from deep research, inside information, or behavioral biases (semi-strong and strong form are stronger claims). Keeping the layers straight is the key to the EMH debate — most people arguing about it are arguing about different layers.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 5.2</span>An obvious mispricing appears. Why might a rational arbitrageur not dare to act?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>The law forbids it</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>The mispricing can widen and wipe out the arbitrageur first (liquidation risk), borrowing costs can soar, and the timing is unknowable</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Arbitrageurs are bad at math</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Textbook arbitrage is riskless and costless; real arbitrage takes hits from both sides: when prices turn even more absurd come margin calls, investor redemptions, and recalls of borrowed shares. LTCM in 1998 (the graveyard of "convergence trades") and the GameStop shorts of 2021 teach the same lesson: <strong>right + leverage + wrong timing = bankruptcy</strong>. Limits of arbitrage are precisely the channel through which "bubbles exist" and "markets are still hard to beat" coexist.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>EMH: prices reflect information ≠ prices are correct; three forms, tested in order.</li>
+          <li>Bubbles exist (Shiller) and beating the market is very hard (Fama) coexist through limits of arbitrage.</li>
+          <li>A low-cost passive strategy is the best-in-expectation answer for ordinary investors.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="ch6">
+      <h2><span class="ch-num">Chapter 6</span> Corporate finance and a first look at derivatives</h2>
+
+      <p><strong>Opening question:</strong>Should a company finance itself by borrowing or by issuing stock? Intuitively, "owing nothing is safest" — so why do nearly all big companies in the real world carry huge debts, and even borrow deliberately to buy back their own shares?</p>
+
+      <aside class="callout intuition">
+        <div class="callout-title">The core intuition: The MM theorem — how you cut the pie does not change the size of the pie</div>
+        <p>Modigliani and Miller proved that (in idealized markets) <strong>firm value is independent of capital structure</strong> — financing merely slices the cash-flow "pie" between creditors and shareholders, and the slicing does not change the size of the pie. The greatness of this "irrelevance" result lies in <strong>the conditions under which it fails</strong>: in reality interest is tax-deductible (the tax shield), bankruptcy is costly, and information asymmetry shapes financing choices. The optimal capital structure is therefore the balance between the tax shield's benefit and the costs of financial distress — the theoretical root of "moderate leverage." Derivatives, meanwhile, are contracts that slice risk and trade the slices: <strong>futures</strong> lock in future prices (transferring risk), and <strong>options</strong> spend a small sum to buy "a right, not an obligation." The payoff diagram of a call option is naturally asymmetric: the downside loses at most the premium, while the upside scales linearly with the stock price — insurance and leverage fused into one.</p>
+      </aside>
+
+      <figure class="fig">
+        <div class="fig-title">Figure 6-1 · The call-option payoff laboratory</div>
+        <p class="fig-sub">Drag the strike and premium sliders to see how the buyer's payoff at expiration moves with the stock price; take in the asymmetric structure of "limited downside, amplified upside."</p>
+        <figure class="fig-canvas">
+          <svg id="opt-svg" viewBox="0 0 640 360" role="img" aria-label="Call-option buyer's payoff at expiration: x-axis stock price at expiration, y-axis profit; below the strike the payoff is a loss equal to the premium, above the strike it climbs linearly, and the break-even is strike plus premium.">
+            <line class="axis" x1="70" y1="180" x2="600" y2="180"/>
+            <line class="axis" x1="70" y1="300" x2="70" y2="40"/>
+            <text class="chart-label" x="335" y="342" text-anchor="middle">Stock price at expiration S</text>
+            <text class="chart-label" x="24" y="170" text-anchor="middle" transform="rotate(-90 24 170)">Buyer's P&amp;L</text>
+            <path id="opt-path" class="curve curve-c1" fill="none"/>
+            <line id="opt-be" stroke="#94a3b8" stroke-dasharray="5 5" stroke-width="2"/>
+            <text id="opt-bet" class="chart-label" style="fill:#475569"></text>
+            <text id="opt-txt" class="chart-title-sm" x="335" y="28" text-anchor="middle"></text>
+            <text class="chart-label" x="560" y="70" style="fill:#2f6fdb">Break-even = K + premium</text>
+          </svg>
+        </figure>
+        <div class="fig-controls">
+          <div class="ctrl"><label for="opt-k">Strike K</label><input type="range" id="opt-k" min="60" max="140" step="5" value="100"><output id="opt-ok" for="opt-k">100</output></div>
+          <div class="ctrl"><label for="opt-p">Premium</label><input type="range" id="opt-p" min="2" max="20" step="1" value="8"><output id="opt-op" for="opt-p">8</output></div>
+        </div>
+        <figcaption>How to read this figure: an option trades a certain small loss (the premium) for a large upside. <strong>The buyer's maximum loss is locked at the premium</strong>, and the break-even = strike + premium. The premium is built from intrinsic value + time value, and the greater the volatility the more expensive it is (uncertainty is valuable). The seller's position is the mirror image: small gains, large risks — AIG, which sold CDS in 2008, is the extreme end state of "selling options."</figcaption>
+      </figure>
+
+      <h3>Key concepts</h3>
+      <div class="terms">
+        <div class="term"><div class="term-name">Tax Shield <span class="term-en">税盾</span></div><div class="term-def">Interest is deducted before tax; dividends are not — debt is thereby naturally a notch cheaper, the first argument for moderate leverage.</div></div>
+        <div class="term"><div class="term-name">Financial Distress Costs <span class="term-en">财务困境成本</span></div><div class="term-def">The direct and indirect losses when heavy debt triggers bankruptcy or restructuring (legal fees, lost customers, talent walking out, forced fire-sales of assets) — the second price of leverage.</div></div>
+        <div class="term"><div class="term-name">Option <span class="term-en">期权</span></div><div class="term-def">The <strong>right</strong>, not the obligation, to buy/sell at a set price at a set time. Calls and puts; the premium is its price.</div></div>
+        <div class="term"><div class="term-name">Principal-Agent Problem <span class="term-en">委托-代理问题</span></div><div class="term-def">Managers spend shareholders' money, and their incentives do not fully align. Equity compensation, boards of directors, and the threat of takeover are all mitigating devices (see Track 04, Game Theory, Chapter 4).</div></div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.1</span>The MM theorem says capital structure is irrelevant to firm value. What does it really mean?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>Debt levels genuinely do not matter, and managers need not care</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>It holds in an ideal world with no taxes and no bankruptcy costs; it is precisely the departures from those conditions (tax shield, distress costs) that guide the real-world optimal leverage</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>Companies should borrow 100%</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>MM is a "benchmark theorem": it tells you <strong>when slicing the pie does change the size of the pie</strong>. The direction of real-world frictions from these conditions is the compass for capital-structure design (more tax shield → borrow a bit more; more distress costs → borrow a bit less). "The theorem's assumptions are wrong, so the theorem is useless" is the most popular misconception about benchmark models — quite the opposite: the list of assumptions is the diagnostic checklist.</div>
+      </div>
+
+      <div class="quiz" data-quiz>
+        <div class="quiz-q"><span class="quiz-tag">Quiz 6.2</span>You buy a call with strike 100 and premium 8. At expiration the stock trades at 130. Your profit or loss?</div>
+        <div class="quiz-opts">
+          <button class="quiz-opt"><span class="opt-key">A</span>+30</button>
+          <button class="quiz-opt" data-correct="true"><span class="opt-key">B</span>+22 ((130−100) exercise gain − 8 premium)</button>
+          <button class="quiz-opt"><span class="opt-key">C</span>−8</button>
+        </div>
+        <div class="quiz-verdict" role="status" aria-live="polite"></div>
+        <div class="quiz-explain"><strong>Explanation:</strong>Exercising earns 130−100=30; subtract the premium of 8 for a net +22. If the price at expiration is &lt; 100, you let the option lapse and lose only 8; between 100 and 108, exercising earns a little but still loses overall. The break-even = 108 = K + premium. The option buyer's payoff structure naturally "truncates the downside" — the shared skeleton of protective puts (insurance) and leveraged speculation alike.</div>
+      </div>
+
+      <div class="summary-card">
+        <h3>Chapter summary</h3>
+        <ul>
+          <li>MM theorem: in an ideal world, the slicing is irrelevant; real-world frictions (tax shield/distress costs) set the optimal leverage.</li>
+          <li>An option = a right, not an obligation: limited downside, amplified upside; the premium buys the asymmetry.</li>
+          <li>The core of corporate governance is easing the principal-agent conflict.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="chapter" id="path">
+      <h2><span class="ch-num">Wrap-up</span> Next steps &amp; further reading</h2>
+      <p>Financial economics reaches outward to <strong>07 International Economics</strong> (exchange-rate asset pricing, interest-rate parity), to the behavioral side at <strong>15 Behavioral Economics</strong> (limits of arbitrage and anomalies), and back to macro in <strong>05 Money &amp; Banking</strong> (the term structure of interest rates and QE).</p>
+      <div class="reading-list">
+        <ul>
+          <li><span class="bk">Bodie, Kane &amp; Marcus, "Investments"</span> — the standard textbook on asset pricing and portfolio theory.</li>
+          <li><span class="bk">Merton Miller, "Thirty Years of the MM Theorem" / any standard corporate-finance text (Ross et al.)</span> — for the logic of capital structure.</li>
+          <li><span class="bk">Peter Bernstein, "Capital Ideas" / "Against the Gods"</span> — a vivid narrative history of thought about risk.</li>
+          <li><span class="bk">Robert Shiller, "Irrational Exuberance"</span> — the signature work on bubbles and behavioral finance.</li>
+          <li><span class="bk">John Hull, "Options, Futures and Other Derivatives"</span> — the derivatives bible (advanced).</li>
+        </ul>
+      </div>
+      <nav class="pager">
+        <a href="../05-money-and-banking/index.html"><span class="pager-dir">Previous track</span><br><span class="pager-name">Money &amp; Banking</span></a>
+        <a href="../07-international-economics/index.html"><span class="pager-dir">Next track</span><br><span class="pager-name">International Economics</span></a>
+      </nav>
+    </section>
+  </main>
+</div>
+
+<script src="../../assets/econ.js"></script>
+<script>
+/* ================= Figure 1-1 Compound interest ================= */
+(function () {
+  var pathC = document.getElementById("ci-comp");
+  var pathS = document.getElementById("ci-simple");
+  var t1 = document.getElementById("ci-txt1");
+  var t2 = document.getElementById("ci-txt2");
+  if (!pathC) return;
+  var X0 = 70, X1 = 600, Y0 = 320, Y1 = 40;
+  function px(t, n) { return X0 + t / n * (X1 - X0); }
+  function draw() {
+    var r = parseFloat(document.getElementById("ci-r").value) / 100;
+    var n = parseFloat(document.getElementById("ci-n").value);
+    document.getElementById("ci-or").textContent = (r * 100).toFixed(1) + "%";
+    document.getElementById("ci-on").textContent = n;
+    var comp = Math.pow(1 + r, n), simple = 1 + r * n;
+    var maxV = Math.max(comp, simple);
+    function py(v) { return Y0 - (v / maxV) * (Y0 - Y1); }
+    var dc = "", ds = "", i, x, t;
+    for (i = 0; i <= n; i++) {
+      x = px(i, n).toFixed(1);
+      dc += (i === 0 ? "M" : "L") + x + "," + py(Math.pow(1 + r, i)).toFixed(1) + " ";
+      ds += (i === 0 ? "M" : "L") + x + "," + py(1 + r * i).toFixed(1) + " ";
+    }
+    pathC.setAttribute("d", dc);
+    pathS.setAttribute("d", ds);
+    if (t1) t1.textContent = "1 yuan of principal → " + comp.toFixed(2) + " yuan compounded / " + simple.toFixed(2) + " yuan simple";
+    if (t2) t2.textContent = "About " + Math.round(72 / (r * 100)) + " years to double (Rule of 72) | Present-value view: " + comp.toFixed(1) + " yuan at the end ÷ (1+r)ⁿ = 1 yuan";
+  }
+  ["ci-r", "ci-n"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", draw);
+  });
+  draw();
+})();
+
+/* ================= Figure 3-1 Diversification ================= */
+(function () {
+  var path = document.getElementById("dp-curve");
+  var dot = document.getElementById("dp-dot");
+  var txt = document.getElementById("dp-txt");
+  if (!path) return;
+  var X0 = 70, X1 = 600, Y0 = 300, Y1 = 40;
+  var s = 0.20, mu = 0.10; // both assets identical: volatility 20%, expected 10%
+  function px(w) { return X0 + w * (X1 - X0); }
+  function py(sig) { return Y0 - sig / 0.24 * (Y0 - Y1); }
+  function sigma(w, rho) {
+    return Math.sqrt(w * w * s * s + (1 - w) * (1 - w) * s * s + 2 * w * (1 - w) * rho * s * s);
+  }
+  function draw() {
+    var rho = parseFloat(document.getElementById("dp-rho").value) / 100;
+    var w = parseFloat(document.getElementById("dp-w").value) / 100;
+    document.getElementById("dp-orho").textContent = rho.toFixed(1);
+    document.getElementById("dp-ow").textContent = w.toFixed(2);
+    var d = "", i, ww;
+    for (i = 0; i <= 50; i++) {
+      ww = i / 50;
+      d += (i === 0 ? "M" : "L") + px(ww).toFixed(1) + "," + py(sigma(ww, rho)).toFixed(1) + " ";
+    }
+    path.setAttribute("d", d);
+    var sig = sigma(w, rho);
+    dot.setAttribute("cx", px(w)); dot.setAttribute("cy", py(sig));
+    if (txt) txt.textContent = "w=" + w.toFixed(2) + " portfolio: expected " + (mu * 100).toFixed(1) + "% unchanged, volatility " + (sig * 100).toFixed(1) + "% (ρ=" + rho.toFixed(1) + ")";
+  }
+  ["dp-w", "dp-rho"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", draw);
+  });
+  draw();
+})();
+
+/* ================= Figure 4-1 SML ================= */
+(function () {
+  var line = document.getElementById("sml-line");
+  var fair = document.getElementById("sml-fair");
+  var cheap = document.getElementById("sml-cheap");
+  var txt = document.getElementById("sml-txt");
+  if (!line) return;
+  var X0 = 70, X1 = 600, Y0 = 300, Y1 = 40;
+  var rf = 0.02, mpr = 0.05; // risk-free 2%, market premium 5%
+  function px(b) { return X0 + b / 2 * (X1 - X0); }
+  function py(e) { return Y0 - (e - 0) / 0.14 * (Y0 - Y1); }
+  function fairRet(b) { return rf + b * mpr; }
+  line.setAttribute("x1", px(0)); line.setAttribute("y1", py(fairRet(0)));
+  line.setAttribute("x2", px(2)); line.setAttribute("y2", py(fairRet(2)));
+  function place(el, b, e) {
+    el.setAttribute("cx", px(b)); el.setAttribute("cy", py(e));
+  }
+  function draw() {
+    var b = parseFloat(document.getElementById("sml-b").value) / 10;
+    document.getElementById("sml-ob").textContent = b.toFixed(1);
+    var e = fairRet(b);
+    place(fair, b, e);
+    cheap.style.display = "none";
+    if (txt) txt.textContent = "β=" + b.toFixed(1) + " → fair expected return " + (e * 100).toFixed(1) + "% (rf 2% + " + b.toFixed(1) + "×5%)";
+  }
+  document.getElementById("sml-b").addEventListener("input", draw);
+  document.getElementById("sml-cheap-btn").addEventListener("click", function () {
+    var b = parseFloat(document.getElementById("sml-b").value) / 10;
+    var e = fairRet(b) + 0.017;
+    cheap.style.display = "";
+    place(cheap, b, e);
+    if (txt) txt.textContent = "Undervalued: offered " + (e * 100).toFixed(1) + "% > fair " + (fairRet(b) * 100).toFixed(1) + "% → α = +1.7%; buying pushes the price back onto the line";
+  });
+  document.getElementById("sml-reset").addEventListener("click", draw);
+  draw();
+})();
+
+/* ================= Figure 6-1 Option payoff ================= */
+(function () {
+  var path = document.getElementById("opt-path");
+  var be = document.getElementById("opt-be");
+  var bet = document.getElementById("opt-bet");
+  var txt = document.getElementById("opt-txt");
+  if (!path) return;
+  var X0 = 70, X1 = 600, Y0 = 300, Y1 = 40, Y0AX = 180;
+  var Smin = 60, Smax = 140;
+  var vTop = 40, vBot = -25; // y-axis value range, adjusted with the sliders so the curve stays in bounds
+  function px(s) { return X0 + (s - Smin) / (Smax - Smin) * (X1 - X0); }
+  function py(v) { return Y0AX - (v - vBot) / (vTop - vBot) * (Y0AX - Y1); }
+  function payoff(s, k, p) { return Math.max(0, s - k) - p; }
+  function draw() {
+    var k = parseFloat(document.getElementById("opt-k").value);
+    var p = parseFloat(document.getElementById("opt-p").value);
+    vTop = Math.max(40, payoff(Smax, k, p));   // with low K and a low premium the payoff can reach ~78
+    vBot = Math.min(-25, -p - 5);
+    document.getElementById("opt-ok").textContent = k;
+    document.getElementById("opt-op").textContent = p;
+    var d = "", i, s;
+    for (i = 0; i <= 80; i++) {
+      s = Smin + (Smax - Smin) * i / 80;
+      d += (i === 0 ? "M" : "L") + px(s).toFixed(1) + "," + py(payoff(s, k, p)).toFixed(1) + " ";
+    }
+    path.setAttribute("d", d);
+    var bex = px(k + p);
+    be.setAttribute("x1", bex); be.setAttribute("x2", bex);
+    be.setAttribute("y1", Y1); be.setAttribute("y2", Y0);
+    bet.setAttribute("x", Math.min(X1 - 8, bex + 4)); bet.setAttribute("y", Y1 + 14);
+    bet.textContent = "S* = " + (k + p);
+    if (txt) txt.textContent = "K=" + k + ", premium " + p + " → maximum loss locked at " + p + ", break-even " + (k + p);
+  }
+  ["opt-k", "opt-p"].forEach(function (id) {
+    document.getElementById(id).addEventListener("input", draw);
+  });
+  draw();
+})();
+</script>
+</body>
+</html>
